@@ -184,7 +184,7 @@ body{
 	padding:0 16px;
 	transition:background .225s cubic-bezier(.4,0,.2,1),color .225s cubic-bezier(.4,0,.2,1);
 }
-#categories>li:nth-of-type(3),[data-light=false] #categories>li:nth-of-type(6){
+#categories>li:nth-of-type(3),#categories>li:nth-of-type(6){
 	border-bottom:1px solid #e0e0e0;
 }
 #categories>li:focus,#categories>li:hover{
@@ -428,15 +428,13 @@ body{
 }*/
 #content>section>article::before{
 	color:#757575;
+	font-family:Material Design Icons;
 	font-size:24px;
 	margin:0 8px 0 0;
 	transition:color .225s cubic-bezier(.4,0,.2,1);
 	vertical-align:middle;
 	width:48px;
 	z-index:2;
-}
-[data-light=false] #content article::before{
-	font-family:Material Design Icons;
 }
 /*#content>section>article[data-icon=""]::before{
 	color:#bdbdbd;
