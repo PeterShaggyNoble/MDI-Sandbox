@@ -16,12 +16,13 @@
 		f=$`filter`,
 		m=$`content`,
 		r=$`results`,
-	/** PAGE SETUP **/
+	/** PAGE **/
 		page={
 			params:u.searchParams,
 			header:$`header`,
 			message:$`message`,
 			textarea:d.createElement`textarea`,
+		/** SET UP **/
 			init(){
 				this.textarea.classList.add("ln","pa");
 				categories.init();
@@ -68,8 +69,10 @@
 						,150);
 				},0);
 			},
+		/** GET JSON **/
 			get:file=>
 				fetch(`json/${file}.json`).then(resp=>resp.json()),
+		/** COPY TO CLIPBOARD **/
 			copy(str,msg){
 				b.append(this.textarea);
 				this.textarea.value=str;
@@ -78,6 +81,7 @@
 				this.textarea.remove();
 				this.alert(`${msg} copied to clipboard.`);
 			},
+		/** TOAST NOTIFICATIONS **/
 			alert(msg){
 				if(this.timer)
 					clearTimeout(this.timer);
@@ -96,34 +100,6 @@
 			header:$`navicon`,
 			menu:$`menu`,
 			categories:$`categories`,
-			toggle(){
-				this.nav.dataset.show=(this.show=!this.show).toString();
-				this.show?b.addEventListener("keydown",this.fns.close=event=>{
-					if(event.keyCode===27)
-						this.toggle();
-				},0):b.removeEventListener("keydown",this.fns.close);
-			},
-			goto(section){
-				this.to=section.offsetTop-page.header.offsetHeight;
-				this.top=m.scrollTop;
-				this.step=(this.to-this.top)/20;
-				this.timer=setInterval(_=>
-					Math.round(this.top)===Math.round(this.to)?clearInterval(this.timer):m.scrollTop=(this.top+=this.step)
-				,10);
-			},
-			touchstart(){
-				b.classList.add`dragging`;
-				this.nav.style.transition=this.menu.style.transition="none";
-			},
-			touchend(cx){
-				d.removeEventListener("touchmove",this.fns.move);
-				d.removeEventListener("touchend",this.fns.end);
-				this.nav.removeAttribute`style`;
-				this.menu.removeAttribute`style`;
-				if(cx>=this.width/2)
-					this.toggle();
-				b.classList.remove`dragging`;
-			},
 			init(){
 				this.nav.addEventListener("click",event=>{
 					let target=event.target;
@@ -153,6 +129,34 @@
 						event.stopPropagation();
 					}
 				},0);
+			},
+			toggle(){
+				this.nav.dataset.show=(this.show=!this.show).toString();
+				this.show?b.addEventListener("keydown",this.fns.close=event=>{
+					if(event.keyCode===27)
+						this.toggle();
+				},0):b.removeEventListener("keydown",this.fns.close);
+			},
+			goto(section){
+				this.to=section.offsetTop-page.header.offsetHeight;
+				this.top=m.scrollTop;
+				this.step=(this.to-this.top)/20;
+				this.timer=setInterval(_=>
+					Math.round(this.top)===Math.round(this.to)?clearInterval(this.timer):m.scrollTop=(this.top+=this.step)
+				,10);
+			},
+			touchstart(){
+				b.classList.add`dragging`;
+				this.nav.style.transition=this.menu.style.transition="none";
+			},
+			touchend(cx){
+				d.removeEventListener("touchmove",this.fns.move);
+				d.removeEventListener("touchend",this.fns.end);
+				this.nav.removeAttribute`style`;
+				this.menu.removeAttribute`style`;
+				if(cx>=this.width/2)
+					this.toggle();
+				b.classList.remove`dragging`;
 			}
 		},
 	/** SEARCH **/
@@ -330,7 +334,6 @@
 			},
 			anchor:d.createElement`a`,
 			show:0,
-			fns:{},
 			init(){
 				/*if(!["ftp:","http:","https:"].includes(u.protocol))
 					this.actions.url.classList.add`dn`;*/
@@ -432,7 +435,7 @@
 				this.aside.dataset.show=(this.show=!this.show).toString();
 				c.content=`#${this.show?"ff5722":"2196f3"}`;
 				if(this.show)
-					b.addEventListener("keydown",this.fns.close=event=>{
+					b.addEventListener("keydown",this.close=event=>{
 						if(event.keyCode===27)
 							this.toggle();
 					},0)
@@ -440,7 +443,7 @@
 					let current=m.querySelector`[data-current=true]`;
 					if(current)
 						current.removeAttribute`data-current`;
-					b.removeEventListener("keydown",this.fns.close);
+					b.removeEventListener("keydown",this.close);
 				}
 			}
 		},
