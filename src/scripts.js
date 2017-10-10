@@ -1,6 +1,6 @@
 {
 	/** VERSION **/
-	let	v=2046;
+	let 	v=2046;
 	/** FUNCTIONS **/
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
@@ -9,6 +9,7 @@
 		d=document,
 		l=localStorage,
 		u=new URL(w.location),
+		s=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">`,
 	/** ELEMENTS **/
 		h=d.documentElement,
 		b=d.body,
@@ -306,7 +307,7 @@
 				this.anchor.download="mdi-favourites.txt";
 				this.anchor.click();
 			}
-		}
+		},
 	/** SIDEBAR **/
 		info={
 			aside:$`info`,
@@ -400,7 +401,7 @@
 				/*this.actions.name.dataset.copy=`mdi-${icon}`;*/
 				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${icon}`;
 				let hex=icons.list[icon].hex;
-				this.img.src=`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="${this.path}"/></svg>`
+				this.img.src=`data:image/svg+xml;utf8,${s}<path d="${this.path}"/></svg>`;
 				this.aside.dataset.nocopy=(!(this.copy=!!hex)).toString();
 				this.aside.dataset.nodownload=(!this.path).toString();
 				this.actions.icon.dataset.copy=hex?String.fromCharCode(`0x${hex}`):"\xa0";
@@ -414,7 +415,7 @@
 					if(this.path){
 						switch(this.type){
 							case"svg":
-								this.anchor.href=`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="${this.path}"/></svg>`;
+								this.anchor.href=`data:text/svg+xml;utf8,${s}<path d="${this.path}"/></svg>`;
 								break;
 							case"xaml":
 								this.anchor.href=`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.path}"/></Canvas>`;
@@ -438,7 +439,7 @@
 					b.addEventListener("keydown",this.close=event=>{
 						if(event.keyCode===27)
 							this.toggle();
-					},0)
+					},0);
 				else{
 					let current=m.querySelector`[data-current=true]`;
 					if(current)
@@ -516,7 +517,7 @@
 					img=this.img,
 					hex=icon.hex,
 					sections=categories.sections,
-					section,x;
+					section;
 				delete article.dataset.aliases;
 				delete article.dataset.keywords;
 				/*article.dataset.contributor=icon.contributor;*/
@@ -524,7 +525,7 @@
 				article.dataset.name=key;
 				article.dataset.icon=hex?String.fromCharCode(`0x${hex}`):"";
 				if(!hex){
-					img.src=`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="${icon.path}"/></svg>`;
+					img.src=`data:image/svg+xml;utf8,${s}<path d="${icon.path}"/></svg>`;
 					article.prepend(img);
 				}else img.remove();
 				article.lastChild.nodeValue=key;
