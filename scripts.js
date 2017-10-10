@@ -59,13 +59,13 @@
 							break;
 					}
 				},0);
-				m.addEventListener("scroll",()=>{
+				m.addEventListener("scroll",_=>{
 					if(this.timer)
 						clearTimeout(this.timer);
 					if(!filter.length)
-						this.timer=setTimeout(()=>{
-							this.top=m.scrollTop;
-						},150);
+						this.timer=setTimeout(_=>
+							this.top=m.scrollTop
+						,150);
 				},0);
 			},
 			get:file=>
@@ -83,7 +83,9 @@
 					clearTimeout(this.timer);
 				this.message.firstChild.nodeValue=msg;
 				this.message.classList.remove`oz`;
-				this.timer=setTimeout(()=>this.message.classList.add`oz`,5000);
+				this.timer=setTimeout(_=>
+					this.message.classList.add`oz`
+				,5000);
 			}
 		},
 	/** MENU **/
@@ -105,7 +107,9 @@
 				this.to=section.offsetTop-page.header.offsetHeight;
 				this.top=m.scrollTop;
 				this.step=(this.to-this.top)/20;
-				this.timer=setInterval(()=>Math.round(this.top)===Math.round(this.to)?clearInterval(this.timer):m.scrollTop=(this.top+=this.step),10);
+				this.timer=setInterval(_=>
+					Math.round(this.top)===Math.round(this.to)?clearInterval(this.timer):m.scrollTop=(this.top+=this.step)
+				,10);
 			},
 			touchstart(){
 				b.classList.add`dragging`;
@@ -158,17 +162,21 @@
 			link:r.firstElementChild,
 			error:r.querySelector`p`,
 			init(){
-				f.addEventListener("input",()=>{
+				f.addEventListener("input",_=>{
 					if(this.timer)
 						clearTimeout(this.timer);
-					this.timer=setTimeout(()=>this.search(),50);
+					this.timer=setTimeout(_=>
+						this.search()
+					,50);
 				},0);
-				this.button.addEventListener("click",()=>{
+				this.button.addEventListener("click",_=>{
 					f.value="";
 					f.dispatchEvent(new Event("input"));
 					f.focus();
 				},0);
-				this.link.addEventListener("click",()=>page.copy(this.url,"Link"),0);
+				this.link.addEventListener("click",_=>
+					page.copy(this.url,"Link")
+				,0);
 			},
 			search(){
 				this.text=f.value.toLowerCase().replace(/\+/g,"%2b");
@@ -218,7 +226,7 @@
 				this.input.accept=".txt,text/plain";
 				this.input.classList.add("ln","pa");
 				this.input.type="file";
-				this.input.addEventListener("change",()=>{
+				this.input.addEventListener("change",_=>{
 					if(this.input.files[0].type==="text/plain")
 						this.reader.readAsText(this.input.files[0]);
 				},0);
@@ -365,7 +373,7 @@
 							break;
 					}
 				},0);
-				this.input.addEventListener("input",()=>
+				this.input.addEventListener("input",_=>
 					this.img.style.height=this.img.style.width=`${this.input.value}px`
 				,0);
 			},
@@ -373,7 +381,9 @@
 				this.set(icon);
 				this.current=icon;
 				this.figure.classList.add`oz`;
-				setTimeout(()=>this.figure.classList.remove`oz`,10);
+				setTimeout(_=>
+					this.figure.classList.remove`oz`
+				,10);
 				this.toggle();
 			},
 			set(icon){
@@ -539,7 +549,9 @@
 				span.style.height=span.style.width=`${Math.min(target.offsetHeight,target.offsetWidth)}px`;
 				span.style.left=`${x-target.getBoundingClientRect().left}px`;
 				span.style.top=`${y-target.offsetTop}px`;
-				setTimeout(()=>span.remove(),875);
+				setTimeout(_=>
+					span.remove()
+				,875);
 			}
 		};
 	/** INITIATE **/	
