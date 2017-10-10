@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<pre id="o"></pre>
+<script>
+	fetch`tmp.json`.then(resp=>resp.json()).then(json=>{
+		for(let key in json)
+			if(json.hasOwnProperty(key))
+				o.innerText+=`,
+	"${key}":{
+		"added":${+json[key].added==json[key].added?json[key].added:`"${json[key].added}"`},
+		"aliases":["${json[key].aliases.split`,`.join`","`}"],
+		"categories":["${json[key].categories.join`","`}"],
+		"contributor":"${json[key].contributor}",
+		"hex":"${json[key].hex}",
+		"id":"${json[key].id}",
+		"keywords":["${json[key].keywords.split`,`.join`","`}"],
+		"path":"${json[key].path}",
+		"updated":${+json[key].updated==json[key].updated?json[key].updated:`"${json[key].updated}"`}
+	}`.replace(/\[\"\"\]/g,`[]`)
+	});
+</script>
