@@ -1,6 +1,6 @@
 {
 	/** VERSION **/
-	let	_,v="2.0.46";
+	let	v="2.0.46";
 	/** FUNCTIONS **/
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
