@@ -421,11 +421,6 @@ body{
 	width:100%;
 	z-index:1;
 }
-/*#content>section>article[data-icon=""]{
-	background:none;
-	box-shadow:none;
-	color:#9e9e9e;
-}*/
 #content>section>article::before{
 	color:#757575;
 	font-family:Material Design Icons;
@@ -436,9 +431,6 @@ body{
 	width:48px;
 	z-index:2;
 }
-/*#content>section>article[data-icon=""]::before{
-	color:#bdbdbd;
-}*/
 #content>section>article>img{
 	left:12px;
 	opacity:.54;
@@ -525,25 +517,18 @@ body{
 }
 /*  preview */
 #preview{
-	align-items:flex-end;
+	align-items:center;
 	font-size:56px;
 	justify-content:center;
-	line-height:116px;
+	height:116px;
 	margin-top:-10px;
 	padding:0 16px;
 	transition:font .195s cubic-bezier(.4,0,.2,1),opacity .195s cubic-bezier(.4,0,.2,1);
 	width:calc(100% - 36px);
 }
-#preview:empty,#preview.oz{
-	font-size:0!important;
-	transition-duration:0s;
-}
 #preview>img{
 	filter:invert(1);
 	height:56px;
-	left:50%;
-	top:50%;
-	transform:translate(-50%,-50%);
 	transition:height .195s cubic-bezier(.4,0,.2,1),width .195s cubic-bezier(.4,0,.2,1);
 	width:56px;
 }

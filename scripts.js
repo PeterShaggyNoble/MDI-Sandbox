@@ -1,4 +1,3 @@
-
 {
 	/** VERSION **/
 	let	_,v="2.0.46";
@@ -69,7 +68,8 @@
 						},150);
 				},0);
 			},
-			get:str=>fetch(`json/${str}.json`).then(resp=>resp.json()),
+			get:file=>
+				fetch(`json/${file}.json`).then(resp=>resp.json()),
 			copy(str,msg){
 				b.append(this.textarea);
 				this.textarea.value=str;
@@ -326,11 +326,10 @@
 			init(){
 				/*if(!["ftp:","http:","https:"].includes(u.protocol))
 					this.actions.url.classList.add`dn`;*/
-				this.img.classList.add`pa`;
+				this.img.classList.add`dib`;
 				this.img.height=this.img.width=56;
 				this.img.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 				this.figure.append(this.img);
-				this.figure.append(d.createTextNode``);
 				this.icons=this.figure.children;
 				this.set(Object.keys(icons.list)[0]);
 				this.aside.addEventListener("click",event=>{
@@ -367,7 +366,7 @@
 					}
 				},0);
 				this.input.addEventListener("input",()=>
-					this.figure.style.fontSize=this.img.style.height=this.img.style.width=`${this.input.value}px`
+					this.img.style.height=this.img.style.width=`${this.input.value}px`
 				,0);
 			},
 			open(icon){
@@ -380,6 +379,7 @@
 			set(icon){
 				favourites.fave=typeof l[`mdi-${icon}`]!=="undefined"&&!!l[`mdi-${icon}`];
 				this.name=this.heading.firstChild.nodeValue=icon;
+				this.path=icons.list[icon].path;
 				this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.fave?"f0c6":"f0c5"}`);
 				this.actions.favourite.firstChild.nodeValue=`${favourites.fave?"Remove from":"Add to"} Favourites`;
 				this.actions.url.dataset.copy=`${u.protocol}//${u.host}${u.pathname}?icon=${encodeURIComponent(icon)}${u.hash}`;
@@ -387,10 +387,10 @@
 				/*this.actions.name.dataset.copy=`mdi-${icon}`;*/
 				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${icon}`;
 				let hex=icons.list[icon].hex;
-				this.img.src=!hex?`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="${icons.list[icon].path}"/></svg>`:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+				this.img.src=`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="${this.path}"/></svg>`
 				this.aside.dataset.nocopy=(!(this.copy=!!hex)).toString();
-				this.aside.dataset.nodownload=(!(this.path=icons.list[icon].path)).toString();
-				this.figure.lastChild.nodeValue=this.actions.icon.dataset.copy=hex?String.fromCharCode(`0x${hex}`):"\xa0";
+				this.aside.dataset.nodownload=(!this.path).toString();
+				this.actions.icon.dataset.copy=hex?String.fromCharCode(`0x${hex}`):"\xa0";
 				this.actions.hex.dataset.copy=hex;
 				this.actions.entity.dataset.copy=`&#x${hex};`;
 				this.actions.css.dataset.copy=`\\${hex}`;
@@ -415,15 +415,7 @@
 						}
 						this.anchor.download=`${this.name}.${this.type}`;
 						this.anchor.click();
-					}else{
-						/*icons.check(this.anchor.href=`https://materialdesignicons.com/api/download/icon/svg/${icons.list[name].id}`).then(()=>{*/
-						if(this.type==="svg")
-							icons.check(this.anchor.href=!icons.list[this.name].hex?`/svg/mdi/${this.name}.svg`:`https://raw.githubusercontent.com/Templarian/MaterialDesign/master/icons/svg/${this.name}.svg`).then(()=>{
-								this.anchor.download=`${this.name}.svg`;
-								this.anchor.click();
-							}).catch(()=>page.alert`File not found.`);
-						else page.alert`Download not available.`;
-					}
+					}else page.alert`Download not available.`;
 				}else page.alert`Icon not found.`;
 			},
 			toggle(){
@@ -541,17 +533,6 @@
 				if(icon.keywords.length)
 					article.dataset.keywords=icon.keywords;
 				r.append(article.cloneNode(1));
-			},
-			check(url){
-				let xml=new XMLHttpRequest();
-				xml.open("HEAD",url,true);
-				xml.send();
-				return new Promise((resolve,reject)=>{
-					xml.addEventListener("readystatechange",()=>{
-						if(xml.readyState===4)
-							xml.status===200?resolve():reject();
-					},0);
-				});
 			},
 			ripple(target,x,y){
 				let span=this.span.cloneNode(0);
