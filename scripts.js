@@ -1,6 +1,6 @@
 {
 	/** VERSION **/
-	let	v="2.0.46";
+	let	v=2046;
 	/** FUNCTIONS **/
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
@@ -487,7 +487,6 @@
 			span:d.createElement`span`,
 			img:d.createElement`img`,
 			init(){
-				v=parseInt(v.replace(/\./g,""));
 				this.article.classList.add("cp","fwm","oh","pr","toe","wsnw");
 				this.article.append(d.createTextNode``);
 				this.span.classList.add("ripple","db","pa","pen");
