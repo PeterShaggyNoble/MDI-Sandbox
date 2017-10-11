@@ -16,6 +16,7 @@
 		c=Q`meta[name=theme-color]`,
 		f=$`filter`,
 		m=$`content`,
+		o=$`load`,
 		r=$`results`,
 	/** PAGE **/
 		page={
@@ -69,6 +70,14 @@
 							this.top=m.scrollTop
 						,150);
 				},0);
+				setTimeout(_=>{
+					o.classList.add`oz`;
+					o.classList.add`pen`;
+					m.classList.remove`oz`;
+					setTimeout(_=>
+						o.remove()
+					,375);
+				},10);
 			},
 		/** GET JSON **/
 			get:file=>
