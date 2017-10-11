@@ -567,6 +567,6 @@
 		page.get`icons`.then(json=>{
 			icons.list=json;
 			page.init();
-		});
-	});
+		}).catch(_=>page.alert`Failed to load icon data.`);
+	}).catch(_=>page.alert`Failed to load category data.`);
 }
