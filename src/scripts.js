@@ -376,13 +376,15 @@
 							this.download();
 							break;
 						case this.actions.link:
-							w.location.href=target.dataset.url;
+							if(this.aside.dataset.retired==="false")
+								w.location.href=target.dataset.url;
+							else page.alert`No longer available.`;
 							break;
 						default:
 							if(target.parentNode===this.actions.favourite.parentNode)
 								if(this.copy||target===this.actions.url)
 									page.copy(target.dataset.copy,target.dataset.confirm);
-								else page.alert`Not yet available.`;
+								else page.alert(`No${this.aside.dataset.retired==="false"?"t yet":" longer"} available.`);
 							break;
 					}
 				},0);
@@ -413,6 +415,7 @@
 				this.img.src=`data:image/svg+xml;utf8,${s}<path d="${this.path}"/></svg>`;
 				this.aside.dataset.nocopy=(!(this.copy=!!hex)).toString();
 				this.aside.dataset.nodownload=(!this.path).toString();
+				this.aside.dataset.retired=(!!icons.list[icon].retired).toString();
 				this.actions.icon.dataset.copy=hex?String.fromCharCode(`0x${hex}`):"\xa0";
 				this.actions.hex.dataset.copy=hex;
 				this.actions.entity.dataset.copy=`&#x${hex};`;
@@ -552,6 +555,8 @@
 				if(icon.updated===v&&(section=sections.updates))
 					section.append(article.cloneNode(1));
 				if(!hex&&(section=sections.soon))
+					section.append(article.cloneNode(1));
+				if(icon.retired&&(section=sections.retired))
 					section.append(article.cloneNode(1));
 				if(icon.aliases)
 					article.dataset.aliases=icon.aliases;
