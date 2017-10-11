@@ -541,9 +541,9 @@
 					section.append(article.cloneNode(1));
 				if(!hex&&(section=sections.soon))
 					section.append(article.cloneNode(1));
-				if(icon.aliases.length)
+				if(icon.aliases)
 					article.dataset.aliases=icon.aliases;
-				if(icon.keywords.length)
+				if(icon.keywords)
 					article.dataset.keywords=icon.keywords;
 				r.append(article.cloneNode(1));
 			},
