@@ -307,7 +307,6 @@
 	},
 	"alarm-bell":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f78d",
 		"id":"02423F51-52A3-4F45-8373-05CA8E8D57B7",
@@ -323,7 +322,6 @@
 	},
 	"alarm-light":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f78e",
 		"id":"B6D88F9D-A85A-4943-A61C-7D33FB0EBF4F",
@@ -392,7 +390,6 @@
 	},
 	"alert-circle-outline":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5d6",
 		"id":"0F4002B4-3C3D-43C4-939F-A998B2C59177",
@@ -408,7 +405,6 @@
 	},
 	"alert-decagram":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6bc",
 		"id":"B4866C08-2DAE-4B0A-8942-E057094B3C76",
@@ -418,7 +414,6 @@
 	},
 	"alert-octagram":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f766",
 		"id":"124F37BE-27F6-4524-9655-A18D28E91CA6",
@@ -434,7 +429,6 @@
 	},
 	"all-inclusive":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6bd",
 		"id":"5596E6E7-916E-4870-9346-5D46BC86C0D5",
@@ -486,7 +480,6 @@
 	},
 	"amplifier":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"infanf",
 		"hex":"f030",
 		"id":"4A952C8C-7A6F-4028-A974-48E4DCE299CF",
@@ -546,7 +539,6 @@
 	},
 	"animation":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5d8",
 		"id":"4FE8F135-8FF9-427B-8857-122FBB0A300A",
@@ -575,7 +567,6 @@
 	},
 	"apple-keyboard-caps":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f632",
 		"id":"070FF4A9-7726-4682-8ABD-AC1800B8D83E",
@@ -583,7 +574,6 @@
 	},
 	"apple-keyboard-command":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f633",
 		"id":"03043022-A59D-4E31-B385-E6D94D3D9B92",
@@ -591,7 +581,6 @@
 	},
 	"apple-keyboard-control":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f634",
 		"id":"F24769F6-25C3-4244-8C64-13A514E7CAAD",
@@ -599,7 +588,6 @@
 	},
 	"apple-keyboard-option":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f635",
 		"id":"C06A94E2-9606-484B-BC0D-D0B9A2FBA76F",
@@ -607,7 +595,6 @@
 	},
 	"apple-keyboard-shift":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f636",
 		"id":"5AF5B660-DDD5-446A-8AC9-102776DBBBC9",
@@ -630,7 +617,6 @@
 	},
 	"application":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f614",
 		"id":"55C0C50F-9F4D-44C4-A84B-C79F645A8604",
@@ -639,7 +625,6 @@
 	"approval":{
 		"added":2046,
 		"aliases":["decagram-check"],
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f790",
 		"id":"64E327CF-3FCB-4742-AB82-789B2C27D31B",
@@ -1219,7 +1204,6 @@
 	},
 	"atom":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"robertogrrraham",
 		"hex":"f767",
 		"id":"C366C8B8-44FB-481E-88F2-AE0C3B1E8C74",
@@ -1234,7 +1218,6 @@
 	},
 	"auto-fix":{
 		"aliases":["magic","wand"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f068",
 		"id":"FAAFAACC-4E0D-4688-B583-FC88A782A9B6",
@@ -1270,7 +1253,6 @@
 	},
 	"baby-buggy":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f68e",
 		"id":"FA711E97-6083-45AA-9C92-FCCDABC57D37",
@@ -1738,7 +1720,6 @@
 	},
 	"bible":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"infanf",
 		"hex":"f0a2",
 		"id":"CC30F9D0-3076-4189-A00D-F570D5B0C5D1",
@@ -1903,7 +1884,6 @@
 	},
 	"bomb":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f690",
 		"id":"7DC40C3F-3733-48AF-94C7-5454FB849A49",
@@ -1911,7 +1891,6 @@
 	},
 	"bomb-off":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"robertogrrraham",
 		"hex":"f6c4",
 		"id":"DEC98F6C-E85D-400C-87CD-6AE692583838",
@@ -1934,7 +1913,6 @@
 	},
 	"book-minus":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f5d9",
 		"id":"7367B5F0-8155-4F3D-9C7E-BFDF677442D8",
@@ -1963,7 +1941,6 @@
 	},
 	"book-open-page-variant":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5da",
 		"id":"113421A1-241F-4479-B22B-5F56EFD63D4C",
@@ -1979,7 +1956,6 @@
 	},
 	"book-plus":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f5db",
 		"id":"3C49BDB2-C3A3-4E0C-9314-19FE66414A5B",
@@ -1987,7 +1963,6 @@
 	},
 	"book-secure":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f799",
 		"id":"121AF367-3AE5-48D1-9868-8DC60342D4A0",
@@ -1995,7 +1970,6 @@
 	},
 	"book-unsecure":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f79a",
 		"id":"90B49606-B4FF-4D4B-AE05-4769659094CE",
@@ -2060,7 +2034,6 @@
 	},
 	"boombox":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5dc",
 		"id":"DAA06443-AE25-4881-BC62-8033C4420B8E",
@@ -2176,7 +2149,6 @@
 	},
 	"bow-tie":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"thunsaker",
 		"hex":"f677",
 		"id":"741B300C-06EF-459D-BB3E-95DB8E21194E",
@@ -2313,7 +2285,6 @@
 	},
 	"buffer":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f619",
 		"id":"FBD11E2A-7F1F-4CE2-B17D-B3623D4FEA43",
@@ -2335,7 +2306,6 @@
 	},
 	"bullhorn":{
 		"aliases":["announcement"],
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f0e6",
 		"id":"A5D2E199-03A1-4C23-9C63-954D63DEBEB4",
@@ -2599,7 +2569,6 @@
 	},
 	"camera-burst":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f692",
 		"id":"4FCD7DBE-6B4C-41DB-BDD8-40ED820EC7F1",
@@ -2643,7 +2612,6 @@
 	},
 	"camera-metering-center":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"kumvert",
 		"hex":"f7a1",
 		"id":"D178034B-0B93-40F5-BBF1-D28B25A86647",
@@ -2651,7 +2619,6 @@
 	},
 	"camera-metering-matrix":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"kumvert",
 		"hex":"f7a2",
 		"id":"700D143A-8347-4A79-9EF8-844E1B436524",
@@ -2659,7 +2626,6 @@
 	},
 	"camera-metering-partial":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"kumvert",
 		"hex":"f7a3",
 		"id":"EA33D5EE-5E13-4D82-A552-C3B16772926F",
@@ -2667,7 +2633,6 @@
 	},
 	"camera-metering-spot":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"kumvert",
 		"hex":"f7a4",
 		"id":"C1313085-6C7F-4D60-A278-A39361B57DA9",
@@ -2675,7 +2640,6 @@
 	},
 	"camera-off":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5df",
 		"id":"461A25B1-59F6-49F1-A917-BED92315AA63",
@@ -2718,7 +2682,6 @@
 	},
 	"cancel":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f739",
 		"id":"02F70DD2-E16E-43FD-9C2A-267C965E3919",
@@ -2727,7 +2690,6 @@
 	},
 	"candle":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5e2",
 		"id":"4FB0AA38-406A-4877-8B0C-15C7ED95F22C",
@@ -2835,7 +2797,6 @@
 	},
 	"cards":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f638",
 		"id":"7E04A92C-1DC5-4A5F-84B0-57A50545EBE4",
@@ -2843,7 +2804,6 @@
 	},
 	"cards-outline":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f639",
 		"id":"BB07EFB4-5078-47BA-B441-93D4957AF7F9",
@@ -2851,7 +2811,6 @@
 	},
 	"cards-playing-outline":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f63a",
 		"id":"C388C342-49AA-4577-A968-12BD804E5A8E",
@@ -2859,7 +2818,6 @@
 	},
 	"cards-variant":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"casesandberg",
 		"hex":"f6c6",
 		"id":"A000BD20-147F-43FB-AD99-08AE6BA2E80B",
@@ -2881,7 +2839,6 @@
 	},
 	"cart-off":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f66b",
 		"id":"05455801-C523-420A-A961-868ABA3DF636",
@@ -2989,7 +2946,6 @@
 	},
 	"ceiling-light":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f768",
 		"id":"C45A21A3-671C-4B1A-B405-D625ECA93C11",
@@ -3297,7 +3253,6 @@
 	},
 	"checkbox-multiple-blank-circle":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f63b",
 		"id":"0AE5C836-2A43-4706-81C5-5053A73B9CAA",
@@ -3305,7 +3260,6 @@
 	},
 	"checkbox-multiple-blank-circle-outline":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f63c",
 		"id":"CCBAD6F8-5D3D-420A-94AF-CC85AA12397E",
@@ -3327,7 +3281,6 @@
 	},
 	"checkbox-multiple-marked-circle":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f63d",
 		"id":"85C35F15-1AC0-407B-BCBF-AD79B6E6DDEA",
@@ -3335,7 +3288,6 @@
 	},
 	"checkbox-multiple-marked-circle-outline":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f63e",
 		"id":"5158D0E3-0E77-4CC3-A9A4-727825812D00",
@@ -3428,7 +3380,6 @@
 	},
 	"chili-hot":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"kumvert",
 		"hex":"f7b1",
 		"id":"E868226C-7BE8-4A22-8A9A-8E040004016A",
@@ -3437,7 +3388,6 @@
 	},
 	"chili-medium":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"kumvert",
 		"hex":"f7b2",
 		"id":"C9DA0BF5-09DD-46A9-AE62-1612B26F0BB1",
@@ -3446,7 +3396,6 @@
 	},
 	"chili-mild":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"kumvert",
 		"hex":"f7b3",
 		"id":"3CE5B420-F103-47EA-800C-A4D145B89508",
@@ -3470,7 +3419,6 @@
 	},
 	"circle":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f764",
 		"id":"59803983-F6CE-4D40-B83C-36D42C9464A9",
@@ -3478,7 +3426,6 @@
 	},
 	"circle-outline":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f765",
 		"id":"00E1BEF8-DD84-4DCE-BE3C-8AA411DCE5FD",
@@ -3543,7 +3490,6 @@
 	},
 	"clipboard-flow":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f6c7",
 		"id":"5A450EF8-D2F0-4F32-8D10-A606DD847E19",
@@ -3558,7 +3504,6 @@
 	},
 	"clipboard-plus":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f750",
 		"id":"A5AA9DEA-AAAE-4C79-965F-6828F823E2CD",
@@ -3890,7 +3835,6 @@
 	},
 	"code-tags-check":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f693",
 		"id":"7F098441-8B1D-4FB1-88EC-95726397BA7C",
@@ -3947,7 +3891,6 @@
 	},
 	"collage":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f640",
 		"id":"8FD44CCD-5073-4C73-98BE-139F777F6E94",
@@ -4121,7 +4064,6 @@
 	},
 	"contacts":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6ca",
 		"id":"5A68EA78-9792-4223-808D-17E5205765E6",
@@ -4566,7 +4508,6 @@
 	},
 	"cursor-text":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5e7",
 		"id":"76C56C15-C2A3-4042-95C7-F143A3B58765",
@@ -4618,7 +4559,6 @@
 	},
 	"decagram":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f76b",
 		"id":"DA734DBD-1239-4E30-B688-ADF6A9D222D0",
@@ -4626,7 +4566,6 @@
 	},
 	"decagram-outline":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f76c",
 		"id":"5F4B9A38-F090-4FA3-A138-1F758A9D446E",
@@ -4648,7 +4587,6 @@
 	},
 	"delete":{
 		"aliases":["trash"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f1c0",
 		"id":"71CD492D-A1E8-4A7A-961A-51DA30952BAD",
@@ -4657,7 +4595,6 @@
 	},
 	"delete-circle":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f682",
 		"id":"1158F80B-E934-4E74-A4C6-7750BDCC409E",
@@ -4666,7 +4603,6 @@
 	},
 	"delete-empty":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f6cb",
 		"id":"E39FB607-9058-4C00-840C-AF666F372071",
@@ -4675,7 +4611,6 @@
 	},
 	"delete-forever":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5e8",
 		"id":"52AFD546-8C5D-4E77-8D83-D4D058A742FE",
@@ -4684,7 +4619,6 @@
 	},
 	"delete-sweep":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5e9",
 		"id":"3B3D514C-AFC3-4D04-91EA-E18F03BB494A",
@@ -4693,7 +4627,6 @@
 	},
 	"delete-variant":{
 		"aliases":["trash-variant"],
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f1c1",
 		"id":"DC3862AC-6945-4104-9F15-50BD46D13705",
@@ -4748,7 +4681,6 @@
 	},
 	"developer-board":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f696",
 		"id":"7D1C43A0-CDE0-416B-A1A9-1CD07F930284",
@@ -4827,7 +4759,6 @@
 	},
 	"dice-d10":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f76e",
 		"id":"47BB1E5C-0CCD-4A50-B1EF-2437411217C0",
@@ -4836,7 +4767,6 @@
 	},
 	"dice-d20":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5ea",
 		"id":"926FAA94-AB58-44AA-916C-66AF56A5BCCF",
@@ -4845,7 +4775,6 @@
 	},
 	"dice-d4":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5eb",
 		"id":"DCC141FA-CA87-48E1-969D-BB010C973DD5",
@@ -4854,7 +4783,6 @@
 	},
 	"dice-d6":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5ec",
 		"id":"A0F00FDF-6648-475B-819B-29E4C0769FFA",
@@ -4863,7 +4791,6 @@
 	},
 	"dice-d8":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5ed",
 		"id":"64967BE6-CAAF-4F28-BF55-C5451D4E8B94",
@@ -4873,7 +4800,6 @@
 	},
 	"dice-multiple":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f76d",
 		"id":"8C9D5084-1B34-4AB9-BE23-E44B03AE85E5",
@@ -4881,7 +4807,6 @@
 	},
 	"dictionary":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"infanf",
 		"hex":"f61d",
 		"id":"250BF541-072A-4773-8BC2-B1943DF1EDBB",
@@ -4889,7 +4814,6 @@
 	},
 	"dip-switch":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7c0",
 		"id":"2356EE38-11BE-44B1-BAD9-D74ECE86F8E7",
@@ -4981,7 +4905,6 @@
 	},
 	"do-not-disturb":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f697",
 		"id":"F33DB278-2B2B-4731-9FDD-6D053EC2CBAB",
@@ -4990,7 +4913,6 @@
 	},
 	"do-not-disturb-off":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f698",
 		"id":"092B5CD3-BB99-492C-9784-4BE71B0C7F5B",
@@ -5048,7 +4970,6 @@
 	},
 	"dots-vertical-circle":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"",
 		"hex":"f7c3",
 		"id":"5D23E65D-271A-463B-972F-E8524E76E6D7",
@@ -5166,7 +5087,6 @@
 	},
 	"ear-hearing":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f7c4",
 		"id":"9F02DA93-0C4D-4A77-8F6B-E4220480AB55",
@@ -5183,7 +5103,6 @@
 	},
 	"earth-box":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"f6cc",
 		"id":"3F4C3330-49D5-4F2B-8FCC-A3448BEF521E",
@@ -5257,7 +5176,6 @@
 	},
 	"email-alert":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f6ce",
 		"id":"8031577D-2528-4278-9F7B-93BD5DED18E3",
@@ -5275,7 +5193,6 @@
 	},
 	"email-open-outline":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5ef",
 		"id":"4F7B4311-FC6B-463D-A2A3-760554AF144E",
@@ -5301,7 +5218,6 @@
 	},
 	"email-variant":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5f0",
 		"id":"80BB05EB-8F75-4205-9952-60B09204A9F6",
@@ -5332,7 +5248,6 @@
 	},
 	"emoticon-dead":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f69a",
 		"id":"47AD308C-C9D8-43DB-8E92-B0FB02B906CF",
@@ -5347,7 +5262,6 @@
 	},
 	"emoticon-excited":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f69b",
 		"id":"828FF1EE-1B9B-4407-A45B-A071FA938158",
@@ -5528,7 +5442,6 @@
 	},
 	"eye-outline":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f6cf",
 		"id":"F2AA59FA-23F6-4FE8-A52A-AEC674A9E864",
@@ -5536,7 +5449,6 @@
 	},
 	"eye-off-outline":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f6d0",
 		"id":"D88D00BE-0B70-40F5-AFD0-51C65DE8D674",
@@ -5559,7 +5471,6 @@
 	},
 	"face":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f643",
 		"id":"D41E7F40-FF48-422F-A64B-4908C6C10F00",
@@ -5567,7 +5478,6 @@
 	},
 	"face-profile":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f644",
 		"id":"97E9CDDB-45B3-4592-8E1F-0DB66E16E1A3",
@@ -5612,7 +5522,6 @@
 	},
 	"fan-off":{
 		"added":"2.x.x",
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"",
 		"id":"BB761A30-6F3C-484D-A0C9-501972F544AB",
@@ -5957,7 +5866,6 @@
 	},
 	"find-replace":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6d3",
 		"id":"D093813C-B59B-42BD-B6C7-B451FA51E87E",
@@ -6085,7 +5993,6 @@
 	},
 	"flash-red-eye":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f67a",
 		"id":"C25CEF12-DF9C-45A4-8399-3102B79BDF14",
@@ -6142,7 +6049,6 @@
 	},
 	"floor-plan":{
 		"added":"2.x.x",
-		"categories":["other"],
 		"contributor":"",
 		"hex":"",
 		"id":"131D3C5D-880D-486B-A041-039B1F1E5284",
@@ -6366,7 +6272,6 @@
 	},
 	"forklift":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"f7c8",
 		"id":"9CB941AF-8C23-4201-B891-A23521B011CD",
@@ -6856,7 +6761,6 @@
 	},
 	"forum":{
 		"aliases":["message-group"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f28c",
 		"id":"3AC84477-2308-4445-868C-9666AE25B054",
@@ -6966,7 +6870,6 @@
 	},
 	"gas-cylinder":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f647",
 		"id":"7CEC48C5-3A70-4BA2-9FB8-A383387DC4A1",
@@ -7034,7 +6937,6 @@
 	},
 	"gesture":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f7ca",
 		"id":"FFC2833D-65AB-47BB-AC7C-8CFA41DF9250",
@@ -7042,7 +6944,6 @@
 	},
 	"gesture-double-tap":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f73b",
 		"id":"D02C7FA0-E8E6-48B7-BEB7-4678B8D9DCA1",
@@ -7050,7 +6951,6 @@
 	},
 	"gesture-swipe-down":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f73c",
 		"id":"92FD3A8C-813E-4AC1-8D0B-85B89747C598",
@@ -7058,7 +6958,6 @@
 	},
 	"gesture-swipe-left":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f73d",
 		"id":"D0887CD1-2BF1-4A5A-B573-2BA6FF8A6129",
@@ -7066,7 +6965,6 @@
 	},
 	"gesture-swipe-right":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f73e",
 		"id":"9B3D3150-CF71-473E-AF65-403C389C308A",
@@ -7074,7 +6972,6 @@
 	},
 	"gesture-swipe-up":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f73f",
 		"id":"CE26D04A-C6AC-4379-AA25-A702F49F1DC2",
@@ -7082,7 +6979,6 @@
 	},
 	"gesture-tap":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f740",
 		"id":"D881AFBC-7477-46C2-9269-324676F19E51",
@@ -7090,7 +6986,6 @@
 	},
 	"gesture-two-double-tap":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f741",
 		"id":"96C02705-84D1-4677-9DDE-CCDE1D43FE11",
@@ -7098,7 +6993,6 @@
 	},
 	"gesture-two-tap":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f742",
 		"id":"AA47E759-39DE-4A5C-B3CF-FAEB215EAB91",
@@ -7121,7 +7015,6 @@
 	},
 	"gift":{
 		"aliases":["donate"],
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f2a1",
 		"id":"22D0C782-CD05-4FEB-845F-BBA7126C7326",
@@ -7416,7 +7309,6 @@
 	},
 	"gradient":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f69f",
 		"id":"F10A05F8-FD09-4BDA-B906-747E9A89AB6E",
@@ -7424,7 +7316,6 @@
 	},
 	"grease-pencil":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f648",
 		"id":"137F01F1-86AC-4923-A9D7-C72057367BB7",
@@ -7461,7 +7352,6 @@
 	},
 	"guitar-acoustic":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"japanyoshilol",
 		"hex":"f770",
 		"id":"C4015804-7FF3-4483-94CA-CEB79F7B34BC",
@@ -7491,7 +7381,6 @@
 	},
 	"guy-fawkes-mask":{
 		"added":"2.x.x",
-		"categories":["other"],
 		"contributor":"_selectlol",
 		"hex":"",
 		"id":"FDDC802D-37F5-4E15-96DA-8A6D553B1D67",
@@ -7626,7 +7515,6 @@
 	},
 	"heart-half":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f6de",
 		"id":"1B01BAE0-095E-424E-9552-6ECEF5E4FC62",
@@ -7646,7 +7534,6 @@
 	},
 	"heart-half-outline":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"casesandberg",
 		"hex":"f6df",
 		"id":"F4384972-741C-4BB6-91BF-9509E75C8AF8",
@@ -7734,7 +7621,6 @@
 	},
 	"hexagon-multiple":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f6e0",
 		"id":"60636193-AC27-470B-BCA5-94CEA29719A8",
@@ -7749,7 +7635,6 @@
 	},
 	"high-definition":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7ce",
 		"id":"8FC812E7-2B7B-412B-9114-1899203DECC4",
@@ -7768,7 +7653,6 @@
 	},
 	"history":{
 		"aliases":["recent","latest"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f2da",
 		"id":"55AF2D53-7FAD-4A1D-8440-10301C95D3B8",
@@ -7799,7 +7683,6 @@
 	},
 	"home-automation":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"f7d0",
 		"id":"FD2567BF-09EC-4871-B3E8-DAE9CDCF3A38",
@@ -7859,7 +7742,6 @@
 	},
 	"hook":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f6e1",
 		"id":"8A2A8364-B33C-4931-BF78-EB171C569D5F",
@@ -7868,7 +7750,6 @@
 	},
 	"hook-off":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f6e2",
 		"id":"984487C2-EBB2-474C-8914-046E6BDC6EC6",
@@ -7905,7 +7786,6 @@
 	},
 	"hot-tub":{
 		"added":"2.x.x",
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"",
 		"id":"832FBA55-F65E-4706-93B1-9018D651CAA3",
@@ -7957,7 +7837,6 @@
 	},
 	"human-female":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f649",
 		"id":"059421A9-4F27-493A-8835-4B49B5286366",
@@ -7966,7 +7845,6 @@
 	},
 	"human-greeting":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f64a",
 		"id":"1C9856E1-6945-464E-85E7-A46C4A974C9D",
@@ -7974,7 +7852,6 @@
 	},
 	"human-handsdown":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f64b",
 		"id":"10E7CAB4-7B15-4F73-82B1-E42562B9103C",
@@ -7982,7 +7859,6 @@
 	},
 	"human-handsup":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f64c",
 		"id":"FA427178-750A-425C-81F2-B46DDC061771",
@@ -7990,7 +7866,6 @@
 	},
 	"human-male":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f64d",
 		"id":"1369FF9C-0E57-4644-BE89-7B5EED0131B0",
@@ -7999,7 +7874,6 @@
 	},
 	"human-male-female":{
 		"aliases":["wc"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f2e8",
 		"id":"0FC16450-7A7E-43C5-AED4-E27C4A6BFF99",
@@ -8119,7 +7993,6 @@
 	},
 	"image-filter-hdr":{
 		"aliases":["mountain"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f2f5",
 		"id":"999CF81E-71B7-48E1-8B8F-70FDE391F647",
@@ -8162,7 +8035,6 @@
 	},
 	"inbox":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f686",
 		"id":"4DDB79C2-C3AE-41DC-B560-AFBF3F689E86",
@@ -8187,7 +8059,6 @@
 	},
 	"incognito":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"infanf",
 		"hex":"f5f9",
 		"id":"1350E7BA-9354-4F62-9B21-0238E3DF4D81",
@@ -8217,7 +8088,6 @@
 	},
 	"information-variant":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f64e",
 		"id":"D991D5FA-BD60-48E1-979D-A103D005725A",
@@ -8284,7 +8154,6 @@
 	},
 	"json":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f626",
 		"id":"24C1AA84-85C2-41F4-A5E3-8FE7421CD359",
@@ -8451,7 +8320,6 @@
 	},
 	"lamp":{
 		"added":1722,
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"f6b4",
 		"id":"A39CC0FD-32DA-4AB2-8483-9E4C4F03D220",
@@ -8488,7 +8356,6 @@
 	},
 	"language-c":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f671",
 		"id":"082F25B3-8413-4CC7-B908-8BBD40BB32D8",
@@ -8496,7 +8363,6 @@
 	},
 	"language-cpp":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f672",
 		"id":"74446CD2-562D-44E7-AAC1-62D4CCDB9F43",
@@ -8638,7 +8504,6 @@
 	},
 	"lava-lamp":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"f7d4",
 		"id":"B1E2F856-253B-465C-861A-40C5C7D6C8DB",
@@ -8838,7 +8703,6 @@
 	},
 	"loading":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"krambertech",
 		"hex":"f771",
 		"id":"205A2FF1-8827-4D3D-8580-FF7FFCD5232C",
@@ -8874,7 +8738,6 @@
 	},
 	"lock-pattern":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"japanyoshilol",
 		"hex":"f6e9",
 		"id":"6921C166-7D1E-44E4-90B9-ADF6668DDFB9",
@@ -8882,7 +8745,6 @@
 	},
 	"lock-plus":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5fb",
 		"id":"BA4D2E1E-2BCB-4B17-AC02-52C8F34FAEAE",
@@ -8891,7 +8753,6 @@
 	"lock-reset":{
 		"added":1932,
 		"aliases":["password-reset"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f772",
 		"id":"82312B48-E128-494E-9D84-DAACB41986F4",
@@ -8899,7 +8760,6 @@
 	},
 	"locker":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"",
 		"hex":"f7d6",
 		"id":"B8B0EAF4-369F-412A-A092-4AA85BBE77FD",
@@ -8907,7 +8767,6 @@
 	},
 	"locker-multiple":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"",
 		"hex":"f7d7",
 		"id":"4A5533A8-402C-45F2-9D7A-A8949C22C33B",
@@ -8922,7 +8781,6 @@
 	},
 	"login-variant":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5fc",
 		"id":"B590AA80-D315-4344-8036-8FBC25C87D2C",
@@ -8937,7 +8795,6 @@
 	},
 	"logout-variant":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f5fd",
 		"id":"FD2A4CE0-AD1F-45D4-B487-BB6E57F2143F",
@@ -8953,7 +8810,6 @@
 	},
 	"loop":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mririgo",
 		"hex":"f6ea",
 		"id":"1573C575-7FBA-4BCD-A960-02D42043FE6F",
@@ -8989,7 +8845,6 @@
 	},
 	"magnify":{
 		"aliases":["search"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f349",
 		"id":"C2889545-7F08-4AE1-9142-ECF9B79957E1",
@@ -9006,7 +8861,6 @@
 	},
 	"magnify-minus-outline":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6eb",
 		"id":"9E259697-7035-4E17-82D6-431C74215E67",
@@ -9023,7 +8877,6 @@
 	},
 	"magnify-plus-outline":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6ec",
 		"id":"521EC414-ECAD-435D-BAE3-4CF772659845",
@@ -9032,7 +8885,6 @@
 	},
 	"mailbox":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6ed",
 		"id":"CCEA599C-8CED-4D49-83FB-7AC452AADFA0",
@@ -9289,7 +9141,6 @@
 	"message-bulleted":{
 		"added":1712,
 		"aliases":["speaker-notes"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6a1",
 		"id":"1EC9427A-2A02-4F74-9C1B-C4EC5E62B793",
@@ -9298,7 +9149,6 @@
 	"message-bulleted-off":{
 		"added":1712,
 		"aliases":["speaker-notes-off"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6a2",
 		"id":"5AAB267C-9A9C-4966-862D-A2AC910494E5",
@@ -9327,7 +9177,6 @@
 	},
 	"message-plus":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f653",
 		"id":"C0B4CC94-B6B5-462F-93C2-98F07093614C",
@@ -9356,7 +9205,6 @@
 	},
 	"message-settings":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f6ef",
 		"id":"4B15BF16-CD96-4427-9EA4-5A8B09F3A2B6",
@@ -9364,7 +9212,6 @@
 	},
 	"message-settings-variant":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f6f0",
 		"id":"F0F27B00-3C37-4AC0-B8D7-DB2554894079",
@@ -9401,7 +9248,6 @@
 	},
 	"metronome":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"japanyoshilol",
 		"hex":"f7d9",
 		"id":"13256CBF-E284-4229-AAB9-5612FBADD060",
@@ -9409,7 +9255,6 @@
 	},
 	"metronome-tick":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"japanyoshilol",
 		"hex":"f7da",
 		"id":"43A2B10E-F7DF-4181-B607-EC2039AFFA0D",
@@ -9607,7 +9452,6 @@
 	},
 	"move-resize":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f655",
 		"id":"4E3B74C0-3E85-4A50-B5FF-3D6AED1CF016",
@@ -9615,7 +9459,6 @@
 	},
 	"move-resize-variant":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f656",
 		"id":"7A5B3547-16C4-4000-9082-E13A9139C737",
@@ -9623,7 +9466,6 @@
 	},
 	"movie":{
 		"aliases":["slate","clapperboard"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f381",
 		"id":"122C53AA-C8BC-41B3-89B2-B9A9F8BB56DC",
@@ -9633,7 +9475,6 @@
 	"movie-roll":{
 		"added":2046,
 		"aliases":["film-reel"],
-		"categories":["other"],
 		"contributor":"",
 		"hex":"f7dd",
 		"id":"21D0F9FB-6814-4CE7-B37D-FC97EBF1D0D2",
@@ -9671,7 +9512,6 @@
 	},
 	"music":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f759",
 		"id":"E7DA3CF2-C345-441D-BFC2-ABC4DB195A6A",
@@ -9780,7 +9620,6 @@
 	},
 	"music-off":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f75a",
 		"id":"E9D8BB99-B31B-4940-9EEE-B69569060B0D",
@@ -9895,7 +9734,6 @@
 	},
 	"ninja":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f773",
 		"id":"8E7C1B4B-C4E8-4072-9FB7-90E207038FFB",
@@ -9969,7 +9807,6 @@
 	},
 	"notebook":{
 		"added":"2.x.x",
-		"categories":["other"],
 		"contributor":"",
 		"hex":"",
 		"id":"2D28230E-DAF3-4A49-ACB6-7D9C3E9E6495",
@@ -10280,7 +10117,6 @@
 	},
 	"nut":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f6f7",
 		"id":"8B702257-4232-459E-BDA8-C4E698DF8E8E",
@@ -10318,7 +10154,6 @@
 	},
 	"octagram":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f6f8",
 		"id":"455C8475-5555-49B7-825B-206581104AB2",
@@ -10327,7 +10162,6 @@
 	},
 	"octagram-outline":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f774",
 		"id":"8316E0F1-5F66-4C4E-ACA8-EE61AD93A42A",
@@ -10390,7 +10224,6 @@
 	},
 	"opacity":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5cc",
 		"id":"27C36043-E269-4223-ADCE-568B1EFB4623",
@@ -10498,7 +10331,6 @@
 	},
 	"page-first":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f600",
 		"id":"DF23FF47-4DD3-4CB3-9BEC-6EE986B0FA65",
@@ -10506,7 +10338,6 @@
 	},
 	"page-last":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f601",
 		"id":"CF9B4635-FE27-4DA5-BE51-F5F4116AFC54",
@@ -10694,7 +10525,6 @@
 	},
 	"paw-off":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f657",
 		"id":"039D7C7E-AB09-4364-B08D-1FC120442AFE",
@@ -10761,7 +10591,6 @@
 	},
 	"pentagon":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mririgo",
 		"hex":"f6ff",
 		"id":"A1E0EA60-79AF-42FD-966D-485276671F9C",
@@ -10769,7 +10598,6 @@
 	},
 	"pentagon-outline":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mririgo",
 		"hex":"f700",
 		"id":"7251D20A-5A23-456D-9A68-0107EF2BF01B",
@@ -10874,7 +10702,6 @@
 	},
 	"phone-minus":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f658",
 		"id":"7F431DF5-245C-4572-962C-CC57177BD8D0",
@@ -10903,7 +10730,6 @@
 	},
 	"phone-plus":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f659",
 		"id":"E58A5CD8-2D42-4A3A-BCC2-70870B43752C",
@@ -10911,7 +10737,6 @@
 	},
 	"phone-return":{
 		"added":"2.x.x",
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"",
 		"id":"B0FC2BB4-6C44-42CA-8F90-52CBCD0F1AD4",
@@ -10940,7 +10765,6 @@
 	},
 	"piano":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f67c",
 		"id":"E7651219-1BF9-4D06-9B4A-7599A2E0A407",
@@ -10970,7 +10794,6 @@
 	"pillar":{
 		"added":1836,
 		"aliases":["historic"],
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"f701",
 		"id":"AD451D24-BA4B-466E-8146-D3FBBDA6E275",
@@ -11022,7 +10845,6 @@
 	},
 	"pipe":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f7e4",
 		"id":"840AF950-F514-452B-AD1F-18EC878CB1F8",
@@ -11030,7 +10852,6 @@
 	},
 	"pipe-disconnected":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f7e5",
 		"id":"01D59BE4-7863-471D-840D-8C810F934344",
@@ -11038,7 +10859,6 @@
 	},
 	"pistol":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f702",
 		"id":"34C9947D-5943-4C3E-9E7A-2CD95061222B",
@@ -11055,7 +10875,6 @@
 	},
 	"plane-shield":{
 		"added":1722,
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"f6ba",
 		"id":"B8FB8784-2E21-4D35-9DE8-95E8E2A42591",
@@ -11250,7 +11069,6 @@
 	},
 	"poker-chip":{
 		"added":"2.x.x",
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"",
 		"id":"D73F724D-EEE6-43EC-BA3A-E185ABD7A258",
@@ -11443,7 +11261,6 @@
 	},
 	"printer-settings":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f706",
 		"id":"33E4D9A3-F8C1-4C58-9E88-977AE4F4E4CA",
@@ -11451,7 +11268,6 @@
 	},
 	"priority-high":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f603",
 		"id":"FA96A5AC-D499-4C13-93C7-7A422A5DE4B7",
@@ -11459,7 +11275,6 @@
 	},
 	"priority-low":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f604",
 		"id":"DFC698A7-3040-48F4-A341-C1E667A4FE22",
@@ -11488,7 +11303,6 @@
 	},
 	"publish":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6a6",
 		"id":"7E1AC29D-46E3-4C7C-9A00-D8803E502795",
@@ -11780,7 +11594,6 @@
 	},
 	"reorder-horizontal":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f687",
 		"id":"08CB23B7-EC19-4FE5-9CBB-C308CC89C10B",
@@ -11789,7 +11602,6 @@
 	},
 	"reorder-vertical":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f688",
 		"id":"F189DB12-9323-47A1-89C9-451EF2A886CB",
@@ -11861,7 +11673,6 @@
 	},
 	"restart":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f708",
 		"id":"15954B5D-3ADA-4B6B-BE15-F95B6A5D4659",
@@ -11869,7 +11680,6 @@
 	},
 	"restore":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6a7",
 		"id":"21D860AE-A880-4ED2-9E11-617D888BD744",
@@ -11892,7 +11702,6 @@
 	},
 	"rhombus":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mririgo",
 		"hex":"f70a",
 		"id":"68CFD178-A6FE-4DB5-9C39-FCA6A3EA83A5",
@@ -11901,7 +11710,6 @@
 	},
 	"rhombus-outline":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mririgo",
 		"hex":"f70b",
 		"id":"101A7558-A38E-48E8-93EA-A21F37238E78",
@@ -11925,7 +11733,6 @@
 	},
 	"ring":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"",
 		"hex":"f7ea",
 		"id":"7D845AED-5EA2-44C0-8F38-6A2C4E08C8A3",
@@ -11947,7 +11754,6 @@
 	},
 	"robot":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f6a8",
 		"id":"EC6C8D3D-0315-4C3A-B37A-97411758DF34",
@@ -12078,7 +11884,6 @@
 	},
 	"sale":{
 		"aliases":["discount"],
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f46f",
 		"id":"688543EC-EC01-474C-883C-C2EA2EDE75BF",
@@ -12109,7 +11914,6 @@
 	},
 	"saxophone":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f609",
 		"id":"64F494E1-5B39-488D-B46E-0FC1B9567478",
@@ -12191,7 +11995,6 @@
 	},
 	"seal":{
 		"aliases":["ribbon"],
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f47a",
 		"id":"82C413A0-A055-4527-87B7-F977B6CD3F74",
@@ -12200,7 +12003,6 @@
 	},
 	"search-web":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f70e",
 		"id":"F6E7F332-1625-4A46-8E10-B6DEC4059E7E",
@@ -12338,7 +12140,6 @@
 	},
 	"send-secure":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f7ec",
 		"id":"343A4B08-D77B-453B-A8A7-AF40D1A98DD2",
@@ -12410,7 +12211,6 @@
 	},
 	"set-all":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f777",
 		"id":"501D1421-A50E-470A-A05B-87864461C4ED",
@@ -12418,7 +12218,6 @@
 	},
 	"set-center":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f778",
 		"id":"0267D77C-9968-45EF-87FC-CD3368D56383",
@@ -12426,7 +12225,6 @@
 	},
 	"set-center-right":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f779",
 		"id":"614D2F8D-5170-4FE8-87C7-419903F205CB",
@@ -12435,7 +12233,6 @@
 	"set-left":{
 		"added":1932,
 		"aliases":["xt3000"],
-		"categories":["other"],
 		"contributor":"",
 		"hex":"f77a",
 		"id":"FB4645C1-DF04-49E0-BA0B-7C02C87AF3A9",
@@ -12443,7 +12240,6 @@
 	},
 	"set-left-center":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f77b",
 		"id":"9C04991C-6A68-4634-885F-A4D6E2816AFF",
@@ -12451,7 +12247,6 @@
 	},
 	"set-left-right":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f77c",
 		"id":"E1BE2EC4-D5D5-475C-A562-9855DA1612FB",
@@ -12459,7 +12254,6 @@
 	},
 	"set-none":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f77d",
 		"id":"9674B809-B544-45E8-BBD8-4E8D9E1A966E",
@@ -12467,7 +12261,6 @@
 	},
 	"set-right":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f77e",
 		"id":"27D4B799-E231-49DF-AB06-0201493C83E9",
@@ -12475,7 +12268,6 @@
 	},
 	"settings":{
 		"aliases":["cog","gear"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f493",
 		"id":"E4A14909-3821-4DB1-A739-4DA464ABEEB7",
@@ -12483,7 +12275,6 @@
 	},
 	"settings-box":{
 		"aliases":["cog-box","gear-box"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f494",
 		"id":"6F15658D-723C-4BE9-85D1-F170E4B90281",
@@ -12491,7 +12282,6 @@
 	},
 	"shape-circle-plus":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"kaifaust",
 		"hex":"f65d",
 		"id":"C989421F-7F77-45D9-9BB4-97D3DE8C8FB4",
@@ -12506,7 +12296,6 @@
 	},
 	"shape-polygon-plus":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"kaifaust",
 		"hex":"f65e",
 		"id":"CFE631FF-AAD1-49D9-BA22-84BAC90B8787",
@@ -12514,7 +12303,6 @@
 	},
 	"shape-square-plus":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"kaifaust",
 		"hex":"f660",
 		"id":"56A31026-C5C6-45D5-A9D4-1C660357F430",
@@ -12522,7 +12310,6 @@
 	},
 	"shape-rectangle-plus":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"kaifaust",
 		"hex":"f65f",
 		"id":"C92D4248-E908-4B39-A6D0-296E6FB5FFE1",
@@ -12551,7 +12338,6 @@
 	},
 	"shield-half-full":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"f77f",
 		"id":"9E908727-9325-4FC6-B8B8-C5CA52A7A827",
@@ -12580,7 +12366,6 @@
 	},
 	"shovel":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f70f",
 		"id":"16D35D19-90C2-42DD-9E83-8F47E21A53DF",
@@ -12589,7 +12374,6 @@
 	},
 	"shovel-off":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f710",
 		"id":"01E7F800-E769-4A3F-9A30-D1B8E96F617B",
@@ -12958,7 +12742,6 @@
 	},
 	"solid":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f68c",
 		"id":"F0E0017F-DD8C-4811-9428-613238CA66A4",
@@ -13015,7 +12798,6 @@
 	},
 	"source-branch":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f62c",
 		"id":"AADA1B60-0161-4417-9726-75AFB5C7AC31",
@@ -13023,7 +12805,6 @@
 	},
 	"source-commit":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"casesandberg",
 		"hex":"f717",
 		"id":"B0400135-C84A-47D8-AD30-B6BD8292E6A4",
@@ -13031,7 +12812,6 @@
 	},
 	"source-commit-end":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"casesandberg",
 		"hex":"f718",
 		"id":"5558E497-77AD-48F4-9456-E6D6B4CA991B",
@@ -13039,7 +12819,6 @@
 	},
 	"source-commit-end-local":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"casesandberg",
 		"hex":"f719",
 		"id":"5681B6C8-CC7F-42B0-9B6F-B53D9A72D12F",
@@ -13047,7 +12826,6 @@
 	},
 	"source-commit-local":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"casesandberg",
 		"hex":"f71a",
 		"id":"DF889541-FEF0-42C0-BF6E-E29D4503C3FB",
@@ -13055,7 +12833,6 @@
 	},
 	"source-commit-next-local":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"casesandberg",
 		"hex":"f71b",
 		"id":"42A5B80B-C7A6-42F4-8437-458F504B7AF5",
@@ -13063,7 +12840,6 @@
 	},
 	"source-commit-start":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"casesandberg",
 		"hex":"f71c",
 		"id":"6647D5DC-4BF4-47FB-9B11-F1ABB94B3769",
@@ -13071,7 +12847,6 @@
 	},
 	"source-commit-start-next-local":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"casesandberg",
 		"hex":"f71d",
 		"id":"64F8200C-7866-46A6-9E8B-1CAF621517CC",
@@ -13087,7 +12862,6 @@
 	},
 	"source-merge":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f62d",
 		"id":"C4A094D6-A68C-41F8-A2EC-C87997DACE70",
@@ -13126,7 +12900,6 @@
 	},
 	"speaker-wireless":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f71e",
 		"id":"F9EA980F-2C75-48DE-9D56-9A15CFE52865",
@@ -13169,7 +12942,6 @@
 	},
 	"spray":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f665",
 		"id":"0CDAFE95-E28B-4A8D-9634-C6BBB99EE598",
@@ -13178,7 +12950,6 @@
 	},
 	"square":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f763",
 		"id":"5659F8EC-377D-41D2-AB3A-52DC40815DC7",
@@ -13200,7 +12971,6 @@
 	},
 	"square-outline":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f762",
 		"id":"5ED659B5-F175-445F-950D-0B4DDAB3F8B3",
@@ -13248,7 +13018,6 @@
 	},
 	"standard-definition":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7ee",
 		"id":"DAA79A7B-03FB-431A-85DD-AB9749783DC0",
@@ -13349,7 +13118,6 @@
 	},
 	"sticker":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"infanf",
 		"hex":"f5d0",
 		"id":"F4C92E8A-A238-4F7C-B2FC-CBA914C5CE04",
@@ -13357,7 +13125,6 @@
 	},
 	"sticker-emoji":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f784",
 		"id":"9E28CC83-5155-4620-80C1-62875D117A79",
@@ -13466,7 +13233,6 @@
 	},
 	"surround-sound":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5c5",
 		"id":"AB38BBD9-58A6-4D21-8A76-8940B7717550",
@@ -13474,7 +13240,6 @@
 	},
 	"surround-sound-2-0":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7ef",
 		"id":"13009B66-7459-4C86-8EB0-3CAED977BB98",
@@ -13482,7 +13247,6 @@
 	},
 	"surround-sound-3-1":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7f0",
 		"id":"4B744BE0-A739-44FF-ADA6-CFC9BC520B1D",
@@ -13490,7 +13254,6 @@
 	},
 	"surround-sound-5-1":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7f1",
 		"id":"CFD48DE8-0DA8-455C-9C4C-337EDC54D7C0",
@@ -13498,7 +13261,6 @@
 	},
 	"surround-sound-7-1":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7f2",
 		"id":"BC85CD47-E52C-4A7D-8E05-DD45596C5822",
@@ -13552,7 +13314,6 @@
 	},
 	"sword-cross":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f786",
 		"id":"37B336A5-5827-4929-93B5-C12373966731",
@@ -13588,7 +13349,6 @@
 	},
 	"tab-plus":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f75b",
 		"id":"9E23B225-E972-4369-A94A-C2AAF4C93870",
@@ -13696,7 +13456,6 @@
 	},
 	"table-settings":{
 		"added":"2.x.x",
-		"categories":["other"],
 		"contributor":"",
 		"hex":"",
 		"id":"B506843C-4832-4F30-8266-9B02632AB582",
@@ -13747,7 +13506,6 @@
 	},
 	"tag-heart":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f68a",
 		"id":"2D9E735C-EA23-4EB2-9AC4-C92D69218577",
@@ -13769,7 +13527,6 @@
 	},
 	"tag-plus":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f721",
 		"id":"83C0C7C5-26FF-4EF7-A05B-B05472FC40FC",
@@ -13777,7 +13534,6 @@
 	},
 	"tag-remove":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f722",
 		"id":"E90C088F-8DFD-4B7D-962C-BE2DD9DB61BD",
@@ -13920,7 +13676,6 @@
 	},
 	"textbox":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f60e",
 		"id":"BB7E18FD-F473-4A80-B6A9-A17D3648E0A4",
@@ -13928,7 +13683,6 @@
 	},
 	"textbox-password":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"mrgrigri",
 		"hex":"f7f4",
 		"id":"F35B5B3C-762F-473C-B229-B6818D50E045",
@@ -13972,7 +13726,6 @@
 	},
 	"thought-bubble":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7f5",
 		"id":"46ACA864-4B1C-4DBD-94FB-7A0D6B9A500E",
@@ -13980,7 +13733,6 @@
 	},
 	"thought-bubble-outline":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7f6",
 		"id":"2C82E0CA-9872-431C-8739-0EA33825EBF7",
@@ -14046,7 +13798,6 @@
 	"ticket-percent":{
 		"added":1836,
 		"aliases":["coupon"],
-		"categories":["other"],
 		"contributor":"greenturtwig",
 		"hex":"f723",
 		"id":"297864D0-935F-4EF0-9A2C-28F018544581",
@@ -14293,7 +14044,6 @@
 	"translate":{
 		"added":1554,
 		"aliases":["language"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f5ca",
 		"id":"4486DD26-4110-457E-BBD7-B5D19DF72E4E",
@@ -14301,7 +14051,6 @@
 	},
 	"treasure-chest":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"alexefremo",
 		"hex":"f725",
 		"id":"A0678E6D-C3D3-42AB-B9E7-C1B12D368B70",
@@ -14530,7 +14279,6 @@
 	},
 	"ultra-high-definition":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7f8",
 		"id":"A7C08392-F82F-4910-8D0F-6A1907AE19E3",
@@ -14582,7 +14330,6 @@
 	},
 	"unfold-less-vertical":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f75f",
 		"id":"E4DFDADF-60F8-4E90-A501-38381F4346A0",
@@ -14598,7 +14345,6 @@
 	},
 	"unfold-more-vertical":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f760",
 		"id":"AE8D43D2-00EC-46D9-A21C-4D0024A539D7",
@@ -14628,7 +14374,6 @@
 	},
 	"update":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f6af",
 		"id":"1B274396-AAE7-4CD8-8D57-27E31D915F68",
@@ -14684,7 +14429,6 @@
 	},
 	"vanish":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"",
 		"hex":"f7fb",
 		"id":"437A175D-CA2F-44C9-9FA0-A59A43E7C590",
@@ -14843,7 +14587,6 @@
 	},
 	"verified":{
 		"aliases":["shield-check"],
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f565",
 		"id":"FC112FD8-5338-49C0-B4E0-FE1816A71E74",
@@ -14865,7 +14608,6 @@
 	},
 	"video-3d":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7fc",
 		"id":"3F4D3E00-72CA-4167-A269-F9DD1A94540D",
@@ -14957,7 +14699,6 @@
 	},
 	"view-parallel":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mririgo",
 		"hex":"f727",
 		"id":"A085C7C7-F5C5-441C-84C0-05EB3B6A8767",
@@ -14972,7 +14713,6 @@
 	},
 	"view-sequential":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"mririgo",
 		"hex":"f728",
 		"id":"350F115F-0C20-4AB3-8206-81D2A25A2EF4",
@@ -15009,7 +14749,6 @@
 	},
 	"violin":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f60f",
 		"id":"D6702650-990F-416E-BF27-F6F2B86BFB8D",
@@ -15153,7 +14892,6 @@
 	},
 	"wall":{
 		"added":2046,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f7fd",
 		"id":"5DAB0112-3768-4ADC-8796-A88B4473FE56",
@@ -15265,7 +15003,6 @@
 	},
 	"waves":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"xt3000",
 		"hex":"f78c",
 		"id":"547979BF-6FF4-4CFF-BD55-1E5793C9DAA3",
@@ -15273,7 +15010,6 @@
 	},
 	"watermark":{
 		"added":1554,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f612",
 		"id":"20907A4A-11CA-447E-A4F5-D0F0901D197E",
@@ -15418,7 +15154,6 @@
 	},
 	"webhook":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f62f",
 		"id":"5B415522-B2A4-4D34-BEE3-D81D607BBD0B",
@@ -15499,7 +15234,6 @@
 	},
 	"widgets":{
 		"added":1836,
-		"categories":["other"],
 		"contributor":"google",
 		"hex":"f72b",
 		"id":"419C0A49-C751-4204-8C82-7E43B0896BD9",
@@ -15647,7 +15381,6 @@
 	},
 	"xaml":{
 		"added":1650,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f673",
 		"id":"1AC4596D-76B2-4F11-AF23-157736CABB86",
@@ -15670,7 +15403,6 @@
 	},
 	"xbox-controller-battery-alert":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f74a",
 		"id":"57F11EDC-2759-4D62-BDD2-C7C3F5199623",
@@ -15678,7 +15410,6 @@
 	},
 	"xbox-controller-battery-empty":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f74b",
 		"id":"51BB7455-5893-4F47-92D1-B3FD408C2ADC",
@@ -15686,7 +15417,6 @@
 	},
 	"xbox-controller-battery-full":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f74c",
 		"id":"CC73B4E7-6B14-459D-AED5-35E50655C05C",
@@ -15694,7 +15424,6 @@
 	},
 	"xbox-controller-battery-low":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f74d",
 		"id":"B65873D1-4808-4C3C-8AD6-A242D61B1985",
@@ -15702,7 +15431,6 @@
 	},
 	"xbox-controller-battery-medium":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f74e",
 		"id":"2B434E26-4ECE-4654-BBDC-4FE13CCCEE3E",
@@ -15710,7 +15438,6 @@
 	},
 	"xbox-controller-battery-unknown":{
 		"added":1932,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f74f",
 		"id":"9CC18C3C-57B6-470C-9F09-80B62ECFABD7",
@@ -15790,7 +15517,6 @@
 	},
 	"yin-yang":{
 		"added":1712,
-		"categories":["other"],
 		"contributor":"templarian",
 		"hex":"f67f",
 		"id":"068670F6-B9DF-40C5-8C50-C9A3953F6201",
