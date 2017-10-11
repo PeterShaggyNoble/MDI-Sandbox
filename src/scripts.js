@@ -529,10 +529,12 @@
 					article.prepend(img);
 				}else img.remove();
 				article.lastChild.nodeValue=key;
-				icon.categories.forEach(item=>{
-					if(section=sections[item])
-						section.append(article.cloneNode(1));
-				});
+				if(icon.categories)
+					icon.categories.forEach(item=>{
+						if(section=sections[item])
+							section.append(article.cloneNode(1));
+					});
+				else sections.other.append(article.cloneNode(1));
 				if(l["mdi-"+key]&&favourites.section)
 					favourites.section.append(article.cloneNode(1));
 				if(icon.added===v&&(section=sections.new))
