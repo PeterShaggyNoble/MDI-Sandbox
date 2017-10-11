@@ -15,6 +15,10 @@
 		"hex":"f6af",
 		"name":"Coming Soon"
 	},
+	"retired":{
+		"hex":"f2da",
+		"name":"Retired Icons"
+	},
 	"other":{
 		"hex":"f2d6",
 		"name":"Uncategorised"
