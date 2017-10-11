@@ -520,7 +520,8 @@
 					section;
 				delete article.dataset.aliases;
 				delete article.dataset.keywords;
-				/*article.dataset.contributor=icon.contributor;*/
+				/*if(icon.contributor)
+					article.dataset.contributor=icon.contributor;*/
 				article.dataset.hex=hex;
 				article.dataset.name=key;
 				article.dataset.icon=hex?String.fromCharCode(`0x${hex}`):"";
@@ -561,9 +562,9 @@
 			}
 		};
 	/** INITIATE **/	
-	page.get`categories.min`.then(json=>{
+	page.get`categories`.then(json=>{
 		categories.list=json;
-		page.get`icons.min`.then(json=>{
+		page.get`icons`.then(json=>{
 			icons.list=json;
 			page.init();
 		});
