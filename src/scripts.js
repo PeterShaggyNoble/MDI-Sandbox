@@ -332,6 +332,7 @@
 					xaml:Q`#actions>[data-type=xaml]`,
 					xml:Q`#actions>[data-type=xml]`
 				},
+				path:Q`#actions>[data-confirm=Path]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
 				hex:Q`#actions>[data-confirm=Unicode]`,
 				entity:Q`#actions>[data-confirm=Entity]`,
@@ -375,6 +376,11 @@
 							this.type="xml";
 							this.download();
 							break;
+						case this.actions.path:
+							if(this.path)
+								page.copy(target.dataset.copy,target.dataset.confirm);
+							else page.alert`Not yet available.`;
+							break;
 						case this.actions.link:
 							if(this.aside.dataset.retired==="false")
 								w.location.href=target.dataset.url;
@@ -401,21 +407,23 @@
 				,10);
 				this.toggle();
 			},
-			set(icon){
-				favourites.fave=typeof l[`mdi-${icon}`]!=="undefined"&&!!l[`mdi-${icon}`];
-				this.name=this.heading.firstChild.nodeValue=icon;
-				this.path=icons.list[icon].path;
-				this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.fave?"f0c6":"f0c5"}`);
+			set(name){
+				favourites.fave=typeof l[`mdi-${name}`]!=="undefined"&&!!l[`mdi-${name}`];
+				let 	icon=icons.list[name],
+					hex=icon.hex;
+				this.name=this.heading.firstChild.nodeValue=name;
+				this.path=icon.path;
+				this.actions.favourite.dataset.name=String.fromCharCode(`0x${favourites.fave?"f0c6":"f0c5"}`);
 				this.actions.favourite.firstChild.nodeValue=`${favourites.fave?"Remove from":"Add to"} Favourites`;
-				this.actions.url.dataset.copy=`${u.protocol}//${u.host}${u.pathname}?icon=${encodeURIComponent(icon)}${u.hash}`;
-				this.actions.html.dataset.copy=`<span class=mdi-${icon}"></span>`;
-				/*this.actions.name.dataset.copy=`mdi-${icon}`;*/
-				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${icon}`;
-				let hex=icons.list[icon].hex;
+				this.actions.url.dataset.copy=`${u.protocol}//${u.host}${u.pathname}?icon=${encodeURIComponent(name)}${u.hash}`;
+				this.actions.html.dataset.copy=`<span class=mdi-${name}"></span>`;
+				/*this.actions.name.dataset.copy=`mdi-${name}`;*/
+				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
 				this.img.src=`data:image/svg+xml;utf8,${s}<path d="${this.path}"/></svg>`;
 				this.aside.dataset.nocopy=(!(this.copy=!!hex)).toString();
 				this.aside.dataset.nodownload=(!this.path).toString();
-				this.aside.dataset.retired=(!!icons.list[icon].retired).toString();
+				this.aside.dataset.retired=(!!icon.retired).toString();
+				this.actions.path.dataset.copy=this.path;
 				this.actions.icon.dataset.copy=hex?String.fromCharCode(`0x${hex}`):"\xa0";
 				this.actions.hex.dataset.copy=hex;
 				this.actions.entity.dataset.copy=`&#x${hex};`;
@@ -576,11 +584,15 @@
 			}
 		};
 	/** INITIATE **/	
-	page.get`categories`.then(json=>{
+	page.get`categories`.catch(_=>
+		page.alert`Failed to load category data.`
+	).then(json=>{
 		categories.list=json;
-		page.get`icons`.then(json=>{
+		page.get`icons`.catch(_=>
+			page.alert`Failed to load icon data.`
+		).then(json=>{
 			icons.list=json;
 			page.init();
-		}).catch(_=>page.alert`Failed to load icon data.`);
-	}).catch(_=>page.alert`Failed to load category data.`);
+		})/**/;
+	});
 }
