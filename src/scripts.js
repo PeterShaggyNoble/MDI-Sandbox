@@ -593,6 +593,6 @@
 		).then(json=>{
 			icons.list=json;
 			page.init();
-		})/**/;
+		});
 	});
 }
