@@ -211,6 +211,23 @@ body{
 	color:#2196f3;
 	transition-duration:inherit;
 }
+#categories li::after{
+	color:#2196f3;
+	content:"\f12c";
+	display:inine-block;
+	float:right;
+	font-family:Material Design Icons;
+	font-size:24px;
+	margin:0 0 0 8px;
+	opacity:0;
+	transition:opacity .225s cubic-bezier(.4,0,.2,1);
+	vertical-align:middle;
+	width:24px;
+}
+#categories>li.active::after{
+	opacity:1;
+	transition-duration:inherit;
+}
 /*  links  */
 #links{
 	border-top:1px solid #e0e0e0;
@@ -363,11 +380,13 @@ body{
 	width:100%;
 }
 #content>section{
+	align-content:flex-start;
+	align-items:flex-start;
 	flex-wrap:wrap;
 	padding:0 4px 4px;
 }
-#results.df~section{
-	display:none;
+#icons[data-filtered=true]{
+	min-height:calc(100vh - 144px);
 }
 #content>section>h2{
 	background:#2196f3;
@@ -387,13 +406,17 @@ body{
 	float:right;
 	font-size:24px;
 	text-align:right;
+	transition:opacity .195s cubic-bezier(.4,0,.2,1);
 	vertical-align:middle;
 	width:48px;
+}
+#icons>h2.pen::before{
+	opacity:0;
 }
 #content>section>h2:only-child::after{
 	background:#e0e0e0;
 	color:#212121;
-	content:"No icons available in this category.";
+	content:"No icons available in this section.";
 	display:block;
 	font-size:14px;
 	font-weight:500;
@@ -445,6 +468,11 @@ body{
 	filter:invert(1);
 	opacity:1;
 }
+#icons>p:last-of-type{
+	line-height:48px;
+	margin:0 12px;
+	width:100%;
+}
 .ripple{
 	animation:ripple 1.5s cubic-bezier(.4,0,.2,1);
 	background:#fff;
@@ -459,11 +487,6 @@ body{
 		transform:translate(-50%,-50%) scale(54);
 		opacity:0;
 	}
-}
-#results>p:last-of-type{
-	line-height:48px;
-	margin:0 12px;
-	width:100%;
 }
 /*  breakpoints  */
 @media(min-width:500px){#content>section>article{box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);width:calc(50% - 8px);}}
@@ -481,6 +504,11 @@ body{
 @media(max-width:699px){
 	#content>figure{
 		display:none;
+	}
+}
+@media(max-width:759px){
+	#icons[data-filtered=true]{
+		min-height:calc(100vh - 136px);
 	}
 }
 @media(min-width:700px){
@@ -501,7 +529,7 @@ body{
 		margin-left:320px;
 		margin-right:320px;
 	}
-	#results>p:first-of-type{
+	#icons>p:first-of-type{
 		right:324px;
 	}
 }
@@ -676,13 +704,14 @@ body{
 	}
 }
 @media(min-width:1500px){
-	#actions{
-		border-left:1px solid #bdbdbd;
+	#info{
+		z-index:2;
 	}
 	#info>header{
 		top:64px;
 	}
 	#actions{
+		border-left:1px solid #bdbdbd;
 		height:calc(100% - 244px);
 		top:244px;
 	}
