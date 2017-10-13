@@ -10,7 +10,7 @@
 		l=localStorage,
 		u=new URL(w.location),
 		a=`${u.protocol}//${u.host+u.pathname}`,
-		s=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">`,
+		s=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="`,
 	/** ELEMENTS **/
 		h=d.documentElement,
 		b=d.body,
@@ -37,7 +37,8 @@
 				filter.init();
 				let 	section=this.params.get`section`,
 					filters=this.params.get`categories`,
-					search=this.params.get`filter`;
+					search=this.params.get`filter`,
+					icon=this.params.get`icon`;
 				if(section&&(section=categories.list[section].section))
 					menu.goto(section);
 				if(filters)
@@ -49,6 +50,12 @@
 					filter.text=(f.value=search.toLowerCase()).replace(/\+/g,"%2b");
 				if(filters||search)
 					filter.apply();
+				if(icon){
+					if(icons.list[icon]){
+						info.open(icon);
+						icons.list[icon].article.dataset.current="true";
+					}
+				}
 				m.addEventListener("click",event=>{
 					let 	target=event.target,
 						parent=target.parentNode,
@@ -432,7 +439,7 @@
 				this.actions.url.dataset.copy=`${a}?icon=${name}${u.hash}`;
 				this.actions.html.dataset.copy=`<span class=mdi-${name}"></span>`;
 				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
-				this.img.src=`data:image/svg+xml;utf8,${s}<path d="${this.path}"/></svg>`;
+				this.img.src=`data:image/svg+xml;utf8,${s+this.path}"/></svg>`;
 				this.aside.dataset.nocopy=(!(this.copy=!!hex)).toString();
 				this.aside.dataset.nodownload=(!this.path).toString();
 				this.aside.dataset.retired=(!!icon.retired).toString();
@@ -448,7 +455,7 @@
 					if(this.path){
 						switch(this.type){
 							case"svg":
-								this.anchor.href=`data:text/svg+xml;utf8,${s}<path d="${this.path}"/></svg>`;
+								this.anchor.href=`data:text/svg+xml;utf8,${s+this.path}"/></svg>`;
 								break;
 							case"xaml":
 								this.anchor.href=`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.path}"/></Canvas>`;
@@ -554,7 +561,7 @@
 					section;
 				article.dataset.icon=hex?String.fromCharCode(`0x${hex}`):"";
 				if(!hex){
-					img.src=`data:image/svg+xml;utf8,${s}<path d="${icon.path}"/></svg>`;
+					img.src=`data:image/svg+xml;utf8,${s+icon.path}"/></svg>`;
 					article.prepend(img);
 				}else img.remove();
 				article.lastChild.nodeValue=key;
