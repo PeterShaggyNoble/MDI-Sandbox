@@ -1,6 +1,6 @@
 # Material Design Icons
 ## Read First
-1. **Important Note:** This is a side-project to the main [Material Design Icons](https://materialdesignicons.com/) project. To request a new icon, suggest an alias or make a contribution to the icon site, please [create an issue](https://github.com/Templarian/MaterialDesign/issues) in the main repository.
+1. **Important Note:** This is a side-project to the main [Material Design Icons](https://materialdesignicons.com/) project. To request a new icon, suggest an alias or make a contribution to the icon pack, please [create an issue](https://github.com/Templarian/MaterialDesign/issues) in the main repository.
 2. This repository is currently a work in progress, being my first project on GitHub. As such, please refrain from submitting any pull requests for the time being. If you have a request or suggestion then please [submit an issue](https://github.com/PeterShaggyNoble/MDI-Sandbox/issues) instead.
 
 ## Background
