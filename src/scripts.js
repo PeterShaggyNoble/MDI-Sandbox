@@ -9,19 +9,21 @@
 		d=document,
 		l=localStorage,
 		u=new URL(w.location),
-		s=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">`,
+		a=`${u.protocol}//${u.host+u.pathname}`,
+		s=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">`,
 	/** ELEMENTS **/
 		h=d.documentElement,
 		b=d.body,
 		c=Q`meta[name=theme-color]`,
 		f=$`filter`,
+		i=$`icons`,
 		m=$`content`,
 		o=$`load`,
-		r=$`results`,
 	/** PAGE **/
 		page={
 			params:u.searchParams,
 			header:$`header`,
+			heading:i.querySelector`h2`,
 			message:$`message`,
 			textarea:d.createElement`textarea`,
 		/** SET UP **/
@@ -33,42 +35,37 @@
 				icons.init();
 				info.init();
 				filter.init();
-				if(this.category=this.params.get`category`)
-					if(this.category=categories.sections[this.category])
-						menu.goto(this.category);
-				if(this.filter=this.params.get`search`){
-					f.value=this.filter;
-					f.dispatchEvent(new Event("input"));
-					f.focus();
-				}
-				if(this.icon=this.params.get`icon`){
-					info.open(this.icon);
-					d.evaluate(`//section${!this.filter?"[not(@id='results')]":""}/article[text()="${this.icon}"]`,d,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue.dataset.current="true";
-				}
+				let 	section=this.params.get`section`,
+					filters=this.params.get`categories`,
+					search=this.params.get`filter`;
+				if(section&&(section=categories.list[section].section))
+					menu.goto(section);
+				if(filters)
+					filters.split`,`.forEach(x=>{
+						categories.list[x].item.classList.add("active");
+						filter.categories.add(x);
+					});
+				if(search)
+					filter.text=(f.value=search.toLowerCase()).replace(/\+/g,"%2b");
+				if(filters||search)
+					filter.apply();
 				m.addEventListener("click",event=>{
 					let 	target=event.target,
-						current;
+						parent=target.parentNode,
+						current=m.querySelector`[data-current=true]`;
 					switch(target.nodeName.toLowerCase()){
 						case"h2":
-							if(w.getComputedStyle(target,"::before").content===`"\uf337"`&&(current=target.parentNode.dataset.name))
-								page.copy(`${u.protocol}//${u.host}${u.pathname}?category=${encodeURIComponent(current)}${u.hash}`,"Link");
+							if(parent!==i&&parent!==categories.list.favourites.section)
+								page.copy(`${a}?section=${parent.dataset.name}${u.hash}`,"Link");
 							break;
 						case"article":
-							if(current=m.querySelector`[data-current=true]`)
+							if(current)
 								current.removeAttribute`data-current`;
 							icons.ripple(target,event.clientX,event.offsetY+target.offsetTop);
 							info.open(target.lastChild.nodeValue);
 							target.dataset.current="true";
 							break;
 					}
-				},0);
-				m.addEventListener("scroll",_=>{
-					if(this.timer)
-						clearTimeout(this.timer);
-					if(!filter.length)
-						this.timer=setTimeout(_=>
-							this.top=m.scrollTop
-						,150);
 				},0);
 				setTimeout(_=>{
 					o.classList.add`oz`;
@@ -79,18 +76,6 @@
 					,375);
 				},10);
 			},
-		/** GET JSON **/
-			get:file=>
-				fetch(`json/${file}.json`).then(resp=>resp.json()),
-		/** COPY TO CLIPBOARD **/
-			copy(str,msg){
-				b.append(this.textarea);
-				this.textarea.value=str;
-				this.textarea.select();
-				d.execCommand`copy`;
-				this.textarea.remove();
-				this.alert(`${msg} copied to clipboard.`);
-			},
 		/** TOAST NOTIFICATIONS **/
 			alert(msg){
 				if(this.timer)
@@ -100,7 +85,19 @@
 				this.timer=setTimeout(_=>
 					this.message.classList.add`oz`
 				,5000);
-			}
+			},
+		/** COPY TO CLIPBOARD **/
+			copy(str,msg){
+				b.append(this.textarea);
+				this.textarea.value=str;
+				this.textarea.select();
+				d.execCommand`copy`;
+				this.textarea.remove();
+				this.alert(`${msg} copied to clipboard.`);
+			},
+		/** GET JSON **/
+			get:file=>
+				fetch(`json/${file}.json`).then(resp=>resp.json())
 		},
 	/** MENU **/
 		menu={
@@ -117,10 +114,20 @@
 						favourites.import();
 					else if(target===favourites.actions.export)
 						favourites.export();
-					else if(target===this.nav||target===this.header||(this.cataegory=categories.sections[target.dataset.category])){
+					else if(target===this.nav||target===this.header)
 						this.toggle();
-						if(this.cataegory)
-							this.goto(this.cataegory);
+					else if(target.nodeName.toLowerCase()==="li"){
+						let 	category=target.dataset.category,
+							section=categories.list[category];
+						if(section){
+							if(section=section.section)
+								this.goto(section);
+							else{
+								target.classList.toggle("active");
+								filter.categories[filter.categories.has(category)?"delete":"add"](category);
+								filter.apply();
+							}
+						}
 					}
 				},0);
 				d.addEventListener("touchstart",event=>{
@@ -148,11 +155,11 @@
 				},0):b.removeEventListener("keydown",this.fns.close);
 			},
 			goto(section){
-				this.to=section.offsetTop-page.header.offsetHeight;
-				this.top=m.scrollTop;
-				this.step=(this.to-this.top)/20;
+				let 	to=section.offsetTop-page.header.offsetHeight,
+					top=m.scrollTop,
+					step=(to-top)/20;
 				this.timer=setInterval(_=>
-					Math.round(this.top)===Math.round(this.to)?clearInterval(this.timer):m.scrollTop=(this.top+=this.step)
+					Math.round(top)===Math.round(to)?clearInterval(this.timer):m.scrollTop=(top+=step)
 				,10);
 			},
 			touchstart(){
@@ -171,62 +178,69 @@
 		},
 	/** SEARCH **/
 		filter={
-			articles:r.getElementsByTagName`article`,
+			categories:new Set(),
 			button:f.nextElementSibling,
-			link:r.firstElementChild,
-			error:r.querySelector`p`,
+			link:i.firstElementChild,
+			error:i.querySelector`p`,
 			init(){
 				f.addEventListener("input",_=>{
 					if(this.timer)
 						clearTimeout(this.timer);
-					this.timer=setTimeout(_=>
-						this.search()
-					,50);
+					this.timer=setTimeout(_=>{
+						this.text=f.value.toLowerCase().replace(/\+/g,"%2b");
+						this.apply();
+					},50);
 				},0);
 				this.button.addEventListener("click",_=>{
-					f.value="";
-					f.dispatchEvent(new Event("input"));
 					f.focus();
+					if(this.text){
+						f.value="";
+						f.dispatchEvent(new Event("input"));
+					}
 				},0);
 				this.link.addEventListener("click",_=>
 					page.copy(this.url,"Link")
 				,0);
 			},
-			search(){
-				this.text=f.value.toLowerCase().replace(/\+/g,"%2b");
-				this.length=this.text.length;
-				this.url=`${u.protocol}//${u.host}${u.pathname}?search=${encodeURIComponent(this.text)}${u.hash}`;
-				switch(this.length){
-					case 0:
-						r.previousElementSibling.classList.remove`dn`;
-						r.classList.remove`df`;
-						r.classList.add`dn`;
-						m.scrollTop=page.top;
-						break;
-					default:
-						if(r.classList.contains`dn`){
-							r.previousElementSibling.classList.add`dn`;
-							r.classList.remove`dn`;
-							r.classList.add`df`;
-							m.scrollTop=r.offsetTop;
+			apply(){
+				if(m.scrollTop<i.offsetTop-page.header.offsetHeight)
+					menu.goto(i);
+				i.dataset.filtered=(this.filtered=!!this.text||!!this.categories.size).toString();
+				this.link.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
+				let 	words=this.text&&this.text.split(/[\s\-]/),
+					match=0,
+					check,icon,article,array;
+				for(let key in icons.list)
+					if(icons.list.hasOwnProperty(key)){
+						check=true;
+						icon=icons.list[key];
+						article=icon.article;
+						if(this.categories.size)
+							check=icon.categories&&icon.categories.some(x=>this.categories.has(x));
+						if(this.text){
+							array=key.split`-`;
+							if(icon.aliases)
+								array=array.concat(icon.aliases);
+							if(icon.keywords)
+								array=array.concat(icon.keywords);
+							check=check&&words.every(word=>array.some(item=>item.startsWith(word)));
 						}
-						this.words=this.text.split(/[\s\-]/);
-						this.match=0;
-						this.count=this.articles.length;
-						while(this.count--){
-							this.article=this.articles[this.count];
-							this.data=this.article.dataset;
-							this.array=this.article.lastChild.nodeValue.split`-`;
-							if(this.data.aliases)
-								this.array=this.array.concat(this.data.aliases.split(/[,\-]/));
-							if(this.data.keywords)
-								this.array=this.array.concat(this.data.keywords.split`,`);
-							this.check=this.length&&this.words.every(word=>this.array.some(item=>item.startsWith(word)));
-							this.article.classList.toggle("dn",!this.check);
-							this.match=this.match||this.check;
-						}
-						this.error.classList.toggle("dn",this.match);
-						break;
+						article.classList.toggle("dn",!check);
+						match=match||check;
+					}
+				this.error.classList.toggle("dn",match);
+				this.link.classList.toggle("pen",!this.filtered||!match);
+				if(this.filtered){
+					this.url=`${a}?`;
+					if(this.categories.size){
+						this.url+=`categories=${[...this.categories].sort().join`,`}`;
+						if(this.text)
+							this.url+=`&`;
+					}
+					if(this.text)
+						this.url+=`filter=${encodeURIComponent(this.text)}`;
+					if(m.scrollTop<i.offsetTop-page.header.offsetHeight)
+						m.scrollTop=i.offsetTop-page.header.offsetHeight
 				}
 			}
 		},
@@ -234,7 +248,7 @@
 		favourites={
 			anchor:d.createElement`a`,
 			input:d.createElement`input`,
-			fave:0,
+			favourite:0,
 			reader:new FileReader(),
 			init(){
 				this.input.accept=".txt,text/plain";
@@ -244,8 +258,10 @@
 					if(this.input.files[0].type==="text/plain")
 						this.reader.readAsText(this.input.files[0]);
 				},0);
-				this.reader.addEventListener("load",event=>this.load(event),0);
-				this.section=categories.sections.favourites;
+				this.reader.addEventListener("load",event=>
+					this.load(event)
+				,0);
+				this.section=categories.list.favourites.section;
 				this.heading=this.section.firstElementChild;
 				this.articles=this.section.getElementsByTagName`article`;
 				this.actions={
@@ -254,10 +270,10 @@
 				}
 			},
 			set(icon){
-				this.fave=!this.fave;
-				info.actions.favourite.dataset.icon=String.fromCharCode(`0x${this.fave?"f0c6":"f0c5"}`);
-				info.actions.favourite.firstChild.nodeValue=`${this.fave?"Remove from":"Add to"} Favourites`;
-				if(this.fave){
+				this.favourite=!this.favourite;
+				info.actions.favourite.dataset.icon=String.fromCharCode(`0x${this.favourite?"f0c6":"f0c5"}`);
+				info.actions.favourite.firstChild.nodeValue=`${this.favourite?"Remove from":"Add to"} Favourites`;
+				if(this.favourite){
 					l.setItem(`mdi-${icon}`,1);
 					this.section.append(Q(`article[data-name=${icon}]`).cloneNode(1));
 					this.section.querySelector(`:scope>[data-name=${icon}]`).removeAttribute`data-current`;
@@ -294,7 +310,7 @@
 								this.section.append(Q(`article[data-name=${name}]`).cloneNode(1));
 								this.section.querySelector(`:scope>[data-name=${name}]`).removeAttribute`data-current`;
 								if(info.current===name){
-									this.fave=1;
+									this.favourite=1;
 									info.actions.favourite.dataset.icon="\uf0c6";
 									info.actions.favourite.firstChild.nodeValue="Remove from Favourites";
 								}
@@ -339,7 +355,6 @@
 				css:Q`#actions>[data-confirm=CSS]`,
 				js:Q`#actions>[data-confirm=JavaScript]`,
 				html:Q`#actions>[data-confirm=HTML]`,
-				/*name:`#actions>[data-confirm=Name]`,*/
 				url:Q`#actions>[data-confirm=Link]`,
 				link:Q`#actions>:last-child`
 			},
@@ -352,7 +367,6 @@
 				this.img.height=this.img.width=56;
 				this.img.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 				this.figure.append(this.img);
-				this.icons=this.figure.children;
 				this.set(Object.keys(icons.list)[0]);
 				this.aside.addEventListener("click",event=>{
 					let target=event.target;
@@ -408,16 +422,15 @@
 				this.toggle();
 			},
 			set(name){
-				favourites.fave=typeof l[`mdi-${name}`]!=="undefined"&&!!l[`mdi-${name}`];
+				favourites.favourite=typeof l[`mdi-${name}`]!=="undefined"&&!!l[`mdi-${name}`];
 				let 	icon=icons.list[name],
 					hex=icon.hex;
 				this.name=this.heading.firstChild.nodeValue=name;
 				this.path=icon.path;
-				this.actions.favourite.dataset.name=String.fromCharCode(`0x${favourites.fave?"f0c6":"f0c5"}`);
-				this.actions.favourite.firstChild.nodeValue=`${favourites.fave?"Remove from":"Add to"} Favourites`;
-				this.actions.url.dataset.copy=`${u.protocol}//${u.host}${u.pathname}?icon=${encodeURIComponent(name)}${u.hash}`;
+				this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.favourite?"f0c6":"f0c5"}`);
+				this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?"Remove from":"Add to"} Favourites`;
+				this.actions.url.dataset.copy=`${a}?icon=${name}${u.hash}`;
 				this.actions.html.dataset.copy=`<span class=mdi-${name}"></span>`;
-				/*this.actions.name.dataset.copy=`mdi-${name}`;*/
 				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
 				this.img.src=`data:image/svg+xml;utf8,${s}<path d="${this.path}"/></svg>`;
 				this.aside.dataset.nocopy=(!(this.copy=!!hex)).toString();
@@ -473,7 +486,6 @@
 			section:d.createElement`section`,
 			heading:d.createElement`h2`,
 			item:d.createElement`li`,
-			sections:{},
 			text:d.createElement`p`,
 			init(){
 				this.section.classList.add("df","pr");
@@ -488,16 +500,19 @@
 			},
 			add(key){
 				let 	category=this.list[key],
-					section=this.sections[key]=this.section.cloneNode(0),
+					section=this.section.cloneNode(0),
 					heading=this.heading.cloneNode(1),
 					item=this.item.cloneNode(1);
-				section.dataset.name=key;
-				heading.firstChild.nodeValue=item.firstChild.nodeValue=category.name;
-				section.append(heading);
-				m.append(section);
+				if(category.section){
+					section.dataset.name=key;
+					heading.firstChild.nodeValue=category.name;
+					section.append(heading);
+					i.before(category.section=section);
+				}
+				item.firstChild.nodeValue=category.name;
 				item.dataset.icon=String.fromCharCode(`0x${category.hex}`);
 				item.dataset.category=key;
-				menu.categories.append(item);
+				menu.categories.append(category.item=item);
 				if(key==="favourites"){
 					item=item.cloneNode(1);
 					item.removeAttribute`data-category`;
@@ -525,8 +540,7 @@
 				this.article.append(d.createTextNode``);
 				this.span.classList.add("ripple","db","pa","pen");
 				this.img.classList.add("pa","pen");
-				this.img.height=24;
-				this.img.width=24;
+				this.img.height=this.img.width=24;
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key))
 						this.add(key);
@@ -536,41 +550,25 @@
 					article=this.article,
 					img=this.img,
 					hex=icon.hex,
-					sections=categories.sections,
+					sections=categories.list,
 					section;
-				delete article.dataset.aliases;
-				delete article.dataset.keywords;
-				/*if(icon.contributor)
-					article.dataset.contributor=icon.contributor;*/
-				article.dataset.hex=hex;
-				article.dataset.name=key;
 				article.dataset.icon=hex?String.fromCharCode(`0x${hex}`):"";
 				if(!hex){
 					img.src=`data:image/svg+xml;utf8,${s}<path d="${icon.path}"/></svg>`;
 					article.prepend(img);
 				}else img.remove();
 				article.lastChild.nodeValue=key;
-				if(icon.categories)
-					icon.categories.forEach(item=>{
-						if(section=sections[item])
-							section.append(article.cloneNode(1));
-					});
-				else sections.other.append(article.cloneNode(1));
-				if(l["mdi-"+key]&&favourites.section)
-					favourites.section.append(article.cloneNode(1));
-				if(icon.added===v&&(section=sections.new))
+				if(l[`mdi-${key}`]&&(section=favourites.section))
 					section.append(article.cloneNode(1));
-				if(icon.updated===v&&(section=sections.updates))
+				if(icon.added===v&&(section=sections.new.section))
 					section.append(article.cloneNode(1));
-				if(!hex&&(section=sections.soon))
+				if(icon.updated===v&&(section=sections.updates.section))
 					section.append(article.cloneNode(1));
-				if(icon.retired&&(section=sections.retired))
+				if(!hex&&!icon.retired&&(section=sections.soon.section))
 					section.append(article.cloneNode(1));
-				if(icon.aliases)
-					article.dataset.aliases=icon.aliases;
-				if(icon.keywords)
-					article.dataset.keywords=icon.keywords;
-				r.append(article.cloneNode(1));
+				if(icon.retired&&(section=sections.retired.section))
+					section.append(article.cloneNode(1));
+				i.append(icon.article=article.cloneNode(1));
 			},
 			ripple(target,x,y){
 				let span=this.span.cloneNode(0);
@@ -584,13 +582,15 @@
 			}
 		};
 	/** INITIATE **/	
-	page.get`categories`.catch(_=>
-		page.alert`Failed to load category data.`
-	).then(json=>{
+	page.get`categories`.catch(err=>{
+		console.log(err);
+		page.alert`Failed to load category data.`;
+	}).then(json=>{
 		categories.list=json;
-		page.get`icons`.catch(_=>
-			page.alert`Failed to load icon data.`
-		).then(json=>{
+		page.get`icons`.catch(err=>{
+			console.log(err);
+			page.alert`Failed to load icon data.`;
+		}).then(json=>{
 			icons.list=json;
 			page.init();
 		});
