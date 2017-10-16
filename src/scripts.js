@@ -195,6 +195,8 @@
 				},0):b.removeEventListener("keydown",this.fns.close);
 			},
 			goto(section){
+				if(this.timer)
+					clearInterval(this.timer);
 				let 	to=section.offsetTop-page.header.offsetHeight,
 					top=m.scrollTop,
 					step=(to-top)/20;
