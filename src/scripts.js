@@ -30,6 +30,7 @@
 			init(){
 				this.textarea.classList.add("ln","pa");
 				categories.init();
+				contributors.init();
 				favourites.init();
 				menu.init();
 				icons.init();
@@ -37,6 +38,7 @@
 				filter.init();
 				let 	section=this.params.get`section`,
 					filters=this.params.get`categories`,
+					creators=this.params.get`contributors`,
 					search=this.params.get`filter`,
 					icon=this.params.get`icon`;
 				if(section&&(section=categories.list[section].section))
@@ -46,9 +48,14 @@
 						categories.list[x].item.classList.add("active");
 						filter.categories.add(x);
 					});
+				if(creators)
+					creators.split`,`.forEach(x=>{
+						contributors.list[x].item.classList.add("active");
+						filter.contributors.add(x);
+					});
 				if(search)
 					filter.text=(f.value=search.toLowerCase()).replace(/\+/g,"%2b");
-				if(filters||search)
+				if(filters||creators||search)
 					filter.apply();
 				if(icon){
 					if(icons.list[icon]){
@@ -113,28 +120,54 @@
 			nav:$`nav`,
 			header:$`navicon`,
 			menu:$`menu`,
+			sections:$`sections`,
 			categories:$`categories`,
+			contributors:$`contributors`,
 			init(){
 				this.nav.addEventListener("click",event=>{
 					let target=event.target;
-					if(target===favourites.actions.import)
-						favourites.import();
-					else if(target===favourites.actions.export)
-						favourites.export();
-					else if(target===this.nav||target===this.header)
-						this.toggle();
-					else if(target.nodeName.toLowerCase()==="li"){
-						let 	category=target.dataset.category,
-							section=categories.list[category];
-						if(section){
-							if(section=section.section)
-								this.goto(section);
-							else{
-								target.classList.toggle("active");
-								filter.categories[filter.categories.has(category)?"delete":"add"](category);
-								filter.apply();
+					switch(target){
+						case this.categories.previousElementSibling:
+						case this.contributors.previousElementSibling:
+							target.classList.toggle("open");
+							break;
+						case favourites.actions.import:
+							favourites.import();
+							break;
+						case favourites.actions.export:
+							favourites.export();
+							break;
+						case this.nav:
+						case this.header:
+							this.toggle();
+							break;
+						default:
+							if(target.nodeName.toLowerCase()==="li"){
+								let 	category=target.dataset.category,
+									contributor=target.dataset.contributor;
+								switch(target.parentNode){
+									case this.sections:
+										if(category=categories.list[category].section)
+											this.goto(category);
+										break;
+									case this.categories:
+										if(categories.list[category]){
+											target.classList.toggle("active");
+											filter.categories[filter.categories.has(category)?"delete":"add"](category);
+											filter.apply();
+										}
+										break;
+									case this.contributors:
+										if(contributors.list[contributor]){
+											target.classList.toggle("active");
+											filter.contributors[filter.contributors.has(contributor)?"delete":"add"](contributor);
+											filter.apply();
+										}
+										break;
+									default:break;
+								}
 							}
-						}
+							break;
 					}
 				},0);
 				d.addEventListener("touchstart",event=>{
@@ -186,6 +219,7 @@
 	/** SEARCH **/
 		filter={
 			categories:new Set(),
+			contributors:new Set(),
 			button:f.nextElementSibling,
 			link:i.firstElementChild,
 			error:i.querySelector`p`,
@@ -212,7 +246,7 @@
 			apply(){
 				if(m.scrollTop<i.offsetTop-page.header.offsetHeight)
 					menu.goto(i);
-				i.dataset.filtered=(this.filtered=!!this.text||!!this.categories.size).toString();
+				i.dataset.filtered=(this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size).toString();
 				this.link.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
 					match=0,
@@ -224,6 +258,8 @@
 						article=icon.article;
 						if(this.categories.size)
 							check=icon.categories&&icon.categories.some(x=>this.categories.has(x));
+						if(this.contributors.size)
+							check=check&&icon.contributor&&this.contributors.has(icon.contributor);
 						if(this.text){
 							array=key.split`-`;
 							if(icon.aliases)
@@ -241,6 +277,11 @@
 					this.url=`${a}?`;
 					if(this.categories.size){
 						this.url+=`categories=${[...this.categories].sort().join`,`}`;
+						if(this.contributors.size||this.text)
+							this.url+=`&`;
+					}
+					if(this.contributors.size){
+						this.url+=`contributors=${[...this.contributors].sort().join`,`}`;
 						if(this.text)
 							this.url+=`&`;
 					}
@@ -335,7 +376,7 @@
 				this.input.remove();
 			},
 			export(){
-				this.anchor.href=`data:text/plain;base64,${btoa(btoa(this.array?this.array.join(","):Object.keys(l).join(",")))}`;
+				this.anchor.href=`data:text/plain;base64,${btoa(btoa(this.array?this.array.join`,`:Object.keys(l).join`,`))}`;
 				this.anchor.download="mdi-favourites.txt";
 				this.anchor.click();
 			}
@@ -493,7 +534,6 @@
 			section:d.createElement`section`,
 			heading:d.createElement`h2`,
 			item:d.createElement`li`,
-			text:d.createElement`p`,
 			init(){
 				this.section.classList.add("df","pr");
 				this.heading.classList.add("oh","ps");
@@ -519,24 +559,52 @@
 				item.firstChild.nodeValue=category.name;
 				item.dataset.icon=String.fromCharCode(`0x${category.hex}`);
 				item.dataset.category=key;
-				menu.categories.append(category.item=item);
+				menu[category.section?"sections":"categories"].append(category.item=item);
 				if(key==="favourites"){
 					item=item.cloneNode(1);
 					item.removeAttribute`data-category`;
 					item.dataset.action="import";
 					item.dataset.icon="\uf220";
 					item.firstChild.nodeValue="Import Favourites";
-					menu.categories.append(item);
+					menu.sections.append(item);
 					item=item.cloneNode(1);
 					item.dataset.action="export";
 					item.dataset.icon="\uf21d";
 					item.firstChild.nodeValue="Export Favourites";
-					menu.categories.append(item);
+					menu.sections.append(item);
 				}
 			}
 		},
 	/** CONTRIBUTORS **/
-		/*contributors={},*/
+		contributors={
+			item:d.createElement`li`,
+			img:d.createElement`img`,
+			init(){
+				this.item.classList.add`cp`;
+				this.item.tabIndex=-1;
+				this.item.append(d.createTextNode``);
+				this.img.classList.add("pen","vam");
+				this.img.height=this.img.width=24;
+				for(let key in this.list)
+					if(this.list.hasOwnProperty(key))
+						this.add(key);
+			},
+			add(key){
+				let 	contributor=this.list[key],
+					image=contributor.image,
+					img=this.img.cloneNode(1),
+					item=this.item.cloneNode(1);
+				item.dataset.contributor=key;
+				item.dataset.icon=image?"":"\uf004";
+				if(image){
+					delete item.dataset.icon;
+					img.src=`data:image/png;base64,${image}`;
+					item.prepend(img);
+				}else img.remove();
+				item.lastChild.nodeValue=contributor.name;
+				menu.contributors.append(contributor.item=item);
+			}
+		},
 	/** ICONS **/
 		icons={
 			article:d.createElement`article`,
@@ -594,12 +662,18 @@
 		page.alert`Failed to load category data.`;
 	}).then(json=>{
 		categories.list=json;
-		page.get`icons`.catch(err=>{
+		page.get`contributors`.catch(err=>{
 			console.log(err);
-			page.alert`Failed to load icon data.`;
+			page.alert`Failed to load contributor data.`;
 		}).then(json=>{
-			icons.list=json;
-			page.init();
+			contributors.list=json;
+			page.get`icons`.catch(err=>{
+				console.log(err);
+				page.alert`Failed to load icon data.`;
+			}).then(json=>{
+				icons.list=json;
+				page.init();
+			});
 		});
 	});
 }
