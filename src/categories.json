@@ -56,6 +56,10 @@
 		"hex":"f2ad",
 		"name":"Google"
 	},
+	"assistant":{
+		"hex":"f7cf",
+		"name":"Home Assistant"
+	},
 	"logos":{
 		"hex":"f032",
 		"name":"Logos & Brands"

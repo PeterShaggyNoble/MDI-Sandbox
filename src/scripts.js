@@ -43,16 +43,20 @@
 					icon=this.params.get`icon`;
 				if(section&&(section=categories.list[section].section))
 					menu.goto(section);
-				if(filters)
+				if(filters){
+					menu.categories.previousElementSibling.classList.add`open`;
 					filters.split`,`.forEach(x=>{
 						categories.list[x].item.classList.add("active");
 						filter.categories.add(x);
 					});
-				if(creators)
+				}
+				if(creators){
+					menu.contributors.previousElementSibling.classList.add`open`;
 					creators.split`,`.forEach(x=>{
 						contributors.list[x].item.classList.add("active");
 						filter.contributors.add(x);
 					});
+				}
 				if(search)
 					filter.text=(f.value=search.toLowerCase()).replace(/\+/g,"%2b");
 				if(filters||creators||search)
