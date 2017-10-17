@@ -9,7 +9,7 @@
 		d=document,
 		l=localStorage,
 		u=new URL(w.location),
-		a=`${u.protocol}//${u.host+u.pathname}`,
+		a=`${u.protocol}\/\/${u.host+u.pathname}`,
 		s=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="`,
 	/** ELEMENTS **/
 		h=d.documentElement,
@@ -126,6 +126,7 @@
 			init(){
 				this.nav.addEventListener("click",event=>{
 					let target=event.target;
+					target.blur();
 					switch(target){
 						case this.categories.previousElementSibling:
 						case this.contributors.previousElementSibling:
@@ -147,8 +148,10 @@
 									contributor=target.dataset.contributor;
 								switch(target.parentNode){
 									case this.sections:
-										if(category=categories.list[category].section)
+										if(category=categories.list[category].section){
 											this.goto(category);
+											this.toggle()
+										}
 										break;
 									case this.categories:
 										if(categories.list[category]){
@@ -252,7 +255,7 @@
 				this.link.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
 					match=0,
-					check,icon,article,array;
+					check,icon,article;
 				for(let key in icons.list)
 					if(icons.list.hasOwnProperty(key)){
 						check=true;
@@ -262,14 +265,12 @@
 							check=icon.categories&&icon.categories.some(x=>this.categories.has(x));
 						if(this.contributors.size)
 							check=check&&icon.contributor&&this.contributors.has(icon.contributor);
-						if(this.text){
-							array=key.split`-`;
-							if(icon.aliases)
-								array=array.concat(icon.aliases);
-							if(icon.keywords)
-								array=array.concat(icon.keywords);
-							check=check&&words.every(word=>array.some(item=>item.startsWith(word)));
-						}
+						if(this.text)
+							check=check&&words.every(word=>
+								icon.keywords.some(item=>
+									item.startsWith(word)
+								)
+							);
 						article.classList.toggle("dn",!check);
 						match=match||check;
 					}
@@ -315,8 +316,8 @@
 				this.heading=this.section.firstElementChild;
 				this.articles=this.section.getElementsByTagName`article`;
 				this.actions={
-					export:Q`#categories>[data-action=export]`,
-					import:Q`#categories>[data-action=import]`
+					export:Q`#sections>[data-action=export]`,
+					import:Q`#sections>[data-action=import]`
 				}
 			},
 			set(icon){
@@ -628,7 +629,19 @@
 					img=this.img,
 					hex=icon.hex,
 					sections=categories.list,
+					keywords=new Set(key.split`-`),
 					section;
+				if(icon.aliases)
+					icon.aliases.forEach(x=>
+						x.split`-`.forEach(x=>
+							keywords.add(x)
+						)
+					);
+				if(icon.keywords)
+					icon.keywords.forEach(x=>
+						keywords.add(x)
+					);
+				icon.keywords=[...keywords].sort();
 				article.dataset.icon=hex?String.fromCharCode(`0x${hex}`):"";
 				if(!hex){
 					img.src=`data:image/svg+xml;utf8,${s+icon.path}"/></svg>`;
