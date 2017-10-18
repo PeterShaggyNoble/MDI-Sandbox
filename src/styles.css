@@ -405,15 +405,15 @@ body{
 	transition:filter .225s cubic-bezier(.4,0,.2,1),opacity .225s cubic-bezier(.4,0,.2,1);
 	z-index:1;
 }
-#content>section>article:hover,#content>section>article[data-current=true]{
+#content>section>article:hover,#content>section>article.active{
 	background:#ff5722;
 	box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
 	color:#fff;
 }
-#content>section>article:hover::before,#content>section>article[data-current=true]::before{
+#content>section>article:hover::before,#content>section>article.active::before{
 	color:#fff;
 }
-#content>section>article:hover>img,#content>section>article[data-current=true]>img{
+#content>section>article:hover>img,#content>section>article.active>img{
 	filter:invert(1);
 	opacity:1;
 }

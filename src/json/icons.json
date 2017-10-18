@@ -707,57 +707,57 @@
 	},
 	"arrow-collapse":{
 		"added":1650,
+		"aliases":["arrow-compress"],
 		"categories":["arrows"],
 		"contributor":"austin-andrews",
 		"hex":"f615",
 		"id":"86BB43B4-910B-4174-8455-661875054171",
-		"keywords":["compress"],
 		"path":"M19.5,3.09L15,7.59V4H13V11H20V9H16.41L20.91,4.5L19.5,3.09M4,13V15H7.59L3.09,19.5L4.5,20.91L9,16.41V20H11V13H4Z",
 		"updated":2046
 	},
 	"arrow-collapse-all":{
+		"aliases":["arrow-compress-all"],
 		"categories":["arrows"],
 		"contributor":"austin-andrews",
 		"hex":"f044",
 		"id":"54364780-8F31-4B23-8085-ABE21EA55926",
-		"keywords":["compress"],
 		"path":"M19.5,3.09L20.91,4.5L16.41,9H20V11H13V4H15V7.59L19.5,3.09M20.91,19.5L19.5,20.91L15,16.41V20H13V13H20V15H16.41L20.91,19.5M4.5,3.09L9,7.59V4H11V11H4V9H7.59L3.09,4.5L4.5,3.09M3.09,19.5L7.59,15H4V13H11V20H9V16.41L4.5,20.91L3.09,19.5Z",
 		"updated":2046
 	},
 	"arrow-collapse-down":{
 		"added":2046,
+		"aliases":["arrow-compress-down"],
 		"categories":["arrows"],
 		"contributor":"michael-richins",
 		"hex":"f791",
 		"id":"9989309E-22E1-46F6-B710-6717D1C5EA11",
-		"keywords":["compress"],
 		"path":"M19.92,12.08L12,20L4.08,12.08L5.5,10.67L11,16.17V2H13V16.17L18.5,10.66L19.92,12.08M12,20H2V22H22V20H12Z"
 	},
 	"arrow-collapse-left":{
 		"added":2046,
+		"aliases":["arrow-compress-left"],
 		"categories":["arrows"],
 		"contributor":"michael-richins",
 		"hex":"f792",
 		"id":"9F794864-D790-48F3-A8B4-31AEC3BB17FD",
-		"keywords":["compress"],
 		"path":"M11.92,19.92L4,12L11.92,4.08L13.33,5.5L7.83,11H22V13H7.83L13.34,18.5L11.92,19.92M4,12V2H2V22H4V12Z"
 	},
 	"arrow-collapse-right":{
 		"added":2046,
+		"aliases":["arrow-compress-right"],
 		"categories":["arrows"],
 		"contributor":"michael-richins",
 		"hex":"f793",
 		"id":"FFED25A5-FD40-4274-9EE3-6B26F5C03584",
-		"keywords":["compress"],
 		"path":"M12.08,4.08L20,12L12.08,19.92L10.67,18.5L16.17,13H2V11H16.17L10.67,5.5L12.08,4.08M20,12V22H22V2H20V12Z"
 	},
 	"arrow-collapse-up":{
 		"added":2046,
+		"aliases":["arrow-compress-up"],
 		"categories":["arrows"],
 		"contributor":"michael-richins",
 		"hex":"f794",
 		"id":"1E02D94D-6931-4CB8-8836-5276B076D811",
-		"keywords":["compress"],
 		"path":"M4.08,11.92L12,4L19.92,11.92L18.5,13.33L13,7.83V22H11V7.83L5.5,13.33L4.08,11.92M12,4H22V2H2V4H12Z"
 	},
 	"arrow-down":{
@@ -4247,19 +4247,19 @@
 		"path":"M12,1.75L5.75,12.25L12,16L18.25,12.25L12,1.75M5.75,13.5L12,22.25L18.25,13.5L12,17.25L5.75,13.5Z"
 	},
 	"currency-eur":{
+		"aliases":["euro"],
 		"categories":["money"],
 		"contributor":"austin-andrews",
 		"hex":"f1ad",
 		"id":"94C667B3-E2EB-428D-B422-751C234CCF44",
-		"keywords":["euro"],
 		"path":"M7.07,11L7,12L7.07,13H17.35L16.5,15H7.67C8.8,17.36 11.21,19 14,19C16.23,19 18.22,17.96 19.5,16.33V19.12C18,20.3 16.07,21 14,21C10.08,21 6.75,18.5 5.5,15H2L3,13H5.05L5,12L5.05,11H2L3,9H5.5C6.75,5.5 10.08,3 14,3C16.5,3 18.8,4.04 20.43,5.71L19.57,7.75C18.29,6.08 16.27,5 14,5C11.21,5 8.8,6.64 7.67,9H19.04L18.19,11H7.07Z"
 	},
 	"currency-gbp":{
+		"aliases":["pound","sterling"],
 		"categories":["money"],
 		"contributor":"austin-andrews",
 		"hex":"f1ae",
 		"id":"F9BD830F-EBB6-45A4-A576-0DEC27084A95",
-		"keywords":["pounds","sterling"],
 		"path":"M6.5,21V19.75C7.44,19.29 8.24,18.57 8.81,17.7C9.38,16.83 9.67,15.85 9.68,14.75L9.66,13.77L9.57,13H7V11H9.4C9.25,10.17 9.16,9.31 9.13,8.25C9.16,6.61 9.64,5.33 10.58,4.41C11.5,3.5 12.77,3 14.32,3C15.03,3 15.64,3.07 16.13,3.2C16.63,3.32 17,3.47 17.31,3.65L16.76,5.39C16.5,5.25 16.19,5.12 15.79,5C15.38,4.9 14.89,4.85 14.32,4.84C13.25,4.86 12.5,5.19 12,5.83C11.5,6.46 11.29,7.28 11.3,8.28L11.4,9.77L11.6,11H15.5V13H11.79C11.88,14 11.84,15 11.65,15.96C11.35,17.16 10.74,18.18 9.83,19H18V21H6.5Z"
 	},
 	"currency-inr":{
@@ -4290,19 +4290,21 @@
 		"path":"M2,3H4L5.33,9H9.33L10.67,3H13.33L14.67,9H18.67L20,3H22L20.67,9H22V11H20.22L19.78,13H22V15H19.33L18,21H15.33L14,15H10L8.67,21H6L4.67,15H2V13H4.22L3.78,11H2V9H3.33L2,3M13.11,11H10.89L10.44,13H13.56L13.11,11M7.33,18L8,15H6.67L7.33,18M8.89,11H5.78L6.22,13H8.44L8.89,11M16.67,18L17.33,15H16L16.67,18M18.22,11H15.11L15.56,13H17.78L18.22,11M12,6L11.33,9H12.67L12,6Z"
 	},
 	"currency-ngn":{
+		"aliases":["naira"],
 		"categories":["money"],
 		"contributor":"austin-andrews",
 		"hex":"f1b0",
 		"id":"2F091499-4472-423E-A0C5-8C96CDDE1ABF",
-		"keywords":["naira","nigerian"],
+		"keywords":["nigerian"],
 		"path":"M4,9H6V3H8L11.42,9H16V3H18V9H20V11H18V13H20V15H18V21H16L12.57,15H8V21H6V15H4V13H6V11H4V9M8,9H9.13L8,7.03V9M8,11V13H11.42L10.28,11H8M16,17V15H14.85L16,17M12.56,11L13.71,13H16V11H12.56Z"
 	},
 	"currency-rub":{
+		"aliases":["ruble"],
 		"categories":["money"],
 		"contributor":"austin-andrews",
 		"hex":"f1b1",
 		"id":"57057EA1-1BA7-49F3-A8C7-51AF633DED68",
-		"keywords":["ruble","russian"],
+		"keywords":["russian"],
 		"path":"M6,10H7V3H14.5C17,3 19,5 19,7.5C19,10 17,12 14.5,12H9V14H15V16H9V21H7V16H6V14H7V12H6V10M14.5,5H9V10H14.5A2.5,2.5 0 0,0 17,7.5A2.5,2.5 0 0,0 14.5,5Z"
 	},
 	"currency-sign":{
@@ -4315,11 +4317,12 @@
 		"path":"M22,12C22,9.86 21.29,7.78 20,6.07L22,4.07L19.94,1.94L17.94,3.94C14.4,1.36 9.59,1.38 6.07,4L4.07,2L1.94,4.06L3.94,6.06C1.36,9.6 1.38,14.41 4,17.93L2,19.93L4.12,22.05L6.12,20.05C9.65,22.65 14.45,22.65 18,20.05L20,22.05L22.1,19.93L20.1,17.93C21.35,16.21 22,14.13 22,12M12,19A7,7 0 0,1 5,12A7,7 0 0,1 12,5A7,7 0 0,1 19,12A7,7 0 0,1 12,19Z"
 	},
 	"currency-try":{
+		"aliases":["lira"],
 		"categories":["money"],
 		"contributor":"austin-andrews",
 		"hex":"f1b2",
 		"id":"94DAFCB6-FA70-4DAE-B3DF-A107031F81E8",
-		"keywords":["lira","turkish"],
+		"keywords":["turkish"],
 		"path":"M19,12A9,9 0 0,1 10,21H8V12.77L5,13.87V11.74L8,10.64V8.87L5,9.96V7.84L8,6.74V3H10V6L15,4.2V6.32L10,8.14V9.92L15,8.1V10.23L10,12.05V19A7,7 0 0,0 17,12H19Z"
 	},
 	"currency-twd":{
@@ -13912,7 +13915,6 @@
 		"path":"M13.5,7A6.5,6.5 0 0,1 20,13.5A6.5,6.5 0 0,1 13.5,20H10V18H13.5C16,18 18,16 18,13.5C18,11 16,9 13.5,9H7.83L10.91,12.09L9.5,13.5L4,8L9.5,2.5L10.92,3.91L7.83,7H13.5M6,18H8V20H6V18Z"
 	},
 	"unfold-less-horizontal":{
-		"categories":[],
 		"contributor":"google",
 		"hex":"f54e",
 		"id":"E533CB7E-48C2-4D9D-B935-B51C918703C0",
@@ -13927,7 +13929,6 @@
 		"path":"M5.41,7.41L10,12L5.41,16.59L4,15.17L7.17,12L4,8.83L5.41,7.41M18.59,16.59L14,12L18.59,7.42L20,8.83L16.83,12L20,15.17L18.59,16.59Z"
 	},
 	"unfold-more-horizontal":{
-		"categories":[],
 		"contributor":"google",
 		"hex":"f54f",
 		"id":"E85F4170-11D3-4757-8247-17EBD07A08D4",
