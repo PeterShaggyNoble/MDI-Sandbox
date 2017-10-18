@@ -114,8 +114,13 @@
 				this.alert(`${msg} copied to clipboard.`);
 			},
 		/** GET JSON **/
-			get:file=>
-				fetch(`json/${file}.json`).then(resp=>resp.json())
+			get:(file,data)=>
+				fetch(`json/${file}.json`).then(resp=>
+					resp.json()
+				).catch(err=>{
+					console.log(err);
+					page.alert(`Failed to load ${data}.`);
+				})
 		},
 	/** MENU **/
 		menu={
@@ -676,20 +681,11 @@
 			}
 		};
 	/** INITIATE **/	
-	page.get`categories`.catch(err=>{
-		console.log(err);
-		page.alert`Failed to load category data.`;
-	}).then(json=>{
+	page.get(`categories`,`category data`).then(json=>{
 		categories.list=json;
-		page.get`contributors`.catch(err=>{
-			console.log(err);
-			page.alert`Failed to load contributor data.`;
-		}).then(json=>{
+		page.get(`contributors`,`contributor data`).then(json=>{
 			contributors.list=json;
-			page.get`icons`.catch(err=>{
-				console.log(err);
-				page.alert`Failed to load icon data.`;
-			}).then(json=>{
+			page.get(`icons`,`icon data`).then(json=>{
 				icons.list=json;
 				page.init();
 			});
