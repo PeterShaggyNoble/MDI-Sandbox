@@ -13,7 +13,7 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 ## Change Log
 Only major changes and additions will be noted here.
 - **2017-10-16:** Added filters for contributors.
-- **2017-10-13:** Categories now serve as filters, rather than each have its own individual section.
+- **2017-10-13:** Categories now serve as filters, rather than each having its own individual section.
 - **2017-10-12:** Added the ability to copy the SVG path of an icon.
 - **2017-10-11:** Added a sction for "retired" icons, for the benefit of those who still have use for them.
 - **2017-10-10:** Extracted all data to JSON files.
