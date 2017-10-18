@@ -2881,74 +2881,74 @@
 		"path":"M8,9H11V4H13V9H16L20,17H4L8,9M14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18H14Z"
 	},
 	"cellphone":{
+		"aliases":["mobile-phone","smartphone"],
 		"categories":["tech"],
 		"contributor":"google",
 		"hex":"f11c",
 		"id":"8898488F-1BE6-40A0-84B7-1C0832AA4754",
-		"keywords":["mobile","phone"],
 		"path":"M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3C19,1.89 18.1,1 17,1Z"
 	},
 	"cellphone-android":{
+		"aliases":["mobile-phone-android","smartphone-android"],
 		"categories":["tech"],
 		"contributor":"google",
 		"hex":"f11d",
 		"id":"C633DDA7-FB93-4041-98C2-92117B970114",
-		"keywords":["mobile","phone"],
 		"path":"M17.25,18H6.75V4H17.25M14,21H10V20H14M16,1H8A3,3 0 0,0 5,4V20A3,3 0 0,0 8,23H16A3,3 0 0,0 19,20V4A3,3 0 0,0 16,1Z"
 	},
 	"cellphone-basic":{
+		"aliases":["mobile-phone-basic"],
 		"categories":["tech"],
 		"contributor":"cody",
 		"hex":"f11e",
 		"id":"E22A55C0-983F-499E-8B43-4A66DB278B4E",
-		"keywords":["mobile","phone"],
 		"path":"M15,2A1,1 0 0,0 14,3V6H10C8.89,6 8,6.89 8,8V20C8,21.11 8.89,22 10,22H15C16.11,22 17,21.11 17,20V8C17,7.26 16.6,6.62 16,6.28V3A1,1 0 0,0 15,2M10,8H15V13H10V8M10,15H11V16H10V15M12,15H13V16H12V15M14,15H15V16H14V15M10,17H11V18H10V17M12,17H13V18H12V17M14,17H15V18H14V17M10,19H11V20H10V19M12,19H13V20H12V19M14,19H15V20H14V19Z"
 	},
 	"cellphone-dock":{
+		"aliases":["mobile-phone-dock","smartphone-dock"],
 		"categories":["tech"],
 		"contributor":"google",
 		"hex":"f11f",
 		"id":"4FBBF196-CF97-436B-A3E6-A08D695E6986",
-		"keywords":["mobile","phone"],
 		"path":"M16,15H8V5H16M16,1H8C6.89,1 6,1.89 6,3V17A2,2 0 0,0 8,19H16A2,2 0 0,0 18,17V3C18,1.89 17.1,1 16,1M8,23H16V21H8V23Z"
 	},
 	"cellphone-iphone":{
+		"aliases":["mobile-phone-iphone","smartphone-iphone"],
 		"categories":["tech"],
 		"contributor":"google",
 		"hex":"f120",
 		"id":"8B1B6ED1-8AA5-4888-8477-B122FB236E1D",
-		"keywords":["mobile","phone"],
 		"path":"M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z"
 	},
 	"cellphone-link":{
+		"aliases":["mobile-phone-link","smartphone-link"],
 		"categories":["networking"],
 		"contributor":"google",
 		"hex":"f121",
 		"id":"E29A590D-51B8-471B-B23B-E0A41046EDA6",
-		"keywords":["mobile","phone"],
 		"path":"M22,17H18V10H22M23,8H17A1,1 0 0,0 16,9V19A1,1 0 0,0 17,20H23A1,1 0 0,0 24,19V9A1,1 0 0,0 23,8M4,6H22V4H4A2,2 0 0,0 2,6V17H0V20H14V17H4V6Z"
 	},
 	"cellphone-link-off":{
+		"aliases":["mobile-phone-link-off","smartphone-link-off"],
 		"categories":["networking"],
 		"contributor":"google",
 		"hex":"f122",
 		"id":"7E4265ED-151D-45CE-BDD2-08B6028B6006",
-		"keywords":["mobile","phone"],
 		"path":"M23,8H17A1,1 0 0,0 16,9V13.18L18,15.18V10H22V17H19.82L22.82,20H23A1,1 0 0,0 24,19V9A1,1 0 0,0 23,8M4,6.27L14.73,17H4V6.27M1.92,1.65L0.65,2.92L2.47,4.74C2.18,5.08 2,5.5 2,6V17H0V20H17.73L20.08,22.35L21.35,21.08L3.89,3.62L1.92,1.65M22,6V4H6.82L8.82,6H22Z"
 	},
 	"cellphone-settings":{
+		"aliases":["mobile-phone-settings","smartphone-settings"],
 		"categories":["tech"],
 		"contributor":"google",
 		"hex":"f123",
 		"id":"E7458A8C-66F2-41D7-81AE-4B2B961DFE1A",
-		"keywords":["mobile","phone"],
 		"path":"M16,16H8V4H16M16,0H8A2,2 0 0,0 6,2V18A2,2 0 0,0 8,20H16A2,2 0 0,0 18,18V2A2,2 0 0,0 16,0M15,24H17V22H15M11,24H13V22H11M7,24H9V22H7V24Z"
 	},
 	"cellphone-wireless":{
 		"added":"2.x.x",
+		"aliases":["mobile-phone-wireless","smartphone-wireless"],
 		"categories":["tech"],
 		"id":"071CA76A-0ED5-42CD-9BE9-46AFA9D5459E",
-		"keywords":["mobile","phone"],
 		"path":"M20.07,4.93C21.88,6.74 23,9.24 23,12C23,14.76 21.88,17.26 20.07,19.07L18.66,17.66C20.11,16.22 21,14.22 21,12C21,9.79 20.11,7.78 18.66,6.34L20.07,4.93M17.24,7.76C18.33,8.85 19,10.35 19,12C19,13.65 18.33,15.15 17.24,16.24L15.83,14.83C16.55,14.11 17,13.11 17,12C17,10.89 16.55,9.89 15.83,9.17L17.24,7.76M13,10A2,2 0 0,1 15,12A2,2 0 0,1 13,14A2,2 0 0,1 11,12A2,2 0 0,1 13,10M11.5,1A2.5,2.5 0 0,1 14,3.5V8H12V4H3V19H12V16H14V20.5A2.5,2.5 0 0,1 11.5,23H3.5A2.5,2.5 0 0,1 1,20.5V3.5A2.5,2.5 0 0,1 3.5,1H11.5Z"
 	},
 	"certificate":{
