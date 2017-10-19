@@ -1,13 +1,19 @@
 /** VIEWPORT **/
 @viewport{initial-scale:1;maximum-scale:1;minimum-scale:1;user-scalable:0;width:device-width;}
 
-/** IMPORT FONT **/
+/** IMPORT FONTS **/
 @font-face{
 	font-family:Material Design Icons;
 	src:url("fnt/materialdesignicons-webfont.woff2?v=2.0.46") format("woff2");
 	font-weight:normal;
 	font-style:normal;
 }
+/*@font-face{
+	font-family:Material Design Icons Light;
+	src:url("fnt/materialdesignicons-light-webfont.woff2?v=0.2.63") format("woff2");
+	font-weight:normal;
+	font-style:normal;
+}*/
 
 /** NORMALISE **/
 *,*::before,*::after{
@@ -522,6 +528,7 @@ body{
 	padding:0 16px;
 	transition:background .225s cubic-bezier(.4,0,.2,1),color .225s cubic-bezier(.4,0,.2,1);
 }
+#info>#actions>li:not([data-confirm]):not([data-url]):focus,#info>#actions>li:not([data-confirm]):not([data-url]):hover,
 #info:not([data-nocopy=true])>#actions>li[data-copy]:focus,#info:not([data-nocopy=true])>#actions>li[data-copy]:hover,
 #info:not([data-nodownload=true])>#actions>li[data-copy]:nth-of-type(5):focus,#info:not([data-nodownload=true])>#actions>li[data-copy]:nth-of-type(5):hover,
 #actions>li[data-copy]:nth-last-of-type(2):focus,#actions>li[data-copy]:nth-last-of-type(2):hover,

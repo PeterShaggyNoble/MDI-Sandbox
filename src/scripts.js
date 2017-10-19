@@ -27,6 +27,7 @@
 			textarea:d.createElement`textarea`,
 		/** SET UP **/
 			init(){
+				page.light=this.params.get`set`===`light`;
 				try{
 					this.storage=localStorage;
 				}catch(e){
@@ -334,6 +335,7 @@
 				this.favourite=!this.favourite;
 				info.actions.favourite.dataset.icon=String.fromCharCode(`0x${this.favourite?`f0c6`:`f0c5`}`);
 				info.actions.favourite.firstChild.nodeValue=`${this.favourite?`Remove from`:`Add to`} Favourites`;
+				let msg=`added to`;
 				if(this.favourite){
 					page.storage.setItem(`mdi-${name}`,1);
 					this.section.append(this.icon.favourite=this.icon.article.cloneNode(1));
@@ -349,7 +351,9 @@
 						this.array=this.array.filter(item=>
 							item!==`mdi-${name}`
 						);
+					msg=`removed from`;
 				}
+				page.alert(`${name} ${msg} favourites.`);
 			},
 			sort(){
 				let articles=[...this.articles];
