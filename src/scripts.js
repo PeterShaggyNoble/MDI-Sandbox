@@ -7,7 +7,6 @@
 	/** CONSTANTS **/
 		w=window,
 		d=document,
-		l=localStorage,
 		u=new URL(w.location),
 		a=`${u.protocol}\/\/${u.host+u.pathname}`,
 		s=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="`,
@@ -28,10 +27,22 @@
 			textarea:d.createElement`textarea`,
 		/** SET UP **/
 			init(){
+				try{
+					this.storage=localStorage;
+				}catch(e){
+					console.log(`localStorage not available. Favourites disabled`);
+					delete categories.list.favourites;
+					for(let x in favourites)
+						if(x!==`actions`)
+							delete favourites[x];
+					info.actions.favourite.remove();
+					delete info.actions.favourite;
+				}
 				this.textarea.classList.add(`ln`,`pa`);
 				categories.init();
 				contributors.init();
-				favourites.init();
+				if(this.storage)
+					favourites.init();
 				icons.init();
 				menu.init();
 				filter.init();
@@ -42,7 +53,7 @@
 						current=m.querySelector`article.active`;
 					switch(target.nodeName.toLowerCase()){
 						case`h2`:
-							if(parent!==i&&parent!==categories.list.favourites.section)
+							if(parent!==i)
 								page.copy(`${a}?section=${parent.dataset.name}${u.hash}`,`Link`);
 							break;
 						case`article`:
@@ -298,6 +309,7 @@
 		},
 	/** FAVOURITES **/
 		favourites={
+			actions:{},
 			anchor:d.createElement`a`,
 			input:d.createElement`input`,
 			favourite:0,
@@ -316,10 +328,6 @@
 				this.section=categories.list.favourites.section;
 				this.heading=this.section.firstElementChild;
 				this.articles=this.section.getElementsByTagName`article`;
-				this.actions={
-					export:Q`#sections>[data-action=export]`,
-					import:Q`#sections>[data-action=import]`
-				}
 			},
 			set(name){
 				this.icon=icons.list[name];
@@ -327,14 +335,14 @@
 				info.actions.favourite.dataset.icon=String.fromCharCode(`0x${this.favourite?`f0c6`:`f0c5`}`);
 				info.actions.favourite.firstChild.nodeValue=`${this.favourite?`Remove from`:`Add to`} Favourites`;
 				if(this.favourite){
-					l.setItem(`mdi-${name}`,1);
+					page.storage.setItem(`mdi-${name}`,1);
 					this.section.append(this.icon.favourite=this.icon.article.cloneNode(1));
 					if(this.array)
 						this.array.push(`mdi-${name}`);
 					if(this.articles.length>1)
 						this.sort();
 				}else{
-					l.removeItem(`mdi-${name}`);
+					page.storage.removeItem(`mdi-${name}`);
 					this.icon.favourite.remove();
 					delete this.icon.favourite;
 					if(this.array)
@@ -366,7 +374,7 @@
 						this.icon=icons.list[name];
 						if(this.icon){
 							if(!this.icon.favourite){
-								l.setItem(item,1);
+								page.storage.setItem(item,1);
 								this.section.append(this.icon.favourite=this.icon.article.cloneNode(1));
 								if(info.current===name){
 									this.favourite=1;
@@ -374,7 +382,7 @@
 									info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
 								}
 							}
-						}else l.removeItem(item);
+						}else page.storage.removeItem(item);
 					});
 					if(this.articles.length>1)
 						this.sort();
@@ -387,7 +395,7 @@
 				this.input.remove();
 			},
 			export(){
-				this.anchor.href=`data:text/plain;base64,${btoa(btoa(this.array?this.array.join`,`:Object.keys(l).join`,`))}`;
+				this.anchor.href=`data:text/plain;base64,${btoa(btoa(this.array?this.array.join`,`:Object.keys(page.storage).join`,`))}`;
 				this.anchor.download=`mdi-favourites.txt`;
 				this.anchor.click();
 			}
@@ -409,7 +417,7 @@
 				},
 				path:Q`#actions>[data-confirm=Path]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
-				hex:Q`#actions>[data-confirm=Unicode]`,
+				hex:Q`#actions>[data-confirm="Code point"]`,
 				entity:Q`#actions>[data-confirm=Entity]`,
 				css:Q`#actions>[data-confirm=CSS]`,
 				js:Q`#actions>[data-confirm=JavaScript]`,
@@ -464,7 +472,7 @@
 							else page.alert`No longer available.`;
 							break;
 						default:
-							if(target.parentNode===this.actions.favourite.parentNode)
+							if(target.parentNode===this.actions.link.parentNode)
 								if(this.copy||target===this.actions.url)
 									page.copy(target.dataset.copy,target.dataset.confirm);
 								else page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
@@ -490,9 +498,11 @@
 				let hex=this.icon.hex;
 				this.name=this.heading.firstChild.nodeValue=name;
 				this.path=this.icon.path;
-				this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.favourite?`f0c6`:`f0c5`}`);
-				this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?`Remove from`:`Add to`} Favourites`;
-				this.actions.url.dataset.copy=`${a}?this.icon=${name}${u.hash}`;
+				if(page.storage){
+					this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.favourite?`f0c6`:`f0c5`}`);
+					this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?`Remove from`:`Add to`} Favourites`;
+				}
+				this.actions.url.dataset.copy=`${a}?icon=${name}${u.hash}`;
 				this.actions.html.dataset.copy=`<span class="mdi-${name}"></span>`;
 				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
 				this.img.src=`data:image/svg+xml;utf8,${s+this.path}"/></svg>`;
@@ -581,12 +591,12 @@
 					item.dataset.action=`import`;
 					item.dataset.icon=`\uf220`;
 					item.firstChild.nodeValue=`Import Favourites`;
-					menu.sections.append(item);
+					menu.sections.append(favourites.actions.import=item);
 					item=item.cloneNode(1);
 					item.dataset.action=`export`;
 					item.dataset.icon=`\uf21d`;
 					item.firstChild.nodeValue=`Export Favourites`;
-					menu.sections.append(item);
+					menu.sections.append(favourites.actions.export=item);
 				}
 			}
 		},
@@ -660,7 +670,7 @@
 					article.prepend(img);
 				}else img.remove();
 				article.lastChild.nodeValue=key;
-				if(l[`mdi-${key}`]&&(section=favourites.section))
+				if((section=favourites.section)&&page.storage[`mdi-${key}`])
 					section.append(icon.favourite=article.cloneNode(1));
 				if(icon.added===v&&(section=sections.new.section))
 					section.append(article.cloneNode(1));
@@ -683,7 +693,7 @@
 				,875);
 			}
 		};
-	/** INITIATE **/	
+	/** INITIATE **/
 	page.get(`categories`,`category data`).then(json=>{
 		categories.list=json;
 		page.get(`contributors`,`contributor data`).then(json=>{

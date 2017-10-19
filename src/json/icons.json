@@ -404,23 +404,23 @@
 		"keywords":["issue"],
 		"path":"M11,15H13V17H11V15M11,7H13V13H11V7M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z"
 	},
-	"alert-octagon":{
-		"contributor":"google",
-		"hex":"f029",
-		"id":"9BC1A338-CD03-4D39-BE46-E9DE5EE51A2F",
-		"path":"M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"
-	},
 	"alert-decagram":{
 		"added":1836,
+		"aliases":["new-releases"],
 		"contributor":"google",
 		"hex":"f6bc",
 		"id":"B4866C08-2DAE-4B0A-8942-E057094B3C76",
 		"path":"M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M13,17H11V15H13V17M13,13H11V7H13V13Z",
 		"updated":1932
 	},
+	"alert-octagon":{
+		"contributor":"google",
+		"hex":"f029",
+		"id":"9BC1A338-CD03-4D39-BE46-E9DE5EE51A2F",
+		"path":"M13,13H11V7H13M12,17.3A1.3,1.3 0 0,1 10.7,16A1.3,1.3 0 0,1 12,14.7A1.3,1.3 0 0,1 13.3,16A1.3,1.3 0 0,1 12,17.3M15.73,3H8.27L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3Z"
+	},
 	"alert-octagram":{
 		"added":1932,
-		"aliases":["new-releases"],
 		"contributor":"austin-andrews",
 		"hex":"f766",
 		"id":"124F37BE-27F6-4524-9655-A18D28E91CA6",
@@ -4221,20 +4221,22 @@
 	},
 	"currency-chf":{
 		"added":2046,
+		"aliases":["franc"],
 		"categories":["money"],
 		"contributor":"japanyoshi",
 		"hex":"f7b8",
 		"id":"55AE86E1-C6DB-4F41-BC21-1750DB608D23",
-		"keywords":["franc","swiss"],
+		"keywords":["swiss"],
 		"path":"M7,3H18V5H9V11H17V13H9V16H11V18H9V21H7V18H5V16H7V3Z"
 	},
 	"currency-cny":{
 		"added":2046,
+		"aliases":["yuan"],
 		"categories":["money"],
 		"contributor":"japanyoshi",
 		"hex":"f7b9",
 		"id":"0F5809A3-18DD-4B42-9A7E-B35B65EF3751",
-		"keywords":["chinese","yuan","renminbi"],
+		"keywords":["chinese","renminbi"],
 		"path":"M11,21V16H6V14H11V13.71L10.16,12H6V10H9.19L5.77,3H8L12,11.2L16,3H18.23L14.81,10H18V12H13.84L13,13.71V14H18V16H13V21H11Z"
 	},
 	"currency-eth":{
@@ -4273,20 +4275,22 @@
 	},
 	"currency-jpy":{
 		"added":2046,
+		"aliases":["yen"],
 		"categories":["money"],
 		"contributor":"japanyoshi",
 		"hex":"f7bb",
 		"id":"639A8D4C-086C-4038-A569-F9387E851262",
-		"keywords":["japanese","yen"],
+		"keywords":["japanese"],
 		"path":"M11,21V16H6V14H11V13.71L10.16,12H6V10H9.19L5.77,3H8L12,11.2L16,3H18.23L14.81,10H18V12H13.84L13,13.71V14H18V16H13V21H11Z"
 	},
 	"currency-krw":{
 		"added":2046,
+		"aliases":["won"],
 		"categories":["money"],
 		"contributor":"japanyoshi",
 		"hex":"f7bc",
 		"id":"72750D9E-229F-4D77-B1CB-9C2C0FD12335",
-		"keywords":["korean","won"],
+		"keywords":["korean"],
 		"path":"M2,3H4L5.33,9H9.33L10.67,3H13.33L14.67,9H18.67L20,3H22L20.67,9H22V11H20.22L19.78,13H22V15H19.33L18,21H15.33L14,15H10L8.67,21H6L4.67,15H2V13H4.22L3.78,11H2V9H3.33L2,3M13.11,11H10.89L10.44,13H13.56L13.11,11M7.33,18L8,15H6.67L7.33,18M8.89,11H5.78L6.22,13H8.44L8.89,11M16.67,18L17.33,15H16L16.67,18M18.22,11H15.11L15.56,13H17.78L18.22,11M12,6L11.33,9H12.67L12,6Z"
 	},
 	"currency-ngn":{
@@ -7510,11 +7514,11 @@
 	},
 	"home-map-marker":{
 		"added":1554,
+		"aliases":["house-map-marker"],
 		"categories":["places","travel"],
 		"contributor":"cody",
 		"hex":"f5f8",
 		"id":"D543BDC6-BC40-4A36-B2F0-60313D8F4EEB",
-		"keywords":["house"],
 		"path":"M12,3L2,12H5V20H19V12H22L12,3M12,7.7C14.1,7.7 15.8,9.4 15.8,11.5C15.8,14.5 12,18 12,18C12,18 8.2,14.5 8.2,11.5C8.2,9.4 9.9,7.7 12,7.7M12,10A1.5,1.5 0 0,0 10.5,11.5A1.5,1.5 0 0,0 12,13A1.5,1.5 0 0,0 13.5,11.5A1.5,1.5 0 0,0 12,10Z"
 	},
 	"home-modern":{
@@ -7527,11 +7531,11 @@
 	},
 	"home-outline":{
 		"added":1712,
+		"aliases":["house-outline"],
 		"categories":["assistant","places"],
 		"contributor":"austin-andrews",
 		"hex":"f6a0",
 		"id":"B4E2287E-8872-48AD-B765-83D82AF66CA3",
-		"keywords":["house"],
 		"path":"M9,19V13H11L13,13H15V19H18V10.91L12,4.91L6,10.91V19H9M12,2.09L21.91,12H20V21H13V15H11V21H4V12H2.09L12,2.09Z"
 	},
 	"home-variant":{
@@ -12332,7 +12336,7 @@
 		"updated":1932
 	},
 	"smoking-off":{
-		"aliases":["no-smoking"],
+		"aliases":["cigarette-off","no-smoking"],
 		"contributor":"cody",
 		"hex":"f4b5",
 		"id":"5F974B83-AEEC-4C52-B281-1A8663B70027",
@@ -13764,11 +13768,12 @@
 	},
 	"truck-fast":{
 		"added":1932,
+		"aliases":["lorry-fast"],
 		"categories":["travel"],
 		"contributor":"austin-andrews",
 		"hex":"f787",
 		"id":"401AC514-6441-4DDC-80DC-48CF851C5B5E",
-		"keywords":["courier","lorry"],
+		"keywords":["courier"],
 		"path":"M3,13.5L2.25,12H7.5L6.9,10.5H2L1.25,9H9.05L8.45,7.5H1.11L0.25,6H4A2,2 0 0,1 6,4H18V8H21L24,12V17H22A3,3 0 0,1 19,20A3,3 0 0,1 16,17H12A3,3 0 0,1 9,20A3,3 0 0,1 6,17H4V13.5H3M19,18.5A1.5,1.5 0 0,0 20.5,17A1.5,1.5 0 0,0 19,15.5A1.5,1.5 0 0,0 17.5,17A1.5,1.5 0 0,0 19,18.5M20.5,9.5H18V12H22.46L20.5,9.5M9,18.5A1.5,1.5 0 0,0 10.5,17A1.5,1.5 0 0,0 9,15.5A1.5,1.5 0 0,0 7.5,17A1.5,1.5 0 0,0 9,18.5Z"
 	},
 	"truck-trailer":{
