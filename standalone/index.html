@@ -1016,7 +1016,59 @@
 				message:$`message`,
 				textarea:d.createElement`textarea`,
 				init(){
-					this.light=false;				this.font=			alert(msg){
+					this.light=false;				this.font=`regular`;				b.classList.add(this.prefix=`mdi`);				v=v[this.font];
+					try{
+						this.storage=localStorage;
+					}catch(e){
+						console.log(`localStorage not available. Favourites disabled`);
+						page.alert`Favourites not available.`;
+						delete categories.list.favourites;
+						for(let x in favourites)
+							if(x!==`actions`)
+								delete favourites[x];
+						info.actions.favourite.remove();
+						delete info.actions.favourite;
+					}
+					if(this.light)
+						$`fab`.remove();
+					this.textarea.classList.add(`ln`,`pa`);
+					categories.init();
+					v=+v.replace(/\./g,``);
+					contributors.init();
+					if(this.storage)
+						favourites.init();
+					icons.init();
+					menu.init();
+					filter.init();
+					info.init();
+					m.addEventListener(`click`,event=>{
+						let	target=event.target,
+							parent=target.parentNode,
+							current=m.querySelector`article.active`;
+						switch(target.nodeName.toLowerCase()){
+							case`h2`:
+								if(parent!==i)
+									page.copy(`${a}?${page.light?`font=light&`:``}section=${parent.dataset.name}${u.hash}`,`Link`);
+								break;
+							case`article`:
+								if(current)
+									current.classList.remove`active`;
+								icons.ripple(target,event.clientX,event.offsetY+target.offsetTop);
+								info.open(target.lastChild.nodeValue);
+								target.classList.add`active`;
+								break;
+						}
+					},0);
+					setTimeout(_=>{
+						o.classList.add`oz`;
+						o.classList.add`pen`;
+						m.classList.remove`oz`;
+						setTimeout(_=>
+							o.remove()
+						,375);
+					},10);
+				},
+				alert(msg){
 					if(this.timer)
 						clearTimeout(this.timer);
 					this.message.firstChild.nodeValue=msg;

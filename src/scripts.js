@@ -31,8 +31,8 @@
 		/** SET UP **/
 			init(){
 				this.light=false;/*this.params.get`font`===`light`;*/
-				this.font=/*this.light?`light`:*/`regular`;
-				b.classList.add(this.prefix=/*this.light?`mdil`:*/`mdi`);
+				this.font=`regular`;/*this.light?`light`:*/
+				b.classList.add(this.prefix=`mdi`);/*this.light?`mdil`:*/
 				v=v[this.font];
 				try{
 					this.storage=localStorage;
