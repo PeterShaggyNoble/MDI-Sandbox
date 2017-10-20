@@ -8,12 +8,12 @@
 	font-weight:normal;
 	font-style:normal;
 }
-/*@font-face{
+@font-face{
 	font-family:Material Design Icons Light;
 	src:url("fnt/materialdesignicons-light-webfont.woff2?v=0.2.63") format("woff2");
 	font-weight:normal;
 	font-style:normal;
-}*/
+}
 
 /** NORMALISE **/
 *,*::before,*::after{
@@ -178,21 +178,21 @@ body{
 #menu>h3.open::before{
 	transform:rotate(90deg);
 }
-#menu>ol,#sections>li:nth-last-child(5){
+#menu>p,#menu>ol,#sections>li:nth-last-child(5){
 	border-bottom:1px solid #e0e0e0;
 }
 #menu>h3:not(.open)+ol{
 	height:0;
 }
-#menu>ol>li{
+#menu>p,#menu>ol>li{
 	padding:0 16px;
 	transition:background .225s cubic-bezier(.4,0,.2,1),color .225s cubic-bezier(.4,0,.2,1);
 }
-#menu>ol>li:focus,#menu>ol>li:hover{
+#menu>p:focus,#menu>p:hover,#menu>ol>li:focus,#menu>ol>li:hover{
 	background:#e0e0e0;
 	color:#2196f3;
 }
-#menu>ol>li[data-icon]::before{
+#menu>p::before,#menu>ol>li[data-icon]::before{
 	color:#757575;
 	content:attr(data-icon);
 	display:inine-block;
@@ -203,7 +203,7 @@ body{
 	vertical-align:middle;
 	width:24px;
 }
-#menu>ol>li[data-icon]:focus::before{
+#menu>p:focus::before,#menu>ol>li[data-icon]:focus::before{
 	color:#2196f3;
 	transition-duration:inherit;
 }
@@ -326,8 +326,10 @@ body{
 /** CONTENT **/
 #content{
 	height:calc(100vh - 64px);
-	padding:0 0 80px;
 	transition:opacity .375s cubic-bezier(.4,0,.2,1);
+}
+body.mdi>#content{
+	padding:0 0 80px;
 }
 #content>figure>img{
 	height:auto;
@@ -339,8 +341,11 @@ body{
 	flex-wrap:wrap;
 	padding:0 4px 4px;
 }
-#icons[data-filtered=true]{
+body.mdi #icons[data-filtered=true]{
 	min-height:calc(100vh - 144px);
+}
+body.mdil #icons[data-filtered=true]{
+	min-height:calc(100vh - 64px);
 }
 #content>section>h2{
 	background:#2196f3;
@@ -364,7 +369,7 @@ body{
 	vertical-align:middle;
 	width:48px;
 }
-#icons>h2.pen::after{
+#icons>h2.pen::before{
 	opacity:0;
 }
 #content>section>h2:only-child::after{
@@ -403,6 +408,12 @@ body{
 	vertical-align:middle;
 	width:48px;
 	z-index:2;
+}
+body.mdi>#content>section>article::before{
+	font-family:Material Design Icons;
+}
+body.mdil>#content>section>article::before{
+	font-family:Material Design Icons Light;
 }
 #content>section>article>img{
 	left:12px;
@@ -720,8 +731,11 @@ body{
 	#card{
 		height:158px;
 	}
-	#icons[data-filtered=true]{
+	body.mdi #icons[data-filtered=true]{
 		min-height:calc(100vh - 136px);
+	}
+	body.mdil #icons[data-filtered=true]{
+		min-height:calc(100vh - 56px);
 	}
 	#info>header,#actions{
 		max-width:280px;
@@ -899,10 +913,8 @@ body{
 .dif{display:inline-flex;}
 .dn{display:none;}
 .dt{display:table;}
-.dtc{display:table-cell;}
-.dtr{display:table-row;}
-.vh{visibility:hidden;}
 .oz{opacity:0;}
+.vh{visibility:hidden;}
 /**  LAYOUTS  **/
 .cb{clear:both;}
 .cf::after{content:"";display:block;clear:both;height:0;width:0;}
@@ -916,8 +928,6 @@ body{
 .vab{vertical-align:bottom;}
 .vam{vertical-align:middle;}
 .vat{vertical-align:top;}
-.left{float:left;margin:0 20px 20px 0!important;}
-.right{float:right;margin:0 0 20px 20px!important;}
 /**  OVERFLOWS  **/
 .oa{overflow:auto;}
 .oh{overflow:hidden;}
@@ -929,20 +939,11 @@ body{
 .pr{position:relative;}
 .ps{position:sticky;}
 /**  TEXT  **/
-.ffa{font-family:arial,sans-serif;}
-.ffab{font-family:arial black,arial bold,gadget,arial,sans-serif;}
 .ffmd{font-family:Material Design Icons;}
-.ffms{font-family:lucida console,courier new,courier,monospace;}
-.fsi{font-style:italic;}
-.fsn{font-style:normal;}
-.fsl{font-size:1.5em;}
-.fss{font-size:.8em;}
-.fwb{font-weight:700;}
+.ffmdl{font-family:Material Design Icons Light;}
 .fwl{font-weight:300;}
 .fwm{font-weight:500;}
 .fwn{font-weight:400;}
-.fwu{font-weight:900;}
-.lsn{list-style:none;}
 .tac{text-align:center;}
 .taj{text-align:justify;}
 .tal{text-align:left;}
@@ -955,13 +956,10 @@ body{
 .ttl{text-transform:lowercase;}
 .ttn{text-transform:none;}
 .ttu{text-transform:uppercase;}
-.wbba{word-break:break-all;}
 .wsnw{white-space:nowrap;}
-.wsw{white-space:normal;}
 /**  MISC  **/
 .ch{cursor:help;}
 .cna{cursor:not-allowed;}
 .cp{cursor:pointer;}
-.cpr{cursor:progress;}
 .cw{cursor:wait;}
 .pen{pointer-events:none;}
