@@ -30,7 +30,7 @@
 			textarea:d.createElement`textarea`,
 		/** SET UP **/
 			init(){
-				this.light=this.params.get`font`===`light`;
+				this.light=false;/*this.params.get`font`===`light`;*/
 				this.font=this.light?`light`:`regular`;
 				b.classList.add(this.prefix=this.light?`mdil`:`mdi`);
 				v=v[this.font];
@@ -128,7 +128,7 @@
 				this.switch.dataset.icon=page.light?`\uf335`:`\uf6e8`;
 				this.switch.tabIndex=-1;
 				this.switch.append(d.createTextNode(`View ${page.light?`Regular`:`Light`} Icons`));
-				this.sections.before(this.switch);
+				/*this.sections.before(this.switch);*/
 				let section=page.params.get`section`;
 				if(section&&(section=categories.list[section].section))
 					this.goto(section);
