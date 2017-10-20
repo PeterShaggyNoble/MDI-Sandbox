@@ -522,9 +522,9 @@
 			set(name){
 				this.icon=icons.list[name];
 				favourites.favourite=this.icon.favourite;
-				let hex=this.icon.hex;
 				this.name=this.heading.firstChild.nodeValue=name;
 				this.path=this.icon.path[page.font];
+				let hex=this.icon.hex;
 				if(page.storage){
 					this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.favourite?`f0c6`:`f0c5`}`);
 					this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?`Remove from`:`Add to`} Favourites`;
@@ -539,11 +539,13 @@
 				this.aside.dataset.nodownload=(!this.path).toString();
 				this.aside.dataset.retired=(!!this.icon.retired).toString();
 				this.actions.path.dataset.copy=this.path;
-				this.actions.icon.dataset.copy=hex?String.fromCharCode(`0x${hex}`):`\xa0`;
-				this.actions.hex.dataset.copy=hex;
-				this.actions.entity.dataset.copy=`&#x${hex};`;
-				this.actions.css.dataset.copy=`\\${hex}`;
-				this.actions.js.dataset.copy=`\\u${hex}`;
+				if(hex){
+					this.actions.icon.dataset.copy=String.fromCharCode(`0x${hex}`);
+					this.actions.hex.dataset.copy=hex;
+					this.actions.entity.dataset.copy=`&#x${hex};`;
+					this.actions.css.dataset.copy=`\\${hex}`;
+					this.actions.js.dataset.copy=`\\u${hex}`;
+				}
 			},
 			download(){
 				if(icons.list[this.name]){

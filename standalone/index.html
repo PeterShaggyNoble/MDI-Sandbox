@@ -994,8 +994,8 @@
 		<li class="cp oh" data-confirm="Icon" data-icon="&#xf18f;" tabindex="-1">Copy Icon
 		<li class="cp oh" data-confirm="Code point" data-icon="&#xf3a0;" tabindex="-1">Copy Code Point
 		<li class="cp oh" data-confirm="Entity" data-icon="&#xf423;" tabindex="-1">Copy HTML Entity
-		<li class="cp oh" data-confirm="CSS" data-icon="&#xf169;" tabindex="-1">Copy CSS Unicode Character
-		<li class="cp oh" data-confirm="JavaScript" data-icon="&#xf172;" tabindex="-1">Copy JavaScript Unicode Character
+		<li class="cp oh" data-confirm="CSS" data-icon="&#xf169;" tabindex="-1">Copy CSS Unicode Sequence
+		<li class="cp oh" data-confirm="JavaScript" data-icon="&#xf172;" tabindex="-1">Copy JavaScript Unicode Sequence
 		<li class="cp oh" data-confirm="HTML" data-icon="&#xf174;" tabindex="-1">Copy HTML Tag
 		<li class="cp oh" data-confirm="Link" data-icon="&#xf337;" tabindex="-1">Copy Direct Link
 		<li class="cp oh" data-icon="&#xf1d8;" tabindex="-1">More Options
@@ -1518,9 +1518,9 @@
 				set(name){
 					this.icon=icons.list[name];
 					favourites.favourite=this.icon.favourite;
-					let hex=this.icon.hex;
 					this.name=this.heading.firstChild.nodeValue=name;
 					this.path=this.icon.path[page.font];
+					let hex=this.icon.hex;
 					if(page.storage){
 						this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.favourite?`f0c6`:`f0c5`}`);
 						this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?`Remove from`:`Add to`} Favourites`;
@@ -1535,11 +1535,13 @@
 					this.aside.dataset.nodownload=(!this.path).toString();
 					this.aside.dataset.retired=(!!this.icon.retired).toString();
 					this.actions.path.dataset.copy=this.path;
-					this.actions.icon.dataset.copy=hex?String.fromCharCode(`0x${hex}`):`\xa0`;
-					this.actions.hex.dataset.copy=hex;
-					this.actions.entity.dataset.copy=`&#x${hex};`;
-					this.actions.css.dataset.copy=`\\${hex}`;
-					this.actions.js.dataset.copy=`\\u${hex}`;
+					if(hex){
+						this.actions.icon.dataset.copy=String.fromCharCode(`0x${hex}`);
+						this.actions.hex.dataset.copy=hex;
+						this.actions.entity.dataset.copy=`&#x${hex};`;
+						this.actions.css.dataset.copy=`\\${hex}`;
+						this.actions.js.dataset.copy=`\\u${hex}`;
+					}
 				},
 				download(){
 					if(icons.list[this.name]){
