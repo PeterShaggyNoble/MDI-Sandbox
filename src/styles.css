@@ -2,36 +2,9 @@
 @viewport{initial-scale:1;maximum-scale:1;minimum-scale:1;user-scalable:0;width:device-width;}
 
 /** IMPORT FONTS **/
-/*@font-face{
-	font-family:Roboto;
-	font-style:normal;
-	font-weight:300;
-	src:url("fnt/roboto-light.woff2") format("woff2");
-	unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215;
-}
-@font-face{
-	font-family:Roboto;
-	font-style:normal;
-	font-weight:400;
-	src:url("fnt/roboto.woff2") format("woff2");
-	unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215;
-}
-@font-face{
-	font-family:Roboto;
-	font-style:normal;
-	font-weight:500;
-	src:url("fnt/roboto-medium.woff2") format("woff2");
-	unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215;
-}*/
 @font-face{
 	font-family:Material Design Icons;
 	src:url("fnt/materialdesignicons-webfont.woff2?v=2.0.46") format("woff2");
-	font-weight:normal;
-	font-style:normal;
-}
-@font-face{
-	font-family:Material Design Icons Light;
-	src:url("fnt/materialdesignicons-light-webfont.woff2?v=0.2.63") format("woff2");
 	font-weight:normal;
 	font-style:normal;
 }
@@ -365,9 +338,9 @@ body.mdi>#content{
 body.mdi #icons[data-filtered=true]{
 	min-height:calc(100vh - 144px);
 }
-body.mdil #icons[data-filtered=true]{
+/*body.mdil #icons[data-filtered=true]{
 	min-height:calc(100vh - 64px);
-}
+}*/
 #content>section>h2{
 	background:#2196f3;
 	color:#fff;
@@ -433,9 +406,9 @@ body.mdil #icons[data-filtered=true]{
 body.mdi>#content>section>article::before{
 	font-family:Material Design Icons;
 }
-body.mdil>#content>section>article::before{
+/*body.mdil>#content>section>article::before{
 	font-family:Material Design Icons Light;
-}
+}*/
 #content>section>article>img{
 	left:12px;
 	opacity:.54;
@@ -755,9 +728,9 @@ body.mdil>#content>section>article::before{
 	body.mdi #icons[data-filtered=true]{
 		min-height:calc(100vh - 136px);
 	}
-	body.mdil #icons[data-filtered=true]{
+/*	body.mdil #icons[data-filtered=true]{
 		min-height:calc(100vh - 56px);
-	}
+	}*/
 	#info>header,#actions{
 		max-width:280px;
 	}
@@ -961,7 +934,7 @@ body.mdil>#content>section>article::before{
 .ps{position:sticky;}
 /**  TEXT  **/
 .ffmd{font-family:Material Design Icons;}
-.ffmdl{font-family:Material Design Icons Light;}
+/*.ffmdl{font-family:Material Design Icons Light;}*/
 .fwl{font-weight:300;}
 .fwm{font-weight:500;}
 .fwn{font-weight:400;}

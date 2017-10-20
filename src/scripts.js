@@ -1,7 +1,7 @@
 {
 	/** VERSION **/
 	let 	v={
-			light:`0.2.63`,
+			/*light:`0.2.63`,*/
 			regular:`2.0.46`
 		};
 	/** FUNCTIONS **/
@@ -31,8 +31,8 @@
 		/** SET UP **/
 			init(){
 				this.light=false;/*this.params.get`font`===`light`;*/
-				this.font=this.light?`light`:`regular`;
-				b.classList.add(this.prefix=this.light?`mdil`:`mdi`);
+				this.font=/*this.light?`light`:*/`regular`;
+				b.classList.add(this.prefix=/*this.light?`mdil`:*/`mdi`);
 				v=v[this.font];
 				try{
 					this.storage=localStorage;
@@ -119,16 +119,16 @@
 			nav:$`nav`,
 			header:$`navicon`,
 			menu:$`menu`,
-			switch:d.createElement`p`,
+			/*switch:d.createElement`p`,*/
 			sections:$`sections`,
 			categories:$`categories`,
 			contributors:$`contributors`,
 			init(){
-				this.switch.classList.add`cp`;
+				/*this.switch.classList.add`cp`;
 				this.switch.dataset.icon=page.light?`\uf335`:`\uf6e8`;
 				this.switch.tabIndex=-1;
 				this.switch.append(d.createTextNode(`View ${page.light?`Regular`:`Light`} Icons`));
-				/*this.sections.before(this.switch);*/
+				this.sections.before(this.switch);*/
 				let section=page.params.get`section`;
 				if(section&&(section=categories.list[section].section))
 					this.goto(section);
