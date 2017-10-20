@@ -31,8 +31,8 @@
 		/** SET UP **/
 			init(){
 				this.light=this.params.get`font`===`light`;
-				b.classList.add(this.font=[`regular`,`light`][+this.light]);
-				this.prefix=[`mdi-`,`mdil-`][+this.light];
+				b.classList.add(this.font=this.light?`light`:`regular`);
+				this.prefix=this.light?`mdil-`:`mdi-`;
 				v=v[this.font];
 				try{
 					this.storage=localStorage;
@@ -119,10 +119,16 @@
 			nav:$`nav`,
 			header:$`navicon`,
 			menu:$`menu`,
+			switch:d.createElement`p`,
 			sections:$`sections`,
 			categories:$`categories`,
 			contributors:$`contributors`,
 			init(){
+				this.switch.classList.add`cp`;
+				this.switch.dataset.icon=page.light?`\uf335`:`\uf6e7`;
+				this.switch.tabIndex=-1;
+				this.switch.append(d.createTextNode(`View ${page.light?`Regular`:`Light`} Icons`));
+				this.sections.before(this.switch);
 				let section=page.params.get`section`;
 				if(section&&(section=categories.list[section].section))
 					this.goto(section);
@@ -130,9 +136,12 @@
 					let target=event.target;
 					target.blur();
 					switch(target){
-						case this.categories.previousElementSibling:
-						case this.contributors.previousElementSibling:
-							target.classList.toggle`open`;
+						case this.nav:
+						case this.header:
+							this.toggle();
+							break;
+						case this.switch:
+							w.location.href=page.light?`./`:`?font=light`;
 							break;
 						case favourites.actions.import:
 							favourites.import();
@@ -140,9 +149,9 @@
 						case favourites.actions.export:
 							favourites.export();
 							break;
-						case this.nav:
-						case this.header:
-							this.toggle();
+						case this.categories.previousElementSibling:
+						case this.contributors.previousElementSibling:
+							target.classList.toggle`open`;
 							break;
 						default:
 							if(target.nodeName.toLowerCase()===`li`){
@@ -445,7 +454,6 @@
 			init(){
 				this.img.classList.add`dib`;
 				this.img.height=this.img.width=56;
-				/*this.img.src=`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=`;*/
 				this.figure.append(this.img);
 				let icon=page.params.get`icon`;
 				if(icon){

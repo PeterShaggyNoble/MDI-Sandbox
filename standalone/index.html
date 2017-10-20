@@ -174,21 +174,21 @@
 	#menu>h3.open::before{
 		transform:rotate(90deg);
 	}
-	#menu>ol,#sections>li:nth-last-child(5){
+	#menu>p,#menu>ol,#sections>li:nth-last-child(5){
 		border-bottom:1px solid #e0e0e0;
 	}
 	#menu>h3:not(.open)+ol{
 		height:0;
 	}
-	#menu>ol>li{
+	#menu>p,#menu>ol>li{
 		padding:0 16px;
 		transition:background .225s cubic-bezier(.4,0,.2,1),color .225s cubic-bezier(.4,0,.2,1);
 	}
-	#menu>ol>li:focus,#menu>ol>li:hover{
+	#menu>p:focus,#menu>p:hover,#menu>ol>li:focus,#menu>ol>li:hover{
 		background:#e0e0e0;
 		color:#2196f3;
 	}
-	#menu>ol>li[data-icon]::before{
+	#menu>p::before,#menu>ol>li[data-icon]::before{
 		color:#757575;
 		content:attr(data-icon);
 		display:inine-block;
@@ -199,7 +199,7 @@
 		vertical-align:middle;
 		width:24px;
 	}
-	#menu>ol>li[data-icon]:focus::before{
+	#menu>p:focus::before,#menu>ol>li[data-icon]:focus::before{
 		color:#2196f3;
 		transition-duration:inherit;
 	}
@@ -1023,8 +1023,8 @@
 				textarea:d.createElement`textarea`,
 				init(){
 					this.light=this.params.get`font`===`light`;
-					b.classList.add(this.font=[`regular`,`light`][+this.light]);
-					this.prefix=[`mdi-`,`mdil-`][+this.light];
+					b.classList.add(this.font=this.light?`light`:`regular`);
+					this.prefix=this.light?`mdil-`:`mdi-`;
 					v=v[this.font];
 					try{
 						this.storage=localStorage;
@@ -1107,10 +1107,16 @@
 				nav:$`nav`,
 				header:$`navicon`,
 				menu:$`menu`,
+				switch:d.createElement`p`,
 				sections:$`sections`,
 				categories:$`categories`,
 				contributors:$`contributors`,
 				init(){
+					this.switch.classList.add`cp`;
+					this.switch.dataset.icon=page.light?`\uf335`:`\uf6e7`;
+					this.switch.tabIndex=-1;
+					this.switch.append(d.createTextNode(`View ${page.light?`Regular`:`Light`} Icons`));
+					this.sections.before(this.switch);
 					let section=page.params.get`section`;
 					if(section&&(section=categories.list[section].section))
 						this.goto(section);
@@ -1118,9 +1124,12 @@
 						let target=event.target;
 						target.blur();
 						switch(target){
-							case this.categories.previousElementSibling:
-							case this.contributors.previousElementSibling:
-								target.classList.toggle`open`;
+							case this.nav:
+							case this.header:
+								this.toggle();
+								break;
+							case this.switch:
+								w.location.href=page.light?`./`:`?font=light`;
 								break;
 							case favourites.actions.import:
 								favourites.import();
@@ -1128,9 +1137,9 @@
 							case favourites.actions.export:
 								favourites.export();
 								break;
-							case this.nav:
-							case this.header:
-								this.toggle();
+							case this.categories.previousElementSibling:
+							case this.contributors.previousElementSibling:
+								target.classList.toggle`open`;
 								break;
 							default:
 								if(target.nodeName.toLowerCase()===`li`){
