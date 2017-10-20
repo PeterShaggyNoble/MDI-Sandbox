@@ -8,12 +8,12 @@
 	font-weight:normal;
 	font-style:normal;
 }
-/*@font-face{
+@font-face{
 	font-family:Material Design Icons Light;
 	src:url("fnt/materialdesignicons-light-webfont.woff2?v=0.2.63") format("woff2");
 	font-weight:normal;
 	font-style:normal;
-}*/
+}
 
 /** NORMALISE **/
 *,*::before,*::after{
@@ -364,7 +364,7 @@ body{
 	vertical-align:middle;
 	width:48px;
 }
-#icons>h2.pen::after{
+#icons>h2.pen::before{
 	opacity:0;
 }
 #content>section>h2:only-child::after{
@@ -403,6 +403,9 @@ body{
 	vertical-align:middle;
 	width:48px;
 	z-index:2;
+}
+body.light>#content>section>article::before{
+	font-family:Material Design Icons Light;
 }
 #content>section>article>img{
 	left:12px;
@@ -899,10 +902,8 @@ body{
 .dif{display:inline-flex;}
 .dn{display:none;}
 .dt{display:table;}
-.dtc{display:table-cell;}
-.dtr{display:table-row;}
-.vh{visibility:hidden;}
 .oz{opacity:0;}
+.vh{visibility:hidden;}
 /**  LAYOUTS  **/
 .cb{clear:both;}
 .cf::after{content:"";display:block;clear:both;height:0;width:0;}
@@ -916,8 +917,6 @@ body{
 .vab{vertical-align:bottom;}
 .vam{vertical-align:middle;}
 .vat{vertical-align:top;}
-.left{float:left;margin:0 20px 20px 0!important;}
-.right{float:right;margin:0 0 20px 20px!important;}
 /**  OVERFLOWS  **/
 .oa{overflow:auto;}
 .oh{overflow:hidden;}
@@ -929,20 +928,11 @@ body{
 .pr{position:relative;}
 .ps{position:sticky;}
 /**  TEXT  **/
-.ffa{font-family:arial,sans-serif;}
-.ffab{font-family:arial black,arial bold,gadget,arial,sans-serif;}
 .ffmd{font-family:Material Design Icons;}
-.ffms{font-family:lucida console,courier new,courier,monospace;}
-.fsi{font-style:italic;}
-.fsn{font-style:normal;}
-.fsl{font-size:1.5em;}
-.fss{font-size:.8em;}
-.fwb{font-weight:700;}
+.ffmdl{font-family:Material Design Icons Light;}
 .fwl{font-weight:300;}
 .fwm{font-weight:500;}
 .fwn{font-weight:400;}
-.fwu{font-weight:900;}
-.lsn{list-style:none;}
 .tac{text-align:center;}
 .taj{text-align:justify;}
 .tal{text-align:left;}
@@ -955,13 +945,10 @@ body{
 .ttl{text-transform:lowercase;}
 .ttn{text-transform:none;}
 .ttu{text-transform:uppercase;}
-.wbba{word-break:break-all;}
 .wsnw{white-space:nowrap;}
-.wsw{white-space:normal;}
 /**  MISC  **/
 .ch{cursor:help;}
 .cna{cursor:not-allowed;}
 .cp{cursor:pointer;}
-.cpr{cursor:progress;}
 .cw{cursor:wait;}
 .pen{pointer-events:none;}

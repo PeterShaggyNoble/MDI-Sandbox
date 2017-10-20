@@ -8,11 +8,11 @@
 A single-file, standalone version is now available, which you can find in the [`standalone`](https://github.com/PeterShaggyNoble/MDI-Sandbox/tree/master/standalone) directory. It can be run locally but note that it does currently need access to the internet in order to download the Roboto font from Google. Also, unless you run the file through a web server, it can't access `window.localStorage` and, therefore, all functionality related to favourites is disabled.
 
 ## To-Do List
-1. Add menu for downloads.
-2. Add Light icons.
-3. Add helper classes to icon preview and HTML tag.
-4. Add contributor info to sidebar.
-5. Add counts to categories & contributors.
+1. [x] Add Light icons.
+2. [x] Add counts to categories & contributors.
+3. [ ] Add menu for downloads.
+4. [ ] Add helper classes to icon preview and HTML tag.
+5. [ ] Add contributor info to sidebar.
 
 ## How to Contribute
 > Coming soon ...
