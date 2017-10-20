@@ -30,9 +30,12 @@
 			textarea:d.createElement`textarea`,
 		/** SET UP **/
 			init(){
-				this.light=false;/*this.params.get`font`===`light`;*/
-				this.font=`regular`;/*this.light?`light`:*/
-				b.classList.add(this.prefix=`mdi`);/*this.light?`mdil`:*/
+				this.light=false;
+				/*this.params.get`font`===`light`;*/
+				this.font=`regular`;
+				/*this.light?`light`:*/
+				b.classList.add(this.prefix=`mdi`);
+				/*this.light?`mdil`:*/
 				v=v[this.font];
 				try{
 					this.storage=localStorage;
