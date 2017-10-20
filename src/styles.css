@@ -326,8 +326,10 @@ body{
 /** CONTENT **/
 #content{
 	height:calc(100vh - 64px);
-	padding:0 0 80px;
 	transition:opacity .375s cubic-bezier(.4,0,.2,1);
+}
+body.mdi>#content{
+	padding:0 0 80px;
 }
 #content>figure>img{
 	height:auto;
@@ -339,8 +341,11 @@ body{
 	flex-wrap:wrap;
 	padding:0 4px 4px;
 }
-#icons[data-filtered=true]{
+body.mdi #icons[data-filtered=true]{
 	min-height:calc(100vh - 144px);
+}
+body.mdil #icons[data-filtered=true]{
+	min-height:calc(100vh - 64px);
 }
 #content>section>h2{
 	background:#2196f3;
@@ -404,7 +409,10 @@ body{
 	width:48px;
 	z-index:2;
 }
-body.light>#content>section>article::before{
+body.mdi>#content>section>article::before{
+	font-family:Material Design Icons;
+}
+body.mdil>#content>section>article::before{
 	font-family:Material Design Icons Light;
 }
 #content>section>article>img{
@@ -723,8 +731,11 @@ body.light>#content>section>article::before{
 	#card{
 		height:158px;
 	}
-	#icons[data-filtered=true]{
+	body.mdi #icons[data-filtered=true]{
 		min-height:calc(100vh - 136px);
+	}
+	body.mdil #icons[data-filtered=true]{
+		min-height:calc(100vh - 56px);
 	}
 	#info>header,#actions{
 		max-width:280px;

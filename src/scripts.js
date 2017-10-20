@@ -3,7 +3,7 @@
 	let 	v={
 			light:`0.2.63`,
 			regular:`2.0.46`
-		}
+		};
 	/** FUNCTIONS **/
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
@@ -31,8 +31,8 @@
 		/** SET UP **/
 			init(){
 				this.light=this.params.get`font`===`light`;
-				b.classList.add(this.font=this.light?`light`:`regular`);
-				this.prefix=this.light?`mdil-`:`mdi-`;
+				this.font=this.light?`light`:`regular`;
+				b.classList.add(this.prefix=this.light?`mdil`:`mdi`);
 				v=v[this.font];
 				try{
 					this.storage=localStorage;
@@ -530,7 +530,7 @@
 					this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?`Remove from`:`Add to`} Favourites`;
 				}
 				this.actions.url.dataset.copy=`${a}?icon=${name}${u.hash}`;
-				this.actions.html.dataset.copy=`<span class="${page.prefix+name}"></span>`;
+				this.actions.html.dataset.copy=`<span class="${page.prefix}-${name}"></span>`;
 				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}/`;
 				if(page.light)
 					this.actions.link.dataset.url+=`light/`;

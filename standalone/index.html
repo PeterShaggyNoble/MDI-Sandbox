@@ -317,8 +317,10 @@
 	}
 	#content{
 		height:calc(100vh - 64px);
-		padding:0 0 80px;
 		transition:opacity .375s cubic-bezier(.4,0,.2,1);
+	}
+	body.mdi>#content{
+		padding:0 0 80px;
 	}
 	#content>figure>img{
 		height:auto;
@@ -330,8 +332,11 @@
 		flex-wrap:wrap;
 		padding:0 4px 4px;
 	}
-	#icons[data-filtered=true]{
+	body.mdi #icons[data-filtered=true]{
 		min-height:calc(100vh - 144px);
+	}
+	body.mdil #icons[data-filtered=true]{
+		min-height:calc(100vh - 64px);
 	}
 	#content>section>h2{
 		background:#2196f3;
@@ -395,7 +400,10 @@
 		width:48px;
 		z-index:2;
 	}
-	body.light>#content>section>article::before{
+	body.mdi>#content>section>article::before{
+		font-family:Material Design Icons;
+	}
+	body.mdil>#content>section>article::before{
 		font-family:Material Design Icons Light;
 	}
 	#content>section>article>img{
@@ -707,8 +715,11 @@
 		#card{
 			height:158px;
 		}
-		#icons[data-filtered=true]{
+		body.mdi #icons[data-filtered=true]{
 			min-height:calc(100vh - 136px);
+		}
+		body.mdil #icons[data-filtered=true]{
+			min-height:calc(100vh - 56px);
 		}
 		#info>header,#actions{
 			max-width:280px;
@@ -1000,7 +1011,7 @@
 		let	v={
 				light:`0.2.63`,
 				regular:`2.0.46`
-			}
+			};
 		const	$=i=>d.getElementById(i),
 			Q=s=>d.querySelector(s),
 			w=window,
@@ -1023,8 +1034,8 @@
 				textarea:d.createElement`textarea`,
 				init(){
 					this.light=this.params.get`font`===`light`;
-					b.classList.add(this.font=this.light?`light`:`regular`);
-					this.prefix=this.light?`mdil-`:`mdi-`;
+					this.font=this.light?`light`:`regular`;
+					b.classList.add(this.prefix=this.light?`mdil`:`mdi`);
 					v=v[this.font];
 					try{
 						this.storage=localStorage;
@@ -1515,7 +1526,7 @@
 						this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?`Remove from`:`Add to`} Favourites`;
 					}
 					this.actions.url.dataset.copy=`${a}?icon=${name}${u.hash}`;
-					this.actions.html.dataset.copy=`<span class="${page.prefix+name}"></span>`;
+					this.actions.html.dataset.copy=`<span class="${page.prefix}-${name}"></span>`;
 					this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}/`;
 					if(page.light)
 						this.actions.link.dataset.url+=`light/`;
