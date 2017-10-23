@@ -30,12 +30,10 @@
 		"aliases":["person","user"],
 		"categories":["assistant","users"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f004",
 		"id":{
-			"light":"90D54205-00CE-4E35-A56F-30F3A32DF8AF",
 			"regular":"E76EC23F-AB71-49B3-9173-841544527A20"
 		},
 		"path":{
@@ -549,12 +547,10 @@
 	"alarm":{
 		"categories":["time"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f020",
 		"id":{
-			"light":"EAE75EA6-F93D-4CAC-ABAE-BBE89D287CE0",
 			"regular":"9A1AAF33-6F36-4987-9E8C-798E34D919A9"
 		},
 		"keywords":["clock"],
@@ -637,12 +633,10 @@
 	"alarm-plus":{
 		"categories":["time"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f024",
 		"id":{
-			"light":"33C5B7F9-A181-4EAB-9D0C-503E1C09ED48",
 			"regular":"6D93F44C-83F7-4446-A5CD-E4135C8644D7"
 		},
 		"keywords":["clock"],
@@ -682,12 +676,10 @@
 	},
 	"alert":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f026",
 		"id":{
-			"light":"43DD3BA1-93A5-480C-83A1-290158B2FD7D",
 			"regular":"9FF7DF3F-D575-433B-9C9A-69C58363C186"
 		},
 		"path":{
@@ -708,12 +700,10 @@
 	},
 	"alert-circle":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f028",
 		"id":{
-			"light":"3D7977C7-4DAC-4C99-8962-558C796C90BE",
 			"regular":"C7EDD5B7-95D4-4D83-A4E3-95D8A16A4887"
 		},
 		"path":{
@@ -757,12 +747,10 @@
 	},
 	"alert-octagon":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f029",
 		"id":{
-			"light":"D0A237FA-9814-4655-A214-9F51993F204B",
 			"regular":"9BC1A338-CD03-4D39-BE46-E9DE5EE51A2F"
 		},
 		"path":{
@@ -1231,12 +1219,10 @@
 	"arrange-bring-forward":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f03d",
 		"id":{
-			"light":"EAC8A6E4-00D2-4614-88F2-04FAA8C50CEC",
 			"regular":"7F57A003-5F4E-46CF-9099-51B8D05381F8"
 		},
 		"path":{
@@ -1246,12 +1232,10 @@
 	"arrange-bring-to-front":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f03e",
 		"id":{
-			"light":"275C2DFB-90F0-4EF9-96E5-41536430240A",
 			"regular":"679C0678-9688-49FD-BA71-BED740A09267"
 		},
 		"path":{
@@ -1261,12 +1245,10 @@
 	"arrange-send-backward":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f03f",
 		"id":{
-			"light":"7B33BDE7-105C-4FA9-8774-01D4688516A6",
 			"regular":"677B1C90-BB0B-4F73-8EEA-D6E8FA709A6D"
 		},
 		"path":{
@@ -1276,12 +1258,10 @@
 	"arrange-send-to-back":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f040",
 		"id":{
-			"light":"EE09DB2D-020C-4A8F-9A97-13DB4517BA85",
 			"regular":"86145497-4CAA-41D6-A14E-0DD3FEE7721E"
 		},
 		"path":{
@@ -1437,12 +1417,10 @@
 	"arrow-down":{
 		"categories":["arrows"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f045",
 		"id":{
-			"light":"3826A9F9-D5E5-4318-BF41-87A7857E6D11",
 			"regular":"3821BF79-5857-47BE-84E3-A100B7247535"
 		},
 		"keywords":["bottom"],
@@ -1709,12 +1687,10 @@
 	"arrow-left":{
 		"categories":["arrows"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f04d",
 		"id":{
-			"light":"7A6C58C0-B388-40EC-B30B-A76EAFD1C4E7",
 			"regular":"C21995A9-094F-4EA8-9127-BA0506B240A6"
 		},
 		"path":{
@@ -1875,12 +1851,10 @@
 	"arrow-right":{
 		"categories":["arrows"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f054",
 		"id":{
-			"light":"599F098C-7E5B-43D9-B142-D69526B959B6",
 			"regular":"05F25B05-A6D6-4863-8B21-6969E10329CF"
 		},
 		"path":{
@@ -2069,12 +2043,10 @@
 	"arrow-up":{
 		"categories":["arrows"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f05d",
 		"id":{
-			"light":"182F1944-D0FB-490A-8FD3-7642E10AE63E",
 			"regular":"3AF49B97-A909-4961-9FBB-82C60D7CC773"
 		},
 		"keywords":["top"],
@@ -2457,12 +2429,10 @@
 	"bank":{
 		"categories":["money","places"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f070",
 		"id":{
-			"light":"9E137086-980B-4913-B7E8-214153F11C1A",
 			"regular":"FE08919F-CFFC-4A25-994C-CEDEB299908B"
 		},
 		"path":{
@@ -3153,12 +3123,10 @@
 	"bell":{
 		"categories":["assistant"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f09a",
 		"id":{
-			"light":"14502605-56EE-4100-818E-15F8A9AD95D2",
 			"regular":"45fea174-07db-11e4-bf19-842b2b6cfe1b"
 		},
 		"path":{
@@ -3167,12 +3135,10 @@
 	},
 	"bell-off":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f09b",
 		"id":{
-			"light":"C05E04B4-4351-4E5D-A55A-52817960C86E",
 			"regular":"69686D8F-75FE-4091-9061-88DB64D95C01"
 		},
 		"path":{
@@ -3428,12 +3394,10 @@
 	"bluetooth":{
 		"categories":["networking","logos"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0af",
 		"id":{
-			"light":"3AF912B3-2737-4B1E-9AFE-77C342E4C446",
 			"regular":"7CBB03E7-EAC6-44C2-8C28-A78728F8BB7B"
 		},
 		"path":{
@@ -3598,12 +3562,10 @@
 	},
 	"book":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0ba",
 		"id":{
-			"light":"C79A85FA-868A-4334-A123-0C7E97CAAD6B",
 			"regular":"FFF82791-D12F-4643-8128-71CF5FE38C9B"
 		},
 		"keywords":["repository"],
@@ -3628,12 +3590,10 @@
 	},
 	"book-multiple":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f0bb",
 		"id":{
-			"light":"B809C13A-4D90-45CD-BF91-7D99D15AC8FE",
 			"regular":"637C4988-5432-4F5E-ADD5-EBDC397D0622"
 		},
 		"path":{
@@ -3699,12 +3659,10 @@
 			"regular":1554
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f5db",
 		"id":{
-			"light":"09B23972-AC10-459D-92B5-77599C39401E",
 			"regular":"3C49BDB2-C3A3-4E0C-9314-19FE66414A5B"
 		},
 		"path":{
@@ -3755,12 +3713,10 @@
 	},
 	"bookmark":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0c0",
 		"id":{
-			"light":"5BF7FCDE-6867-4445-BC5C-3F3DD5DC7BDC",
 			"regular":"690787DD-F7B0-4D32-A668-32657D3A3AE8"
 		},
 		"path":{
@@ -3875,12 +3831,10 @@
 	"border-all":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0c7",
 		"id":{
-			"light":"5661B6CF-4822-4A8D-9B45-943816E76897",
 			"regular":"A3D0E8B6-96B3-4281-B31C-0DDFD729903B"
 		},
 		"path":{
@@ -3890,12 +3844,10 @@
 	"border-bottom":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0c8",
 		"id":{
-			"light":"4B7B4544-129E-49F6-9DC9-1E4445E28CC5",
 			"regular":"9441B8BD-25C8-4F46-AFD4-6B2DA0C4A599"
 		},
 		"path":{
@@ -3918,12 +3870,10 @@
 	"border-horizontal":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0ca",
 		"id":{
-			"light":"17C36964-B3E7-46DA-8673-D4F98D6E9D11",
 			"regular":"0F804E73-90EF-4175-984D-603698F0AF09"
 		},
 		"path":{
@@ -3933,12 +3883,10 @@
 	"border-inside":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0cb",
 		"id":{
-			"light":"27C1EAB4-7690-46EF-99A4-6ABB732DECD1",
 			"regular":"F7471447-8501-40A6-9FFB-AB353B55AA89"
 		},
 		"path":{
@@ -3948,12 +3896,10 @@
 	"border-left":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0cc",
 		"id":{
-			"light":"1B7D084C-3EB9-4013-BAE7-BF2925D4DCD5",
 			"regular":"6B8A1379-9497-4B1B-A8CF-51CB1AD67757"
 		},
 		"path":{
@@ -3963,12 +3909,10 @@
 	"border-none":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0cd",
 		"id":{
-			"light":"A601BC1B-62D1-4C39-BEF9-65B3CE220F90",
 			"regular":"F6333BD9-AC00-428D-B8A8-FA3B9187487F"
 		},
 		"path":{
@@ -3978,12 +3922,10 @@
 	"border-outside":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0ce",
 		"id":{
-			"light":"12EAF8C3-65EC-4FAD-B3D2-D692C00173F7",
 			"regular":"F8EA9B00-82F1-4DE8-B8B5-0A71B934C44D"
 		},
 		"path":{
@@ -3993,12 +3935,10 @@
 	"border-right":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0cf",
 		"id":{
-			"light":"9DD2DF3E-C38A-43F6-ABC1-BEECAC14FF3A",
 			"regular":"BC67506B-CAE4-4EDA-B0C8-614436AFDCBF"
 		},
 		"path":{
@@ -4021,12 +3961,10 @@
 	"border-top":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0d1",
 		"id":{
-			"light":"C646E121-BA9A-4C8F-A943-EB7B6715B89E",
 			"regular":"AE703F65-F8D5-43B9-9B6B-B5966260E799"
 		},
 		"path":{
@@ -4036,12 +3974,10 @@
 	"border-vertical":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0d2",
 		"id":{
-			"light":"58772F79-4700-4DB3-BE94-E973F7F92BF5",
 			"regular":"540E7940-BA85-4EED-BEAB-C50CEF348D50"
 		},
 		"path":{
@@ -4152,12 +4088,10 @@
 	},
 	"briefcase":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0d6",
 		"id":{
-			"light":"E490115B-EFF9-4D13-8A54-09C562F4DDCE",
 			"regular":"15A9F4A5-3EB6-443C-8283-547A077CB0C4"
 		},
 		"path":{
@@ -4572,12 +4506,10 @@
 	"calendar":{
 		"categories":["time"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0ed",
 		"id":{
-			"light":"B381012A-6E5D-4839-9F88-9CBE97E4CCF5",
 			"regular":"23C8742A-612C-4C55-B184-2A0ABB387746"
 		},
 		"path":{
@@ -4803,12 +4735,10 @@
 	},
 	"camcorder":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f0fc",
 		"id":{
-			"light":"BDF37FFB-FA5B-4009-A70A-E9B00C756E58",
 			"regular":"89EE8EAB-CA5B-40C5-B114-1EC5248634BF"
 		},
 		"path":{
@@ -4855,12 +4785,10 @@
 		"aliases":["photography"],
 		"categories":["assistant"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f100",
 		"id":{
-			"light":"B2AE5F65-0542-499F-A015-7A753EB42B21",
 			"regular":"236D9E8E-E38C-4EA9-9539-0E8B1447003A"
 		},
 		"path":{
@@ -5087,12 +5015,10 @@
 		},
 		"aliases":["ban","prohibited"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f739",
 		"id":{
-			"light":"24B05AE5-AF36-4CD5-8500-B28FF2835C99",
 			"regular":"02F70DD2-E16E-43FD-9C2A-267C965E3919"
 		},
 		"keywords":["block"],
@@ -5387,12 +5313,10 @@
 	"cart":{
 		"aliases":["trolley"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f110",
 		"id":{
-			"light":"3B37FF66-3834-47AC-8C4E-0D317DE27254",
 			"regular":"97563623-CF1C-43AE-87D8-DF54802D442B"
 		},
 		"path":{
@@ -5777,12 +5701,10 @@
 	"chart-areaspline":{
 		"categories":["science"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f127",
 		"id":{
-			"light":"A7F390C9-C26F-42EA-AAE0-C47D61B95A5A",
 			"regular":"00654F5E-1B8B-4BD7-933B-0BD65B2C9BAC"
 		},
 		"path":{
@@ -5792,12 +5714,10 @@
 	"chart-bar":{
 		"categories":["science"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f128",
 		"id":{
-			"light":"859FBA63-332B-475F-A796-51168ED0CC22",
 			"regular":"85D4DC49-5359-4867-A5D1-52C44699387F"
 		},
 		"path":{
@@ -5889,12 +5809,10 @@
 	"chart-histogram":{
 		"categories":["science"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f129",
 		"id":{
-			"light":"AA39461E-8582-4AC8-9ED0-96DB510FF490",
 			"regular":"8DCC14D7-057F-4DA4-89B2-B26D6B6F0C00"
 		},
 		"path":{
@@ -5904,12 +5822,10 @@
 	"chart-line":{
 		"categories":["science"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f12a",
 		"id":{
-			"light":"26E7AFEC-891E-47EE-8FC6-8B5576971999",
 			"regular":"D996574D-5B42-47C5-91D6-F86555C2FBC5"
 		},
 		"path":{
@@ -5951,12 +5867,10 @@
 	"chart-pie":{
 		"categories":["science"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f12b",
 		"id":{
-			"light":"5FA19819-6B0B-4A99-8452-F22FF7FAA1E4",
 			"regular":"9C6B53C5-698B-4428-9738-A6700BF8698C"
 		},
 		"path":{
@@ -5999,12 +5913,10 @@
 		"aliases":["tick"],
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f12c",
 		"id":{
-			"light":"9369C108-E01F-4943-8732-DF14EA9E0825",
 			"regular":"F789CE44-7EA3-4E97-88FB-BEC22EB2030C"
 		},
 		"path":{
@@ -6291,12 +6203,10 @@
 	"chevron-double-down":{
 		"categories":["arrows"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f13c",
 		"id":{
-			"light":"741481EA-C02A-4770-918F-7170146F12D7",
 			"regular":"74ACC301-AA62-492B-92C1-8021BDD89A02"
 		},
 		"keywords":["bottom"],
@@ -6307,12 +6217,10 @@
 	"chevron-double-left":{
 		"categories":["arrows","characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f13d",
 		"id":{
-			"light":"0E94B19D-7840-40E2-AC8B-B294D90D37B0",
 			"regular":"76350FC3-7629-4247-9D09-8AB9AF9BC6CF"
 		},
 		"keywords":["angle","quotation"],
@@ -6323,12 +6231,10 @@
 	"chevron-double-right":{
 		"categories":["arrows","characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f13e",
 		"id":{
-			"light":"D723DB11-DA77-4EB7-80B9-6E7FC59559B7",
 			"regular":"E4B5D36C-A663-4D53-BE18-09393497556F"
 		},
 		"keywords":["angle","quotation"],
@@ -6339,12 +6245,10 @@
 	"chevron-double-up":{
 		"categories":["arrows"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f13f",
 		"id":{
-			"light":"997ADB7A-BF59-49BB-B642-146F7181FA8C",
 			"regular":"53D302C9-3A0D-4104-967E-21D174E3C0B2"
 		},
 		"keywords":["top"],
@@ -6355,12 +6259,10 @@
 	"chevron-down":{
 		"categories":["arrows"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f140",
 		"id":{
-			"light":"A555103F-B25D-4773-91BD-3D319E5F3D79",
 			"regular":"84FE90C1-076D-4EA1-B56F-4C2582A39AC3"
 		},
 		"keywords":["bottom"],
@@ -6371,12 +6273,10 @@
 	"chevron-left":{
 		"categories":["arrows","characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f141",
 		"id":{
-			"light":"FD681AF4-55CA-4D3C-980B-F8D5A480BC40",
 			"regular":"CF5607F2-4106-4D47-8FE6-B8F5A16E6D98"
 		},
 		"keywords":["angle","quotation"],
@@ -6387,12 +6287,10 @@
 	"chevron-right":{
 		"categories":["arrows","characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f142",
 		"id":{
-			"light":"48A76F1A-C237-43B8-84C9-5B671DC82D1C",
 			"regular":"A6D25AD4-462B-4185-B739-FBFCD3ACF3C3"
 		},
 		"keywords":["angle","quotation"],
@@ -6403,12 +6301,10 @@
 	"chevron-up":{
 		"categories":["arrows"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f143",
 		"id":{
-			"light":"6CDD5B08-76F6-430A-86B1-8C583AFC9692",
 			"regular":"AECCC94F-C38A-4A97-879E-ACD09F89169A"
 		},
 		"keywords":["top"],
@@ -6498,12 +6394,10 @@
 			"regular":1932
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f764",
 		"id":{
-			"light":"0FF869B3-EDCD-4C5D-9820-86720A49DDF0",
 			"regular":"59803983-F6CE-4D40-B83C-36D42C9464A9"
 		},
 		"path":{
@@ -6553,12 +6447,10 @@
 	},
 	"clipboard":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f147",
 		"id":{
-			"light":"BCAF9107-51E6-4B4D-9191-57AF410F238F",
 			"regular":"423D4239-D8DC-4D8B-9365-9D51E2A0FDF7"
 		},
 		"path":{
@@ -6617,12 +6509,10 @@
 	},
 	"clipboard-check":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f14c",
 		"id":{
-			"light":"30832287-8E78-4874-8569-FF641D83030B",
 			"regular":"2FA574EF-C285-465F-A254-868506FA4273"
 		},
 		"path":{
@@ -6661,12 +6551,10 @@
 			"regular":1932
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f750",
 		"id":{
-			"light":"78F07900-177C-49B4-AB0F-C98D9880A794",
 			"regular":"A5AA9DEA-AAAE-4C79-965F-6828F823E2CD"
 		},
 		"path":{
@@ -6675,12 +6563,10 @@
 	},
 	"clipboard-text":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f14e",
 		"id":{
-			"light":"CE76EAAA-2805-4FF3-A23B-412B6B24510F",
 			"regular":"81453216-6EC0-4751-82A4-BFFF63B922FC"
 		},
 		"path":{
@@ -6704,12 +6590,10 @@
 	"clock":{
 		"categories":["time"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f150",
 		"id":{
-			"light":"CF579505-2C0D-4680-8BAD-B512DA19143D",
 			"regular":"E3A4F70D-92EF-4115-BBB3-3BE68A788F5D"
 		},
 		"path":{
@@ -6867,12 +6751,10 @@
 	"closed-caption":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f15e",
 		"id":{
-			"light":"F95EE0B7-CCE7-490F-9CA4-50BACA44119B",
 			"regular":"5367B460-F7E5-46C5-A4F5-40B339BF9DAD"
 		},
 		"keywords":["cc"],
@@ -6941,12 +6823,10 @@
 	"cloud":{
 		"categories":["networking","weather"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f15f",
 		"id":{
-			"light":"A8CAEDB6-5618-4287-8701-F95E0E49DD97",
 			"regular":"CF07C502-388E-4A65-BD89-FACCFD00C245"
 		},
 		"path":{
@@ -6999,12 +6879,10 @@
 	"cloud-download":{
 		"categories":["networking"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f162",
 		"id":{
-			"light":"90CC4600-7FE9-4A3E-A63E-DADCD23D4641",
 			"regular":"D8C49CD8-61B2-4F34-A4B8-543396B4A610"
 		},
 		"path":{
@@ -7099,12 +6977,10 @@
 	"cloud-upload":{
 		"categories":["networking"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f167",
 		"id":{
-			"light":"FFFF549B-99CE-4D3B-86E4-2BF32B6FFA17",
 			"regular":"BB4F16F6-B596-4725-8831-A794321542EB"
 		},
 		"path":{
@@ -7405,12 +7281,10 @@
 	},
 	"comment":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f17a",
 		"id":{
-			"light":"797F760F-AA0E-4DEA-A962-938EF8252AA8",
 			"regular":"B42FD735-27ED-47EC-887B-F5108774E6BC"
 		},
 		"path":{
@@ -7447,12 +7321,10 @@
 	},
 	"comment-alert":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f17d",
 		"id":{
-			"light":"F74F0CDB-6139-4592-9E9A-1CFB4AC40CAE",
 			"regular":"04CF8C3D-0D65-41CA-8D0D-53DD7EAB25B8"
 		},
 		"path":{
@@ -7581,12 +7453,10 @@
 	},
 	"comment-text":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f188",
 		"id":{
-			"light":"E5A9AF3F-78BA-4E40-8B11-92E044CA31B4",
 			"regular":"483321DB-C7E5-4E48-B739-8500F6153446"
 		},
 		"path":{
@@ -7647,12 +7517,10 @@
 		"aliases":["terminal"],
 		"categories":["networking"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f18d",
 		"id":{
-			"light":"CE052413-EC58-460D-B066-29FC2B4FA2B7",
 			"regular":"DCD0A183-A5DC-43BD-BC48-8FFF0CA0FA9C"
 		},
 		"path":{
@@ -7721,12 +7589,10 @@
 		"aliases":["scissors","clip"],
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f190",
 		"id":{
-			"light":"9C4D4131-6B0B-41C2-BDF6-62D6A4216C93",
 			"regular":"D4028362-37C3-4EED-BE0B-C78927C3F55D"
 		},
 		"path":{
@@ -7736,12 +7602,10 @@
 	"content-duplicate":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f191",
 		"id":{
-			"light":"A04D0EF7-A012-4B66-BA5B-3D15791A4D1F",
 			"regular":"B1A86989-2CB4-47DC-BC93-67A077792F72"
 		},
 		"path":{
@@ -7751,12 +7615,10 @@
 	"content-paste":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f192",
 		"id":{
-			"light":"5ECF5463-3D51-45A0-BECE-E9FE554691AB",
 			"regular":"75856C98-A0D6-4C78-A323-BD170B6E6094"
 		},
 		"path":{
@@ -7766,12 +7628,10 @@
 	"content-save":{
 		"categories":["editor","tech"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f193",
 		"id":{
-			"light":"DDA08254-F102-45B6-9D7F-B968662E961A",
 			"regular":"29F946C0-CA58-4287-AF0B-964961E5CC2C"
 		},
 		"keywords":["disc","disk"],
@@ -7782,12 +7642,10 @@
 	"content-save-all":{
 		"categories":["editor","tech"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f194",
 		"id":{
-			"light":"1CAD35C1-27AF-4739-A5F9-A510556D9690",
 			"regular":"B9BE7889-D858-41A1-AB4E-9C58325261E9"
 		},
 		"keywords":["discs","disks"],
@@ -7941,12 +7799,10 @@
 	"credit-card":{
 		"categories":["money"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f19b",
 		"id":{
-			"light":"38789AE7-120C-4CEC-8888-B33F46F7DE39",
 			"regular":"A121DBBB-C9E6-4534-AA7B-F59496787BD2"
 		},
 		"path":{
@@ -8001,12 +7857,10 @@
 	"credit-card-scan":{
 		"categories":["money"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f19d",
 		"id":{
-			"light":"AFEAC773-C960-4E5F-9ABB-C6090E5C762D",
 			"regular":"CF494E4E-F1FC-411D-87FD-933CC17EE08C"
 		},
 		"path":{
@@ -8016,12 +7870,10 @@
 	"crop":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f19e",
 		"id":{
-			"light":"99F1F09C-CA54-4DCC-959F-C5A4E1CE87D9",
 			"regular":"FA68ACCA-389F-453E-B886-FF3DAFE10530"
 		},
 		"path":{
@@ -8031,12 +7883,10 @@
 	"crop-free":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f19f",
 		"id":{
-			"light":"DAC98269-16D6-4C7D-8D66-A766F9726936",
 			"regular":"17AB799B-F531-4800-A7DE-23C5D95238F4"
 		},
 		"path":{
@@ -8296,12 +8146,10 @@
 		"aliases":["euro"],
 		"categories":["money"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f1ad",
 		"id":{
-			"light":"F23C850D-44EE-4EB9-8DF4-C64464FF5012",
 			"regular":"94C667B3-E2EB-428D-B422-751C234CCF44"
 		},
 		"path":{
@@ -8312,12 +8160,10 @@
 		"aliases":["pound","sterling"],
 		"categories":["money"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f1ae",
 		"id":{
-			"light":"9B93B39A-0EF8-4EEB-BFB8-E231337B4ECD",
 			"regular":"F9BD830F-EBB6-45A4-A576-0DEC27084A95"
 		},
 		"path":{
@@ -8394,12 +8240,10 @@
 		"aliases":["ruble"],
 		"categories":["money"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f1b1",
 		"id":{
-			"light":"CB835AAD-2E3B-4C53-BF5E-9F9A307336FD",
 			"regular":"57057EA1-1BA7-49F3-A8C7-51AF633DED68"
 		},
 		"keywords":["russian"],
@@ -8459,12 +8303,10 @@
 	"currency-usd":{
 		"categories":["money"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f1b3",
 		"id":{
-			"light":"131C469A-0A3B-46F3-8012-E691084F0EBD",
 			"regular":"3FA4946C-029B-42D3-AA31-3D607FB4A2F1"
 		},
 		"keywords":["dollars"],
@@ -8692,12 +8534,10 @@
 	"delete":{
 		"aliases":["bin","trash"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f1c0",
 		"id":{
-			"light":"A5930B2C-AB99-46FF-ADAE-E09E072344D2",
 			"regular":"71CD492D-A1E8-4A7A-961A-51DA30952BAD"
 		},
 		"path":{
@@ -8911,12 +8751,10 @@
 	},
 	"diamond":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f1c8",
 		"id":{
-			"light":"8FC3F861-3F35-4327-BEAF-01D3506313EF",
 			"regular":"7AEA1B64-9B6D-4D55-91F8-05BA1BF3BF89"
 		},
 		"keywords":["jewel"],
@@ -9376,12 +9214,10 @@
 		"aliases":["ellipsis-horizontal","more"],
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f1d8",
 		"id":{
-			"light":"33FC299C-2BB0-4B46-AA12-5E2C5698C105",
 			"regular":"9156AFAA-25BB-4E97-9EC8-BB9BE9AF60B0"
 		},
 		"path":{
@@ -9405,12 +9241,10 @@
 	"dots-vertical":{
 		"aliases":["ellipsis-vertical"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f1d9",
 		"id":{
-			"light":"1F345A6C-B293-4C71-A1A2-3DA3B13FDCD2",
 			"regular":"5D70B3D1-8407-42C9-A3C1-42EE68FF18F3"
 		},
 		"keywords":["more","options"],
@@ -9451,12 +9285,10 @@
 	"download":{
 		"categories":["networking"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f1da",
 		"id":{
-			"light":"E20DB718-55B4-4CA6-BA70-2D743F512DA3",
 			"regular":"704F7397-0E85-4213-8D76-FE156DF1795F"
 		},
 		"path":{
@@ -9723,12 +9555,10 @@
 	"eject":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f1ea",
 		"id":{
-			"light":"CB9BF164-92E3-4B95-87F1-ADD4C6F73656",
 			"regular":"4B57E9DF-354F-460D-9551-65C0DB55D788"
 		},
 		"path":{
@@ -9789,12 +9619,10 @@
 	},
 	"email":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f1ee",
 		"id":{
-			"light":"22A91DAE-D7F7-4D05-8060-D1575FB65227",
 			"regular":"14AAE073-8399-4D67-9F7E-8E9424328681"
 		},
 		"keywords":["e-mail","envelope","letter","mail","notification","support"],
@@ -9820,12 +9648,10 @@
 	},
 	"email-open":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f1ef",
 		"id":{
-			"light":"5715FCF4-081F-4A59-8879-98041CBA3296",
 			"regular":"1E550A45-9D97-4918-9DEC-F536EC5C7A1C"
 		},
 		"keywords":["e-mail","envelope","letter","mail","notification","support"],
@@ -10273,12 +10099,10 @@
 	},
 	"eye":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f208",
 		"id":{
-			"light":"2A422143-1C2E-43FD-8DC3-F1F29FDCBF31",
 			"regular":"3C2B7DF3-97FE-4EC4-B6A9-69A75FB26B67"
 		},
 		"path":{
@@ -10287,12 +10111,10 @@
 	},
 	"eye-off":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f209",
 		"id":{
-			"light":"FA1D915F-A7B1-438D-975B-E915DF0A11C3",
 			"regular":"4D1385CF-1389-43D3-BD88-A83018434FB6"
 		},
 		"path":{
@@ -10434,12 +10256,10 @@
 		"aliases":["industrial"],
 		"categories":["places"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f20f",
 		"id":{
-			"light":"7181A0AB-3BEE-45A5-BEE5-6FBDE82F56B0",
 			"regular":"B74F1DE6-5DEC-4866-AEED-DE85FE09C52F"
 		},
 		"path":{
@@ -10477,12 +10297,10 @@
 	"fast-forward":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f211",
 		"id":{
-			"light":"AA31F57B-F980-4397-9892-1C8B2D0AAC35",
 			"regular":"98B9D071-70A9-422B-BCC1-55DC4C2E0744"
 		},
 		"path":{
@@ -10555,12 +10373,10 @@
 	"file":{
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f214",
 		"id":{
-			"light":"F22C8C16-14E5-460A-98BC-3F27758FD50B",
 			"regular":"BFF59001-B52D-47E6-A217-C9095F81C3B8"
 		},
 		"path":{
@@ -10774,12 +10590,10 @@
 	"file-multiple":{
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f222",
 		"id":{
-			"light":"DF64A2B8-E24D-4E07-AB09-5FCF11985BC6",
 			"regular":"7696AF65-B943-4BA3-94DB-5E85077F7BA9"
 		},
 		"path":{
@@ -10860,12 +10674,10 @@
 		},
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f751",
 		"id":{
-			"light":"D53F15E8-7265-48B6-A0EB-315CDBB22873",
 			"regular":"9C42F83F-4C75-4E0A-A1C2-F10FA032E495"
 		},
 		"path":{
@@ -11175,12 +10987,10 @@
 	},
 	"flag":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f23b",
 		"id":{
-			"light":"CF85B119-F608-4F59-BBB0-D7D2F8055002",
 			"regular":"55271063-77EF-43FA-917C-657E57135A24"
 		},
 		"path":{
@@ -11254,12 +11064,10 @@
 		"aliases":["lightning-bolt"],
 		"categories":["power","weather"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f241",
 		"id":{
-			"light":"4C099158-5222-4530-8AEA-EB40367C0E2E",
 			"regular":"EF3D6923-793B-410C-B349-90A6A338F06C"
 		},
 		"path":{
@@ -11351,12 +11159,10 @@
 	"flask":{
 		"categories":["science"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f093",
 		"id":{
-			"light":"7FF06C65-3646-4D20-8EEC-BCF7AE9887FF",
 			"regular":"5E171637-949C-4091-9A6E-1A56C1DC8347"
 		},
 		"path":{
@@ -11366,12 +11172,10 @@
 	"flask-empty":{
 		"categories":["science"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f094",
 		"id":{
-			"light":"F79B4C4D-F0E4-4D74-AF4D-C727AAB8403D",
 			"regular":"D036C297-DB1B-42F5-A856-13EEBDB48613"
 		},
 		"path":{
@@ -11484,12 +11288,10 @@
 	"folder":{
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f24b",
 		"id":{
-			"light":"53BB9DE1-56E0-422B-A5E9-EE288938C388",
 			"regular":"9D8C1CEE-19BE-4B0B-85CC-DEB829F9F045"
 		},
 		"path":{
@@ -11594,12 +11396,10 @@
 	"folder-multiple":{
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f253",
 		"id":{
-			"light":"9E852062-A5C1-47BF-9963-C7AB379D8C38",
 			"regular":"7116841C-C243-4A44-8C68-267048AAF939"
 		},
 		"path":{
@@ -11664,12 +11464,10 @@
 	"folder-plus":{
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f257",
 		"id":{
-			"light":"5F1282B8-4CD3-4600-B566-459285CE0CD3",
 			"regular":"BAE32170-6509-4D1F-A6A5-A2FD1A0C679B"
 		},
 		"path":{
@@ -11888,12 +11686,10 @@
 		},
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f752",
 		"id":{
-			"light":"B1DCD5EE-531C-49A3-A0B4-ED56E89ABF34",
 			"regular":"CF22AACF-228D-4C3A-9BE7-D5DE853A0139"
 		},
 		"path":{
@@ -11903,12 +11699,10 @@
 	"format-align-center":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f260",
 		"id":{
-			"light":"0DEB60AF-193A-4469-A484-A527D398AA16",
 			"regular":"9B295DCA-8352-407E-84F1-34890975D010"
 		},
 		"path":{
@@ -11918,12 +11712,10 @@
 	"format-align-justify":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f261",
 		"id":{
-			"light":"4345CADB-3B7B-4877-B48B-A5864C87A0FA",
 			"regular":"521B67DD-EC96-4B1D-B884-BE155D850F85"
 		},
 		"path":{
@@ -11933,12 +11725,10 @@
 	"format-align-left":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f262",
 		"id":{
-			"light":"40E42DD2-ECEA-4E0B-92BC-B5520AAC812E",
 			"regular":"56F0424F-3D53-486E-BC4C-0738457ACBA8"
 		},
 		"path":{
@@ -11951,12 +11741,10 @@
 		},
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f753",
 		"id":{
-			"light":"377126F4-EBD9-42B9-BF2B-C3DE2601FFFF",
 			"regular":"59384E78-B7EF-4BDA-B537-35E537C00130"
 		},
 		"path":{
@@ -11966,12 +11754,10 @@
 	"format-align-right":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f263",
 		"id":{
-			"light":"AFA8FDE7-BCC2-4352-8BA4-F91572008315",
 			"regular":"7289388F-3768-4833-B282-0662FD9B9A73"
 		},
 		"path":{
@@ -11984,12 +11770,10 @@
 		},
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f754",
 		"id":{
-			"light":"045CF92E-E964-4FF9-AC34-8BD8DB0A7696",
 			"regular":"71140AD8-A0A6-45DD-9414-5DB2FBC875F1"
 		},
 		"path":{
@@ -12015,12 +11799,10 @@
 	"format-bold":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f264",
 		"id":{
-			"light":"CC61F854-E4CE-4DD6-8902-E5FE5550AA37",
 			"regular":"2107C153-0FEC-4171-8602-6549ACABA768"
 		},
 		"path":{
@@ -12030,12 +11812,10 @@
 	"format-clear":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f265",
 		"id":{
-			"light":"C07C3224-842D-4699-8359-B6E953E189FC",
 			"regular":"D5213C5D-AC53-40A5-BBCC-C8B3F849D6B4"
 		},
 		"path":{
@@ -12074,12 +11854,10 @@
 	"format-float-center":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"andreas-gohr"
 		},
 		"hex":"f267",
 		"id":{
-			"light":"A36FB467-36AD-481A-82D8-A31D46E8554E",
 			"regular":"3BC78F10-A7C3-4F15-9328-138E35CFC259"
 		},
 		"path":{
@@ -12089,12 +11867,10 @@
 	"format-float-left":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"andreas-gohr"
 		},
 		"hex":"f268",
 		"id":{
-			"light":"AC95D5C7-832D-4D05-9311-B9D4428368E4",
 			"regular":"E595D32A-5108-4E9A-BF98-52DEFC1A50EE"
 		},
 		"path":{
@@ -12104,12 +11880,10 @@
 	"format-float-none":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"andreas-gohr"
 		},
 		"hex":"f269",
 		"id":{
-			"light":"0A74F466-9FE8-40F3-A75E-81AC7F56CE9C",
 			"regular":"22DE1517-7E6C-43B9-B0E1-F3EDAEFE6398"
 		},
 		"path":{
@@ -12119,12 +11893,10 @@
 	"format-float-right":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"andreas-gohr"
 		},
 		"hex":"f26a",
 		"id":{
-			"light":"BBC821ED-9BA1-4A78-BC35-6F83B2437D84",
 			"regular":"8F5AF64B-3A3D-449C-9FCC-374EAF6D523C"
 		},
 		"path":{
@@ -12328,12 +12100,10 @@
 	"format-indent-decrease":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f275",
 		"id":{
-			"light":"2E0F378D-0CE5-4AAF-89C4-3DA29086A7D1",
 			"regular":"148FD97C-E3C6-4E41-87B8-488036159CC6"
 		},
 		"path":{
@@ -12343,12 +12113,10 @@
 	"format-indent-increase":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f276",
 		"id":{
-			"light":"925460C8-2470-4176-8988-4A1DA74F590C",
 			"regular":"18B9F49B-7A69-4E93-AEA6-8CB30F22E100"
 		},
 		"path":{
@@ -12358,12 +12126,10 @@
 	"format-italic":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f277",
 		"id":{
-			"light":"706D0A64-8CC2-4C2A-A4EC-181B6069AB01",
 			"regular":"F766C5E3-1BBB-4ADE-9D33-170A223DB6F9"
 		},
 		"path":{
@@ -12373,12 +12139,10 @@
 	"format-line-spacing":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f278",
 		"id":{
-			"light":"C6F5FAFB-34FC-482D-9CE3-797F2E8AC484",
 			"regular":"24F69EED-721D-48A1-BA3C-3C1657B65C04"
 		},
 		"path":{
@@ -12420,12 +12184,10 @@
 	"format-list-bulleted":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f279",
 		"id":{
-			"light":"738FDD6E-1A80-4163-A469-6A1FE53176D4",
 			"regular":"2FBAE8A7-BAC7-44C8-85DC-EB458871BF29"
 		},
 		"path":{
@@ -12454,12 +12216,10 @@
 		},
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f755",
 		"id":{
-			"light":"96FD6FFA-9CDE-47A4-B91B-986065B8AA31",
 			"regular":"2B19EECF-71BF-41F3-B62A-468607BA0B47"
 		},
 		"keywords":["checklist"],
@@ -12470,12 +12230,10 @@
 	"format-list-numbers":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f27b",
 		"id":{
-			"light":"91658E63-7BDD-4FD2-A515-C4AC440B98FF",
 			"regular":"EFEB4AB3-780B-4C2D-B673-36BB0A4FE0B2"
 		},
 		"path":{
@@ -12543,12 +12301,10 @@
 	"format-quote-close":{
 		"categories":["characters","editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f27e",
 		"id":{
-			"light":"E634ECA0-683D-4B53-92FE-5FF486DC7219",
 			"regular":"0450C081-EE6B-4CB1-A7F7-B6F0F524CA99"
 		},
 		"path":{
@@ -12564,12 +12320,10 @@
 		},
 		"categories":["characters","editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f756",
 		"id":{
-			"light":"AE33A258-80E8-4EB0-AC1F-8F6B1C2875CE",
 			"regular":"CF5D126B-7DC1-4BE7-B5A1-E31B715EDBAA"
 		},
 		"path":{
@@ -12736,12 +12490,10 @@
 	"format-underline":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f287",
 		"id":{
-			"light":"9CC99C31-91E6-4230-B80D-D5A96428E3D5",
 			"regular":"DD218F3D-C302-477A-9B9F-482813328DE6"
 		},
 		"path":{
@@ -12799,12 +12551,10 @@
 	"format-wrap-inline":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"andreas-gohr"
 		},
 		"hex":"f288",
 		"id":{
-			"light":"60F766F8-420C-43AF-A1A9-774FE8CEEC92",
 			"regular":"556AFB1F-1857-4CB9-94B8-2E7E8A8DD292"
 		},
 		"path":{
@@ -12814,12 +12564,10 @@
 	"format-wrap-square":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"andreas-gohr"
 		},
 		"hex":"f289",
 		"id":{
-			"light":"94C280ED-D295-42CC-BFF0-EFDED63E6FD2",
 			"regular":"D5787449-1950-4A7C-8CD9-CABC628AFBCE"
 		},
 		"path":{
@@ -12829,12 +12577,10 @@
 	"format-wrap-tight":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"andreas-gohr"
 		},
 		"hex":"f28a",
 		"id":{
-			"light":"F4A16C99-B444-40A4-B568-902DE851CEB9",
 			"regular":"4AA96763-2A6C-4BF0-BA64-32AD08B530F6"
 		},
 		"path":{
@@ -12844,12 +12590,10 @@
 	"format-wrap-top-bottom":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"andreas-gohr"
 		},
 		"hex":"f28b",
 		"id":{
-			"light":"7D783F9D-CAE2-4470-8CBB-2294C085CD54",
 			"regular":"0378C7CD-8331-42A0-9C0F-114960FD5966"
 		},
 		"path":{
@@ -12859,12 +12603,10 @@
 	"forum":{
 		"aliases":["message-group"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f28c",
 		"id":{
-			"light":"C1D28BF0-69AB-45C3-AA2A-1E373C3F7855",
 			"regular":"3AC84477-2308-4445-868C-9666AE25B054"
 		},
 		"path":{
@@ -12969,12 +12711,10 @@
 	"fullscreen":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f293",
 		"id":{
-			"light":"158F2597-422F-4068-8E18-8EF8983E1BE1",
 			"regular":"A4F7E2E4-704C-4A71-99D5-4BD19AD8E755"
 		},
 		"path":{
@@ -12984,12 +12724,10 @@
 	"fullscreen-exit":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f294",
 		"id":{
-			"light":"DE213505-D4B6-4630-ABE3-1A7F689F6905",
 			"regular":"CE6DC9C1-A636-4B3E-B838-34069330D3B2"
 		},
 		"path":{
@@ -13355,12 +13093,10 @@
 	"gift":{
 		"aliases":["donate","present"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f2a1",
 		"id":{
-			"light":"80DC672D-1D3A-42FD-B6C8-5274AC9AE5A6",
 			"regular":"22D0C782-CD05-4FEB-845F-BBA7126C7326"
 		},
 		"path":{
@@ -13938,12 +13674,10 @@
 	"grid":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f2c1",
 		"id":{
-			"light":"CB27B665-499F-4F91-AF9D-0162AF970D90",
 			"regular":"8D4C203D-A1F0-42DA-997A-AB7BAC63D97B"
 		},
 		"path":{
@@ -13956,12 +13690,10 @@
 		},
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f757",
 		"id":{
-			"light":"AB182EDD-DD9E-45AE-A3F8-4E6A2FC8C1FB",
 			"regular":"4A3863FA-620C-4564-8A7B-57681117B81D"
 		},
 		"path":{
@@ -13971,12 +13703,10 @@
 	"grid-off":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f2c2",
 		"id":{
-			"light":"C153CDE7-4B28-400E-9E24-8395843D2729",
 			"regular":"4A8DDCEF-7E60-4864-9CC3-64C9A5B0D6D4"
 		},
 		"path":{
@@ -13986,12 +13716,10 @@
 	"group":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f2c3",
 		"id":{
-			"light":"1454CE6A-3C1E-4C78-9C91-AC141569BF7B",
 			"regular":"D1B31666-9F9A-4CAB-843B-4BFEDBCC5347"
 		},
 		"path":{
@@ -14088,12 +13816,10 @@
 		},
 		"categories":["food"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"japanyoshi"
 		},
 		"hex":"f684",
 		"id":{
-			"light":"0AFEC8E7-DCF5-4DB6-B353-B53FE10C0986",
 			"regular":"F5BC2290-D719-4974-9920-DF8E08E5F955"
 		},
 		"keywords":["burger"],
@@ -14249,12 +13975,10 @@
 	"heart":{
 		"categories":["science"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f2d1",
 		"id":{
-			"light":"DCB5714F-9E65-43C5-A6BA-FFB5F91700DC",
 			"regular":"32B56DB2-B6BF-4B54-AD0C-9444106B1C1D"
 		},
 		"keywords":["favourite","like","love"],
@@ -14305,12 +14029,10 @@
 			"regular":1836
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f6de",
 		"id":{
-			"light":"4663D762-2980-4F05-BA77-475660CBAA63",
 			"regular":"1B01BAE0-095E-424E-9552-6ECEF5E4FC62"
 		},
 		"keywords":["favourite","like","love"],
@@ -14366,12 +14088,10 @@
 		},
 		"categories":["science"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f758",
 		"id":{
-			"light":"DB206EFF-52CB-4FCE-B597-37DDD2533F02",
 			"regular":"012A92C0-E5DE-4FB4-9AB1-9BD5F53861E0"
 		},
 		"keywords":["favourite","like","love"],
@@ -14414,12 +14134,10 @@
 		"aliases":["question-mark"],
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f2d6",
 		"id":{
-			"light":"143D265A-0357-4B89-81B8-765BBF8B11AC",
 			"regular":"62675A10-D453-40EB-8AED-A789A39EEF11"
 		},
 		"keywords":["faq"],
@@ -14450,12 +14168,10 @@
 		"aliases":["question-mark-circle"],
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f2d7",
 		"id":{
-			"light":"C65E2C17-E7C8-41DF-BC1C-BDB81AD51842",
 			"regular":"49B41103-DD15-4FF4-A18A-44D8586704B6"
 		},
 		"keywords":["faq"],
@@ -14501,12 +14217,10 @@
 	},
 	"hexagon":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f2d8",
 		"id":{
-			"light":"BC458BAC-5406-4D3C-92B9-477C0F903702",
 			"regular":"229D267D-F77F-4F33-ADD4-325647EC2662"
 		},
 		"path":{
@@ -14604,12 +14318,10 @@
 		"aliases":["house"],
 		"categories":["assistant","places"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f2dc",
 		"id":{
-			"light":"72587467-554B-4B15-8278-CB4270960379",
 			"regular":"5D085274-15B9-42EC-8CCE-2F94C5EC039C"
 		},
 		"path":{
@@ -15053,12 +14765,10 @@
 	"image":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f2e9",
 		"id":{
-			"light":"03C72909-2540-48D8-B092-6959A26C51C1",
 			"regular":"3238BA72-FEE8-4C90-A440-AD701359A7BC"
 		},
 		"path":{
@@ -15279,12 +14989,10 @@
 			"regular":1712
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f686",
 		"id":{
-			"light":"CBEFDFD8-F2AD-4377-89C3-AD7D8E025CA6",
 			"regular":"4DDB79C2-C3AE-41DC-B560-AFBF3F689E86"
 		},
 		"keywords":["e-mail","mail","notification"],
@@ -15351,12 +15059,10 @@
 	},
 	"information":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f2fc",
 		"id":{
-			"light":"2F0BA9E2-7D75-4061-917C-765CBF2B918E",
 			"regular":"2BC4A4B6-119B-4637-BF3D-1FB9394E1F38"
 		},
 		"path":{
@@ -15767,12 +15473,10 @@
 	},
 	"label":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f315",
 		"id":{
-			"light":"DDEFEEEE-148A-499E-A2D4-75E78A85E3A8",
 			"regular":"C749E06B-E75E-4D9B-97A6-47E9399D01FC"
 		},
 		"path":{
@@ -16179,12 +15883,10 @@
 	},
 	"layers":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f328",
 		"id":{
-			"light":"01667295-C9F0-49DA-9BCA-38AA46D64D0F",
 			"regular":"36A9B462-C487-458E-BFB6-2415739BC968"
 		},
 		"path":{
@@ -16382,12 +16084,10 @@
 	"lightbulb":{
 		"categories":["assistant","power"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f335",
 		"id":{
-			"light":"262D67F4-EC4D-4987-BC4F-9C1E43385A87",
 			"regular":"ECC94305-DFA6-4D9B-85C8-CC79F3F05FB5"
 		},
 		"keywords":["bulb","idea"],
@@ -16401,12 +16101,10 @@
 		},
 		"categories":["assistant","power"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f6e7",
 		"id":{
-			"light":"CEFBBB36-E4D3-477D-A09A-F39CE93AD68C",
 			"regular":"4B3F67C4-02C3-4083-B47A-645AD24992FA"
 		},
 		"keywords":["bulb","idea"],
@@ -16448,12 +16146,10 @@
 	"link":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f337",
 		"id":{
-			"light":"702C4768-FC47-4643-9842-BE8D4FE28B5E",
 			"regular":"462769C2-0A30-4B31-B66C-55168B10D705"
 		},
 		"path":{
@@ -16476,12 +16172,10 @@
 	"link-variant":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f339",
 		"id":{
-			"light":"89C91993-4562-4C35-8AD5-B3048B3AF883",
 			"regular":"4D09DDBE-9716-4162-9DA9-B50892241E15"
 		},
 		"path":{
@@ -16561,12 +16255,10 @@
 	"lock":{
 		"categories":["assistant"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f33e",
 		"id":{
-			"light":"90755BC8-CFF6-4CD7-B163-609286A04272",
 			"regular":"D711AFDE-2B8D-4932-82AC-A04E7B2810AE"
 		},
 		"path":{
@@ -16576,12 +16268,10 @@
 	"lock-open":{
 		"categories":["assistant"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f33f",
 		"id":{
-			"light":"5864543F-FCBC-4884-8D8E-6756AD648795",
 			"regular":"E357D5CD-7E42-463B-899A-7D7B038A3E31"
 		},
 		"path":{
@@ -16686,12 +16376,10 @@
 	},
 	"login":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f342",
 		"id":{
-			"light":"7D3FBCF1-335E-4663-8C19-63737F595184",
 			"regular":"63D8BFA5-7AE4-4002-A4C2-C464638C38FC"
 		},
 		"path":{
@@ -16715,12 +16403,10 @@
 	},
 	"logout":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f343",
 		"id":{
-			"light":"7A46E0FC-01BB-4281-B572-AAF5AA2BA698",
 			"regular":"47DF41F2-49C7-4081-8419-F49C7894E7F1"
 		},
 		"path":{
@@ -16823,12 +16509,10 @@
 	"magnify":{
 		"aliases":["search"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f349",
 		"id":{
-			"light":"63DF7BAF-09E5-460B-B002-940E69F4AA9E",
 			"regular":"C2889545-7F08-4AE1-9142-ECF9B79957E1"
 		},
 		"keywords":["zoom"],
@@ -16838,12 +16522,10 @@
 	},
 	"magnify-minus":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f34a",
 		"id":{
-			"light":"CB25CBD7-9DED-476D-BD54-E57243E2E93A",
 			"regular":"36D3966F-BFA2-407B-BF36-D21FBA930930"
 		},
 		"keywords":["minify","out","smaller","zoom"],
@@ -16869,12 +16551,10 @@
 	},
 	"magnify-plus":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f34b",
 		"id":{
-			"light":"265939D8-F8AA-459C-99C2-69D81D6FFE17",
 			"regular":"798F7C9D-2EC7-47EF-8729-845B4E2DDD16"
 		},
 		"keywords":["bigger","enlarge","in","zoom"],
@@ -16944,12 +16624,10 @@
 		"aliases":["address-marker","location"],
 		"categories":["places"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f34e",
 		"id":{
-			"light":"0AB4C37B-B402-4BA4-B8FD-E5D2479BA4C1",
 			"regular":"379B9D93-434B-46E7-9ABC-CAFAB694B209"
 		},
 		"path":{
@@ -17222,12 +16900,10 @@
 	"memory":{
 		"categories":["tech"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f35b",
 		"id":{
-			"light":"16D76B72-600B-4AA0-BAAD-7DE27560C3DC",
 			"regular":"E404434E-17DB-4E90-9D97-5355258E1FCF"
 		},
 		"path":{
@@ -17236,12 +16912,10 @@
 	},
 	"menu":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f35c",
 		"id":{
-			"light":"F8924903-5C4B-4C72-8E75-02DAB78DBF57",
 			"regular":"0BD2CD08-CCFB-4EC3-B96D-08B0B8230A91"
 		},
 		"keywords":["bars","burger","hamburger","navigation"],
@@ -17341,12 +17015,10 @@
 	},
 	"message":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f361",
 		"id":{
-			"light":"55FAC0F1-8B5F-4B0A-AAD6-77E03B0737A8",
 			"regular":"99DA4752-8C79-44D8-8286-6EBD696F0B45"
 		},
 		"path":{
@@ -17356,12 +17028,10 @@
 	"message-alert":{
 		"aliases":["feedback"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f362",
 		"id":{
-			"light":"F8B0917A-60B6-412C-A495-E6A4943AA559",
 			"regular":"213A797A-41C0-4804-A5B1-A841898CCC11"
 		},
 		"path":{
@@ -17414,12 +17084,10 @@
 	},
 	"message-image":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f364",
 		"id":{
-			"light":"1FAD7F13-45BD-4367-B0E3-3032A386EBF1",
 			"regular":"C4C9B194-78C3-47FB-ABF6-5129230527AC"
 		},
 		"path":{
@@ -17455,12 +17123,10 @@
 	},
 	"message-processing":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f366",
 		"id":{
-			"light":"0832CE54-C732-4C10-ADC9-C89232CC7986",
 			"regular":"602EE454-C61C-4608-919E-FCCF3B58DE65"
 		},
 		"path":{
@@ -17469,12 +17135,10 @@
 	},
 	"message-reply":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f367",
 		"id":{
-			"light":"D0A87373-2E0F-4875-9EE1-6B56CAD7F2E1",
 			"regular":"6657779A-7238-4686-B3D5-1244862D7B2C"
 		},
 		"path":{
@@ -17525,12 +17189,10 @@
 	},
 	"message-text":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f369",
 		"id":{
-			"light":"9DB3406B-67CC-4E7D-891A-6F9E780647D5",
 			"regular":"D2AFF074-2CE4-442D-AF1A-64B168BC622A"
 		},
 		"path":{
@@ -17551,12 +17213,10 @@
 	},
 	"message-video":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f36b",
 		"id":{
-			"light":"6963FBE8-58F2-4EDB-A678-1E9610FD9BA5",
 			"regular":"7AEB07C3-0EFC-4D74-BB5B-2EB1288DC27D"
 		},
 		"path":{
@@ -17629,12 +17289,10 @@
 	"microphone":{
 		"categories":["tech"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f36c",
 		"id":{
-			"light":"AA49407C-B0AB-4A00-8BF9-A6ADCDA00401",
 			"regular":"18C99959-2A0E-4095-BAEA-F5B266377648"
 		},
 		"path":{
@@ -17644,12 +17302,10 @@
 	"microphone-off":{
 		"categories":["networking"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f36d",
 		"id":{
-			"light":"0E20C91C-06F6-4228-91F6-79355BEAF8EF",
 			"regular":"90AD0141-2243-49F0-8B84-FF909244D237"
 		},
 		"path":{
@@ -17756,12 +17412,10 @@
 	"minus":{
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f374",
 		"id":{
-			"light":"328DA771-B76B-4493-9DB3-A5FE9A68339F",
 			"regular":"2CEA6B7B-E7C9-4D52-9D9D-286E50001B70"
 		},
 		"path":{
@@ -17771,12 +17425,10 @@
 	"minus-box":{
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f375",
 		"id":{
-			"light":"FB697170-364D-4381-BB9A-56F020F5F72C",
 			"regular":"6BFAE994-AF2D-4B04-965D-9734631D5F0D"
 		},
 		"path":{
@@ -17802,12 +17454,10 @@
 	"minus-circle":{
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f376",
 		"id":{
-			"light":"ECE487FF-38C4-4D44-9BF6-74773B4EA6AC",
 			"regular":"DDEB98E7-E016-44CA-8DE7-A31969C2CC04"
 		},
 		"path":{
@@ -17871,12 +17521,10 @@
 	"monitor":{
 		"categories":["assistant","tech"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f379",
 		"id":{
-			"light":"9527CECB-7171-4C81-8B98-27785860CDBD",
 			"regular":"35091AEB-2AF7-4F92-A249-2955F01404A3"
 		},
 		"path":{
@@ -17886,12 +17534,10 @@
 	"monitor-multiple":{
 		"categories":["assistant","tech"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"chris-litherland"
 		},
 		"hex":"f37a",
 		"id":{
-			"light":"4EBCAF8B-8EBE-442D-A711-B5D40A5D3563",
 			"regular":"7768BF7B-0A52-4492-88BD-5A482E4D61C3"
 		},
 		"path":{
@@ -18090,12 +17736,10 @@
 			"regular":1932
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f759",
 		"id":{
-			"light":"095EFE20-E3B3-465D-B63F-BF27C2E69DC0",
 			"regular":"E7DA3CF2-C345-441D-BFC2-ABC4DB195A6A"
 		},
 		"keywords":["note","sound"],
@@ -18288,12 +17932,10 @@
 			"regular":1932
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f75a",
 		"id":{
-			"light":"EA7B5C9F-AED9-4951-970E-3300E3BADB13",
 			"regular":"E9D8BB99-B31B-4940-9EEE-B69569060B0D"
 		},
 		"keywords":["mute","note","sound"],
@@ -18492,12 +18134,10 @@
 	"nfc-variant":{
 		"categories":["networking"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f398",
 		"id":{
-			"light":"FA7E8ECE-C101-42CE-A060-80929EB753E5",
 			"regular":"4DFF5414-0EA3-4255-BC50-B40B0E3ADB15"
 		},
 		"path":{
@@ -18551,12 +18191,10 @@
 	"note":{
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f39a",
 		"id":{
-			"light":"2A535D58-3826-46B6-A143-586703D5B82C",
 			"regular":"5E1DF73F-AEF5-48F8-B766-419FBB05C5D0"
 		},
 		"path":{
@@ -18569,12 +18207,10 @@
 		},
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f6b7",
 		"id":{
-			"light":"5692776A-1307-4CE5-87AD-DDD871C59E43",
 			"regular":"0A0E42BA-FE9D-44C6-BF6A-D29D6013F2E0"
 		},
 		"path":{
@@ -18613,12 +18249,10 @@
 	"note-plus":{
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f39c",
 		"id":{
-			"light":"C17035E7-3C79-46EE-B678-58514EAA2492",
 			"regular":"753F2E09-A32F-4790-9C07-7CD9AB69104D"
 		},
 		"path":{
@@ -18641,12 +18275,10 @@
 	"note-text":{
 		"categories":["files"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f39e",
 		"id":{
-			"light":"702AC1CD-3009-4046-946A-1B4994C181CC",
 			"regular":"2ADC4253-F51B-4BC2-B04C-0DDD139425CF"
 		},
 		"path":{
@@ -19247,12 +18879,10 @@
 	},
 	"octagon":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f3c3",
 		"id":{
-			"light":"DDDB9646-C67B-4AFD-8C8F-10B5C3B71601",
 			"regular":"5E3C88DE-A208-471A-9096-7C7868CC957C"
 		},
 		"path":{
@@ -19830,12 +19460,10 @@
 	"paperclip":{
 		"aliases":["attachment-vertical"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f3e2",
 		"id":{
-			"light":"FE5D7322-FA4D-4453-911A-3B17F06D21BD",
 			"regular":"27BCEC7F-ABF8-4506-B339-EE2425E1BAF9"
 		},
 		"path":{
@@ -19876,12 +19504,10 @@
 	"pause":{
 		"categories":["assistant","player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f3e4",
 		"id":{
-			"light":"C869448C-D281-48A0-8BC1-AEE451ED4941",
 			"regular":"2A1F0831-13CA-4419-BBD7-1F1FAF62A32B"
 		},
 		"path":{
@@ -19995,12 +19621,10 @@
 	"pencil":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f3eb",
 		"id":{
-			"light":"0DAEDFB9-7C35-4586-ACDB-6843D8933777",
 			"regular":"BB27CE6C-769A-4C0C-A53C-F1B10B9C4423"
 		},
 		"path":{
@@ -20185,12 +19809,10 @@
 	"phone":{
 		"categories":["tech"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f3f2",
 		"id":{
-			"light":"A4798268-A431-4A0D-A16B-7AF7B7D2DBB4",
 			"regular":"B5BA809F-FCE8-476C-8388-6A9CFFF73015"
 		},
 		"path":{
@@ -20492,12 +20114,10 @@
 	"pin":{
 		"categories":["places"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f403",
 		"id":{
-			"light":"D2184A71-A301-4547-917F-6761E7945748",
 			"regular":"B1337135-0E57-465F-8C0C-E658C9981A19"
 		},
 		"path":{
@@ -20507,12 +20127,10 @@
 	"pin-off":{
 		"categories":["places"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f404",
 		"id":{
-			"light":"2B837329-53BE-487B-BE43-C5D1BA9AD2FB",
 			"regular":"8C59FE68-D89C-4A86-8E01-5C8109D1B028"
 		},
 		"path":{
@@ -20651,12 +20269,10 @@
 	"play":{
 		"categories":["assistant","player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f40a",
 		"id":{
-			"light":"BCA0ABF1-C7BB-4244-B30F-ACB1718C3970",
 			"regular":"90AD6D2A-7986-49D0-8DA5-DC92F9F92A15"
 		},
 		"path":{
@@ -20840,12 +20456,10 @@
 		"aliases":["add"],
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f415",
 		"id":{
-			"light":"9A20D2A7-9E10-4BB6-BC47-13008798E39F",
 			"regular":"2DE4F8E6-F25C-4FCA-8405-109FA8918B78"
 		},
 		"path":{
@@ -20855,12 +20469,10 @@
 	"plus-box":{
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f416",
 		"id":{
-			"light":"FCBF01D0-7430-441F-B797-5775D9B4540C",
 			"regular":"87EE041D-81D2-4F1A-A757-F76E9D8686EF"
 		},
 		"keywords":["add"],
@@ -20888,12 +20500,10 @@
 	"plus-circle":{
 		"categories":["characters"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f417",
 		"id":{
-			"light":"6891B856-58C8-4963-988D-099F88B4D0EE",
 			"regular":"0F76DADF-2A8D-4C1F-B43E-DC3C6D282BBF"
 		},
 		"keywords":["add"],
@@ -21156,12 +20766,10 @@
 	"power":{
 		"categories":["assistant","power"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f425",
 		"id":{
-			"light":"2BE93F7C-D267-4C97-814A-93550085C06B",
 			"regular":"C945D203-9737-4C25-87CA-29D97B862DD2"
 		},
 		"path":{
@@ -21281,12 +20889,10 @@
 	},
 	"presentation":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f428",
 		"id":{
-			"light":"BE559576-766F-4911-B71C-4C5C6625AFB3",
 			"regular":"DAEB5F87-858A-4677-B023-C9EC71F99F6C"
 		},
 		"path":{
@@ -21295,12 +20901,10 @@
 	},
 	"presentation-play":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f429",
 		"id":{
-			"light":"F6AF7E07-0587-463C-B0BC-707A39DA4AA3",
 			"regular":"E182F4B3-B2B0-41CD-90DC-5ADFBE25DA90"
 		},
 		"path":{
@@ -21327,12 +20931,10 @@
 	"printer":{
 		"categories":["assistant","tech"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f42a",
 		"id":{
-			"light":"B2BF6BC2-B8B7-40A9-B21A-6744DD313DA1",
 			"regular":"7365D689-4C10-4EBA-AD9A-09189B8091EE"
 		},
 		"path":{
@@ -21888,12 +21490,10 @@
 	"redo-variant":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f44f",
 		"id":{
-			"light":"A1108614-F000-4CD4-8954-617C969B1803",
 			"regular":"72717CF3-6D1D-4032-9799-1F553CAD067E"
 		},
 		"path":{
@@ -21902,12 +21502,10 @@
 	},
 	"refresh":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f450",
 		"id":{
-			"light":"061F0462-756A-4DB4-89DD-C52574F64CC5",
 			"regular":"AD3C7A2B-0B64-4183-9452-C96EAAF3E08E"
 		},
 		"path":{
@@ -22010,12 +21608,10 @@
 	"repeat":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f456",
 		"id":{
-			"light":"B432DD97-E179-4DA6-BED3-B2358C136AA4",
 			"regular":"9AEE0CB7-46B9-414F-A8A8-AFB127CB7057"
 		},
 		"path":{
@@ -22025,12 +21621,10 @@
 	"repeat-off":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f457",
 		"id":{
-			"light":"EB18866B-23E5-49A2-9D3D-4F6D5FBD180D",
 			"regular":"06540FC6-0AF2-40C7-895A-B8C98BD143D1"
 		},
 		"path":{
@@ -22040,12 +21634,10 @@
 	"repeat-once":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f458",
 		"id":{
-			"light":"506651C5-01A2-4069-9E59-0DB46AEAA4DF",
 			"regular":"D27E266C-5F69-4E4F-9DE3-65A47B5208F5"
 		},
 		"path":{
@@ -22159,12 +21751,10 @@
 	"rewind":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f45f",
 		"id":{
-			"light":"AC057191-6302-4F43-973F-D123271B05EA",
 			"regular":"28BCDF41-AA93-4C25-B87A-95A3F5DD8805"
 		},
 		"path":{
@@ -22193,12 +21783,10 @@
 		},
 		"aliases":["diamond"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"michael-irigoyen"
 		},
 		"hex":"f70a",
 		"id":{
-			"light":"4EC8E41A-4223-4924-993D-6D356B7DA3BC",
 			"regular":"68CFD178-A6FE-4DB5-9C39-FCA6A3EA83A5"
 		},
 		"path":{
@@ -22456,12 +22044,10 @@
 	},
 	"rss":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f46b",
 		"id":{
-			"light":"0CDBEABB-EED4-49EB-BC30-09E85A002AA0",
 			"regular":"9E877D76-9BC5-496D-99E4-1E6029DE1B4D"
 		},
 		"path":{
@@ -22713,12 +22299,10 @@
 	},
 	"script":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f478",
 		"id":{
-			"light":"E5C73896-54BC-470D-80F7-054EEF75F206",
 			"regular":"6E18A0EA-1F19-47E3-83DD-25732C1D318D"
 		},
 		"keywords":["scroll"],
@@ -23269,12 +22853,10 @@
 	"settings":{
 		"aliases":["cog","gear"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f493",
 		"id":{
-			"light":"D8D3EECD-5B12-4466-81AC-82B868117618",
 			"regular":"E4A14909-3821-4DB1-A739-4DA464ABEEB7"
 		},
 		"path":{
@@ -23392,12 +22974,10 @@
 	},
 	"shield":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f498",
 		"id":{
-			"light":"E3790795-EB82-4BBD-A409-155F7E8C4A2A",
 			"regular":"A3709A80-3219-4E83-9D4F-EF74F31EEAAE"
 		},
 		"path":{
@@ -23505,12 +23085,10 @@
 	"shuffle":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f49d",
 		"id":{
-			"light":"804E6F4F-4910-4B27-90B5-E3A79A61180D",
 			"regular":"99537665-2115-40D6-9725-0F4B4730C99A"
 		},
 		"path":{
@@ -23623,12 +23201,10 @@
 	"signal":{
 		"categories":["networking"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f4a2",
 		"id":{
-			"light":"4D278441-7983-431C-9527-79B25679B794",
 			"regular":"7099FDF8-B653-4C49-BE2B-5B96147A709D"
 		},
 		"path":{
@@ -23843,12 +23419,10 @@
 	},
 	"sitemap":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f4aa",
 		"id":{
-			"light":"A14FAF31-A10F-4AE8-9221-994BB80C208F",
 			"regular":"673CE0A7-8AA2-4BFD-9308-B51589FBF520"
 		},
 		"path":{
@@ -23884,12 +23458,10 @@
 	"skip-next":{
 		"categories":["assistant","player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f4ad",
 		"id":{
-			"light":"AD4E5824-19A5-455B-88B0-4EE98F715DD8",
 			"regular":"D2F19A25-4EF4-41A7-A91A-C03C77E32186"
 		},
 		"path":{
@@ -23934,12 +23506,10 @@
 	"skip-previous":{
 		"categories":["assistant","player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f4ae",
 		"id":{
-			"light":"BF5ACDE7-B027-4DAE-B7BB-AE4588C47D75",
 			"regular":"8D8B924F-0AD5-4458-9BCE-0A5887D935B6"
 		},
 		"path":{
@@ -24038,12 +23608,10 @@
 	},
 	"sleep":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f4b2",
 		"id":{
-			"light":"A612A948-8495-4003-B2F5-24A0B88825C6",
 			"regular":"C9CF20D8-55F4-4997-8019-F8056ED86702"
 		},
 		"path":{
@@ -24052,12 +23620,10 @@
 	},
 	"sleep-off":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f4b3",
 		"id":{
-			"light":"8FE1B42E-EFCA-431D-9C85-233572E6E107",
 			"regular":"0801B02C-2187-40D1-8A03-D521D0214662"
 		},
 		"path":{
@@ -24523,12 +24089,10 @@
 	"spellcheck":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f4c6",
 		"id":{
-			"light":"321A7282-FD73-4EB3-B6C7-C2BD4EF1B36F",
 			"regular":"72253002-9545-40A4-95A4-49401269B553"
 		},
 		"path":{
@@ -24595,12 +24159,10 @@
 			"regular":1932
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f763",
 		"id":{
-			"light":"8234401A-3F00-4285-8638-DA7E4E1FB313",
 			"regular":"5659F8EC-377D-41D2-AB3A-52DC40815DC7"
 		},
 		"path":{
@@ -24745,12 +24307,10 @@
 	"star":{
 		"categories":["weather"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f4ce",
 		"id":{
-			"light":"1A83CD80-71FB-448C-A7FB-76492B7880D3",
 			"regular":"53D81A11-D8FF-46F4-A0CB-B7F668BA720D"
 		},
 		"keywords":["award","achievement","favourite","night","rate","rating","score"],
@@ -24773,12 +24333,10 @@
 	},
 	"star-half":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f4d0",
 		"id":{
-			"light":"A316B314-1FE5-4144-9901-047DBDA73338",
 			"regular":"52E97617-C7F4-45D0-98E0-E9B4407EC179"
 		},
 		"keywords":["award","achievement","favourite","rate","rating","score"],
@@ -24958,12 +24516,10 @@
 	"stop":{
 		"categories":["player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f4db",
 		"id":{
-			"light":"679F175A-6EB7-4829-AA58-6494EAB804E6",
 			"regular":"F1057179-EA45-4D87-A14D-D05442C06503"
 		},
 		"path":{
@@ -25351,12 +24907,10 @@
 	},
 	"tab":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f4e9",
 		"id":{
-			"light":"35592B86-7F1D-4ADD-9A11-053EF555D1AD",
 			"regular":"76D6AAA9-7D7F-4C7A-818E-D9947744A23C"
 		},
 		"path":{
@@ -25368,12 +24922,10 @@
 			"regular":1932
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f75b",
 		"id":{
-			"light":"506D324D-6728-449F-8517-DE1A7A195A1A",
 			"regular":"9E23B225-E972-4369-A94A-C2AAF4C93870"
 		},
 		"path":{
@@ -25395,12 +24947,10 @@
 	"table":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f4eb",
 		"id":{
-			"light":"1CAFE56B-5979-4A5E-AD44-DE49290B94C9",
 			"regular":"984D8348-AB61-4DD8-838C-3F2542577F73"
 		},
 		"path":{
@@ -25623,12 +25173,10 @@
 		},
 		"categories":["food"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f761",
 		"id":{
-			"light":"A91CA258-527C-4760-AE9B-D1AECB4E73CF",
 			"regular":"9E259FF6-513C-44B0-BB10-7F930DFA47DD"
 		},
 		"path":{
@@ -25637,12 +25185,10 @@
 	},
 	"tag":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f4f9",
 		"id":{
-			"light":"5AAE6AF6-9B35-4937-B02E-225C99E48E0A",
 			"regular":"0BE85AB2-0D51-411C-B119-789E9E317216"
 		},
 		"path":{
@@ -25797,12 +25343,10 @@
 		"aliases":["tv"],
 		"categories":["assistant","tech"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f502",
 		"id":{
-			"light":"63A08512-F392-42A6-9F41-4352C6B4DF20",
 			"regular":"1B699A99-578E-450C-9523-934F4D281F72"
 		},
 		"path":{
@@ -26104,12 +25648,10 @@
 	"thumb-down":{
 		"aliases":["dislike"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f511",
 		"id":{
-			"light":"4673D8AF-1F1B-4E46-8F73-CE39C6D9CB33",
 			"regular":"83D606E3-69A1-4583-854D-5C44477D038D"
 		},
 		"path":{
@@ -26132,12 +25674,10 @@
 	"thumb-up":{
 		"aliases":["like"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f513",
 		"id":{
-			"light":"13E5C725-305C-4690-9312-05568AAE547C",
 			"regular":"C32E4FC9-F3DC-4C67-81FB-62648E3F1AB5"
 		},
 		"path":{
@@ -26160,12 +25700,10 @@
 	"thumbs-up-down":{
 		"aliases":["like-dislike"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f515",
 		"id":{
-			"light":"6BFF422E-8395-4ABC-833A-8C0877251B3F",
 			"regular":"C38D6CEC-4D8E-44DB-B704-9A76552733D4"
 		},
 		"path":{
@@ -26418,12 +25956,10 @@
 	},
 	"tooltip":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f523",
 		"id":{
-			"light":"41FB9628-C597-4276-832A-802473F6A8C8",
 			"regular":"D6AD70EE-33F4-4C3A-8ED1-3CD3236222F8"
 		},
 		"path":{
@@ -26480,12 +26016,10 @@
 	},
 	"tooltip-text":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f528",
 		"id":{
-			"light":"5183952A-68D2-4177-B205-C3B9937AECE2",
 			"regular":"B608ACE2-279D-4C66-9169-32BD86BDF5F3"
 		},
 		"path":{
@@ -26762,12 +26296,10 @@
 	},
 	"triangle":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f536",
 		"id":{
-			"light":"D73B56BB-1F69-41D4-88D9-3CFCCED2D6D5",
 			"regular":"78EC62FE-EC63-407F-BCF3-92C441398DDA"
 		},
 		"path":{
@@ -26790,12 +26322,10 @@
 		"aliases":["achievement"],
 		"categories":["sport"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"doug-c-hardester"
 		},
 		"hex":"f538",
 		"id":{
-			"light":"28B14D18-EE0A-4399-9554-4273BF3DE308",
 			"regular":"0B9368A1-FC31-4D0D-8909-C2D44DCC0B83"
 		},
 		"path":{
@@ -27169,12 +26699,10 @@
 	},
 	"undo-variant":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f54d",
 		"id":{
-			"light":"7D634B1A-0E0B-4E7C-83B4-1CD16A05BB5E",
 			"regular":"C262C766-4474-4BC5-AE66-23E5735F86F1"
 		},
 		"path":{
@@ -27183,12 +26711,10 @@
 	},
 	"unfold-less-horizontal":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f54e",
 		"id":{
-			"light":"9B50C774-FEC6-41FD-B507-B427083F33FC",
 			"regular":"E533CB7E-48C2-4D9D-B935-B51C918703C0"
 		},
 		"path":{
@@ -27203,12 +26729,10 @@
 			"regular":1932
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f75f",
 		"id":{
-			"light":"5B9ED200-D920-42B0-9A53-91CFED6DA1B3",
 			"regular":"E4DFDADF-60F8-4E90-A501-38381F4346A0"
 		},
 		"path":{
@@ -27217,12 +26741,10 @@
 	},
 	"unfold-more-horizontal":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f54f",
 		"id":{
-			"light":"FE574134-F4F3-4873-B830-7D8F188A1492",
 			"regular":"E85F4170-11D3-4757-8247-17EBD07A08D4"
 		},
 		"path":{
@@ -27237,12 +26759,10 @@
 			"regular":1932
 		},
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f760",
 		"id":{
-			"light":"C7C34C94-34F3-439F-99BC-BFD19F6B077B",
 			"regular":"AE8D43D2-00EC-46D9-A21C-4D0024A539D7"
 		},
 		"path":{
@@ -27252,12 +26772,10 @@
 	"ungroup":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f550",
 		"id":{
-			"light":"654B4A04-0059-416B-B2DC-1442C8080D8D",
 			"regular":"87E56CEE-67B1-427E-9A28-303F8B6D29A7"
 		},
 		"path":{
@@ -27311,12 +26829,10 @@
 	"upload":{
 		"categories":["networking"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f552",
 		"id":{
-			"light":"B538CCB0-9FA2-4992-BE64-801F616AFE0B",
 			"regular":"08F8FCE9-67A0-4696-9B83-0B1F11EA959E"
 		},
 		"path":{
@@ -27418,12 +26934,10 @@
 	"vector-arrange-above":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f554",
 		"id":{
-			"light":"532B2121-5FA2-40DA-B3B0-E610FB3C99DB",
 			"regular":"576A1B80-550B-46BD-90A6-A497D8A29BC5"
 		},
 		"path":{
@@ -27433,12 +26947,10 @@
 	"vector-arrange-below":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f555",
 		"id":{
-			"light":"C642E215-060D-4CFF-A0B7-140D1F21AC4F",
 			"regular":"C2EC8280-2EFC-44F4-BA6D-89DE72F06CA3"
 		},
 		"path":{
@@ -27474,12 +26986,10 @@
 	"vector-combine":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f558",
 		"id":{
-			"light":"26B26D49-DD2D-49F9-868A-18BBC92C3B24",
 			"regular":"7845F254-C78F-44D3-84E3-421B0B2AFF31"
 		},
 		"path":{
@@ -27503,12 +27013,10 @@
 	"vector-difference":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f55a",
 		"id":{
-			"light":"B5D1F0EA-98DD-4616-A908-126C6A606F4C",
 			"regular":"C4CA626C-23C3-495A-A73B-4B55A6FBC1F9"
 		},
 		"path":{
@@ -27518,12 +27026,10 @@
 	"vector-difference-ab":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f55b",
 		"id":{
-			"light":"108AC66F-9617-48CD-B16B-B6B5EFA07695",
 			"regular":"9D39AD1D-F643-43EF-B55B-6CF2EC4637EC"
 		},
 		"path":{
@@ -27533,12 +27039,10 @@
 	"vector-difference-ba":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f55c",
 		"id":{
-			"light":"489A9AF4-504E-4B92-91AC-DDC7DED44C6E",
 			"regular":"A327D00A-F451-4B88-AEBA-EA87016806CB"
 		},
 		"path":{
@@ -27548,12 +27052,10 @@
 	"vector-intersection":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f55d",
 		"id":{
-			"light":"F48273AE-9517-4928-8ACE-8639EA9C1F59",
 			"regular":"DACB8CA9-A0A9-4766-B1A3-EC334425514A"
 		},
 		"path":{
@@ -27686,12 +27188,10 @@
 	"vector-union":{
 		"categories":["editor"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"cody"
 		},
 		"hex":"f564",
 		"id":{
-			"light":"055CD40E-1F4E-4939-BA97-A8040B35D0F1",
 			"regular":"2FD284B6-3DC1-4733-B08E-BAD459E87B87"
 		},
 		"path":{
@@ -27841,12 +27341,10 @@
 	},
 	"view-dashboard":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f56e",
 		"id":{
-			"light":"9084AF3F-5910-45B3-928F-0A108AEF07F9",
 			"regular":"B6D8B213-DC5F-40D3-97E4-EFA9B499A19D"
 		},
 		"path":{
@@ -27903,12 +27401,10 @@
 	},
 	"view-module":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f573",
 		"id":{
-			"light":"B62B2FC5-1B61-40FA-9DB5-4FC27BEB4AAC",
 			"regular":"467C52AB-0DEA-43AF-BAE4-76FD66D6C7F0"
 		},
 		"path":{
@@ -28129,12 +27625,10 @@
 	"volume-high":{
 		"categories":["assistant","player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f57e",
 		"id":{
-			"light":"A1CDCBBE-FE1A-44D4-A577-51B78B413602",
 			"regular":"CE6E08CF-2476-4BBB-AF91-6D081F1CBEF9"
 		},
 		"path":{
@@ -28173,12 +27667,10 @@
 		},
 		"categories":["assistant","player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f75d",
 		"id":{
-			"light":"331B01F4-390F-46C9-B053-594DE27E0A3B",
 			"regular":"D8BFD10F-6D55-4EE1-8D30-5B5CB064CBBF"
 		},
 		"keywords":["down"],
@@ -28192,12 +27684,10 @@
 		},
 		"categories":["assistant","player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f75e",
 		"id":{
-			"light":"9D3A190B-9C81-401B-89DC-F8FBAA50E164",
 			"regular":"A78C1259-0DB5-4793-9EA9-DD69FEB337A8"
 		},
 		"keywords":["off"],
@@ -28209,12 +27699,10 @@
 		"aliases":["mute"],
 		"categories":["assistant","player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"google"
 		},
 		"hex":"f581",
 		"id":{
-			"light":"C80F8992-5E80-4002-8A90-B5CFA69B0E26",
 			"regular":"74834C94-6AE1-493B-A9FB-4EE2A8FD989C"
 		},
 		"path":{
@@ -28227,12 +27715,10 @@
 		},
 		"categories":["assistant","player"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f75c",
 		"id":{
-			"light":"C06C19AF-9444-4765-9B10-B894D465566B",
 			"regular":"DECF3A51-F972-4D34-815D-D103BCE3888B"
 		},
 		"keywords":["up"],
@@ -28943,12 +28429,10 @@
 	"wifi":{
 		"categories":["networking"],
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f5a9",
 		"id":{
-			"light":"804F3BE8-4010-424D-A267-7863174B0A2E",
 			"regular":"E77CF681-7DD0-4EDF-AA35-0DB80790BC03"
 		},
 		"path":{
@@ -29394,12 +28878,10 @@
 	},
 	"xml":{
 		"contributor":{
-			"light":"austin-andrews",
 			"regular":"austin-andrews"
 		},
 		"hex":"f5c0",
 		"id":{
-			"light":"B705B8F9-D6EF-4B52-B2C7-3DED9E87CE1A",
 			"regular":"994C18D8-DAF1-4311-A30B-CD93F5ADC233"
 		},
 		"path":{
