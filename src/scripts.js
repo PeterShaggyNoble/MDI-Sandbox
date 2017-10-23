@@ -28,7 +28,7 @@
 				/*this.params.get`font`===`light`;*/
 				this.font=this.light?`light`:`regular`;
 				b.classList.add(this.prefix=this.light?`mdil`:`mdi`);
-				version=+versions[this.font].replace(/\./g,``);
+				version=versions[this.font];
 				try{
 					this.storage=localStorage;
 				}catch(e){
@@ -45,6 +45,7 @@
 					$`fab`.remove();
 				this.textarea.classList.add(`ln`,`pa`);
 				categories.init();
+				version=+version.replace(/\./g,``);
 				contributors.init();
 				if(this.storage)
 					favourites.init();
