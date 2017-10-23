@@ -1,11 +1,12 @@
 {
 	/** VERSION **/
-	let versions={
-		light:`0.2.63`,
-		regular:`2.0.46`
-	},version;
+	let 	version;
+	const 	versions={
+			light:`0.2.63`,
+			regular:`2.0.46`
+		},
 	/** FUNCTIONS **/
-	const 	$=i=>d.getElementById(i),
+		$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
 	/** CONSTANTS **/
 		w=window,
@@ -434,7 +435,7 @@
 				},
 				path:Q`#actions>[data-confirm=Path]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
-				hex:Q`#actions>[data-confirm="Code point"]`,
+				codepoint:Q`#actions>[data-confirm="Code point"]`,
 				entity:Q`#actions>[data-confirm=Entity]`,
 				css:Q`#actions>[data-confirm=CSS]`,
 				js:Q`#actions>[data-confirm=JavaScript]`,
@@ -517,7 +518,7 @@
 				favourites.favourite=this.icon.favourite;
 				this.name=this.heading.firstChild.nodeValue=name;
 				this.path=this.icon.path[page.font];
-				let hex=this.icon.hex;
+				let codepoint=this.icon.codepoint;
 				if(page.storage){
 					this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.favourite?`f0c6`:`f0c5`}`);
 					this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?`Remove from`:`Add to`} Favourites`;
@@ -528,16 +529,16 @@
 				if(page.light)
 					this.actions.link.dataset.url+=`light/`;
 				this.img.src=`data:image/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`;
-				this.aside.dataset.nocopy=(!(this.copy=!!hex)).toString();
+				this.aside.dataset.nocopy=(!(this.copy=!!codepoint)).toString();
 				this.aside.dataset.nodownload=(!this.path).toString();
 				this.aside.dataset.retired=(!!this.icon.retired).toString();
 				this.actions.path.dataset.copy=this.path;
-				if(hex){
-					this.actions.icon.dataset.copy=String.fromCharCode(`0x${hex}`);
-					this.actions.hex.dataset.copy=hex;
-					this.actions.entity.dataset.copy=`&#x${hex};`;
-					this.actions.css.dataset.copy=`\\${hex}`;
-					this.actions.js.dataset.copy=`\\u${hex}`;
+				if(codepoint){
+					this.actions.icon.dataset.copy=String.fromCharCode(`0x${codepoint}`);
+					this.actions.codepoint.dataset.copy=codepoint;
+					this.actions.entity.dataset.copy=`&#x${codepoint};`;
+					this.actions.css.dataset.copy=`\\${codepoint}`;
+					this.actions.js.dataset.copy=`\\u${codepoint}`;
 				}
 			},
 			download(){
@@ -617,17 +618,15 @@
 						if(category.count)
 							item.firstChild.nodeValue+=` (${category.count})`;
 						item.dataset.category=key;
-						item.dataset.icon=String.fromCharCode(`0x${category.hex}`);
+						item.dataset.icon=String.fromCharCode(`0x${category.codepoint}`);
 						menu[category.section?`sections`:`categories`].append(category.item=item);
 						if(key===`favourites`){
 							item=item.cloneNode(1);
 							delete item.dataset.category;
-							item.dataset.action=`import`;
 							item.dataset.icon=`\uf220`;
 							item.firstChild.nodeValue=`Import Favourites`;
 							menu.sections.append(favourites.actions.import=item);
 							item=item.cloneNode(1);
-							item.dataset.action=`export`;
 							item.dataset.icon=`\uf21d`;
 							item.firstChild.nodeValue=`Export Favourites`;
 							menu.sections.append(favourites.actions.export=item);
@@ -693,7 +692,7 @@
 				let 	icon=this.list[key],
 					article=this.article,
 					img=this.img,
-					hex=icon.hex,
+					codepoint=icon.codepoint,
 					sections=categories.list,
 					keywords=new Set(key.split`-`),
 					section;
@@ -708,8 +707,8 @@
 						keywords.add(word)
 					);
 				icon.keywords=[...keywords].sort();
-				article.dataset.icon=hex?String.fromCharCode(`0x${hex}`):``;
-				if(!hex){
+				article.dataset.icon=codepoint?String.fromCharCode(`0x${codepoint}`):``;
+				if(!codepoint){
 					img.src=`data:image/svg+xml;utf8,${this.svgheader+icon.path[page.font]}"/></svg>`;
 					article.prepend(img);
 				}else img.remove();

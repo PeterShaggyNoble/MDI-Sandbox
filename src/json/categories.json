@@ -1,111 +1,111 @@
 {
 	"favourites":{
-		"hex":"f2d1",
+		"codepoint":"f2d1",
 		"name":"My Favourites",
 		"section":true
 	},
 	"new":{
-		"hex":"f6bc",
+		"codepoint":"f6bc",
 		"name":"New in v{v}",
 		"section":true
 	},
 	"updates":{
-		"hex":"f453",
+		"codepoint":"f453",
 		"name":"Updated in v{v}",
 		"section":true
 	},
 	"soon":{
-		"hex":"f6af",
+		"codepoint":"f6af",
 		"name":"Coming Soon",
 		"section":true
 	},
 	"retired":{
-		"hex":"f2da",
+		"codepoint":"f2da",
 		"name":"Retired Icons",
 		"section":true
 	},
 	"arrows":{
-		"hex":"f054",
+		"codepoint":"f054",
 		"name":"Arrows"
 	},
 	"characters":{
-		"hex":"f295",
+		"codepoint":"f295",
 		"name":"Characters & Symbols"
 	},
 	"time":{
-		"hex":"f0f0",
+		"codepoint":"f0f0",
 		"name":"Date & Time"
 	},
 	"tech":{
-		"hex":"f379",
+		"codepoint":"f379",
 		"name":"Devices & Hardware"
 	},
 	"editor":{
-		"hex":"f3eb",
+		"codepoint":"f3eb",
 		"name":"Editing & Formatting"
 	},
 	"files":{
-		"hex":"f224",
+		"codepoint":"f224",
 		"name":"Files & Folders"
 	},
 	"food":{
-		"hex":"f25a",
+		"codepoint":"f25a",
 		"name":"Food & Drink"
 	},
 	"google":{
-		"hex":"f2ad",
+		"codepoint":"f2ad",
 		"name":"Google"
 	},
 	"assistant":{
-		"hex":"f7cf",
+		"codepoint":"f7cf",
 		"name":"Home Assistant"
 	},
 	"logos":{
-		"hex":"f032",
+		"codepoint":"f032",
 		"name":"Logos & Brands"
 	},
 	"player":{
-		"hex":"f40a",
+		"codepoint":"f40a",
 		"name":"Media Player Controls"
 	},
 	"money":{
-		"hex":"f1ad",
+		"codepoint":"f1ad",
 		"name":"Money & Payments"
 	},
 	"networking":{
-		"hex":"f318",
+		"codepoint":"f318",
 		"name":"Networking"
 	},
 	"nature":{
-		"hex":"f38e",
+		"codepoint":"f38e",
 		"name":"Nature & Animals"
 	},
 	"places":{
-		"hex":"f34e",
+		"codepoint":"f34e",
 		"name":"Places & Landmarks"
 	},
 	"power":{
-		"hex":"f425",
+		"codepoint":"f425",
 		"name":"Power"
 	},
 	"science":{
-		"hex":"f093",
+		"codepoint":"f093",
 		"name":"Science & Medicine"
 	},
 	"sport":{
-		"hex":"f4e3",
+		"codepoint":"f4e3",
 		"name":"Sport"
 	},
 	"travel":{
-		"hex":"f01d",
+		"codepoint":"f01d",
 		"name":"Travel & Transport"
 	},
 	"users":{
-		"hex":"f004",
+		"codepoint":"f004",
 		"name":"Users & Accounts"
 	},
 	"weather":{
-		"hex":"f599",
+		"codepoint":"f599",
 		"name":"Weather"
 	}
 }
