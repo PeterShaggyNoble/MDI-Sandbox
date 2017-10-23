@@ -1,51 +1,42 @@
 {
 	/** VERSION **/
-	let 	v={
-			/*light:`0.2.63`,*/
-			regular:`2.0.46`
-		};
+	let versions={
+		light:`0.2.63`,
+		regular:`2.0.46`
+	},version;
 	/** FUNCTIONS **/
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
 	/** CONSTANTS **/
 		w=window,
 		d=document,
-		u=new URL(w.location),
-		a=`${u.protocol}\/\/${u.host+u.pathname}`,
-		s=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="`,
-	/** ELEMENTS **/
-		h=d.documentElement,
 		b=d.body,
-		c=Q`meta[name=theme-color]`,
-		f=$`filter`,
-		i=$`icons`,
-		m=$`content`,
-		o=$`load`,
 	/** PAGE **/
 		page={
-			params:u.searchParams,
+			url:new URL(w.location),
 			header:$`header`,
-			heading:i.querySelector`h2`,
+			main:$`content`,
+			section:$`icons`,
 			message:$`message`,
 			textarea:d.createElement`textarea`,
 		/** SET UP **/
 			init(){
+				this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
+				this.params=this.url.searchParams;
 				this.light=false;
 				/*this.params.get`font`===`light`;*/
-				this.font=`regular`;
-				/*this.light?`light`:*/
-				b.classList.add(this.prefix=`mdi`);
-				/*this.light?`mdil`:*/
-				v=v[this.font];
+				this.font=this.light?`light`:`regular`;
+				b.classList.add(this.prefix=this.light?`mdil`:`mdi`);
+				version=+versions[this.font].replace(/\./g,``);
 				try{
 					this.storage=localStorage;
 				}catch(e){
 					console.log(`localStorage not available. Favourites disabled`);
 					page.alert`Favourites not available.`;
 					delete categories.list.favourites;
-					for(let x in favourites)
-						if(x!==`actions`)
-							delete favourites[x];
+					for(let key in favourites)
+						if(key!==`actions`)
+							delete favourites[key];
 					info.actions.favourite.remove();
 					delete info.actions.favourite;
 				}
@@ -53,7 +44,6 @@
 					$`fab`.remove();
 				this.textarea.classList.add(`ln`,`pa`);
 				categories.init();
-				v=+v.replace(/\./g,``);
 				contributors.init();
 				if(this.storage)
 					favourites.init();
@@ -61,14 +51,14 @@
 				menu.init();
 				filter.init();
 				info.init();
-				m.addEventListener(`click`,event=>{
+				this.main.addEventListener(`click`,event=>{
 					let 	target=event.target,
 						parent=target.parentNode,
-						current=m.querySelector`article.active`;
+						current=this.main.querySelector`article.active`;
 					switch(target.nodeName.toLowerCase()){
 						case`h2`:
-							if(parent!==i)
-								page.copy(`${a}?${page.light?`font=light&`:``}section=${parent.dataset.name}${u.hash}`,`Link`);
+							if(parent!==this.section)
+								page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`);
 							break;
 						case`article`:
 							if(current)
@@ -80,11 +70,12 @@
 					}
 				},0);
 				setTimeout(_=>{
-					o.classList.add`oz`;
-					o.classList.add`pen`;
-					m.classList.remove`oz`;
+					let loader=$`load`;
+					loader.classList.add`oz`;
+					loader.classList.add`pen`;
+					this.main.classList.remove`oz`;
 					setTimeout(_=>
-						o.remove()
+						loader.remove()
 					,375);
 				},10);
 			},
@@ -108,21 +99,21 @@
 				this.alert(`${msg} copied to clipboard.`);
 			},
 		/** GET JSON **/
-			get:(file,data)=>fetch(`json/${file}.json`).then(resp=>
-						resp.json()
-					).catch(err=>{
-						console.log(err);
+			getjson:(file,data)=>fetch(`json/${file}.json`).then(response=>
+						response.json()
+					).catch(error=>{
+						console.log(error);
 						page.alert(`Failed to load ${data}.`);
 					})
 		},
 	/** MENU **/
 		menu={
 			show:0,
-			fns:{},
+			functions:{},
 			nav:$`nav`,
 			header:$`navicon`,
 			menu:$`menu`,
-			/*switch:d.createElement`p`,*/
+			switch:d.createElement`p`,
 			sections:$`sections`,
 			categories:$`categories`,
 			contributors:$`contributors`,
@@ -189,18 +180,18 @@
 				},0);
 				d.addEventListener(`touchstart`,event=>{
 					this.width=this.menu.offsetWidth;
-					this.cx=event.touches[0].clientX;
-					if(([m,b].includes(event.target)&&!this.show&&this.cx<=50)||(this.show&&this.cx>this.width)){
+					this.clientx=event.touches[0].clientX;
+					if(([page.main,b].includes(event.target)&&!this.show&&this.clientx<=50)||(this.show&&this.clientx>this.width)){
 						this.touchstart();
-						d.addEventListener(`touchmove`,this.fns.move=event=>{
-							let cx=event.touches[0].clientX-this.cx;
-							this.nav.style.background=`rgba(0,0,0,${Math.min((cx+(this.show?285.185:0))/285.185*.54,.54)})`;
-							this.menu.style.left=`${this.show?Math.min(Math.max(cx,-this.width),0):Math.min(Math.max(cx,this.width-this.width)-this.width,0)}px`;
-							this.menu.style.boxShadow=`0 14px 28px rgba(0,0,0,${Math.min((cx+(this.show?500:0))/500*.25,.25)}),0 10px 10px rgba(0,0,0,${Math.min((cx+(this.show?545.545:0))/545.545*.22,.22)})`;
+						d.addEventListener(`touchmove`,this.functions.move=event=>{
+							let clientx=event.touches[0].clientX-this.clientx;
+							this.nav.style.background=`rgba(0,0,0,${Math.min((clientx+(this.show?285.185:0))/285.185*.54,.54)})`;
+							this.menu.style.left=`${this.show?Math.min(Math.max(clientx,-this.width),0):Math.min(Math.max(clientx,this.width-this.width)-this.width,0)}px`;
+							this.menu.style.boxShadow=`0 14px 28px rgba(0,0,0,${Math.min((clientx+(this.show?500:0))/500*.25,.25)}),0 10px 10px rgba(0,0,0,${Math.min((clientx+(this.show?545.545:0))/545.545*.22,.22)})`;
 							event.stopPropagation();
 						},0);
-						d.addEventListener(`touchend`,this.fns.end=event=>
-							this.touchend(this.show?this.cx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.cx),0
+						d.addEventListener(`touchend`,this.functions.end=event=>
+							this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx),0
 						);
 						event.stopPropagation();
 					}
@@ -208,84 +199,82 @@
 			},
 			toggle(){
 				this.nav.dataset.show=(this.show=!this.show).toString();
-				this.show?b.addEventListener(`keydown`,this.fns.close=event=>{
+				this.show?b.addEventListener(`keydown`,this.functions.close=event=>{
 					if(event.keyCode===27)
 						this.toggle();
-				},0):b.removeEventListener(`keydown`,this.fns.close);
+				},0):b.removeEventListener(`keydown`,this.functions.close);
 			},
 			goto(section){
 				if(this.timer)
 					clearInterval(this.timer);
 				let 	to=section.offsetTop-page.header.offsetHeight,
-					top=m.scrollTop,
+					top=page.main.scrollTop,
 					step=(to-top)/20;
 				this.timer=setInterval(_=>
-					Math.round(top)===Math.round(to)?clearInterval(this.timer):m.scrollTop=(top+=step)
+					Math.round(top)===Math.round(to)?clearInterval(this.timer):page.main.scrollTop=(top+=step)
 				,10);
 			},
 			touchstart(){
 				b.classList.add`dragging`;
 				this.nav.style.transition=this.menu.style.transition=`none`;
 			},
-			touchend(cx){
-				d.removeEventListener(`touchmove`,this.fns.move);
-				d.removeEventListener(`touchend`,this.fns.end);
+			touchend(clientx){
+				d.removeEventListener(`touchmove`,this.functions.move);
+				d.removeEventListener(`touchend`,this.functions.end);
 				this.nav.removeAttribute`style`;
 				this.menu.removeAttribute`style`;
-				if(cx>=this.width/2)
+				if(clientx>=this.width/2)
 					this.toggle();
 				b.classList.remove`dragging`;
 			}
 		},
 	/** FILTERS **/
 		filter={
-			categories:page.params.get`categories`,
-			contributors:page.params.get`contributors`,
-			text:page.params.get`filter`||``,
-			button:f.nextElementSibling,
-			link:i.firstElementChild,
-			error:i.querySelector`p`,
+			input:$`filter`,
+			heading:page.section.firstElementChild,
+			error:page.section.querySelector`p`,
 			init(){
-				this.categories=new Set(this.categories?this.categories.split`,`:[]);
+				this.button=this.input.nextElementSibling;
+				this.categories=new Set(this.categories=page.params.get`categories`?this.categories.split`,`:[]);
 				if(this.categories.size){
 					menu.categories.previousElementSibling.classList.add`open`;
 					for(let x of this.categories)
 						categories.list[x].item.classList.add`active`;
 				}
-				this.contributors=new Set(this.contributors?this.contributors.split`,`:[]);
+				this.contributors=new Set(this.contributors=page.params.get`contributors`?this.contributors.split`,`:[]);
 				if(this.contributors.size){
 					menu.contributors.previousElementSibling.classList.add`open`;
 					for(let x of this.contributors)
 						contributors.list[x].item.classList.add`active`;
 				}
-				if(this.text)
-					this.text=(f.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
+				if(this.text=page.params.get`filter`||``)
+					this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 				if(this.categories.size+this.contributors.size+this.text.length)
 					filter.apply();
-				f.addEventListener(`input`,_=>{
+				this.input.addEventListener(`input`,_=>{
 					if(this.timer)
 						clearTimeout(this.timer);
 					this.timer=setTimeout(_=>{
-						this.text=f.value.toLowerCase().replace(/\+/g,`%2b`);
+						this.text=this.input.value.toLowerCase().replace(/\+/g,`%2b`);
 						this.apply();
 					},50);
 				},0);
 				this.button.addEventListener(`click`,_=>{
-					f.focus();
+					this.input.focus();
 					if(this.text){
-						f.value=``;
-						f.dispatchEvent(new Event(`input`));
+						this.input.value=``;
+						this.input.dispatchEvent(new Event(`input`));
 					}
 				},0);
-				this.link.addEventListener(`click`,_=>
+				this.heading.addEventListener(`click`,_=>
 					page.copy(this.url,`Link`)
 				,0);
 			},
 			apply(){
-				if(m.scrollTop<i.offsetTop-page.header.offsetHeight)
-					menu.goto(i);
-				i.dataset.filtered=(this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size).toString();
-				this.link.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
+				if(page.main.scrollTop<page.section.offsetTop-page.header.offsetHeight)
+					menu.goto(page.section);
+				page.section.dataset.filtered=(this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size).toString();
+				this.heading.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
 					match=0,
 					check,icon,article;
@@ -293,8 +282,8 @@
 					if(icons.list.hasOwnProperty(key)&&(article=(icon=icons.list[key]).article)){
 						check=true;
 						if(this.categories.size)
-							check=icon.categories&&icon.categories.some(x=>
-								this.categories.has(x)
+							check=icon.categories&&icon.categories.some(category=>
+								this.categories.has(category)
 							);
 						if(this.contributors.size)
 							check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
@@ -308,9 +297,9 @@
 						match=match||check;
 					}
 				this.error.classList.toggle(`dn`,match);
-				this.link.classList.toggle(`pen`,!this.filtered||!match);
+				this.heading.classList.toggle(`pen`,!this.filtered||!match);
 				if(this.filtered){
-					this.url=`${a}?`;
+					this.url=`${page.address}?`;
 					if(page.light)
 						this.url+=`font=light&`;
 					if(this.categories.size){
@@ -325,8 +314,8 @@
 					}
 					if(this.text)
 						this.url+=`filter=${encodeURIComponent(this.text)}`;
-					if(m.scrollTop<i.offsetTop-page.header.offsetHeight)
-						m.scrollTop=i.offsetTop-page.header.offsetHeight
+					if(page.main.scrollTop<page.section.offsetTop-page.header.offsetHeight)
+						page.main.scrollTop=page.section.offsetTop-page.header.offsetHeight
 				}
 			}
 		},
@@ -380,13 +369,13 @@
 			},
 			sort(){
 				let articles=[...this.articles];
-				articles.sort((a,b)=>
-					a.lastChild.nodeValue<b.lastChild.nodeValue?1:-1
+				articles.sort((first,second)=>
+					first.lastChild.nodeValue<second.lastChild.nodeValue?1:-1
 				);
 				while(this.heading.nextElementSibling)
 					this.section.lastChild.remove();
-				articles.forEach(item=>
-					this.section.insertBefore(item,this.heading.nextElementSibling)
+				articles.forEach(article=>
+					this.section.insertBefore(article,this.heading.nextElementSibling)
 				);
 			},
 			import(){
@@ -429,6 +418,7 @@
 		},
 	/** SIDEBAR **/
 		info={
+			color:Q`meta[name=theme-color]`,
 			aside:$`info`,
 			heading:$`name`,
 			figure:$`preview`,
@@ -532,12 +522,12 @@
 					this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.favourite?`f0c6`:`f0c5`}`);
 					this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?`Remove from`:`Add to`} Favourites`;
 				}
-				this.actions.url.dataset.copy=`${a}?icon=${name}${u.hash}`;
+				this.actions.url.dataset.copy=`${page.address}?icon=${name}`;
 				this.actions.html.dataset.copy=`<span class="${page.prefix}-${name}"></span>`;
-				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}/`;
+				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
 				if(page.light)
 					this.actions.link.dataset.url+=`light/`;
-				this.img.src=`data:image/svg+xml;utf8,${s+this.path}"/></svg>`;
+				this.img.src=`data:image/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`;
 				this.aside.dataset.nocopy=(!(this.copy=!!hex)).toString();
 				this.aside.dataset.nodownload=(!this.path).toString();
 				this.aside.dataset.retired=(!!this.icon.retired).toString();
@@ -555,7 +545,7 @@
 					if(this.path){
 						switch(this.type){
 							case`svg`:
-								this.anchor.href=`data:text/svg+xml;utf8,${s+this.path}"/></svg>`;
+								this.anchor.href=`data:text/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`;
 								break;
 							case`xaml`:
 								this.anchor.href=`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.path}"/></Canvas>`;
@@ -574,14 +564,14 @@
 			},
 			toggle(){
 				this.aside.dataset.show=(this.show=!this.show).toString();
-				c.content=`#${this.show?`ff5722`:`2196f3`}`;
+				this.color.content=`#${this.show?`ff5722`:`2196f3`}`;
 				if(this.show)
 					b.addEventListener(`keydown`,this.close=event=>{
 						if(event.keyCode===27)
 							this.toggle();
 					},0);
 				else{
-					let current=m.querySelector`article.active`;
+					let current=page.main.querySelector`article.active`;
 					if(current)
 						current.classList.remove`active`;
 					b.removeEventListener(`keydown`,this.close);
@@ -603,8 +593,8 @@
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key)){
 						if(!this.list[key].section)
-							this.list[key].count=icons.array.filter(x=>
-								x.path[page.font]&&x.categories&&x.categories.includes(key)
+							this.list[key].count=icons.array.filter(item=>
+								item.path[page.font]&&item.categories&&item.categories.includes(key)
 							).length;
 						this.add(key);
 					}
@@ -614,13 +604,13 @@
 					section=this.section.cloneNode(0),
 					heading=this.heading.cloneNode(1),
 					item=this.item.cloneNode(1),
-					name=category.name.replace(`{v}`,v);
+					name=category.name.replace(`{v}`,version);
 				if(!page.light||!category.section||key===`favourites`){
 					if(category.section){
 						section.dataset.name=key;
 						heading.firstChild.nodeValue=name;
 						section.append(heading);
-						i.before(category.section=section);
+						page.section.before(category.section=section);
 					}
 					if(category.section||category.count){
 						item.firstChild.nodeValue=name;
@@ -658,8 +648,8 @@
 				this.img.height=this.img.width=24;
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key)){
-						this.list[key].count=icons.array.filter(x=>
-							x.path[page.font]&&x.contributor&&x.contributor[page.font]&&x.contributor[page.font]===key
+						this.list[key].count=icons.array.filter(item=>
+							item.path[page.font]&&item.contributor&&item.contributor[page.font]&&item.contributor[page.font]===key
 						).length;
 						this.add(key);
 					}
@@ -687,6 +677,7 @@
 			article:d.createElement`article`,
 			span:d.createElement`span`,
 			img:d.createElement`img`,
+			svgheader:`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="`,
 			init(){
 				delete this.array;
 				this.article.classList.add(`cp`,page.light?`fwl`:`fwm`,`oh`,`pr`,`toe`,`wsnw`);
@@ -707,33 +698,33 @@
 					keywords=new Set(key.split`-`),
 					section;
 				if(icon.aliases)
-					icon.aliases.forEach(x=>
-						x.split`-`.forEach(x=>
-							keywords.add(x)
+					icon.aliases.forEach(alias=>
+						alias.split`-`.forEach(word=>
+							keywords.add(word)
 						)
 					);
 				if(icon.keywords)
-					icon.keywords.forEach(x=>
-						keywords.add(x)
+					icon.keywords.forEach(word=>
+						keywords.add(word)
 					);
 				icon.keywords=[...keywords].sort();
 				article.dataset.icon=hex?String.fromCharCode(`0x${hex}`):``;
 				if(!hex){
-					img.src=`data:image/svg+xml;utf8,${s+icon.path[page.font]}"/></svg>`;
+					img.src=`data:image/svg+xml;utf8,${this.svgheader+icon.path[page.font]}"/></svg>`;
 					article.prepend(img);
 				}else img.remove();
 				article.lastChild.nodeValue=key;
 				if((section=favourites.section)&&page.storage[`mdi-${key}`])
 					section.append(icon.favourite=article.cloneNode(1));
-				if((section=sections.new.section)&&icon.added&&icon.added[page.font]===v)
+				if((section=sections.new.section)&&icon.added&&icon.added[page.font]===version)
 					section.append(article.cloneNode(1));
-				if((section=sections.updates.section)&&icon.updated&&icon.updated[page.font]===v)
+				if((section=sections.updates.section)&&icon.updated&&icon.updated[page.font]===version)
 					section.append(article.cloneNode(1));
 				if((section=sections.soon.section)&&icon.added&&icon.added[page.font]===`{next}`)
 					section.append(article.cloneNode(1));
 				if((section=sections.retired.section)&&icon.retired)
 					section.append(article.cloneNode(1));
-				i.append(icon.article=article.cloneNode(1));
+				page.section.append(icon.article=article.cloneNode(1));
 			},
 			ripple(target,x,y){
 				let span=this.span.cloneNode(0);
@@ -747,11 +738,11 @@
 			}
 		};
 	/** INITIATE **/
-	page.get(`categories`,`category data`).then(json=>{
+	page.getjson(`categories`,`category data`).then(json=>{
 		categories.list=json;
-		page.get(`contributors`,`contributor data`).then(json=>{
+		page.getjson(`contributors`,`contributor data`).then(json=>{
 			contributors.list=json;
-			page.get(`icons`,`icon data`).then(json=>{
+			page.getjson(`icons`,`icon data`).then(json=>{
 				icons.array=Object.values(icons.list=json);
 				page.init();
 			});
