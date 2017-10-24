@@ -1007,6 +1007,7 @@
 				main:$`content`,
 				section:$`icons`,
 				message:$`message`,
+				anchor:d.createElement`a`,
 				textarea:d.createElement`textarea`,
 				init(){
 					this.address=`${this.url.protocol}//${this.url.host+this.url.pathname}`;
@@ -1073,6 +1074,11 @@
 						this.message.classList.add`oz`
 					,5000);
 				},
+				download(data,name){
+					this.anchor.href=data;
+					this.anchor.download=name;
+					this.anchor.click();
+				},
 				copy(str,msg){
 					b.append(this.textarea);
 					this.textarea.value=str;
@@ -1093,6 +1099,10 @@
 				categories:$`categories`,
 				contributors:$`contributors`,
 				init(){
+					this.switch.classList.add`cp`;
+					this.switch.dataset.icon=page.light?`\uf335`:`\uf6e8`;
+					this.switch.tabIndex=-1;
+					this.switch.append(d.createTextNode(`View ${page.light?`Regular`:`Light`} Icons`));
 					let section=page.params.get`section`;
 					if(section&&(section=categories.list[section].section))
 						this.goto(section);
@@ -1111,7 +1121,7 @@
 								favourites.import();
 								break;
 							case this.export:
-								favourites.export();
+								page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).join`,`))}`,`mdi-favourites.txt`);
 								break;
 							case this.categories.previousElementSibling:
 							case this.contributors.previousElementSibling:
@@ -1175,8 +1185,7 @@
 					},0):b.removeEventListener(`keydown`,this.functions.close);
 				},
 				goto(section){
-					if(this.timer)
-						clearInterval(this.timer);
+					clearInterval(this.timer);
 					let	to=section.offsetTop-page.header.offsetHeight,
 						top=page.main.scrollTop,
 						step=(to-top)/20;
@@ -1207,18 +1216,18 @@
 					this.categories=new Set(this.categories=page.params.get`categories`?this.categories.split`,`:[]);
 					if(this.categories.size){
 						menu.categories.previousElementSibling.classList.add`open`;
-						for(let x of this.categories)
-							categories.list[x].item.classList.add`active`;
+						for(let key of this.categories)
+							categories.list[key].item.classList.add`active`;
 					}
 					this.contributors=new Set(this.contributors=page.params.get`contributors`?this.contributors.split`,`:[]);
 					if(this.contributors.size){
 						menu.contributors.previousElementSibling.classList.add`open`;
-						for(let x of this.contributors)
-							contributors.list[x].item.classList.add`active`;
+						for(let key of this.contributors)
+							contributors.list[key].item.classList.add`active`;
 					}
-					if(this.text=page.params.get`filter`||``)
+					if(this.text=page.params.get`filter`)
 						this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
-					if(this.categories.size+this.contributors.size+this.text.length)
+					if(this.categories.size&&this.contributors.size&&this.text)
 						filter.apply();
 					this.input.addEventListener(`input`,_=>{
 						clearTimeout(this.timer);
@@ -1247,7 +1256,8 @@
 						match=0,
 						check,icon,article;
 					for(let key in icons.list)
-						if(icons.list.hasOwnProperty(key)&&(article=(icon=icons.list[key]).article)){
+						if(icons.list.hasOwnProperty(key)){
+							icon=icons.list[key];
 							check=true;
 							if(this.categories.size)
 								check=icon.categories&&icon.categories.some(category=>
@@ -1261,7 +1271,7 @@
 										item.startsWith(word)
 									)
 								);
-							article.classList.toggle(`dn`,!check);
+							icon.article.classList.toggle(`dn`,!check);
 							match=match||check;
 						}
 					this.error.classList.toggle(`dn`,match);
@@ -1288,8 +1298,6 @@
 				}
 			},
 			favourites={
-				actions:{},
-				anchor:d.createElement`a`,
 				input:d.createElement`input`,
 				favourite:0,
 				reader:new FileReader(),
@@ -1318,18 +1326,12 @@
 						page.storage.setItem(`mdi-${name}`,1);
 						this.section.append(this.icon.favourite=this.icon.article.cloneNode(1));
 						this.icon.favourite.classList.remove`active`;
-						if(this.array)
-							this.array.push(`mdi-${name}`);
 						if(this.articles.length>1)
 							this.sort();
 					}else{
 						page.storage.removeItem(`mdi-${name}`);
 						this.icon.favourite.remove();
 						delete this.icon.favourite;
-						if(this.array)
-							this.array=this.array.filter(item=>
-								item!==`mdi-${name}`
-							);
 						msg=`removed from`;
 					}
 					page.alert(`${name} ${msg} favourites.`);
@@ -1352,7 +1354,8 @@
 				load(event){
 					let msg=`complete`;
 					try{
-						(this.array=atob(event.target.result).split`,`).forEach(item=>{
+						let array=atob(event.target.result).split`,`;
+						array.forEach(item=>{
 							let name=item.substr(4);
 							this.icon=icons.list[name];
 							if(this.icon){
@@ -1365,23 +1368,20 @@
 										info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
 									}
 								}
-							}else if(!page.light)
+							}else if(!page.light){
 								page.storage.removeItem(item);
+								this.list.remove(item);
+							}
 						});
 						if(this.articles.length>1)
 							this.sort();
-					}catch(err){
-						console.log(err);
+					}catch(error){
+						console.log(error);
 						msg=`failed`;
 					}
 					page.alert(`Import ${msg}.`);
 					this.input.value=``;
 					this.input.remove();
-				},
-				export(){
-					this.anchor.href=`data:text/plain;base64,${btoa(btoa(this.array?this.array.join`,`:Object.keys(page.storage).join`,`))}`;
-					this.anchor.download=`mdi-favourites.txt`;
-					this.anchor.click();
 				}
 			},
 			info={
@@ -1394,11 +1394,6 @@
 				copy:1,
 				actions:{
 					favourite:Q`#actions>:first-child`,
-					downloads:{
-						svg:Q`#actions>[data-type=svg]`,
-						xaml:Q`#actions>[data-type=xaml]`,
-						xml:Q`#actions>[data-type=xml]`
-					},
 					path:Q`#actions>[data-confirm=Path]`,
 					icon:Q`#actions>[data-confirm=Icon]`,
 					codepoint:Q`#actions>[data-confirm="Code point"]`,
@@ -1409,7 +1404,7 @@
 					url:Q`#actions>[data-confirm=Link]`,
 					link:Q`#actions>:last-child`
 				},
-				anchor:d.createElement`a`,
+				downloads:{},
 				show:0,
 				init(){
 					this.img.classList.add`dib`;
@@ -1436,20 +1431,8 @@
 							case this.actions.favourite:
 								favourites.set(this.name);
 								break;
-							case this.actions.downloads.svg:
-								this.type=`svg`;
-								this.download();
-								break;
-							case this.actions.downloads.xaml:
-								this.type=`xaml`;
-								this.download();
-								break;
-							case this.actions.downloads.xml:
-								this.type=`xml`;
-								this.download();
-								break;
 							case this.actions.path:
-								if(this.icon.path[page.font])
+								if(this.path)
 									page.copy(target.dataset.copy,target.dataset.confirm);
 								else page.alert`Not yet available.`;
 								break;
@@ -1459,7 +1442,9 @@
 								else page.alert`No longer available.`;
 								break;
 							default:
-								if(target.parentNode===this.actions.link.parentNode)
+								if(this.type=target.dataset.type)
+									this.download();
+								else if(target.parentNode===this.actions.link.parentNode)
 									if(this.copy||target===this.actions.url)
 										page.copy(target.dataset.copy,target.dataset.confirm);
 									else page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
@@ -1506,28 +1491,20 @@
 						this.actions.css.dataset.copy=`\\${codepoint}`;
 						this.actions.js.dataset.copy=`\\u${codepoint}`;
 					}
+					this.downloads={
+						svg:`data:text/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`,
+						xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.path}"/></Canvas>`,
+						xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.path}"/></vector>`
+					};
 				},
 				download(){
-					if(icons.list[this.name]){
-						if(this.path){
-							switch(this.type){
-								case`svg`:
-									this.anchor.href=`data:text/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`;
-									break;
-								case`xaml`:
-									this.anchor.href=`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.path}"/></Canvas>`;
-									break;
-								case`xml`:
-									this.anchor.href=`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.path}"/></vector>`;
-									break;
-								default:
-									page.alert`Unknown file type.`;
-									break;
-							}
-							this.anchor.download=`${this.name}.${this.type}`;
-							this.anchor.click();
-						}else page.alert`Download not available.`;
-					}else page.alert`Icon not found.`;
+					if(this.icon)
+						if(this.path)
+							if(this.downloads[this.type])
+								page.download(this.downloads[this.type],`${this.name}.${this.type}`);
+							else page.alert`Unknown file type.`;
+						else page.alert`Download not available.`;
+					else page.alert`Unknown icon.`;
 				},
 				toggle(){
 					this.aside.dataset.show=(this.show=!this.show).toString();
@@ -1558,6 +1535,12 @@
 					this.item.append(d.createTextNode``);
 					if(!page.storage)
 						delete this.list.favourites;
+					if(page.light){
+						delete this.list.new;
+						delete this.list.updated;
+						delete this.list.soon;
+						delete this.list.retired;
+					}
 					for(let key in this.list)
 						if(this.list.hasOwnProperty(key))
 							this.add(key);
@@ -1568,16 +1551,14 @@
 						heading=this.heading.cloneNode(1),
 						item=this.item.cloneNode(1),
 						name=category.name.replace(`{v}`,version);
-					if(category.section)
-						if(!page.light||key===`favourites`){
-							section.dataset.name=key;
-							heading.firstChild.nodeValue=name;
-							section.append(heading);
-							page.section.before(category.section=section);
-						}else delete category.section;
-					else category.count=icons.array.filter(item=>
-							item.path[page.font]&&item.categories&&item.categories.includes(key)
-						).length;
+					if(category.section){
+						section.dataset.name=key;
+						heading.firstChild.nodeValue=name;
+						section.append(heading);
+						page.section.before(category.section=section);
+					}else category.count=icons.array.filter(item=>
+						item.path[page.font]&&item.categories&&item.categories.includes(key)
+					).length;
 					if(category.section||category.count){
 						item.firstChild.nodeValue=name;
 						if(category.count)
@@ -1729,7 +1710,7 @@
 						img=this.img.cloneNode(1),
 						item=this.item.cloneNode(1);
 					contributor.count=icons.array.filter(item=>
-						item.path[page.font]&&item.contributor&&item.contributor[page.font]&&item.contributor[page.font]===key
+						item.path[page.font]&&item.contributor&&item.contributor[page.font]===key
 					).length;
 					if(contributor.count){
 						item.dataset.contributor=key;
@@ -13894,6 +13875,7 @@
 						"added":{
 							"regular":"{next}"
 						},
+						"aliases":["martial-arts"],
 						"categories":["sport"],
 						"contributor":{
 							"regular":"michael-richins"
