@@ -1299,7 +1299,6 @@
 			},
 			favourites={
 				input:d.createElement`input`,
-				favourite:0,
 				reader:new FileReader(),
 				init(){
 					this.input.accept=`.txt,text/plain`;
@@ -1318,21 +1317,20 @@
 				},
 				set(name){
 					this.icon=icons.list[name];
-					this.favourite=!this.favourite;
-					info.actions.favourite.dataset.icon=String.fromCharCode(`0x${this.favourite?`f0c6`:`f0c5`}`);
-					info.actions.favourite.firstChild.nodeValue=`${this.favourite?`Remove from`:`Add to`} Favourites`;
+					info.actions.favourite.dataset.icon=this.icon.favourite?`\uf0c5`:`\uf0c6`;
+					info.actions.favourite.firstChild.nodeValue=`${this.icon.favourite?`Add to`:`Remove from`} Favourites`;
 					let msg=`added to`;
-					if(this.favourite){
+					if(this.icon.favourite){
+						page.storage.removeItem(`mdi-${name}`);
+						this.icon.favourite.remove();
+						delete this.icon.favourite;
+						msg=`removed from`;
+					}else{
 						page.storage.setItem(`mdi-${name}`,1);
 						this.section.append(this.icon.favourite=this.icon.article.cloneNode(1));
 						this.icon.favourite.classList.remove`active`;
 						if(this.articles.length>1)
 							this.sort();
-					}else{
-						page.storage.removeItem(`mdi-${name}`);
-						this.icon.favourite.remove();
-						delete this.icon.favourite;
-						msg=`removed from`;
 					}
 					page.alert(`${name} ${msg} favourites.`);
 				},
@@ -1363,15 +1361,12 @@
 									page.storage.setItem(item,1);
 									this.section.append(this.icon.favourite=this.icon.article.cloneNode(1));
 									if(info.current===name){
-										this.favourite=1;
 										info.actions.favourite.dataset.icon=`\uf0c6`;
 										info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
 									}
 								}
-							}else if(!page.light){
+							}else if(!page.light)
 								page.storage.removeItem(item);
-								this.list.remove(item);
-							}
 						});
 						if(this.articles.length>1)
 							this.sort();
@@ -1466,13 +1461,12 @@
 				},
 				set(name){
 					this.icon=icons.list[name];
-					favourites.favourite=this.icon.favourite;
 					this.name=this.heading.firstChild.nodeValue=name;
 					this.path=this.icon.path[page.font];
 					let codepoint=this.icon.codepoint;
 					if(page.storage){
-						this.actions.favourite.dataset.icon=String.fromCharCode(`0x${favourites.favourite?`f0c6`:`f0c5`}`);
-						this.actions.favourite.firstChild.nodeValue=`${favourites.favourite?`Remove from`:`Add to`} Favourites`;
+						this.actions.favourite.dataset.icon=this.icon.favourite?`\uf0c6`:`\uf0c5`;
+						this.actions.favourite.firstChild.nodeValue=`${this.icon.favourite?`Remove from`:`Add to`} Favourites`;
 					}
 					this.actions.url.dataset.copy=`${page.address}?icon=${name}`;
 					this.actions.html.dataset.copy=`<span class="${page.prefix}-${name}"></span>`;
