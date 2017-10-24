@@ -407,12 +407,11 @@ body.mdi>#content>section>article::before{
 	font-family:mdi;
 }
 /*body.mdil>#content>section>article::before{
-	font-family:mdi Light;
+	font-family:mdil;
 }*/
 #content>section>article>img{
-	left:12px;
+	margin:0 20px 0 12px;
 	opacity:.54;
-	top:12px;
 	transition:filter .225s cubic-bezier(.4,0,.2,1),opacity .225s cubic-bezier(.4,0,.2,1);
 	z-index:1;
 }
@@ -934,7 +933,7 @@ body.mdi>#content>section>article::before{
 .ps{position:sticky;}
 /**  TEXT  **/
 .ffmd{font-family:mdi;}
-/*.ffmdl{font-family:mdi Light;}*/
+/*.ffmdl{font-family:mdil;}*/
 .fwl{font-weight:300;}
 .fwm{font-weight:500;}
 .fwn{font-weight:400;}

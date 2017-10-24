@@ -9,7 +9,7 @@
 		"name":"New in v{v}",
 		"section":true
 	},
-	"updates":{
+	"updated":{
 		"codepoint":"f453",
 		"name":"Updated in v{v}",
 		"section":true

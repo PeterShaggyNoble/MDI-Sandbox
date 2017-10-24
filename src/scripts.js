@@ -34,10 +34,8 @@
 				}catch(e){
 					console.log(`localStorage not available. Favourites disabled`);
 					page.alert`Favourites not available.`;
-					delete categories.list.favourites;
 					for(let key in favourites)
-						if(key!==`actions`)
-							delete favourites[key];
+						delete favourites[key];
 					info.actions.favourite.remove();
 					delete info.actions.favourite;
 				}
@@ -83,8 +81,7 @@
 			},
 		/** TOAST NOTIFICATIONS **/
 			alert(msg){
-				if(this.timer)
-					clearTimeout(this.timer);
+				clearTimeout(this.timer);
 				this.message.firstChild.nodeValue=msg;
 				this.message.classList.remove`oz`;
 				this.timer=setTimeout(_=>
@@ -139,10 +136,10 @@
 						case this.switch:
 							w.location.href=page.light?`./`:`?font=light`;
 							break;
-						case favourites.actions.import:
+						case this.import:
 							favourites.import();
 							break;
-						case favourites.actions.export:
+						case this.export:
 							favourites.export();
 							break;
 						case this.categories.previousElementSibling:
@@ -254,8 +251,7 @@
 				if(this.categories.size+this.contributors.size+this.text.length)
 					filter.apply();
 				this.input.addEventListener(`input`,_=>{
-					if(this.timer)
-						clearTimeout(this.timer);
+					clearTimeout(this.timer);
 					this.timer=setTimeout(_=>{
 						this.text=this.input.value.toLowerCase().replace(/\+/g,`%2b`);
 						this.apply();
@@ -400,7 +396,8 @@
 									info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
 								}
 							}
-						}else page.storage.removeItem(item);
+						}else if(!page.light)
+							page.storage.removeItem(item);
 					});
 					if(this.articles.length>1)
 						this.sort();
@@ -484,7 +481,7 @@
 							this.download();
 							break;
 						case this.actions.path:
-							if(this.path[page.font])
+							if(this.icon.path[page.font])
 								page.copy(target.dataset.copy,target.dataset.confirm);
 							else page.alert`Not yet available.`;
 							break;
@@ -592,14 +589,11 @@
 				this.item.classList.add`cp`;
 				this.item.tabIndex=-1;
 				this.item.append(d.createTextNode``);
+				if(!page.storage)
+					delete this.list.favourites;
 				for(let key in this.list)
-					if(this.list.hasOwnProperty(key)){
-						if(!this.list[key].section)
-							this.list[key].count=icons.array.filter(item=>
-								item.path[page.font]&&item.categories&&item.categories.includes(key)
-							).length;
+					if(this.list.hasOwnProperty(key))
 						this.add(key);
-					}
 			},
 			add(key){
 				let 	category=this.list[key],
@@ -607,33 +601,36 @@
 					heading=this.heading.cloneNode(1),
 					item=this.item.cloneNode(1),
 					name=category.name.replace(`{v}`,version);
-				if(!page.light||!category.section||key===`favourites`){
-					if(category.section){
+				if(category.section)
+					if(!page.light||key===`favourites`){
 						section.dataset.name=key;
 						heading.firstChild.nodeValue=name;
 						section.append(heading);
 						page.section.before(category.section=section);
+					}else delete category.section;
+				else
+					category.count=icons.array.filter(item=>
+						item.path[page.font]&&item.categories&&item.categories.includes(key)
+					).length;
+				if(category.section||category.count){
+					item.firstChild.nodeValue=name;
+					if(category.count)
+						item.firstChild.nodeValue+=` (${category.count})`;
+					item.dataset.category=key;
+					item.dataset.icon=String.fromCharCode(`0x${category.codepoint}`);
+					menu[category.section?`sections`:`categories`].append(category.item=item);
+					if(key===`favourites`){
+						item=item.cloneNode(1);
+						delete item.dataset.category;
+						item.dataset.icon=`\uf220`;
+						item.firstChild.nodeValue=`Import Favourites`;
+						menu.sections.append(menu.import=item);
+						item=item.cloneNode(1);
+						item.dataset.icon=`\uf21d`;
+						item.firstChild.nodeValue=`Export Favourites`;
+						menu.sections.append(menu.export=item);
 					}
-					if(category.section||category.count){
-						item.firstChild.nodeValue=name;
-						if(category.count)
-							item.firstChild.nodeValue+=` (${category.count})`;
-						item.dataset.category=key;
-						item.dataset.icon=String.fromCharCode(`0x${category.codepoint}`);
-						menu[category.section?`sections`:`categories`].append(category.item=item);
-						if(key===`favourites`){
-							item=item.cloneNode(1);
-							delete item.dataset.category;
-							item.dataset.icon=`\uf220`;
-							item.firstChild.nodeValue=`Import Favourites`;
-							menu.sections.append(favourites.actions.import=item);
-							item=item.cloneNode(1);
-							item.dataset.icon=`\uf21d`;
-							item.firstChild.nodeValue=`Export Favourites`;
-							menu.sections.append(favourites.actions.export=item);
-						}
-					}
-				}else delete category.section;
+				}else delete category;
 			}
 		},
 	/** CONTRIBUTORS **/
@@ -647,29 +644,26 @@
 				this.img.classList.add(`pen`,`vam`);
 				this.img.height=this.img.width=24;
 				for(let key in this.list)
-					if(this.list.hasOwnProperty(key)){
-						this.list[key].count=icons.array.filter(item=>
-							item.path[page.font]&&item.contributor&&item.contributor[page.font]&&item.contributor[page.font]===key
-						).length;
+					if(this.list.hasOwnProperty(key))
 						this.add(key);
-					}
 			},
 			add(key){
 				let 	contributor=this.list[key],
 					image=contributor.image,
 					img=this.img.cloneNode(1),
 					item=this.item.cloneNode(1);
+				contributor.count=icons.array.filter(item=>
+					item.path[page.font]&&item.contributor&&item.contributor[page.font]&&item.contributor[page.font]===key
+				).length;
 				if(contributor.count){
 					item.dataset.contributor=key;
-					item.dataset.icon=image?``:`\uf004`;
 					if(image){
-						delete item.dataset.icon;
 						img.src=`data:image/png;base64,${image}`;
 						item.prepend(img);
-					}else img.remove();
+					}else item.dataset.icon=`\uf004`;
 					item.lastChild.nodeValue=`${contributor.name} (${contributor.count})`;
 					menu.contributors.append(contributor.item=item);
-				}
+				}else delete contributor
 			}
 		},
 	/** ICONS **/
@@ -683,7 +677,7 @@
 				this.article.classList.add(`cp`,page.light?`fwl`:`fwm`,`oh`,`pr`,`toe`,`wsnw`);
 				this.article.append(d.createTextNode``);
 				this.span.classList.add(`ripple`,`db`,`pa`,`pen`);
-				this.img.classList.add(`pa`,`pen`);
+				this.img.classList.add(`pen`,`vam`);
 				this.img.height=this.img.width=24;
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key)&&this.list[key].path[page.font])
@@ -691,40 +685,42 @@
 			},
 			add(key){
 				let 	icon=this.list[key],
-					article=this.article,
-					img=this.img,
+					article=this.article.cloneNode(1),
+					img=this.img.cloneNode(1),
 					codepoint=icon.codepoint,
-					sections=categories.list,
 					keywords=new Set(key.split`-`),
-					section;
-				if(icon.aliases)
-					icon.aliases.forEach(alias=>
-						alias.split`-`.forEach(word=>
+					category;
+				if(icon.path[page.font]){
+					if(icon.aliases)
+						icon.aliases.forEach(alias=>
+							alias.split`-`.forEach(word=>
+								keywords.add(word)
+							)
+						);
+					if(icon.keywords)
+						icon.keywords.forEach(word=>
 							keywords.add(word)
-						)
-					);
-				if(icon.keywords)
-					icon.keywords.forEach(word=>
-						keywords.add(word)
-					);
-				icon.keywords=[...keywords].sort();
-				article.dataset.icon=codepoint?String.fromCharCode(`0x${codepoint}`):``;
-				if(!codepoint){
-					img.src=`data:image/svg+xml;utf8,${this.svgheader+icon.path[page.font]}"/></svg>`;
-					article.prepend(img);
-				}else img.remove();
-				article.lastChild.nodeValue=key;
-				if((section=favourites.section)&&page.storage[`mdi-${key}`])
-					section.append(icon.favourite=article.cloneNode(1));
-				if((section=sections.new.section)&&icon.added&&icon.added[page.font]===version)
-					section.append(article.cloneNode(1));
-				if((section=sections.updates.section)&&icon.updated&&icon.updated[page.font]===version)
-					section.append(article.cloneNode(1));
-				if((section=sections.soon.section)&&icon.added&&icon.added[page.font]===`{next}`)
-					section.append(article.cloneNode(1));
-				if((section=sections.retired.section)&&icon.retired)
-					section.append(article.cloneNode(1));
-				page.section.append(icon.article=article.cloneNode(1));
+						);
+					icon.keywords=[...keywords].sort();
+					if(codepoint)
+						article.dataset.icon=String.fromCharCode(`0x${codepoint}`);
+					else{
+						img.src=`data:image/svg+xml;utf8,${this.svgheader+icon.path[page.font]}"/></svg>`;
+						article.prepend(img);
+					}
+					article.lastChild.nodeValue=key;
+					if((category=categories.list.favourites)&&page.storage[`mdi-${key}`])
+						category.section.append(icon.favourite=article.cloneNode(1));
+					if((category=categories.list.new)&&icon.added&&icon.added[page.font]===version)
+						category.section.append(article.cloneNode(1));
+					if((category=categories.list.updated)&&icon.updated&&icon.updated[page.font]===version)
+						category.section.append(article.cloneNode(1));
+					if((category=categories.list.soon)&&icon.added&&icon.added[page.font]===`{next}`)
+						category.section.append(article.cloneNode(1));
+					if((category=categories.list.retired)&&icon.retired)
+						category.section.append(article.cloneNode(1));
+					page.section.append(icon.article=article);
+				}else delete icon;
 			},
 			ripple(target,x,y){
 				let span=this.span.cloneNode(0);
