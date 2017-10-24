@@ -608,8 +608,7 @@
 						section.append(heading);
 						page.section.before(category.section=section);
 					}else delete category.section;
-				else
-					category.count=icons.array.filter(item=>
+				else category.count=icons.array.filter(item=>
 						item.path[page.font]&&item.categories&&item.categories.includes(key)
 					).length;
 				if(category.section||category.count){
