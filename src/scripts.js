@@ -8,6 +8,7 @@
 	/** FUNCTIONS **/
 		$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
+		C=e=>d.createElement(e),
 	/** CONSTANTS **/
 		w=window,
 		d=document,
@@ -19,8 +20,8 @@
 			main:$`content`,
 			section:$`icons`,
 			message:$`message`,
-			anchor:d.createElement`a`,
-			textarea:d.createElement`textarea`,
+			anchor:C`a`,
+			textarea:C`textarea`,
 		/** SET UP **/
 			init(){
 				this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
@@ -119,7 +120,7 @@
 			nav:$`nav`,
 			header:$`navicon`,
 			menu:$`menu`,
-			switch:d.createElement`p`,
+			switch:C`p`,
 			sections:$`sections`,
 			categories:$`categories`,
 			contributors:$`contributors`,
@@ -149,6 +150,10 @@
 						case this.export:
 							page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).join`,`))}`,`mdi-favourites.txt`);
 							break;
+						case filter.clearall:
+							filter.clear();
+							this.toggle();
+							break;
 						case this.categories.previousElementSibling:
 						case this.contributors.previousElementSibling:
 							target.classList.toggle`open`;
@@ -161,7 +166,7 @@
 									case this.sections:
 										if(category=categories.list[category].section){
 											this.goto(category);
-											this.toggle()
+											this.toggle();
 										}
 										break;
 									case this.categories:
@@ -236,10 +241,16 @@
 	/** FILTERS **/
 		filter={
 			input:$`filter`,
+			clearall:C`li`,
 			heading:page.section.firstElementChild,
 			error:page.section.querySelector`p`,
 			init(){
 				this.button=this.input.nextElementSibling;
+				this.clearall.classList.add`cp`;
+				this.clearall.dataset.icon=`\uf573`;
+				this.clearall.tabIndex=-1;
+				this.clearall.append(d.createTextNode`All Icons`);
+				menu.sections.append(this.clearall);
 				this.categories=new Set(this.categories=page.params.get`categories`?this.categories.split`,`:[]);
 				if(this.categories.size){
 					menu.categories.previousElementSibling.classList.add`open`;
@@ -254,7 +265,7 @@
 				}
 				if(this.text=page.params.get`filter`)
 					this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
-				if(this.categories.size&&this.contributors.size&&this.text)
+				if(this.categories.size||this.contributors.size||this.text)
 					filter.apply();
 				this.input.addEventListener(`input`,_=>{
 					clearTimeout(this.timer);
@@ -266,8 +277,8 @@
 				this.button.addEventListener(`click`,_=>{
 					this.input.focus();
 					if(this.text){
-						this.input.value=``;
-						this.input.dispatchEvent(new Event(`input`));
+						this.text=this.input.value=``;
+						this.apply();
 					}
 				},0);
 				this.heading.addEventListener(`click`,_=>
@@ -292,7 +303,7 @@
 							);
 						if(this.contributors.size)
 							check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
-						if(this.text)
+						if(words)
 							check=check&&words.every(word=>
 								icon.keywords.some(item=>
 									item.startsWith(word)
@@ -303,6 +314,7 @@
 					}
 				this.error.classList.toggle(`dn`,match);
 				this.heading.classList.toggle(`pen`,!this.filtered||!match);
+				this.clearall.dataset.icon=this.filtered?`\uf234`:`\uf573`;
 				if(this.filtered){
 					this.url=`${page.address}?`;
 					if(page.light)
@@ -322,11 +334,25 @@
 					if(page.main.scrollTop<page.section.offsetTop-page.header.offsetHeight)
 						page.main.scrollTop=page.section.offsetTop-page.header.offsetHeight
 				}
+			},
+			clear(){
+				if(this.filtered){
+					for(let key of this.categories)
+						categories.list[key].item.classList.remove`active`;
+					this.categories.clear();
+					for(let key of this.contributors)
+						contributors.list[key].item.classList.remove`active`;
+					this.contributors.clear();
+					this.text=this.input.value=``;
+					this.apply();
+					if(page.main.scrollTop!=page.section.offsetTop-page.header.offsetHeight)
+						menu.goto(page.section);
+				}
 			}
 		},
 	/** FAVOURITES **/
 		favourites={
-			input:d.createElement`input`,
+			input:C`input`,
 			reader:new FileReader(),
 			init(){
 				this.input.accept=`.txt,text/plain`;
@@ -413,9 +439,8 @@
 			aside:$`info`,
 			heading:$`name`,
 			figure:$`preview`,
-			img:d.createElement`img`,
+			img:C`img`,
 			input:$`slider`,
-			copy:1,
 			actions:{
 				favourite:Q`#actions>:first-child`,
 				path:Q`#actions>[data-confirm=Path]`,
@@ -435,12 +460,12 @@
 				this.img.height=this.img.width=56;
 				this.figure.append(this.img);
 				let icon=page.params.get`icon`;
-				if(icon){
+				if(icon)
 					if(icons.list[icon]){
 						this.open(icon);
 						icons.list[icon].article.classList.add`active`;
 					}
-				}else for(let key in icons.list)
+				else for(let key in icons.list)
 					if(icons.list.hasOwnProperty(key)&&icons.list[key].path[page.font]){
 						this.set(key);
 						break;
@@ -491,34 +516,35 @@
 			set(name){
 				this.icon=icons.list[name];
 				this.name=this.heading.firstChild.nodeValue=name;
-				this.path=this.icon.path[page.font];
-				let codepoint=this.icon.codepoint;
-				if(page.storage){
-					this.actions.favourite.dataset.icon=this.icon.favourite?`\uf0c6`:`\uf0c5`;
-					this.actions.favourite.firstChild.nodeValue=`${this.icon.favourite?`Remove from`:`Add to`} Favourites`;
-				}
-				this.actions.url.dataset.copy=`${page.address}?icon=${name}`;
-				this.actions.html.dataset.copy=`<span class="${page.prefix}-${name}"></span>`;
-				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
-				if(page.light)
-					this.actions.link.dataset.url+=`light/`;
-				this.img.src=`data:image/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`;
+				this.path=this.actions.path.dataset.copy=this.icon.path[page.font];
+				let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 				this.aside.dataset.nocopy=(!(this.copy=!!codepoint)).toString();
 				this.aside.dataset.nodownload=(!this.path).toString();
 				this.aside.dataset.retired=(!!this.icon.retired).toString();
-				this.actions.path.dataset.copy=this.path;
-				if(codepoint){
-					this.actions.icon.dataset.copy=String.fromCharCode(`0x${codepoint}`);
-					this.actions.codepoint.dataset.copy=codepoint;
-					this.actions.entity.dataset.copy=`&#x${codepoint};`;
-					this.actions.css.dataset.copy=`\\${codepoint}`;
-					this.actions.js.dataset.copy=`\\u${codepoint}`;
-				}
+				this.img.src=`data:image/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`;
 				this.downloads={
 					svg:`data:text/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.path}"/></Canvas>`,
 					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.path}"/></vector>`
 				};
+				if(page.storage){
+					this.actions.favourite.dataset.icon=this.icon.favourite?`\uf0c6`:`\uf0c5`;
+					this.actions.favourite.firstChild.nodeValue=`${this.icon.favourite?`Remove from`:`Add to`} Favourites`;
+				}
+				if(codepoint){
+					this.actions.icon.dataset.copy=String.fromCharCode(`0x${codepoint}`);
+					this.actions.entity.dataset.copy=`&#x${codepoint};`;
+					this.actions.css.dataset.copy=`\\${codepoint}`;
+					this.actions.js.dataset.copy=`\\u${codepoint}`;
+				}
+				this.actions.html.dataset.copy=`<span class="${page.prefix}-${name}"></span>`;
+				this.actions.url.dataset.copy=`${page.address}?`;
+				if(page.light)
+					this.actions.url.dataset.copy+=`font=light&`;
+				this.actions.url.dataset.copy+=`icon=${name}`;
+				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
+				if(page.light)
+					this.actions.link.dataset.url+=`light/`;
 			},
 			download(){
 				if(this.icon)
@@ -547,9 +573,9 @@
 		},
 	/** CATEGORIES **/
 		categories={
-			section:d.createElement`section`,
-			heading:d.createElement`h2`,
-			item:d.createElement`li`,
+			section:C`section`,
+			heading:C`h2`,
+			item:C`li`,
 			init(){
 				this.section.classList.add(`df`,`pr`);
 				this.heading.classList.add(`oh`,`ps`);
@@ -606,8 +632,8 @@
 		},
 	/** CONTRIBUTORS **/
 		contributors={
-			item:d.createElement`li`,
-			img:d.createElement`img`,
+			item:C`li`,
+			img:C`img`,
 			init(){
 				this.item.classList.add`cp`;
 				this.item.tabIndex=-1;
@@ -639,9 +665,9 @@
 		},
 	/** ICONS **/
 		icons={
-			article:d.createElement`article`,
-			span:d.createElement`span`,
-			img:d.createElement`img`,
+			article:C`article`,
+			span:C`span`,
+			img:C`img`,
 			svgheader:`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="`,
 			init(){
 				delete this.array;

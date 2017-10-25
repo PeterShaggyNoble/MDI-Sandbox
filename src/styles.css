@@ -172,7 +172,7 @@ body{
 #menu>h3.open::before{
 	transform:rotate(90deg);
 }
-#menu>p,#menu>ol,#sections>li:nth-last-child(5){
+#menu>p,#menu>ol,#sections>li:nth-child(3):nth-last-child(6),#sections>li:nth-child(3):nth-last-child(2){
 	border-bottom:1px solid #e0e0e0;
 }
 #menu>h3:not(.open)+ol{
