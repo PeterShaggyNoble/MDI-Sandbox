@@ -65,10 +65,7 @@
 	font-weight:inherit;
 }
 ::-webkit-scrollbar{
-	width:4px;
-}
-::-webkit-scrollbar-track{
-	background:#eee;
+	width:8px;
 }
 ::-webkit-scrollbar-thumb{
 	background:#9e9e9e;

@@ -68,10 +68,7 @@
 		font-weight:inherit;
 	}
 	::-webkit-scrollbar{
-		width:4px;
-	}
-	::-webkit-scrollbar-track{
-		background:#eee;
+		width:8px;
 	}
 	::-webkit-scrollbar-thumb{
 		background:#9e9e9e;
@@ -878,7 +875,7 @@
 </header>
 <main class="oa oz" id="content">
 	<section class="dg pr" id="icons">
-		<h2 class="oh pen ps">All Icons</h2>
+		<h2 class="oh ps">All Icons</h2>
 		<p class="dn fwm">No icons matched your query
 	</section>
 </main>
@@ -961,11 +958,13 @@
 					info.init();
 					this.main.addEventListener(`click`,event=>{
 						let	target=event.target,
+							parent=target.parentNode,
 							current=this.main.querySelector`article.active`;
 						switch(target.nodeName.toLowerCase()){
 							case`h2`:
-								if(target!==filter.heading)
-									page.copy(`${page.address}?${page.light?`font=light&`:``}section=${target.parentNode.dataset.name}`,`Link`);
+								if(parent!==this.section)
+									page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`);
+								else page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
 								break;
 							case`article`:
 								if(current)
@@ -1139,7 +1138,7 @@
 			filter={
 				input:$`filter`,
 				clearall:C`li`,
-				heading:page.section.firstElementChild,
+				heading:page.section.firstElementChild.firstChild,
 				error:page.section.querySelector`p`,
 				init(){
 					this.button=this.input.nextElementSibling;
@@ -1178,15 +1177,12 @@
 							this.apply();
 						}
 					},0);
-					this.heading.addEventListener(`click`,_=>
-						page.copy(this.filtered&&this.url?this.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`)
-					,0);
 				},
 				apply(){
 					if(page.main.scrollTop<page.section.offsetTop-page.header.offsetHeight)
 						menu.goto(page.section);
 					page.section.dataset.filtered=(this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size).toString();
-					this.heading.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
+					this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 					let	words=this.text&&this.text.split(/[\s\-]/),
 						match=0,
 						check,icon,article;
@@ -1210,7 +1206,6 @@
 							match=match||check;
 						}
 					this.error.classList.toggle(`dn`,match);
-					this.heading.classList.toggle(`pen`,!this.filtered||!match);
 					this.clearall.dataset.icon=this.filtered?`\uf234`:`\uf03b`;
 					if(this.filtered){
 						this.url=`${page.address}?`;
@@ -1467,7 +1462,7 @@
 				item:C`li`,
 				init(){
 					this.section.classList.add(`dg`,`pr`);
-					this.heading.classList.add(`oh`,`pen`,`ps`);
+					this.heading.classList.add(`oh`,`ps`);
 					this.heading.append(d.createTextNode``);
 					this.item.classList.add`cp`;
 					this.item.tabIndex=-1;
@@ -1851,7 +1846,7 @@
 						}
 					},
 					"account-alert":{
-						"aliases":["user-alert"],
+						"aliases":["account-warning","user-alert","user-warning"],
 						"categories":["users"],
 						"contributor":{
 							"regular":"austin-andrews"
@@ -2378,6 +2373,7 @@
 						}
 					},
 					"alert":{
+						"aliases":["warning"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -2387,6 +2383,7 @@
 						}
 					},
 					"alert-box":{
+						"aliases":["warning-box"],
 						"contributor":{
 							"regular":"austin-andrews"
 						},
@@ -2396,6 +2393,7 @@
 						}
 					},
 					"alert-circle":{
+						"aliases":["warning-circle"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -2405,6 +2403,7 @@
 						}
 					},
 					"alert-circle-outline":{
+						"aliases":["warning-circle-outline"],
 						"added":{
 							"regular":1554
 						},
@@ -2421,7 +2420,7 @@
 						"added":{
 							"regular":1836
 						},
-						"aliases":["new-releases"],
+						"aliases":["new-releases","warning-decagram"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -2434,6 +2433,7 @@
 						}
 					},
 					"alert-octagon":{
+						"aliases":["warning-octagon"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -2446,6 +2446,7 @@
 						"added":{
 							"regular":1932
 						},
+						"aliases":["warning-octagram"],
 						"contributor":{
 							"regular":"austin-andrews"
 						},
@@ -2455,6 +2456,7 @@
 						}
 					},
 					"alert-outline":{
+						"aliases":["warning-outline"],
 						"contributor":{
 							"regular":"cody"
 						},
@@ -3972,6 +3974,7 @@
 						}
 					},
 					"battery-alert":{
+						"aliases":["battery-warning"],
 						"categories":["assistant","power"],
 						"contributor":{
 							"regular":"google"
@@ -4188,6 +4191,7 @@
 						"added":{
 							"regular":"{next}"
 						},
+						"aliases":["battery-charging-wireless-warning"],
 						"categories":["assistant","power"],
 						"contributor":{
 							"regular":"michael-richins"
@@ -6944,6 +6948,7 @@
 						}
 					},
 					"clipboard-alert":{
+						"aliases":["clipboard-warning"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -7046,6 +7051,7 @@
 						"added":{
 							"regular":1554
 						},
+						"aliases":["clock-warning"],
 						"categories":["time"],
 						"contributor":{
 							"regular":"cody"
@@ -7605,6 +7611,7 @@
 						}
 					},
 					"comment-alert":{
+						"aliases":["comment-warning"],
 						"contributor":{
 							"regular":"austin-andrews"
 						},
@@ -7614,6 +7621,7 @@
 						}
 					},
 					"comment-alert-outline":{
+						"aliases":["comment-warning-outline"],
 						"contributor":{
 							"regular":"austin-andrews"
 						},
@@ -8961,6 +8969,7 @@
 						}
 					},
 					"disk-alert":{
+						"aliases":["disk-warning"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -9424,6 +9433,7 @@
 						"added":{
 							"regular":1836
 						},
+						"aliases":["email-warning"],
 						"contributor":{
 							"regular":"austin-andrews"
 						},
@@ -15226,7 +15236,7 @@
 						}
 					},
 					"message-alert":{
-						"aliases":["feedback"],
+						"aliases":["feedback","message-warning"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -18315,6 +18325,7 @@
 						}
 					},
 					"printer-alert":{
+						"aliases":["printer-warning"],
 						"categories":["assistant"],
 						"contributor":{
 							"regular":"austin-andrews"
@@ -20218,6 +20229,7 @@
 						}
 					},
 					"sim-alert":{
+						"aliases":["sim-warning"],
 						"categories":["networking"],
 						"contributor":{
 							"regular":"google"
@@ -21394,6 +21406,7 @@
 						}
 					},
 					"sync-alert":{
+						"aliases":["sync-warning"],
 						"categories":["networking"],
 						"contributor":{
 							"regular":"google"
@@ -24398,6 +24411,7 @@
 						"added":{
 							"regular":1932
 						},
+						"aliases":["xbox-controller-battery-warning"],
 						"contributor":{
 							"regular":"austin-andrews"
 						},

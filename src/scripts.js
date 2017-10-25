@@ -55,11 +55,13 @@
 				info.init();
 				this.main.addEventListener(`click`,event=>{
 					let 	target=event.target,
+						parent=target.parentNode,
 						current=this.main.querySelector`article.active`;
 					switch(target.nodeName.toLowerCase()){
 						case`h2`:
-							if(target!==filter.heading)
-								page.copy(`${page.address}?${page.light?`font=light&`:``}section=${target.parentNode.dataset.name}`,`Link`);
+							if(parent!==this.section)
+								page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`);
+							else page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
 							break;
 						case`article`:
 							if(current)
@@ -246,7 +248,7 @@
 		filter={
 			input:$`filter`,
 			clearall:C`li`,
-			heading:page.section.firstElementChild,
+			heading:page.section.firstElementChild.firstChild,
 			error:page.section.querySelector`p`,
 			init(){
 				this.button=this.input.nextElementSibling;
@@ -285,15 +287,12 @@
 						this.apply();
 					}
 				},0);
-				this.heading.addEventListener(`click`,_=>
-					page.copy(this.filtered&&this.url?this.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`)
-				,0);
 			},
 			apply(){
 				if(page.main.scrollTop<page.section.offsetTop-page.header.offsetHeight)
 					menu.goto(page.section);
 				page.section.dataset.filtered=(this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size).toString();
-				this.heading.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
+				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
 					match=0,
 					check,icon,article;
@@ -317,7 +316,6 @@
 						match=match||check;
 					}
 				this.error.classList.toggle(`dn`,match);
-				this.heading.classList.toggle(`pen`,!this.filtered||!match);
 				this.clearall.dataset.icon=this.filtered?`\uf234`:`\uf03b`;
 				if(this.filtered){
 					this.url=`${page.address}?`;
@@ -577,7 +575,7 @@
 			item:C`li`,
 			init(){
 				this.section.classList.add(`dg`,`pr`);
-				this.heading.classList.add(`oh`,`pen`,`ps`);
+				this.heading.classList.add(`oh`,`ps`);
 				this.heading.append(d.createTextNode``);
 				this.item.classList.add`cp`;
 				this.item.tabIndex=-1;

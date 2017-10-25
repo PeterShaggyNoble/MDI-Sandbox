@@ -41,7 +41,7 @@
 		}
 	},
 	"account-alert":{
-		"aliases":["user-alert"],
+		"aliases":["account-warning","user-alert","user-warning"],
 		"categories":["users"],
 		"contributor":{
 			"regular":"austin-andrews"
@@ -694,6 +694,7 @@
 		}
 	},
 	"alert":{
+		"aliases":["warning"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -706,6 +707,7 @@
 		}
 	},
 	"alert-box":{
+		"aliases":["warning-box"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -718,6 +720,7 @@
 		}
 	},
 	"alert-circle":{
+		"aliases":["warning-circle"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -730,6 +733,7 @@
 		}
 	},
 	"alert-circle-outline":{
+		"aliases":["warning-circle-outline"],
 		"added":{
 			"regular":1554
 		},
@@ -749,7 +753,7 @@
 		"added":{
 			"regular":1836
 		},
-		"aliases":["new-releases"],
+		"aliases":["new-releases","warning-decagram"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -765,6 +769,7 @@
 		}
 	},
 	"alert-octagon":{
+		"aliases":["warning-octagon"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -780,6 +785,7 @@
 		"added":{
 			"regular":1932
 		},
+		"aliases":["warning-octagram"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -792,6 +798,7 @@
 		}
 	},
 	"alert-outline":{
+		"aliases":["warning-outline"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -2705,6 +2712,7 @@
 		}
 	},
 	"battery-alert":{
+		"aliases":["battery-warning"],
 		"categories":["assistant","power"],
 		"contributor":{
 			"regular":"google"
@@ -2978,6 +2986,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["battery-charging-wireless-warning"],
 		"categories":["assistant","power"],
 		"contributor":{
 			"regular":"michael-richins"
@@ -6508,6 +6517,7 @@
 		}
 	},
 	"clipboard-alert":{
+		"aliases":["clipboard-warning"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -6640,6 +6650,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["clock-warning"],
 		"categories":["time"],
 		"contributor":{
 			"regular":"cody"
@@ -7358,6 +7369,7 @@
 		}
 	},
 	"comment-alert":{
+		"aliases":["comment-warning"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -7370,6 +7382,7 @@
 		}
 	},
 	"comment-alert-outline":{
+		"aliases":["comment-warning-outline"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -9080,6 +9093,7 @@
 		}
 	},
 	"disk-alert":{
+		"aliases":["disk-warning"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -9672,6 +9686,7 @@
 		"added":{
 			"regular":1836
 		},
+		"aliases":["email-warning"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -17067,7 +17082,7 @@
 		}
 	},
 	"message-alert":{
-		"aliases":["feedback"],
+		"aliases":["feedback","message-warning"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -20996,6 +21011,7 @@
 		}
 	},
 	"printer-alert":{
+		"aliases":["printer-warning"],
 		"categories":["assistant"],
 		"contributor":{
 			"regular":"austin-andrews"
@@ -23433,6 +23449,7 @@
 		}
 	},
 	"sim-alert":{
+		"aliases":["sim-warning"],
 		"categories":["networking"],
 		"contributor":{
 			"regular":"google"
@@ -24921,6 +24938,7 @@
 		}
 	},
 	"sync-alert":{
+		"aliases":["sync-warning"],
 		"categories":["networking"],
 		"contributor":{
 			"regular":"google"
@@ -28768,6 +28786,7 @@
 		"added":{
 			"regular":1932
 		},
+		"aliases":["xbox-controller-battery-warning"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
