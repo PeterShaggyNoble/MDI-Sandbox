@@ -411,6 +411,7 @@ body.mdil #icons[data-filtered=true]{
 	color:#757575;
 	font-family:mdi;
 	font-size:24px;
+	margin:0 8px 0 0;
 	transition:color .225s cubic-bezier(.4,0,.2,1);
 	vertical-align:middle;
 	width:48px;
