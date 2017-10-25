@@ -5,7 +5,7 @@
 2. This repository is currently a work in progress, being my first project on GitHub. As such, please refrain from submitting any pull requests for now. If you have a request or suggestion then please [submit an issue](https://github.com/PeterShaggyNoble/MDI-Sandbox/issues) instead.
 
 ## Standalone Version
-A single-file, standalone version is now available, which you can find in the [`standalone`](https://github.com/PeterShaggyNoble/MDI-Sandbox/tree/master/standalone) directory. It can be run locally but note that it does currently need access to the internet in order to download the Roboto font from Google. Also, unless you run the file through a web server, it can't access `window.localStorage` and, therefore, all functionality related to favourites is disabled.
+A single-file, standalone version is now available, which you can find in the [`standalone`](https://github.com/PeterShaggyNoble/MDI-Sandbox/tree/master/standalone) directory. It can be run locally ~but note that it does currently need access to the internet in order to download the Roboto font from Google~. Also, unless you run the file through a web server, it can't access `window.localStorage` and, therefore, all functionality related to favourites is disabled.
 
 ## To-Do List
 1. [ ] Add Light icons.
