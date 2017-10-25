@@ -55,12 +55,11 @@
 				info.init();
 				this.main.addEventListener(`click`,event=>{
 					let 	target=event.target,
-						parent=target.parentNode,
 						current=this.main.querySelector`article.active`;
 					switch(target.nodeName.toLowerCase()){
 						case`h2`:
-							if(parent!==this.section)
-								page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`);
+							if(target!==filter.heading)
+								page.copy(`${page.address}?${page.light?`font=light&`:``}section=${target.parentNode.dataset.name}`,`Link`);
 							break;
 						case`article`:
 							if(current)
@@ -69,6 +68,7 @@
 							info.open(target.lastChild.nodeValue);
 							target.classList.add`active`;
 							break;
+						default:break;
 					}
 				},0);
 				setTimeout(_=>{
@@ -131,7 +131,11 @@
 				this.switch.append(d.createTextNode(`View ${page.light?`Regular`:`Light`} Icons`));
 				/*this.sections.before(this.switch);*/
 				let section=page.params.get`section`;
-				if(section&&(section=categories.list[section].section))
+				if(section)
+					if(categories.list[section]&&categories.list[section].section)
+						section=categories.list[section].section;
+					else section=page.main.querySelector(`#${section}`);
+				if(section)
 					this.goto(section);
 				this.nav.addEventListener(`click`,event=>{
 					let target=event.target;
@@ -282,7 +286,7 @@
 					}
 				},0);
 				this.heading.addEventListener(`click`,_=>
-					page.copy(this.url,`Link`)
+					page.copy(this.filtered&&this.url?this.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`)
 				,0);
 			},
 			apply(){
@@ -455,20 +459,16 @@
 			downloads:{},
 			show:0,
 			init(){
-				this.img.classList.add`dib`;
+				this.img.classList.add`pr`;
 				this.img.height=this.img.width=56;
 				this.figure.append(this.img);
 				let icon=page.params.get`icon`;
-				if(icon)
+				if(icon){
 					if(icons.list[icon]){
 						this.open(icon);
 						icons.list[icon].article.classList.add`active`;
 					}
-				else for(let key in icons.list)
-					if(icons.list.hasOwnProperty(key)&&icons.list[key].path[page.font]){
-						this.set(key);
-						break;
-					}
+				}else this.set(Object.keys(icons.list)[0]);
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
@@ -507,9 +507,10 @@
 				this.set(icon);
 				this.current=icon;
 				this.figure.classList.add`oz`;
-				setTimeout(_=>
-					this.figure.classList.remove`oz`
-				,10);
+				setTimeout(_=>{
+					this.img.src=`data:image/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`;
+					this.figure.classList.remove`oz`;
+				},195);
 				this.toggle();
 			},
 			set(name){
@@ -520,7 +521,6 @@
 				this.aside.dataset.nocopy=(!(this.copy=!!codepoint)).toString();
 				this.aside.dataset.nodownload=(!this.path).toString();
 				this.aside.dataset.retired=(!!this.icon.retired).toString();
-				this.img.src=`data:image/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`;
 				this.downloads={
 					svg:`data:text/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.path}"/></Canvas>`,
@@ -576,8 +576,8 @@
 			heading:C`h2`,
 			item:C`li`,
 			init(){
-				this.section.classList.add(`df`,`pr`);
-				this.heading.classList.add(`oh`,`ps`);
+				this.section.classList.add(`dg`,`pr`);
+				this.heading.classList.add(`oh`,`pen`,`ps`);
 				this.heading.append(d.createTextNode``);
 				this.item.classList.add`cp`;
 				this.item.tabIndex=-1;
