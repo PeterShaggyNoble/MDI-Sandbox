@@ -247,7 +247,7 @@
 			init(){
 				this.button=this.input.nextElementSibling;
 				this.clearall.classList.add`cp`;
-				this.clearall.dataset.icon=`\uf573`;
+				this.clearall.dataset.icon=`\uf03b`;
 				this.clearall.tabIndex=-1;
 				this.clearall.append(d.createTextNode`All Icons`);
 				menu.sections.append(this.clearall);
@@ -314,7 +314,7 @@
 					}
 				this.error.classList.toggle(`dn`,match);
 				this.heading.classList.toggle(`pen`,!this.filtered||!match);
-				this.clearall.dataset.icon=this.filtered?`\uf234`:`\uf573`;
+				this.clearall.dataset.icon=this.filtered?`\uf234`:`\uf03b`;
 				if(this.filtered){
 					this.url=`${page.address}?`;
 					if(page.light)
@@ -345,9 +345,8 @@
 					this.contributors.clear();
 					this.text=this.input.value=``;
 					this.apply();
-					if(page.main.scrollTop!=page.section.offsetTop-page.header.offsetHeight)
-						menu.goto(page.section);
 				}
+				menu.goto(page.section);
 			}
 		},
 	/** FAVOURITES **/
