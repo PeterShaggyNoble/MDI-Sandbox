@@ -631,12 +631,14 @@ dialog>figure>svg{
 	transition-duration:.195s;
 	transition-property:background,border-radius,fill,fill-opacity,height,padding,width;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
+	z-index:2;
 }
 dialog>figure>span{
 	border:0 solid rgba(76,175,80,.54);
 	transition-duration:.195s;
-	transition-property:border,height,width;
+	transition-property:background,border,height,width;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
+	z-index:1;
 }
 dialog>figure.light>span{
 	border-color:rgba(3,169,244,.54);
@@ -650,12 +652,21 @@ dialog>figure>span:first-of-type{
 	top:50%;
 	transform:translatey(-50%);
 }
-dialog>figure>span:last-of-type{
+dialog>figure>span:nth-of-type(2){
 	border-width:0 1px;
 	bottom:0;
 	left:50%;
 	top:0;
 	transform:translatex(-50%);
+	width:24px;
+	max-width:256px;
+}
+dialog>figure>span:last-of-type{
+	height:24px;
+	max-height:256px;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
 	width:24px;
 	max-width:256px;
 }

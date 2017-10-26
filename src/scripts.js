@@ -745,20 +745,19 @@
 				this.context=this.canvas.getContext`2d`;
 				this.xml=new XMLSerializer();
 				this.padding=this.alpha=this.radius=0;
-				this.fill=[...this.backgound=[0,0,0]];
+				this.fill=[...this.background=[0,0,0]];
 				this.dialog=Q`dialog`;
 				this.save=this.dialog.lastElementChild;
 				this.cancel=this.save.previousElementSibling;
 				this.figure=this.dialog.querySelector`figure`;
-				this.figure.append(this.svg=N`svg`);
+				this.figure.append(this.svg=N`svg`,this.horizontal=C`span`);
 				this.svg.classList.add`pa`;
 				this.svg.setAttribute(`height`,this.dimensions=this.size=24);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				this.svg.setAttribute(`width`,24);
 				this.svg.append(this.path=N`path`);
-				this.figure.append(this.horizontal=C`span`);
 				this.horizontal.classList.add(`pa`,`pen`);
-				this.figure.append(this.vertical=this.horizontal.cloneNode(1));
+				this.figure.append(this.vertical=this.horizontal.cloneNode(1),this.bg=this.horizontal.cloneNode(1));
 				this.inputs={
 					alpha:$`png_alpha`,
 					background:$`png_background`,
@@ -791,21 +790,18 @@
 					if(valid){
 						switch(target){
 							case this.inputs.size:
-								value=parseInt(value);
-								this.svg.setAttribute(`height`,this.size=value);
+								this.svg.setAttribute(`height`,this.size=parseInt(value));
 								this.svg.setAttribute(`width`,this.size);
 								if(this.padding>(this.inputs.padding.max=(256-this.size)/2))
-									this.svg.style.padding=`${this.padding=this.inputs.padding.value=this.inputs.padding.max}px`;
-								this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*this.padding}px`;
+									this.padding=this.inputs.padding.value=this.inputs.padding.max;
+								this.bg.style.height=this.bg.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*this.padding}px`;
 								if(this.radius>(this.inputs.radius.max=this.dimensions/2))
-									this.svg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
+									this.bg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
 								break;
 							case this.inputs.padding:
-								value=parseInt(value);
-								this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=value)}px`;
-								this.svg.style.padding=`${this.padding}px`;
+								this.bg.style.height=this.bg.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=parseInt(value))}px`;
 								if(this.radius>(this.inputs.radius.max=this.dimensions/2))
-									this.svg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
+									this.bg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
 								break;
 							case this.inputs.fill:
 								this.svg.setAttribute(`fill`,`#${value.toLowerCase()}`);
@@ -815,14 +811,14 @@
 								this.svg.setAttribute(`fill-opacity`,value/100);
 								break;
 							case this.inputs.background:
-								this.svg.style.background=`rgba(${this.background=this.convert(value)},${this.alpha})`;
+								this.bg.style.background=`rgba(${this.background=this.convert(value)},${this.alpha})`;
 								break;
 							case this.inputs.alpha:
-								this.svg.style.background=`rgba(${this.background},${this.alpha=value/100})`;
+								this.bg.style.background=`rgba(${this.background},${this.alpha=value/100})`;
 								this.figure.classList.toggle(`light`,this.test(this.fill)>=128&&value<31);
 								break;
 							case this.inputs.radius:
-								this.svg.style.borderRadius=`${this.radius=value}px`;
+								this.bg.style.borderRadius=`${this.radius=value}px`;
 								break;
 						}
 					}
@@ -856,10 +852,8 @@
 					this.context.arcTo(0,0,this.dimensions,0,this.radius);
 					this.context.fill();
 				}
-				let 	svg=this.svg.cloneNode(1),
-					img=new Image();
-				svg.removeAttribute`style`;
-				img.src=w.URL.createObjectURL(new Blob([this.xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}));
+				let img=new Image();
+				img.src=w.URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
 				img.addEventListener(`load`,_=>{
 					this.context.drawImage(img,this.padding,this.padding);
 					w.URL.revokeObjectURL(img.src);
