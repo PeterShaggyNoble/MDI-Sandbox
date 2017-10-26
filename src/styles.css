@@ -64,8 +64,12 @@
 	font-style:inherit;
 	font-weight:inherit;
 }
+::-webkit-inner-spin-button,::-webkit-outer-spin-button{ 
+	-webkit-appearance:none;
+	margin:0;
+}
 ::-webkit-scrollbar{
-	width:8px;
+	width:4px;
 }
 ::-webkit-scrollbar-thumb{
 	background:#9e9e9e;
@@ -496,7 +500,6 @@ body.mdil>#content>section>article::before{
 	left:50%;
 	top:50%;
 	transform:translate(-50%,-50%);
-	transform-origin:50% 50%;
 	transition:opacity .195s cubic-bezier(.4,0,.2,1);
 }
 #slider{
@@ -576,8 +579,116 @@ body.mdil>#content>section>article::before{
 	color:#ff5722;
 	transition-duration:inherit;
 }
-#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#actions>li:nth-last-child(2){
+#actions>li:nth-last-child(14),#actions>li:nth-last-child(10),#actions>li:nth-last-child(2){
 	border-bottom:1px solid #e0e0e0;
+}
+
+/** EDITOR **/
+dialog{
+	background:#fff;
+	box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+	border-radius:2px;
+	flex-wrap:wrap;
+	justify-content:flex-end;
+	left:50%;
+	opacity:0;
+	top:50%;
+	transform:translate(-50%,-50%);
+	width:256px;
+}
+dialog[open]{
+	opacity:1;
+}
+dialog::backdrop{
+	background:rgba(0,0,0,0);
+}
+dialog>h2{
+	background:#ff5722;
+	color:#fff;
+	font-size:20px;
+	line-height:48px;
+	padding:0 16px;
+	width:100%;
+}
+dialog>figure{
+	background:linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee) 0 0 / 16px,linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee) 8px 8px / 16px;
+	height:256px;
+	margin:0 0 16px;
+	width:256px;
+}
+dialog>figure>svg{
+	box-sizing:content-box;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	transition-duration:.195s;
+	transition-property:background,border-radius,fill,fill-opacity,height,padding,width;
+	transition-timing-function:cubic-bezier(.4,0,.2,1);
+}
+#horizontal,#vertical{
+	border:0 solid rgba(76,175,80,.54);
+	transition-duration:.195s;
+	transition-property:height,width;
+	transition-timing-function:cubic-bezier(.4,0,.2,1);
+}
+#horizontal{
+	border-width:1px 0;
+	height:24px;
+	max-height:256px;
+	left:0;
+	right:0;
+	top:50%;
+	transform:translatey(-50%);
+}
+#vertical{
+	border-width:0 1px;
+	bottom:0;
+	left:50%;
+	top:0;
+	transform:translatex(-50%);
+	width:24px;
+	max-width:256px;
+}
+dialog>section{
+	padding:8px;
+	max-height:calc(100vh - 432px);
+}
+dialog>section>label{
+	line-height:32px;
+	margin:0 0 8px;
+	width:calc(100% - 80px);
+}
+dialog>section>input{
+	border-bottom:1px solid #bdbdbd;
+	line-height:23px;
+	height:24px;
+	margin:4px 0 12px 0;
+	padding:0 8px;
+	transition:border .195s cubic-bezier(.4,0,.2,1);
+	width:72px;
+}
+dialog>section>label:last-of-type{
+	width:calc(100% - 184px);
+}
+dialog>section>input:last-of-type{
+	width:176px;
+}
+dialog>section>input:invalid{
+	border-color:#f44336;
+}
+dialog>button{
+	color:#ff5722;
+	line-height:36px;
+	padding:0 8px;
+	margin:24px 8px 8px 0;
+	transition:background .195s cubic-bezier(.4,0,.2,1);
+	min-width:72px;
+}
+dialog>button:focus{
+	background:rgba(0,0,0,.12);
+}
+dialog>button:active{
+	background:rgba(0,0,0,.2);
 }
 
 /** FOOTER **/
@@ -858,7 +969,9 @@ body.mdil>#content>section>article::before{
 .fwm{font-weight:500;}
 .fwn{font-weight:400;}
 .tac{text-align:center;}
+.tar{text-align:right;}
 .ttl{text-transform:lowercase;}
+.ttu{text-transform:uppercase;}
 .wsnw{white-space:nowrap;}
 /**  POINTERS  **/
 .ch{cursor:help;}

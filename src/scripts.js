@@ -10,6 +10,7 @@
 		Q=s=>d.querySelector(s),
 		C=e=>d.createElement(e),
 		N=e=>d.createElementNS(`http://www.w3.org/2000/svg`,e),
+		T=t=>d.createTextNode(t),
 	/** CONSTANTS **/
 		w=window,
 		d=document,
@@ -71,7 +72,6 @@
 							info.open(target.lastChild.nodeValue);
 							target.classList.add`active`;
 							break;
-						default:break;
 					}
 				},0);
 				setTimeout(_=>{
@@ -131,7 +131,7 @@
 				this.switch.classList.add`cp`;
 				this.switch.dataset.icon=page.light?`\uf335`:`\uf6e8`;
 				this.switch.tabIndex=-1;
-				this.switch.append(d.createTextNode(`View ${page.light?`Regular`:`Light`} Icons`));
+				this.switch.append(T(`View ${page.light?`Regular`:`Light`} Icons`));
 				/*this.sections.before(this.switch);*/
 				let section=page.params.get`section`;
 				if(section)
@@ -190,7 +190,6 @@
 											filter.apply();
 										}
 										break;
-									default:break;
 								}
 							}
 							break;
@@ -256,7 +255,7 @@
 				this.clearall.classList.add`cp`;
 				this.clearall.dataset.icon=`\uf03b`;
 				this.clearall.tabIndex=-1;
-				this.clearall.append(d.createTextNode`All Icons`);
+				this.clearall.append(T`All Icons`);
 				menu.sections.append(this.clearall);
 				this.categories=new Set(this.categories=page.params.get`categories`?this.categories.split`,`:[]);
 				if(this.categories.size){
@@ -446,6 +445,7 @@
 			input:$`slider`,
 			actions:{
 				favourite:Q`#actions>:first-child`,
+				export:Q`#actions>[data-type=png]`,
 				path:Q`#actions>[data-confirm=Path]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
 				codepoint:Q`#actions>[data-confirm="Code point"]`,
@@ -481,6 +481,9 @@
 							break;
 						case this.actions.favourite:
 							favourites.set(this.name);
+							break;
+						case this.actions.export:
+							editor.open(this.name);
 							break;
 						case this.actions.path:
 							if(this.data)
@@ -582,10 +585,10 @@
 			init(){
 				this.section.classList.add(`dg`,`pr`);
 				this.heading.classList.add(`oh`,`ps`);
-				this.heading.append(d.createTextNode``);
+				this.heading.append(T``);
 				this.item.classList.add`cp`;
 				this.item.tabIndex=-1;
-				this.item.append(d.createTextNode``);
+				this.item.append(T``);
 				if(!page.storage)
 					delete this.list.favourites;
 				if(page.light){
@@ -640,7 +643,7 @@
 			init(){
 				this.item.classList.add`cp`;
 				this.item.tabIndex=-1;
-				this.item.append(d.createTextNode``);
+				this.item.append(T``);
 				this.img.classList.add(`pen`,`vam`);
 				this.img.height=this.img.width=24;
 				for(let key in this.list)
@@ -674,7 +677,7 @@
 			init(){
 				delete this.array;
 				this.article.classList.add(`cp`,page.light?`fwl`:`fwm`,`oh`,`pr`,`toe`,`wsnw`);
-				this.article.append(d.createTextNode``);
+				this.article.append(T``);
 				this.span.classList.add(`ripple`,`db`,`pa`,`pen`);
 				this.svg.classList.add(`pen`,`vam`);
 				this.svg.setAttribute(`height`,24);
@@ -733,6 +736,134 @@
 				setTimeout(_=>
 					span.remove()
 				,875);
+			}
+		},
+	/** PNG EDITOR **/
+		editor={
+			init(){
+				this.dialog=Q`dialog`;
+				this.cancel=this.dialog.querySelector`button`;
+				this.save=this.dialog.querySelector`button+button`;
+				this.dimensions=this.size=24;
+				this.padding=0;
+				this.background=[0,0,0];
+				this.alpha=0;
+				this.radius=0;
+				this.figure=this.dialog.querySelector`figure`;
+				this.figure.append(this.svg=N`svg`);
+				this.svg.classList.add`pa`;
+				this.svg.setAttribute(`height`,24);
+				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
+				this.svg.setAttribute(`width`,24);
+				this.svg.append(this.path=N`path`);
+				this.guides={
+					horizontal:C`span`,
+					vertical:C`span`
+				};
+				this.guides.horizontal.classList.add(`pa`,`pen`);
+				this.guides.horizontal.id=`horizontal`;
+				this.figure.append(this.guides.horizontal);
+				this.guides.vertical.classList.add(`pa`,`pen`);
+				this.guides.vertical.id=`vertical`;
+				this.figure.append(this.guides.vertical);
+				this.inputs={
+					alpha:$`png_alpha`,
+					background:$`png_background`,
+					fill:$`png_fill`,
+					name:$`png_name`,
+					opacity:$`png_opacity`,
+					padding:$`png_padding`,
+					radius:$`png_radius`,
+					size:$`png_size`
+				};
+				this.canvas=C`canvas`;
+				this.context=this.canvas.getContext`2d`;
+				this.dialog.addEventListener(`click`,event=>{
+					let 	target=event.target,
+						area=this.dialog.getBoundingClientRect();
+					if(target===this.cancel||this.dialog.open&&!(area.top<=event.clientY&&event.clientY<=area.top+area.height&&area.left<=event.clientX&&event.clientX<=area.left+area.width))
+						this.dialog.close(0);
+					else if(target===this.save)
+						this.download();
+				},0);
+				this.dialog.addEventListener(`input`,event=>{
+					let 	target=event.target,
+						valid=target.validity.valid,
+						value=target.value;
+					if(valid){
+						switch(target){
+							case this.inputs.size:
+								value=parseInt(value);
+								this.svg.setAttribute(`height`,this.size=value);
+								this.svg.setAttribute(`width`,this.size);
+								if(this.padding>(this.inputs.padding.max=(256-this.size)/2))
+									this.svg.style.padding=`${this.padding=this.inputs.padding.value=this.inputs.padding.max}px`;
+								this.guides.horizontal.style.height=this.guides.vertical.style.width=`${this.dimensions=this.size+2*this.padding}px`;
+								if(this.radius>(this.inputs.radius.max=this.dimensions/2))
+									this.svg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
+								break;
+							case this.inputs.padding:
+								value=parseInt(value);
+								this.guides.horizontal.style.height=this.guides.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=value)}px`;
+								this.svg.style.padding=`${this.padding}px`;
+								if(this.radius>(this.inputs.radius.max=this.dimensions/2))
+									this.svg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
+								break;
+							case this.inputs.fill:
+								this.svg.setAttribute(`fill`,`#${value.toLowerCase()}`);
+								break;
+							case this.inputs.opacity:
+								this.svg.setAttribute(`fill-opacity`,value/100);
+								break;
+							case this.inputs.background:
+								if(value.length===3)
+									value=value.replace(/./g,m=>m+m);
+								value=parseInt(value,16);
+								this.svg.style.background=`rgba(${this.background=[(value>>16)&255,(value>>8)&255,value&255]},${this.alpha})`;
+								break;
+							case this.inputs.alpha:
+								this.svg.style.background=`rgba(${this.background},${this.alpha=value/100})`;
+								break;
+							case this.inputs.radius:
+								this.svg.style.borderRadius=`${this.radius=value}px`;
+								break;
+						}
+					}
+				},1);
+			},
+			open(name){
+				if(!this.dialog)
+					this.init();
+				this.name=name;
+				this.path.setAttribute(`d`,icons.list[name].path[page.font]);
+				this.inputs.name.value=name;
+				this.dialog.showModal();
+			},
+			download(){
+				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+				this.canvas.height=this.canvas.width=this.dimensions;
+				if(this.alpha){
+					this.context.fillStyle=`rgba(${this.background},${this.alpha})`;
+					if(this.radius){
+						this.context.moveTo(this.radius,0);
+						this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.radius);
+						this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.radius);
+						this.context.arcTo(0,this.dimensions,0,0,this.radius);
+						this.context.arcTo(0,0,this.dimensions,0,this.radius);
+						this.context.fill();
+					}else this.context.fillRect(0,0,this.canvas.width,this.canvas.height);
+				}
+				let img=new Image();
+				this.svg.removeAttribute`style`;
+				img.src=w.URL.createObjectURL(new Blob([(new XMLSerializer()).serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
+				this.svg.style.borderRadius=`${this.radius}px`;
+				this.svg.style.background=`rgba(${this.background},${this.alpha})`;
+				this.svg.style.padding=`${this.padding}px`;
+				img.addEventListener(`load`,_=>{
+					this.context.drawImage(img,(this.canvas.width-this.size)/2,(this.canvas.height-this.size)/2);
+					w.URL.revokeObjectURL(img.src);
+					page.download(this.canvas.toDataURL`image/png`,`${this.inputs.name.value}.png`);
+				},0);
 			}
 		};
 	/** INITIATE **/
