@@ -9,6 +9,7 @@
 		$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
 		C=e=>d.createElement(e),
+		N=e=>d.createElementNS(`http://www.w3.org/2000/svg`,e),
 	/** CONSTANTS **/
 		w=window,
 		d=document,
@@ -440,7 +441,8 @@
 			aside:$`info`,
 			heading:$`name`,
 			figure:$`preview`,
-			img:C`img`,
+			svg:N`svg`,
+			path:N`path`,
 			input:$`slider`,
 			actions:{
 				favourite:Q`#actions>:first-child`,
@@ -457,9 +459,12 @@
 			downloads:{},
 			show:0,
 			init(){
-				this.img.classList.add`pr`;
-				this.img.height=this.img.width=56;
-				this.figure.append(this.img);
+				this.svg.classList.add`pa`;
+				this.svg.setAttribute(`height`,56);
+				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
+				this.svg.setAttribute(`width`,56);
+				this.svg.append(this.path);
+				this.figure.append(this.svg);
 				let icon=page.params.get`icon`;
 				if(icon){
 					if(icons.list[icon]){
@@ -478,7 +483,7 @@
 							favourites.set(this.name);
 							break;
 						case this.actions.path:
-							if(this.path)
+							if(this.data)
 								page.copy(target.dataset.copy,target.dataset.confirm);
 							else page.alert`Not yet available.`;
 							break;
@@ -497,32 +502,29 @@
 							break;
 					}
 				},0);
-				this.input.addEventListener(`input`,_=>
-					this.img.style.height=this.img.style.width=`${this.input.value}px`
-				,0);
+				this.input.addEventListener(`input`,_=>{
+					this.svg.setAttribute(`height`,this.input.value);
+					this.svg.setAttribute(`width`,this.input.value);
+				},0);
 			},
 			open(icon){
 				this.set(icon);
 				this.current=icon;
 				this.figure.classList.add`oz`;
-				setTimeout(_=>{
-					this.img.src=`data:image/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`;
-					this.figure.classList.remove`oz`;
-				},195);
 				this.toggle();
 			},
 			set(name){
 				this.icon=icons.list[name];
 				this.name=this.heading.firstChild.nodeValue=name;
-				this.path=this.actions.path.dataset.copy=this.icon.path[page.font];
+				this.data=this.actions.path.dataset.copy=this.icon.path[page.font];
 				let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 				this.aside.dataset.nocopy=(!(this.copy=!!codepoint)).toString();
-				this.aside.dataset.nodownload=(!this.path).toString();
+				this.aside.dataset.nodownload=(!this.data).toString();
 				this.aside.dataset.retired=(!!this.icon.retired).toString();
 				this.downloads={
-					svg:`data:text/svg+xml;utf8,${icons.svgheader+this.path}"/></svg>`,
-					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.path}"/></Canvas>`,
-					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.path}"/></vector>`
+					svg:`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
+					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
+					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.data}"/></vector>`
 				};
 				if(page.storage){
 					this.actions.favourite.dataset.icon=this.icon.favourite?`\uf0c6`:`\uf0c5`;
@@ -542,10 +544,14 @@
 				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
 				if(page.light)
 					this.actions.link.dataset.url+=`light/`;
+				setTimeout(_=>{
+					this.path.setAttribute(`d`,this.data);
+					this.figure.classList.remove`oz`;
+				},195);
 			},
 			download(){
 				if(this.icon)
-					if(this.path)
+					if(this.data)
 						if(this.downloads[this.type])
 							page.download(this.downloads[this.type],`${this.name}.${this.type}`);
 						else page.alert`Unknown file type.`;
@@ -664,15 +670,17 @@
 		icons={
 			article:C`article`,
 			span:C`span`,
-			img:C`img`,
-			svgheader:`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="`,
+			svg:N`svg`,
 			init(){
 				delete this.array;
 				this.article.classList.add(`cp`,page.light?`fwl`:`fwm`,`oh`,`pr`,`toe`,`wsnw`);
 				this.article.append(d.createTextNode``);
 				this.span.classList.add(`ripple`,`db`,`pa`,`pen`);
-				this.img.classList.add(`pen`,`vam`);
-				this.img.height=this.img.width=24;
+				this.svg.classList.add(`pen`,`vam`);
+				this.svg.setAttribute(`height`,24);
+				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
+				this.svg.setAttribute(`width`,24);
+				this.svg.append(N`path`);
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key)&&this.list[key].path[page.font])
 						this.add(key);
@@ -680,7 +688,7 @@
 			add(key){
 				let 	icon=this.list[key],
 					article=this.article.cloneNode(1),
-					img=this.img.cloneNode(1),
+					svg=this.svg.cloneNode(1),
 					codepoint=icon.codepoint,
 					keywords=new Set(key.split`-`),
 					category;
@@ -699,8 +707,8 @@
 					if(codepoint)
 						article.dataset.icon=String.fromCharCode(`0x${codepoint}`);
 					else{
-						img.src=`data:image/svg+xml;utf8,${this.svgheader+icon.path[page.font]}"/></svg>`;
-						article.prepend(img);
+						svg.firstElementChild.setAttribute(`d`,icon.path[page.font]);
+						article.prepend(svg);
 					}
 					article.lastChild.nodeValue=key;
 					if((category=categories.list.favourites)&&page.storage[`mdi-${key}`])

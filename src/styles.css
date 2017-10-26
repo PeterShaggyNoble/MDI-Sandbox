@@ -419,10 +419,10 @@ body.mdi>#content>section>article::before{
 body.mdil>#content>section>article::before{
 	font-family:mdil;
 }
-#content>section>article>img{
+#content>section>article>svg{
 	margin:0 20px 0 12px;
 	opacity:.54;
-	transition:filter .225s cubic-bezier(.4,0,.2,1),opacity .225s cubic-bezier(.4,0,.2,1);
+	transition:fill .225s cubic-bezier(.4,0,.2,1),opacity .225s cubic-bezier(.4,0,.2,1);
 	z-index:1;
 }
 #content>section>article:hover,#content>section>article.active{
@@ -433,8 +433,8 @@ body.mdil>#content>section>article::before{
 #content>section>article:hover::before,#content>section>article.active::before{
 	color:#fff;
 }
-#content>section>article:hover>img,#content>section>article.active>img{
-	filter:invert(1);
+#content>section>article:hover>svg,#content>section>article.active>svg{
+	fill:#fff;
 	opacity:1;
 }
 #icons>p:last-of-type{
@@ -491,13 +491,13 @@ body.mdil>#content>section>article::before{
 	transition:font .195s cubic-bezier(.4,0,.2,1),opacity .195s cubic-bezier(.4,0,.2,1);
 	width:calc(100% - 36px);
 }
-#preview>img{
-	filter:invert(1);
-	height:56px;
+#preview>svg{
+	fill:#fff;
+	left:50%;
 	top:50%;
-	transform:translatey(-50%);
+	transform:translate(-50%,-50%);
+	transform-origin:50% 50%;
 	transition:opacity .195s cubic-bezier(.4,0,.2,1);
-	width:56px;
 }
 #slider{
 	top:64px;
