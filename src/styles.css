@@ -616,7 +616,12 @@ dialog>figure{
 	background:linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee) 0 0 / 16px,linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee) 8px 8px / 16px;
 	height:256px;
 	margin:0 0 16px;
+	transition:background .195s cubic-bezier(.4,0,.2,1);
 	width:256px;
+}
+dialog>figure.light{
+	background-color:#616161;
+	background-image:linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121),linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121);
 }
 dialog>figure>svg{
 	box-sizing:content-box;
@@ -627,13 +632,16 @@ dialog>figure>svg{
 	transition-property:background,border-radius,fill,fill-opacity,height,padding,width;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
 }
-#horizontal,#vertical{
+dialog>figure>span{
 	border:0 solid rgba(76,175,80,.54);
 	transition-duration:.195s;
-	transition-property:height,width;
+	transition-property:border,height,width;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
 }
-#horizontal{
+dialog>figure.light>span{
+	border-color:rgba(3,169,244,.54);
+}
+dialog>figure>span:first-of-type{
 	border-width:1px 0;
 	height:24px;
 	max-height:256px;
@@ -642,7 +650,7 @@ dialog>figure>svg{
 	top:50%;
 	transform:translatey(-50%);
 }
-#vertical{
+dialog>figure>span:last-of-type{
 	border-width:0 1px;
 	bottom:0;
 	left:50%;
@@ -681,6 +689,7 @@ dialog>section>input:invalid{
 	border-color:#f44336;
 }
 dialog>button{
+	border-radius:2px;
 	color:#ff5722;
 	line-height:36px;
 	padding:0 8px;

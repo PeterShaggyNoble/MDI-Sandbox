@@ -600,7 +600,12 @@
 		background:linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee) 0 0 / 16px,linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee) 8px 8px / 16px;
 		height:256px;
 		margin:0 0 16px;
+		transition:background .195s cubic-bezier(.4,0,.2,1);
 		width:256px;
+	}
+	dialog>figure.light{
+		background-color:#616161;
+		background-image:linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121),linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121);
 	}
 	dialog>figure>svg{
 		box-sizing:content-box;
@@ -611,13 +616,16 @@
 		transition-property:background,border-radius,fill,fill-opacity,height,padding,width;
 		transition-timing-function:cubic-bezier(.4,0,.2,1);
 	}
-	#horizontal,#vertical{
+	dialog>figure>span{
 		border:0 solid rgba(76,175,80,.54);
 		transition-duration:.195s;
-		transition-property:height,width;
+		transition-property:border,height,width;
 		transition-timing-function:cubic-bezier(.4,0,.2,1);
 	}
-	#horizontal{
+	dialog>figure.light>span{
+		border-color:rgba(3,169,244,.54);
+	}
+	dialog>figure>span:first-of-type{
 		border-width:1px 0;
 		height:24px;
 		max-height:256px;
@@ -626,7 +634,7 @@
 		top:50%;
 		transform:translatey(-50%);
 	}
-	#vertical{
+	dialog>figure>span:last-of-type{
 		border-width:0 1px;
 		bottom:0;
 		left:50%;
@@ -665,6 +673,7 @@
 		border-color:#f44336;
 	}
 	dialog>button{
+		border-radius:2px;
 		color:#ff5722;
 		line-height:36px;
 		padding:0 8px;
@@ -1003,7 +1012,7 @@
 	<ul class="oa fwm pf toe wsnw" id="actions">
 		<li class="cp oh" data-icon="&#xf0c5;" tabindex="-1">Add to Favourites
 		<li class="cp oh" data-icon="&#xf5c0;" data-type="svg" tabindex="-1">Download SVG
-		<li class="cp oh" data-icon="&#xf21f;" data-type="png" tabindex="-1">Export PNG
+		<li class="cp oh" data-icon="&#xf21f;" data-type="png" tabindex="-1">Download PNG
 		<li class="cp oh" data-icon="&#xf032;" data-type="xml" tabindex="-1">Download XML Vector
 		<li class="cp oh" data-icon="&#xf5b3;" data-type="xaml" tabindex="-1">Download XAML
 		<li class="cp oh" data-confirm="Path" data-icon="&#xf7ca;" tabindex="-1">Copy SVG Path
@@ -1023,7 +1032,7 @@
 	<figure class="cw pf tac" id="load"><svg height="56" viewBox="0 0 56 56" width="56"><title>Loading ...</title><g><circle cx="28" cy="28" r="16"/></g></svg></figure>
 </footer>
 <dialog class="df oh oz pf">
-	<h2 class="fwm">Export PNG</h2>
+	<h2 class="fwm">Edit PNG</h2>
 	<figure class="pr"></figure>
 	<section class="oa">
 		<label class="cp dib fwm vam" for="png_size">Size: </label>
@@ -1043,8 +1052,8 @@
 		<label class="cp dib fwm vam" for="png_name">Name: </label>
 		<input class="dib tar vam" id="png_name" required type="text">
 	</section>
-	<button class="cp fwm pr tac ttu">Cancel</button>
-	<button class="cp fwm pr tac ttu">Save</button>
+	<button class="cp fwm pr tac ttu">Close</button>
+	<button autofocus class="cp fwm pr tac ttu">Save</button>
 </dialog>
 <script>
 	{
@@ -24779,31 +24788,24 @@
 			},
 			editor={
 				init(){
+					this.canvas=C`canvas`;
+					this.context=this.canvas.getContext`2d`;
+					this.xml=new XMLSerializer();
 					this.dialog=Q`dialog`;
-					this.cancel=this.dialog.querySelector`button`;
-					this.save=this.dialog.querySelector`button+button`;
-					this.dimensions=this.size=24;
-					this.padding=0;
-					this.background=[0,0,0];
-					this.alpha=0;
-					this.radius=0;
+					this.save=this.dialog.lastElementChild;
+					this.cancel=this.save.previousElementSibling;
+					this.padding=this.alpha=this.radius=0;
+					this.fill=[...this.backgound=[0,0,0]];
 					this.figure=this.dialog.querySelector`figure`;
 					this.figure.append(this.svg=N`svg`);
 					this.svg.classList.add`pa`;
-					this.svg.setAttribute(`height`,24);
+					this.svg.setAttribute(`height`,this.dimensions=this.size=24);
 					this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 					this.svg.setAttribute(`width`,24);
 					this.svg.append(this.path=N`path`);
-					this.guides={
-						horizontal:C`span`,
-						vertical:C`span`
-					};
-					this.guides.horizontal.classList.add(`pa`,`pen`);
-					this.guides.horizontal.id=`horizontal`;
-					this.figure.append(this.guides.horizontal);
-					this.guides.vertical.classList.add(`pa`,`pen`);
-					this.guides.vertical.id=`vertical`;
-					this.figure.append(this.guides.vertical);
+					this.figure.append(this.horizontal=C`span`);
+					this.horizontal.classList.add(`pa`,`pen`);
+					this.figure.append(this.vertical=this.horizontal.cloneNode(1));
 					this.inputs={
 						alpha:$`png_alpha`,
 						background:$`png_background`,
@@ -24814,16 +24816,20 @@
 						radius:$`png_radius`,
 						size:$`png_size`
 					};
-					this.canvas=C`canvas`;
-					this.context=this.canvas.getContext`2d`;
 					this.dialog.addEventListener(`click`,event=>{
 						let	target=event.target,
 							area=this.dialog.getBoundingClientRect();
-						if(target===this.cancel||this.dialog.open&&!(area.top<=event.clientY&&event.clientY<=area.top+area.height&&area.left<=event.clientX&&event.clientX<=area.left+area.width)){
-							this.dialog.classList.add`oz`;
-							this.timer=setTimeout(_=>this.dialog.close(0),225);
-						}else if(target===this.save)
+						if(target===this.cancel||this.dialog.open&&!(area.top<=event.clientY&&event.clientY<=area.top+area.height&&area.left<=event.clientX&&event.clientX<=area.left+area.width))
+							this.close();
+						else if(target===this.save)
 							this.download();
+					},0);
+					this.dialog.addEventListener(`keydown`,event=>{
+						if(this.dialog.open&&event.keyCode===27){
+							this.close();
+							event.preventDefault();
+							event.stopPropagation();
+						}
 					},0);
 					this.dialog.addEventListener(`input`,event=>{
 						let	target=event.target,
@@ -24837,31 +24843,30 @@
 									this.svg.setAttribute(`width`,this.size);
 									if(this.padding>(this.inputs.padding.max=(256-this.size)/2))
 										this.svg.style.padding=`${this.padding=this.inputs.padding.value=this.inputs.padding.max}px`;
-									this.guides.horizontal.style.height=this.guides.vertical.style.width=`${this.dimensions=this.size+2*this.padding}px`;
+									this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*this.padding}px`;
 									if(this.radius>(this.inputs.radius.max=this.dimensions/2))
 										this.svg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
 									break;
 								case this.inputs.padding:
 									value=parseInt(value);
-									this.guides.horizontal.style.height=this.guides.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=value)}px`;
+									this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=value)}px`;
 									this.svg.style.padding=`${this.padding}px`;
 									if(this.radius>(this.inputs.radius.max=this.dimensions/2))
 										this.svg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
 									break;
 								case this.inputs.fill:
 									this.svg.setAttribute(`fill`,`#${value.toLowerCase()}`);
+									this.figure.classList.toggle(`light`,this.test(this.fill=this.convert(value))>=128&&this.alpha<31);
 									break;
 								case this.inputs.opacity:
 									this.svg.setAttribute(`fill-opacity`,value/100);
 									break;
 								case this.inputs.background:
-									if(value.length===3)
-										value=value.replace(/./g,m=>m+m);
-									value=parseInt(value,16);
-									this.svg.style.background=`rgba(${this.background=[(value>>16)&255,(value>>8)&255,value&255]},${this.alpha})`;
+									this.svg.style.background=`rgba(${this.background=this.convert(value)},${this.alpha})`;
 									break;
 								case this.inputs.alpha:
 									this.svg.style.background=`rgba(${this.background},${this.alpha=value/100})`;
+									this.figure.classList.toggle(`light`,this.test(this.fill)>=128&&value<31);
 									break;
 								case this.inputs.radius:
 									this.svg.style.borderRadius=`${this.radius=value}px`;
@@ -24880,26 +24885,28 @@
 					this.dialog.showModal();
 					this.dialog.classList.remove`oz`;
 				},
+				close(){
+					this.dialog.classList.add`oz`;
+					this.timer=setTimeout(_=>this.dialog.close(0),225);
+				},
+				convert:hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
+				test:([r,g,b])=>(r*299+g*587+b*114)/1000,
 				download(){
 					this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
 					this.canvas.height=this.canvas.width=this.dimensions;
 					if(this.alpha){
 						this.context.fillStyle=`rgba(${this.background},${this.alpha})`;
-						if(this.radius){
-							this.context.moveTo(this.radius,0);
-							this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.radius);
-							this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.radius);
-							this.context.arcTo(0,this.dimensions,0,0,this.radius);
-							this.context.arcTo(0,0,this.dimensions,0,this.radius);
-							this.context.fill();
-						}else this.context.fillRect(0,0,this.canvas.width,this.canvas.height);
+						this.context.moveTo(this.radius,0);
+						this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.radius);
+						this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.radius);
+						this.context.arcTo(0,this.dimensions,0,0,this.radius);
+						this.context.arcTo(0,0,this.dimensions,0,this.radius);
+						this.context.fill();
 					}
-					let img=new Image();
-					this.svg.removeAttribute`style`;
-					img.src=w.URL.createObjectURL(new Blob([(new XMLSerializer()).serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
-					this.svg.style.borderRadius=`${this.radius}px`;
-					this.svg.style.background=`rgba(${this.background},${this.alpha})`;
-					this.svg.style.padding=`${this.padding}px`;
+					let	svg=this.svg.cloneNode(1),
+						img=new Image();
+					svg.removeAttribute`style`;
+					img.src=w.URL.createObjectURL(new Blob([this.xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}));
 					img.addEventListener(`load`,_=>{
 						this.context.drawImage(img,(this.canvas.width-this.size)/2,(this.canvas.height-this.size)/2);
 						w.URL.revokeObjectURL(img.src);
