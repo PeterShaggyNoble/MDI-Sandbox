@@ -591,16 +591,18 @@ dialog{
 	flex-wrap:wrap;
 	justify-content:flex-end;
 	left:50%;
-	opacity:0;
 	top:50%;
 	transform:translate(-50%,-50%);
 	width:256px;
 }
-dialog[open]{
-	opacity:1;
+dialog,dialog::backdrop{
+	transition:opacity .225s cubic-bezier(.4,0,.2,1);
 }
 dialog::backdrop{
-	background:rgba(0,0,0,0);
+	background:rgba(0,0,0,.54);
+}
+dialog.oz::backdrop{
+	opacity:0;
 }
 dialog>h2{
 	background:#ff5722;
@@ -668,9 +670,11 @@ dialog>section>input{
 	width:72px;
 }
 dialog>section>label:last-of-type{
+	margin:0;
 	width:calc(100% - 184px);
 }
 dialog>section>input:last-of-type{
+	margin:4px 0 0;
 	width:176px;
 }
 dialog>section>input:invalid{

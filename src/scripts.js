@@ -781,9 +781,10 @@
 				this.dialog.addEventListener(`click`,event=>{
 					let 	target=event.target,
 						area=this.dialog.getBoundingClientRect();
-					if(target===this.cancel||this.dialog.open&&!(area.top<=event.clientY&&event.clientY<=area.top+area.height&&area.left<=event.clientX&&event.clientX<=area.left+area.width))
-						this.dialog.close(0);
-					else if(target===this.save)
+					if(target===this.cancel||this.dialog.open&&!(area.top<=event.clientY&&event.clientY<=area.top+area.height&&area.left<=event.clientX&&event.clientX<=area.left+area.width)){
+						this.dialog.classList.add`oz`;
+						this.timer=setTimeout(_=>this.dialog.close(0),225);
+					}else if(target===this.save)
 						this.download();
 				},0);
 				this.dialog.addEventListener(`input`,event=>{
@@ -834,10 +835,12 @@
 			open(name){
 				if(!this.dialog)
 					this.init();
+				clearTimeout(this.timer);
 				this.name=name;
 				this.path.setAttribute(`d`,icons.list[name].path[page.font]);
 				this.inputs.name.value=name;
 				this.dialog.showModal();
+				this.dialog.classList.remove`oz`;
 			},
 			download(){
 				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
