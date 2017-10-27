@@ -156,7 +156,7 @@
 							favourites.import();
 							break;
 						case this.export:
-							page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).join`,`))}`,`mdi-favourites.txt`);
+							page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).filter(key=>key.startsWith`mdi-`).join`,`))}`,`mdi-favourites.txt`);
 							break;
 						case filter.clearall:
 							filter.clear();
@@ -216,7 +216,7 @@
 				},0);
 			},
 			toggle(){
-				this.nav.dataset.show=(this.show=!this.show).toString();
+				this.nav.classList.toggle(`show`,this.show=!this.show);
 				this.show?b.addEventListener(`keydown`,this.functions.close=event=>{
 					if(event.keyCode===27)
 						this.toggle();
@@ -292,7 +292,7 @@
 			apply(){
 				if(page.main.scrollTop<page.section.offsetTop-page.header.offsetHeight)
 					menu.goto(page.section);
-				page.section.dataset.filtered=(this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size).toString();
+				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
 				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
 					match=0,
@@ -313,11 +313,11 @@
 									item.startsWith(word)
 								)
 							);
-						icon.article.classList.toggle(`dn`,!check);
+						icon.articles.main.classList.toggle(`dn`,!check);
 						match=match||check;
 					}
 				this.error.classList.toggle(`dn`,match);
-				this.clearall.dataset.icon=this.filtered?`\uf234`:`\uf03b`;
+				this.clearall.classList.toggle(`clear`,this.filtered);
 				if(this.filtered){
 					this.url=`${page.address}?`;
 					if(page.light)
@@ -373,18 +373,18 @@
 			},
 			set(name){
 				this.icon=icons.list[name];
-				info.actions.favourite.dataset.icon=this.icon.favourite?`\uf0c5`:`\uf0c6`;
-				info.actions.favourite.firstChild.nodeValue=`${this.icon.favourite?`Add to`:`Remove from`} Favourites`;
+				info.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf0c5`:`\uf0c6`;
+				info.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
 				let msg=`added to`;
-				if(this.icon.favourite){
+				if(this.icon.articles.favourite){
 					page.storage.removeItem(`mdi-${name}`);
-					this.icon.favourite.remove();
-					delete this.icon.favourite;
+					this.icon.articles.favourite.remove();
+					delete this.icon.articles.favourite;
 					msg=`removed from`;
 				}else{
 					page.storage.setItem(`mdi-${name}`,1);
-					this.section.append(this.icon.favourite=this.icon.article.cloneNode(1));
-					this.icon.favourite.classList.remove`active`;
+					this.section.append(this.icon.articles.favourite=this.icon.articles.main.cloneNode(1));
+					this.icon.articles.favourite.classList.remove`active`;
 					if(this.articles.length>1)
 						this.sort();
 				}
@@ -413,16 +413,15 @@
 						let name=item.substr(4);
 						this.icon=icons.list[name];
 						if(this.icon){
-							if(this.icon.article&&!this.icon.favourite){
+							if(this.icon.articles.main&&!this.icon.articles.favourite){
 								page.storage.setItem(item,1);
-								this.section.append(this.icon.favourite=this.icon.article.cloneNode(1));
+								this.section.append(this.icon.articles.favourite=this.icon.articles.main.cloneNode(1));
 								if(info.current===name){
 									info.actions.favourite.dataset.icon=`\uf0c6`;
 									info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
 								}
 							}
-						}else if(!page.light)
-							page.storage.removeItem(item);
+						}
 					});
 					if(this.articles.length>1)
 						this.sort();
@@ -470,9 +469,11 @@
 				if(icon){
 					if(icons.list[icon]){
 						this.open(icon);
-						icons.list[icon].article.classList.add`active`;
+						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
-				}else this.set(Object.keys(icons.list)[0]);
+				}else if(icon=page.params.get`edit`)
+					this.set(icon);
+				else this.set(Object.keys(icons.list)[0]);
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
@@ -533,8 +534,8 @@
 					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.data}"/></vector>`
 				};
 				if(page.storage){
-					this.actions.favourite.dataset.icon=this.icon.favourite?`\uf0c6`:`\uf0c5`;
-					this.actions.favourite.firstChild.nodeValue=`${this.icon.favourite?`Remove from`:`Add to`} Favourites`;
+					this.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf0c6`:`\uf0c5`;
+					this.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Remove from`:`Add to`} Favourites`;
 				}
 				if(codepoint){
 					this.actions.icon.dataset.copy=String.fromCharCode(`0x${codepoint}`);
@@ -565,7 +566,7 @@
 				else page.alert`Unknown icon.`;
 			},
 			toggle(){
-				this.aside.dataset.show=(this.show=!this.show).toString();
+				this.aside.classList.toggle(`show`,this.show=!this.show);
 				this.colour.content=`#${this.show?`ff5722`:`2196f3`}`;
 				if(this.show)
 					b.addEventListener(`keydown`,this.close=event=>{
@@ -717,17 +718,18 @@
 						article.prepend(svg);
 					}
 					article.lastChild.nodeValue=key;
+					icon.articles={};
 					if((category=categories.list.favourites)&&page.storage[`mdi-${key}`])
-						category.section.append(icon.favourite=article.cloneNode(1));
+						category.section.append(icon.articles.favourite=article.cloneNode(1));
 					if((category=categories.list.new)&&icon.added&&icon.added[page.font]===version)
-						category.section.append(article.cloneNode(1));
+						category.section.append(icon.articles.new=article.cloneNode(1));
 					if((category=categories.list.updated)&&icon.updated&&icon.updated[page.font]===version)
-						category.section.append(article.cloneNode(1));
+						category.section.append(icon.articles.updated=article.cloneNode(1));
 					if((category=categories.list.soon)&&icon.added&&icon.added[page.font]===`{next}`)
-						category.section.append(article.cloneNode(1));
+						category.section.append(icon.articles.soon=article.cloneNode(1));
 					if((category=categories.list.retired)&&icon.retired)
-						category.section.append(article.cloneNode(1));
-					page.section.append(icon.article=article);
+						category.section.append(icon.articles.retired=article.cloneNode(1));
+					page.section.append(icon.articles.main=article);
 				}else delete icon;
 			},
 			ripple(target,x,y){
