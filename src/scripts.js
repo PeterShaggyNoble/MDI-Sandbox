@@ -484,7 +484,9 @@
 							favourites.set(this.name);
 							break;
 						case this.actions.export:
-							editor.open(this.name);
+							if(this.data)
+								editor.open(this.name);
+							else page.alert`Not yet available.`;
 							break;
 						case this.actions.path:
 							if(this.data)
@@ -680,7 +682,7 @@
 				this.article.classList.add(`cp`,page.light?`fwl`:`fwm`,`oh`,`pr`,`toe`,`wsnw`);
 				this.article.append(T``);
 				this.span.classList.add(`ripple`,`db`,`pa`,`pen`);
-				this.svg.classList.add(`pen`,`vam`);
+				this.svg.classList.add(`pa`,`pen`);
 				this.svg.setAttribute(`height`,24);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				this.svg.setAttribute(`width`,24);
@@ -830,6 +832,9 @@
 						}
 					}
 				},1);
+				let name=page.params.get`edit`;
+				if(name&&icons.list[name])
+					this.open(name);
 			},
 			open(name){
 				clearTimeout(this.timer);

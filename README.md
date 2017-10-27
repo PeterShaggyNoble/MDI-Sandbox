@@ -22,6 +22,8 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2017-10-27:** Added PNG downloads with basic editor.
+- **2017-10-25:** Switched from flex layout to grid layout for icons.
 - **2017-10-19:** Added stanadlone version for local use.
 - **2017-10-16:** Added filters for contributors.
 - **2017-10-13:** Categories now serve as filters, rather than each having its own individual section.

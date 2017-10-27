@@ -401,7 +401,7 @@ body.mdil #icons[data-filtered=true]{
 	border-radius:2px;
 	box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
 	line-height:48px;
-	padding:0 8px 0 0;
+	padding:0 8px 0 56px;
 	transition-duration:.375s;
 	transition-property:background,color;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
@@ -411,9 +411,10 @@ body.mdil #icons[data-filtered=true]{
 	color:#757575;
 	font-family:mdi;
 	font-size:24px;
-	margin:0 8px 0 0;
+	left:0;
+	position:absolute;
+	top:0;
 	transition:color .225s cubic-bezier(.4,0,.2,1);
-	vertical-align:middle;
 	width:48px;
 	z-index:2;
 }
@@ -424,8 +425,9 @@ body.mdil>#content>section>article::before{
 	font-family:mdil;
 }
 #content>section>article>svg{
-	margin:0 20px 0 12px;
+	left:12px;
 	opacity:.54;
+	top:12px;
 	transition:fill .225s cubic-bezier(.4,0,.2,1),opacity .225s cubic-bezier(.4,0,.2,1);
 	z-index:1;
 }
