@@ -17082,6 +17082,7 @@
 		}
 	},
 	"message":{
+		"aliases":["chat-bubble"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -17163,6 +17164,7 @@
 		}
 	},
 	"message-outline":{
+		"aliases":["chat-bubble-outline"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -17256,6 +17258,7 @@
 		}
 	},
 	"message-text":{
+		"aliases":["chat"],
 		"contributor":{
 			"regular":"google"
 		},
