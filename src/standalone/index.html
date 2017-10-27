@@ -515,7 +515,7 @@
 		left:50%;
 		top:50%;
 		transform:translate(-50%,-50%);
-		transition:opacity .195s cubic-bezier(.4,0,.2,1);
+		transition:opacity .195s cubic-bezier(.4,0,.2,1),height .195s cubic-bezier(.4,0,.2,1),width .195s cubic-bezier(.4,0,.2,1);
 	}
 	#slider{
 		top:64px;
@@ -1079,22 +1079,22 @@
 	<h2 class="fwm">Edit PNG</h2>
 	<figure class="pr"></figure>
 	<section class="oa">
-		<label class="cp dib fwm vam" for="png_size">Size: </label>
-		<input class="dib tar vam" id="png_size" max="256" min="12" required type="number" value="24">
-		<label class="cp dib fwm vam" for="png_padding">Padding: </label>
-		<input class="dib tar vam" id="png_padding" max="116" min="0" required type="number" value="0">
-		<label class="cp dib fwm vam" for="png_fill">Icon Colour: </label>
-		<input class="dib tar ttl vam" id="png_fill" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="000">
-		<label class="cp dib fwm vam" for="png_opacity">Icon Opacity: </label>
-		<input class="dib tar vam" id="png_opacity" max="100" min="0" required type="number" value="100">
-		<label class="cp dib fwm vam" for="png_background">Background Colour: </label>
-		<input class="dib tar ttl vam" id="png_background" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="fff">
-		<label class="cp dib fwm vam" for="png_alpha">Background Opacity: </label>
-		<input class="dib tar vam" id="png_alpha" max="100" min="0" required type="number" value="0">
-		<label class="cp dib fwm vam" for="png_radius">Round Corners: </label>
-		<input class="dib tar vam" id="png_radius" max="12" min="0" required type="number" value="0">
-		<label class="cp dib fwm vat" for="png_name">Name: </label>
-		<input class="dib tar vat" id="png_name" required type="text">
+		<label class="cp dib fwm vam" for="png-size">Size: </label>
+		<input class="dib tar vam" id="png-size" max="256" min="12" required type="number" value="24">
+		<label class="cp dib fwm vam" for="png-padding">Padding: </label>
+		<input class="dib tar vam" id="png-padding" max="116" min="0" required type="number" value="0">
+		<label class="cp dib fwm vam" for="png-fill">Icon Colour: </label>
+		<input class="dib tar ttl vam" id="png-fill" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="000">
+		<label class="cp dib fwm vam" for="png-opacity">Icon Opacity: </label>
+		<input class="dib tar vam" id="png-opacity" max="100" min="0" required type="number" value="100">
+		<label class="cp dib fwm vam" for="png-colour">Background Colour: </label>
+		<input class="dib tar ttl vam" id="png-colour" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="fff">
+		<label class="cp dib fwm vam" for="png-alpha">Background Opacity: </label>
+		<input class="dib tar vam" id="png-alpha" max="100" min="0" required type="number" value="0">
+		<label class="cp dib fwm vam" for="png-radius">Round Corners: </label>
+		<input class="dib tar vam" id="png-radius" max="12" min="0" required type="number" value="0">
+		<label class="cp dib fwm vat" for="png-name">Name: </label>
+		<input class="dib tar vat" id="png-name" required type="text">
 	</section>
 	<button class="cp fwm pr tac ttu">Close</button>
 	<button autofocus class="cp fwm pr tac ttu">Save</button>
@@ -1651,8 +1651,10 @@
 					this.colour.content=`#${this.show?`ff5722`:`2196f3`}`;
 					if(this.show)
 						b.addEventListener(`keydown`,this.close=event=>{
-							if(event.keyCode===27)
+							if(event.keyCode===27){
 								this.toggle();
+								event.stopPropagation();
+							}
 						},0);
 					else{
 						let current=page.main.querySelector`article.active`;
@@ -24863,14 +24865,14 @@
 				alpha:0,
 				radius:0,
 				inputs:{
-					alpha:$`png_alpha`,
-					background:$`png_background`,
-					fill:$`png_fill`,
-					name:$`png_name`,
-					opacity:$`png_opacity`,
-					padding:$`png_padding`,
-					radius:$`png_radius`,
-					size:$`png_size`
+					alpha:$`png-alpha`,
+					colour:$`png-colour`,
+					fill:$`png-fill`,
+					name:$`png-name`,
+					opacity:$`png-opacity`,
+					padding:$`png-padding`,
+					radius:$`png-radius`,
+					size:$`png-size`
 				},
 				init(){
 					this.context=this.canvas.getContext`2d`;
@@ -24925,7 +24927,7 @@
 								case this.inputs.opacity:
 									this.path.setAttribute(`fill-opacity`,value/100);
 									break;
-								case this.inputs.background:
+								case this.inputs.colour:
 									this.background.style.background=`rgba(${this.colour=this.convert(value)},${this.alpha})`;
 									break;
 								case this.inputs.alpha:
@@ -24936,8 +24938,20 @@
 									this.background.style.borderRadius=`${this.radius=value}px`;
 									break;
 							}
+							if(page.storage)
+								page.storage.setItem(target.id,value);
 						}
 					},1);
+					this.load();
+				},
+				load(){
+					if(page.storage)
+						for(let key in this.inputs)
+							if(this.inputs.hasOwnProperty(key))
+								if(page.storage[`png-${key}`]){
+									this.inputs[key].value=page.storage[`png-${key}`];
+									this.inputs[key].dispatchEvent(new Event(`input`));
+								}
 					let name=page.params.get`edit`;
 					if(name&&icons.list[name])
 						this.open(name);

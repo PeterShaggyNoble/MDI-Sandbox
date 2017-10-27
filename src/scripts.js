@@ -570,8 +570,10 @@
 				this.colour.content=`#${this.show?`ff5722`:`2196f3`}`;
 				if(this.show)
 					b.addEventListener(`keydown`,this.close=event=>{
-						if(event.keyCode===27)
+						if(event.keyCode===27){
 							this.toggle();
+							event.stopPropagation();
+						}
 					},0);
 				else{
 					let current=page.main.querySelector`article.active`;
@@ -759,14 +761,14 @@
 			alpha:0,
 			radius:0,
 			inputs:{
-				alpha:$`png_alpha`,
-				background:$`png_background`,
-				fill:$`png_fill`,
-				name:$`png_name`,
-				opacity:$`png_opacity`,
-				padding:$`png_padding`,
-				radius:$`png_radius`,
-				size:$`png_size`
+				alpha:$`png-alpha`,
+				colour:$`png-colour`,
+				fill:$`png-fill`,
+				name:$`png-name`,
+				opacity:$`png-opacity`,
+				padding:$`png-padding`,
+				radius:$`png-radius`,
+				size:$`png-size`
 			},
 			init(){
 				this.context=this.canvas.getContext`2d`;
@@ -821,7 +823,7 @@
 							case this.inputs.opacity:
 								this.path.setAttribute(`fill-opacity`,value/100);
 								break;
-							case this.inputs.background:
+							case this.inputs.colour:
 								this.background.style.background=`rgba(${this.colour=this.convert(value)},${this.alpha})`;
 								break;
 							case this.inputs.alpha:
@@ -832,8 +834,20 @@
 								this.background.style.borderRadius=`${this.radius=value}px`;
 								break;
 						}
+						if(page.storage)
+							page.storage.setItem(target.id,value);
 					}
 				},1);
+				this.load();
+			},
+			load(){
+				if(page.storage)
+					for(let key in this.inputs)
+						if(this.inputs.hasOwnProperty(key))
+							if(page.storage[`png-${key}`]){
+								this.inputs[key].value=page.storage[`png-${key}`];
+								this.inputs[key].dispatchEvent(new Event(`input`));
+							}
 				let name=page.params.get`edit`;
 				if(name&&icons.list[name])
 					this.open(name);
