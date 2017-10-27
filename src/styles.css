@@ -613,7 +613,7 @@ dialog>h2{
 	width:100%;
 }
 dialog>figure{
-	background:linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee) 0 0 / 16px,linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee) 8px 8px / 16px;
+	background:linear-gradient(45deg,#e0e0e0 25%,transparent 25%,transparent 75%,#e0e0e0 75%,#e0e0e0) 0 0 / 16px,linear-gradient(45deg,#e0e0e0 25%,transparent 25%,transparent 75%,#e0e0e0 75%,#e0e0e0) 8px 8px / 16px;
 	height:256px;
 	margin:0 0 16px;
 	transition:background .195s cubic-bezier(.4,0,.2,1);
@@ -629,14 +629,19 @@ dialog>figure>svg{
 	top:50%;
 	transform:translate(-50%,-50%);
 	transition-duration:.195s;
-	transition-property:background,border-radius,fill,fill-opacity,height,padding,width;
+	transition-property:height,width;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
 	z-index:2;
+}
+dialog>figure>svg>path{
+	transition-duration:.195s;
+	transition-property:fill,fill-opacity;
+	transition-timing-function:cubic-bezier(.4,0,.2,1);
 }
 dialog>figure>span{
 	border:0 solid rgba(76,175,80,.54);
 	transition-duration:.195s;
-	transition-property:background,border,height,width;
+	transition-property:background,border,border-radius,height,width;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
 	z-index:1;
 }
@@ -644,6 +649,15 @@ dialog>figure.light>span{
 	border-color:rgba(3,169,244,.54);
 }
 dialog>figure>span:first-of-type{
+	height:24px;
+	max-height:256px;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	width:24px;
+	max-width:256px;
+}
+dialog>figure>span:nth-of-type(2){
 	border-width:1px 0;
 	height:24px;
 	max-height:256px;
@@ -652,21 +666,12 @@ dialog>figure>span:first-of-type{
 	top:50%;
 	transform:translatey(-50%);
 }
-dialog>figure>span:nth-of-type(2){
+dialog>figure>span:last-of-type{
 	border-width:0 1px;
 	bottom:0;
 	left:50%;
 	top:0;
 	transform:translatex(-50%);
-	width:24px;
-	max-width:256px;
-}
-dialog>figure>span:last-of-type{
-	height:24px;
-	max-height:256px;
-	left:50%;
-	top:50%;
-	transform:translate(-50%,-50%);
 	width:24px;
 	max-width:256px;
 }
@@ -683,7 +688,7 @@ dialog>section>input{
 	border-bottom:1px solid #bdbdbd;
 	line-height:23px;
 	height:24px;
-	margin:4px 0 12px 0;
+	margin:0 0 16px 0;
 	padding:0 8px;
 	transition:border .195s cubic-bezier(.4,0,.2,1);
 	width:72px;

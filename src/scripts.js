@@ -83,6 +83,7 @@
 						loader.remove()
 					,375);
 				},10);
+				editor.init();
 			},
 		/** TOAST NOTIFICATIONS **/
 			alert(msg){
@@ -436,7 +437,7 @@
 		},
 	/** SIDEBAR **/
 		info={
-			color:Q`meta[name=theme-color]`,
+			colour:Q`meta[name=theme-color]`,
 			aside:$`info`,
 			heading:$`name`,
 			figure:$`preview`,
@@ -563,7 +564,7 @@
 			},
 			toggle(){
 				this.aside.dataset.show=(this.show=!this.show).toString();
-				this.color.content=`#${this.show?`ff5722`:`2196f3`}`;
+				this.colour.content=`#${this.show?`ff5722`:`2196f3`}`;
 				if(this.show)
 					b.addEventListener(`keydown`,this.close=event=>{
 						if(event.keyCode===27)
@@ -740,93 +741,97 @@
 		},
 	/** PNG EDITOR **/
 		editor={
+			dialog:Q`dialog`,
+			svg:N`svg`,
+			path:N`path`,
+			background:C`span`,
+			canvas:C`canvas`,
+			xml:new XMLSerializer(),
+			dimensions:24,
+			size:24,
+			padding:0,
+			luminance:0,
+			colour:[255,255,255],
+			alpha:0,
+			radius:0,
+			inputs:{
+				alpha:$`png_alpha`,
+				background:$`png_background`,
+				fill:$`png_fill`,
+				name:$`png_name`,
+				opacity:$`png_opacity`,
+				padding:$`png_padding`,
+				radius:$`png_radius`,
+				size:$`png_size`
+			},
 			init(){
-				this.canvas=C`canvas`;
 				this.context=this.canvas.getContext`2d`;
-				this.xml=new XMLSerializer();
-				this.padding=this.alpha=this.radius=0;
-				this.fill=[...this.background=[0,0,0]];
-				this.dialog=Q`dialog`;
 				this.save=this.dialog.lastElementChild;
 				this.cancel=this.save.previousElementSibling;
 				this.figure=this.dialog.querySelector`figure`;
-				this.figure.append(this.svg=N`svg`,this.horizontal=C`span`);
 				this.svg.classList.add`pa`;
-				this.svg.setAttribute(`height`,this.dimensions=this.size=24);
+				this.svg.setAttribute(`height`,this.size);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.svg.setAttribute(`width`,24);
-				this.svg.append(this.path=N`path`);
-				this.horizontal.classList.add(`pa`,`pen`);
-				this.figure.append(this.vertical=this.horizontal.cloneNode(1),this.bg=this.horizontal.cloneNode(1));
-				this.inputs={
-					alpha:$`png_alpha`,
-					background:$`png_background`,
-					fill:$`png_fill`,
-					name:$`png_name`,
-					opacity:$`png_opacity`,
-					padding:$`png_padding`,
-					radius:$`png_radius`,
-					size:$`png_size`
-				};
+				this.svg.setAttribute(`width`,this.size);
+				this.svg.append(this.path);
+				this.background.classList.add(`pa`,`pen`);
+				this.figure.append(this.background,this.horizontal=this.background.cloneNode(1),this.vertical=this.background.cloneNode(1),this.svg);
 				this.dialog.addEventListener(`click`,event=>{
 					let 	target=event.target,
 						area=this.dialog.getBoundingClientRect();
 					if(target===this.cancel||this.dialog.open&&!(area.top<=event.clientY&&event.clientY<=area.top+area.height&&area.left<=event.clientX&&event.clientX<=area.left+area.width))
-						this.close();
+						this.close(0);
 					else if(target===this.save)
 						this.download();
 				},0);
 				this.dialog.addEventListener(`keydown`,event=>{
 					if(this.dialog.open&&event.keyCode===27){
-						this.close();
+						this.close(0);
 						event.preventDefault();
 						event.stopPropagation();
 					}
 				},0);
 				this.dialog.addEventListener(`input`,event=>{
 					let 	target=event.target,
-						valid=target.validity.valid,
 						value=target.value;
-					if(valid){
+					if(target.validity.valid){
 						switch(target){
 							case this.inputs.size:
 								this.svg.setAttribute(`height`,this.size=parseInt(value));
 								this.svg.setAttribute(`width`,this.size);
 								if(this.padding>(this.inputs.padding.max=(256-this.size)/2))
 									this.padding=this.inputs.padding.value=this.inputs.padding.max;
-								this.bg.style.height=this.bg.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*this.padding}px`;
-								if(this.radius>(this.inputs.radius.max=this.dimensions/2))
-									this.bg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
+								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*this.padding}px`;
+								if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
+									this.background.style.borderRadius=`${this.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
 								break;
 							case this.inputs.padding:
-								this.bg.style.height=this.bg.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=parseInt(value))}px`;
-								if(this.radius>(this.inputs.radius.max=this.dimensions/2))
-									this.bg.style.borderRadius=`${this.radius=this.inputs.radius.value=this.dimensions/2}px`;
+								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=parseInt(value))}px`;
+								if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
+									this.background.style.borderRadius=`${this.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
 								break;
 							case this.inputs.fill:
-								this.svg.setAttribute(`fill`,`#${value.toLowerCase()}`);
-								this.figure.classList.toggle(`light`,this.test(this.fill=this.convert(value))>=128&&this.alpha<31);
+								this.path.setAttribute(`fill`,`#${value.toLowerCase()}`);
+								this.figure.classList.toggle(`light`,(this.luminance=this.test(this.convert(value)))>=128&&this.alpha<.31);
 								break;
 							case this.inputs.opacity:
-								this.svg.setAttribute(`fill-opacity`,value/100);
+								this.path.setAttribute(`fill-opacity`,value/100);
 								break;
 							case this.inputs.background:
-								this.bg.style.background=`rgba(${this.background=this.convert(value)},${this.alpha})`;
+								this.background.style.background=`rgba(${this.colour=this.convert(value)},${this.alpha})`;
 								break;
 							case this.inputs.alpha:
-								this.bg.style.background=`rgba(${this.background},${this.alpha=value/100})`;
-								this.figure.classList.toggle(`light`,this.test(this.fill)>=128&&value<31);
+								this.background.style.background=`rgba(${this.colour},${this.alpha=value/100})`;
+								this.figure.classList.toggle(`light`,this.luminance>=128&&value<31);
 								break;
 							case this.inputs.radius:
-								this.bg.style.borderRadius=`${this.radius=value}px`;
+								this.background.style.borderRadius=`${this.radius=value}px`;
 								break;
 						}
 					}
 				},1);
 			},
 			open(name){
-				if(!this.dialog)
-					this.init();
 				clearTimeout(this.timer);
 				this.name=name;
 				this.path.setAttribute(`d`,icons.list[name].path[page.font]);
@@ -834,9 +839,9 @@
 				this.dialog.showModal();
 				this.dialog.classList.remove`oz`;
 			},
-			close(){
+			close(value){
 				this.dialog.classList.add`oz`;
-				this.timer=setTimeout(_=>this.dialog.close(0),225);
+				this.timer=setTimeout(_=>this.dialog.close(value),225);
 			},
 			convert:hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000,
@@ -844,7 +849,7 @@
 				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
 				this.canvas.height=this.canvas.width=this.dimensions;
 				if(this.alpha){
-					this.context.fillStyle=`rgba(${this.background},${this.alpha})`;
+					this.context.fillStyle=`rgba(${this.colour},${this.alpha})`;
 					this.context.moveTo(this.radius,0);
 					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.radius);
 					this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.radius);
