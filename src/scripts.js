@@ -61,9 +61,8 @@
 						current=this.main.querySelector`article.active`;
 					switch(target.nodeName.toLowerCase()){
 						case`h2`:
-							if(parent!==this.section)
-								page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`);
-							else page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
+							if(parent!==parent.parentNode.firstElementChild)
+								parent!==this.section?page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`):page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
 							break;
 						case`article`:
 							if(current)
@@ -135,12 +134,11 @@
 				this.switch.append(T(`View ${page.light?`Regular`:`Light`} Icons`));
 				/*this.sections.before(this.switch);*/
 				let section=page.params.get`section`;
-				if(section)
-					if(categories.list[section]&&categories.list[section].section)
-						section=categories.list[section].section;
-					else section=page.main.querySelector(`#${section}`);
-				if(section)
-					this.goto(section);
+				if(section){
+					categories.list[section]&&categories.list[section].section?section=categories.list[section].section:section=page.main.querySelector(`#${section}`);
+					if(section)
+						this.goto(section);
+				}
 				this.nav.addEventListener(`click`,event=>{
 					let target=event.target;
 					target.blur();
@@ -465,15 +463,13 @@
 				this.svg.setAttribute(`width`,56);
 				this.svg.append(this.path);
 				this.figure.append(this.svg);
-				let icon=page.params.get`icon`;
+				let icon=page.params.get`icon`||page.params.get`edit`;
 				if(icon){
 					if(icons.list[icon]){
 						this.open(icon);
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
-				}else if(icon=page.params.get`edit`)
-					this.set(icon);
-				else this.set(Object.keys(icons.list)[0]);
+				}else this.set(Object.keys(icons.list)[0]);
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
@@ -485,9 +481,7 @@
 							favourites.set(this.name);
 							break;
 						case this.actions.export:
-							if(this.data)
-								editor.open(this.name);
-							else page.alert`Not yet available.`;
+							this.data?editor.open(this.name):page.alert`Not yet available.`;
 							break;
 						case this.actions.path:
 							if(this.data)
@@ -495,17 +489,13 @@
 							else page.alert`Not yet available.`;
 							break;
 						case this.actions.link:
-							if(this.aside.dataset.retired===`false`)
-								w.location.href=target.dataset.url;
-							else page.alert`No longer available.`;
+							this.aside.dataset.retired===`false`?w.location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`No longer available.`;
 							break;
 						default:
 							if(this.type=target.dataset.type)
 								this.download();
 							else if(target.parentNode===this.actions.link.parentNode)
-								if(this.copy||target===this.actions.url)
-									page.copy(target.dataset.copy,target.dataset.confirm);
-								else page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
+								this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
 							break;
 					}
 				},0);
@@ -548,22 +538,19 @@
 				if(page.light)
 					this.actions.url.dataset.copy+=`font=light&`;
 				this.actions.url.dataset.copy+=`icon=${name}`;
-				this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
-				if(page.light)
-					this.actions.link.dataset.url+=`light/`;
 				setTimeout(_=>{
 					this.path.setAttribute(`d`,this.data);
 					this.figure.classList.remove`oz`;
 				},195);
 			},
 			download(){
-				if(this.icon)
-					if(this.data)
-						if(this.downloads[this.type])
-							page.download(this.downloads[this.type],`${this.name}.${this.type}`);
-						else page.alert`Unknown file type.`;
-					else page.alert`Download not available.`;
-				else page.alert`Unknown icon.`;
+				this.icon?
+					this.data?
+						this.downloads[this.type]?
+							page.download(this.downloads[this.type],`${this.name}.${this.type}`)
+						:page.alert`Unknown file type.`
+					:page.alert`Download not available.`
+				:page.alert`Unknown icon.`;
 			},
 			toggle(){
 				this.aside.classList.toggle(`show`,this.show=!this.show);
@@ -886,7 +873,7 @@
 					this.canvas.toBlob(blob=>{
 						page.download(w.URL.createObjectURL(blob),`${this.inputs.name.value}.png`);
 						w.URL.revokeObjectURL(page.anchor.href);
-					},`image/png`);
+					});
 				},0);
 			}
 		};

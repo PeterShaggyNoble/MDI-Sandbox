@@ -449,7 +449,6 @@
 	}
 	#content>section>article:hover,#content>section>article.active{
 		background:#ff5722;
-		box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
 		color:#fff;
 	}
 	#content>section>article:hover::before,#content>section>article.active::before{
@@ -1059,7 +1058,7 @@
 		<li class="cp oh" data-icon="&#xf21f;" data-type="png" tabindex="-1">Download PNG
 		<li class="cp oh" data-icon="&#xf032;" data-type="xml" tabindex="-1">Download XML Vector
 		<li class="cp oh" data-icon="&#xf5b3;" data-type="xaml" tabindex="-1">Download XAML
-		<li class="cp oh" data-confirm="Path" data-icon="&#xf7ca;" tabindex="-1">Copy SVG Path
+		<li class="cp oh" data-confirm="Path" data-icon="&#xf7ca;" tabindex="-1">Copy Path
 		<li class="cp oh" data-confirm="Icon" data-icon="&#xf18f;" tabindex="-1">Copy Icon
 		<li class="cp oh" data-confirm="Code point" data-icon="&#xf3a0;" tabindex="-1">Copy Code Point
 		<li class="cp oh" data-confirm="Entity" data-icon="&#xf423;" tabindex="-1">Copy HTML Entity
@@ -1157,9 +1156,8 @@
 							current=this.main.querySelector`article.active`;
 						switch(target.nodeName.toLowerCase()){
 							case`h2`:
-								if(parent!==this.section)
-									page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`);
-								else page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
+								if(parent!==parent.parentNode.firstElementChild)
+									parent!==this.section?page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`):page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
 								break;
 							case`article`:
 								if(current)
@@ -1219,12 +1217,11 @@
 					this.switch.tabIndex=-1;
 					this.switch.append(T(`View ${page.light?`Regular`:`Light`} Icons`));
 					let section=page.params.get`section`;
-					if(section)
-						if(categories.list[section]&&categories.list[section].section)
-							section=categories.list[section].section;
-						else section=page.main.querySelector(`#${section}`);
-					if(section)
-						this.goto(section);
+					if(section){
+						categories.list[section]&&categories.list[section].section?section=categories.list[section].section:section=page.main.querySelector(`#${section}`);
+						if(section)
+							this.goto(section);
+					}
 					this.nav.addEventListener(`click`,event=>{
 						let target=event.target;
 						target.blur();
@@ -1546,15 +1543,13 @@
 					this.svg.setAttribute(`width`,56);
 					this.svg.append(this.path);
 					this.figure.append(this.svg);
-					let icon=page.params.get`icon`;
+					let icon=page.params.get`icon`||page.params.get`edit`;
 					if(icon){
 						if(icons.list[icon]){
 							this.open(icon);
 							Object.values(icons.list[icon].articles)[0].classList.add`active`;
 						}
-					}else if(icon=page.params.get`edit`)
-						this.set(icon);
-					else this.set(Object.keys(icons.list)[0]);
+					}else this.set(Object.keys(icons.list)[0]);
 					this.aside.addEventListener(`click`,event=>{
 						let target=event.target;
 						switch(target){
@@ -1566,9 +1561,7 @@
 								favourites.set(this.name);
 								break;
 							case this.actions.export:
-								if(this.data)
-									editor.open(this.name);
-								else page.alert`Not yet available.`;
+								this.data?editor.open(this.name):page.alert`Not yet available.`;
 								break;
 							case this.actions.path:
 								if(this.data)
@@ -1576,17 +1569,13 @@
 								else page.alert`Not yet available.`;
 								break;
 							case this.actions.link:
-								if(this.aside.dataset.retired===`false`)
-									w.location.href=target.dataset.url;
-								else page.alert`No longer available.`;
+								this.aside.dataset.retired===`false`?w.location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`No longer available.`;
 								break;
 							default:
 								if(this.type=target.dataset.type)
 									this.download();
 								else if(target.parentNode===this.actions.link.parentNode)
-									if(this.copy||target===this.actions.url)
-										page.copy(target.dataset.copy,target.dataset.confirm);
-									else page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
+									this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
 								break;
 						}
 					},0);
@@ -1629,22 +1618,19 @@
 					if(page.light)
 						this.actions.url.dataset.copy+=`font=light&`;
 					this.actions.url.dataset.copy+=`icon=${name}`;
-					this.actions.link.dataset.url=`https://materialdesignicons.com/icon/${name}`;
-					if(page.light)
-						this.actions.link.dataset.url+=`light/`;
 					setTimeout(_=>{
 						this.path.setAttribute(`d`,this.data);
 						this.figure.classList.remove`oz`;
 					},195);
 				},
 				download(){
-					if(this.icon)
-						if(this.data)
-							if(this.downloads[this.type])
-								page.download(this.downloads[this.type],`${this.name}.${this.type}`);
-							else page.alert`Unknown file type.`;
-						else page.alert`Download not available.`;
-					else page.alert`Unknown icon.`;
+					this.icon?
+						this.data?
+							this.downloads[this.type]?
+								page.download(this.downloads[this.type],`${this.name}.${this.type}`)
+							:page.alert`Unknown file type.`
+						:page.alert`Download not available.`
+					:page.alert`Unknown icon.`;
 				},
 				toggle(){
 					this.aside.classList.toggle(`show`,this.show=!this.show);
@@ -2990,12 +2976,11 @@
 						"added":{
 							"regular":2046
 						},
-						"aliases":["decagram-check"],
+						"aliases":["decagram-check","verified"],
 						"contributor":{
 							"regular":"michael-richins"
 						},
 						"codepoint":"f790",
-						"keywords":["verified"],
 						"path":{
 							"regular":"M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"
 						}
@@ -10018,6 +10003,7 @@
 						}
 					},
 					"eye":{
+						"aliases":["show"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -10027,6 +10013,7 @@
 						}
 					},
 					"eye-off":{
+						"aliases":["hide"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -10035,22 +10022,11 @@
 							"regular":"M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z"
 						}
 					},
-					"eye-outline":{
-						"added":{
-							"regular":1836
-						},
-						"contributor":{
-							"regular":"austin-andrews"
-						},
-						"codepoint":"f6cf",
-						"path":{
-							"regular":"M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z"
-						}
-					},
 					"eye-off-outline":{
 						"added":{
 							"regular":1836
 						},
+						"aliases":["hide-outline"],
 						"contributor":{
 							"regular":"austin-andrews"
 						},
@@ -10060,6 +10036,19 @@
 						},
 						"updated":{
 							"regular":1932
+						}
+					},
+					"eye-outline":{
+						"aliases":["show-outline"],
+						"added":{
+							"regular":1836
+						},
+						"contributor":{
+							"regular":"austin-andrews"
+						},
+						"codepoint":"f6cf",
+						"path":{
+							"regular":"M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z"
 						}
 					},
 					"eyedropper":{
@@ -17500,6 +17489,7 @@
 						}
 					},
 					"pencil":{
+						"aliases":["edit"],
 						"categories":["editor"],
 						"contributor":{
 							"regular":"google"
@@ -18720,6 +18710,7 @@
 						}
 					},
 					"radar":{
+						"aliases":["track changes"],
 						"categories":["science"],
 						"contributor":{
 							"regular":"google"
@@ -24993,7 +24984,7 @@
 						this.canvas.toBlob(blob=>{
 							page.download(w.URL.createObjectURL(blob),`${this.inputs.name.value}.png`);
 							w.URL.revokeObjectURL(page.anchor.href);
-						},`image/png`);
+						});
 					},0);
 				}
 			};
