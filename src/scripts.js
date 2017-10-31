@@ -761,14 +761,14 @@
 			alpha:0,
 			radius:0,
 			inputs:{
-				alpha:$`png-alpha`,
-				colour:$`png-colour`,
-				fill:$`png-fill`,
-				name:$`png-name`,
-				opacity:$`png-opacity`,
+				size:$`png-size`,
 				padding:$`png-padding`,
+				fill:$`png-fill`,
+				opacity:$`png-opacity`,
+				colour:$`png-colour`,
+				alpha:$`png-alpha`,
 				radius:$`png-radius`,
-				size:$`png-size`
+				name:$`png-name`
 			},
 			init(){
 				this.context=this.canvas.getContext`2d`;
@@ -834,7 +834,7 @@
 								this.background.style.borderRadius=`${this.radius=value}px`;
 								break;
 						}
-						if(page.storage)
+						if(page.storage&&target!==this.inputs.name)
 							page.storage.setItem(target.id,value);
 					}
 				},1);
@@ -883,7 +883,10 @@
 				img.addEventListener(`load`,_=>{
 					this.context.drawImage(img,this.padding,this.padding);
 					w.URL.revokeObjectURL(img.src);
-					page.download(this.canvas.toDataURL`image/png`,`${this.inputs.name.value}.png`);
+					this.canvas.toBlob(blob=>{
+						page.download(w.URL.createObjectURL(blob),`${this.inputs.name.value}.png`);
+						w.URL.revokeObjectURL(page.anchor.href);
+					},`image/png`);
 				},0);
 			}
 		};
