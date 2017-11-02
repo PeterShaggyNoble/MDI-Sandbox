@@ -140,7 +140,9 @@
 				if(section){
 					categories.list[section]&&categories.list[section].section?section=categories.list[section].section:section=page.main.querySelector(`#${section}`);
 					if(section)
-						this.goto(section);
+						setTimeout(_=>
+							this.goto(section)
+						,225);
 				}
 				this.nav.addEventListener(`click`,event=>{
 					let target=event.target;
@@ -582,7 +584,7 @@
 			item:C`li`,
 			init(){
 				this.section.classList.add`dg`;
-				this.heading.classList.add(`oh`);
+				this.heading.classList.add(`oh`,`ps`);
 				this.heading.append(T``);
 				this.item.classList.add(`cp`,`oh`);
 				this.item.tabIndex=-1;
@@ -676,9 +678,9 @@
 				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 				this.article.append(T``);
 				this.svg.classList.add(`pa`,`pen`);
-				this.svg.setAttribute(`height`,48);
+				this.svg.setAttribute(`height`,24);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.svg.setAttribute(`width`,48);
+				this.svg.setAttribute(`width`,24);
 				this.svg.append(N`path`);
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key)&&this.list[key].path[page.font])

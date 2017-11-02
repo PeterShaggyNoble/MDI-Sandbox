@@ -159,6 +159,7 @@ body{
 	font-size:14px;
 	left:0;
 	line-height:48px;
+	overscroll-behavior:contain;
 	padding:8px 0;
 	transition:left .225s cubic-bezier(.4,0,.2,1);
 	width:calc(100% - 56px);
@@ -384,6 +385,7 @@ body.mdil #icons.filtered{
 	line-height:48px;
 	margin:0 -8px;
 	padding:0 16px;
+	top:64px;
 	z-index:2;
 }
 #content>section>h2::before{
@@ -424,7 +426,6 @@ body.mdil #icons.filtered{
 	z-index:1;
 }
 #content>section>article::before{
-	color:#757575;
 	font-family:mdi;
 	font-size:48px;
 	left:50%;
@@ -432,7 +433,6 @@ body.mdil #icons.filtered{
 	position:absolute;
 	top:8px;
 	transform:translatex(-50%);
-	transition:color .225s cubic-bezier(.4,0,.2,1);
 	width:48px;
 	z-index:2;
 }
@@ -443,11 +443,12 @@ body.mdil>#content>section>article::before{
 	font-family:mdil;
 }
 #content>section>article>svg{
+	fill:currentcolor;
+	height:48px;
 	left:50%;
-	opacity:.54;
 	top:8px;
 	transform:translatex(-50%);
-	transition:fill .225s cubic-bezier(.4,0,.2,1),opacity .225s cubic-bezier(.4,0,.2,1);
+	width:48px;
 	z-index:1;
 }
 #content>section>article:hover{
@@ -456,13 +457,6 @@ body.mdil>#content>section>article::before{
 #content>section>article.active{
 	background:#2196f3;
 	color:#fff;
-}
-#content>section>article.active::before{
-	color:#fff;
-}
-#content>section>article.active>svg{
-	fill:#fff;
-	opacity:1;
 }
 #icons>p:last-of-type{
 	grid-column:1/-1;
@@ -535,6 +529,7 @@ body.mdil>#content>section>article::before{
 #actions{
 	background:#fff;
 	line-height:48px;
+	overscroll-behavior:contain;
 	padding:8px 0;
 	z-index:2;
 }
@@ -676,6 +671,7 @@ dialog>figure>span:last-of-type{
 	max-width:256px;
 }
 dialog>section{
+	overscroll-behavior:contain;
 	padding:8px;
 	max-height:calc(100vh - 432px);
 }
@@ -683,6 +679,10 @@ dialog>section>label{
 	line-height:32px;
 	margin:0 0 8px;
 	width:calc(100% - 80px);
+}
+dialog>section>label:last-of-type{
+	margin:0;
+	width:calc(100% - 184px);
 }
 dialog>section>input{
 	border-bottom:1px solid #bdbdbd;
@@ -692,10 +692,6 @@ dialog>section>input{
 	padding:0 8px;
 	transition:border .195s cubic-bezier(.4,0,.2,1);
 	width:72px;
-}
-dialog>section>label:last-of-type{
-	margin:0;
-	width:calc(100% - 184px);
 }
 dialog>section>input:last-of-type{
 	margin:4px 0 0;
@@ -805,7 +801,6 @@ dialog>button:active{
 	#menu{
 		background:#fff;
 		box-shadow:0 14px 28px rgba(0,0,0,0),0 10px 10px rgba(0,0,0,0);
-		overscroll-behavior:contain;
 		top:0;
 	}
 	body.menu #menu{
@@ -897,6 +892,9 @@ dialog>button:active{
 	}
 	#card{
 		height:158px;
+	}
+	#content>section>h2{
+		top:56px;
 	}
 	body.mdi #icons.filtered{
 		min-height:calc(100vh - 136px);
