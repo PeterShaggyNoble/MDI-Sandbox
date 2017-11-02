@@ -111,8 +111,10 @@ body{
 	order:2;
 }
 #header>p{
-	margin-left:auto;
 	order:4;
+}
+#header>p:first-of-type{
+	margin-left:auto;
 }
 #header>p>a{
 	line-height:48px;
@@ -138,11 +140,16 @@ body{
 	z-index:7;
 }
 #navicon{
+	border-radius:50%;
 	left:12px;
 	line-height:48px;
 	pointer-events:initial;
-	width:48px;
 	top:8px;
+	transition:background .195s cubic-bezier(.4,0,.2,1);
+	width:48px;
+}
+#navicon:hover{
+	background:rgba(0,0,0,.07);
 }
 #navicon::before{
 	content:"\f35c";
