@@ -14,10 +14,12 @@
 	/** CONSTANTS **/
 		w=window,
 		d=document,
+		h=d.documentElement,
 		b=d.body,
 	/** PAGE **/
 		page={
 			url:new URL(w.location),
+			wide:b.offsetWidth>1499,
 			header:$`header`,
 			main:$`content`,
 			section:$`icons`,
@@ -53,7 +55,9 @@
 					favourites.init();
 				icons.init();
 				menu.init();
-				filter.init();
+				setTimeout(_=>
+					filter.init()
+				,225);
 				info.init();
 				this.main.addEventListener(`click`,event=>{
 					let 	target=event.target,
@@ -61,15 +65,15 @@
 						current=this.main.querySelector`article.active`;
 					switch(target.nodeName.toLowerCase()){
 						case`h2`:
-							if(parent!==parent.parentNode.firstElementChild)
-								parent!==this.section?page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`):page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
+							parent!==this.section?page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`):page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
 							break;
 						case`article`:
-							if(current)
-								current.classList.remove`active`;
-							icons.ripple(target,event.clientX,event.offsetY+target.offsetTop);
-							info.open(target.lastChild.nodeValue);
-							target.classList.add`active`;
+							if(current!==target){
+								if(current)
+									current.classList.remove`active`;
+								info.open(target.lastChild.nodeValue);
+								target.classList.add`active`;
+							}
 							break;
 					}
 				},0);
@@ -77,7 +81,6 @@
 					let loader=$`load`;
 					loader.classList.add`oz`;
 					loader.classList.add`pen`;
-					this.main.classList.remove`oz`;
 					setTimeout(_=>
 						loader.remove()
 					,375);
@@ -158,7 +161,8 @@
 							break;
 						case filter.clearall:
 							filter.clear();
-							this.toggle();
+							if(!page.wide)
+								this.toggle();
 							break;
 						case this.categories.previousElementSibling:
 						case this.contributors.previousElementSibling:
@@ -172,7 +176,8 @@
 									case this.sections:
 										if(category=categories.list[category].section){
 											this.goto(category);
-											this.toggle();
+											if(!page.wide)
+												this.toggle();
 										}
 										break;
 									case this.categories:
@@ -212,9 +217,11 @@
 						event.stopPropagation();
 					}
 				},0);
+				if(page.wide)
+					this.toggle();
 			},
 			toggle(){
-				this.nav.classList.toggle(`show`,this.show=!this.show);
+				b.classList.toggle(`menu`,this.show=!this.show);
 				this.show?b.addEventListener(`keydown`,this.functions.close=event=>{
 					if(event.keyCode===27)
 						this.toggle();
@@ -222,11 +229,11 @@
 			},
 			goto(section){
 				clearInterval(this.timer);
-				let 	to=section.offsetTop-page.header.offsetHeight,
-					top=page.main.scrollTop,
-					step=(to-top)/20;
+				let 	to=section.offsetTop-8-page.header.offsetHeight,
+					top=h.scrollTop,
+					step=(to-top)/10;
 				this.timer=setInterval(_=>
-					Math.round(top)===Math.round(to)?clearInterval(this.timer):page.main.scrollTop=(top+=step)
+					Math.round(top)===Math.round(to)?clearInterval(this.timer):h.scrollTop=(top+=step)
 				,10);
 			},
 			touchstart(){
@@ -288,7 +295,7 @@
 				},0);
 			},
 			apply(){
-				if(page.main.scrollTop<page.section.offsetTop-page.header.offsetHeight)
+				if(h.scrollTop<page.section.offsetTop-page.header.offsetHeight)
 					menu.goto(page.section);
 				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
 				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
@@ -332,8 +339,8 @@
 					}
 					if(this.text)
 						this.url+=`filter=${encodeURIComponent(this.text)}`;
-					if(page.main.scrollTop<page.section.offsetTop-page.header.offsetHeight)
-						page.main.scrollTop=page.section.offsetTop-page.header.offsetHeight
+					if(h.scrollTop<page.section.offsetTop-page.header.offsetHeight)
+						h.scrollTop=page.section.offsetTop-8-page.header.offsetHeight
 				}
 			},
 			clear(){
@@ -434,7 +441,6 @@
 		},
 	/** SIDEBAR **/
 		info={
-			colour:Q`meta[name=theme-color]`,
 			aside:$`info`,
 			heading:$`name`,
 			figure:$`preview`,
@@ -554,7 +560,6 @@
 			},
 			toggle(){
 				this.aside.classList.toggle(`show`,this.show=!this.show);
-				this.colour.content=`#${this.show?`ff5722`:`2196f3`}`;
 				if(this.show)
 					b.addEventListener(`keydown`,this.close=event=>{
 						if(event.keyCode===27){
@@ -576,10 +581,10 @@
 			heading:C`h2`,
 			item:C`li`,
 			init(){
-				this.section.classList.add(`dg`,`pr`);
-				this.heading.classList.add(`oh`,`ps`);
+				this.section.classList.add`dg`;
+				this.heading.classList.add(`oh`);
 				this.heading.append(T``);
-				this.item.classList.add`cp`;
+				this.item.classList.add(`cp`,`oh`);
 				this.item.tabIndex=-1;
 				this.item.append(T``);
 				if(!page.storage)
@@ -634,7 +639,7 @@
 			item:C`li`,
 			img:C`img`,
 			init(){
-				this.item.classList.add`cp`;
+				this.item.classList.add(`cp`,`oh`);
 				this.item.tabIndex=-1;
 				this.item.append(T``);
 				this.img.classList.add(`pen`,`vam`);
@@ -665,17 +670,15 @@
 	/** ICONS **/
 		icons={
 			article:C`article`,
-			span:C`span`,
 			svg:N`svg`,
 			init(){
 				delete this.array;
-				this.article.classList.add(`cp`,page.light?`fwl`:`fwm`,`oh`,`pr`,`toe`,`wsnw`);
+				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 				this.article.append(T``);
-				this.span.classList.add(`ripple`,`db`,`pa`,`pen`);
 				this.svg.classList.add(`pa`,`pen`);
-				this.svg.setAttribute(`height`,24);
+				this.svg.setAttribute(`height`,48);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.svg.setAttribute(`width`,24);
+				this.svg.setAttribute(`width`,48);
 				this.svg.append(N`path`);
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key)&&this.list[key].path[page.font])
@@ -720,16 +723,6 @@
 						category.section.append(icon.articles.retired=article.cloneNode(1));
 					page.section.append(icon.articles.main=article);
 				}else delete icon;
-			},
-			ripple(target,x,y){
-				let span=this.span.cloneNode(0);
-				target.prepend(span);
-				span.style.height=span.style.width=`${Math.min(target.offsetHeight,target.offsetWidth)}px`;
-				span.style.left=`${x-target.getBoundingClientRect().left}px`;
-				span.style.top=`${y-target.offsetTop}px`;
-				setTimeout(_=>
-					span.remove()
-				,875);
 			}
 		},
 	/** PNG EDITOR **/
@@ -845,10 +838,10 @@
 				this.path.setAttribute(`d`,icons.list[name].path[page.font]);
 				this.inputs.name.value=name;
 				this.dialog.showModal();
-				this.dialog.classList.remove`oz`;
+				this.dialog.classList.remove(`oz`,`pen`);
 			},
 			close(value){
-				this.dialog.classList.add`oz`;
+				this.dialog.classList.add(`oz`,`pen`);
 				this.timer=setTimeout(_=>this.dialog.close(value),225);
 			},
 			convert:hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
