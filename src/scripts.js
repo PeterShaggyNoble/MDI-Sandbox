@@ -63,7 +63,8 @@
 						current=this.main.querySelector`article.active`;
 					switch(target.nodeName.toLowerCase()){
 						case`h2`:
-							parent!==this.section?page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`):page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
+							if(!page.storage||parent!==categories.list.favourites.section)
+								parent!==this.section?page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`):page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
 							break;
 						case`article`:
 							if(current!==target){
@@ -155,12 +156,6 @@
 							break;
 						case this.switch:
 							w.location.href=page.light?`./`:`?font=light`;
-							break;
-						case this.import:
-							favourites.import();
-							break;
-						case this.export:
-							page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).filter(key=>key.startsWith`mdi-`).join`,`))}`,`mdi-favourites.txt`);
 							break;
 						case filter.clearall:
 							filter.clear();
@@ -363,9 +358,30 @@
 		},
 	/** FAVOURITES **/
 		favourites={
+			menu:C`ul`,
+			item:C`li`,
+			actions:{},
 			input:C`input`,
 			reader:new FileReader(),
 			init(){
+				this.menu.classList.add(`oh`,`pa`);
+				this.menu.tabIndex=-1;
+				this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
+				this.item.dataset.icon=`\uf3d4`;
+				this.item.append(T`Download SVG`);
+				this.menu.append(this.actions.download=this.item);
+				this.item=this.item.cloneNode(1);
+				this.item.dataset.icon=`\uf220`;
+				this.item.firstChild.nodeValue=`Import Favourites`;
+				this.menu.append(this.actions.import=this.item);
+				this.item=this.item.cloneNode(1);
+				this.item.dataset.icon=`\uf21d`;
+				this.item.firstChild.nodeValue=`Export Favourites`;
+				this.menu.append(this.actions.export=this.item);
+				this.item=this.item.cloneNode(1);
+				this.item.dataset.icon=`\uf1c0`;
+				this.item.firstChild.nodeValue=`Clear Favourites`;
+				this.menu.append(this.actions.clear=this.item);
 				this.input.accept=`.txt,text/plain`;
 				this.input.classList.add(`ln`,`pa`);
 				this.input.type=`file`;
@@ -378,7 +394,46 @@
 				,0);
 				this.section=categories.list.favourites.section;
 				this.heading=this.section.firstElementChild;
+				this.heading.nextElementSibling.before(this.menu);
 				this.articles=this.section.getElementsByTagName`article`;
+				this.menu.addEventListener(`click`,event=>{
+					switch(event.target){
+						case this.actions.download:
+							let path;
+							this.svg=`<svg><defs>`;
+							Object.keys(page.storage).filter(key=>
+								key.startsWith`mdi-`&&icons.list[key.substr(4)]
+							).forEach(key=>{
+								if(path=icons.list[key=key.substr(4)].path[page.font])
+									this.svg+=`<g id="${key}"><path d="${path}"/></g>`;
+							});
+							this.menu.blur();
+							page.download(`data:text/svg+xml;utf8,${this.svg}</defs></svg>`,`mdi-favourites.svg`);
+							break;
+						case this.actions.import:
+							b.append(this.input);
+							this.menu.blur();
+							this.input.click();
+							break;
+						case this.actions.export:
+							this.menu.blur();
+							page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).filter(key=>key.startsWith`mdi-`).join`,`))}`,`mdi-favourites.txt`);
+							break;
+						case this.actions.clear:
+							let icon,article;
+							for(let key in page.storage)
+								if(page.storage.hasOwnProperty(key))
+									if(key.startsWith`mdi-`){
+										page.storage.removeItem(key);
+										if((icon=icons.list[key.substr(4)])&&icon.articles.favourite){
+											icon.articles.favourite.remove();
+											delete icon.articles.favourite;
+										}
+									}
+							page.alert`Favourites cleared.`;
+							break;
+					}
+				},0);
 			},
 			set(name){
 				this.icon=icons.list[name];
@@ -400,19 +455,12 @@
 				page.alert(`${name} ${msg} favourites.`);
 			},
 			sort(){
-				let articles=[...this.articles];
-				articles.sort((first,second)=>
-					first.lastChild.nodeValue<second.lastChild.nodeValue?1:-1
-				);
-				while(this.heading.nextElementSibling)
-					this.section.lastChild.remove();
-				articles.forEach(article=>
-					this.section.insertBefore(article,this.heading.nextElementSibling)
-				);
-			},
-			import(){
-				b.append(this.input);
-				this.input.click();
+				[...this.articles].sort((first,second)=>
+					first.lastChild.nodeValue>second.lastChild.nodeValue?1:-1
+				).forEach(article=>{
+					article.remove();
+					this.section.append(article);
+				});
 			},
 			load(event){
 				let msg=`complete`;
@@ -581,11 +629,14 @@
 		categories={
 			section:C`section`,
 			heading:C`h2`,
+			paragraph:C`p`,
 			item:C`li`,
 			init(){
-				this.section.classList.add`dg`;
+				this.section.classList.add(`dg`,`pr`);
 				this.heading.classList.add(`oh`,`ps`);
 				this.heading.append(T``);
+				this.paragraph.classList.add`fwm`;
+				this.paragraph.append(T`No icons available in this section.`);
 				this.item.classList.add(`cp`,`oh`);
 				this.item.tabIndex=-1;
 				this.item.append(T``);
@@ -609,8 +660,11 @@
 					name=category.name.replace(`{v}`,version);
 				if(category.section){
 					section.dataset.name=key;
+					if(key===`favourites`)
+						section.id=`favourites`;
 					heading.firstChild.nodeValue=name;
 					section.append(heading);
+					section.append(this.paragraph.cloneNode(1));
 					page.section.before(category.section=section);
 				}else category.count=icons.array.filter(item=>
 					item.path[page.font]&&item.categories&&item.categories.includes(key)
@@ -622,17 +676,6 @@
 					item.dataset.category=key;
 					item.dataset.icon=String.fromCharCode(`0x${category.codepoint}`);
 					menu[category.section?`sections`:`categories`].append(category.item=item);
-					if(key===`favourites`){
-						item=item.cloneNode(1);
-						delete item.dataset.category;
-						item.dataset.icon=`\uf220`;
-						item.firstChild.nodeValue=`Import Favourites`;
-						menu.sections.append(menu.import=item);
-						item=item.cloneNode(1);
-						item.dataset.icon=`\uf21d`;
-						item.firstChild.nodeValue=`Export Favourites`;
-						menu.sections.append(menu.export=item);
-					}
 				}else delete this.list[key];
 			}
 		},
@@ -666,7 +709,7 @@
 					}else item.dataset.icon=`\uf004`;
 					item.lastChild.nodeValue=`${contributor.name} (${contributor.count})`;
 					menu.contributors.append(contributor.item=item);
-				}else delete this.list[key]
+				}else delete this.list[key];
 			}
 		},
 	/** ICONS **/

@@ -68,7 +68,6 @@
 	}
 	::-webkit-scrollbar-thumb{
 		background:rgba(0,0,0,0);
-		transition:background .195s cubic-bezier(.4,0,.2,1);
 	}
 	:hover::-webkit-scrollbar-thumb{
 		background:#9e9e9e;
@@ -176,7 +175,7 @@
 	#menu>h3.open::before{
 		transform:rotate(90deg);
 	}
-	#menu>p,#menu>ol,#sections>li:nth-child(3):nth-last-child(6),#sections>li:nth-child(3):nth-last-child(2){
+	#menu>p,#menu>ol{
 		border-bottom:1px solid #bdbdbd;
 	}
 	#menu>p,#menu>ol>li{
@@ -316,9 +315,6 @@
 	#content{
 		transition:margin .225s cubic-bezier(.4,0,.2,1);
 	}
-	body.mdi>#content{
-		padding:0 0 80px;
-	}
 	#content>figure{
 		border-radius:2px;
 		box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
@@ -340,11 +336,8 @@
 		margin:16px;
 		padding:0 8px 8px;
 	}
-	body.mdi #icons.filtered{
-		min-height:calc(100vh - 168px);
-	}
-	body.mdil #icons.filtered{
-		min-height:calc(100vh - 64px);
+	#icons.filtered{
+		min-height:calc(100vh - 88px);
 	}
 	#content>section>h2{
 		background:#3f51b5;
@@ -355,34 +348,21 @@
 		grid-row:1/1.5;
 		line-height:48px;
 		margin:0 -8px;
-		padding:0 16px;
+		padding:0 72px 0 16px;;
 		top:64px;
 		z-index:2;
 	}
-	#content>section>h2::before{
+	#content>section:not(#favourites)>h2::before{
 		content:"\f337";
 		cursor:pointer;
 		font-family:mdi;
-		float:right;
 		font-size:24px;
-		pointer-events:initial;
-		text-align:right;
-		transition:opacity .195s cubic-bezier(.4,0,.2,1);
-		vertical-align:middle;
-		width:48px;
-	}
-	#content>section>h2:only-child::after{
-		background:#fff;
-		color:#212121;
-		content:"No icons available in this section.";
-		display:block;
-		font-size:14px;
-		font-weight:500;
 		line-height:48px;
-		margin:0 -16px -8px;
-		padding:8px 12px;
-		position:relative;
-		z-index:2;
+		position:absolute;
+		right:8px;
+		text-align:right;
+		top:0;
+		width:48px;
 	}
 	#content>section>article{
 		background:#fff;
@@ -420,11 +400,77 @@
 		margin:0 auto 16px;
 		width:48px;
 	}
-	#icons>p:last-of-type{
+	#content>section>p:last-of-type{
 		grid-column:1/-1;
 		line-height:24px;
 		margin:12px;
 		width:100%;
+	}
+	#content>section:not(#icons)>p:last-of-type:not(:last-child){
+		display:none;
+	}
+	#favourites>ul{
+		box-shadow:0 1px 3px rgba(0,0,0,0),0 1px 2px rgba(0,0,0,0);
+		border-radius:2px;
+		right:8px;
+		padding:48px 0 0;
+		top:0;
+		width:48px;
+		z-index:3;
+	}
+	#favourites>ul:focus{
+		box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+		width:auto;
+	}
+	#favourites>ul::before{
+		color:#fff;
+		content:"\f1d9";
+		cursor:pointer;
+		font-family:mdi;
+		font-size:24px;
+		line-height:48px;
+		position:absolute;
+		right:0;
+		text-align:right;
+		top:0;
+		width:48px;
+		z-index:1;
+	}
+	#favourites>ul>li{
+		background:#fff;
+		line-height:48px;
+		opacity:0;
+		padding:0 16px 0 8px;
+		pointer-events:none;
+		transition:background .225s cubic-bezier(.4,0,.2,1),color .225s cubic-bezier(.4,0,.2,1);
+		right:0;
+		z-index:1;
+	}
+	#favourites>ul:focus>li{
+		opacity:1;
+		pointer-events:initial;
+	}
+	#favourites>ul>li:first-of-type{
+		border-radius:2px 2px 0 0;
+		margin-top:-40px;
+	}
+	#favourites>ul>li:last-of-type{
+		border-radius:0 0 2px 2px;
+	}
+	#favourites>ul>li:focus,#favourites>ul>li:hover{
+		background:#e0e0e0;
+		color:#3f51b5;
+	}
+	#favourites>ul>li::before{
+		color:#757575;
+		font-size:24px;
+		margin:0 16px 0 0;
+		transition:color .225s cubic-bezier(.4,0,.2,1);
+		vertical-align:middle;
+		width:24px;
+	}
+	#favourites>ul>li:focus::before{
+		color:#3f51b5;
 	}
 	#info{
 		width:calc(100% - 56px);
@@ -522,7 +568,6 @@
 	}
 	#actions>li:focus::before{
 		color:#3f51b5;
-		transition-duration:inherit;
 	}
 	#actions>li:nth-last-child(14),#actions>li:nth-last-child(10),#actions>li:nth-last-child(2){
 		border-bottom:1px solid #e0e0e0;
@@ -542,11 +587,14 @@
 	dialog,dialog::backdrop{
 		transition:opacity .225s cubic-bezier(.4,0,.2,1);
 	}
+	dialog::backdrop{
+		background:rgba(0,0,0,.54);
+	}
 	dialog.oz::backdrop{
 		opacity:0;
 	}
 	dialog>h2{
-		background:#2196f3;
+		background:#3f51b5;
 		color:#fff;
 		font-size:20px;
 		line-height:48px;
@@ -671,23 +719,6 @@
 		padding:0 24px;
 		z-index:5;
 		min-width:288px;
-	}
-	#fab{
-		bottom:24px;
-		right:24px;
-		z-index:3;
-	}
-	#fab>a{
-		background:#3f51b5;
-		border-radius:50%;
-		box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
-		color:#fff;
-		font-size:24px;
-		line-height:56px;
-		width:56px;
-	}
-	#fab>a::before{
-		width:100%;
 	}
 	#load{
 		background:#e0e0e0;
@@ -846,14 +877,11 @@
 		#content>figure,#content>section{
 			margin:8px;
 		}
+		#icons.filtered{
+			min-height:calc(100vh - 72px);
+		}
 		#content>section>h2{
 			top:56px;
-		}
-		body.mdi #icons.filtered{
-			min-height:calc(100vh - 136px);
-		}
-		body.mdil #icons.filtered{
-			min-height:calc(100vh - 56px);
 		}
 		#info{
 			max-width:280px;
@@ -885,12 +913,6 @@
 		}
 		#message.oz{
 			bottom:-48px;
-		}
-		#message+#fab{
-			transition:bottom .375s cubic-bezier(.4,0,.2,1);
-		}
-		#message:not(.oz)+#fab{
-			bottom:72px;
 		}
 		#load{
 			top:56px;
@@ -945,12 +967,6 @@
 		}
 		#actions{
 			max-height:calc(100vh - 276px);
-		}
-		#fab{
-			right:360px;
-		}
-		dialog::backdrop{
-			background:rgba(0,0,0,.54);
 		}
 	}
 	.db{display:block;}
@@ -1031,7 +1047,7 @@
 		<li class="cp oh" data-icon="&#xf21f;" data-type="png" tabindex="-1">Download PNG
 		<li class="cp oh" data-icon="&#xf032;" data-type="xml" tabindex="-1">Download XML Vector
 		<li class="cp oh" data-icon="&#xf5b3;" data-type="xaml" tabindex="-1">Download XAML
-		<li class="cp oh" data-confirm="Path" data-icon="&#xf7ca;" tabindex="-1">Copy Path
+		<li class="cp oh" data-confirm="Path" data-icon="&#xf7ca;" tabindex="-1">Copy Path Data
 		<li class="cp oh" data-confirm="Icon" data-icon="&#xf18f;" tabindex="-1">Copy Icon
 		<li class="cp oh" data-confirm="Code point" data-icon="&#xf3a0;" tabindex="-1">Copy Code Point
 		<li class="cp oh" data-confirm="Entity" data-icon="&#xf423;" tabindex="-1">Copy HTML Entity
@@ -1044,7 +1060,6 @@
 </aside>
 <footer>
 	<p class="oz pen pf" id="message"> 
-	<p class="pf" id="fab"><a class="db oh wsnw" data-icon="&#xf1da;" href="https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip" tabindex="2">Download</a>
 	<figure class="cw pf tac" id="load"><svg height="56" viewBox="0 0 56 56" width="56"><title>Loading ...</title><g><circle cx="28" cy="28" r="16"/></g></svg></figure>
 </footer>
 <dialog class="df oh oz pen pf">
@@ -1131,7 +1146,8 @@
 							current=this.main.querySelector`article.active`;
 						switch(target.nodeName.toLowerCase()){
 							case`h2`:
-								parent!==this.section?page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`):page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
+								if(!page.storage||parent!==categories.list.favourites.section)
+									parent!==this.section?page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`):page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
 								break;
 							case`article`:
 								if(current!==target){
@@ -1211,12 +1227,6 @@
 								break;
 							case this.switch:
 								w.location.href=page.light?`./`:`?font=light`;
-								break;
-							case this.import:
-								favourites.import();
-								break;
-							case this.export:
-								page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).filter(key=>key.startsWith`mdi-`).join`,`))}`,`mdi-favourites.txt`);
 								break;
 							case filter.clearall:
 								filter.clear();
@@ -1417,9 +1427,30 @@
 				}
 			},
 			favourites={
+				menu:C`ul`,
+				item:C`li`,
+				actions:{},
 				input:C`input`,
 				reader:new FileReader(),
 				init(){
+					this.menu.classList.add(`oh`,`pa`);
+					this.menu.tabIndex=-1;
+					this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
+					this.item.dataset.icon=`\uf3d4`;
+					this.item.append(T`Download SVG`);
+					this.menu.append(this.actions.download=this.item);
+					this.item=this.item.cloneNode(1);
+					this.item.dataset.icon=`\uf220`;
+					this.item.firstChild.nodeValue=`Import Favourites`;
+					this.menu.append(this.actions.import=this.item);
+					this.item=this.item.cloneNode(1);
+					this.item.dataset.icon=`\uf21d`;
+					this.item.firstChild.nodeValue=`Export Favourites`;
+					this.menu.append(this.actions.export=this.item);
+					this.item=this.item.cloneNode(1);
+					this.item.dataset.icon=`\uf1c0`;
+					this.item.firstChild.nodeValue=`Clear Favourites`;
+					this.menu.append(this.actions.clear=this.item);
 					this.input.accept=`.txt,text/plain`;
 					this.input.classList.add(`ln`,`pa`);
 					this.input.type=`file`;
@@ -1432,7 +1463,46 @@
 					,0);
 					this.section=categories.list.favourites.section;
 					this.heading=this.section.firstElementChild;
+					this.heading.nextElementSibling.before(this.menu);
 					this.articles=this.section.getElementsByTagName`article`;
+					this.menu.addEventListener(`click`,event=>{
+						switch(event.target){
+							case this.actions.download:
+								let path;
+								this.svg=`<svg><defs>`;
+								Object.keys(page.storage).filter(key=>
+									key.startsWith`mdi-`&&icons.list[key.substr(4)]
+								).forEach(key=>{
+									if(path=icons.list[key=key.substr(4)].path[page.font])
+										this.svg+=`<g id="${key}"><path d="${path}"/></g>`;
+								});
+								this.menu.blur();
+								page.download(`data:text/svg+xml;utf8,${this.svg}</defs></svg>`,`mdi-favourites.svg`);
+								break;
+							case this.actions.import:
+								b.append(this.input);
+								this.menu.blur();
+								this.input.click();
+								break;
+							case this.actions.export:
+								this.menu.blur();
+								page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).filter(key=>key.startsWith`mdi-`).join`,`))}`,`mdi-favourites.txt`);
+								break;
+							case this.actions.clear:
+								let icon,article;
+								for(let key in page.storage)
+									if(page.storage.hasOwnProperty(key))
+										if(key.startsWith`mdi-`){
+											page.storage.removeItem(key);
+											if((icon=icons.list[key.substr(4)])&&icon.articles.favourite){
+												icon.articles.favourite.remove();
+												delete icon.articles.favourite;
+											}
+										}
+								page.alert`Favourites cleared.`;
+								break;
+						}
+					},0);
 				},
 				set(name){
 					this.icon=icons.list[name];
@@ -1454,19 +1524,12 @@
 					page.alert(`${name} ${msg} favourites.`);
 				},
 				sort(){
-					let articles=[...this.articles];
-					articles.sort((first,second)=>
-						first.lastChild.nodeValue<second.lastChild.nodeValue?1:-1
-					);
-					while(this.heading.nextElementSibling)
-						this.section.lastChild.remove();
-					articles.forEach(article=>
-						this.section.insertBefore(article,this.heading.nextElementSibling)
-					);
-				},
-				import(){
-					b.append(this.input);
-					this.input.click();
+					[...this.articles].sort((first,second)=>
+						first.lastChild.nodeValue>second.lastChild.nodeValue?1:-1
+					).forEach(article=>{
+						article.remove();
+						this.section.append(article);
+					});
 				},
 				load(event){
 					let msg=`complete`;
@@ -1633,11 +1696,14 @@
 			categories={
 				section:C`section`,
 				heading:C`h2`,
+				paragraph:C`p`,
 				item:C`li`,
 				init(){
-					this.section.classList.add`dg`;
+					this.section.classList.add(`dg`,`pr`);
 					this.heading.classList.add(`oh`,`ps`);
 					this.heading.append(T``);
+					this.paragraph.classList.add`fwm`;
+					this.paragraph.append(T`No icons available in this section.`);
 					this.item.classList.add(`cp`,`oh`);
 					this.item.tabIndex=-1;
 					this.item.append(T``);
@@ -1661,8 +1727,11 @@
 						name=category.name.replace(`{v}`,version);
 					if(category.section){
 						section.dataset.name=key;
+						if(key===`favourites`)
+							section.id=`favourites`;
 						heading.firstChild.nodeValue=name;
 						section.append(heading);
+						section.append(this.paragraph.cloneNode(1));
 						page.section.before(category.section=section);
 					}else category.count=icons.array.filter(item=>
 						item.path[page.font]&&item.categories&&item.categories.includes(key)
@@ -1674,17 +1743,6 @@
 						item.dataset.category=key;
 						item.dataset.icon=String.fromCharCode(`0x${category.codepoint}`);
 						menu[category.section?`sections`:`categories`].append(category.item=item);
-						if(key===`favourites`){
-							item=item.cloneNode(1);
-							delete item.dataset.category;
-							item.dataset.icon=`\uf220`;
-							item.firstChild.nodeValue=`Import Favourites`;
-							menu.sections.append(menu.import=item);
-							item=item.cloneNode(1);
-							item.dataset.icon=`\uf21d`;
-							item.firstChild.nodeValue=`Export Favourites`;
-							menu.sections.append(menu.export=item);
-						}
 					}else delete this.list[key];
 				},
 				list:{
@@ -1828,7 +1886,7 @@
 						}else item.dataset.icon=`\uf004`;
 						item.lastChild.nodeValue=`${contributor.name} (${contributor.count})`;
 						menu.contributors.append(contributor.item=item);
-					}else delete this.list[key]
+					}else delete this.list[key];
 				},
 				list:{
 					"alex-efremo":{
@@ -5385,6 +5443,7 @@
 						}
 					},
 					"bug":{
+						"aliases":["bug-report"],
 						"categories":["nature"],
 						"contributor":{
 							"regular":"google"
@@ -7105,7 +7164,7 @@
 						}
 					},
 					"clipboard-account":{
-						"aliases":["clipboard-user"],
+						"aliases":["assignment-ind","clipboard-user"],
 						"categories":["users"],
 						"contributor":{
 							"regular":"google"
@@ -7117,7 +7176,7 @@
 						}
 					},
 					"clipboard-alert":{
-						"aliases":["clipboard-warning"],
+						"aliases":["assignment-late","clipboard-warning"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -7127,6 +7186,7 @@
 						}
 					},
 					"clipboard-arrow-down":{
+						"aliases":["assignment-returned"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -7136,6 +7196,7 @@
 						}
 					},
 					"clipboard-arrow-left":{
+						"aliases":["assignment-return"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -7145,6 +7206,7 @@
 						}
 					},
 					"clipboard-check":{
+						"aliases":["assignment-turned-in"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -7187,6 +7249,7 @@
 						}
 					},
 					"clipboard-text":{
+						"aliases":["assignment"],
 						"contributor":{
 							"regular":"google"
 						},
@@ -10534,6 +10597,7 @@
 						"added":{
 							"regular":1650
 						},
+						"aliases":["subtasks"],
 						"categories":["files"],
 						"contributor":{
 							"regular":"kai-faust"

@@ -4318,6 +4318,7 @@
 		}
 	},
 	"bug":{
+		"aliases":["bug-report"],
 		"categories":["nature"],
 		"contributor":{
 			"regular":"google"
@@ -6506,7 +6507,7 @@
 		}
 	},
 	"clipboard-account":{
-		"aliases":["clipboard-user"],
+		"aliases":["assignment-ind","clipboard-user"],
 		"categories":["users"],
 		"contributor":{
 			"regular":"google"
@@ -6521,7 +6522,7 @@
 		}
 	},
 	"clipboard-alert":{
-		"aliases":["clipboard-warning"],
+		"aliases":["assignment-late","clipboard-warning"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -6534,6 +6535,7 @@
 		}
 	},
 	"clipboard-arrow-down":{
+		"aliases":["assignment-returned"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -6546,6 +6548,7 @@
 		}
 	},
 	"clipboard-arrow-left":{
+		"aliases":["assignment-return"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -6558,6 +6561,7 @@
 		}
 	},
 	"clipboard-check":{
+		"aliases":["assignment-turned-in"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -6612,6 +6616,7 @@
 		}
 	},
 	"clipboard-text":{
+		"aliases":["assignment"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -10874,6 +10879,7 @@
 		"added":{
 			"regular":1650
 		},
+		"aliases":["subtasks"],
 		"categories":["files"],
 		"contributor":{
 			"regular":"kai-faust"
