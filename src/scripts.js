@@ -124,10 +124,7 @@
 				b.append(script);
 				return new Promise((resolve,reject)=>{
 					script.addEventListener(`load`,resolve,0);
-					script.addEventListener(`error`,error=>{
-						console.log(error);
-						reject();
-					},0);
+					script.addEventListener(`error`,reject,0);
 				});
 			}
 		},
@@ -947,9 +944,11 @@
 		});
 	});
 	/** LOAD ANALYTICS **/
-	page.loadjs`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`.then(_=>{
+	page.loadjs`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`.catch(_=>
+		console.log(`Failed to load Google Tag Manager.`)
+	).then(_=>{
 		w.dataLayer=w.dataLayer||[];
-		let gtag=(...args)=>w.dataLayer.push(args);
+		let gtag=function(){w.dataLayer.push(arguments);};
 		gtag(`js`,new Date());
 		gtag(`config`,`UA-109147935-1`);
 	});
