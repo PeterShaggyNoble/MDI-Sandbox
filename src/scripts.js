@@ -30,7 +30,7 @@
 			init(){
 				this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
 				this.params=this.url.searchParams;
-				this.light=false;
+				this.light=0;
 				/*this.params.get`font`===`light`;*/
 				this.font=this.light?`light`:`regular`;
 				b.classList.add(this.prefix=this.light?`mdil`:`mdi`);
@@ -45,8 +45,6 @@
 					info.actions.favourite.remove();
 					delete info.actions.favourite;
 				}
-				if(this.light)
-					$`fab`.remove();
 				this.textarea.classList.add(`ln`,`pa`);
 				categories.init();
 				version=+version.replace(/\./g,``);
@@ -518,9 +516,7 @@
 			open(icon){
 				this.set(icon);
 				this.current=icon;
-				this.path.classList.add`oz`;
-				if(!page.wide)
-					this.toggle();
+				page.wide?this.path.classList.add`oz`:this.toggle();
 			},
 			set(name){
 				this.icon=icons.list[name];
@@ -553,7 +549,7 @@
 				setTimeout(_=>{
 					this.path.setAttribute(`d`,this.data);
 					this.path.classList.remove`oz`;
-				},195);
+				},page.wide&&195);
 			},
 			download(){
 				this.icon?
@@ -637,7 +633,7 @@
 						item.firstChild.nodeValue=`Export Favourites`;
 						menu.sections.append(menu.export=item);
 					}
-				}else delete category;
+				}else delete this.list[key];
 			}
 		},
 	/** CONTRIBUTORS **/
@@ -670,7 +666,7 @@
 					}else item.dataset.icon=`\uf004`;
 					item.lastChild.nodeValue=`${contributor.name} (${contributor.count})`;
 					menu.contributors.append(contributor.item=item);
-				}else delete contributor
+				}else delete this.list[key]
 			}
 		},
 	/** ICONS **/
@@ -681,13 +677,13 @@
 				delete this.array;
 				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 				this.article.append(T``);
-				this.svg.classList.add`db`;
+				this.svg.classList.add(`db`,`pen`);
 				this.svg.setAttribute(`height`,24);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				this.svg.setAttribute(`width`,24);
 				this.svg.append(N`path`);
 				for(let key in this.list)
-					if(this.list.hasOwnProperty(key)&&this.list[key].path[page.font])
+					if(this.list.hasOwnProperty(key))
 						this.add(key);
 			},
 			add(key){
@@ -728,7 +724,7 @@
 					if((category=categories.list.retired)&&icon.retired)
 						category.section.append(icon.articles.retired=article.cloneNode(1));
 					page.section.append(icon.articles.main=article);
-				}else delete icon;
+				}else delete this.list[key];
 			}
 		},
 	/** PNG EDITOR **/

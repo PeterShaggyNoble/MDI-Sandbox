@@ -3899,6 +3899,7 @@
 		}
 	},
 	"border-color":{
+		"aliases":["border-colour"],
 		"categories":["editor"],
 		"contributor":{
 			"regular":"google"
@@ -4924,6 +4925,7 @@
 		"added":{
 			"regular":2046
 		},
+		"aliases":["camera-metering-centre"],
 		"contributor":{
 			"regular":"andy-martinez"
 		},
@@ -7317,6 +7319,7 @@
 		}
 	},
 	"color-helper":{
+		"aliases":["colour-helper"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -10208,7 +10211,7 @@
 		}
 	},
 	"eye":{
-		"aliases":["show"],
+		"aliases":["show","visibility"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -10221,7 +10224,7 @@
 		}
 	},
 	"eye-off":{
-		"aliases":["hide"],
+		"aliases":["hide","visibility-off"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -10237,7 +10240,7 @@
 		"added":{
 			"regular":1836
 		},
-		"aliases":["hide-outline"],
+		"aliases":["hide-outline","visibility-off-outline"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -10253,7 +10256,7 @@
 		}
 	},
 	"eye-outline":{
-		"aliases":["show-outline"],
+		"aliases":["show-outline","visibility-outline"],
 		"added":{
 			"regular":1836
 		},
@@ -11813,6 +11816,7 @@
 		}
 	},
 	"format-align-center":{
+		"aliases":["format-align-centre"],
 		"categories":["editor"],
 		"contributor":{
 			"regular":"google"
@@ -11939,6 +11943,7 @@
 		}
 	},
 	"format-color-fill":{
+		"aliases":["format-colour-fill"],
 		"categories":["editor"],
 		"contributor":{
 			"regular":"google"
@@ -11955,6 +11960,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["format-colour-text"],
 		"categories":["editor"],
 		"contributor":{
 			"regular":"google"
@@ -11968,6 +11974,7 @@
 		}
 	},
 	"format-float-center":{
+		"aliases":["format-float-centre"],
 		"categories":["editor"],
 		"contributor":{
 			"regular":"andreas-gohr"
@@ -12169,6 +12176,7 @@
 		"added":{
 			"regular":1650
 		},
+		"aliases":["format-horizontal-align-centre"],
 		"categories":["editor"],
 		"contributor":{
 			"regular":"austin-andrews"
@@ -12636,6 +12644,7 @@
 		"added":{
 			"regular":1650
 		},
+		"aliases":["format-vertical-align-centre"],
 		"categories":["editor"],
 		"contributor":{
 			"regular":"google"
@@ -14716,6 +14725,7 @@
 		}
 	},
 	"human":{
+		"aliases":["accessibility"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -14978,6 +14988,7 @@
 		}
 	},
 	"image-filter-center-focus":{
+		"aliases":["image-filter-centre-focus"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -14990,6 +15001,7 @@
 		}
 	},
 	"image-filter-center-focus-weak":{
+		"aliases":["image-filter-centre-focus-weak"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -15256,6 +15268,7 @@
 		}
 	},
 	"invert-colors":{
+		"aliases":["invert-colours"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -17145,7 +17158,7 @@
 		}
 	},
 	"message-alert":{
-		"aliases":["feedback","message-warning"],
+		"aliases":["announcement","feedback","message-warning"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -22874,6 +22887,7 @@
 		"added":{
 			"regular":1932
 		},
+		"aliases":["set-centre"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -22889,6 +22903,7 @@
 		"added":{
 			"regular":1932
 		},
+		"aliases":["set-centre-right"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -22919,6 +22934,7 @@
 		"added":{
 			"regular":1932
 		},
+		"aliases":["set-left-centre"],
 		"contributor":{
 			"regular":"cody"
 		},
