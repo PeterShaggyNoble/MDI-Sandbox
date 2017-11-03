@@ -112,11 +112,24 @@
 			},
 		/** GET JSON **/
 			getjson:(file,data)=>fetch(`json/${file}.json`).then(response=>
-						response.json()
-					).catch(error=>{
+				response.json()
+			).catch(error=>{
+				console.log(error);
+				page.alert(`Failed to load ${data}.`);
+			}),
+			loadjs:url=>{
+				let script=C`script`;
+				script.async=1;
+				script.src=url;
+				b.append(script);
+				return new Promise((resolve,reject)=>{
+					script.addEventListener(`load`,resolve,0);
+					script.addEventListener(`error`,error=>{
 						console.log(error);
-						page.alert(`Failed to load ${data}.`);
-					})
+						reject();
+					},0);
+				});
+			}
 		},
 	/** MENU **/
 		menu={
@@ -932,5 +945,12 @@
 				page.init();
 			});
 		});
+	});
+	/** LOAD ANALYTICS **/
+	page.loadjs`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`.then(_=>{
+		w.dataLayer=w.dataLayer||[];
+		let gtag=(...args)=>w.dataLayer.push(args);
+		gtag(`js`,new Date());
+		gtag(`config`,`UA-109147935-1`);
 	});
 }
