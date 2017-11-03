@@ -149,6 +149,9 @@
 					target.blur();
 					switch(target){
 						case this.nav:
+							if(!page.wide)
+								this.toggle();
+							break;
 						case this.header:
 							this.toggle();
 							break;
@@ -224,10 +227,11 @@
 			},
 			toggle(){
 				b.classList.toggle(`menu`,this.show=!this.show);
-				this.show?b.addEventListener(`keydown`,this.functions.close=event=>{
-					if(event.keyCode===27)
-						this.toggle();
-				},0):b.removeEventListener(`keydown`,this.functions.close);
+				if(!page.wide)
+					this.show?b.addEventListener(`keydown`,this.functions.close=event=>{
+						if(event.keyCode===27)
+							this.toggle();
+					},0):b.removeEventListener(`keydown`,this.functions.close);
 			},
 			goto(section){
 				clearInterval(this.timer);
@@ -265,13 +269,13 @@
 				this.clearall.tabIndex=-1;
 				this.clearall.append(T`All Icons`);
 				menu.sections.append(this.clearall);
-				this.categories=new Set(this.categories=page.params.get`categories`?this.categories.split`,`:[]);
+				this.categories=new Set((this.categories=page.params.get`categories`)?this.categories.split`,`:[]);
 				if(this.categories.size){
 					menu.categories.previousElementSibling.classList.add`open`;
 					for(let key of this.categories)
 						categories.list[key].item.classList.add`active`;
 				}
-				this.contributors=new Set(this.contributors=page.params.get`contributors`?this.contributors.split`,`:[]);
+				this.contributors=new Set((this.contributors=page.params.get`contributors`)?this.contributors.split`,`:[]);
 				if(this.contributors.size){
 					menu.contributors.previousElementSibling.classList.add`open`;
 					for(let key of this.contributors)
@@ -466,9 +470,9 @@
 			show:0,
 			init(){
 				this.svg.classList.add`pa`;
-				this.svg.setAttribute(`height`,56);
+				this.svg.setAttribute(`height`,112);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.svg.setAttribute(`width`,56);
+				this.svg.setAttribute(`width`,112);
 				this.svg.append(this.path);
 				this.figure.append(this.svg);
 				let icon=page.params.get`icon`||page.params.get`edit`;
@@ -483,7 +487,8 @@
 					switch(target){
 						case this.aside:
 						case this.heading:
-							this.toggle();
+							if(!page.wide)
+								this.toggle();
 							break;
 						case this.actions.favourite:
 							favourites.set(this.name);
@@ -492,9 +497,7 @@
 							this.data?editor.open(this.name):page.alert`Not yet available.`;
 							break;
 						case this.actions.path:
-							if(this.data)
-								page.copy(target.dataset.copy,target.dataset.confirm);
-							else page.alert`Not yet available.`;
+							this.data?page.copy(target.dataset.copy,target.dataset.confirm):page.alert`Not yet available.`;
 							break;
 						case this.actions.link:
 							this.aside.dataset.retired===`false`?w.location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`No longer available.`;
@@ -515,8 +518,9 @@
 			open(icon){
 				this.set(icon);
 				this.current=icon;
-				this.figure.classList.add`oz`;
-				this.toggle();
+				this.path.classList.add`oz`;
+				if(!page.wide)
+					this.toggle();
 			},
 			set(name){
 				this.icon=icons.list[name];
@@ -548,7 +552,7 @@
 				this.actions.url.dataset.copy+=`icon=${name}`;
 				setTimeout(_=>{
 					this.path.setAttribute(`d`,this.data);
-					this.figure.classList.remove`oz`;
+					this.path.classList.remove`oz`;
 				},195);
 			},
 			download(){
@@ -564,7 +568,7 @@
 				this.aside.classList.toggle(`show`,this.show=!this.show);
 				if(this.show)
 					b.addEventListener(`keydown`,this.close=event=>{
-						if(event.keyCode===27){
+						if(event.keyCode===27&&!editor.dialog.open){
 							this.toggle();
 							event.stopPropagation();
 						}
@@ -677,7 +681,7 @@
 				delete this.array;
 				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 				this.article.append(T``);
-				this.svg.classList.add(`pa`,`pen`);
+				this.svg.classList.add`db`;
 				this.svg.setAttribute(`height`,24);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				this.svg.setAttribute(`width`,24);
@@ -739,14 +743,14 @@
 			size:24,
 			padding:0,
 			luminance:0,
-			colour:[255,255,255],
+			colour:"fff",
 			alpha:0,
 			radius:0,
 			inputs:{
 				size:$`png-size`,
-				padding:$`png-padding`,
 				fill:$`png-fill`,
 				opacity:$`png-opacity`,
+				padding:$`png-padding`,
 				colour:$`png-colour`,
 				alpha:$`png-alpha`,
 				radius:$`png-radius`,
@@ -765,9 +769,8 @@
 				this.background.classList.add(`pa`,`pen`);
 				this.figure.append(this.background,this.horizontal=this.background.cloneNode(1),this.vertical=this.background.cloneNode(1),this.svg);
 				this.dialog.addEventListener(`click`,event=>{
-					let 	target=event.target,
-						area=this.dialog.getBoundingClientRect();
-					if(target===this.cancel||this.dialog.open&&!(area.top<=event.clientY&&event.clientY<=area.top+area.height&&area.left<=event.clientX&&event.clientX<=area.left+area.width))
+					let target=event.target;
+					if(target===this.cancel)
 						this.close(0);
 					else if(target===this.save)
 						this.download();
@@ -793,11 +796,6 @@
 								if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
 									this.background.style.borderRadius=`${this.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
 								break;
-							case this.inputs.padding:
-								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=parseInt(value))}px`;
-								if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
-									this.background.style.borderRadius=`${this.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
-								break;
 							case this.inputs.fill:
 								this.path.setAttribute(`fill`,`#${value.toLowerCase()}`);
 								this.figure.classList.toggle(`light`,(this.luminance=this.test(this.convert(value)))>=128&&this.alpha<.31);
@@ -805,11 +803,16 @@
 							case this.inputs.opacity:
 								this.path.setAttribute(`fill-opacity`,value/100);
 								break;
+							case this.inputs.padding:
+								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=parseInt(value))}px`;
+								if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
+									this.background.style.borderRadius=`${this.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
+								break;
 							case this.inputs.colour:
-								this.background.style.background=`rgba(${this.colour=this.convert(value)},${this.alpha})`;
+								this.background.style.backgroundColor=`#${this.colour=value}`;
 								break;
 							case this.inputs.alpha:
-								this.background.style.background=`rgba(${this.colour},${this.alpha=value/100})`;
+								this.background.style.opacity=this.alpha=value/100;
 								this.figure.classList.toggle(`light`,this.luminance>=128&&value<31);
 								break;
 							case this.inputs.radius:
@@ -841,8 +844,16 @@
 				this.inputs.name.value=name;
 				this.dialog.showModal();
 				this.dialog.classList.remove(`oz`,`pen`);
+				b.addEventListener(`keydown`,this.fn=event=>{
+					if(event.keyCode===27){
+						this.close(0);
+						event.preventDefault();
+						event.stopPropagation();
+					}
+				},0);
 			},
 			close(value){
+				b.removeEventListener(`keydown`,this.fn);
 				this.dialog.classList.add(`oz`,`pen`);
 				this.timer=setTimeout(_=>this.dialog.close(value),225);
 			},
@@ -852,7 +863,7 @@
 				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
 				this.canvas.height=this.canvas.width=this.dimensions;
 				if(this.alpha){
-					this.context.fillStyle=`rgba(${this.colour},${this.alpha})`;
+					this.context.fillStyle=`rgba(${this.convert(this.colour)},${this.alpha})`;
 					this.context.moveTo(this.radius,0);
 					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.radius);
 					this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.radius);

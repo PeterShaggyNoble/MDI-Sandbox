@@ -9264,6 +9264,51 @@
 			"regular":"M21.34,10.35L21.27,10.28L21.18,10.19L18,7V6A0.5,0.5 0 0,0 17.5,5.5C17.36,5.5 17.22,5.56 17.13,5.66L13.46,9H7C6.32,9 5.69,9.35 5.32,9.92L2.62,12.59C2.29,13.04 2.39,13.66 2.84,14C3.18,14.24 3.65,14.25 4,14L5,13.07V19H8V15H13V19H16V13.83C16,13.3 16.21,12.79 16.59,12.42L18,11L20,12V12C20.15,12.08 20.32,12.13 20.5,12.13C21.1,12.11 21.59,11.61 21.58,11C21.57,10.76 21.5,10.53 21.34,10.35Z"
 		}
 	},
+	"door":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["assistant"],
+		"contributor":{
+			"regular":"japanyoshi"
+		},
+		"id":{
+			"regular":"858F8782-5001-4950-96F2-65032091A847"
+		},
+		"path":{
+			"regular":"M8,3C6.89,3 6,3.89 6,5V21H18V5C18,3.89 17.11,3 16,3H8M8,5H16V19H8V5M13,11V13H15V11H13Z"
+		}
+	},
+	"door-closed":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["assistant"],
+		"contributor":{
+			"regular":"japanyoshi"
+		},
+		"id":{
+			"regular":"DFE96305-5114-4F53-AB08-08F99F37C2FE"
+		},
+		"path":{
+			"regular":"M16,11H18V13H16V11M12,3H19C20.11,3 21,3.89 21,5V19H22V21H2V19H10V5C10,3.89 10.89,3 12,3M12,5V19H19V5H12Z"
+		}
+	},
+	"door-open":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["assistant"],
+		"contributor":{
+			"regular":"japanyoshi"
+		},
+		"id":{
+			"regular":"A64D06DE-1EE4-400F-9E17-2B5D319475A3"
+		},
+		"path":{
+			"regular":"M12,3C10.89,3 10,3.89 10,5H3V19H2V21H22V19H21V5C21,3.89 20.11,3 19,3H12M12,5H19V19H12V5M5,11H7V13H5V11Z"
+		}
+	},
 	"dots-horizontal":{
 		"aliases":["ellipsis-horizontal","more"],
 		"categories":["characters"],
