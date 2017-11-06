@@ -28,7 +28,7 @@
 	},
 	"account":{
 		"aliases":["person","user"],
-		"categories":["assistant","users"],
+		"categories":["home","users"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -321,7 +321,7 @@
 	},
 	"account-plus":{
 		"aliases":["register","user-plus"],
-		"categories":["assistant","users"],
+		"categories":["home","users"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -457,7 +457,7 @@
 		}
 	},
 	"air-conditioner":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -550,7 +550,7 @@
 		}
 	},
 	"airplay":{
-		"categories":["assistant","logos"],
+		"categories":["home","logos"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -581,6 +581,7 @@
 		"added":{
 			"regular":2046
 		},
+		"categories":["home"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -610,6 +611,7 @@
 		"added":{
 			"regular":2046
 		},
+		"categories":["home"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -911,7 +913,7 @@
 		"added":{
 			"regular":1554
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"christopher-schreiner"
 		},
@@ -2581,7 +2583,7 @@
 		}
 	},
 	"battery":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2594,7 +2596,7 @@
 		}
 	},
 	"battery-10":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2607,7 +2609,7 @@
 		}
 	},
 	"battery-20":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2620,7 +2622,7 @@
 		}
 	},
 	"battery-30":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2633,7 +2635,7 @@
 		}
 	},
 	"battery-40":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2646,7 +2648,7 @@
 		}
 	},
 	"battery-50":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2659,7 +2661,7 @@
 		}
 	},
 	"battery-60":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2672,7 +2674,7 @@
 		}
 	},
 	"battery-70":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2685,7 +2687,7 @@
 		}
 	},
 	"battery-80":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2698,7 +2700,7 @@
 		}
 	},
 	"battery-90":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2712,7 +2714,7 @@
 	},
 	"battery-alert":{
 		"aliases":["battery-warning"],
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2725,7 +2727,7 @@
 		}
 	},
 	"battery-charging":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2741,7 +2743,7 @@
 		}
 	},
 	"battery-charging-100":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2754,7 +2756,7 @@
 		}
 	},
 	"battery-charging-20":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2767,7 +2769,7 @@
 		}
 	},
 	"battery-charging-30":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2780,7 +2782,7 @@
 		}
 	},
 	"battery-charging-40":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2793,7 +2795,7 @@
 		}
 	},
 	"battery-charging-60":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2806,7 +2808,7 @@
 		}
 	},
 	"battery-charging-80":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2819,7 +2821,7 @@
 		}
 	},
 	"battery-charging-90":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -2835,7 +2837,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2850,7 +2852,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2865,7 +2867,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2880,7 +2882,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2895,7 +2897,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2910,7 +2912,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2925,7 +2927,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2940,7 +2942,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2955,7 +2957,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2970,7 +2972,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2986,7 +2988,7 @@
 			"regular":"{next}"
 		},
 		"aliases":["battery-charging-wireless-warning"],
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -3001,7 +3003,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -3013,7 +3015,7 @@
 		}
 	},
 	"battery-minus":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -3026,7 +3028,7 @@
 		}
 	},
 	"battery-negative":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -3039,7 +3041,7 @@
 		}
 	},
 	"battery-outline":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -3052,7 +3054,7 @@
 		}
 	},
 	"battery-plus":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -3065,7 +3067,7 @@
 		}
 	},
 	"battery-positive":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -3078,7 +3080,7 @@
 		}
 	},
 	"battery-unknown":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -3121,9 +3123,6 @@
 		}
 	},
 	"beam":{
-		"added":{
-			"regular":"{next}"
-		},
 		"categories":["logos"],
 		"path":{
 			"regular":"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M21.36,12.82C16.62,11.16 12.85,7.4 11.18,2.64C17,2.13 21.87,7 21.36,12.82M9.17,9.17C10.73,7.61 13.27,7.61 14.83,9.17C16.39,10.73 16.39,13.27 14.83,14.83C13.27,16.39 10.73,16.39 9.17,14.83C7.61,13.27 7.61,10.73 9.17,9.17M2.64,11.18C7.38,12.84 11.15,16.6 12.82,21.36C7,21.87 2.13,17 2.64,11.18Z"
@@ -3174,7 +3173,7 @@
 		}
 	},
 	"bell":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -3854,7 +3853,7 @@
 		"added":{
 			"regular":1554
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -4262,7 +4261,7 @@
 		}
 	},
 	"brightness-7":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -4840,7 +4839,7 @@
 	},
 	"camera":{
 		"aliases":["photography"],
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -5168,7 +5167,7 @@
 			"regular":"M5,14H19L17.5,9.5H6.5L5,14M17.5,19A1.5,1.5 0 0,0 19,17.5A1.5,1.5 0 0,0 17.5,16A1.5,1.5 0 0,0 16,17.5A1.5,1.5 0 0,0 17.5,19M6.5,19A1.5,1.5 0 0,0 8,17.5A1.5,1.5 0 0,0 6.5,16A1.5,1.5 0 0,0 5,17.5A1.5,1.5 0 0,0 6.5,19M18.92,9L21,15V23A1,1 0 0,1 20,24H19A1,1 0 0,1 18,23V22H6V23A1,1 0 0,1 5,24H4A1,1 0 0,1 3,23V15L5.08,9C5.28,8.42 5.85,8 6.5,8H17.5C18.15,8 18.72,8.42 18.92,9M12,0C14.12,0 16.15,0.86 17.65,2.35L16.23,3.77C15.11,2.65 13.58,2 12,2C10.42,2 8.89,2.65 7.77,3.77L6.36,2.35C7.85,0.86 9.88,0 12,0M12,4C13.06,4 14.07,4.44 14.82,5.18L13.4,6.6C13.03,6.23 12.53,6 12,6C11.5,6 10.97,6.23 10.6,6.6L9.18,5.18C9.93,4.44 10.94,4 12,4Z"
 		}
 	},
-	"car-convertable":{
+	"car-convertible":{
 		"added":{
 			"regular":2046
 		},
@@ -5284,7 +5283,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["assistant","places","travel"],
+		"categories":["home","places","travel"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -5493,7 +5492,7 @@
 		}
 	},
 	"cast":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -5507,7 +5506,7 @@
 		}
 	},
 	"cast-connected":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -5524,7 +5523,7 @@
 		"added":{
 			"regular":1932
 		},
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -5566,7 +5565,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"roberto-graham"
 		},
@@ -5583,7 +5582,7 @@
 		"added":{
 			"regular":1932
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -6982,7 +6981,7 @@
 		}
 	},
 	"cloud-print":{
-		"categories":["assistant","networking"],
+		"categories":["home","networking"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -6995,7 +6994,7 @@
 		}
 	},
 	"cloud-print-outline":{
-		"categories":["assistant","networking"],
+		"categories":["home","networking"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -8723,7 +8722,7 @@
 			"regular":2046
 		},
 		"aliases":["computer-classic"],
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -8736,7 +8735,7 @@
 		}
 	},
 	"desktop-mac":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -8750,7 +8749,7 @@
 		}
 	},
 	"desktop-tower":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"chris-litherland"
 		},
@@ -9243,7 +9242,7 @@
 		"added":{
 			"regular":1722
 		},
-		"categories":["assistant","logos"],
+		"categories":["home","logos"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -9286,7 +9285,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"japanyoshi"
 		},
@@ -9301,7 +9300,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"japanyoshi"
 		},
@@ -9316,7 +9315,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"japanyoshi"
 		},
@@ -10399,7 +10398,7 @@
 		}
 	},
 	"fan":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -10415,7 +10414,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -11385,7 +11384,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"id":{
 			"regular":"131D3C5D-880D-486B-A041-039B1F1E5284"
 		},
@@ -11433,7 +11432,7 @@
 		}
 	},
 	"folder-account":{
-		"aliases":["folder-user"],	
+		"aliases":["folder-user"],
 		"categories":["files","users"],
 		"contributor":{
 			"regular":"google"
@@ -12781,7 +12780,7 @@
 		}
 	},
 	"fridge":{
-		"categories":["assistant","food"],
+		"categories":["home","food"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -12794,7 +12793,7 @@
 		}
 	},
 	"fridge-filled":{
-		"categories":["assistant","food"],
+		"categories":["home","food"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -12807,7 +12806,7 @@
 		}
 	},
 	"fridge-filled-bottom":{
-		"categories":["assistant","food"],
+		"categories":["home","food"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -12820,7 +12819,7 @@
 		}
 	},
 	"fridge-filled-top":{
-		"categories":["assistant","food"],
+		"categories":["home","food"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -12889,7 +12888,7 @@
 		}
 	},
 	"gamepad":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -12902,6 +12901,7 @@
 		}
 	},
 	"gamepad-variant":{
+		"categories":["home"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -12917,7 +12917,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["assistant","places"],
+		"categories":["home","places"],
 		"contributor":{
 			"regular":"alex-efremo"
 		},
@@ -12933,7 +12933,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["assistant","places"],
+		"categories":["home","places"],
 		"contributor":{
 			"regular":"alex-efremo"
 		},
@@ -12990,7 +12990,7 @@
 		}
 	},
 	"gauge":{
-		"categories":["assistant","science"],
+		"categories":["home","science"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -14457,7 +14457,7 @@
 	},
 	"home":{
 		"aliases":["house"],
-		"categories":["assistant","places"],
+		"categories":["home","places"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -14473,7 +14473,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["assistant","logos"],
+		"categories":["home","logos"],
 		"codepoint":"f7cf",
 		"id":{
 			"regular":"80923357-29F3-429E-A186-F3561451398C"
@@ -14486,7 +14486,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -14547,7 +14547,7 @@
 	},
 	"home-modern":{
 		"aliases":["house-modern"],
-		"categories":["assistant","places"],
+		"categories":["home","places"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -14564,7 +14564,7 @@
 			"regular":1712
 		},
 		"aliases":["house-outline"],
-		"categories":["assistant","places"],
+		"categories":["home","places"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -14578,7 +14578,7 @@
 	},
 	"home-variant":{
 		"aliases":["house-variant"],
-		"categories":["assistant","places"],
+		"categories":["home","places"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -14690,7 +14690,7 @@
 	},
 	"hotel":{
 		"aliases":["bed"],
-		"categories":["assistant","places","travel"],
+		"categories":["home","places","travel"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -15662,7 +15662,7 @@
 		"added":{
 			"regular":1722
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -15911,7 +15911,7 @@
 		}
 	},
 	"laptop":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -15924,7 +15924,7 @@
 		}
 	},
 	"laptop-chromebook":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -15940,7 +15940,7 @@
 		}
 	},
 	"laptop-mac":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -15959,7 +15959,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -15972,7 +15972,7 @@
 		}
 	},
 	"laptop-windows":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -16016,7 +16016,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -16082,7 +16082,7 @@
 		}
 	},
 	"led-off":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -16095,7 +16095,7 @@
 		}
 	},
 	"led-on":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -16108,7 +16108,7 @@
 		}
 	},
 	"led-outline":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -16124,7 +16124,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -16137,7 +16137,7 @@
 		}
 	},
 	"led-variant-off":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -16150,7 +16150,7 @@
 		}
 	},
 	"led-variant-on":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -16163,7 +16163,7 @@
 		}
 	},
 	"led-variant-outline":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -16229,7 +16229,7 @@
 		}
 	},
 	"lightbulb":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -16246,7 +16246,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -16263,7 +16263,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -16277,7 +16277,7 @@
 		}
 	},
 	"lightbulb-outline":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -16400,7 +16400,7 @@
 		}
 	},
 	"lock":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -16413,7 +16413,7 @@
 		}
 	},
 	"lock-open":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -16426,7 +16426,7 @@
 		}
 	},
 	"lock-open-outline":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -16439,7 +16439,7 @@
 		}
 	},
 	"lock-outline":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -17669,7 +17669,7 @@
 		}
 	},
 	"monitor":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -17682,7 +17682,7 @@
 		}
 	},
 	"monitor-multiple":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"chris-litherland"
 		},
@@ -18167,7 +18167,7 @@
 		}
 	},
 	"nest-protect":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -18180,7 +18180,7 @@
 		}
 	},
 	"nest-thermostat":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -19652,7 +19652,7 @@
 		}
 	},
 	"pause":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -19913,7 +19913,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["science"],
+		"categories":["home","science"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -20418,7 +20418,7 @@
 		}
 	},
 	"play":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -20476,7 +20476,7 @@
 		}
 	},
 	"play-pause":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -20915,7 +20915,7 @@
 		}
 	},
 	"power":{
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -20931,7 +20931,7 @@
 		"added":{
 			"regular":1712
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -20947,7 +20947,7 @@
 		"added":{
 			"regular":1712
 		},
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -20974,7 +20974,7 @@
 	},
 	"power-socket":{
 		"aliases":["plug-socket"],
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -20991,7 +20991,7 @@
 			"regular":2046
 		},
 		"aliases":["plug-socket-eu"],
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -21008,7 +21008,7 @@
 			"regular":2046
 		},
 		"aliases":["plug-socket-uk"],
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -21026,7 +21026,7 @@
 			"regular":2046
 		},
 		"aliases":["plug-socket-us"],
-		"categories":["assistant","power"],
+		"categories":["home","power"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -21080,7 +21080,7 @@
 		}
 	},
 	"printer":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -21093,7 +21093,7 @@
 		}
 	},
 	"printer-3d":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -21107,7 +21107,7 @@
 	},
 	"printer-alert":{
 		"aliases":["printer-warning"],
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -21177,7 +21177,7 @@
 		}
 	},
 	"projector":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -21190,7 +21190,7 @@
 		}
 	},
 	"projector-screen":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -21337,7 +21337,7 @@
 		}
 	},
 	"radiator":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -21350,7 +21350,7 @@
 		}
 	},
 	"radio":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -21578,7 +21578,7 @@
 		}
 	},
 	"record":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -21591,7 +21591,7 @@
 		}
 	},
 	"record-rec":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -21703,7 +21703,7 @@
 		}
 	},
 	"remote":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -22058,7 +22058,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"roberto-graham"
 		},
@@ -22254,7 +22254,7 @@
 		}
 	},
 	"run-fast":{
-		"categories":["assistant","sport","travel"],
+		"categories":["home","sport","travel"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -22371,7 +22371,7 @@
 		}
 	},
 	"scale-bathroom":{
-		"categories":["assistant","science"],
+		"categories":["home","science"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -22628,7 +22628,7 @@
 		"added":{
 			"regular":1712
 		},
-		"categories":["assistant","networking"],
+		"categories":["home","networking"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -23588,7 +23588,7 @@
 		}
 	},
 	"skip-backward":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -23601,7 +23601,7 @@
 		}
 	},
 	"skip-forward":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -23614,7 +23614,7 @@
 		}
 	},
 	"skip-next":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -23662,7 +23662,7 @@
 		}
 	},
 	"skip-previous":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -24190,7 +24190,7 @@
 		}
 	},
 	"speaker":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -24203,7 +24203,7 @@
 		}
 	},
 	"speaker-off":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -24219,7 +24219,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -24271,7 +24271,7 @@
 		}
 	},
 	"spotlight":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -24284,7 +24284,7 @@
 		}
 	},
 	"spotlight-beam":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -24743,7 +24743,7 @@
 		}
 	},
 	"stove":{
-		"categories":["assistant","food"],
+		"categories":["home","food"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -25500,7 +25500,7 @@
 	},
 	"television":{
 		"aliases":["tv"],
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -25517,7 +25517,7 @@
 			"regular":2046
 		},
 		"aliases":["tv-classic"],
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -25530,7 +25530,7 @@
 		}
 	},
 	"television-guide":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -25749,7 +25749,7 @@
 		}
 	},
 	"thermometer":{
-		"categories":["assistant","science","weather"],
+		"categories":["home","science","weather"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -25882,7 +25882,7 @@
 		}
 	},
 	"ticket-account":{
-		"aliases":["ticket-user"],	
+		"aliases":["ticket-user"],
 		"categories":["users"],
 		"contributor":{
 			"regular":"austin-andrews"
@@ -27400,7 +27400,7 @@
 		}
 	},
 	"video":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -27428,7 +27428,7 @@
 		}
 	},
 	"video-off":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -27784,7 +27784,7 @@
 		}
 	},
 	"volume-high":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -27797,7 +27797,7 @@
 		}
 	},
 	"volume-low":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -27810,7 +27810,7 @@
 		}
 	},
 	"volume-medium":{
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -27826,7 +27826,7 @@
 		"added":{
 			"regular":1932
 		},
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -27843,7 +27843,7 @@
 		"added":{
 			"regular":1932
 		},
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -27858,7 +27858,7 @@
 	},
 	"volume-off":{
 		"aliases":["mute"],
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -27874,7 +27874,7 @@
 		"added":{
 			"regular":1932
 		},
-		"categories":["assistant","player"],
+		"categories":["home","player"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -28015,7 +28015,7 @@
 			"regular":1836
 		},
 		"aliases":["laundrette"],
-		"categories":["assistant","places"],
+		"categories":["home","places"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -28114,7 +28114,7 @@
 	},
 	"water-percent":{
 		"aliases":["humidity"],
-		"categories":["assistant","science"],
+		"categories":["home","science"],
 		"contributor":{
 			"regular":"cody"
 		},
@@ -28412,7 +28412,7 @@
 		}
 	},
 	"webcam":{
-		"categories":["assistant","tech"],
+		"categories":["home","tech"],
 		"contributor":{
 			"regular":"chris-litherland"
 		},
@@ -28671,7 +28671,7 @@
 		}
 	},
 	"window-closed":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -28708,7 +28708,7 @@
 		}
 	},
 	"window-open":{
-		"categories":["assistant"],
+		"categories":["home"],
 		"contributor":{
 			"regular":"austin-andrews"
 		},

@@ -56,9 +56,9 @@
 		"codepoint":"f2ad",
 		"name":"Google"
 	},
-	"assistant":{
-		"codepoint":"f7cf",
-		"name":"Home Assistant"
+	"home":{
+		"codepoint":"f7d0",
+		"name":"Home Automation"
 	},
 	"logos":{
 		"codepoint":"f032",

@@ -7,7 +7,7 @@
 .alpha40{fill-opacity:.4;}
 </style>
 <!--bg-->
-<rect fill="#3f51b5" height="240" width="960" x="0" y="0"/>
+<rect fill="#303f9f" height="240" width="960" x="0" y="0"/>
 <path class="alpha20" d="M 0,103L 0,0L 179,0L 0,103 Z"/>
 <path class="alpha20" d="M 820.366,517.792L 1204,292.292L 1058.06,44.0081L 674.425,269.508L 820.366,517.792 Z"/>
 <!--v-->

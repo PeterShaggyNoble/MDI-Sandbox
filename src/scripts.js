@@ -57,6 +57,7 @@
 					filter.init()
 				,225);
 				info.init();
+				editor.init();
 				this.main.addEventListener(`click`,event=>{
 					let 	target=event.target,
 						parent=target.parentNode,
@@ -84,7 +85,6 @@
 						loader.remove()
 					,375);
 				},10);
-				editor.init();
 			},
 		/** TOAST NOTIFICATIONS **/
 			alert(msg){
@@ -262,28 +262,25 @@
 	/** FILTERS **/
 		filter={
 			input:$`filter`,
-			clearall:C`li`,
 			heading:page.section.firstElementChild.firstChild,
 			error:page.section.querySelector`p`,
 			init(){
 				this.button=this.input.nextElementSibling;
+				menu.sections.append(this.clearall=C`li`);
 				this.clearall.classList.add`cp`;
 				this.clearall.dataset.icon=`\uf03b`;
 				this.clearall.tabIndex=-1;
 				this.clearall.append(T`All Icons`);
-				menu.sections.append(this.clearall);
-				this.categories=new Set((this.categories=page.params.get`categories`)?this.categories.split`,`:[]);
-				if(this.categories.size){
+				if(this.categories=page.params.get`categories`){
 					menu.categories.previousElementSibling.classList.add`open`;
-					for(let key of this.categories)
+					for(let key of this.categories=new Set(this.categories.split`,`))
 						categories.list[key].item.classList.add`active`;
-				}
-				this.contributors=new Set((this.contributors=page.params.get`contributors`)?this.contributors.split`,`:[]);
-				if(this.contributors.size){
+				}else this.categories=new Set();
+				if(this.contributors=page.params.get`contributors`){
 					menu.contributors.previousElementSibling.classList.add`open`;
-					for(let key of this.contributors)
+					for(let key of this.contributors=new Set(this.contributors.split`,`))
 						contributors.list[key].item.classList.add`active`;
-				}
+				}else this.contributors=new Set();
 				if(this.text=page.params.get`filter`)
 					this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 				if(this.categories.size||this.contributors.size||this.text)
@@ -374,28 +371,15 @@
 			input:C`input`,
 			reader:new FileReader(),
 			init(){
-				this.menu.classList.add(`oh`,`pa`);
+				this.menu.classList.add(`export`,`oh`,`pa`);
 				this.menu.tabIndex=-1;
 				this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
-				this.item.dataset.icon=`\uf6b1`;
-				this.item.append(T`Download SVG`);
-				this.menu.append(this.actions.svg=this.item);
-				this.actions.html=this.item.cloneNode(1);
-				this.actions.html.dataset.icon=`\uf421`;
-				this.actions.html.firstChild.nodeValue=`Download HTML`;
-				this.menu.append(this.actions.html);
-				this.actions.import=this.item.cloneNode(1);
-				this.actions.import.dataset.icon=`\uf220`;
-				this.actions.import.firstChild.nodeValue=`Import Favourites`;
-				this.menu.append(this.actions.import);
-				this.actions.export=this.item.cloneNode(1);
-				this.actions.export.dataset.icon=`\uf21d`;
-				this.actions.export.firstChild.nodeValue=`Export Favourites`;
-				this.menu.append(this.actions.export);
-				this.actions.clear=this.item.cloneNode(1);
-				this.actions.clear.dataset.icon=`\uf1c0`;
-				this.actions.clear.firstChild.nodeValue=`Clear Favourites`;
-				this.menu.append(this.actions.clear);
+				this.item.append(T``);
+				this.additem(`svg`,`\uf6b1`,`Download SVG`);
+				this.additem(`html`,`\uf421`,`Download HTML`);
+				this.additem(`import`,`\uf220`,`Import Favourites`);
+				this.additem(`export`,`\uf21d`,`Export Favourites`);
+				this.additem(`clear`,`\uf1c0`,`Clear Favourites`);
 				this.input.accept=`.txt,text/plain`;
 				this.input.classList.add(`ln`,`pa`);
 				this.input.type=`file`;
@@ -446,6 +430,11 @@
 					}
 				},0);
 			},
+			additem(key,codepoint,text){
+				this.menu.append(this.actions[key]=this.item.cloneNode(1));
+				this.actions[key].dataset.icon=codepoint;
+				this.actions[key].firstChild.nodeValue=text;
+			},
 			set(name){
 				this.icon=icons.list[name];
 				info.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf0c5`:`\uf0c6`;
@@ -468,10 +457,9 @@
 			sort(){
 				[...this.articles].sort((first,second)=>
 					first.lastChild.nodeValue>second.lastChild.nodeValue?1:-1
-				).forEach(article=>{
-					article.remove();
-					this.section.append(article);
-				});
+				).forEach(article=>
+					this.section.append(this.section.removeChild(article))
+				);
 			},
 			build:_=>Object.keys(page.storage).map((key,path)=>
 				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(path=icons.list[key].path[page.font])?
@@ -481,8 +469,7 @@
 			load(event){
 				let msg=`complete`;
 				try{
-					let array=atob(event.target.result).split`,`;
-					array.forEach(item=>{
+					atob(event.target.result).split`,`.forEach(item=>{
 						let name=item.substr(4);
 						this.icon=icons.list[name];
 						if(this.icon){
@@ -512,8 +499,6 @@
 			aside:$`info`,
 			heading:$`name`,
 			figure:$`preview`,
-			svg:N`svg`,
-			path:N`path`,
 			input:$`slider`,
 			actions:{
 				favourite:Q`#actions>:first-child`,
@@ -531,12 +516,12 @@
 			downloads:{},
 			show:0,
 			init(){
+				this.figure.append(this.svg=N`svg`);
 				this.svg.classList.add`pa`;
 				this.svg.setAttribute(`height`,112);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				this.svg.setAttribute(`width`,112);
-				this.svg.append(this.path);
-				this.figure.append(this.svg);
+				this.svg.append(this.path=N`path`);
 				let icon=page.params.get`icon`||page.params.get`edit`;
 				if(icon){
 					if(icons.list[icon]){
@@ -791,18 +776,10 @@
 	/** PNG EDITOR **/
 		editor={
 			dialog:Q`dialog`,
-			svg:N`svg`,
-			path:N`path`,
 			background:C`span`,
 			canvas:C`canvas`,
 			xml:new XMLSerializer(),
-			dimensions:24,
-			size:24,
-			padding:0,
-			luminance:0,
-			colour:"fff",
-			alpha:0,
-			radius:0,
+			settings:{},
 			inputs:{
 				size:$`png-size`,
 				fill:$`png-fill`,
@@ -814,23 +791,79 @@
 				name:$`png-name`
 			},
 			init(){
+				this.menu=this.dialog.querySelector`ul`;
+				if(page.storage){
+					this.input=C`input`;
+					this.reader=new FileReader();
+					this.import=this.menu.firstElementChild;
+					this.export=this.menu.querySelector`li+li`;
+					this.clear=this.menu.lastElementChild;
+					this.input.accept=`.txt,text/plain`;
+					this.input.classList.add(`ln`,`pa`);
+					this.input.type=`file`;
+					this.input.addEventListener(`change`,_=>{
+						if(this.input.files[0].type===`text/plain`)
+							this.reader.readAsText(this.input.files[0]);
+					},0);
+					this.reader.addEventListener(`load`,event=>{
+						let msg=`complete`;
+						try{
+							atob(event.target.result).split`,`.forEach(entry=>{
+								entry=entry.split`:`;
+								let key=entry[0];
+								if(this.inputs[key.substr(4)])
+									page.storage.setItem(key,entry[1]);
+							});
+						}catch(error){
+							console.log(error);
+							msg=`failed`;
+						}
+						page.alert(`Import ${msg}.`);
+						this.input.value=``;
+						this.input.remove();
+						this.set();
+					},0);
+				}else this.menu.remove();
 				this.context=this.canvas.getContext`2d`;
 				this.save=this.dialog.lastElementChild;
 				this.cancel=this.save.previousElementSibling;
 				this.figure=this.dialog.querySelector`figure`;
-				this.svg.classList.add`pa`;
-				this.svg.setAttribute(`height`,this.size);
-				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.svg.setAttribute(`width`,this.size);
-				this.svg.append(this.path);
 				this.background.classList.add(`pa`,`pen`);
-				this.figure.append(this.background,this.horizontal=this.background.cloneNode(1),this.vertical=this.background.cloneNode(1),this.svg);
+				this.figure.append(this.background,this.horizontal=this.background.cloneNode(1),this.vertical=this.background.cloneNode(1),this.svg=N`svg`);
+				this.svg.classList.add`pa`;
+				this.svg.setAttribute(`height`,24);
+				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
+				this.svg.setAttribute(`width`,24);
+				this.svg.append(this.path=N`path`);
 				this.dialog.addEventListener(`click`,event=>{
 					let target=event.target;
-					if(target===this.cancel)
-						this.close(0);
-					else if(target===this.save)
-						this.download();
+					switch(target){
+						case this.import:
+							b.append(this.input);
+							this.menu.blur();
+							this.input.click();
+							break;
+						case this.export:
+							this.menu.blur();
+							page.download(`data:text/plain;base64,${btoa(btoa(Object.entries(page.storage).filter(entry=>entry[0].startsWith`png-`).map(item=>item.join`:`).join`,`))}`,`mdi-settings.txt`);
+							break;
+						case this.clear:
+							for(let key in page.storage)
+								if(page.storage.hasOwnProperty(key))
+									if(key.startsWith`png-`)
+										page.storage.removeItem(key);
+							this.menu.blur();
+							this.set();
+							this.inputs.name.value=this.name;
+							page.alert`Settings cleared.`;
+							break;
+						case this.cancel:
+							this.close(0);
+							break;
+						case this.save:
+							this.download();
+							break;
+					}
 				},0);
 				this.dialog.addEventListener(`keydown`,event=>{
 					if(this.dialog.open&&event.keyCode===27){
@@ -845,60 +878,59 @@
 					if(target.validity.valid){
 						switch(target){
 							case this.inputs.size:
-								this.svg.setAttribute(`height`,this.size=parseInt(value));
-								this.svg.setAttribute(`width`,this.size);
-								if(this.padding>(this.inputs.padding.max=(256-this.size)/2))
-									this.padding=this.inputs.padding.value=this.inputs.padding.max;
-								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*this.padding}px`;
+								this.svg.setAttribute(`height`,this.settings.size=parseInt(value));
+								this.svg.setAttribute(`width`,this.settings.size);
+								if(this.settings.padding>(this.inputs.padding.max=(256-this.size)/2))
+									this.settings.padding=this.inputs.padding.value=this.inputs.padding.max;
+								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.settings.size+2*this.settings.padding}px`;
 								if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
-									this.background.style.borderRadius=`${this.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
+									this.background.style.borderRadius=`${this.settings.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
 								break;
 							case this.inputs.fill:
-								this.path.setAttribute(`fill`,`#${value.toLowerCase()}`);
-								this.figure.classList.toggle(`light`,(this.luminance=this.test(this.convert(value)))>=128&&this.alpha<.31);
+								this.path.setAttribute(`fill`,`#${this.settings.fill=value.toLowerCase()}`);
+								this.figure.classList.toggle(`light`,(this.luminance=this.test(this.convert(value)))>=128&&this.settings.alpha<.31);
 								break;
 							case this.inputs.opacity:
-								this.path.setAttribute(`fill-opacity`,value/100);
+								this.path.setAttribute(`fill-opacity`,this.settings.opacity=value/100);
 								break;
 							case this.inputs.padding:
-								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.size+2*(this.padding=parseInt(value))}px`;
-								if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
-									this.background.style.borderRadius=`${this.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
+								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.settings.size+2*(this.settings.padding=parseInt(value))}px`;
+								if(this.settings.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
+									this.background.style.borderRadius=`${this.settings.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
 								break;
 							case this.inputs.colour:
-								this.background.style.backgroundColor=`#${this.colour=value}`;
+								this.background.style.backgroundColor=`#${this.settings.colour=value}`;
 								break;
 							case this.inputs.alpha:
-								this.background.style.opacity=this.alpha=value/100;
+								this.background.style.opacity=this.settings.alpha=value/100;
 								this.figure.classList.toggle(`light`,this.luminance>=128&&value<31);
 								break;
 							case this.inputs.radius:
-								this.background.style.borderRadius=`${this.radius=value}px`;
+								this.background.style.borderRadius=`${this.settings.radius=value}px`;
 								break;
 						}
 						if(page.storage&&target!==this.inputs.name)
 							page.storage.setItem(target.id,value);
 					}
 				},1);
-				this.load();
-			},
-			load(){
-				if(page.storage)
-					for(let key in this.inputs)
-						if(this.inputs.hasOwnProperty(key))
-							if(page.storage[`png-${key}`]){
-								this.inputs[key].value=page.storage[`png-${key}`];
-								this.inputs[key].dispatchEvent(new Event(`input`));
-							}
+				this.set();
 				let name=page.params.get`edit`;
 				if(name&&icons.list[name])
 					this.open(name);
 			},
+			set(){
+				for(let key in this.inputs)
+					if(this.inputs.hasOwnProperty(key)&&key!=="name"){
+						if(page.storage){
+							this.inputs[key].value=page.storage[`png-${key}`]||this.inputs[key].getAttribute`value`;
+							this.inputs[key].dispatchEvent(new Event(`input`));
+						}else this.settings[key]=this.inputs[key].getAttribute`value`;
+					}
+			},
 			open(name){
 				clearTimeout(this.timer);
-				this.name=name;
+				this.name=this.inputs.name.value=name;
 				this.path.setAttribute(`d`,icons.list[name].path[page.font]);
-				this.inputs.name.value=name;
 				this.dialog.showModal();
 				this.dialog.classList.remove(`oz`,`pen`);
 				b.addEventListener(`keydown`,this.fn=event=>{
@@ -914,18 +946,16 @@
 				this.dialog.classList.add(`oz`,`pen`);
 				this.timer=setTimeout(_=>this.dialog.close(value),225);
 			},
-			convert:hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
-			test:([r,g,b])=>(r*299+g*587+b*114)/1000,
 			download(){
 				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
 				this.canvas.height=this.canvas.width=this.dimensions;
 				if(this.alpha){
-					this.context.fillStyle=`rgba(${this.convert(this.colour)},${this.alpha})`;
-					this.context.moveTo(this.radius,0);
-					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.radius);
-					this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.radius);
-					this.context.arcTo(0,this.dimensions,0,0,this.radius);
-					this.context.arcTo(0,0,this.dimensions,0,this.radius);
+					this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha})`;
+					this.context.moveTo(this.settings.radius,0);
+					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
+					this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.settings.radius);
+					this.context.arcTo(0,this.dimensions,0,0,this.settings.radius);
+					this.context.arcTo(0,0,this.dimensions,0,this.settings.radius);
 					this.context.fill();
 				}
 				let img=new Image();
@@ -938,7 +968,9 @@
 						w.URL.revokeObjectURL(page.anchor.href);
 					});
 				},0);
-			}
+			},
+			convert:hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
+			test:([r,g,b])=>(r*299+g*587+b*114)/1000
 		};
 	/** INITIATE **/
 	page.getjson(`categories`,`category data`).then(json=>{
