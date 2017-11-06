@@ -949,7 +949,7 @@
 			download(){
 				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
 				this.canvas.height=this.canvas.width=this.dimensions;
-				if(this.alpha){
+				if(this.settings.alpha){
 					this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha})`;
 					this.context.moveTo(this.settings.radius,0);
 					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
@@ -961,7 +961,7 @@
 				let img=new Image();
 				img.src=w.URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
 				img.addEventListener(`load`,_=>{
-					this.context.drawImage(img,this.padding,this.padding);
+					this.context.drawImage(img,this.settings.padding,this.settings.padding);
 					w.URL.revokeObjectURL(img.src);
 					this.canvas.toBlob(blob=>{
 						page.download(w.URL.createObjectURL(blob),`${this.inputs.name.value}.png`);

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <title>Material Design Icons</title>
-<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAElBMVEU/ULU9ULY/UbU/ULU/UbX///9TsmNYAAAABHRSTlPQUODfsWnNGgAAADdJREFUCNdjEHABA0MGFQjDgcEFChhcXENdXEJDQAzX0NCQEGQRlxAXF1cX3AwC2qEAbinMGYoAxTgis6mICVsAAAAASUVORK5CYII=" rel="shortcut icon">
+<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAElBMVEUwP58wPZ8wP54wP58wP5////9iC1sGAAAABHRSTlPQUODfsWnNGgAAADdJREFUCNdjEHABA0MGFQjDgcEFChhcXENdXEJDQAzX0NCQEGQRlxAXF1cX3AwC2qEAbinMGYoAxTgis6mICVsAAAAASUVORK5CYII=" rel="shortcut icon">
 <meta charset="utf-8">
 <meta content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0,width=device-width" name="viewport">
 <meta name="robots" content="noodp">
@@ -25151,7 +25151,7 @@
 				download(){
 					this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
 					this.canvas.height=this.canvas.width=this.dimensions;
-					if(this.alpha){
+					if(this.settings.alpha){
 						this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha})`;
 						this.context.moveTo(this.settings.radius,0);
 						this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
@@ -25163,7 +25163,7 @@
 					let img=new Image();
 					img.src=w.URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
 					img.addEventListener(`load`,_=>{
-						this.context.drawImage(img,this.padding,this.padding);
+						this.context.drawImage(img,this.settings.padding,this.settings.padding);
 						w.URL.revokeObjectURL(img.src);
 						this.canvas.toBlob(blob=>{
 							page.download(w.URL.createObjectURL(blob),`${this.inputs.name.value}.png`);
