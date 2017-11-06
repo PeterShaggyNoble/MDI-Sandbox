@@ -1,3 +1,4 @@
+*.php
 build/
 trash/
 wip/

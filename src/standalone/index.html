@@ -119,6 +119,13 @@
 		vertical-align:top;
 		width:100%;
 	}
+	#nav{
+		height:100%;
+		left:0;
+		order:1;
+		top:0;
+		z-index:7;
+	}
 	#navicon{
 		border-radius:50%;
 		left:12px;
@@ -141,7 +148,6 @@
 		width:100%;
 	}
 	#menu{
-		bottom:0;
 		color:#212121;
 		font-size:14px;
 		left:0;
@@ -278,8 +284,6 @@
 	#filter{
 		background:rgba(255,255,255,.04) url('data:image/svg+xml;utf8,<svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>') 12px center no-repeat;
 		border-radius:4px;
-		line-height:48px;
-		height:48px;
 		margin:0 -48px 0 0;
 		padding-left:48px;
 		transition:background .225s cubic-bezier(.4,0,.2,1);
@@ -300,9 +304,7 @@
 	#clear{
 		border-radius:0 4px 4px 0;
 		font-size:24px;
-		line-height:48px;
 		transition:opacity .195s cubic-bezier(.4,0,.2,1);
-		width:48px;
 		z-index:3;
 	}
 	#filter:placeholder-shown+#clear{
@@ -336,16 +338,12 @@
 		margin:16px;
 		padding:0 8px 8px;
 	}
-	#icons.filtered{
-		min-height:calc(100vh - 88px);
-	}
 	#content>section>h2{
 		background:#3f51b5;
 		border-radius:2px 2px 0 0;
 		color:#fff;
 		font-size:20px;
 		grid-column:1/-1;
-		grid-row:1/1.5;
 		line-height:48px;
 		margin:0 -8px;
 		padding:0 72px 0 16px;;
@@ -547,14 +545,18 @@
 		transition-property:background,color,height,opacity;
 		transition-timing-function:cubic-bezier(.4,0,.2,1);
 	}
+	#actions>li:nth-last-child(14),#actions>li:nth-last-child(10),#actions>li:nth-last-child(2){
+		border-bottom:1px solid #e0e0e0;
+		height:49px;
+	}
 	#info>#actions>li:focus,#info>#actions>li:hover{
 		background:#e0e0e0;
 		color:#3f51b5;
 	}
 	#info[data-nocopy=true]>#actions>li[data-copy]:not(:nth-of-type(5)):not(:nth-last-of-type(2)),
 	#info[data-nodownload=true]>#actions>li[data-type],
-	#info[data-nodownload=true]>#actions>li[data-copy]:nth-of-type(5),
-	#info[data-retired=true]>#actions>li[data-url]{
+	#info[data-nodownload=true]>#actions>li:nth-of-type(5),
+	#info[data-retired=true]>#actions>li:last-child{
 		height:0;
 		opacity:0;
 	}
@@ -568,10 +570,6 @@
 	}
 	#actions>li:focus::before{
 		color:#3f51b5;
-	}
-	#actions>li:nth-last-child(14),#actions>li:nth-last-child(10),#actions>li:nth-last-child(2){
-		border-bottom:1px solid #e0e0e0;
-		height:49px;
 	}
 	dialog{
 		background:#fff;
@@ -722,11 +720,11 @@
 	}
 	#load{
 		background:#e0e0e0;
-		bottom:0;
-		top:64px;
+		height:100%;
 		left:0;
 		padding:8px;
 		right:0;
+		top:64px;
 		transition:opacity .375s cubic-bezier(.4,0,.2,1);
 		z-index:3;
 	}
@@ -763,13 +761,8 @@
 	@media(max-width:1499px){
 		#nav{
 			background:rgba(0,0,0,0);
-			bottom:0;
-			left:0;
-			order:1;
 			right:0;
-			top:0;
 			transition:background .195s cubic-bezier(.4,0,.2,1);
-			z-index:7;
 		}
 		body:not(.menu) #nav{
 			pointer-events:none;
@@ -782,6 +775,7 @@
 		#menu{
 			background:#fff;
 			box-shadow:0 14px 28px rgba(0,0,0,0),0 10px 10px rgba(0,0,0,0);
+			height:100%;
 			top:0;
 		}
 		body.menu #menu{
@@ -794,8 +788,8 @@
 			background:#e0e0e0;
 		}
 		#info{
-			bottom:0;
 			box-shadow:0 -14px 28px rgba(0,0,0,.25),0 -10px 10px rgba(0,0,0,.22);
+			height:100%;
 			right:0;
 			top:0;
 			transition:right .225s cubic-bezier(.4,0,.2,1);
@@ -808,8 +802,8 @@
 		}
 		#info::before{
 			background:rgba(63,81,181,0);
-			bottom:0;
 			content:"";
+			height:100%;
 			left:0;
 			position:fixed;
 			right:0;
@@ -868,11 +862,15 @@
 		}
 		#filter,#clear{
 			height:40px;
-			line-height:48px;
+			line-height:40px;
 		}
 		#filter{
 			background-position:8px center;
+			margin:0 -40px 0 0;
 			padding:0 0 0 40px;
+		}
+		#clear{
+			width:40px;
 		}
 		#content>figure,#content>section{
 			margin:8px;
@@ -929,6 +927,16 @@
 		}
 	}
 	@media(min-width:760px){
+		#filter,#clear{
+			height:48px;
+			line-height:48px;
+		}
+		#clear{
+			width:48px;
+		}
+		#icons.filtered{
+			min-height:calc(100vh - 88px);
+		}
 		#message{
 			box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
 			border-radius:2px;
@@ -941,6 +949,7 @@
 	}
 	@media(min-width:1500px){
 		#menu{
+			height:calc(100% - 64px);
 			top:64px;
 		}
 		#menu>p:hover,#menu>ol>li:hover,#links a:hover{
@@ -1452,21 +1461,25 @@
 					this.menu.classList.add(`oh`,`pa`);
 					this.menu.tabIndex=-1;
 					this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
-					this.item.dataset.icon=`\uf3d4`;
+					this.item.dataset.icon=`\uf6b1`;
 					this.item.append(T`Download SVG`);
-					this.menu.append(this.actions.download=this.item);
-					this.item=this.item.cloneNode(1);
-					this.item.dataset.icon=`\uf220`;
-					this.item.firstChild.nodeValue=`Import Favourites`;
-					this.menu.append(this.actions.import=this.item);
-					this.item=this.item.cloneNode(1);
-					this.item.dataset.icon=`\uf21d`;
-					this.item.firstChild.nodeValue=`Export Favourites`;
-					this.menu.append(this.actions.export=this.item);
-					this.item=this.item.cloneNode(1);
-					this.item.dataset.icon=`\uf1c0`;
-					this.item.firstChild.nodeValue=`Clear Favourites`;
-					this.menu.append(this.actions.clear=this.item);
+					this.menu.append(this.actions.svg=this.item);
+					this.actions.html=this.item.cloneNode(1);
+					this.actions.html.dataset.icon=`\uf421`;
+					this.actions.html.firstChild.nodeValue=`Download HTML`;
+					this.menu.append(this.actions.html);
+					this.actions.import=this.item.cloneNode(1);
+					this.actions.import.dataset.icon=`\uf220`;
+					this.actions.import.firstChild.nodeValue=`Import Favourites`;
+					this.menu.append(this.actions.import);
+					this.actions.export=this.item.cloneNode(1);
+					this.actions.export.dataset.icon=`\uf21d`;
+					this.actions.export.firstChild.nodeValue=`Export Favourites`;
+					this.menu.append(this.actions.export);
+					this.actions.clear=this.item.cloneNode(1);
+					this.actions.clear.dataset.icon=`\uf1c0`;
+					this.actions.clear.firstChild.nodeValue=`Clear Favourites`;
+					this.menu.append(this.actions.clear);
 					this.input.accept=`.txt,text/plain`;
 					this.input.classList.add(`ln`,`pa`);
 					this.input.type=`file`;
@@ -1483,17 +1496,13 @@
 					this.articles=this.section.getElementsByTagName`article`;
 					this.menu.addEventListener(`click`,event=>{
 						switch(event.target){
-							case this.actions.download:
-								let path;
-								this.svg=`<svg><defs>`;
-								Object.keys(page.storage).filter(key=>
-									key.startsWith`mdi-`&&icons.list[key.substr(4)]
-								).forEach(key=>{
-									if(path=icons.list[key=key.substr(4)].path[page.font])
-										this.svg+=`<g id="${key}"><path d="${path}"/></g>`;
-								});
+							case this.actions.svg:
 								this.menu.blur();
-								page.download(`data:text/svg+xml;utf8,${this.svg}</defs></svg>`,`mdi-favourites.svg`);
+								page.download(`data:text/svg+xml;utf8,<svg><defs>${this.build()}</defs></svg>`,`mdi-favourites.svg`);
+								break;
+							case this.actions.html:
+								this.menu.blur();
+								page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" iconSize="24"><svg><defs>${this.build()}</defs></svg></iron-iconset-svg>`,`mdi-favourites.html`);
 								break;
 							case this.actions.import:
 								b.append(this.input);
@@ -1505,7 +1514,7 @@
 								page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).filter(key=>key.startsWith`mdi-`).join`,`))}`,`mdi-favourites.txt`);
 								break;
 							case this.actions.clear:
-								let icon,article;
+								let icon;
 								for(let key in page.storage)
 									if(page.storage.hasOwnProperty(key))
 										if(key.startsWith`mdi-`){
@@ -1515,6 +1524,7 @@
 												delete icon.articles.favourite;
 											}
 										}
+								this.menu.blur();
 								page.alert`Favourites cleared.`;
 								break;
 						}
@@ -1547,6 +1557,11 @@
 						this.section.append(article);
 					});
 				},
+				build:_=>Object.keys(page.storage).map((key,path)=>
+					key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(path=icons.list[key].path[page.font])?
+						`<g id="${key}"><path d="${path}"/></g>`:
+					``
+				).join``,
 				load(event){
 					let msg=`complete`;
 					try{
@@ -1611,7 +1626,8 @@
 							this.open(icon);
 							Object.values(icons.list[icon].articles)[0].classList.add`active`;
 						}
-					}else this.set(Object.keys(icons.list)[0]);
+					}else if(page.wide)
+						this.set(Object.keys(icons.list)[0]);
 					this.aside.addEventListener(`click`,event=>{
 						let target=event.target;
 						switch(target){
@@ -1657,7 +1673,7 @@
 					let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 					this.aside.dataset.nocopy=(!(this.copy=!!codepoint)).toString();
 					this.aside.dataset.nodownload=(!this.data).toString();
-					this.aside.dataset.retired=(!!this.icon.retired).toString();
+					this.aside.dataset.retired=(!!this.icon.retired&&this.icon.retired!==`{next}`).toString();
 					this.downloads={
 						svg:`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 						xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
@@ -1680,7 +1696,8 @@
 					this.actions.url.dataset.copy+=`icon=${name}`;
 					setTimeout(_=>{
 						this.path.setAttribute(`d`,this.data);
-						this.path.classList.remove`oz`;
+						if(page.wide)
+							this.path.classList.remove`oz`;
 					},page.wide&&195);
 				},
 				download(){
@@ -4533,6 +4550,16 @@
 						"path":{
 							"regular":"M3,3H21V5A2,2 0 0,0 19,7V19A2,2 0 0,1 17,21H7A2,2 0 0,1 5,19V7A2,2 0 0,0 3,5V3M7,5V7H12V8H7V9H10V10H7V11H10V12H7V13H12V14H7V15H10V16H7V19H17V5H7Z"
 						}
+					},
+					"beam":{
+						"added":{
+							"regular":"{next}"
+						},
+						"categories":["logos"],
+						"path":{
+							"regular":"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M21.36,12.82C16.62,11.16 12.85,7.4 11.18,2.64C17,2.13 21.87,7 21.36,12.82M9.17,9.17C10.73,7.61 13.27,7.61 14.83,9.17C16.39,10.73 16.39,13.27 14.83,14.83C13.27,16.39 10.73,16.39 9.17,14.83C7.61,13.27 7.61,10.73 9.17,9.17M2.64,11.18C7.38,12.84 11.15,16.6 12.82,21.36C7,21.87 2.13,17 2.64,11.18Z"
+						},
+						"retired":2046
 					},
 					"beats":{
 						"categories":["logos"],
@@ -25100,13 +25127,5 @@
 			};
 		icons.array=Object.values(icons.list);
 		page.init();
-		page.loadjs`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`.catch(_=>
-			console.log(`Failed to load Google Tag Manager.`)
-		).then(_=>{
-			w.dataLayer=w.dataLayer||[];
-			let gtag=function(){w.dataLayer.push(arguments);};
-			gtag(`js`,new Date());
-			gtag(`config`,`UA-109147935-1`);
-		});
 	}
 </script>

@@ -7,13 +7,6 @@
 ## Standalone Version
 A single-file, standalone version is now available, which you can find in the [`standalone`](https://github.com/PeterShaggyNoble/MDI-Sandbox/tree/master/standalone) directory. It can be run locally ~but note that it does currently need access to the internet in order to download the Roboto font from Google~. Also, unless you run the file through a web server, it can't access `window.localStorage` and, therefore, all functionality related to favourites is disabled.
 
-## To-Do List
-1. [ ] Add Light icons.
-2. [x] Add counts to categories & contributors.
-3. [ ] Add menu for downloads.
-4. [ ] Add helper classes to icon preview and HTML tag.
-5. [ ] Add contributor info to sidebar.
-
 ## How to Contribute
 > Coming soon ...
 
@@ -22,6 +15,8 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2017-11-05:** Added ability to download favourites as an HTML file for use with Polymer.
+- **2017-11-03:** Added ability to download favourites as an SVG file for use with Angular.
 - **2017-11-02:** Overhauled the design.
 - **2017-10-27:** Added PNG downloads with basic editor.
 - **2017-10-25:** Switched from flex layout to grid layout for icons.

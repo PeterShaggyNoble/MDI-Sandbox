@@ -377,21 +377,25 @@
 				this.menu.classList.add(`oh`,`pa`);
 				this.menu.tabIndex=-1;
 				this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
-				this.item.dataset.icon=`\uf3d4`;
+				this.item.dataset.icon=`\uf6b1`;
 				this.item.append(T`Download SVG`);
-				this.menu.append(this.actions.download=this.item);
-				this.item=this.item.cloneNode(1);
-				this.item.dataset.icon=`\uf220`;
-				this.item.firstChild.nodeValue=`Import Favourites`;
-				this.menu.append(this.actions.import=this.item);
-				this.item=this.item.cloneNode(1);
-				this.item.dataset.icon=`\uf21d`;
-				this.item.firstChild.nodeValue=`Export Favourites`;
-				this.menu.append(this.actions.export=this.item);
-				this.item=this.item.cloneNode(1);
-				this.item.dataset.icon=`\uf1c0`;
-				this.item.firstChild.nodeValue=`Clear Favourites`;
-				this.menu.append(this.actions.clear=this.item);
+				this.menu.append(this.actions.svg=this.item);
+				this.actions.html=this.item.cloneNode(1);
+				this.actions.html.dataset.icon=`\uf421`;
+				this.actions.html.firstChild.nodeValue=`Download HTML`;
+				this.menu.append(this.actions.html);
+				this.actions.import=this.item.cloneNode(1);
+				this.actions.import.dataset.icon=`\uf220`;
+				this.actions.import.firstChild.nodeValue=`Import Favourites`;
+				this.menu.append(this.actions.import);
+				this.actions.export=this.item.cloneNode(1);
+				this.actions.export.dataset.icon=`\uf21d`;
+				this.actions.export.firstChild.nodeValue=`Export Favourites`;
+				this.menu.append(this.actions.export);
+				this.actions.clear=this.item.cloneNode(1);
+				this.actions.clear.dataset.icon=`\uf1c0`;
+				this.actions.clear.firstChild.nodeValue=`Clear Favourites`;
+				this.menu.append(this.actions.clear);
 				this.input.accept=`.txt,text/plain`;
 				this.input.classList.add(`ln`,`pa`);
 				this.input.type=`file`;
@@ -408,17 +412,13 @@
 				this.articles=this.section.getElementsByTagName`article`;
 				this.menu.addEventListener(`click`,event=>{
 					switch(event.target){
-						case this.actions.download:
-							let path;
-							this.svg=`<svg><defs>`;
-							Object.keys(page.storage).filter(key=>
-								key.startsWith`mdi-`&&icons.list[key.substr(4)]
-							).forEach(key=>{
-								if(path=icons.list[key=key.substr(4)].path[page.font])
-									this.svg+=`<g id="${key}"><path d="${path}"/></g>`;
-							});
+						case this.actions.svg:
 							this.menu.blur();
-							page.download(`data:text/svg+xml;utf8,${this.svg}</defs></svg>`,`mdi-favourites.svg`);
+							page.download(`data:text/svg+xml;utf8,<svg><defs>${this.build()}</defs></svg>`,`mdi-favourites.svg`);
+							break;
+						case this.actions.html:
+							this.menu.blur();
+							page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" iconSize="24"><svg><defs>${this.build()}</defs></svg></iron-iconset-svg>`,`mdi-favourites.html`);
 							break;
 						case this.actions.import:
 							b.append(this.input);
@@ -430,7 +430,7 @@
 							page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).filter(key=>key.startsWith`mdi-`).join`,`))}`,`mdi-favourites.txt`);
 							break;
 						case this.actions.clear:
-							let icon,article;
+							let icon;
 							for(let key in page.storage)
 								if(page.storage.hasOwnProperty(key))
 									if(key.startsWith`mdi-`){
@@ -440,6 +440,7 @@
 											delete icon.articles.favourite;
 										}
 									}
+							this.menu.blur();
 							page.alert`Favourites cleared.`;
 							break;
 					}
@@ -472,6 +473,11 @@
 					this.section.append(article);
 				});
 			},
+			build:_=>Object.keys(page.storage).map((key,path)=>
+				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(path=icons.list[key].path[page.font])?
+					`<g id="${key}"><path d="${path}"/></g>`:
+				``
+			).join``,
 			load(event){
 				let msg=`complete`;
 				try{
@@ -537,7 +543,8 @@
 						this.open(icon);
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
-				}else this.set(Object.keys(icons.list)[0]);
+				}else if(page.wide)
+					this.set(Object.keys(icons.list)[0]);
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
@@ -583,7 +590,7 @@
 				let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 				this.aside.dataset.nocopy=(!(this.copy=!!codepoint)).toString();
 				this.aside.dataset.nodownload=(!this.data).toString();
-				this.aside.dataset.retired=(!!this.icon.retired).toString();
+				this.aside.dataset.retired=(!!this.icon.retired&&this.icon.retired!==`{next}`).toString();
 				this.downloads={
 					svg:`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
@@ -606,7 +613,8 @@
 				this.actions.url.dataset.copy+=`icon=${name}`;
 				setTimeout(_=>{
 					this.path.setAttribute(`d`,this.data);
-					this.path.classList.remove`oz`;
+					if(page.wide)
+						this.path.classList.remove`oz`;
 				},page.wide&&195);
 			},
 			download(){
