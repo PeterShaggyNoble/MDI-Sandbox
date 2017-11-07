@@ -556,7 +556,7 @@ body.mdil>#content>section>article::before{
 	transition-property:background,color,height,opacity;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
 }
-#actions>li:nth-last-child(14),#actions>li:nth-last-child(10),#info:not([data-retired=true])>#actions>li:nth-last-child(2){
+#actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info:not([data-retired=true])>#actions>li:nth-last-child(2){
 	border-bottom:1px solid #e0e0e0;
 	height:49px;
 }
@@ -564,9 +564,7 @@ body.mdil>#content>section>article::before{
 	background:#e0e0e0;
 	color:#303f9f;
 }
-#info[data-nocopy=true]>#actions>li[data-copy]:not(:nth-of-type(5)):not(:nth-last-of-type(2)),
-#info[data-nodownload=true]>#actions>li[data-type],
-#info[data-nodownload=true]>#actions>li:nth-of-type(5),
+#info[data-nocopy=true]>#actions>li[data-copy]:not([data-confirm=Path]):not(:nth-last-of-type(2)),
 #info[data-retired=true]>#actions>li:last-child{
 	height:0;
 	opacity:0;
@@ -692,7 +690,7 @@ dialog>section>label:last-of-type{
 	margin:0;
 	width:calc(100% - 216px);
 }
-dialog>section>input{
+dialog>section>input,dialog>section>select{
 	border-bottom:1px solid #bdbdbd;
 	line-height:23px;
 	height:24px;
@@ -707,6 +705,14 @@ dialog>section>input:last-of-type{
 }
 dialog>section>input:invalid{
 	border-color:#f44336;
+}
+dialog>section>select{
+	background:url('data:image/svg+xml;utf8,<svg fill="#757575" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7,10L12,15L17,10H7Z"/></svg>') right -2px no-repeat;
+	direction:rtl;
+	padding:0 24px 0 8px;
+}
+dialog option:checked{
+	display:none;
 }
 dialog>button{
 	border-radius:2px;
@@ -1033,8 +1039,6 @@ dialog>button:active{
 .pr{position:relative;}
 .ps{position:sticky;}
 /**  TEXT  **/
-.ffmd{font-family:mdi;}
-.ffmdl{font-family:mdil;}
 .fwm{font-weight:500;}
 .fwn{font-weight:400;}
 .tac{text-align:center;}

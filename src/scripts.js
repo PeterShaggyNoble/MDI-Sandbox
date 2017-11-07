@@ -30,8 +30,7 @@
 			init(){
 				this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
 				this.params=this.url.searchParams;
-				this.light=0;
-				/*this.params.get`font`===`light`;*/
+				this.light=this.params.get`font`===`light`;
 				this.font=this.light?`light`:`regular`;
 				b.classList.add(this.prefix=this.light?`mdil`:`mdi`);
 				version=versions[this.font];
@@ -100,6 +99,7 @@
 				this.anchor.href=data;
 				this.anchor.download=name;
 				this.anchor.click();
+				w.URL.revokeObjectURL(this.anchor.href);
 			},
 		/** COPY TO CLIPBOARD **/
 			copy(str,msg){
@@ -462,9 +462,7 @@
 				);
 			},
 			build:_=>Object.keys(page.storage).map((key,path)=>
-				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(path=icons.list[key].path[page.font])?
-					`<g id="${key}"><path d="${path}"/></g>`:
-				``
+				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(path=icons.list[key].path[page.font])?`<g id="${key}"><path d="${path}"/></g>`:``
 			).join``,
 			load(event){
 				let msg=`complete`;
@@ -476,7 +474,7 @@
 							if(this.icon.articles.main&&!this.icon.articles.favourite){
 								page.storage.setItem(item,1);
 								this.section.append(this.icon.articles.favourite=this.icon.articles.main.cloneNode(1));
-								if(info.current===name){
+								if(info.name===name){
 									info.actions.favourite.dataset.icon=`\uf0c6`;
 									info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
 								}
@@ -500,9 +498,10 @@
 			heading:$`name`,
 			figure:$`preview`,
 			input:$`slider`,
+			xml:new XMLSerializer(),
 			actions:{
 				favourite:Q`#actions>:first-child`,
-				export:Q`#actions>[data-type=png]`,
+				export:Q`#actions>:nth-child(2)`,
 				path:Q`#actions>[data-confirm=Path]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
 				codepoint:Q`#actions>[data-confirm="Code point"]`,
@@ -529,7 +528,7 @@
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
 				}else if(page.wide)
-					this.set(Object.keys(icons.list)[0]);
+					this.open(Object.keys(icons.list)[0]);
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
@@ -563,21 +562,14 @@
 					this.svg.setAttribute(`width`,this.input.value);
 				},0);
 			},
-			open(icon){
-				this.set(icon);
-				this.current=icon;
-				page.wide?this.path.classList.add`oz`:this.toggle();
-			},
-			set(name){
-				this.icon=icons.list[name];
-				this.name=this.heading.firstChild.nodeValue=name;
+			open(name){
+				this.icon=icons.list[this.name=this.heading.firstChild.nodeValue=name];
 				this.data=this.actions.path.dataset.copy=this.icon.path[page.font];
 				let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 				this.aside.dataset.nocopy=(!(this.copy=!!codepoint)).toString();
-				this.aside.dataset.nodownload=(!this.data).toString();
-				this.aside.dataset.retired=(!!this.icon.retired&&this.icon.retired!==`{next}`).toString();
+				this.aside.dataset.retired=(!!this.icon.retired&&this.icon.retired!==`{soon}`).toString();
 				this.downloads={
-					svg:`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
+					svg:`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
 					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.data}"/></vector>`
 				};
@@ -596,6 +588,7 @@
 				if(page.light)
 					this.actions.url.dataset.copy+=`font=light&`;
 				this.actions.url.dataset.copy+=`icon=${name}`;
+				page.wide?this.path.classList.add`oz`:this.toggle();
 				setTimeout(_=>{
 					this.path.setAttribute(`d`,this.data);
 					if(page.wide)
@@ -773,7 +766,7 @@
 				}else delete this.list[key];
 			}
 		},
-	/** PNG EDITOR **/
+	/** EDITOR **/
 		editor={
 			dialog:Q`dialog`,
 			background:C`span`,
@@ -781,14 +774,15 @@
 			xml:new XMLSerializer(),
 			settings:{},
 			inputs:{
-				size:$`png-size`,
 				fill:$`png-fill`,
 				opacity:$`png-opacity`,
 				padding:$`png-padding`,
 				colour:$`png-colour`,
 				alpha:$`png-alpha`,
 				radius:$`png-radius`,
-				name:$`png-name`
+				format:$`png-format`,
+				name:$`png-name`,
+				size:$`png-size`
 			},
 			init(){
 				this.menu=this.dialog.querySelector`ul`;
@@ -880,11 +874,11 @@
 							case this.inputs.size:
 								this.svg.setAttribute(`height`,this.settings.size=parseInt(value));
 								this.svg.setAttribute(`width`,this.settings.size);
-								if(this.settings.padding>(this.inputs.padding.max=(256-this.size)/2))
-									this.settings.padding=this.inputs.padding.value=this.inputs.padding.max;
+								if(this.settings.padding>(this.inputs.padding.max=(256-this.settings.size)/2))
+									this.settings.padding=this.inputs.padding.value=parseInt(this.inputs.padding.max);
 								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.settings.size+2*this.settings.padding}px`;
 								if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
-									this.background.style.borderRadius=`${this.settings.radius=this.inputs.radius.value=this.inputs.radius.max}px`;
+									this.background.style.borderRadius=`${this.settings.radius=this.inputs.radius.value=parseInt(this.inputs.radius.max)}px`;
 								break;
 							case this.inputs.fill:
 								this.path.setAttribute(`fill`,`#${this.settings.fill=value.toLowerCase()}`);
@@ -906,7 +900,7 @@
 								this.figure.classList.toggle(`light`,this.luminance>=128&&value<31);
 								break;
 							case this.inputs.radius:
-								this.background.style.borderRadius=`${this.settings.radius=value}px`;
+								this.background.style.borderRadius=`${this.settings.radius=parseInt(value)}px`;
 								break;
 						}
 						if(page.storage&&target!==this.inputs.name)
@@ -922,15 +916,15 @@
 				for(let key in this.inputs)
 					if(this.inputs.hasOwnProperty(key)&&key!=="name"){
 						if(page.storage){
-							this.inputs[key].value=page.storage[`png-${key}`]||this.inputs[key].getAttribute`value`;
+							this.inputs[key].value=page.storage[`png-${key}`]||this.inputs[key].getAttribute`value`||this.inputs[key].firstElementChild.getAttribute`value`;
 							this.inputs[key].dispatchEvent(new Event(`input`));
-						}else this.settings[key]=this.inputs[key].getAttribute`value`;
+						}else this.settings[key]=this.inputs[key].getAttribute`value`||this.inputs[key].firstElementChild.getAttribute`value`;
 					}
 			},
 			open(name){
 				clearTimeout(this.timer);
 				this.name=this.inputs.name.value=name;
-				this.path.setAttribute(`d`,icons.list[name].path[page.font]);
+				this.path.setAttribute(`d`,this.data=icons.list[name].path[page.font]);
 				this.dialog.showModal();
 				this.dialog.classList.remove(`oz`,`pen`);
 				b.addEventListener(`keydown`,this.fn=event=>{
@@ -947,27 +941,69 @@
 				this.timer=setTimeout(_=>this.dialog.close(value),225);
 			},
 			download(){
-				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-				this.canvas.height=this.canvas.width=this.dimensions;
-				if(this.settings.alpha){
-					this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha})`;
-					this.context.moveTo(this.settings.radius,0);
-					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
-					this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.settings.radius);
-					this.context.arcTo(0,this.dimensions,0,0,this.settings.radius);
-					this.context.arcTo(0,0,this.dimensions,0,this.settings.radius);
-					this.context.fill();
+				switch(this.inputs.format.value){
+					case`png`:
+						this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+						this.canvas.height=this.canvas.width=this.dimensions;
+						if(this.settings.alpha){
+							this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha})`;
+							this.context.beginPath();
+							this.context.moveTo(this.settings.radius,0);
+							this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
+							this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.settings.radius);
+							this.context.arcTo(0,this.dimensions,0,0,this.settings.radius);
+							this.context.arcTo(0,0,this.dimensions,0,this.settings.radius);
+							this.context.closePath();
+							this.context.fill();
+						}
+						let image=new Image();
+						image.src=w.URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
+						image.addEventListener(`load`,_=>{
+							this.context.drawImage(image,this.settings.padding,this.settings.padding);
+							w.URL.revokeObjectURL(image.src);
+							this.canvas.toBlob(blob=>
+								page.download(w.URL.createObjectURL(blob),`${this.inputs.name.value}.png`)
+							);
+						},0);
+						break;
+					case`svg`:
+						let 	padding=this.settings.padding/this.settings.size*24,
+							dimensions=24+2*padding,
+							svg=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="${this.dimensions}" viewBox="${0-padding} ${0-padding} ${dimensions} ${dimensions}" width="${this.dimensions}" xmlns="http://www.w3.org/2000/svg">`,
+							radius,issquare,iscircle;
+						if(this.settings.alpha){
+							radius=this.settings.radius/this.dimensions*dimensions;
+							issquare=!radius;
+							iscircle=radius===dimensions/2;
+							svg+=`<path fill="#${this.settings.colour}" `;
+							if(this.settings.alpha<1)
+								svg+=`fill-opacity="${this.settings.alpha}" `;
+							svg+=`d="M${radius-padding},${0-padding}`;
+							if(!iscircle)
+								svg+=`H${dimensions-radius-padding}`;
+							if(!issquare)
+								svg+=`A${radius},${radius} 0 0 1 ${dimensions-padding},${radius-padding}`;
+							if(!iscircle)
+								svg+=`V${dimensions-radius-padding}`;
+							if(!issquare)
+								svg+=`A${radius},${radius} 0 0 1 ${dimensions-radius-padding},${dimensions-padding}`;
+							if(!iscircle)
+								svg+=`H${radius-padding}`;
+							if(!issquare)
+								svg+=`A${radius},${radius} 0 0 1 ${0-padding},${dimensions-radius-padding}`;
+							if(!iscircle)
+								svg+=`V${radius-padding}`;
+							if(!issquare)
+								svg+=`A${radius},${radius} 0 0 1 ${radius-padding},${0-padding}`;
+							svg+=`Z"/>`;
+						}
+						svg+=`<path fill="#${this.settings.fill}" `;
+						if(this.settings.opacity<1)
+							svg+=`fill-opacity="${this.settings.opacity}" `;
+						svg+=`d="${this.data}"/></svg>`;
+						page.download(`data:text/svg+xml;utf8,${svg}`,`${this.inputs.name.value}.svg`);
+						break;
 				}
-				let img=new Image();
-				img.src=w.URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
-				img.addEventListener(`load`,_=>{
-					this.context.drawImage(img,this.settings.padding,this.settings.padding);
-					w.URL.revokeObjectURL(img.src);
-					this.canvas.toBlob(blob=>{
-						page.download(w.URL.createObjectURL(blob),`${this.inputs.name.value}.png`);
-						w.URL.revokeObjectURL(page.anchor.href);
-					});
-				},0);
 			},
 			convert:hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000
