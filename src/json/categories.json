@@ -24,6 +24,10 @@
 		"name":"Retired Icons",
 		"section":true
 	},
+	"other":{
+		"codepoint":"f2d6",
+		"name":"Uncategorised"
+	},
 	"arrows":{
 		"codepoint":"f054",
 		"name":"Arrows"
