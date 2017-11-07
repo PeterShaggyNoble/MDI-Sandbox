@@ -497,7 +497,6 @@
 			aside:$`info`,
 			heading:$`name`,
 			figure:$`preview`,
-			input:$`slider`,
 			xml:new XMLSerializer(),
 			actions:{
 				favourite:Q`#actions>:first-child`,
@@ -556,10 +555,6 @@
 								this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
 							break;
 					}
-				},0);
-				this.input.addEventListener(`input`,_=>{
-					this.svg.setAttribute(`height`,this.input.value);
-					this.svg.setAttribute(`width`,this.input.value);
 				},0);
 			},
 			open(name){
@@ -855,7 +850,7 @@
 							this.close(0);
 							break;
 						case this.save:
-							this.download();
+							(this.settings.format=this.inputs.format.value)!==`png`?this.downloadxml():this.downloadpng();
 							break;
 					}
 				},0);
@@ -940,70 +935,99 @@
 				this.dialog.classList.add(`oz`,`pen`);
 				this.timer=setTimeout(_=>this.dialog.close(value),225);
 			},
-			download(){
+			downloadpng(){
+				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+				this.canvas.height=this.canvas.width=this.dimensions;
+				if(this.settings.alpha){
+					this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha})`;
+					this.context.beginPath();
+					this.context.moveTo(this.settings.radius,0);
+					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
+					this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.settings.radius);
+					this.context.arcTo(0,this.dimensions,0,0,this.settings.radius);
+					this.context.arcTo(0,0,this.dimensions,0,this.settings.radius);
+					this.context.closePath();
+					this.context.fill();
+				}
+				let image=new Image();
+				image.src=w.URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
+				image.addEventListener(`load`,_=>{
+					this.context.drawImage(image,this.settings.padding,this.settings.padding);
+					w.URL.revokeObjectURL(image.src);
+					this.canvas.toBlob(blob=>
+						page.download(w.URL.createObjectURL(blob),`${this.inputs.name.value}.png`)
+					);
+				},0);
+			},
+			downloadxml(){
+				let 	padding=this.settings.padding/this.settings.size*24,
+					dimensions=24+2*padding,
+					xml,data,arc,radius,issquare,iscircle;
+				if(this.settings.alpha){
+					radius=this.settings.radius/this.dimensions*dimensions;
+					issquare=!radius;
+					iscircle=radius===dimensions/2;
+					data=`M${radius},0`;
+					!iscircle&&(data+=`H${dimensions-radius}`);
+					!issquare&&(data+=`${arc=`A${radius},${radius} 0 0 1 `}${dimensions},${radius}`);
+					!iscircle&&(data+=`V${dimensions-radius}`);
+					!issquare&&(data+=`${arc}${dimensions-radius},${dimensions}`);
+					!iscircle&&(data+=`H${radius}`);
+					!issquare&&(data+=`${arc}0,${dimensions-radius}`);
+					!iscircle&&(data+=`V${radius}`);
+					!issquare&&(data+=`${arc+radius},0`);
+					data+=`Z`;
+				}
 				switch(this.inputs.format.value){
-					case`png`:
-						this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-						this.canvas.height=this.canvas.width=this.dimensions;
-						if(this.settings.alpha){
-							this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha})`;
-							this.context.beginPath();
-							this.context.moveTo(this.settings.radius,0);
-							this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
-							this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.settings.radius);
-							this.context.arcTo(0,this.dimensions,0,0,this.settings.radius);
-							this.context.arcTo(0,0,this.dimensions,0,this.settings.radius);
-							this.context.closePath();
-							this.context.fill();
-						}
-						let image=new Image();
-						image.src=w.URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
-						image.addEventListener(`load`,_=>{
-							this.context.drawImage(image,this.settings.padding,this.settings.padding);
-							w.URL.revokeObjectURL(image.src);
-							this.canvas.toBlob(blob=>
-								page.download(w.URL.createObjectURL(blob),`${this.inputs.name.value}.png`)
-							);
-						},0);
-						break;
 					case`svg`:
-						let 	padding=this.settings.padding/this.settings.size*24,
-							dimensions=24+2*padding,
-							svg=`<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="${this.dimensions}" viewBox="${0-padding} ${0-padding} ${dimensions} ${dimensions}" width="${this.dimensions}" xmlns="http://www.w3.org/2000/svg">`,
-							radius,issquare,iscircle;
+						xml=`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="${this.dimensions}" viewBox="0 0 ${dimensions} ${dimensions}" width="${this.dimensions}" xmlns="http://www.w3.org/2000/svg">`;
 						if(this.settings.alpha){
-							radius=this.settings.radius/this.dimensions*dimensions;
-							issquare=!radius;
-							iscircle=radius===dimensions/2;
-							svg+=`<path fill="#${this.settings.colour}" `;
+							xml+=`<path fill="#${this.settings.colour}" `;
 							if(this.settings.alpha<1)
-								svg+=`fill-opacity="${this.settings.alpha}" `;
-							svg+=`d="M${radius-padding},${0-padding}`;
-							if(!iscircle)
-								svg+=`H${dimensions-radius-padding}`;
-							if(!issquare)
-								svg+=`A${radius},${radius} 0 0 1 ${dimensions-padding},${radius-padding}`;
-							if(!iscircle)
-								svg+=`V${dimensions-radius-padding}`;
-							if(!issquare)
-								svg+=`A${radius},${radius} 0 0 1 ${dimensions-radius-padding},${dimensions-padding}`;
-							if(!iscircle)
-								svg+=`H${radius-padding}`;
-							if(!issquare)
-								svg+=`A${radius},${radius} 0 0 1 ${0-padding},${dimensions-radius-padding}`;
-							if(!iscircle)
-								svg+=`V${radius-padding}`;
-							if(!issquare)
-								svg+=`A${radius},${radius} 0 0 1 ${radius-padding},${0-padding}`;
-							svg+=`Z"/>`;
+								xml+=`fill-opacity="${this.settings.alpha}" `;
+							xml+=`d="${data}"/>`;
 						}
-						svg+=`<path fill="#${this.settings.fill}" `;
+						xml+=`<path fill="#${this.settings.fill}" `;
 						if(this.settings.opacity<1)
-							svg+=`fill-opacity="${this.settings.opacity}" `;
-						svg+=`d="${this.data}"/></svg>`;
-						page.download(`data:text/svg+xml;utf8,${svg}`,`${this.inputs.name.value}.svg`);
+							xml+=`fill-opacity="${this.settings.opacity}" `;
+						if(padding)
+							xml+=`transform="translate(${padding},${padding})" `;
+						xml+=`d="${this.data}"/></svg>`;
+						break;
+					case`xaml`:
+						xml=`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="${this.dimensions}" Height="${this.dimensions}">`;
+						if(this.settings.alpha){
+							xml+=`<Path Fill="#${this.settings.fill}" `;
+							if(this.settings.opacity<1)
+								xml+=`Opacity="${this.settings.opacity}" `;
+							if(this.dimensions>dimensions)
+								xml+=`ScaleX="${this.dimensions/dimensions}" ScaleY="${this.dimensions/dimensions}" `;
+							xml+=`Data="${data}"/>`;
+						}
+						xml+=`<Path `;
+						if(this.settings.size>24)
+							xml+=`ScaleX="${this.settings.size/24}" ScaleY="${this.settings.size/24}" `;
+						if(this.settings.padding)
+							xml+=`TranslateX="${this.settings.padding}" TranslateY="${this.settings.padding}" `;
+						xml+=`Data="${this.data}"/></Canvas>`;
+						break;
+					case`xml`:
+						xml=`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="${this.dimensions}dp" android:width="${this.dimensions}dp" android:viewportWidth="24" android:viewportHeight="24">`;
+						if(this.settings.alpha){
+							xml+=`<path android:fillColor="#${this.settings.colour}" `;
+							if(this.settings.alpha<1)
+								xml+=`android:fillOpacity="${this.settings.alpha}" `;
+							xml+=`android:pathData="${data}"/>`;
+						}
+						xml+=`<path android:fillColor="#${this.settings.fill}" `;
+						if(this.settings.opacity<1)
+							xml+=`android:fillOpacity="${this.settings.opacity}" `;
+						if(padding)
+							xml+=`android:translateX="${padding}" android:translateY="${padding}" `;
+						xml+=`android:pathData="${this.data}"/></vector>`;
 						break;
 				}
+				page.download(xml,`${this.inputs.name.value}.${this.inputs.format.value}`);
 			},
 			convert:hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000

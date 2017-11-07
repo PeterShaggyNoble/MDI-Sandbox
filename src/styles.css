@@ -501,8 +501,6 @@ body.mdil>#content>section>article::before{
 	justify-content:center;
 	height:116px;
 	margin-top:-10px;
-	padding:0 16px;
-	width:calc(100% - 36px);
 }
 #preview>svg{
 	fill:#fff;
@@ -513,33 +511,6 @@ body.mdil>#content>section>article::before{
 }
 #preview>svg>path{
 	transition:opacity .195s cubic-bezier(.4,0,.2,1);
-}
-#slider{
-	top:64px;
-	right:24px;
-	transform:rotate(270deg);
-	transform-origin:100% 100%;
-	width:98px;
-}
-#slider::-webkit-slider-runnable-track{
-	background:#fff;
-	height:2px;
-	transition:background .225s cubic-bezier(.4,0,.2,1);
-}
-#slider::-webkit-slider-thumb{
-	-webkit-appearance:none;
-	appearance:none;
-	background-color:#fff;
-	border:1px solid #303f9f;
-	border-radius:50%;
-	height:18px;
-	margin:-8px 0 0;
-	position:relative;
-	transition:background .25s linear;
-	width:18px;
-}
-#slider:focus::-webkit-slider-thumb{
-	background:#303f9f;
 }
 /*  actions  */
 #actions{
@@ -849,19 +820,15 @@ dialog>button:active{
 		padding:0 16px 0 0;
 	}
 	#name::before{
-		content:"\f04d";
+		content:"\f054";
 		cursor:pointer;
 		display:inline-block;
 		font-family:mdi;
 		font-size:24px;
 		pointer-events:initial;
 		text-align:center;
-		transition:transform .225s cubic-bezier(.4,0,.2,1);
 		vertical-align:top;
 		width:48px;
-	}
-	#info.show #name::before{
-		transform:rotatey(180deg);
 	}
 	#actions{
 		height:calc(100% - 180px);
@@ -923,10 +890,6 @@ dialog>button:active{
 	}
 	#preview{
 		margin-top:-14px;
-	}
-	#slider{
-		top:56px;
-		width:84px;
 	}
 	#actions{
 		height:calc(100% - 158px);

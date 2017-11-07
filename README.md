@@ -15,7 +15,8 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
-- **2017-11-06:** Added the ability to export, import and reset PNG editor settings.
+- **2017-11-07:** Added vector downloads to the icon editor.
+- **2017-11-06:** Added the ability to export, import and reset icon editor settings.
 - **2017-11-05:** Added the ability to download favourites as an HTML file for use with Polymer.
 - **2017-11-03:** Added the ability to download favourites as an SVG file for use with Angular.
 - **2017-11-02:** Overhauled the design.
