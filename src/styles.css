@@ -602,7 +602,12 @@ dialog{
 	left:50%;
 	top:16px;
 	transform:translatex(-50%);
+}
+dialog,dialog::backdrop{
 	transition:opacity .225s cubic-bezier(.4,0,.2,1);
+}
+dialog.oz::backdrop{
+	opacity:0;
 }
 dialog>h2{
 	background:#303f9f;
@@ -815,8 +820,12 @@ dialog>button:active{
 	#actions{
 		height:calc(100% - 180px);
 	}
-	dialog::backdrop{
-		display:none;
+	#info.oz~dialog{
+		box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+	}
+	#info.oz~dialog::backdrop{
+		background:rgba(0,0,0,.54);
+		transition:opacity .225s cubic-bezier(.4,0,.2,1);
 	}
 	@media(max-height:772px){
 		#info{
@@ -1011,7 +1020,6 @@ dialog>button:active{
 	}
 	dialog::backdrop{
 		background:rgba(0,0,0,.54);
-		transition:opacity .225s cubic-bezier(.4,0,.2,1);
 	}
 	dialog.oz::backdrop{
 		opacity:0;

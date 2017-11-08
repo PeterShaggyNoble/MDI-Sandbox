@@ -41,7 +41,7 @@
 					info.actions.favourite.remove();
 					delete info.actions.favourite;
 				}
-				this.textarea.classList.add(`ln`,`pa`);
+				this.textarea.classList.add(`ln`,`pf`);
 				categories.init();
 				version=+version.replace(/\./g,``);
 				contributors.init();
@@ -90,12 +90,14 @@
 				,5e3);
 			},
 			copy(string,message){
-				b.append(this.textarea);
+				editor.dialog.append(this.textarea);
 				this.textarea.value=string;
 				this.textarea.select();
-				d.execCommand`copy`;
+				console.log(d.execCommand`copy`);
+				this.textarea.value=``;
 				this.textarea.remove();
-				this.alert(`${message} copied to clipboard.`);
+				if(message)
+					this.alert(`${message} copied to clipboard.`);
 			},
 			download(data,name){
 				this.anchor.href=data;
@@ -371,7 +373,7 @@
 				this.menu.addEventListener(`click`,event=>{
 					switch(event.target){
 						case this.actions.svg:
-							this.menu.blur();
+							page.copy(`text`,`Link`);
 							page.download(`data:text/svg+xml;utf8,<svg><defs>${this.build()}</defs></svg>`,`mdi-favourites.svg`);
 							break;
 						case this.actions.html:
@@ -495,14 +497,14 @@
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				this.svg.setAttribute(`width`,112);
 				this.svg.append(this.path=N`path`);
-				let icon=page.params.get`icon`||page.params.get`edit`;
+				let icon=page.params.get`icon`;
 				if(icon){
 					if(icons.list[icon]){
 						this.open(icon);
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
 				}else if(page.wide)
-					this.open(Object.keys(icons.list)[0]);
+					this.open(page.params.get`edit`||Object.keys(icons.list)[0]);
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
@@ -759,9 +761,10 @@
 				if(page.storage){
 					this.input=C`input`;
 					this.reader=new FileReader();
-					this.import=this.menu.firstElementChild;
-					this.export=this.menu.querySelector`li+li`;
-					this.clear=this.menu.lastElementChild;
+					this.link=this.menu.firstElementChild;
+					this.import=this.link.nextElementSibling;
+					this.export=this.import.nextElementSibling;
+					this.clear=this.export.nextElementSibling;
 					this.input.accept=`.txt,text/plain`;
 					this.input.classList.add(`ln`,`pa`);
 					this.input.type=`file`;
@@ -802,6 +805,16 @@
 				this.dialog.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
+						case this.link:
+							let url=`${page.address}?`;
+							if(page.light)
+								url+=`font=light&`;
+							url+=`edit=${this.name}`;
+							for(let key in this.settings)
+								if(this.settings.hasOwnProperty(key))
+									url+=`&${key}=${this.settings[key]}`;
+							page.copy(url,`Link`);
+							break;
 						case this.import:
 							b.append(this.input);
 							this.menu.blur();
@@ -830,10 +843,14 @@
 					}
 				},0);
 				this.dialog.addEventListener(`keydown`,event=>{
-					if(this.dialog.open&&event.keyCode===27){
-						this.close(0);
-						event.preventDefault();
-						event.stopPropagation();
+					if(this.dialog.open){
+						if(event.keyCode===13)
+							(this.settings.format=this.inputs.format.value)!==`png`?this.downloadxml():this.downloadpng();
+						else if(event.keyCode===27){
+							this.close(0);
+							event.preventDefault();
+							event.stopPropagation();
+						}
 					}
 				},0);
 				this.dialog.addEventListener(`input`,event=>{
@@ -852,10 +869,10 @@
 								break;
 							case this.inputs.fill:
 								this.path.setAttribute(`fill`,`#${this.settings.fill=value.toLowerCase()}`);
-								this.figure.classList.toggle(`light`,(this.luminance=this.test(this.convert(value)))>=128&&this.settings.alpha<.31);
+								this.figure.classList.toggle(`light`,(this.luminance=this.test(this.convert(value)))>=128&&this.settings.alpha<31);
 								break;
 							case this.inputs.opacity:
-								this.path.setAttribute(`fill-opacity`,this.settings.opacity=value/100);
+								this.path.setAttribute(`fill-opacity`,(this.settings.opacity=parseInt(value))/100);
 								break;
 							case this.inputs.padding:
 								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.settings.size+2*(this.settings.padding=parseInt(value))}px`;
@@ -866,7 +883,7 @@
 								this.background.style.backgroundColor=`#${this.settings.colour=value}`;
 								break;
 							case this.inputs.alpha:
-								this.background.style.opacity=this.settings.alpha=value/100;
+								this.background.style.opacity=(this.settings.alpha=parseInt(value))/100;
 								this.figure.classList.toggle(`light`,this.luminance>=128&&value<31);
 								break;
 							case this.inputs.radius:
@@ -892,7 +909,7 @@
 				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
 				this.canvas.height=this.canvas.width=this.dimensions;
 				if(this.settings.alpha){
-					this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha})`;
+					this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha/100})`;
 					this.context.beginPath();
 					this.context.moveTo(this.settings.radius,0);
 					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
@@ -915,8 +932,10 @@
 			downloadxml(){
 				let 	padding=this.settings.padding/this.settings.size*24,
 					dimensions=24+2*padding,
+					opacity=this.settings.opacity/100,
+					alpha=this.settings.alpha/100,
 					xml,data,arc,radius,iscircle;
-				if(this.settings.alpha){
+				if(alpha){
 					radius=this.settings.radius/this.dimensions*dimensions;
 					iscircle=radius===dimensions/2;
 					data=`M${radius},0`;
@@ -933,25 +952,25 @@
 				switch(this.inputs.format.value){
 					case`svg`:
 						xml=`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="${this.dimensions}" viewBox="0 0 ${dimensions} ${dimensions}" width="${this.dimensions}" xmlns="http://www.w3.org/2000/svg">`;
-						if(this.settings.alpha){
+						if(alpha){
 							xml+=`<path fill="#${this.settings.colour}" `;
-							if(this.settings.alpha<1)
-								xml+=`fill-opacity="${this.settings.alpha}" `;
+							if(alpha<1)
+								xml+=`fill-opacity="${alpha}" `;
 							xml+=`d="${data}"/>`;
 						}
 						xml+=`<path fill="#${this.settings.fill}" `;
-						if(this.settings.opacity<1)
-							xml+=`fill-opacity="${this.settings.opacity}" `;
+						if(opacity<1)
+							xml+=`fill-opacity="${opacity}" `;
 						if(padding)
 							xml+=`transform="translate(${padding},${padding})" `;
 						xml+=`d="${this.data}"/></svg>`;
 						break;
 					case`xaml`:
 						xml=`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="${this.dimensions}" Height="${this.dimensions}">`;
-						if(this.settings.alpha){
+						if(alpha){
 							xml+=`<Path Fill="#${this.settings.fill}" `;
-							if(this.settings.opacity<1)
-								xml+=`Opacity="${this.settings.opacity}" `;
+							if(opacity<1)
+								xml+=`Opacity="${opacity}" `;
 							if(this.dimensions>dimensions)
 								xml+=`ScaleX="${this.dimensions/dimensions}" ScaleY="${this.dimensions/dimensions}" `;
 							xml+=`Data="${data}"/>`;
@@ -965,15 +984,15 @@
 						break;
 					case`xml`:
 						xml=`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="${this.dimensions}dp" android:width="${this.dimensions}dp" android:viewportWidth="24" android:viewportHeight="24">`;
-						if(this.settings.alpha){
+						if(alpha){
 							xml+=`<path android:fillColor="#${this.settings.colour}" `;
-							if(this.settings.alpha<1)
-								xml+=`android:fillOpacity="${this.settings.alpha}" `;
+							if(alpha<1)
+								xml+=`android:fillOpacity="${alpha}" `;
 							xml+=`android:pathData="${data}"/>`;
 						}
 						xml+=`<path android:fillColor="#${this.settings.fill}" `;
-						if(this.settings.opacity<1)
-							xml+=`android:fillOpacity="${this.settings.opacity}" `;
+						if(opacity<1)
+							xml+=`android:fillOpacity="${opacity}" `;
 						if(padding)
 							xml+=`android:translateX="${padding}" android:translateY="${padding}" `;
 						xml+=`android:pathData="${this.data}"/></vector>`;
@@ -984,10 +1003,8 @@
 			load(){
 				for(let key in this.inputs)
 					if(this.inputs.hasOwnProperty(key)&&key!=="name"){
-						if(page.storage){
-							this.inputs[key].value=page.storage[`png-${key}`]||this.inputs[key].getAttribute`value`||this.inputs[key].firstElementChild.getAttribute`value`;
-							this.inputs[key].dispatchEvent(new Event(`input`));
-						}else this.settings[key]=this.inputs[key].getAttribute`value`||this.inputs[key].firstElementChild.getAttribute`value`;
+						this.inputs[key].value=page.params.get(key)||page.storage&&page.storage[`png-${key}`]||this.inputs[key].getAttribute`value`||this.inputs[key].firstElementChild.getAttribute`value`;
+						this.inputs[key].dispatchEvent(new Event(`input`));
 					}
 			},
 			open(name){
