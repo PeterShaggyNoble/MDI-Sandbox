@@ -531,7 +531,11 @@ body.mdil>#content>section>article::before{
 	border-bottom:1px solid #e0e0e0;
 	height:49px;
 }
-#info>#actions>li:focus,#info>#actions>li:hover{
+#info>#actions>li:hover{
+	background:#eee;
+	color:#303f9f;
+}
+#info>#actions>li:focus{
 	background:#e0e0e0;
 	color:#303f9f;
 }
@@ -659,7 +663,7 @@ dialog>section>label{
 }
 dialog>section>label:last-of-type{
 	margin:0;
-	width:calc(100% - 216px);
+	width:88px;
 }
 dialog>section>input,dialog>section>select{
 	border-bottom:1px solid #bdbdbd;
@@ -672,7 +676,7 @@ dialog>section>input,dialog>section>select{
 }
 dialog>section>input:last-of-type{
 	margin:4px 0 0;
-	width:208px;
+	width:calc(100% - 96px);
 }
 dialog>section>input:invalid{
 	border-color:#f44336;
@@ -905,6 +909,9 @@ dialog>button:active{
 	}
 	#load{
 		top:56px;
+	}
+	dialog{
+		width:280px;
 	}
 }
 @media(max-width:699px){
