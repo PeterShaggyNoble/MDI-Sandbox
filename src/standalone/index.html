@@ -149,11 +149,8 @@
 		overscroll-behavior:contain;
 		padding:8px 0;
 		transition:left .225s cubic-bezier(.4,0,.2,1);
-		width:calc(100% - 56px);
-		max-width:320px;
 	}
 	body:not(.menu) #menu{
-		left:-320px;
 		transition-duration:.195s;
 	}
 	#menu>h3{
@@ -278,8 +275,6 @@
 	#filter{
 		background:rgba(255,255,255,.04) url('data:image/svg+xml;utf8,<svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>') 12px center no-repeat;
 		border-radius:4px;
-		margin:0 -48px 0 0;
-		padding-left:48px;
 		transition:background .225s cubic-bezier(.4,0,.2,1);
 		width:100%;
 		z-index:2;
@@ -296,7 +291,6 @@
 		appearance:none;
 	}
 	#clear{
-		border-radius:0 4px 4px 0;
 		font-size:24px;
 		transition:opacity .195s cubic-bezier(.4,0,.2,1);
 		z-index:3;
@@ -314,7 +308,6 @@
 	#content>figure{
 		border-radius:2px;
 		box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
-		margin:16px;
 	}
 	#content>figure>img{
 		border-radius:2px;
@@ -329,7 +322,6 @@
 		align-items:start;
 		grid-gap:8px;
 		grid-template-columns:repeat(auto-fill,minmax(96px,1fr));
-		margin:16px;
 		padding:0 8px 8px;
 	}
 	#content>section>h2{
@@ -340,7 +332,7 @@
 		grid-column:1/-1;
 		line-height:48px;
 		margin:0 -8px;
-		padding:0 72px 0 16px;;
+		padding:0 72px 0 16px;
 		top:64px;
 		z-index:2;
 	}
@@ -467,26 +459,22 @@
 		color:#303f9f;
 	}
 	#info{
-		width:calc(100% - 56px);
-		max-width:320px;
-		z-index:4;
+		border-radius:2px;
 	}
 	#info>header{
+		border-radius:2px 2px 0 0;
 		background:#303f9f;
 		color:#fff;
-		height:180px;
 		z-index:3;
 	}
 	#name{
 		font-size:18px;
-		line-height:64px;
-		padding:0 16px;
+		line-height:48px;
 	}
 	#preview{
 		align-items:center;
 		justify-content:center;
-		height:116px;
-		margin-top:-10px;
+		height:120px;
 	}
 	#preview>svg{
 		fill:#fff;
@@ -500,6 +488,7 @@
 	}
 	#actions{
 		background:#fff;
+		border-radius:0 0 2px 2px;
 		line-height:48px;
 		overscroll-behavior:contain;
 		padding:8px 0;
@@ -540,28 +529,65 @@
 	#actions>li:focus::before{
 		color:#303f9f;
 	}
+	#message{
+		background:#323232;
+		color:#fff;
+		line-height:48px;
+		padding:0 24px;
+		min-width:288px;
+		z-index:5;
+	}
+	#load{
+		background:#e0e0e0;
+		left:0;
+		padding:8px;
+		right:0;
+		transition:opacity .375s cubic-bezier(.4,0,.2,1);
+		z-index:8;
+	}
+	#load g{
+		animation:rotate 1.4s linear infinite;
+		transform-origin:center;
+	}
+	#load circle{
+		animation:spin 1.4s ease-in-out infinite,colors 5.6s ease-in-out infinite;
+		fill:none;
+		stroke:#303f9f;
+		stroke-dasharray:100;
+		stroke-dashoffset:0;
+		stroke-linecap:square;
+		stroke-width:4;
+		transform-origin:center;
+	}
+	@keyframes rotate{
+		0%{transform:rotate(0deg);}
+		100%{transform:rotate(270deg);}
+	}
+	@keyframes spin{
+		0%{stroke-dashoffset:100;}
+		50%{stroke-dashoffset:20;transform:rotate(135deg);}
+		100%{stroke-dashoffset:100;transform:rotate(450deg);}
+	}
+	@keyframes colors{
+		0%{stroke:#4285f4;}
+		25%{stroke:#de3e35;}
+		50%{stroke:#f7C223;}
+		75%{stroke:#1b9a59;}
+		100%{stroke:#4285f4;}
+	}
 	dialog{
 		background:#fff;
-		box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
 		border-radius:2px;
 		flex-wrap:wrap;
 		justify-content:flex-end;
 		left:50%;
-		top:50%;
-		transform:translate(-50%,-50%);
-		width:320px;
-	}
-	dialog,dialog::backdrop{
+		top:16px;
+		transform:translatex(-50%);
 		transition:opacity .225s cubic-bezier(.4,0,.2,1);
-	}
-	dialog::backdrop{
-		background:rgba(0,0,0,.54);
-	}
-	dialog.oz::backdrop{
-		opacity:0;
 	}
 	dialog>h2{
 		background:#303f9f;
+		border-radius:2px 2px 0 0;
 		color:#fff;
 		font-size:20px;
 		line-height:48px;
@@ -637,7 +663,7 @@
 	dialog>section{
 		overscroll-behavior:contain;
 		padding:8px;
-		max-height:calc(100vh - 432px);
+		max-height:calc(100vh - 436px);
 	}
 	dialog>section>label{
 		line-height:32px;
@@ -687,53 +713,15 @@
 	dialog>button:active{
 		background:rgba(0,0,0,.2);
 	}
-	#message{
-		background:#323232;
-		color:#fff;
-		line-height:48px;
-		padding:0 24px;
-		z-index:5;
-		min-width:288px;
+	@media(max-height:772px){
+		dialog{
+			top:16px;
+		}
 	}
-	#load{
-		background:#e0e0e0;
-		height:100%;
-		left:0;
-		padding:8px;
-		right:0;
-		top:64px;
-		transition:opacity .375s cubic-bezier(.4,0,.2,1);
-		z-index:8;
-	}
-	#load g{
-		animation:rotate 1.4s linear infinite;
-		transform-origin:center;
-	}
-	#load circle{
-		animation:spin 1.4s ease-in-out infinite,colors 5.6s ease-in-out infinite;
-		fill:none;
-		stroke:#303f9f;
-		stroke-dasharray:100;
-		stroke-dashoffset:0;
-		stroke-linecap:square;
-		stroke-width:4;
-		transform-origin:center;
-	}
-	@keyframes rotate{
-		0%{transform:rotate(0deg);}
-		100%{transform:rotate(270deg);}
-	}
-	@keyframes spin{
-		0%{stroke-dashoffset:100;}
-		50%{stroke-dashoffset:20;transform:rotate(135deg);}
-		100%{stroke-dashoffset:100;transform:rotate(450deg);}
-	}
-	@keyframes colors{
-		0%{stroke:#4285f4;}
-		25%{stroke:#de3e35;}
-		50%{stroke:#f7C223;}
-		75%{stroke:#1b9a59;}
-		100%{stroke:#4285f4;}
+	@media(min-height:773px){
+		dialog{
+			top:calc(50% - 386px);
+		}
 	}
 	@media(max-width:1499px){
 		#nav{
@@ -746,7 +734,6 @@
 		}
 		body.menu #nav{
 			background:rgba(0,0,0,.54);
-			transition-delay:0s;
 			transition-duration:.225s;
 		}
 		#navicon{
@@ -768,53 +755,57 @@
 			background:#e0e0e0;
 		}
 		#info{
-			box-shadow:0 -14px 28px rgba(0,0,0,.25),0 -10px 10px rgba(0,0,0,.22);
-			height:100%;
-			right:0;
-			top:0;
-			transition:right .225s cubic-bezier(.4,0,.2,1);
+			box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+			height:calc(100vh - 32px);
+			max-height:772px;
+			left:calc(50% - 160px);
+			transition:opacity .225s cubic-bezier(.4,0,.2,1);
+			z-index:4;
 		}
-		#info:not(.show){
-			box-shadow:0 -14px 28px rgba(0,0,0,0),0 -10px 10px rgba(0,0,0,0);
+		#info.oz{
 			pointer-events:none;
-			right:-320px;
-			transition-duration:.195s;
 		}
 		#info::before{
-			background:rgba(63,81,181,0);
+			background:rgba(0,0,0,.54);
 			content:"";
 			height:100%;
 			left:0;
 			position:fixed;
 			right:0;
 			top:0;
-			transition:background .195s cubic-bezier(.4,0,.2,1);
 			z-index:1;
 		}
-		#info.show::before{
-			background:rgba(0,0,0,.54);
-			transition-delay:0s;
-			transition-duration:.225s;
-		}
-		#info>header,#actions{
-			z-index:2;
-		}
 		#name{
-			padding:0 16px 0 0;
+			padding:0 56px 0 16px;
 		}
 		#name::before{
-			content:"\f054";
+			content:"\f156";
 			cursor:pointer;
-			display:inline-block;
 			font-family:mdi;
 			font-size:24px;
+			line-height:48px;
 			pointer-events:initial;
+			position:absolute;
+			right:0;
 			text-align:center;
-			vertical-align:top;
+			top:0;
 			width:48px;
 		}
 		#actions{
 			height:calc(100% - 180px);
+		}
+		dialog::backdrop{
+			display:none;
+		}
+		@media(max-height:772px){
+			#info{
+				top:16px;
+			}
+		}
+		@media(min-height:773px){
+			#info{
+				top:calc(50% - 386px);
+			}
 		}
 	}
 	@media(max-width:759px){
@@ -833,6 +824,7 @@
 			top:4px;
 		}
 		#menu{
+			width:calc(100% - 56px);
 			max-width:280px;
 		}
 		body:not(.menu) #menu{
@@ -860,19 +852,15 @@
 			top:56px;
 		}
 		#info{
+			left:calc(50% - 140px);
+			width:calc(100% - 56px);
 			max-width:280px;
-		}
-		#info:not(.show){
-			right:-280px;
 		}
 		#info>header{
 			height:158px;
 		}
-		#name{
-			line-height:56px;
-		}
 		#preview{
-			margin-top:-14px;
+			margin-top:-10px;
 		}
 		#actions{
 			height:calc(100% - 158px);
@@ -887,6 +875,7 @@
 			bottom:-48px;
 		}
 		#load{
+			height:calc(100% - 56px);
 			top:56px;
 		}
 		dialog{
@@ -915,15 +904,37 @@
 			left:12px;
 			top:8px;
 		}
+		#menu{
+			width:320px;
+		}
+		body:not(.menu) #menu{
+			left:-320px;
+		}
 		#filter,#clear{
 			height:48px;
 			line-height:48px;
 		}
+		#filter{
+			margin:0 -48px 0 0;
+			padding-left:48px;
+		}
 		#clear{
 			width:48px;
 		}
+		#content>figure,#content>section{
+			margin:16px;
+		}
 		#icons.filtered{
 			min-height:calc(100vh - 88px);
+		}
+		#info{
+			width:320px;
+		}
+		#info>header{
+			height:180px;
+		}
+		#preview{
+			margin-top:6px;
 		}
 		#message{
 			box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
@@ -933,6 +944,13 @@
 			transform:translatex(-50%);
 			transition:opacity .375s cubic-bezier(.4,0,.2,1);
 			max-width:568px;
+		}
+		#load{
+			height:calc(100% - 64px);
+			top:64px;
+		}
+		dialog{
+			width:320px;
 		}
 	}
 	@media(min-width:1500px){
@@ -957,13 +975,25 @@
 		}
 		#info{
 			box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
-			border-radius:2px;
 			right:16px;
 			top:80px;
 			z-index:2;
 		}
+		#name{
+			padding:0 16px;
+		}
 		#actions{
 			max-height:calc(100vh - 276px);
+		}
+		dialog{
+			box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+		}
+		dialog::backdrop{
+			background:rgba(0,0,0,.54);
+			transition:opacity .225s cubic-bezier(.4,0,.2,1);
+		}
+		dialog.oz::backdrop{
+			opacity:0;
 		}
 	}
 	.db{display:block;}
@@ -1032,9 +1062,9 @@
 		<p class="dn fwm">No icons matched your query
 	</section>
 </main>
-<aside class="oh pf" id="info">
+<aside class="oz pf" id="info">
 	<header class="pr">
-		<h2 class="oh pen toe wsnw" id="name"> </h2>
+		<h2 class="oh pen pr toe wsnw" id="name"> </h2>
 		<figure class="oh pr vat" id="preview"></figure>
 	</header>
 	<ul class="oa fwm pr toe wsnw" id="actions">
@@ -1058,8 +1088,8 @@
 	<p class="oz pen pf" id="message"> 
 	<figure class="cw pf tac" id="load"><svg height="56" viewBox="0 0 56 56" width="56"><title>Loading ...</title><g><circle cx="28" cy="28" r="16"/></g></svg></figure>
 </footer>
-<dialog class="df oh oz pen pf">
-	<h2 class="fwm">Edit PNG</h2>
+<dialog class="df oz pen pf">
+	<h2>Edit PNG</h2>
 	<figure class="pr"></figure>
 	<section class="oa">
 		<label class="cp dib fwm vam" for="png-size">Size: </label>
@@ -1575,11 +1605,13 @@
 				figure:$`preview`,
 				heading:$`name`,
 				init(){
+					if(page.wide)
+						this.aside.classList.remove`oz`;
 					this.figure.append(this.svg=N`svg`);
 					this.svg.classList.add`pa`;
-					this.svg.setAttribute(`height`,120);
+					this.svg.setAttribute(`height`,112);
 					this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-					this.svg.setAttribute(`width`,120);
+					this.svg.setAttribute(`width`,112);
 					this.svg.append(this.path=N`path`);
 					let icon=page.params.get`icon`||page.params.get`edit`;
 					if(icon){
@@ -1661,7 +1693,7 @@
 					},page.wide&&195);
 				},
 				toggle(){
-					this.aside.classList.toggle(`show`,this.show=!this.show);
+					this.aside.classList.toggle(`oz`,!(this.show=!this.show));
 					if(this.show)
 						b.addEventListener(`keydown`,this.close=event=>{
 							if(event.keyCode===27&&!editor.dialog.open){

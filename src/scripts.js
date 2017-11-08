@@ -487,11 +487,13 @@
 			figure:$`preview`,
 			heading:$`name`,
 			init(){
+				if(page.wide)
+					this.aside.classList.remove`oz`;
 				this.figure.append(this.svg=N`svg`);
 				this.svg.classList.add`pa`;
-				this.svg.setAttribute(`height`,120);
+				this.svg.setAttribute(`height`,112);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.svg.setAttribute(`width`,120);
+				this.svg.setAttribute(`width`,112);
 				this.svg.append(this.path=N`path`);
 				let icon=page.params.get`icon`||page.params.get`edit`;
 				if(icon){
@@ -573,7 +575,7 @@
 				},page.wide&&195);
 			},
 			toggle(){
-				this.aside.classList.toggle(`show`,this.show=!this.show);
+				this.aside.classList.toggle(`oz`,!(this.show=!this.show));
 				if(this.show)
 					b.addEventListener(`keydown`,this.close=event=>{
 						if(event.keyCode===27&&!editor.dialog.open){
@@ -1017,7 +1019,7 @@
 			b.append(script);
 			script.addEventListener(`load`,resolve,0);
 		});
-		window.dataLayer=w.dataLayer||[];
+		window.dataLayer=window.dataLayer||[];
 		let gtag=function(){window.dataLayer.push(arguments);};
 		gtag(`js`,new Date());
 		gtag(`config`,`UA-109147935-1`);
