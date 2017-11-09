@@ -77,9 +77,9 @@
 							break;
 						default:
 							switch(target.nodeName.toLowerCase()){
-								case`h2`:
-									if(parent!==this.section&&(!page.storage||parent!==categories.list.favourites.section))
-										page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`);
+								case`p`:
+									if(parent.nodeName.toLowerCase()===`header`)
+										page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.parentNode.id}`,`Link`);
 									break;
 								case`article`:
 									if(current!==target){
@@ -146,15 +146,12 @@
 				this.switch.dataset.icon=page.light?`\uf335`:`\uf6e8`;
 				this.switch.tabIndex=-1;
 				this.switch.append(T(`View ${page.light?`Regular`:`Light`} Icons`));
-				/*this.sections.before(this.switch);*/
+				/*this.menu.prepend(this.switch);*/
 				let section=page.params.get`section`;
-				if(section){
-					categories.list[section]&&categories.list[section].section?section=categories.list[section].section:section=page.main.querySelector(`#${section}`);
-					if(section)
-						setTimeout(_=>
-							this.goto(section)
-						,225);
-				}
+				if(section&&(section=$(section)))
+					setTimeout(_=>
+						this.goto(section)
+					,225);
 				this.nav.addEventListener(`click`,event=>{
 					let target=event.target;
 					target.blur();
@@ -272,7 +269,7 @@
 			clearall:menu.sections.lastElementChild,
 			error:page.section.querySelector`p`,
 			input:$`filter`,
-			heading:page.section.firstElementChild.firstChild,
+			heading:page.section.querySelector`h2`,
 			init(){
 				this.button=this.input.nextElementSibling;
 				if(this.categories=page.params.get`categories`){
@@ -398,8 +395,7 @@
 					this.load(event)
 				,0);
 				this.section=categories.list.favourites.section;
-				this.heading=this.section.firstElementChild;
-				this.heading.after(this.menu);
+				this.section.firstElementChild.append(this.menu);
 				this.articles=this.section.getElementsByTagName`article`;
 				this.menu.addEventListener(`click`,event=>{
 					switch(event.target){
@@ -625,16 +621,22 @@
 		},
 	/** CATEGORIES **/
 		categories={
+			header:C`header`,
 			heading:C`h2`,
+			error:C`p`,
 			item:C`li`,
-			paragraph:C`p`,
+			link:C`p`,
 			section:C`section`,
 			init(){
 				this.section.classList.add(`dg`,`pr`);
-				this.heading.classList.add(`oh`,`ps`);
+				this.header.classList.add`ps`;
+				this.heading.classList.add(`oh`,`toe`,`wsnw`);
 				this.heading.append(T``);
-				this.paragraph.classList.add`fwm`;
-				this.paragraph.append(T`No icons available in this section.`);
+				this.link.classList.add(`cp`,`oh`,`pa`,`wsnw`);
+				this.link.dataset.icon=`\uf337`;
+				this.link.append(T`Copy Link`);
+				this.error.classList.add`fwm`;
+				this.error.append(T`No icons available in this section.`);
 				this.item.classList.add(`cp`,`oh`);
 				this.item.tabIndex=-1;
 				this.item.append(T``);
@@ -653,16 +655,18 @@
 			add(key){
 				let 	category=this.list[key],
 					section=this.section.cloneNode(0),
+					header=this.header.cloneNode(1),
 					heading=this.heading.cloneNode(1),
 					item=this.item.cloneNode(1),
 					name=category.name.replace(`{v}`,version);
 				if(category.section){
-					section.dataset.name=key;
-					if(key===`favourites`)
-						section.id=`favourites`;
+					section.id=key;
 					heading.firstChild.nodeValue=name;
-					section.append(heading);
-					section.append(this.paragraph.cloneNode(1));
+					header.append(heading);
+					if(key!==`favourites`)
+						header.append(this.link.cloneNode(1));
+					section.append(header);
+					section.append(this.error.cloneNode(1));
 					page.section.before(category.section=section);
 				}else category.count=icons.array.filter(item=>
 					item.path[page.font]&&item.categories&&item.categories.includes(key)

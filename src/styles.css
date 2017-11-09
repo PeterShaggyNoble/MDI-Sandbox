@@ -362,28 +362,30 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 	grid-template-columns:repeat(auto-fill,minmax(96px,1fr));
 	padding:0 8px 8px;
 }
-#content>section>h2{
+#content>section>header{
 	background:#303f9f;
 	border-radius:2px 2px 0 0;
-	color:#fff;
-	font-size:20px;
 	grid-column:1/-1;
-	line-height:48px;
 	margin:0 -8px;
 	padding:0 72px 0 16px;
 	top:64px;
 	z-index:2;
 }
-#content>section:not([id])>h2::before{
-	content:"\f337";
-	cursor:pointer;
-	font-family:mdi;
+#content>section>header>h2{
+	color:#fff;
+	font-size:20px;
+	line-height:48px;
+}
+#content>section>header>p{
+	color:#fff;
 	font-size:24px;
 	line-height:48px;
-	position:absolute;
 	right:8px;
-	text-align:right;
 	top:0;
+	width:48px;
+}
+#content>section>header>p::before{
+	text-align:right;
 	width:48px;
 }
 #content>section>article{
@@ -913,7 +915,7 @@ dialog>button:active{
 	#icons.filtered{
 		min-height:calc(100vh - 72px);
 	}
-	#content>section>h2{
+	#content>section>header{
 		top:56px;
 	}
 	#info{
