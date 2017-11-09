@@ -520,6 +520,7 @@ body.mdil>#content>section>article::before{
 #name{
 	font-size:18px;
 	line-height:48px;
+	transition:opacity .195s cubic-bezier(.4,0,.2,1);
 }
 /*  preview */
 #preview{
@@ -532,9 +533,6 @@ body.mdil>#content>section>article::before{
 	left:50%;
 	top:50%;
 	transform:translate(-50%,-50%);
-	transition:height .195s cubic-bezier(.4,0,.2,1),width .195s cubic-bezier(.4,0,.2,1);
-}
-#preview>svg>path{
 	transition:opacity .195s cubic-bezier(.4,0,.2,1);
 }
 /*  actions  */

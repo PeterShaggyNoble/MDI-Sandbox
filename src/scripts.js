@@ -45,8 +45,7 @@
 				categories.init();
 				version=+version.replace(/\./g,``);
 				contributors.init();
-				if(this.storage)
-					favourites.init();
+				this.storage&&favourites.init();
 				icons.init();
 				menu.init();
 				setTimeout(_=>
@@ -78,13 +77,11 @@
 						default:
 							switch(target.nodeName.toLowerCase()){
 								case`p`:
-									if(parent.nodeName.toLowerCase()===`header`)
-										page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.parentNode.id}`,`Link`);
+									parent.nodeName.toLowerCase()===`header`&&page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.parentNode.id}`,`Link`);
 									break;
 								case`article`:
 									if(current!==target){
-										if(current)
-											current.classList.remove`active`;
+										current&&current.classList.remove`active`;
 										info.open(target.lastChild.nodeValue);
 										target.classList.add`active`;
 									}
@@ -119,8 +116,7 @@
 				d.execCommand`copy`;
 				this.textarea.value=``;
 				this.textarea.remove();
-				if(message)
-					this.alert(`${message} copied to clipboard.`);
+				message&&this.alert(`${message} copied to clipboard.`);
 			},
 			download(data,name){
 				this.anchor.href=data;
@@ -148,17 +144,15 @@
 				this.switch.append(T(`View ${page.light?`Regular`:`Light`} Icons`));
 				/*this.menu.prepend(this.switch);*/
 				let section=page.params.get`section`;
-				if(section&&(section=$(section)))
-					setTimeout(_=>
-						this.goto(section)
-					,225);
+				section&&(section=$(section))&&setTimeout(_=>
+					this.goto(section)
+				,225);
 				this.nav.addEventListener(`click`,event=>{
 					let target=event.target;
 					target.blur();
 					switch(target){
 						case this.nav:
-							if(!page.wide)
-								this.toggle();
+							!page.wide&&this.toggle();
 							break;
 						case this.navicon:
 							this.toggle();
@@ -168,13 +162,11 @@
 							break;
 						case this.highlight:
 							b.classList.toggle`highlight`;
-							if(!page.wide)
-								this.toggle();
+							!page.wide&&this.toggle();
 							break;
 						case filter.clearall:
 							filter.clear();
-							if(!page.wide)
-								this.toggle();
+							!page.wide&&this.toggle();
 							break;
 						case this.categories.previousElementSibling:
 						case this.contributors.previousElementSibling:
@@ -188,8 +180,7 @@
 									case this.sections:
 										if(category=categories.list[category].section){
 											this.goto(category);
-											if(!page.wide)
-												this.toggle();
+											!page.wide&&this.toggle();
 										}
 										break;
 									case this.categories:
@@ -244,19 +235,16 @@
 			},
 			toggle(){
 				b.classList.toggle(`menu`,this.show=!this.show);
-				if(!page.wide)
-					this.show?b.addEventListener(`keydown`,this.functions.close=event=>{
-						if(event.keyCode===27)
-							this.toggle();
-					},0):b.removeEventListener(`keydown`,this.functions.close);
+				!page.wide&&this.show?b.addEventListener(`keydown`,this.functions.close=event=>
+					event.keyCode===27&&this.toggle()
+				,0):b.removeEventListener(`keydown`,this.functions.close);
 			},
 			touchend(clientx){
 				d.removeEventListener(`touchmove`,this.functions.move);
 				d.removeEventListener(`touchend`,this.functions.end);
 				this.nav.removeAttribute`style`;
 				this.menu.removeAttribute`style`;
-				if(clientx>=this.width/2)
-					this.toggle();
+				clientx>=this.width/2&&this.toggle();
 				b.classList.remove`dragging`;
 			},
 			touchstart(){
@@ -302,8 +290,7 @@
 				},0);
 			},
 			apply(){
-				if(h.scrollTop<page.section.offsetTop-page.header.offsetHeight)
-					menu.goto(page.section);
+				h.scrollTop<page.section.offsetTop-page.header.offsetHeight&&menu.goto(page.section);
 				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
 				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
@@ -387,8 +374,7 @@
 				this.input.classList.add(`ln`,`pa`);
 				this.input.type=`file`;
 				this.input.addEventListener(`change`,_=>{
-					if(this.input.files[0].type===`text/plain`)
-						this.reader.readAsText(this.input.files[0]);
+					this.input.files[0].type===`text/plain`&&this.reader.readAsText(this.input.files[0]);
 					this.input.remove();
 				},0);
 				this.reader.addEventListener(`load`,event=>
@@ -456,8 +442,7 @@
 							}
 						}
 					});
-					if(this.articles.length>1)
-						this.sort();
+					this.articles.length>1&&this.sort();
 				}catch(error){
 					console.log(error);
 					msg=`failed`;
@@ -479,8 +464,7 @@
 					page.storage.setItem(`mdi-${name}`,1);
 					this.section.append(this.icon.articles.favourite=(this.icon.articles.main||this.icon.articles.retired).cloneNode(1));
 					this.icon.articles.favourite.classList.remove`active`;
-					if(this.articles.length>1)
-						this.sort();
+					this.articles.length>1&&this.sort();
 				}
 				page.alert(`${name} ${msg} favourites.`);
 			},
@@ -514,8 +498,7 @@
 			figure:$`preview`,
 			heading:$`name`,
 			init(){
-				if(page.wide)
-					this.aside.classList.remove`oz`;
+				page.wide&&this.aside.classList.remove`oz`;
 				this.heading.append(T``);
 				this.figure.append(this.svg=N`svg`);
 				this.svg.classList.add`pa`;
@@ -529,15 +512,13 @@
 						this.open(icon);
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
-				}else if(page.wide)
-					this.open(page.params.get`edit`||Object.keys(icons.list)[0]);
+				}else page.wide&&this.open(page.params.get`edit`||Object.keys(icons.list)[0]);
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
 						case this.aside:
 						case this.heading:
-							if(!page.wide)
-								this.toggle();
+							!page.wide&&this.toggle();
 							break;
 						case this.actions.favourite:
 							favourites.set(this.name);
@@ -554,8 +535,7 @@
 						default:
 							if(this.type=target.dataset.type)
 								this.download();
-							else if(target.parentNode===this.actions.link.parentNode)
-								this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
+							else target.parentNode===this.actions.link.parentNode&&this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
 							break;
 					}
 				},0);
@@ -570,7 +550,7 @@
 				:page.alert`Unknown icon.`;
 			},
 			open(name){
-				this.icon=icons.list[this.name=this.heading.firstChild.nodeValue=name];
+				this.icon=icons.list[this.name=name];
 				this.data=this.actions.path.dataset.copy=this.icon.path[page.font];
 				let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 				this.aside.dataset.nocopy=(!(this.copy=!!codepoint)).toString();
@@ -595,11 +575,17 @@
 				if(page.light)
 					this.actions.url.dataset.copy+=`font=light&`;
 				this.actions.url.dataset.copy+=`icon=${name}`;
-				page.wide?this.path.classList.add`oz`:this.toggle();
+				if(page.wide){
+					this.heading.classList.add`oz`;
+					this.svg.classList.add`oz`;
+				}else this.toggle();
 				setTimeout(_=>{
+					this.heading.firstChild.nodeValue=this.name;
 					this.path.setAttribute(`d`,this.data);
-					if(page.wide)
-						this.path.classList.remove`oz`;
+					if(page.wide){
+						this.heading.classList.remove`oz`;
+						this.svg.classList.remove`oz`;
+					}
 				},page.wide&&195);
 			},
 			toggle(){
@@ -613,8 +599,7 @@
 					},0);
 				else{
 					let current=page.main.querySelector`article.active`;
-					if(current)
-						current.classList.remove`active`;
+					current&&current.classList.remove`active`;
 					b.removeEventListener(`keydown`,this.close);
 				}
 			}
@@ -640,8 +625,7 @@
 				this.item.classList.add(`cp`,`oh`);
 				this.item.tabIndex=-1;
 				this.item.append(T``);
-				if(!page.storage)
-					delete this.list.favourites;
+				!page.storage&&delete this.list.favourites;
 				if(page.light){
 					delete this.list.new;
 					delete this.list.updated;
@@ -649,8 +633,7 @@
 					delete this.list.retired;
 				}
 				for(let key in this.list)
-					if(this.list.hasOwnProperty(key))
-						this.add(key);
+					this.list.hasOwnProperty(key)&&this.add(key);
 			},
 			add(key){
 				let 	category=this.list[key],
@@ -663,8 +646,7 @@
 					section.id=key;
 					heading.firstChild.nodeValue=name;
 					header.append(heading);
-					if(key!==`favourites`)
-						header.append(this.link.cloneNode(1));
+					key!==`favourites`&&header.append(this.link.cloneNode(1));
 					section.append(header);
 					section.append(this.error.cloneNode(1));
 					page.section.before(category.section=section);
@@ -692,8 +674,7 @@
 				this.img.classList.add(`pen`,`vam`);
 				this.img.height=this.img.width=24;
 				for(let key in this.list)
-					if(this.list.hasOwnProperty(key))
-						this.add(key);
+					this.list.hasOwnProperty(key)&&this.add(key);
 			},
 			add(key){
 				let 	contributor=this.list[key],
@@ -728,8 +709,7 @@
 				this.svg.setAttribute(`width`,24);
 				this.svg.append(N`path`);
 				for(let key in this.list)
-					if(this.list.hasOwnProperty(key))
-						this.add(key);
+					this.list.hasOwnProperty(key)&&this.add(key);
 			},
 			add(key){
 				let 	icon=this.list[key],
@@ -739,18 +719,16 @@
 					keywords=new Set(key.split`-`),
 					category;
 				if(icon.path[page.font]){
-					if(icon.aliases)
-						icon.aliases.forEach(alias=>
-							alias.split`-`.forEach(word=>
-								keywords.add(word)
-							)
-						);
-					if(icon.keywords)
-						icon.keywords.forEach(word=>
+					icon.aliases&&icon.aliases.forEach(alias=>
+						alias.split`-`.forEach(word=>
 							keywords.add(word)
-						);
+						)
+					);
+					icon.keywords&&icon.keywords.forEach(word=>
+						keywords.add(word)
+					);
 					icon.keywords=[...keywords].sort();
-					if(codepoint)
+					if(codepoint&&(!icon.updated||icon.updated[page.font]!=="{next}"))
 						article.dataset.icon=String.fromCharCode(`0x${codepoint}`);
 					else{
 						svg.firstElementChild.setAttribute(`d`,icon.path[page.font]);
@@ -759,18 +737,12 @@
 					article.classList.toggle(`community`,icon.contributor.regular!=="google");
 					article.lastChild.nodeValue=key;
 					icon.articles={};
-					if((category=categories.list.favourites)&&page.storage[`mdi-${key}`])
-						category.section.append(icon.articles.favourite=article.cloneNode(1));
-					if((category=categories.list.new)&&icon.added&&icon.added[page.font]===version)
-						category.section.append(icon.articles.new=article.cloneNode(1));
-					if((category=categories.list.updated)&&icon.updated&&icon.updated[page.font]===version)
-						category.section.append(icon.articles.updated=article.cloneNode(1));
-					if((category=categories.list.soon)&&icon.added&&icon.added[page.font]===`{next}`)
-						category.section.append(icon.articles.soon=article.cloneNode(1));
-					if((category=categories.list.retired)&&icon.retired)
-						category.section.append(icon.articles.retired=article.cloneNode(1));
-					if(!icon.retired||icon.retired==="{soon}")
-						page.section.append(icon.articles.main=article);
+					(category=categories.list.favourites)&&page.storage[`mdi-${key}`]&&category.section.append(icon.articles.favourite=article.cloneNode(1));
+					(category=categories.list.new)&&icon.added&&icon.added[page.font]===version&&category.section.append(icon.articles.new=article.cloneNode(1));
+					(category=categories.list.updated)&&icon.updated&&icon.updated[page.font]===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
+					(category=categories.list.soon)&&icon.added&&icon.added[page.font]===`{next}`&&category.section.append(icon.articles.soon=article.cloneNode(1));
+					(category=categories.list.retired)&&icon.retired&&category.section.append(icon.articles.retired=article.cloneNode(1));
+					(!icon.retired||icon.retired==="{soon}")&&page.section.append(icon.articles.main=article);
 				}else delete this.list[key];
 			}
 		},
@@ -805,8 +777,7 @@
 					this.input.classList.add(`ln`,`pa`);
 					this.input.type=`file`;
 					this.input.addEventListener(`change`,_=>{
-						if(this.input.files[0].type===`text/plain`)
-							this.reader.readAsText(this.input.files[0]);
+						this.input.files[0].type===`text/plain`&&this.reader.readAsText(this.input.files[0]);
 						this.input.remove();
 					},0);
 					this.reader.addEventListener(`load`,event=>{
@@ -815,8 +786,7 @@
 							atob(event.target.result).split`,`.forEach(entry=>{
 								entry=entry.split`:`;
 								let key=entry[0];
-								if(this.inputs[key.substr(4)])
-									page.storage.setItem(key,entry[1]);
+								this.inputs[key.substr(4)]&&page.storage.setItem(key,entry[1]);
 							});
 						}catch(error){
 							console.log(error);
@@ -862,9 +832,7 @@
 							break;
 						case this.clear:
 							for(let key in page.storage)
-								if(page.storage.hasOwnProperty(key))
-									if(key.startsWith`png-`)
-										page.storage.removeItem(key);
+								page.storage.hasOwnProperty(key)&&key.startsWith`png-`&&page.storage.removeItem(key);
 							this.menu.blur();
 							this.load();
 							this.inputs.name.value=this.name;
@@ -926,14 +894,12 @@
 								this.background.style.borderRadius=`${this.settings.radius=parseInt(value)}px`;
 								break;
 						}
-						if(page.storage&&target!==this.inputs.name)
-							page.storage.setItem(target.id,value);
+						page.storage&&target!==this.inputs.name&&page.storage.setItem(target.id,value);
 					}
 				},1);
 				this.load();
 				let name=page.params.get`edit`;
-				if(name&&icons.list[name])
-					this.open(name);
+				name&&icons.list[name]&&this.open(name);
 			},
 			close(value){
 				b.removeEventListener(`keydown`,this.fn);
