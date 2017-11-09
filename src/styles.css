@@ -151,10 +151,25 @@ body{
 	line-height:48px;
 	overscroll-behavior:contain;
 	padding:8px 0;
-	transition:left .225s cubic-bezier(.4,0,.2,1);
+	transition:left .195s cubic-bezier(.4,0,.2,1);
 }
-body:not(.menu) #menu{
-	transition-duration:.195s;
+body.menu #menu{
+	transition-duration:.225s;
+}
+#highlight::after{
+	color:#303f9f;
+	content:"\f132";
+	font-family:mdi;
+	font-size:24px;
+	left:16px;
+	opacity:0;
+	position:absolute;
+	top:0;
+	transition:opacity .195s cubic-bezier(.4,0,.2,1);
+	width:24px;
+}
+body.highlight #highlight::after{
+	opacity:1;
 }
 /*  lists  */
 #menu>h3{
@@ -176,8 +191,13 @@ body:not(.menu) #menu{
 #menu>h3.open::before{
 	transform:rotate(90deg);
 }
-#menu>p,#menu>ol{
+#menu>ol{
 	border-bottom:1px solid #bdbdbd;
+}
+#sections{
+	border-top:1px solid #bdbdbd;
+	margin-top:8px;
+	padding-top:8px;
 }
 #menu>p,#menu>ol>li{
 	height:48px;
@@ -186,8 +206,13 @@ body:not(.menu) #menu{
 	transition-property:background,color,height,opacity;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
 }
+#menu>ol>li:last-child{
+	margin-bottom:8px;
+	transition-property:background,color,height,margin,opacity;
+}
 #menu>h3:not(.open)+ol>li{
 	height:0;
+	margin:0;
 	opacity:0;
 }
 #menu>p:focus,#menu>p:hover,#menu>ol>li:focus,#menu>ol>li:hover{
@@ -254,6 +279,9 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 	transition-duration:inherit;
 }
 /*  links  */
+#links{
+	padding-top:8px;
+}
 #links a{
 	padding:0 16px;
 	transition:background .225s cubic-bezier(.4,0,.2,1),color .225s cubic-bezier(.4,0,.2,1);
@@ -361,7 +389,7 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 #content>section>article{
 	background:#fff;
 	border-radius:2px;
-	color:rgba(0,0,0,.54);
+	color:#757575;
 	font-size:12px;
 	height:96px;
 	line-height:16px;
@@ -373,8 +401,14 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 }
 #content>section>article:hover{
 	background:rgba(0,0,0,.12);
+	color:#757575;
 }
-#content>section>article.active{
+body.mdi.highlight>#content>section>article.community{
+	background:#e8eaf6;
+	color:#303f9f;
+}
+#content>section>article.active,
+body.mdi.highlight>#content>section>article.active{
 	background:#303f9f;
 	color:#fff;
 }
@@ -404,7 +438,7 @@ body.mdil>#content>section>article::before{
 	display:none;
 }
 
-/** EXPORT MENUS **/
+/** SECTION MENUS **/
 .export{
 	box-shadow:0 1px 3px rgba(0,0,0,0),0 1px 2px rgba(0,0,0,0);
 	border-radius:2px;

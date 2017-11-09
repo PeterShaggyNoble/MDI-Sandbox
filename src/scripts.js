@@ -112,6 +112,7 @@
 			show:0,
 			categories:$`categories`,
 			contributors:$`contributors`,
+			highlight:$`highlight`,
 			menu:$`menu`,
 			nav:$`nav`,
 			navicon:$`navicon`,
@@ -144,6 +145,11 @@
 							break;
 						case this.switch:
 							location.href=page.light?`./`:`?font=light`;
+							break;
+						case this.highlight:
+							b.classList.toggle`highlight`;
+							if(!page.wide)
+								this.toggle();
 							break;
 						case filter.clearall:
 							filter.clear();
@@ -722,6 +728,7 @@
 						svg.firstElementChild.setAttribute(`d`,icon.path[page.font]);
 						article.prepend(svg);
 					}
+					article.classList.toggle(`community`,icon.contributor.regular!=="google");
 					article.lastChild.nodeValue=key;
 					icon.articles={};
 					if((category=categories.list.favourites)&&page.storage[`mdi-${key}`])
