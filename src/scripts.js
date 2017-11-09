@@ -54,21 +54,41 @@
 				,225);
 				info.init();
 				editor.init();
+				this.options=this.section.querySelector`ul`,
+				this.actions={
+					link:this.options.firstElementChild,
+					html:this.options.lastElementChild
+				};
+				this.actions.svg=this.actions.link.nextElementSibling;
 				this.main.addEventListener(`click`,event=>{
 					let 	target=event.target,
 						parent=target.parentNode,
 						current=this.main.querySelector`article.active`;
-					switch(target.nodeName.toLowerCase()){
-						case`h2`:
-							if(!page.storage||parent!==categories.list.favourites.section)
-								parent!==this.section?page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`):page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
+					switch(target){
+						case this.actions.link:
+							page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
+							this.options.blur();
 							break;
-						case`article`:
-							if(current!==target){
-								if(current)
-									current.classList.remove`active`;
-								info.open(target.lastChild.nodeValue);
-								target.classList.add`active`;
+						case this.actions.svg:
+						case this.actions.html:
+							let svg=target===this.actions.svg;
+							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" iconSize="24">`}<svg><defs>${filter.filtered?this.build():this.package||(this.package=this.build())}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
+							this.options.blur();
+							break;
+						default:
+							switch(target.nodeName.toLowerCase()){
+								case`h2`:
+									if(parent!==this.section&&(!page.storage||parent!==categories.list.favourites.section))
+										page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.dataset.name}`,`Link`);
+									break;
+								case`article`:
+									if(current!==target){
+										if(current)
+											current.classList.remove`active`;
+										info.open(target.lastChild.nodeValue);
+										target.classList.add`active`;
+									}
+									break;
 							}
 							break;
 					}
@@ -89,11 +109,14 @@
 					this.message.classList.add`oz`
 				,5e3);
 			},
+			build:_=>Object.entries(icons.list).map(([key,icon],path)=>
+				icon.articles.main&&!icon.articles.main.classList.contains`dn`&&(path=icon.path[page.font])?`<g id="${key}"><path d="${path}"/></g>`:``
+			).join``,
 			copy(string,message){
 				editor.dialog.append(this.textarea);
 				this.textarea.value=string;
 				this.textarea.select();
-				console.log(d.execCommand`copy`);
+				d.execCommand`copy`;
 				this.textarea.value=``;
 				this.textarea.remove();
 				if(message)
@@ -292,21 +315,23 @@
 				for(let key in icons.list)
 					if(icons.list.hasOwnProperty(key)){
 						icon=icons.list[key];
-						check=1;
-						if(this.categories.size)
-							check=icon.categories&&icon.categories.some(category=>
-								this.categories.has(category)
-							);
-						if(this.contributors.size)
-							check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
-						if(words)
-							check=check&&words.every(word=>
-								icon.keywords.some(item=>
-									item.startsWith(word)
-								)
-							);
-						icon.articles.main.classList.toggle(`dn`,!check);
-						match=match||check;
+						if(icon.articles.main){
+							check=1;
+							if(this.categories.size)
+								check=icon.categories&&icon.categories.some(category=>
+									this.categories.has(category)
+								);
+							if(this.contributors.size)
+								check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
+							if(words)
+								check=check&&words.every(word=>
+									icon.keywords.some(item=>
+										item.startsWith(word)
+									)
+								);
+							icon.articles.main.classList.toggle(`dn`,!check);
+							match+=check;
+						}
 					}
 				this.error.classList.toggle(`dn`,match);
 				this.clearall.classList.toggle(`clear`,this.filtered);
@@ -352,7 +377,7 @@
 			input:C`input`,
 			item:C`li`,
 			init(){
-				this.menu.classList.add(`export`,`oh`,`pa`);
+				this.menu.classList.add(`options`,`oh`,`pa`);
 				this.menu.tabIndex=-1;
 				this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
 				this.item.append(T``);
@@ -374,17 +399,15 @@
 				,0);
 				this.section=categories.list.favourites.section;
 				this.heading=this.section.firstElementChild;
-				this.heading.nextElementSibling.before(this.menu);
+				this.heading.after(this.menu);
 				this.articles=this.section.getElementsByTagName`article`;
 				this.menu.addEventListener(`click`,event=>{
 					switch(event.target){
 						case this.actions.svg:
-							page.copy(`text`,`Link`);
-							page.download(`data:text/svg+xml;utf8,<svg><defs>${this.build()}</defs></svg>`,`mdi-favourites.svg`);
-							break;
 						case this.actions.html:
+							let svg=target===this.actions.svg;
+							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" iconSize="24">`}<svg><defs>${this.build()}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`mdi-favourites.${svg?`svg`:`html`}`);
 							this.menu.blur();
-							page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" iconSize="24"><svg><defs>${this.build()}</defs></svg></iron-iconset-svg>`,`mdi-favourites.html`);
 							break;
 						case this.actions.import:
 							b.append(this.input);
@@ -427,9 +450,9 @@
 						let name=item.substr(4);
 						this.icon=icons.list[name];
 						if(this.icon){
-							if(this.icon.articles.main&&!this.icon.articles.favourite){
+							if(!this.icon.articles.favourite){
 								page.storage.setItem(item,1);
-								this.section.append(this.icon.articles.favourite=this.icon.articles.main.cloneNode(1));
+								this.section.append(this.icon.articles.favourite=(this.icon.articles.main||this.icon.articles.retired).cloneNode(1));
 								if(info.name===name){
 									info.actions.favourite.dataset.icon=`\uf0c6`;
 									info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
@@ -458,7 +481,7 @@
 					msg=`removed from`;
 				}else{
 					page.storage.setItem(`mdi-${name}`,1);
-					this.section.append(this.icon.articles.favourite=this.icon.articles.main.cloneNode(1));
+					this.section.append(this.icon.articles.favourite=(this.icon.articles.main||this.icon.articles.retired).cloneNode(1));
 					this.icon.articles.favourite.classList.remove`active`;
 					if(this.articles.length>1)
 						this.sort();
@@ -497,6 +520,7 @@
 			init(){
 				if(page.wide)
 					this.aside.classList.remove`oz`;
+				this.heading.append(T``);
 				this.figure.append(this.svg=N`svg`);
 				this.svg.classList.add`pa`;
 				this.svg.setAttribute(`height`,112);
@@ -741,7 +765,8 @@
 						category.section.append(icon.articles.soon=article.cloneNode(1));
 					if((category=categories.list.retired)&&icon.retired)
 						category.section.append(icon.articles.retired=article.cloneNode(1));
-					page.section.append(icon.articles.main=article);
+					if(!icon.retired||icon.retired==="{soon}")
+						page.section.append(icon.articles.main=article);
 				}else delete this.list[key];
 			}
 		},

@@ -374,7 +374,7 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 	top:64px;
 	z-index:2;
 }
-#content>section:not(#favourites)>h2::before{
+#content>section:not([id])>h2::before{
 	content:"\f337";
 	cursor:pointer;
 	font-family:mdi;
@@ -439,7 +439,7 @@ body.mdil>#content>section>article::before{
 }
 
 /** SECTION MENUS **/
-.export{
+.options{
 	box-shadow:0 1px 3px rgba(0,0,0,0),0 1px 2px rgba(0,0,0,0);
 	border-radius:2px;
 	height:48px;
@@ -449,12 +449,12 @@ body.mdil>#content>section>article::before{
 	width:48px;
 	z-index:3;
 }
-.export:focus{
+.options:focus{
 	box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
 	height:auto;
 	width:auto;
 }
-.export::before{
+.options::before{
 	color:#fff;
 	content:"\f1d9";
 	cursor:pointer;
@@ -468,7 +468,7 @@ body.mdil>#content>section>article::before{
 	width:48px;
 	z-index:1;
 }
-.export>li{
+.options>li{
 	background:#fff;
 	line-height:48px;
 	opacity:0;
@@ -478,22 +478,22 @@ body.mdil>#content>section>article::before{
 	right:0;
 	z-index:1;
 }
-.export:focus>li{
+.options:focus>li{
 	opacity:1;
 	pointer-events:initial;
 }
-.export>li:first-of-type{
+.options>li:first-of-type{
 	border-radius:2px 2px 0 0;
 	margin-top:-40px;
 }
-.export>li:last-of-type{
+.options>li:last-of-type{
 	border-radius:0 0 2px 2px;
 }
-.export>li:focus,.export>li:hover{
+.options>li:focus,.options>li:hover{
 	background:#e0e0e0;
 	color:#303f9f;
 }
-.export>li::before{
+.options>li::before{
 	color:#757575;
 	font-size:24px;
 	margin:0 16px 0 0;
@@ -501,7 +501,7 @@ body.mdil>#content>section>article::before{
 	vertical-align:middle;
 	width:24px;
 }
-.export>li:focus::before{
+.options>li:focus::before{
 	color:#303f9f;
 }
 
