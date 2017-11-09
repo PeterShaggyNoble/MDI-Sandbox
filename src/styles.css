@@ -232,6 +232,7 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 	transform:rotatey(0deg);
 }
 #contributors>li>img{
+	background:#303f9f;
 	border-radius:50%;
 	margin:0 36px 0 0;
 }

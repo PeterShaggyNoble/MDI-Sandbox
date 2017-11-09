@@ -1,4 +1,9 @@
 {
+	"community":{
+		"id":"85277898-09f0-11e7-a586-842b2b6cfe1b",
+		"image":"iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAANlBMVEUAAAD////////////////////////////////////////////////////////////////////xY8b8AAAAEXRSTlMAwF/wEN+vf8+gP0/gkHBAIJofVsUAAACqSURBVGje7dTdDkQwEEBh02ot+zvv/7LLRkhN6qJ6w57v7pjEJKgGAAAAAICDnHgvznRNreiPtKbrEZ2J6WqcLpzpWkQXYroWrwu/7XMt2Xtc53rxO5/w2Q5j9reCSxu6KDqS2A3N7JX0US5qIt7n62sf5YIawTWTZ9LlPqLGeggfSZdqb5pxm+7aJV2q16x+HL+TLhU0K0zzpEvpju2cJRdaAgAAAAD4a18sPieJg4YWxwAAAABJRU5ErkJggg==",
+		"name":"Unassigned"
+	},
 	"alex-efremo":{
 		"github":"alexefremo",
 		"id":"bcedc9e0-b530-11e6-bd37-842b2b6cfe1b",
