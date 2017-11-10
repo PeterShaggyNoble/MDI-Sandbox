@@ -439,8 +439,7 @@ body.mdil>#content>section>article::before{
 #content>section:not(#icons)>p:last-of-type:not(:last-child){
 	display:none;
 }
-
-/** SECTION MENUS **/
+/*  menus  */
 .options{
 	box-shadow:0 1px 3px rgba(0,0,0,0),0 1px 2px rgba(0,0,0,0);
 	border-radius:2px;
@@ -551,7 +550,7 @@ body.mdil>#content>section>article::before{
 	transition-property:background,color,height,opacity;
 	transition-timing-function:cubic-bezier(.4,0,.2,1);
 }
-#actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info:not([data-retired=true])>#actions>li:nth-last-child(2){
+#actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info:not(.retired)>#actions>li:nth-last-child(2){
 	border-bottom:1px solid #e0e0e0;
 	height:49px;
 }
@@ -563,8 +562,8 @@ body.mdil>#content>section>article::before{
 	background:#e0e0e0;
 	color:#303f9f;
 }
-#info[data-nocopy=true]>#actions>li[data-copy]:not([data-confirm=Path]):not([data-confirm=Link]),
-#info[data-retired=true]>#actions>li:last-child{
+#info.nocopy>#actions>li[data-copy]:not([data-confirm=Path]):not([data-confirm=Link]),
+#info.retired>#actions>li:last-child{
 	height:0;
 	opacity:0;
 }
@@ -817,7 +816,7 @@ dialog>button:active{
 	}
 	#info{
 		box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
-		height:calc(100vh - 32px);
+		height:calc(100% - 32px);
 		max-height:772px;
 		left:calc(50% - 160px);
 		transition:opacity .225s cubic-bezier(.4,0,.2,1);
@@ -1020,7 +1019,7 @@ dialog>button:active{
 }
 @media(min-width:1500px){
 	#menu{
-		height:calc(100% - 64px);
+		max-height:calc(100% - 64px);
 		top:64px;
 	}
 	#menu>p:hover,#menu>ol>li:hover,#links a:hover{

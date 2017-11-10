@@ -530,13 +530,13 @@
 							this.data?page.copy(target.dataset.copy,target.dataset.confirm):page.alert`Not yet available.`;
 							break;
 						case this.actions.link:
-							this.aside.dataset.retired===`false`?location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`No longer available.`;
+							this.retired?page.alert`No longer available.`:location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`;
 							break;
 						default:
 							if(this.type=target.dataset.type)
 								this.download();
 							else if(target.parentNode===this.actions.link.parentNode)
-								this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
+								this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.retired?` longer`:`t yet`} available.`);
 							break;
 					}
 				},0);
@@ -554,8 +554,8 @@
 				this.icon=icons.list[this.name=name];
 				this.data=this.actions.path.dataset.copy=this.icon.path[page.font];
 				let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
-				this.aside.dataset.nocopy=(!(this.copy=!!codepoint)).toString();
-				this.aside.dataset.retired=(!!this.icon.retired&&this.icon.retired!==`{soon}`).toString();
+				this.aside.classList.toggle(`nocopy`,!(this.copy=!!codepoint));
+				this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
 				this.downloads={
 					svg:`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
