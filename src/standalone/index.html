@@ -548,7 +548,7 @@
 		background:#e0e0e0;
 		color:#303f9f;
 	}
-	#info[data-nocopy=true]>#actions>li[data-copy]:not([data-confirm=Path]):not(:nth-last-of-type(2)),
+	#info[data-nocopy=true]>#actions>li[data-copy]:not([data-confirm=Path]):not([data-confirm=Link]),
 	#info[data-retired=true]>#actions>li:last-child{
 		height:0;
 		opacity:0;
@@ -1225,7 +1225,7 @@
 					menu.init();
 					setTimeout(_=>
 						filter.init()
-					,225);
+					,600);
 					info.init();
 					editor.init();
 					this.options=this.section.querySelector`ul`,
@@ -1271,7 +1271,7 @@
 						setTimeout(_=>
 							loader.remove()
 						,375);
-					},10);
+					},600);
 				},
 				alert(message){
 					clearTimeout(this.timer);
@@ -1319,7 +1319,7 @@
 					let section=page.params.get`section`;
 					section&&(section=$(section))&&setTimeout(_=>
 						this.goto(section)
-					,225);
+					,600);
 					this.nav.addEventListener(`click`,event=>{
 						let target=event.target;
 						target.blur();
@@ -1621,7 +1621,14 @@
 					page.alert(`Import ${msg}.`);
 					this.input.value=``;
 				},
-				set(name){
+				sort(){
+					[...this.articles].sort((first,second)=>
+						first.lastChild.nodeValue>second.lastChild.nodeValue?1:-1
+					).forEach(article=>
+						this.section.append(this.section.removeChild(article))
+					);
+				},
+				toggle(name){
 					this.icon=icons.list[name];
 					info.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf0c5`:`\uf0c6`;
 					info.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
@@ -1638,13 +1645,6 @@
 						this.articles.length>1&&this.sort();
 					}
 					page.alert(`${name} ${msg} favourites.`);
-				},
-				sort(){
-					[...this.articles].sort((first,second)=>
-						first.lastChild.nodeValue>second.lastChild.nodeValue?1:-1
-					).forEach(article=>
-						this.section.append(this.section.removeChild(article))
-					);
 				}
 			},
 			info={
@@ -1691,7 +1691,7 @@
 								!page.wide&&this.toggle();
 								break;
 							case this.actions.favourite:
-								favourites.set(this.name);
+								favourites.toggle(this.name);
 								break;
 							case this.actions.export:
 								this.data?editor.open(this.name):page.alert`Not yet available.`;
@@ -1705,7 +1705,8 @@
 							default:
 								if(this.type=target.dataset.type)
 									this.download();
-								else target.parentNode===this.actions.link.parentNode&&this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
+								else if(target.parentNode===this.actions.link.parentNode)
+									this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
 								break;
 						}
 					},0);
@@ -4045,7 +4046,7 @@
 						}
 					},
 					"av-timer":{
-						"categories":["other"],
+						"categories":["time"],
 						"codepoint":"f06b",
 						"contributor":{
 							"regular":"google"
@@ -6226,7 +6227,7 @@
 						}
 					},
 					"camera-timer":{
-						"categories":["other"],
+						"categories":["time"],
 						"codepoint":"f109",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -7300,7 +7301,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["food"],
 						"codepoint":"f7b1",
 						"contributor":{
 							"regular":"andy-martinez"
@@ -7314,7 +7315,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["food"],
 						"codepoint":"f7b2",
 						"contributor":{
 							"regular":"andy-martinez"
@@ -7328,7 +7329,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["food"],
 						"codepoint":"f7b3",
 						"contributor":{
 							"regular":"andy-martinez"
@@ -8076,7 +8077,7 @@
 					},
 					"color-helper":{
 						"aliases":["colour-helper"],
-						"categories":["other"],
+						"categories":["editor"],
 						"codepoint":"f179",
 						"contributor":{
 							"regular":"google"
@@ -11113,7 +11114,7 @@
 						"added":{
 							"regular":1836
 						},
-						"categories":["other"],
+						"categories":["editor"],
 						"codepoint":"f6d3",
 						"contributor":{
 							"regular":"google"
@@ -11155,7 +11156,7 @@
 						}
 					},
 					"fish":{
-						"categories":["nature"],
+						"categories":["food","nature"],
 						"codepoint":"f23a",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -13799,7 +13800,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["player"],
 						"codepoint":"f7ce",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -13886,7 +13887,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["places"],
+						"categories":["home","places"],
 						"codepoint":"f7d1",
 						"contributor":{
 							"regular":"community"
@@ -13901,7 +13902,7 @@
 							"regular":"{next}"
 						},
 						"aliases":["family"],
-						"categories":["google"],
+						"categories":["google","home"],
 						"contributor":{
 							"regular":"michael-richins"
 						},
@@ -13914,7 +13915,7 @@
 							"regular":1554
 						},
 						"aliases":["house-map-marker"],
-						"categories":["places","travel"],
+						"categories":["home","places","travel"],
 						"codepoint":"f5f8",
 						"contributor":{
 							"regular":"cody"
@@ -14630,7 +14631,7 @@
 						"added":{
 							"regular":1554
 						},
-						"categories":["food"],
+						"categories":["food","home"],
 						"codepoint":"f5fa",
 						"contributor":{
 							"regular":"cody"
@@ -19527,7 +19528,7 @@
 						}
 					},
 					"raspberrypi":{
-						"categories":["logos"],
+						"categories":["tech"],
 						"codepoint":"f43f",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -21996,7 +21997,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["player"],
 						"codepoint":"f7ee",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -22325,7 +22326,7 @@
 						"added":{
 							"regular":1554
 						},
-						"categories":["other"],
+						"categories":["player"],
 						"codepoint":"f5c5",
 						"contributor":{
 							"regular":"google"
@@ -22338,7 +22339,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["player"],
 						"codepoint":"f7ef",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -22351,7 +22352,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["player"],
 						"codepoint":"f7f0",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -22364,7 +22365,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["player"],
 						"codepoint":"f7f1",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -22377,7 +22378,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["player"],
 						"codepoint":"f7f2",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -22667,7 +22668,7 @@
 						"added":{
 							"regular":"{next}"
 						},
-						"categories":["other"],
+						"categories":["editor"],
 						"contributor":{
 							"regular":"community"
 						},
@@ -23900,7 +23901,7 @@
 						"added":{
 							"regular":2046
 						},
-						"categories":["other"],
+						"categories":["player"],
 						"codepoint":"f7f8",
 						"contributor":{
 							"regular":"austin-andrews"
@@ -25550,7 +25551,7 @@
 						"added":{
 							"regular":1650
 						},
-						"categories":["other"],
+						"categories":["logos"],
 						"codepoint":"f673",
 						"contributor":{
 							"regular":"austin-andrews"

@@ -50,7 +50,7 @@
 				menu.init();
 				setTimeout(_=>
 					filter.init()
-				,225);
+				,600);
 				info.init();
 				editor.init();
 				this.options=this.section.querySelector`ul`,
@@ -96,7 +96,7 @@
 					setTimeout(_=>
 						loader.remove()
 					,375);
-				},10);
+				},600);
 			},
 			alert(message){
 				clearTimeout(this.timer);
@@ -146,7 +146,7 @@
 				let section=page.params.get`section`;
 				section&&(section=$(section))&&setTimeout(_=>
 					this.goto(section)
-				,225);
+				,600);
 				this.nav.addEventListener(`click`,event=>{
 					let target=event.target;
 					target.blur();
@@ -450,7 +450,14 @@
 				page.alert(`Import ${msg}.`);
 				this.input.value=``;
 			},
-			set(name){
+			sort(){
+				[...this.articles].sort((first,second)=>
+					first.lastChild.nodeValue>second.lastChild.nodeValue?1:-1
+				).forEach(article=>
+					this.section.append(this.section.removeChild(article))
+				);
+			},
+			toggle(name){
 				this.icon=icons.list[name];
 				info.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf0c5`:`\uf0c6`;
 				info.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
@@ -467,13 +474,6 @@
 					this.articles.length>1&&this.sort();
 				}
 				page.alert(`${name} ${msg} favourites.`);
-			},
-			sort(){
-				[...this.articles].sort((first,second)=>
-					first.lastChild.nodeValue>second.lastChild.nodeValue?1:-1
-				).forEach(article=>
-					this.section.append(this.section.removeChild(article))
-				);
 			}
 		},
 	/** SIDEBAR **/
@@ -521,7 +521,7 @@
 							!page.wide&&this.toggle();
 							break;
 						case this.actions.favourite:
-							favourites.set(this.name);
+							favourites.toggle(this.name);
 							break;
 						case this.actions.export:
 							this.data?editor.open(this.name):page.alert`Not yet available.`;
@@ -535,7 +535,8 @@
 						default:
 							if(this.type=target.dataset.type)
 								this.download();
-							else target.parentNode===this.actions.link.parentNode&&this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
+							else if(target.parentNode===this.actions.link.parentNode)
+								this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.aside.dataset.retired===`false`?`t yet`:` longer`} available.`);
 							break;
 					}
 				},0);

@@ -2393,7 +2393,7 @@
 		}
 	},
 	"av-timer":{
-		"categories":["other"],
+		"categories":["time"],
 		"codepoint":"f06b",
 		"contributor":{
 			"regular":"google"
@@ -5174,7 +5174,7 @@
 		}
 	},
 	"camera-timer":{
-		"categories":["other"],
+		"categories":["time"],
 		"codepoint":"f109",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -6527,7 +6527,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["food"],
 		"codepoint":"f7b1",
 		"contributor":{
 			"regular":"andy-martinez"
@@ -6544,7 +6544,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["food"],
 		"codepoint":"f7b2",
 		"contributor":{
 			"regular":"andy-martinez"
@@ -6561,7 +6561,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["food"],
 		"codepoint":"f7b3",
 		"contributor":{
 			"regular":"andy-martinez"
@@ -7513,7 +7513,7 @@
 	},
 	"color-helper":{
 		"aliases":["colour-helper"],
-		"categories":["other"],
+		"categories":["editor"],
 		"codepoint":"f179",
 		"contributor":{
 			"regular":"google"
@@ -11348,7 +11348,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["other"],
+		"categories":["editor"],
 		"codepoint":"f6d3",
 		"contributor":{
 			"regular":"google"
@@ -11402,7 +11402,7 @@
 		}
 	},
 	"fish":{
-		"categories":["nature"],
+		"categories":["food","nature"],
 		"codepoint":"f23a",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14745,7 +14745,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["player"],
 		"codepoint":"f7ce",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14853,7 +14853,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["places"],
+		"categories":["home","places"],
 		"codepoint":"f7d1",
 		"contributor":{
 			"regular":"community"
@@ -14871,7 +14871,7 @@
 			"regular":"{next}"
 		},
 		"aliases":["family"],
-		"categories":["google"],
+		"categories":["google","home"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -14887,7 +14887,7 @@
 			"regular":1554
 		},
 		"aliases":["house-map-marker"],
-		"categories":["places","travel"],
+		"categories":["home","places","travel"],
 		"codepoint":"f5f8",
 		"contributor":{
 			"regular":"cody"
@@ -15792,7 +15792,7 @@
 		"added":{
 			"regular":1554
 		},
-		"categories":["food"],
+		"categories":["food","home"],
 		"codepoint":"f5fa",
 		"contributor":{
 			"regular":"cody"
@@ -21985,7 +21985,7 @@
 		}
 	},
 	"raspberrypi":{
-		"categories":["logos"],
+		"categories":["tech"],
 		"codepoint":"f43f",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -25105,7 +25105,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["player"],
 		"codepoint":"f7ee",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -25518,7 +25518,7 @@
 		"added":{
 			"regular":1554
 		},
-		"categories":["other"],
+		"categories":["player"],
 		"codepoint":"f5c5",
 		"contributor":{
 			"regular":"google"
@@ -25534,7 +25534,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["player"],
 		"codepoint":"f7ef",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -25550,7 +25550,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["player"],
 		"codepoint":"f7f0",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -25566,7 +25566,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["player"],
 		"codepoint":"f7f1",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -25582,7 +25582,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["player"],
 		"codepoint":"f7f2",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -25953,7 +25953,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["other"],
+		"categories":["editor"],
 		"contributor":{
 			"regular":"community"
 		},
@@ -27516,7 +27516,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["other"],
+		"categories":["player"],
 		"codepoint":"f7f8",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -29616,7 +29616,7 @@
 		"added":{
 			"regular":1650
 		},
-		"categories":["other"],
+		"categories":["logos"],
 		"codepoint":"f673",
 		"contributor":{
 			"regular":"austin-andrews"

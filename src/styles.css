@@ -563,7 +563,7 @@ body.mdil>#content>section>article::before{
 	background:#e0e0e0;
 	color:#303f9f;
 }
-#info[data-nocopy=true]>#actions>li[data-copy]:not([data-confirm=Path]):not(:nth-last-of-type(2)),
+#info[data-nocopy=true]>#actions>li[data-copy]:not([data-confirm=Path]):not([data-confirm=Link]),
 #info[data-retired=true]>#actions>li:last-child{
 	height:0;
 	opacity:0;
