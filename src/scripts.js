@@ -18,7 +18,7 @@
 	/** PAGE **/
 		page={
 			url:new URL(location),
-			wide:b.offsetWidth>1499,
+			size:(b.offsetWidth>1199)+(b.offsetWidth>1499),
 			anchor:C`a`,
 			header:$`header`,
 			main:$`content`,
@@ -152,7 +152,7 @@
 					target.blur();
 					switch(target){
 						case this.nav:
-							!page.wide&&this.toggle();
+							page.size<2&&this.toggle();
 							break;
 						case this.navicon:
 							this.toggle();
@@ -162,11 +162,11 @@
 							break;
 						case this.highlight:
 							b.classList.toggle`highlight`;
-							!page.wide&&this.toggle();
+							page.size<2&&this.toggle();
 							break;
 						case filter.clearall:
 							filter.clear();
-							!page.wide&&this.toggle();
+							page.size<2&&this.toggle();
 							break;
 						case this.categories.previousElementSibling:
 						case this.contributors.previousElementSibling:
@@ -180,7 +180,7 @@
 									case this.sections:
 										if(category=categories.list[category].section){
 											this.goto(category);
-											!page.wide&&this.toggle();
+											page.size<2&&this.toggle();
 										}
 										break;
 									case this.categories:
@@ -202,7 +202,7 @@
 							break;
 					}
 				},0);
-				if(page.wide)
+				if(page.size===2)
 					this.toggle();
 				else 
 					d.addEventListener(`touchstart`,event=>{
@@ -235,7 +235,7 @@
 			},
 			toggle(){
 				b.classList.toggle(`menu`,this.show=!this.show);
-				!page.wide&&this.show?b.addEventListener(`keydown`,this.functions.close=event=>
+				page.size<2&&this.show?b.addEventListener(`keydown`,this.functions.close=event=>
 					event.keyCode===27&&this.toggle()
 				,0):b.removeEventListener(`keydown`,this.functions.close);
 			},
@@ -258,8 +258,12 @@
 			error:page.section.querySelector`p`,
 			input:$`filter`,
 			heading:page.section.querySelector`h2`,
+			counter:C`span`,
 			init(){
 				this.button=this.input.nextElementSibling;
+				this.heading.append(this.counter);
+				this.counter.append(this.counter=T``);
+				this.heading=this.heading.firstChild;
 				if(this.categories=page.params.get`categories`){
 					menu.categories.previousElementSibling.classList.add`open`;
 					for(let key of this.categories=new Set(this.categories.split`,`))
@@ -274,6 +278,7 @@
 					this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 				if(this.categories.size||this.contributors.size||this.text)
 					filter.apply();
+				else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
 				this.input.addEventListener(`input`,_=>{
 					clearTimeout(this.timer);
 					this.timer=setTimeout(_=>{
@@ -294,30 +299,32 @@
 				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
 				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
-					match=0,
+					matches=0,
 					check,icon,article;
-				for(let key in icons.list)
-					if(icons.list.hasOwnProperty(key)){
-						icon=icons.list[key];
-						if(icon.articles.main){
-							check=1;
-							if(this.categories.size)
-								check=icon.categories&&icon.categories.some(category=>
-									this.categories.has(category)
-								);
-							if(this.contributors.size)
-								check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
-							if(words)
-								check=check&&words.every(word=>
-									icon.keywords.some(item=>
-										item.startsWith(word)
-									)
-								);
-							icon.articles.main.classList.toggle(`dn`,!check);
-							match+=check;
+				if(this.filtered)
+					for(let key in icons.list)
+						if(icons.list.hasOwnProperty(key)){
+							icon=icons.list[key];
+							if(icon.articles.main){
+								check=1;
+								if(this.categories.size)
+									check=icon.categories&&icon.categories.some(category=>
+										this.categories.has(category)
+									);
+								if(this.contributors.size)
+									check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
+								if(words)
+									check=check&&words.every(word=>
+										icon.keywords.some(item=>
+											item.startsWith(word)
+										)
+									);
+								icon.articles.main.classList.toggle(`dn`,!check);
+								matches+=check;
+							}
 						}
-					}
-				this.error.classList.toggle(`dn`,match);
+				this.counter.nodeValue=` (${this.filtered?matches:icons.total}/${icons.total})`;
+				this.error.classList.toggle(`dn`,!this.filtered||matches);
 				this.clearall.classList.toggle(`clear`,this.filtered);
 				if(this.filtered){
 					this.url=`${page.address}?`;
@@ -498,7 +505,7 @@
 			figure:$`preview`,
 			heading:$`name`,
 			init(){
-				page.wide&&this.aside.classList.remove`oz`;
+				page.size>0&&this.aside.classList.remove`oz`;
 				this.heading.append(T``);
 				this.figure.append(this.svg=N`svg`);
 				this.svg.classList.add`pa`;
@@ -512,13 +519,13 @@
 						this.open(icon);
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
-				}else page.wide&&this.open(page.params.get`edit`||Object.keys(icons.list)[0]);
+				}else page.size>0&&this.open(page.params.get`edit`||Object.keys(icons.list)[0]);
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
 						case this.aside:
 						case this.heading:
-							!page.wide&&this.toggle();
+							page.size<1&&this.toggle();
 							break;
 						case this.actions.favourite:
 							favourites.toggle(this.name);
@@ -576,18 +583,18 @@
 				if(page.light)
 					this.actions.url.dataset.copy+=`font=light&`;
 				this.actions.url.dataset.copy+=`icon=${name}`;
-				if(page.wide){
+				if(page.size>0){
 					this.heading.classList.add`oz`;
 					this.svg.classList.add`oz`;
 				}else this.toggle();
 				setTimeout(_=>{
 					this.heading.firstChild.nodeValue=this.name;
 					this.path.setAttribute(`d`,this.data);
-					if(page.wide){
+					if(page.size>0){
 						this.heading.classList.remove`oz`;
 						this.svg.classList.remove`oz`;
 					}
-				},page.wide&&195);
+				},page.size>0&&195);
 			},
 			toggle(){
 				this.aside.classList.toggle(`oz`,!(this.show=!this.show));
@@ -700,6 +707,7 @@
 		icons={
 			article:C`article`,
 			svg:N`svg`,
+			total:0,
 			init(){
 				delete this.array;
 				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
@@ -711,6 +719,7 @@
 				this.svg.append(N`path`);
 				for(let key in this.list)
 					this.list.hasOwnProperty(key)&&this.add(key);
+				console.log(this.total);
 			},
 			add(key){
 				let 	icon=this.list[key],
@@ -743,7 +752,7 @@
 					(category=categories.list.updated)&&icon.updated&&icon.updated[page.font]===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
 					(category=categories.list.soon)&&icon.added&&icon.added[page.font]===`{next}`&&category.section.append(icon.articles.soon=article.cloneNode(1));
 					(category=categories.list.retired)&&icon.retired&&category.section.append(icon.articles.retired=article.cloneNode(1));
-					(!icon.retired||icon.retired==="{soon}")&&page.section.append(icon.articles.main=article);
+					(!icon.retired||icon.retired==="{soon}")&&++this.total&&page.section.append(icon.articles.main=article);
 				}else delete this.list[key];
 			}
 		},

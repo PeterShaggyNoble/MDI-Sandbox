@@ -60,13 +60,20 @@
 	-webkit-appearance:none;
 	margin:0;
 }
-::-webkit-scrollbar{
+
+/** PAGE **/
+body{
+	background:#e0e0e0;
+	font-size:14px;
+	user-select:none;
+}
+body ::-webkit-scrollbar{
 	width:4px;
 }
-::-webkit-scrollbar-thumb{
+body ::-webkit-scrollbar-thumb{
 	background:rgba(0,0,0,0);
 }
-:hover::-webkit-scrollbar-thumb{
+body :hover::-webkit-scrollbar-thumb{
 	background:#9e9e9e;
 }
 [data-icon]::before{
@@ -74,13 +81,6 @@
 	display:inline-block;
 	font-family:mdi;
 	text-align:center;
-}
-
-/** PAGE **/
-body{
-	background:#e0e0e0;
-	font-size:14px;
-	user-select:none;
 }
 
 /** HEADER **/
@@ -309,7 +309,7 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 	max-width:720px;
 }
 #filter{
-	background:rgba(255,255,255,.04) url('data:image/svg+xml;utf8,<svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>') 12px center no-repeat;
+	background:rgba(255,255,255,.06) url('data:image/svg+xml;utf8,<svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>') 12px center no-repeat;
 	border-radius:4px;
 	transition:background .225s cubic-bezier(.4,0,.2,1);
 	width:100%;
@@ -402,8 +402,8 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 	z-index:1;
 }
 #content>section>article:hover{
-	background:rgba(0,0,0,.12);
-	color:#757575;
+	background:#e0e0e0;
+	color:#212121;
 }
 body.mdi.highlight>#content>section>article.community{
 	background:#e8eaf6;
@@ -814,6 +814,8 @@ dialog>button:active{
 	#menu>p:focus,#menu>ol>li:focus,#links a:active,#links a:focus{
 		background:#e0e0e0;
 	}
+}
+@media(max-width:1199px){
 	#info{
 		box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
 		height:calc(100% - 32px);
@@ -1017,25 +1019,9 @@ dialog>button:active{
 		width:320px;
 	}
 }
-@media(min-width:1500px){
-	#menu{
-		max-height:calc(100% - 64px);
-		top:64px;
-	}
-	#menu>p:hover,#menu>ol>li:hover,#links a:hover{
-		background:rgba(0,0,0,.03);
-	}
-	#menu>p:focus,#menu>ol>li:focus,#links a:active,#links a:focus{
-		background:rgba(0,0,0,.06);
-	}
+@media(min-width:1200px){
 	#content{
 		margin-right:336px;
-	}
-	body.menu>#content{
-		margin-left:320px;
-	}
-	#icons>p:first-of-type{
-		right:324px;
 	}
 	#info{
 		box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
@@ -1057,6 +1043,21 @@ dialog>button:active{
 	}
 	dialog.oz::backdrop{
 		opacity:0;
+	}
+}
+@media(min-width:1500px){
+	#menu{
+		max-height:calc(100% - 64px);
+		top:64px;
+	}
+	#menu>p:hover,#menu>ol>li:hover,#links a:hover{
+		background:rgba(0,0,0,.03);
+	}
+	#menu>p:focus,#menu>ol>li:focus,#links a:active,#links a:focus{
+		background:rgba(0,0,0,.06);
+	}
+	body.menu>#content{
+		margin-left:320px;
 	}
 }
 

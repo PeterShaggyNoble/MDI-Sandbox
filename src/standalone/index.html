@@ -63,13 +63,18 @@
 		-webkit-appearance:none;
 		margin:0;
 	}
-	::-webkit-scrollbar{
+	body{
+		background:#e0e0e0;
+		font-size:14px;
+		user-select:none;
+	}
+	body ::-webkit-scrollbar{
 		width:4px;
 	}
-	::-webkit-scrollbar-thumb{
+	body ::-webkit-scrollbar-thumb{
 		background:rgba(0,0,0,0);
 	}
-	:hover::-webkit-scrollbar-thumb{
+	body :hover::-webkit-scrollbar-thumb{
 		background:#9e9e9e;
 	}
 	[data-icon]::before{
@@ -77,11 +82,6 @@
 		display:inline-block;
 		font-family:mdi;
 		text-align:center;
-	}
-	body{
-		background:#e0e0e0;
-		font-size:14px;
-		user-select:none;
 	}
 	#header{
 		align-items:center;
@@ -302,7 +302,7 @@
 		max-width:720px;
 	}
 	#filter{
-		background:rgba(255,255,255,.04) url('data:image/svg+xml;utf8,<svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>') 12px center no-repeat;
+		background:rgba(255,255,255,.06) url('data:image/svg+xml;utf8,<svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>') 12px center no-repeat;
 		border-radius:4px;
 		transition:background .225s cubic-bezier(.4,0,.2,1);
 		width:100%;
@@ -393,8 +393,8 @@
 		z-index:1;
 	}
 	#content>section>article:hover{
-		background:rgba(0,0,0,.12);
-		color:#757575;
+		background:#e0e0e0;
+		color:#212121;
 	}
 	body.mdi.highlight>#content>section>article.community{
 		background:#e8eaf6;
@@ -794,6 +794,8 @@
 		#menu>p:focus,#menu>ol>li:focus,#links a:active,#links a:focus{
 			background:#e0e0e0;
 		}
+	}
+	@media(max-width:1199px){
 		#info{
 			box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
 			height:calc(100% - 32px);
@@ -997,25 +999,9 @@
 			width:320px;
 		}
 	}
-	@media(min-width:1500px){
-		#menu{
-			max-height:calc(100% - 64px);
-			top:64px;
-		}
-		#menu>p:hover,#menu>ol>li:hover,#links a:hover{
-			background:rgba(0,0,0,.03);
-		}
-		#menu>p:focus,#menu>ol>li:focus,#links a:active,#links a:focus{
-			background:rgba(0,0,0,.06);
-		}
+	@media(min-width:1200px){
 		#content{
 			margin-right:336px;
-		}
-		body.menu>#content{
-			margin-left:320px;
-		}
-		#icons>p:first-of-type{
-			right:324px;
 		}
 		#info{
 			box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
@@ -1037,6 +1023,21 @@
 		}
 		dialog.oz::backdrop{
 			opacity:0;
+		}
+	}
+	@media(min-width:1500px){
+		#menu{
+			max-height:calc(100% - 64px);
+			top:64px;
+		}
+		#menu>p:hover,#menu>ol>li:hover,#links a:hover{
+			background:rgba(0,0,0,.03);
+		}
+		#menu>p:focus,#menu>ol>li:focus,#links a:active,#links a:focus{
+			background:rgba(0,0,0,.06);
+		}
+		body.menu>#content{
+			margin-left:320px;
 		}
 	}
 	.db{display:block;}
@@ -1193,7 +1194,7 @@
 			b=d.body,
 			page={
 				url:new URL(location),
-				wide:b.offsetWidth>1499,
+				size:(b.offsetWidth>1199)+(b.offsetWidth>1499),
 				anchor:C`a`,
 				header:$`header`,
 				main:$`content`,
@@ -1325,7 +1326,7 @@
 						target.blur();
 						switch(target){
 							case this.nav:
-								!page.wide&&this.toggle();
+								page.size<2&&this.toggle();
 								break;
 							case this.navicon:
 								this.toggle();
@@ -1335,11 +1336,11 @@
 								break;
 							case this.highlight:
 								b.classList.toggle`highlight`;
-								!page.wide&&this.toggle();
+								page.size<2&&this.toggle();
 								break;
 							case filter.clearall:
 								filter.clear();
-								!page.wide&&this.toggle();
+								page.size<2&&this.toggle();
 								break;
 							case this.categories.previousElementSibling:
 							case this.contributors.previousElementSibling:
@@ -1353,7 +1354,7 @@
 										case this.sections:
 											if(category=categories.list[category].section){
 												this.goto(category);
-												!page.wide&&this.toggle();
+												page.size<2&&this.toggle();
 											}
 											break;
 										case this.categories:
@@ -1375,7 +1376,7 @@
 								break;
 						}
 					},0);
-					if(page.wide)
+					if(page.size===2)
 						this.toggle();
 					else 
 						d.addEventListener(`touchstart`,event=>{
@@ -1408,7 +1409,7 @@
 				},
 				toggle(){
 					b.classList.toggle(`menu`,this.show=!this.show);
-					!page.wide&&this.show?b.addEventListener(`keydown`,this.functions.close=event=>
+					page.size<2&&this.show?b.addEventListener(`keydown`,this.functions.close=event=>
 						event.keyCode===27&&this.toggle()
 					,0):b.removeEventListener(`keydown`,this.functions.close);
 				},
@@ -1430,8 +1431,12 @@
 				error:page.section.querySelector`p`,
 				input:$`filter`,
 				heading:page.section.querySelector`h2`,
+				counter:C`span`,
 				init(){
 					this.button=this.input.nextElementSibling;
+					this.heading.append(this.counter);
+					this.counter.append(this.counter=T``);
+					this.heading=this.heading.firstChild;
 					if(this.categories=page.params.get`categories`){
 						menu.categories.previousElementSibling.classList.add`open`;
 						for(let key of this.categories=new Set(this.categories.split`,`))
@@ -1446,6 +1451,7 @@
 						this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 					if(this.categories.size||this.contributors.size||this.text)
 						filter.apply();
+					else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
 					this.input.addEventListener(`input`,_=>{
 						clearTimeout(this.timer);
 						this.timer=setTimeout(_=>{
@@ -1466,30 +1472,32 @@
 					page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
 					this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 					let	words=this.text&&this.text.split(/[\s\-]/),
-						match=0,
+						matches=0,
 						check,icon,article;
-					for(let key in icons.list)
-						if(icons.list.hasOwnProperty(key)){
-							icon=icons.list[key];
-							if(icon.articles.main){
-								check=1;
-								if(this.categories.size)
-									check=icon.categories&&icon.categories.some(category=>
-										this.categories.has(category)
-									);
-								if(this.contributors.size)
-									check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
-								if(words)
-									check=check&&words.every(word=>
-										icon.keywords.some(item=>
-											item.startsWith(word)
-										)
-									);
-								icon.articles.main.classList.toggle(`dn`,!check);
-								match+=check;
+					if(this.filtered)
+						for(let key in icons.list)
+							if(icons.list.hasOwnProperty(key)){
+								icon=icons.list[key];
+								if(icon.articles.main){
+									check=1;
+									if(this.categories.size)
+										check=icon.categories&&icon.categories.some(category=>
+											this.categories.has(category)
+										);
+									if(this.contributors.size)
+										check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
+									if(words)
+										check=check&&words.every(word=>
+											icon.keywords.some(item=>
+												item.startsWith(word)
+											)
+										);
+									icon.articles.main.classList.toggle(`dn`,!check);
+									matches+=check;
+								}
 							}
-						}
-					this.error.classList.toggle(`dn`,match);
+					this.counter.nodeValue=` (${this.filtered?matches:icons.total}/${icons.total})`;
+					this.error.classList.toggle(`dn`,!this.filtered||matches);
 					this.clearall.classList.toggle(`clear`,this.filtered);
 					if(this.filtered){
 						this.url=`${page.address}?`;
@@ -1668,7 +1676,7 @@
 				figure:$`preview`,
 				heading:$`name`,
 				init(){
-					page.wide&&this.aside.classList.remove`oz`;
+					page.size>0&&this.aside.classList.remove`oz`;
 					this.heading.append(T``);
 					this.figure.append(this.svg=N`svg`);
 					this.svg.classList.add`pa`;
@@ -1682,13 +1690,13 @@
 							this.open(icon);
 							Object.values(icons.list[icon].articles)[0].classList.add`active`;
 						}
-					}else page.wide&&this.open(page.params.get`edit`||Object.keys(icons.list)[0]);
+					}else page.size>0&&this.open(page.params.get`edit`||Object.keys(icons.list)[0]);
 					this.aside.addEventListener(`click`,event=>{
 						let target=event.target;
 						switch(target){
 							case this.aside:
 							case this.heading:
-								!page.wide&&this.toggle();
+								page.size<1&&this.toggle();
 								break;
 							case this.actions.favourite:
 								favourites.toggle(this.name);
@@ -1746,18 +1754,18 @@
 					if(page.light)
 						this.actions.url.dataset.copy+=`font=light&`;
 					this.actions.url.dataset.copy+=`icon=${name}`;
-					if(page.wide){
+					if(page.size>0){
 						this.heading.classList.add`oz`;
 						this.svg.classList.add`oz`;
 					}else this.toggle();
 					setTimeout(_=>{
 						this.heading.firstChild.nodeValue=this.name;
 						this.path.setAttribute(`d`,this.data);
-						if(page.wide){
+						if(page.size>0){
 							this.heading.classList.remove`oz`;
 							this.svg.classList.remove`oz`;
 						}
-					},page.wide&&195);
+					},page.size>0&&195);
 				},
 				toggle(){
 					this.aside.classList.toggle(`oz`,!(this.show=!this.show));
@@ -2076,6 +2084,7 @@
 			icons={
 				article:C`article`,
 				svg:N`svg`,
+				total:0,
 				init(){
 					delete this.array;
 					this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
@@ -2087,6 +2096,7 @@
 					this.svg.append(N`path`);
 					for(let key in this.list)
 						this.list.hasOwnProperty(key)&&this.add(key);
+					console.log(this.total);
 				},
 				add(key){
 					let	icon=this.list[key],
@@ -2119,7 +2129,7 @@
 						(category=categories.list.updated)&&icon.updated&&icon.updated[page.font]===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
 						(category=categories.list.soon)&&icon.added&&icon.added[page.font]===`{next}`&&category.section.append(icon.articles.soon=article.cloneNode(1));
 						(category=categories.list.retired)&&icon.retired&&category.section.append(icon.articles.retired=article.cloneNode(1));
-						(!icon.retired||icon.retired==="{soon}")&&page.section.append(icon.articles.main=article);
+						(!icon.retired||icon.retired==="{soon}")&&++this.total&&page.section.append(icon.articles.main=article);
 					}else delete this.list[key];
 				},
 				list:{
