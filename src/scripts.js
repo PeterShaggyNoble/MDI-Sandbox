@@ -301,30 +301,29 @@
 				let 	words=this.text&&this.text.split(/[\s\-]/),
 					matches=0,
 					check,icon,article;
-				if(this.filtered)
-					for(let key in icons.list)
-						if(icons.list.hasOwnProperty(key)){
-							icon=icons.list[key];
-							if(icon.articles.main){
-								check=1;
-								if(this.categories.size)
-									check=icon.categories&&icon.categories.some(category=>
-										this.categories.has(category)
-									);
-								if(this.contributors.size)
-									check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
-								if(words)
-									check=check&&words.every(word=>
-										icon.keywords.some(item=>
-											item.startsWith(word)
-										)
-									);
-								icon.articles.main.classList.toggle(`dn`,!check);
-								matches+=check;
-							}
+				for(let key in icons.list)
+					if(icons.list.hasOwnProperty(key)){
+						icon=icons.list[key];
+						if(icon.articles.main){
+							check=1;
+							if(this.categories.size)
+								check=icon.categories&&icon.categories.some(category=>
+									this.categories.has(category)
+								);
+							if(this.contributors.size)
+								check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
+							if(words)
+								check=check&&words.every(word=>
+									icon.keywords.some(item=>
+										item.startsWith(word)
+									)
+								);
+							icon.articles.main.classList.toggle(`dn`,!check);
+							matches+=check;
 						}
+					}
 				this.counter.nodeValue=` (${this.filtered?matches:icons.total}/${icons.total})`;
-				this.error.classList.toggle(`dn`,!this.filtered||matches);
+				this.error.classList.toggle(`dn`,matches);
 				this.clearall.classList.toggle(`clear`,this.filtered);
 				if(this.filtered){
 					this.url=`${page.address}?`;
@@ -719,7 +718,6 @@
 				this.svg.append(N`path`);
 				for(let key in this.list)
 					this.list.hasOwnProperty(key)&&this.add(key);
-				console.log(this.total);
 			},
 			add(key){
 				let 	icon=this.list[key],

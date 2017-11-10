@@ -522,11 +522,6 @@ body.mdil>#content>section>article::before{
 	transition:opacity .195s cubic-bezier(.4,0,.2,1);
 }
 /*  preview */
-#preview{
-	align-items:center;
-	justify-content:center;
-	height:120px;
-}
 #preview>svg{
 	fill:#fff;
 	left:50%;
@@ -926,7 +921,8 @@ dialog>button:active{
 		height:158px;
 	}
 	#preview{
-		margin-top:-10px;
+		height:120px;
+		margin:-12px 0 0;
 	}
 	#actions{
 		height:calc(100% - 158px);
@@ -1000,7 +996,8 @@ dialog>button:active{
 		height:180px;
 	}
 	#preview{
-		margin-top:6px;
+		margin-top:-12px;
+		height:144px;
 	}
 	#message{
 		box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
