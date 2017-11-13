@@ -371,8 +371,8 @@
 				this.menu.tabIndex=-1;
 				this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
 				this.item.append(T``);
-				this.additem(`svg`,`\uf6b1`,`Download SVG`);
-				this.additem(`html`,`\uf421`,`Download HTML`);
+				this.additem(`svg`,`\uf6b1`,`SVG for Angular`);
+				this.additem(`html`,`\uf421`,`HTML for Polymer`);
 				this.additem(`import`,`\uf220`,`Import Favourites`);
 				this.additem(`export`,`\uf21d`,`Export Favourites`);
 				this.additem(`clear`,`\uf1c0`,`Clear Favourites`);
@@ -665,7 +665,7 @@
 					if(category.count)
 						item.firstChild.nodeValue+=` (${category.count})`;
 					item.dataset.category=key;
-					item.dataset.icon=String.fromCharCode(`0x${category.codepoint}`);
+					item.dataset.icon=String.fromCharCode(`0x${icons.list[category.icon].codepoint}`);
 					category.section?filter.clearall.before(category.item=item):menu.categories.append(category.item=item);
 				}else delete this.list[key];
 			}

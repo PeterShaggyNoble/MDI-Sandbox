@@ -1,115 +1,115 @@
 {
 	"favourites":{
-		"codepoint":"f2d1",
+		"icon":"heart",
 		"name":"My Favourites",
 		"section":true
 	},
 	"new":{
-		"codepoint":"f6bc",
+		"icon":"alert-decagram",
 		"name":"New in v{v}",
 		"section":true
 	},
 	"updated":{
-		"codepoint":"f453",
+		"icon":"reload",
 		"name":"Updated in v{v}",
 		"section":true
 	},
 	"soon":{
-		"codepoint":"f6af",
+		"icon":"update",
 		"name":"Coming Soon",
 		"section":true
 	},
 	"retired":{
-		"codepoint":"f2da",
+		"icon":"history",
 		"name":"Retired Icons",
 		"section":true
 	},
 	"other":{
-		"codepoint":"f2d6",
+		"icon":"help",
 		"name":"Uncategorised"
 	},
 	"arrows":{
-		"codepoint":"f054",
+		"icon":"arrow-right",
 		"name":"Arrows"
 	},
 	"characters":{
-		"codepoint":"f3c9",
+		"icon":"omega",
 		"name":"Characters & Symbols"
 	},
 	"time":{
-		"codepoint":"f0f0",
+		"icon":"calendar-clock",
 		"name":"Date & Time"
 	},
 	"tech":{
-		"codepoint":"f379",
+		"icon":"monitor",
 		"name":"Devices & Hardware"
 	},
 	"editor":{
-		"codepoint":"f3eb",
+		"icon":"pencil",
 		"name":"Editing & Formatting"
 	},
 	"files":{
-		"codepoint":"f224",
+		"icon":"file-outline",
 		"name":"Files & Folders"
 	},
 	"food":{
-		"codepoint":"f25a",
+		"icon":"food",
 		"name":"Food & Drink"
 	},
 	"google":{
-		"codepoint":"f2ad",
+		"icon":"google",
 		"name":"Google"
 	},
 	"home":{
-		"codepoint":"f7d0",
+		"icon":"home-automation",
 		"name":"Home Automation"
 	},
 	"logos":{
-		"codepoint":"f032",
+		"icon":"android",
 		"name":"Logos & Brands"
 	},
 	"player":{
-		"codepoint":"f40a",
+		"icon":"play",
 		"name":"Media Player Controls"
 	},
 	"money":{
-		"codepoint":"f1ad",
+		"icon":"currency-eur",
 		"name":"Money & Payments"
 	},
 	"networking":{
-		"codepoint":"f318",
+		"icon":"lan-connect",
 		"name":"Networking"
 	},
 	"nature":{
-		"codepoint":"f38e",
+		"icon":"nature",
 		"name":"Nature & Animals"
 	},
 	"places":{
-		"codepoint":"f34e",
+		"icon":"map-marker",
 		"name":"Places & Landmarks"
 	},
 	"power":{
-		"codepoint":"f425",
+		"icon":"power",
 		"name":"Power"
 	},
 	"science":{
-		"codepoint":"f093",
+		"icon":"flask",
 		"name":"Science & Medicine"
 	},
 	"sport":{
-		"codepoint":"f4e3",
+		"icon":"swim",
 		"name":"Sport"
 	},
 	"travel":{
-		"codepoint":"f01d",
+		"icon":"airplane",
 		"name":"Travel & Transport"
 	},
 	"users":{
-		"codepoint":"f004",
+		"icon":"account",
 		"name":"Users & Accounts"
 	},
 	"weather":{
-		"codepoint":"f599",
+		"icon":"weather-sunny",
 		"name":"Weather"
 	}
 }
