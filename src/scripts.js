@@ -106,8 +106,8 @@
 					this.message.classList.add`oz`
 				,5e3);
 			},
-			build:_=>Object.entries(icons.list).map(([key,icon],path)=>
-				icon.articles.main&&!icon.articles.main.classList.contains`dn`&&(path=icon.path[page.font])?`<g id="${key}"><path d="${path}"/></g>`:``
+			build:_=>Object.entries(icons.list).map(([key,icon],data)=>
+				icon.articles.main&&!icon.articles.main.classList.contains`dn`&&(data=icon.data[page.font])?`<g id="${key}"><path d="${data}"/></g>`:``
 			).join``,
 			copy(string,message){
 				editor.dialog.append(this.textarea);
@@ -125,6 +125,7 @@
 				URL.revokeObjectURL(this.anchor.href);
 			}
 		},
+
 	/** MENU **/
 		menu={
 			functions:{},
@@ -428,8 +429,8 @@
 				this.actions[key].dataset.icon=codepoint;
 				this.actions[key].firstChild.nodeValue=text;
 			},
-			build:_=>Object.keys(page.storage).map((key,path)=>
-				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(path=icons.list[key].path[page.font])?`<g id="${key}"><path d="${path}"/></g>`:``
+			build:_=>Object.keys(page.storage).map((key,data)=>
+				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(data=icons.list[key].data[page.font])?`<g id="${key}"><path d="${data}"/></g>`:``
 			).join``,
 			load(event){
 				let msg=`complete`;
@@ -442,7 +443,7 @@
 								page.storage.setItem(item,1);
 								this.section.append(this.icon.articles.favourite=(this.icon.articles.main||this.icon.articles.retired).cloneNode(1));
 								if(info.name===name){
-									info.actions.favourite.dataset.icon=`\uf0c6`;
+									info.actions.favourite.dataset.icon=`\uf4d1`;
 									info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
 								}
 							}
@@ -465,7 +466,7 @@
 			},
 			toggle(name){
 				this.icon=icons.list[name];
-				info.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf0c5`:`\uf0c6`;
+				info.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf4ce`:`\uf4d1`;
 				info.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
 				let msg=`added to`;
 				if(this.icon.articles.favourite){
@@ -482,12 +483,13 @@
 				page.alert(`${name} ${msg} favourites.`);
 			}
 		},
+
 	/** SIDEBAR **/
 		info={
 			actions:{
 				favourite:Q`#actions>:first-child`,
 				export:Q`#actions>:nth-child(2)`,
-				path:Q`#actions>[data-confirm=Path]`,
+				data:Q`#actions>[data-confirm="Path data"]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
 				codepoint:Q`#actions>[data-confirm="Code point"]`,
 				entity:Q`#actions>[data-confirm=Entity]`,
@@ -532,7 +534,7 @@
 						case this.actions.export:
 							this.data?editor.open(this.name):page.alert`Not yet available.`;
 							break;
-						case this.actions.path:
+						case this.actions.data:
 							this.data?page.copy(target.dataset.copy,target.dataset.confirm):page.alert`Not yet available.`;
 							break;
 						case this.actions.link:
@@ -558,7 +560,7 @@
 			},
 			open(name){
 				this.icon=icons.list[this.name=name];
-				this.data=this.actions.path.dataset.copy=this.icon.path[page.font];
+				this.data=this.actions.data.dataset.copy=this.icon.data[page.font];
 				let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 				this.aside.classList.toggle(`nocopy`,!(this.copy=!!codepoint));
 				this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
@@ -568,7 +570,7 @@
 					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.data}"/></vector>`
 				};
 				if(page.storage){
-					this.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf0c6`:`\uf0c5`;
+					this.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf4d1`:`\uf4ce`;
 					this.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Remove from`:`Add to`} Favourites`;
 				}
 				if(codepoint){
@@ -611,6 +613,7 @@
 				}
 			}
 		},
+
 	/** CATEGORIES **/
 		categories={
 			header:C`header`,
@@ -621,7 +624,6 @@
 			section:C`section`,
 			init(){
 				this.section.classList.add(`dg`,`pr`);
-				this.header.classList.add`ps`;
 				this.heading.classList.add(`oh`,`toe`,`wsnw`);
 				this.heading.append(T``);
 				this.link.classList.add(`cp`,`oh`,`pa`,`wsnw`);
@@ -657,8 +659,8 @@
 					section.append(header);
 					section.append(this.error.cloneNode(1));
 					page.section.before(category.section=section);
-				}else category.count=icons.array.filter(item=>
-					item.path[page.font]&&item.categories&&item.categories.includes(key)
+				}else category.count=icons.array.filter(icon=>
+					icon.categories&&icon.data[page.font]&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
 				).length;
 				if(category.section||category.count){
 					item.firstChild.nodeValue=name;
@@ -670,6 +672,7 @@
 				}else delete this.list[key];
 			}
 		},
+
 	/** CONTRIBUTORS **/
 		contributors={
 			img:C`img`,
@@ -688,8 +691,8 @@
 					image=contributor.image,
 					img=this.img.cloneNode(1),
 					item=this.item.cloneNode(1);
-				contributor.count=icons.array.filter(item=>
-					item.path[page.font]&&item.contributor&&item.contributor[page.font]===key
+				contributor.count=icons.array.filter(icon=>
+					icon.contributor&&icon.data[page.font]&&(!icon.retired||icon.retired==="{soon}")&&icon.contributor[page.font]===key
 				).length;
 				if(contributor.count){
 					item.dataset.contributor=key;
@@ -702,6 +705,7 @@
 				}else delete this.list[key];
 			}
 		},
+
 	/** ICONS **/
 		icons={
 			article:C`article`,
@@ -725,8 +729,8 @@
 					svg=this.svg.cloneNode(1),
 					codepoint=icon.codepoint,
 					keywords=new Set(key.split`-`),
-					category;
-				if(icon.path[page.font]){
+					data,category
+				if(data=icon.data[page.font]){
 					icon.aliases&&icon.aliases.forEach(alias=>
 						alias.split`-`.forEach(word=>
 							keywords.add(word)
@@ -739,7 +743,7 @@
 					if(codepoint&&(!icon.updated||icon.updated[page.font]!=="{next}"))
 						article.dataset.icon=String.fromCharCode(`0x${codepoint}`);
 					else{
-						svg.firstElementChild.setAttribute(`d`,icon.path[page.font]);
+						svg.firstElementChild.setAttribute(`d`,data);
 						article.prepend(svg);
 					}
 					article.classList.toggle(`community`,icon.contributor.regular!=="google");
@@ -754,6 +758,7 @@
 				}else delete this.list[key];
 			}
 		},
+
 	/** EDITOR **/
 		editor={
 			inputs:{
@@ -1020,7 +1025,7 @@
 			open(name){
 				clearTimeout(this.timer);
 				this.name=this.inputs.name.value=name;
-				this.path.setAttribute(`d`,this.data=icons.list[name].path[page.font]);
+				this.path.setAttribute(`d`,this.data=icons.list[name].data[page.font]);
 				this.dialog.showModal();
 				this.dialog.classList.remove(`oz`,`pen`);
 				b.addEventListener(`keydown`,this.fn=event=>{
@@ -1033,6 +1038,7 @@
 			},
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000
 		};
+
 	/** INITIATE **/
 	(async _=>{
 		categories.list=await(await fetch`json/categories.json`).json();

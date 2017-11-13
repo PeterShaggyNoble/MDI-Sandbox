@@ -1,6 +1,6 @@
 {
 	"favourites":{
-		"icon":"heart",
+		"icon":"star",
 		"name":"My Favourites",
 		"section":true
 	},

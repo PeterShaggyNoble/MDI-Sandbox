@@ -56,7 +56,7 @@
 	font-style:inherit;
 	font-weight:inherit;
 }
-::-webkit-inner-spin-button,::-webkit-outer-spin-button{ 
+::-webkit-inner-spin-button,::-webkit-outer-spin-button{
 	-webkit-appearance:none;
 	margin:0;
 }
@@ -521,7 +521,6 @@ body.mdil>#content>section>article::before{
 	line-height:48px;
 	transition:opacity .195s cubic-bezier(.4,0,.2,1);
 }
-/*  preview */
 #preview>svg{
 	fill:#fff;
 	left:50%;
@@ -557,7 +556,7 @@ body.mdil>#content>section>article::before{
 	background:#e0e0e0;
 	color:#303f9f;
 }
-#info.nocopy>#actions>li[data-copy]:not([data-confirm=Path]):not([data-confirm=Link]),
+#info.nocopy>#actions>li[data-copy]:not([data-confirm="Path data"]):not([data-confirm=Link]),
 #info.retired>#actions>li:last-child{
 	height:0;
 	opacity:0;
