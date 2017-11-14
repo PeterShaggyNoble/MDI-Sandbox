@@ -32,6 +32,7 @@
 				this.font=this.light?`light`:`regular`;
 				b.classList.add(this.light?`mdil`:`mdi`);
 				version=versions[this.font];
+				this.message.append(T``);
 				try{
 					this.storage=localStorage;
 				}catch(e){
@@ -729,7 +730,7 @@
 					svg=this.svg.cloneNode(1),
 					codepoint=icon.codepoint,
 					keywords=new Set(key.split`-`),
-					data,category
+					data,category;
 				if(data=icon.data[page.font]){
 					icon.aliases&&icon.aliases.forEach(alias=>
 						alias.split`-`.forEach(word=>
