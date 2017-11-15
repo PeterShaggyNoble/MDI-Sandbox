@@ -519,7 +519,10 @@
 						this.open(icon);
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
-				}else page.size>0&&this.open(page.params.get`edit`||Object.keys(icons.list)[0]);
+				}else if(page.size>0){
+					this.open(icon=(page.params.get`edit`||Object.keys(icons.list)[0]));
+					Object.values(icons.list[icon].articles)[0].classList.add`active`;
+				}
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
