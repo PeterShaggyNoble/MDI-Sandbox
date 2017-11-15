@@ -126,7 +126,6 @@
 				URL.revokeObjectURL(this.anchor.href);
 			}
 		},
-
 	/** MENU **/
 		menu={
 			functions:{},
@@ -484,7 +483,6 @@
 				page.alert(`${name} ${msg} favourites.`);
 			}
 		},
-
 	/** SIDEBAR **/
 		info={
 			actions:{
@@ -614,7 +612,6 @@
 				}
 			}
 		},
-
 	/** CATEGORIES **/
 		categories={
 			header:C`header`,
@@ -673,7 +670,6 @@
 				}else delete this.list[key];
 			}
 		},
-
 	/** CONTRIBUTORS **/
 		contributors={
 			img:C`img`,
@@ -706,7 +702,6 @@
 				}else delete this.list[key];
 			}
 		},
-
 	/** ICONS **/
 		icons={
 			article:C`article`,
@@ -759,7 +754,6 @@
 				}else delete this.list[key];
 			}
 		},
-
 	/** EDITOR **/
 		editor={
 			inputs:{
@@ -1039,7 +1033,6 @@
 			},
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000
 		};
-
 	/** INITIATE **/
 	(async _=>{
 		categories.list=await(await fetch`json/categories.json`).json();
