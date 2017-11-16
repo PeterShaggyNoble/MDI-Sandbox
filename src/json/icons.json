@@ -18043,6 +18043,7 @@
 		}
 	},
 	"rotate-3d":{
+		"aliases":["3d-rotation"],
 		"categories":["editor"],
 		"codepoint":"f464",
 		"contributor":{
@@ -23167,6 +23168,7 @@
 		}
 	},
 	"weather-night":{
+		"aliases":["moon-and-stars","night-sky"],
 		"categories":["weather"],
 		"codepoint":"f594",
 		"contributor":{
