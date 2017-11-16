@@ -1,7 +1,7 @@
 {
-	"background_color":"#e0e0e0",
+	"background_color":"#303f9f",
 	"description":"A jacked up cheatsheet for https://materialdesignicons.com/",
-	"display":"fullscreen",
+	"display":"standalone",
   	"icons":[{
 		"sizes":"48x48",
         	"src":"../img/icon48.png",
