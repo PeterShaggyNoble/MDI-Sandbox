@@ -589,7 +589,7 @@
 		}
 	},
 	"alert-circle":{
-		"aliases":["warning-circle"],
+		"aliases":["error","warning-circle"],
 		"categories":["other"],
 		"codepoint":"f028",
 		"contributor":{
@@ -603,7 +603,7 @@
 		"added":{
 			"regular":1554
 		},
-		"aliases":["warning-circle-outline"],
+		"aliases":["error-outline","warning-circle-outline"],
 		"categories":["other"],
 		"codepoint":"f5d6",
 		"contributor":{
@@ -1195,6 +1195,7 @@
 		}
 	},
 	"arrow-down":{
+		"aliases":["arrow-downward"],
 		"categories":["arrows"],
 		"codepoint":"f045",
 		"contributor":{
@@ -1294,6 +1295,7 @@
 		}
 	},
 	"arrow-down-drop-circle":{
+		"aliases":["arrow-drop-down-dircle"],
 		"categories":["arrows"],
 		"codepoint":"f04a",
 		"contributor":{
@@ -1414,6 +1416,7 @@
 		}
 	},
 	"arrow-left":{
+		"aliases":["arrow-back"],
 		"categories":["arrows"],
 		"codepoint":"f04d",
 		"contributor":{
@@ -1545,6 +1548,7 @@
 		}
 	},
 	"arrow-right":{
+		"aliases":["arrow-forward"],
 		"categories":["arrows"],
 		"codepoint":"f054",
 		"contributor":{
@@ -1698,6 +1702,7 @@
 		"keywords":["up"]
 	},
 	"arrow-up":{
+		"aliases":["arrow-upward"],
 		"categories":["arrows"],
 		"codepoint":"f05d",
 		"contributor":{
@@ -1990,6 +1995,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["child-friendly"],
 		"categories":["other"],
 		"codepoint":"f68e",
 		"contributor":{
@@ -2140,6 +2146,7 @@
 		}
 	},
 	"battery":{
+		"aliases":["battery-full","battery-std"],
 		"categories":["home","power"],
 		"codepoint":"f079",
 		"contributor":{
@@ -2251,6 +2258,7 @@
 		}
 	},
 	"battery-charging":{
+		"aliases":["battery-charging-full"],
 		"categories":["home","power"],
 		"codepoint":"f084",
 		"contributor":{
@@ -2701,7 +2709,7 @@
 		}
 	},
 	"bike":{
-		"aliases":["bicycle","cycling"],
+		"aliases":["bicycle","cycling","directions-bike"],
 		"categories":["sport","travel"],
 		"codepoint":"f0a3",
 		"contributor":{
@@ -2841,6 +2849,7 @@
 		}
 	},
 	"bluetooth-audio":{
+		"aliases":["bluetooth-searching"],
 		"categories":["networking"],
 		"codepoint":"f0b0",
 		"contributor":{
@@ -2851,6 +2860,7 @@
 		}
 	},
 	"bluetooth-connect":{
+		"aliases":["bluetooth-connected"],
 		"categories":["networking"],
 		"codepoint":"f0b1",
 		"contributor":{
@@ -2861,6 +2871,7 @@
 		}
 	},
 	"bluetooth-off":{
+		"aliases":["bluetooth-disabled"],
 		"categories":["networking"],
 		"codepoint":"f0b2",
 		"contributor":{
@@ -2891,6 +2902,7 @@
 		}
 	},
 	"blur":{
+		"aliases":["blur-on"],
 		"categories":["other"],
 		"codepoint":"f0b5",
 		"contributor":{
@@ -2921,6 +2933,7 @@
 		}
 	},
 	"blur-radial":{
+		"aliases":["blur-circular"],
 		"categories":["other"],
 		"codepoint":"f0b8",
 		"contributor":{
@@ -3011,6 +3024,7 @@
 		}
 	},
 	"book-open":{
+		"aliases":["chrome-reader-mode"],
 		"categories":["other"],
 		"codepoint":"f0bd",
 		"contributor":{
@@ -3086,6 +3100,7 @@
 		}
 	},
 	"book-variant":{
+		"aliases":["class"],
 		"categories":["other"],
 		"codepoint":"f0bf",
 		"contributor":{
@@ -3127,6 +3142,7 @@
 		"keywords":["note","sound"]
 	},
 	"bookmark-outline":{
+		"aliases":["bookmark-border"],
 		"categories":["other"],
 		"codepoint":"f0c3",
 		"contributor":{
@@ -3254,6 +3270,7 @@
 		}
 	},
 	"border-none":{
+		"aliases":["border-clear"],
 		"categories":["editor"],
 		"codepoint":"f0cd",
 		"contributor":{
@@ -3264,6 +3281,7 @@
 		}
 	},
 	"border-outside":{
+		"aliases":["border-outer"],
 		"categories":["editor"],
 		"codepoint":"f0ce",
 		"contributor":{
@@ -3477,6 +3495,7 @@
 		}
 	},
 	"brightness-5":{
+		"aliases":["brightness-low"],
 		"categories":["other"],
 		"codepoint":"f0de",
 		"contributor":{
@@ -3487,6 +3506,7 @@
 		}
 	},
 	"brightness-6":{
+		"aliases":["brightness-medium"],
 		"categories":["other"],
 		"codepoint":"f0df",
 		"contributor":{
@@ -3497,6 +3517,7 @@
 		}
 	},
 	"brightness-7":{
+		"aliases":["brightness-high"],
 		"categories":["home"],
 		"codepoint":"f0e0",
 		"contributor":{
@@ -3609,6 +3630,7 @@
 		"retired":"{next}"
 	},
 	"bus":{
+		"aliases":["directions-bus"],
 		"categories":["travel"],
 		"codepoint":"f0e7",
 		"contributor":{
@@ -3740,6 +3762,7 @@
 		}
 	},
 	"calendar":{
+		"aliases":["event"],
 		"categories":["time"],
 		"codepoint":"f0ed",
 		"contributor":{
@@ -3760,6 +3783,7 @@
 		}
 	},
 	"calendar-check":{
+		"aliases":["event-available"],
 		"categories":["time"],
 		"codepoint":"f0ef",
 		"contributor":{
@@ -3827,6 +3851,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["date-range"],
 		"categories":["time"],
 		"codepoint":"f678",
 		"contributor":{
@@ -3840,6 +3865,7 @@
 		}
 	},
 	"calendar-remove":{
+		"aliases":["event-busy"],
 		"categories":["time"],
 		"codepoint":"f0f4",
 		"contributor":{
@@ -3850,6 +3876,7 @@
 		}
 	},
 	"calendar-text":{
+		"aliases":["event-note"],
 		"categories":["time"],
 		"codepoint":"f0f5",
 		"contributor":{
@@ -3960,7 +3987,7 @@
 		}
 	},
 	"camera":{
-		"aliases":["photography"],
+		"aliases":["camera-alt","photography"],
 		"categories":["home"],
 		"codepoint":"f100",
 		"contributor":{
@@ -4157,7 +4184,7 @@
 		"added":{
 			"regular":1932
 		},
-		"aliases":["ban","prohibited"],
+		"aliases":["ban","do-not-disturb-alt","prohibited"],
 		"categories":["other"],
 		"codepoint":"f739",
 		"contributor":{
@@ -4205,6 +4232,7 @@
 		}
 	},
 	"car":{
+		"aliases":["directions-car","drive-eta"],
 		"categories":["travel"],
 		"codepoint":"f10b",
 		"contributor":{
@@ -4639,7 +4667,7 @@
 		}
 	},
 	"cellphone-link":{
-		"aliases":["mobile-phone-link","smartphone-link"],
+		"aliases":["devices","mobile-phone-link","smartphone-link"],
 		"categories":["networking"],
 		"codepoint":"f121",
 		"contributor":{
@@ -4751,6 +4779,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["bubble-chart"],
 		"categories":["science"],
 		"codepoint":"f5e3",
 		"contributor":{
@@ -4884,7 +4913,7 @@
 		}
 	},
 	"check":{
-		"aliases":["tick"],
+		"aliases":["done","tick"],
 		"categories":["characters"],
 		"codepoint":"f12c",
 		"contributor":{
@@ -4895,7 +4924,7 @@
 		}
 	},
 	"check-all":{
-		"aliases":["tick-all"],
+		"aliases":["done-all","tick-all"],
 		"categories":["other"],
 		"codepoint":"f12d",
 		"contributor":{
@@ -4965,6 +4994,7 @@
 		}
 	},
 	"checkbox-blank-outline":{
+		"aliases":["check-box-outline-blank"],
 		"categories":["other"],
 		"codepoint":"f131",
 		"contributor":{
@@ -4975,6 +5005,7 @@
 		}
 	},
 	"checkbox-marked":{
+		"aliases":["check-box"],
 		"categories":["other"],
 		"codepoint":"f132",
 		"contributor":{
@@ -5171,6 +5202,7 @@
 		"keywords":["top"]
 	},
 	"chevron-down":{
+		"aliases":["expand-more"],
 		"categories":["arrows"],
 		"codepoint":"f140",
 		"contributor":{
@@ -5204,6 +5236,7 @@
 		"keywords":["angle","quotation"]
 	},
 	"chevron-up":{
+		"aliases":["expand-less"],
 		"categories":["arrows"],
 		"codepoint":"f143",
 		"contributor":{
@@ -5525,6 +5558,7 @@
 		}
 	},
 	"close":{
+		"aliases":["clear"],
 		"categories":["characters"],
 		"codepoint":"f156",
 		"contributor":{
@@ -5555,7 +5589,7 @@
 		}
 	},
 	"close-circle":{
-		"aliases":["remove-circle"],
+		"aliases":["cancel","remove-circle"],
 		"categories":["characters"],
 		"codepoint":"f159",
 		"contributor":{
@@ -5658,6 +5692,7 @@
 		}
 	},
 	"cloud-check":{
+		"aliases":["cloud-done"],
 		"categories":["networking"],
 		"codepoint":"f160",
 		"contributor":{
@@ -5698,6 +5733,7 @@
 		}
 	},
 	"cloud-outline":{
+		"aliases":["cloud-queue"],
 		"categories":["networking"],
 		"codepoint":"f163",
 		"contributor":{
@@ -5755,6 +5791,7 @@
 		}
 	},
 	"cloud-upload":{
+		"aliases":["backup"],
 		"categories":["networking"],
 		"codepoint":"f167",
 		"contributor":{
@@ -6208,6 +6245,7 @@
 		}
 	},
 	"compass":{
+		"aliases":["explore"],
 		"categories":["travel"],
 		"codepoint":"f18b",
 		"contributor":{
@@ -6531,6 +6569,7 @@
 		}
 	},
 	"crop-landscape":{
+		"aliases":["crop-5-4"],
 		"categories":["editor"],
 		"codepoint":"f1a0",
 		"contributor":{
@@ -6732,7 +6771,7 @@
 		}
 	},
 	"currency-eur":{
-		"aliases":["euro"],
+		"aliases":["euro","euro-symbol"],
 		"categories":["money"],
 		"codepoint":"f1ad",
 		"contributor":{
@@ -6857,9 +6896,10 @@
 		"data":{
 			"regular":"M3,11H21V13H15V19H21V21H15A2,2 0 0,1 13,19V13H10.35L5.73,21L4,20L8.04,13H3V11M5,3H19V5H5V3Z"
 		},
-		"keywords":["dollar","taiwanese"]
+		"keywords":["dollars","taiwanese"]
 	},
 	"currency-usd":{
+		"aliases":["attach-money"],
 		"categories":["money"],
 		"codepoint":"f1b3",
 		"contributor":{
@@ -7128,6 +7168,7 @@
 		}
 	},
 	"delta":{
+		"aliases":["change-history"],
 		"categories":["characters"],
 		"codepoint":"f1c2",
 		"contributor":{
@@ -7484,7 +7525,7 @@
 		"keywords":["disc"]
 	},
 	"disk-alert":{
-		"aliases":["disk-warning"],
+		"aliases":["disc-full","disk-warning"],
 		"categories":["other"],
 		"codepoint":"f1d1",
 		"contributor":{
@@ -7600,7 +7641,7 @@
 		}
 	},
 	"domain":{
-		"aliases":["building","company"],
+		"aliases":["building","business","company"],
 		"categories":["networking","places"],
 		"codepoint":"f1d7",
 		"contributor":{
@@ -8020,6 +8061,7 @@
 		"keywords":["e-mail","envelope","letter","mail","notification","support"]
 	},
 	"email-open":{
+		"aliases":["drafts"],
 		"categories":["other"],
 		"codepoint":"f1ef",
 		"contributor":{
@@ -8462,6 +8504,7 @@
 		}
 	},
 	"eyedropper-variant":{
+		"aliases":["colorize","colourise"],
 		"categories":["editor"],
 		"codepoint":"f20b",
 		"contributor":{
@@ -8614,7 +8657,7 @@
 		}
 	},
 	"ferry":{
-		"aliases":["boat","cargo-ship","ship"],
+		"aliases":["boat","cargo-ship","directions-boat","ship"],
 		"categories":["travel"],
 		"codepoint":"f213",
 		"contributor":{
@@ -9114,6 +9157,7 @@
 		}
 	},
 	"flag":{
+		"aliases":["assistant-photo"],
 		"categories":["other"],
 		"codepoint":"f23b",
 		"contributor":{
@@ -9497,6 +9541,7 @@
 		}
 	},
 	"folder-plus":{
+		"aliases":["create-new-folder"],
 		"categories":["files"],
 		"codepoint":"f257",
 		"contributor":{
@@ -12235,6 +12280,7 @@
 		}
 	},
 	"image-broken-variant":{
+		"aliases":["broken-image"],
 		"categories":["other"],
 		"codepoint":"f2ee",
 		"contributor":{
@@ -12350,6 +12396,7 @@
 		}
 	},
 	"image-multiple":{
+		"aliases":["collections"],
 		"categories":["other"],
 		"codepoint":"f2f9",
 		"contributor":{
@@ -13032,6 +13079,7 @@
 		}
 	},
 	"laptop":{
+		"aliases":["computer"],
 		"categories":["home","tech"],
 		"codepoint":"f322",
 		"contributor":{
@@ -13477,6 +13525,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["enhanced-encryption"],
 		"categories":["other"],
 		"codepoint":"f5fb",
 		"contributor":{
@@ -13865,6 +13914,7 @@
 		}
 	},
 	"marker-check":{
+		"aliases":["beenhere"],
 		"categories":["places"],
 		"codepoint":"f355",
 		"contributor":{
@@ -13980,6 +14030,7 @@
 		"keywords":["bars","burger","navigation"]
 	},
 	"menu-down":{
+		"aliases":["arrow-drop-down"],
 		"categories":["arrows"],
 		"codepoint":"f35d",
 		"contributor":{
@@ -14027,6 +14078,7 @@
 		"keywords":["caret"]
 	},
 	"menu-up":{
+		"aliases":["arrow-drop-up"],
 		"categories":["arrows"],
 		"codepoint":"f360",
 		"contributor":{
@@ -14166,6 +14218,7 @@
 		}
 	},
 	"message-reply-text":{
+		"aliases":["comment"],
 		"categories":["other"],
 		"codepoint":"f368",
 		"contributor":{
@@ -14416,6 +14469,7 @@
 		}
 	},
 	"minus-circle":{
+		"aliases":["do-not-disturb-on"],
 		"categories":["characters"],
 		"codepoint":"f376",
 		"contributor":{
@@ -14472,6 +14526,7 @@
 		}
 	},
 	"monitor":{
+		"aliases":["desktop-windows"],
 		"categories":["home","tech"],
 		"codepoint":"f379",
 		"contributor":{
@@ -15954,6 +16009,7 @@
 		}
 	},
 	"palette":{
+		"aliases":["color-lens","colour-lens"],
 		"categories":["editor"],
 		"codepoint":"f3d8",
 		"contributor":{
@@ -16054,7 +16110,7 @@
 		}
 	},
 	"paperclip":{
-		"aliases":["attachment-vertical"],
+		"aliases":["attach-file","attachment-vertical"],
 		"categories":["other"],
 		"codepoint":"f3e2",
 		"contributor":{
@@ -16184,7 +16240,7 @@
 		}
 	},
 	"pencil":{
-		"aliases":["edit"],
+		"aliases":["create","edit"],
 		"categories":["editor"],
 		"codepoint":"f3eb",
 		"contributor":{
@@ -16336,6 +16392,7 @@
 		"keywords":["medicine"]
 	},
 	"phone":{
+		"aliases":["call"],
 		"categories":["tech"],
 		"codepoint":"f3f2",
 		"contributor":{
@@ -16379,6 +16436,7 @@
 		}
 	},
 	"phone-hangup":{
+		"aliases":["call-end"],
 		"categories":["other"],
 		"codepoint":"f3f5",
 		"contributor":{
@@ -16909,6 +16967,7 @@
 		"keywords":["add"]
 	},
 	"plus-circle-multiple-outline":{
+		"aliases":["control-point-duplicate"],
 		"categories":["characters"],
 		"codepoint":"f418",
 		"contributor":{
@@ -16920,7 +16979,7 @@
 		"keywords":["add"]
 	},
 	"plus-circle-outline":{
-		"aliases":["add-circle-outline"],
+		"aliases":["add-circle-outline","control-point"],
 		"categories":["characters"],
 		"codepoint":"f419",
 		"contributor":{
@@ -17020,6 +17079,7 @@
 		}
 	},
 	"poll-box":{
+		"aliases":["assessment"],
 		"categories":["other"],
 		"codepoint":"f420",
 		"contributor":{
@@ -17370,6 +17430,7 @@
 		"keywords":["health","heartbeat"]
 	},
 	"puzzle":{
+		"aliases":["extension"],
 		"categories":["other"],
 		"codepoint":"f431",
 		"contributor":{
@@ -18193,6 +18254,7 @@
 		"added":{
 			"regular":1836
 		},
+		"aliases":["directions-run"],
 		"categories":["sport","travel"],
 		"codepoint":"f70d",
 		"contributor":{
@@ -20304,7 +20366,7 @@
 		}
 	},
 	"subway-variant":{
-		"aliases":["metro-variant","tube-variant","underground-variant"],
+		"aliases":["directions-subway","directions-transit","metro-variant","tube-variant","underground-variant"],
 		"categories":["places","travel"],
 		"codepoint":"f4df",
 		"contributor":{
@@ -21206,6 +21268,7 @@
 		"keywords":["person"]
 	},
 	"ticket-confirmation":{
+		"aliases":["confirmation-number"],
 		"categories":["other"],
 		"codepoint":"f518",
 		"contributor":{
@@ -21528,6 +21591,7 @@
 		}
 	},
 	"train":{
+		"aliases":["directions-railway"],
 		"categories":["travel"],
 		"codepoint":"f52c",
 		"contributor":{
@@ -22934,6 +22998,7 @@
 		}
 	},
 	"walk":{
+		"aliases":["directions-walk"],
 		"categories":["sport","travel"],
 		"codepoint":"f583",
 		"contributor":{
@@ -22970,6 +23035,7 @@
 		}
 	},
 	"wallet-giftcard":{
+		"aliases":["card-giftcard"],
 		"categories":["money"],
 		"codepoint":"f585",
 		"contributor":{
@@ -22980,6 +23046,7 @@
 		}
 	},
 	"wallet-membership":{
+		"aliases":["card-membership"],
 		"categories":["other"],
 		"codepoint":"f586",
 		"contributor":{
@@ -22990,6 +23057,7 @@
 		}
 	},
 	"wallet-travel":{
+		"aliases":["card-travel"],
 		"categories":["money","travel"],
 		"codepoint":"f587",
 		"contributor":{
@@ -23115,6 +23183,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["branding-watermark"],
 		"categories":["other"],
 		"codepoint":"f612",
 		"contributor":{
@@ -23630,6 +23699,7 @@
 		}
 	},
 	"wrench":{
+		"aliases":["build"],
 		"categories":["other"],
 		"codepoint":"f5b7",
 		"contributor":{

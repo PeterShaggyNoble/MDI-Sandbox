@@ -301,8 +301,8 @@
 				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
 					matches=0,
-					check,icon,article;
-				for(let key in icons.list)
+					article,check,icon,key;
+				for(key in icons.list)
 					if(icons.list.hasOwnProperty(key)){
 						icon=icons.list[key];
 						if(icon.articles.main){
@@ -355,7 +355,9 @@
 						contributors.list[key].item.classList.remove`active`;
 					this.contributors.clear();
 					this.text=this.input.value=``;
-					this.apply();
+					let article,key;
+					for(key in icons.list)
+						icons.list.hasOwnProperty(key)&&(article=icons.list[key].articles.main)&&article.classList.remove`dn`;
 				}
 				menu.goto(page.section);
 			}
