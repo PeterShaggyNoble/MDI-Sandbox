@@ -15,6 +15,8 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2017-11-17:** Added a games category.
+- **2017-11-16:** Created a web app for Chrome mobile.
 - **2017-11-09:** Added an options menu to allow downloading of currently filtered icons.
 - **2017-11-09:** Community icons can now be highlighted via the main menu.
 - **2017-11-07:** Added vector downloads to the icon editor.

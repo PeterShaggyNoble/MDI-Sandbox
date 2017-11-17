@@ -56,6 +56,10 @@
 		"icon":"food",
 		"name":"Food & Drink"
 	},
+	"games":{
+		"icon":"cards-playing-outline",
+		"name":"Games"
+	},
 	"google":{
 		"icon":"google",
 		"name":"Google"
