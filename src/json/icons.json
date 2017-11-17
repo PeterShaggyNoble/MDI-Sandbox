@@ -170,7 +170,7 @@
 		"keywords":["person"]
 	},
 	"account-multiple":{
-		"aliases":["people","user-multiple"],
+		"aliases":["group","people","user-multiple"],
 		"categories":["users"],
 		"codepoint":"f00e",
 		"contributor":{
@@ -209,7 +209,7 @@
 		"keywords":["accounts","people","users"]
 	},
 	"account-multiple-plus":{
-		"aliases":["user-multiple-plus"],
+		"aliases":["group-add","user-multiple-plus"],
 		"categories":["users"],
 		"codepoint":"f010",
 		"contributor":{
@@ -393,7 +393,7 @@
 		"keywords":["balloon","hot"]
 	},
 	"airplane":{
-		"aliases":["aeroplane","airplanemode-active"],
+		"aliases":["aeroplane","airplanemode-active","flight"],
 		"categories":["places","travel"],
 		"codepoint":"f01d",
 		"contributor":{
@@ -408,7 +408,7 @@
 		"added":{
 			"regular":1554
 		},
-		"aliases":["aeroplane-landing"],
+		"aliases":["aeroplane-landing","flight-land"],
 		"categories":["travel"],
 		"codepoint":"f5d4",
 		"contributor":{
@@ -435,7 +435,7 @@
 		"added":{
 			"regular":1554
 		},
-		"aliases":["aeroplane-takeoff"],
+		"aliases":["aeroplane-takeoff","flight-takeoff"],
 		"categories":["travel"],
 		"codepoint":"f5d5",
 		"contributor":{
@@ -3048,6 +3048,7 @@
 		}
 	},
 	"book-open-variant":{
+		"aliases":["import-contacts"],
 		"categories":["other"],
 		"codepoint":"f0be",
 		"contributor":{
@@ -3762,7 +3763,7 @@
 		}
 	},
 	"calendar":{
-		"aliases":["event"],
+		"aliases":["event","insert-invitation"],
 		"categories":["time"],
 		"codepoint":"f0ed",
 		"contributor":{
@@ -5202,7 +5203,7 @@
 		"keywords":["top"]
 	},
 	"chevron-down":{
-		"aliases":["expand-more"],
+		"aliases":["expand-more","keyboard-arrow-down"],
 		"categories":["arrows"],
 		"codepoint":"f140",
 		"contributor":{
@@ -5214,6 +5215,7 @@
 		"keywords":["bottom"]
 	},
 	"chevron-left":{
+		"aliases":["keyboard-arrow-left"],
 		"categories":["arrows","characters"],
 		"codepoint":"f141",
 		"contributor":{
@@ -5225,6 +5227,7 @@
 		"keywords":["angle","quotation"]
 	},
 	"chevron-right":{
+		"aliases":["keyboard-arrow-right"],
 		"categories":["arrows","characters"],
 		"codepoint":"f142",
 		"contributor":{
@@ -5236,7 +5239,7 @@
 		"keywords":["angle","quotation"]
 	},
 	"chevron-up":{
-		"aliases":["expand-less"],
+		"aliases":["expand-less","keyboard-arrow-up"],
 		"categories":["arrows"],
 		"codepoint":"f143",
 		"contributor":{
@@ -5600,6 +5603,7 @@
 		}
 	},
 	"close-circle-outline":{
+		"aliases":["highlight-off"],
 		"categories":["characters"],
 		"codepoint":"f15a",
 		"contributor":{
@@ -5960,7 +5964,7 @@
 		}
 	},
 	"coffee":{
-		"aliases":["cup","tea"],
+		"aliases":["cup","free-breakfast","tea"],
 		"categories":["food"],
 		"codepoint":"f176",
 		"contributor":{
@@ -6613,6 +6617,7 @@
 		}
 	},
 	"crosshairs":{
+		"aliases":["gps-not-fixed"],
 		"categories":["other"],
 		"codepoint":"f1a3",
 		"contributor":{
@@ -6623,6 +6628,7 @@
 		}
 	},
 	"crosshairs-gps":{
+		"aliases":["gps-fixed"],
 		"categories":["travel"],
 		"codepoint":"f1a4",
 		"contributor":{
@@ -7766,6 +7772,7 @@
 		}
 	},
 	"download":{
+		"aliases":["file-download","get-app"],
 		"categories":["networking"],
 		"codepoint":"f1da",
 		"contributor":{
@@ -8142,7 +8149,7 @@
 		}
 	},
 	"emoticon":{
-		"aliases":["smiley"],
+		"aliases":["insert-emoticon","smiley"],
 		"categories":["other"],
 		"codepoint":"f1f2",
 		"contributor":{
@@ -8668,6 +8675,7 @@
 		}
 	},
 	"file":{
+		"aliases":["insert-drive-file"],
 		"categories":["files"],
 		"codepoint":"f214",
 		"contributor":{
@@ -8784,7 +8792,7 @@
 		}
 	},
 	"file-find":{
-		"aliases":["print-preview"],
+		"aliases":["find-in-page","print-preview"],
 		"categories":["files"],
 		"codepoint":"f21e",
 		"contributor":{
@@ -9092,6 +9100,7 @@
 		}
 	},
 	"filter-variant":{
+		"aliases":["filter-list"],
 		"categories":["other"],
 		"codepoint":"f236",
 		"contributor":{
@@ -9221,7 +9230,7 @@
 		}
 	},
 	"flash":{
-		"aliases":["lightning-bolt"],
+		"aliases":["flash-on","lightning-bolt"],
 		"categories":["power","weather"],
 		"codepoint":"f241",
 		"contributor":{
@@ -9413,7 +9422,7 @@
 		}
 	},
 	"folder-account":{
-		"aliases":["folder-user"],
+		"aliases":["folder-shared","folder-user"],
 		"categories":["files","users"],
 		"codepoint":"f24c",
 		"contributor":{
@@ -9531,6 +9540,7 @@
 		}
 	},
 	"folder-outline":{
+		"aliases":["folder-open"],
 		"categories":["files"],
 		"codepoint":"f256",
 		"contributor":{
@@ -9565,6 +9575,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["folder-special"],
 		"categories":["files"],
 		"codepoint":"f69c",
 		"contributor":{
@@ -10152,6 +10163,7 @@
 		"keywords":["checklist"]
 	},
 	"format-list-numbers":{
+		"aliases":["format-list-numbered"],
 		"categories":["editor"],
 		"codepoint":"f27b",
 		"contributor":{
@@ -10358,6 +10370,7 @@
 		}
 	},
 	"format-underline":{
+		"aliases":["format-underlined"],
 		"categories":["editor"],
 		"codepoint":"f287",
 		"contributor":{
@@ -10479,6 +10492,7 @@
 		}
 	},
 	"fridge":{
+		"aliases":["kitchen"],
 		"categories":["food","home"],
 		"codepoint":"f28f",
 		"contributor":{
@@ -10563,6 +10577,7 @@
 		}
 	},
 	"gamepad":{
+		"aliases":["games"],
 		"categories":["games","home"],
 		"codepoint":"f296",
 		"contributor":{
@@ -10984,7 +10999,8 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["sport"],
+		"aliases":["golf-course"],
+		"categories":["places","sport"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -11263,6 +11279,7 @@
 		}
 	},
 	"google-translate":{
+		"aliases":["g-translate"],
 		"categories":["google"],
 		"codepoint":"f2bf",
 		"contributor":{
@@ -11312,6 +11329,7 @@
 		}
 	},
 	"grid":{
+		"aliases":["grid-on"],
 		"categories":["editor"],
 		"codepoint":"f2c1",
 		"contributor":{
@@ -11481,6 +11499,7 @@
 		"keywords":["disc","disk","drive"]
 	},
 	"headphones":{
+		"aliases":["headset"],
 		"categories":["tech"],
 		"codepoint":"f2cb",
 		"contributor":{
@@ -11524,6 +11543,7 @@
 		}
 	},
 	"headset":{
+		"aliases":["headset-mic"],
 		"categories":["tech"],
 		"codepoint":"f2ce",
 		"contributor":{
@@ -11554,6 +11574,7 @@
 		}
 	},
 	"heart":{
+		"aliases":["favorite","favourite"],
 		"categories":["science"],
 		"codepoint":"f2d1",
 		"contributor":{
@@ -11662,6 +11683,7 @@
 		"keywords":["favourite","like","love"]
 	},
 	"heart-outline":{
+		"aliases":["favorite-border","favourite-border"],
 		"categories":["science"],
 		"codepoint":"f2d5",
 		"contributor":{
@@ -11730,6 +11752,7 @@
 		"added":{
 			"regular":1650
 		},
+		"aliases":["help-outline"],
 		"categories":["characters"],
 		"codepoint":"f625",
 		"contributor":{
@@ -12230,6 +12253,7 @@
 		}
 	},
 	"image":{
+		"aliases":["insert-photo"],
 		"categories":["editor"],
 		"codepoint":"f2e9",
 		"contributor":{
@@ -12302,6 +12326,7 @@
 		"keywords":["mountains"]
 	},
 	"image-filter-black-white":{
+		"aliases":["filter-b-and-w"],
 		"categories":["other"],
 		"codepoint":"f2f0",
 		"contributor":{
@@ -12501,6 +12526,7 @@
 		}
 	},
 	"information-outline":{
+		"aliases":["info-outline"],
 		"categories":["other"],
 		"codepoint":"f2fd",
 		"contributor":{
@@ -12745,6 +12771,7 @@
 		}
 	},
 	"keyboard-caps":{
+		"aliases":["keyboard-capslock"],
 		"categories":["arrows"],
 		"codepoint":"f30e",
 		"contributor":{
@@ -12755,6 +12782,7 @@
 		}
 	},
 	"keyboard-close":{
+		"aliases":["keyboard-hide"],
 		"categories":["other"],
 		"codepoint":"f30f",
 		"contributor":{
@@ -13383,6 +13411,7 @@
 		"keywords":["bulb","idea"]
 	},
 	"link":{
+		"aliases":["insert-link"],
 		"categories":["editor"],
 		"codepoint":"f337",
 		"contributor":{
@@ -13469,6 +13498,7 @@
 		}
 	},
 	"lock":{
+		"aliases":["https"],
 		"categories":["home"],
 		"codepoint":"f33e",
 		"contributor":{
@@ -14218,7 +14248,7 @@
 		}
 	},
 	"message-reply-text":{
-		"aliases":["comment"],
+		"aliases":["comment","insert-comment"],
 		"categories":["other"],
 		"codepoint":"f368",
 		"contributor":{
@@ -14339,6 +14369,7 @@
 		"keywords":["card","memory"]
 	},
 	"microphone":{
+		"aliases":["keyboard-voice"],
 		"categories":["tech"],
 		"codepoint":"f36c",
 		"contributor":{
@@ -14446,6 +14477,7 @@
 		}
 	},
 	"minus-box":{
+		"aliases":["indeterminate-check-box"],
 		"categories":["characters"],
 		"codepoint":"f375",
 		"contributor":{
@@ -14995,6 +15027,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["fiber-new"],
 		"categories":["editor"],
 		"codepoint":"f394",
 		"contributor":{
@@ -15276,6 +15309,7 @@
 		"keywords":["one"]
 	},
 	"numeric-1-box-multiple-outline":{
+		"aliases":["filter-1"],
 		"categories":["characters"],
 		"codepoint":"f3a5",
 		"contributor":{
@@ -15309,6 +15343,7 @@
 		"keywords":["two"]
 	},
 	"numeric-2-box-multiple-outline":{
+		"aliases":["filter-2"],
 		"categories":["characters"],
 		"codepoint":"f3a8",
 		"contributor":{
@@ -15342,6 +15377,7 @@
 		"keywords":["three"]
 	},
 	"numeric-3-box-multiple-outline":{
+		"aliases":["filter-3"],
 		"categories":["characters"],
 		"codepoint":"f3ab",
 		"contributor":{
@@ -15375,6 +15411,7 @@
 		"keywords":["four"]
 	},
 	"numeric-4-box-multiple-outline":{
+		"aliases":["filter-4"],
 		"categories":["characters"],
 		"codepoint":"f3ae",
 		"contributor":{
@@ -15408,6 +15445,7 @@
 		"keywords":["five"]
 	},
 	"numeric-5-box-multiple-outline":{
+		"aliases":["filter-5"],
 		"categories":["characters"],
 		"codepoint":"f3b1",
 		"contributor":{
@@ -15441,6 +15479,7 @@
 		"keywords":["six"]
 	},
 	"numeric-6-box-multiple-outline":{
+		"aliases":["filter-6"],
 		"categories":["characters"],
 		"codepoint":"f3b4",
 		"contributor":{
@@ -15474,6 +15513,7 @@
 		"keywords":["seven"]
 	},
 	"numeric-7-box-multiple-outline":{
+		"aliases":["filter-7"],
 		"categories":["characters"],
 		"codepoint":"f3b7",
 		"contributor":{
@@ -15507,6 +15547,7 @@
 		"keywords":["eight"]
 	},
 	"numeric-8-box-multiple-outline":{
+		"aliases":["filter-8"],
 		"categories":["characters"],
 		"codepoint":"f3ba",
 		"contributor":{
@@ -15540,6 +15581,7 @@
 		"keywords":["nine"]
 	},
 	"numeric-9-box-multiple-outline":{
+		"aliases":["filter-9"],
 		"categories":["characters"],
 		"codepoint":"f3bd",
 		"contributor":{
@@ -15573,6 +15615,7 @@
 		"keywords":["nine"]
 	},
 	"numeric-9-plus-box-multiple-outline":{
+		"aliases":["filter-9-plus"],
 		"categories":["characters"],
 		"codepoint":"f3c0",
 		"contributor":{
@@ -15921,6 +15964,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["first-page"],
 		"categories":["other"],
 		"codepoint":"f600",
 		"contributor":{
@@ -17079,7 +17123,7 @@
 		}
 	},
 	"poll-box":{
-		"aliases":["assessment"],
+		"aliases":["assessment","insert-chart"],
 		"categories":["other"],
 		"codepoint":"f420",
 		"contributor":{
@@ -17484,6 +17528,7 @@
 		}
 	},
 	"quality-high":{
+		"aliases":["high-quality"],
 		"categories":["other"],
 		"codepoint":"f435",
 		"contributor":{
@@ -17711,6 +17756,7 @@
 		}
 	},
 	"record":{
+		"aliases":["fiber-manual-record"],
 		"categories":["home","player"],
 		"codepoint":"f44a",
 		"contributor":{
@@ -17791,6 +17837,7 @@
 		}
 	},
 	"relative-scale":{
+		"aliases":["image-aspect-ratio"],
 		"categories":["other"],
 		"codepoint":"f452",
 		"contributor":{
@@ -17975,6 +18022,7 @@
 		}
 	},
 	"rewind":{
+		"aliases":["fast-rewind"],
 		"categories":["player"],
 		"codepoint":"f45f",
 		"contributor":{
@@ -20089,6 +20137,7 @@
 		"keywords":["sd"]
 	},
 	"star":{
+		"aliases":["grade"],
 		"categories":["weather"],
 		"codepoint":"f4ce",
 		"contributor":{
@@ -20493,6 +20542,7 @@
 		"keywords":["switch"]
 	},
 	"swap-vertical":{
+		"aliases":["import-export"],
 		"categories":["arrows"],
 		"codepoint":"f4e2",
 		"contributor":{
@@ -22171,6 +22221,7 @@
 		}
 	},
 	"upload":{
+		"aliases":["file-upload"],
 		"categories":["networking"],
 		"codepoint":"f552",
 		"contributor":{
@@ -23149,6 +23200,7 @@
 		}
 	},
 	"water-off":{
+		"aliases":["format-color-reset"],
 		"categories":["science"],
 		"codepoint":"f58d",
 		"contributor":{
