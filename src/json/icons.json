@@ -393,7 +393,7 @@
 		"keywords":["balloon","hot"]
 	},
 	"airplane":{
-		"aliases":["aeroplane","airplanemode-active","flight"],
+		"aliases":["aeroplane","airplanemode-active","flight","local-airport"],
 		"categories":["places","travel"],
 		"codepoint":"f01d",
 		"contributor":{
@@ -3908,6 +3908,7 @@
 		}
 	},
 	"call-merge":{
+		"aliases":["merge-type"],
 		"categories":["arrows"],
 		"codepoint":"f0f8",
 		"contributor":{
@@ -3988,8 +3989,8 @@
 		}
 	},
 	"camera":{
-		"aliases":["camera-alt","photography"],
-		"categories":["home"],
+		"aliases":["camera-alt","local-see","photography"],
+		"categories":["home","places"],
 		"codepoint":"f100",
 		"contributor":{
 			"regular":"google"
@@ -4345,6 +4346,7 @@
 		}
 	},
 	"car-wash":{
+		"aliases":["local-car-wash"],
 		"categories":["places"],
 		"codepoint":"f10e",
 		"contributor":{
@@ -4430,7 +4432,7 @@
 		}
 	},
 	"cart":{
-		"aliases":["trolley"],
+		"aliases":["local-grocery-store","trolley"],
 		"categories":["other"],
 		"codepoint":"f110",
 		"contributor":{
@@ -4520,7 +4522,8 @@
 		"keywords":["money","notes"]
 	},
 	"cash-usd":{
-		"categories":["money"],
+		"aliases":["local-atm"],
+		"categories":["money","places"],
 		"codepoint":"f117",
 		"contributor":{
 			"regular":"google"
@@ -5319,6 +5322,7 @@
 		"added":{
 			"regular":1932
 		},
+		"aliases":["lens"],
 		"categories":["other"],
 		"codepoint":"f764",
 		"contributor":{
@@ -5352,6 +5356,7 @@
 		}
 	},
 	"city":{
+		"aliases":["location-city"],
 		"categories":["places"],
 		"codepoint":"f146",
 		"contributor":{
@@ -5964,8 +5969,8 @@
 		}
 	},
 	"coffee":{
-		"aliases":["cup","free-breakfast","tea"],
-		"categories":["food"],
+		"aliases":["cup","free-breakfast","local-cafe","tea"],
+		"categories":["food","places"],
 		"codepoint":"f176",
 		"contributor":{
 			"regular":"google"
@@ -6617,7 +6622,7 @@
 		}
 	},
 	"crosshairs":{
-		"aliases":["gps-not-fixed"],
+		"aliases":["gps-not-fixed","location-searching"],
 		"categories":["other"],
 		"codepoint":"f1a3",
 		"contributor":{
@@ -6628,7 +6633,7 @@
 		}
 	},
 	"crosshairs-gps":{
-		"aliases":["gps-fixed"],
+		"aliases":["gps-fixed","my-location"],
 		"categories":["travel"],
 		"codepoint":"f1a4",
 		"contributor":{
@@ -6712,7 +6717,8 @@
 		}
 	},
 	"cup-water":{
-		"categories":["food"],
+		"aliases":["local-drink"],
+		"categories":["food","places"],
 		"codepoint":"f1ab",
 		"contributor":{
 			"regular":"google"
@@ -6920,6 +6926,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["money-off"],
 		"categories":["money"],
 		"codepoint":"f679",
 		"contributor":{
@@ -7707,7 +7714,7 @@
 		}
 	},
 	"dots-horizontal":{
-		"aliases":["ellipsis-horizontal","more"],
+		"aliases":["ellipsis-horizontal","more","more-horiz"],
 		"categories":["characters"],
 		"codepoint":"f1d8",
 		"contributor":{
@@ -7732,7 +7739,7 @@
 		}
 	},
 	"dots-vertical":{
-		"aliases":["ellipsis-vertical"],
+		"aliases":["ellipsis-vertical","more-vert"],
 		"categories":["other"],
 		"codepoint":"f1d9",
 		"contributor":{
@@ -7741,7 +7748,7 @@
 		"data":{
 			"regular":"M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"
 		},
-		"keywords":["more","options"]
+		"keywords":["options"]
 	},
 	"dots-vertical-circle":{
 		"added":{
@@ -8042,7 +8049,8 @@
 		}
 	},
 	"email":{
-		"categories":["other"],
+		"aliases":["local-post-office","mail","markunread"],
+		"categories":["places"],
 		"codepoint":"f1ee",
 		"contributor":{
 			"regular":"google"
@@ -8050,7 +8058,7 @@
 		"data":{
 			"regular":"M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"
 		},
-		"keywords":["e-mail","envelope","letter","mail","notification","support"]
+		"keywords":["e-mail","envelope","letter","notification","support"]
 	},
 	"email-alert":{
 		"added":{
@@ -8097,6 +8105,7 @@
 		"keywords":["e-mail","envelope","letter","mail","notification","support"]
 	},
 	"email-outline":{
+		"aliases":["mail-outline"],
 		"categories":["other"],
 		"codepoint":"f1f0",
 		"contributor":{
@@ -8105,7 +8114,7 @@
 		"data":{
 			"regular":"M4,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4C2.89,20 2,19.1 2,18V6C2,4.89 2.89,4 4,4M12,11L20,6H4L12,11M4,18H20V8.37L12,13.36L4,8.37V18Z"
 		},
-		"keywords":["e-mail","envelope","letter","mail","notification","support"],
+		"keywords":["e-mail","envelope","letter","notification","support"],
 		"updated":{
 			"regular":2046
 		}
@@ -8149,7 +8158,7 @@
 		}
 	},
 	"emoticon":{
-		"aliases":["insert-emoticon","smiley"],
+		"aliases":["insert-emoticon","mood","smiley"],
 		"categories":["other"],
 		"codepoint":"f1f2",
 		"contributor":{
@@ -9040,7 +9049,8 @@
 		}
 	},
 	"filmstrip":{
-		"categories":["other"],
+		"aliases":["local-movies"],
+		"categories":["places"],
 		"codepoint":"f230",
 		"contributor":{
 			"regular":"google"
@@ -9402,6 +9412,7 @@
 		}
 	},
 	"flower":{
+		"aliases":["local-florist"],
 		"categories":["nature"],
 		"codepoint":"f24a",
 		"contributor":{
@@ -10637,7 +10648,7 @@
 		}
 	},
 	"gas-station":{
-		"aliases":["gas-pump","petrol-pump","petrol-station"],
+		"aliases":["gas-pump","local-gas-station","petrol-pump","petrol-station"],
 		"categories":["places","travel"],
 		"codepoint":"f298",
 		"contributor":{
@@ -12029,6 +12040,7 @@
 		}
 	},
 	"hospital":{
+		"aliases":["local-hospital"],
 		"categories":["places","science"],
 		"codepoint":"f2e0",
 		"contributor":{
@@ -12380,7 +12392,7 @@
 		}
 	},
 	"image-filter-hdr":{
-		"aliases":["mountain"],
+		"aliases":["landscape","mountain"],
 		"categories":["other"],
 		"codepoint":"f2f5",
 		"contributor":{
@@ -12468,6 +12480,7 @@
 		"keywords":["e-mail","mail","notification"]
 	},
 	"inbox-arrow-down":{
+		"aliases":["move-to-inbox"],
 		"categories":["other"],
 		"codepoint":"f2fb",
 		"contributor":{
@@ -13213,6 +13226,7 @@
 		}
 	},
 	"layers-off":{
+		"aliases":["layers-clear"],
 		"categories":["other"],
 		"codepoint":"f329",
 		"contributor":{
@@ -13319,6 +13333,7 @@
 		}
 	},
 	"library":{
+		"aliases":["local-library"],
 		"categories":["places"],
 		"codepoint":"f331",
 		"contributor":{
@@ -13350,7 +13365,7 @@
 		"keywords":["note","sound"]
 	},
 	"library-plus":{
-		"aliases":["add-to-photos"],
+		"aliases":["add-to-photos","library-add"],
 		"categories":["files"],
 		"codepoint":"f334",
 		"contributor":{
@@ -13791,6 +13806,7 @@
 		"added":{
 			"regular":1836
 		},
+		"aliases":["markunread-mailbox"],
 		"categories":["other"],
 		"codepoint":"f6ed",
 		"contributor":{
@@ -13812,7 +13828,7 @@
 		}
 	},
 	"map-marker":{
-		"aliases":["address-marker","location"],
+		"aliases":["address-marker","location","location-on"],
 		"categories":["places"],
 		"codepoint":"f34e",
 		"contributor":{
@@ -13859,6 +13875,7 @@
 		"keywords":["location"]
 	},
 	"map-marker-off":{
+		"aliases":["location-off"],
 		"categories":["places"],
 		"codepoint":"f351",
 		"contributor":{
@@ -13955,7 +13972,8 @@
 		}
 	},
 	"martini":{
-		"categories":["food"],
+		"aliases":["local-bar"],
+		"categories":["food","places"],
 		"codepoint":"f356",
 		"contributor":{
 			"regular":"google"
@@ -13963,7 +13981,7 @@
 		"data":{
 			"regular":"M7.5,7L5.5,5H18.5L16.5,7M11,13V19H6V21H18V19H13V13L21,5V3H3V5L11,13Z"
 		},
-		"keywords":["alcohol","bar","cocktail","drink","glass","liquor"]
+		"keywords":["alcohol","cocktail","drink","glass","liquor"]
 	},
 	"material-ui":{
 		"categories":["logos"],
@@ -14194,6 +14212,7 @@
 		}
 	},
 	"message-image":{
+		"aliases":["mms"],
 		"categories":["other"],
 		"codepoint":"f364",
 		"contributor":{
@@ -14238,6 +14257,7 @@
 		}
 	},
 	"message-reply":{
+		"aliases":["mode-comment"],
 		"categories":["other"],
 		"codepoint":"f367",
 		"contributor":{
@@ -14380,7 +14400,8 @@
 		}
 	},
 	"microphone-off":{
-		"categories":["networking"],
+		"aliases":["mic-off"],
+		"categories":["tech"],
 		"codepoint":"f36d",
 		"contributor":{
 			"regular":"google"
@@ -14390,6 +14411,7 @@
 		}
 	},
 	"microphone-outline":{
+		"aliases":["mic-none"],
 		"categories":["tech"],
 		"codepoint":"f36e",
 		"contributor":{
@@ -14667,7 +14689,7 @@
 		}
 	},
 	"movie":{
-		"aliases":["clapperboard","film","slate"],
+		"aliases":["clapperboard","film","movie-creation","slate"],
 		"categories":["other"],
 		"codepoint":"f381",
 		"contributor":{
@@ -15298,6 +15320,7 @@
 		"keywords":["zero"]
 	},
 	"numeric-1-box":{
+		"aliases":["looks-one"],
 		"categories":["characters"],
 		"codepoint":"f3a4",
 		"contributor":{
@@ -15332,6 +15355,7 @@
 		"keywords":["one"]
 	},
 	"numeric-2-box":{
+		"aliases":["looks-two"],
 		"categories":["characters"],
 		"codepoint":"f3a7",
 		"contributor":{
@@ -15366,6 +15390,7 @@
 		"keywords":["two"]
 	},
 	"numeric-3-box":{
+		"aliases":["looks-3"],
 		"categories":["characters"],
 		"codepoint":"f3aa",
 		"contributor":{
@@ -15400,6 +15425,7 @@
 		"keywords":["three"]
 	},
 	"numeric-4-box":{
+		"aliases":["looks-4"],
 		"categories":["characters"],
 		"codepoint":"f3ad",
 		"contributor":{
@@ -15434,6 +15460,7 @@
 		"keywords":["four"]
 	},
 	"numeric-5-box":{
+		"aliases":["looks-5"],
 		"categories":["characters"],
 		"codepoint":"f3b0",
 		"contributor":{
@@ -15468,6 +15495,7 @@
 		"keywords":["five"]
 	},
 	"numeric-6-box":{
+		"aliases":["looks-6"],
 		"categories":["characters"],
 		"codepoint":"f3b3",
 		"contributor":{
@@ -15978,6 +16006,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["last-page"],
 		"categories":["other"],
 		"codepoint":"f601",
 		"contributor":{
@@ -16165,7 +16194,7 @@
 		}
 	},
 	"parking":{
-		"aliases":["car-park"],
+		"aliases":["car-park","local-parking"],
 		"categories":["places","travel"],
 		"codepoint":"f3e3",
 		"contributor":{
@@ -16284,7 +16313,7 @@
 		}
 	},
 	"pencil":{
-		"aliases":["create","edit"],
+		"aliases":["create","edit","mode-edit"],
 		"categories":["editor"],
 		"codepoint":"f3eb",
 		"contributor":{
@@ -16424,7 +16453,7 @@
 		}
 	},
 	"pharmacy":{
-		"aliases":["chemist"],
+		"aliases":["chemist","local-pharmacy"],
 		"categories":["places","science"],
 		"codepoint":"f3f1",
 		"contributor":{
@@ -16436,8 +16465,8 @@
 		"keywords":["medicine"]
 	},
 	"phone":{
-		"aliases":["call"],
-		"categories":["tech"],
+		"aliases":["call","local-phone"],
+		"categories":["places","tech"],
 		"codepoint":"f3f2",
 		"contributor":{
 			"regular":"google"
@@ -16790,7 +16819,7 @@
 		}
 	},
 	"pizza":{
-		"aliases":["pizzeria"],
+		"aliases":["local-pizza","pizzeria"],
 		"categories":["food","places"],
 		"codepoint":"f409",
 		"contributor":{
@@ -17350,7 +17379,8 @@
 		}
 	},
 	"printer":{
-		"categories":["home","tech"],
+		"aliases":["local-printshop"],
+		"categories":["home","places","tech"],
 		"codepoint":"f42a",
 		"contributor":{
 			"regular":"google"
@@ -17410,6 +17440,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["low-priority"],
 		"categories":["other"],
 		"codepoint":"f604",
 		"contributor":{
@@ -19080,6 +19111,7 @@
 		}
 	},
 	"shopping":{
+		"aliases":["local-mall"],
 		"categories":["places"],
 		"codepoint":"f49a",
 		"contributor":{
@@ -19331,7 +19363,8 @@
 		}
 	},
 	"silverware":{
-		"categories":["food"],
+		"aliases":["local-dining"],
+		"categories":["food","places"],
 		"codepoint":"f4a3",
 		"contributor":{
 			"regular":"google"
@@ -20354,6 +20387,7 @@
 		}
 	},
 	"store-24-hour":{
+		"aliases":["local-convenience-store"],
 		"categories":["places"],
 		"codepoint":"f4dd",
 		"contributor":{
@@ -20598,6 +20632,7 @@
 		}
 	},
 	"sync":{
+		"aliases":["loop"],
 		"categories":["networking"],
 		"codepoint":"f4e6",
 		"contributor":{
@@ -20864,7 +20899,8 @@
 		}
 	},
 	"tag":{
-		"categories":["other"],
+		"aliases":["local-offer"],
+		"categories":["places"],
 		"codepoint":"f4f9",
 		"contributor":{
 			"regular":"google"
@@ -20887,6 +20923,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["loyalty"],
 		"categories":["other"],
 		"codepoint":"f68a",
 		"contributor":{
@@ -20963,7 +21000,8 @@
 		}
 	},
 	"taxi":{
-		"categories":["travel"],
+		"aliases":["local-taxi"],
+		"categories":["places","travel"],
 		"codepoint":"f4ff",
 		"contributor":{
 			"regular":"google"
@@ -21296,7 +21334,8 @@
 		}
 	},
 	"ticket":{
-		"categories":["other"],
+		"aliases":["local-activity","local-play"],
+		"categories":["places"],
 		"codepoint":"f516",
 		"contributor":{
 			"regular":"google"
@@ -21864,8 +21903,8 @@
 		}
 	},
 	"truck":{
-		"aliases":["lorry"],
-		"categories":["travel"],
+		"aliases":["local-shipping","lorry"],
+		"categories":["places","travel"],
 		"codepoint":"f53d",
 		"contributor":{
 			"regular":"google"
@@ -23438,6 +23477,7 @@
 		}
 	},
 	"web":{
+		"aliases":["language"],
 		"categories":["networking"],
 		"codepoint":"f59f",
 		"contributor":{
