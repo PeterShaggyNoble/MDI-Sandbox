@@ -3131,6 +3131,7 @@
 		}
 	},
 	"bookmark":{
+		"aliases":["turned-in"],
 		"categories":["other"],
 		"codepoint":"f0c0",
 		"contributor":{
@@ -3162,7 +3163,7 @@
 		"keywords":["note","sound"]
 	},
 	"bookmark-outline":{
-		"aliases":["bookmark-border"],
+		"aliases":["bookmark-border","turned-in-not"],
 		"categories":["other"],
 		"codepoint":"f0c3",
 		"contributor":{
@@ -4279,7 +4280,7 @@
 		}
 	},
 	"car":{
-		"aliases":["directions-car","drive-eta"],
+		"aliases":["directions-car","drive-eta","time-to-leave"],
 		"categories":["travel"],
 		"codepoint":"f10b",
 		"contributor":{
@@ -5723,6 +5724,7 @@
 		"keywords":["cc"]
 	},
 	"cloud":{
+		"aliases":["wb-cloudy"],
 		"categories":["networking","weather"],
 		"codepoint":"f15f",
 		"contributor":{
@@ -6065,6 +6067,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["toll"],
 		"categories":["money"],
 		"codepoint":"f694",
 		"contributor":{
@@ -8218,7 +8221,7 @@
 		}
 	},
 	"emoticon":{
-		"aliases":["insert-emoticon","mood","sentiment-very-satisfied","smiley"],
+		"aliases":["insert-emoticon","mood","sentiment-very-satisfied","smiley","tag-faces"],
 		"categories":["other"],
 		"codepoint":"f1f2",
 		"contributor":{
@@ -9111,7 +9114,7 @@
 		}
 	},
 	"filmstrip":{
-		"aliases":["local-movies"],
+		"aliases":["local-movies","theaters"],
 		"categories":["places"],
 		"codepoint":"f230",
 		"contributor":{
@@ -9207,6 +9210,7 @@
 		}
 	},
 	"fire":{
+		"aliases":["whatshot"],
 		"categories":["science"],
 		"codepoint":"f238",
 		"contributor":{
@@ -12796,6 +12800,7 @@
 		}
 	},
 	"key":{
+		"aliases":["vpn-key"],
 		"categories":["other"],
 		"codepoint":"f306",
 		"contributor":{
@@ -13835,6 +13840,7 @@
 		"keywords":["zoom"]
 	},
 	"magnify-minus":{
+		"aliases":["zoom-out"],
 		"categories":["other"],
 		"codepoint":"f34a",
 		"contributor":{
@@ -13849,6 +13855,7 @@
 		"added":{
 			"regular":1836
 		},
+		"aliases":["zoom-out-outline"],
 		"categories":["other"],
 		"codepoint":"f6eb",
 		"contributor":{
@@ -13860,6 +13867,7 @@
 		"keywords":["minify","out","smaller","zoom"]
 	},
 	"magnify-plus":{
+		"aliases":["zoom-in"],
 		"categories":["other"],
 		"codepoint":"f34b",
 		"contributor":{
@@ -13874,6 +13882,7 @@
 		"added":{
 			"regular":1836
 		},
+		"aliases":["zoom-in-outline"],
 		"categories":["other"],
 		"codepoint":"f6ec",
 		"contributor":{
@@ -14340,7 +14349,7 @@
 		}
 	},
 	"message-processing":{
-		"aliases":["sms"],
+		"aliases":["sms","textsms"],
 		"categories":["other"],
 		"codepoint":"f366",
 		"contributor":{
@@ -14420,6 +14429,7 @@
 		}
 	},
 	"message-video":{
+		"aliases":["voice-chat"],
 		"categories":["other"],
 		"codepoint":"f36b",
 		"contributor":{
@@ -16054,6 +16064,7 @@
 		"keywords":["box"]
 	},
 	"package-up":{
+		"aliases":["unarchive"],
 		"categories":["other"],
 		"codepoint":"f3d5",
 		"contributor":{
@@ -21025,6 +21036,7 @@
 		}
 	},
 	"tablet-ipad":{
+		"aliases":["tablet-mac"],
 		"categories":["tech"],
 		"codepoint":"f4f8",
 		"contributor":{
@@ -21925,6 +21937,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["transfer-within-a-station"],
 		"categories":["travel"],
 		"codepoint":"f6ad",
 		"contributor":{
@@ -21996,6 +22009,7 @@
 		}
 	},
 	"trending-neutral":{
+		"aliases":["trending-flat"],
 		"categories":["arrows"],
 		"codepoint":"f534",
 		"contributor":{
@@ -22756,7 +22770,7 @@
 		}
 	},
 	"verified":{
-		"aliases":["shield-check"],
+		"aliases":["shield-check","verified-user"],
 		"categories":["other"],
 		"codepoint":"f565",
 		"contributor":{
@@ -22767,6 +22781,7 @@
 		}
 	},
 	"vibrate":{
+		"aliases":["vibration"],
 		"categories":["other"],
 		"codepoint":"f566",
 		"contributor":{
@@ -22777,6 +22792,7 @@
 		}
 	},
 	"video":{
+		"aliases":["videocam"],
 		"categories":["home"],
 		"codepoint":"f567",
 		"contributor":{
@@ -22865,6 +22881,7 @@
 		}
 	},
 	"video-off":{
+		"aliases":["videocam-off"],
 		"categories":["home"],
 		"codepoint":"f568",
 		"contributor":{
@@ -23769,6 +23786,7 @@
 		}
 	},
 	"white-balance-auto":{
+		"aliases":["wb-auto"],
 		"categories":["other"],
 		"codepoint":"f5a5",
 		"contributor":{
@@ -23779,6 +23797,7 @@
 		}
 	},
 	"white-balance-incandescent":{
+		"aliases":["wb-incandescent"],
 		"categories":["other"],
 		"codepoint":"f5a6",
 		"contributor":{
@@ -23789,6 +23808,7 @@
 		}
 	},
 	"white-balance-iridescent":{
+		"aliases":["wb-iridescent"],
 		"categories":["other"],
 		"codepoint":"f5a7",
 		"contributor":{
@@ -23799,6 +23819,7 @@
 		}
 	},
 	"white-balance-sunny":{
+		"aliases":["wb-sunny"],
 		"categories":["nature","weather"],
 		"codepoint":"f5a8",
 		"contributor":{
