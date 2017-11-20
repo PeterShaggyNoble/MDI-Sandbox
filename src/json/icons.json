@@ -56,7 +56,7 @@
 		"keywords":["person"]
 	},
 	"account-box-outline":{
-		"aliases":["selfie-outline","user-box-outline"],
+		"aliases":["portrait","selfie-outline","user-box-outline"],
 		"categories":["users"],
 		"codepoint":"f007",
 		"contributor":{
@@ -197,7 +197,7 @@
 		"keywords":["accounts","people","users"]
 	},
 	"account-multiple-outline":{
-		"aliases":["user-multiple-outline"],
+		"aliases":["people-outline","user-multiple-outline"],
 		"categories":["users"],
 		"codepoint":"f00f",
 		"contributor":{
@@ -206,7 +206,7 @@
 		"data":{
 			"regular":"M16.5,6.5A2,2 0 0,1 18.5,8.5A2,2 0 0,1 16.5,10.5A2,2 0 0,1 14.5,8.5A2,2 0 0,1 16.5,6.5M16.5,12A3.5,3.5 0 0,0 20,8.5A3.5,3.5 0 0,0 16.5,5A3.5,3.5 0 0,0 13,8.5A3.5,3.5 0 0,0 16.5,12M7.5,6.5A2,2 0 0,1 9.5,8.5A2,2 0 0,1 7.5,10.5A2,2 0 0,1 5.5,8.5A2,2 0 0,1 7.5,6.5M7.5,12A3.5,3.5 0 0,0 11,8.5A3.5,3.5 0 0,0 7.5,5A3.5,3.5 0 0,0 4,8.5A3.5,3.5 0 0,0 7.5,12M21.5,17.5H14V16.25C14,15.79 13.8,15.39 13.5,15.03C14.36,14.73 15.44,14.5 16.5,14.5C18.94,14.5 21.5,15.71 21.5,16.25M12.5,17.5H2.5V16.25C2.5,15.71 5.06,14.5 7.5,14.5C9.94,14.5 12.5,15.71 12.5,16.25M16.5,13C15.3,13 13.43,13.34 12,14C10.57,13.33 8.7,13 7.5,13C5.33,13 1,14.08 1,16.25V19H23V16.25C23,14.08 18.67,13 16.5,13Z"
 		},
-		"keywords":["accounts","people","users"]
+		"keywords":["accounts","users"]
 	},
 	"account-multiple-plus":{
 		"aliases":["group-add","user-multiple-plus"],
@@ -245,7 +245,7 @@
 		"keywords":["person"]
 	},
 	"account-outline":{
-		"aliases":["user-outline"],
+		"aliases":["perm-identity","person-outline","user-outline"],
 		"categories":["users"],
 		"codepoint":"f013",
 		"contributor":{
@@ -253,11 +253,10 @@
 		},
 		"data":{
 			"regular":"M12,13C9.33,13 4,14.33 4,17V20H20V17C20,14.33 14.67,13 12,13M12,4A4,4 0 0,0 8,8A4,4 0 0,0 12,12A4,4 0 0,0 16,8A4,4 0 0,0 12,4M12,14.9C14.97,14.9 18.1,16.36 18.1,17V18.1H5.9V17C5.9,16.36 9,14.9 12,14.9M12,5.9A2.1,2.1 0 0,1 14.1,8A2.1,2.1 0 0,1 12,10.1A2.1,2.1 0 0,1 9.9,8A2.1,2.1 0 0,1 12,5.9Z"
-		},
-		"keywords":["person"]
+		}
 	},
 	"account-plus":{
-		"aliases":["register","user-plus"],
+		"aliases":["person-add","register","user-plus"],
 		"categories":["home","users"],
 		"codepoint":"f014",
 		"contributor":{
@@ -265,8 +264,7 @@
 		},
 		"data":{
 			"regular":"M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z"
-		},
-		"keywords":["person"]
+		}
 	},
 	"account-remove":{
 		"aliases":["user-remove"],
@@ -567,7 +565,7 @@
 		}
 	},
 	"alert":{
-		"aliases":["warning"],
+		"aliases":["report-problem","warning"],
 		"categories":["other"],
 		"codepoint":"f026",
 		"contributor":{
@@ -632,7 +630,7 @@
 		}
 	},
 	"alert-octagon":{
-		"aliases":["warning-octagon"],
+		"aliases":["report","warning-octagon"],
 		"categories":["other"],
 		"codepoint":"f029",
 		"contributor":{
@@ -2628,6 +2626,7 @@
 		}
 	},
 	"bell":{
+		"aliases":["notifications"],
 		"categories":["home"],
 		"codepoint":"f09a",
 		"contributor":{
@@ -2638,6 +2637,7 @@
 		}
 	},
 	"bell-off":{
+		"aliases":["notifications-off"],
 		"categories":["other"],
 		"codepoint":"f09b",
 		"contributor":{
@@ -2648,6 +2648,7 @@
 		}
 	},
 	"bell-outline":{
+		"aliases":["notifications-none"],
 		"categories":["other"],
 		"codepoint":"f09c",
 		"contributor":{
@@ -2669,6 +2670,7 @@
 		}
 	},
 	"bell-ring":{
+		"aliases":["notifications-active"],
 		"categories":["other"],
 		"codepoint":"f09e",
 		"contributor":{
@@ -2689,6 +2691,7 @@
 		}
 	},
 	"bell-sleep":{
+		"aliases":["notifications-paused"],
 		"categories":["other"],
 		"codepoint":"f0a0",
 		"contributor":{
@@ -4027,7 +4030,7 @@
 		}
 	},
 	"camera":{
-		"aliases":["camera-alt","local-see","photography"],
+		"aliases":["camera-alt","local-see","photo-camera","photography"],
 		"categories":["home","places"],
 		"codepoint":"f100",
 		"contributor":{
@@ -4484,7 +4487,7 @@
 		"added":{
 			"regular":1650
 		},
-		"aliases":["trolley-off"],
+		"aliases":["remove-shopping-cart","trolley-off"],
 		"categories":["other"],
 		"codepoint":"f66b",
 		"contributor":{
@@ -4720,7 +4723,7 @@
 		}
 	},
 	"cellphone-link-off":{
-		"aliases":["mobile-phone-link-off","smartphone-link-off"],
+		"aliases":["mobile-phone-link-off","phonelink-off","smartphone-link-off"],
 		"categories":["networking"],
 		"codepoint":"f122",
 		"contributor":{
@@ -5256,7 +5259,7 @@
 		"keywords":["bottom"]
 	},
 	"chevron-left":{
-		"aliases":["keyboard-arrow-left"],
+		"aliases":["keyboard-arrow-left","navigate-before"],
 		"categories":["arrows","characters"],
 		"codepoint":"f141",
 		"contributor":{
@@ -5268,7 +5271,7 @@
 		"keywords":["angle","quotation"]
 	},
 	"chevron-right":{
-		"aliases":["keyboard-arrow-right"],
+		"aliases":["keyboard-arrow-right","navigate-next"],
 		"categories":["arrows","characters"],
 		"codepoint":"f142",
 		"contributor":{
@@ -5529,7 +5532,7 @@
 		"keywords":["microsoft","word"]
 	},
 	"clock":{
-		"aliases":["access-time"],
+		"aliases":["access-time","query-builder"],
 		"categories":["time"],
 		"codepoint":"f150",
 		"contributor":{
@@ -6540,6 +6543,7 @@
 		}
 	},
 	"credit-card":{
+		"aliases":["payment"],
 		"categories":["money"],
 		"codepoint":"f19b",
 		"contributor":{
@@ -7991,7 +7995,7 @@
 		}
 	},
 	"earth":{
-		"aliases":["globe"],
+		"aliases":["globe","public"],
 		"categories":["places","science"],
 		"codepoint":"f1e7",
 		"contributor":{
@@ -8508,7 +8512,7 @@
 		}
 	},
 	"eye":{
-		"aliases":["show","visibility"],
+		"aliases":["remove-red-eye","show","visibility"],
 		"categories":["other"],
 		"codepoint":"f208",
 		"contributor":{
@@ -8972,6 +8976,7 @@
 		"added":{
 			"regular":1932
 		},
+		"aliases":["note-add"],
 		"categories":["files"],
 		"codepoint":"f751",
 		"contributor":{
@@ -9015,6 +9020,7 @@
 		"added":{
 			"regular":1650
 		},
+		"aliases":["restore-page"],
 		"categories":["files"],
 		"codepoint":"f670",
 		"contributor":{
@@ -9582,6 +9588,7 @@
 		}
 	},
 	"folder-multiple-image":{
+		"aliases":["perm-media"],
 		"categories":["files"],
 		"codepoint":"f254",
 		"contributor":{
@@ -10324,6 +10331,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["rotate-90-degrees-ccw"],
 		"categories":["editor"],
 		"codepoint":"f6a9",
 		"contributor":{
@@ -10536,7 +10544,7 @@
 		}
 	},
 	"forum":{
-		"aliases":["message-group"],
+		"aliases":["message-group","question-answer"],
 		"categories":["other"],
 		"codepoint":"f28c",
 		"contributor":{
@@ -12305,6 +12313,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["pregnant-woman"],
 		"categories":["science"],
 		"codepoint":"f5cf",
 		"contributor":{
@@ -12352,6 +12361,7 @@
 		}
 	},
 	"image-album":{
+		"aliases":["photo-album"],
 		"categories":["other"],
 		"codepoint":"f2ea",
 		"contributor":{
@@ -12509,7 +12519,7 @@
 		}
 	},
 	"image-multiple":{
-		"aliases":["collections"],
+		"aliases":["collections","photo-library"],
 		"categories":["other"],
 		"codepoint":"f2f9",
 		"contributor":{
@@ -13441,7 +13451,7 @@
 		"keywords":["note","sound"]
 	},
 	"library-plus":{
-		"aliases":["add-to-photos","library-add"],
+		"aliases":["add-to-photos","library-add","queue"],
 		"categories":["files"],
 		"codepoint":"f334",
 		"contributor":{
@@ -13904,7 +13914,7 @@
 		}
 	},
 	"map-marker":{
-		"aliases":["address-marker","location","location-on"],
+		"aliases":["address-marker","location","location-on","place","room"],
 		"categories":["places"],
 		"codepoint":"f34e",
 		"contributor":{
@@ -14278,6 +14288,7 @@
 		}
 	},
 	"message-draw":{
+		"aliases":["rate-review"],
 		"categories":["other"],
 		"codepoint":"f363",
 		"contributor":{
@@ -14565,6 +14576,7 @@
 		"keywords":["microsoft"]
 	},
 	"minus":{
+		"aliases":["remove"],
 		"categories":["characters"],
 		"codepoint":"f374",
 		"contributor":{
@@ -14599,7 +14611,7 @@
 		}
 	},
 	"minus-circle":{
-		"aliases":["do-not-disturb-on"],
+		"aliases":["do-not-disturb-on","remove-circle"],
 		"categories":["characters"],
 		"codepoint":"f376",
 		"contributor":{
@@ -14610,6 +14622,7 @@
 		}
 	},
 	"minus-circle-outline":{
+		"aliases":["remove-circle-outline"],
 		"categories":["characters"],
 		"codepoint":"f377",
 		"contributor":{
@@ -15919,6 +15932,7 @@
 		}
 	},
 	"open-in-app":{
+		"aliases":["open-in-browser"],
 		"categories":["other"],
 		"codepoint":"f3cb",
 		"contributor":{
@@ -16209,6 +16223,7 @@
 		}
 	},
 	"panorama-fisheye":{
+		"aliases":["panorama-fish-eye"],
 		"categories":["other"],
 		"codepoint":"f3dd",
 		"contributor":{
@@ -16308,6 +16323,7 @@
 		}
 	},
 	"pause-circle":{
+		"aliases":["pause-circle-filled"],
 		"categories":["player"],
 		"codepoint":"f3e5",
 		"contributor":{
@@ -16354,6 +16370,7 @@
 		}
 	},
 	"paw":{
+		"aliases":["pets"],
 		"categories":["nature"],
 		"codepoint":"f3e9",
 		"contributor":{
@@ -16552,6 +16569,7 @@
 		}
 	},
 	"phone-bluetooth":{
+		"aliases":["phone-bluetooth-speaker"],
 		"categories":["networking"],
 		"codepoint":"f3f3",
 		"contributor":{
@@ -16575,6 +16593,7 @@
 		}
 	},
 	"phone-forward":{
+		"aliases":["phone-forwarded"],
 		"categories":["other"],
 		"codepoint":"f3f4",
 		"contributor":{
@@ -16920,6 +16939,7 @@
 		}
 	},
 	"play":{
+		"aliases":["play-arrow"],
 		"categories":["home","player"],
 		"codepoint":"f40a",
 		"contributor":{
@@ -16940,6 +16960,7 @@
 		}
 	},
 	"play-circle":{
+		"aliases":["play-circle-filled"],
 		"categories":["player"],
 		"codepoint":"f40c",
 		"contributor":{
@@ -16989,7 +17010,7 @@
 		"added":{
 			"regular":1554
 		},
-		"aliases":["subscriptions"],
+		"aliases":["playlist-add-check","subscriptions"],
 		"categories":["player"],
 		"codepoint":"f5c7",
 		"contributor":{
@@ -17023,6 +17044,7 @@
 		}
 	},
 	"playlist-plus":{
+		"aliases":["playlist-add"],
 		"categories":["player"],
 		"codepoint":"f412",
 		"contributor":{
@@ -17321,6 +17343,7 @@
 		}
 	},
 	"power":{
+		"aliases":["power-settings-new"],
 		"categories":["home","power"],
 		"codepoint":"f425",
 		"contributor":{
@@ -17718,6 +17741,7 @@
 		}
 	},
 	"radiobox-blank":{
+		"aliases":["radio-button-unchecked"],
 		"categories":["other"],
 		"codepoint":"f43d",
 		"contributor":{
@@ -17728,6 +17752,7 @@
 		}
 	},
 	"radiobox-marked":{
+		"aliases":["radio-button-checked"],
 		"categories":["other"],
 		"codepoint":"f43e",
 		"contributor":{
@@ -18033,6 +18058,7 @@
 		}
 	},
 	"repeat-once":{
+		"aliases":["repeat-one"],
 		"categories":["player"],
 		"codepoint":"f458",
 		"contributor":{
@@ -18373,6 +18399,7 @@
 		"keywords":["boat","oar","rower"]
 	},
 	"rss":{
+		"aliases":["rss-feed"],
 		"categories":["other"],
 		"codepoint":"f46b",
 		"contributor":{
@@ -19465,7 +19492,7 @@
 		}
 	},
 	"silverware":{
-		"aliases":["local-dining"],
+		"aliases":["local-dining","restaurant-menu"],
 		"categories":["food","places"],
 		"codepoint":"f4a3",
 		"contributor":{
@@ -19530,6 +19557,7 @@
 		}
 	},
 	"sim-off":{
+		"aliases":["signal-cellular-no-sim"],
 		"categories":["networking"],
 		"codepoint":"f4a9",
 		"contributor":{
@@ -23104,6 +23132,7 @@
 		"added":{
 			"regular":1554
 		},
+		"aliases":["record-voice-over"],
 		"categories":["users"],
 		"codepoint":"f5cb",
 		"contributor":{
@@ -23267,7 +23296,7 @@
 		}
 	},
 	"wallet-giftcard":{
-		"aliases":["card-giftcard"],
+		"aliases":["card-giftcard","redeem"],
 		"categories":["money"],
 		"codepoint":"f585",
 		"contributor":{
