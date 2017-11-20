@@ -84,6 +84,10 @@
 		"icon":"lan-connect",
 		"name":"Networking"
 	},
+	"music":{
+		"icon":"music-note",
+		"name":"Music"
+	},
 	"nature":{
 		"icon":"nature",
 		"name":"Nature & Animals"

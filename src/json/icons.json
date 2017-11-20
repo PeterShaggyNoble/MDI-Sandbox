@@ -555,7 +555,7 @@
 	},
 	"album":{
 		"aliases":["record","vinyl"],
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f025",
 		"contributor":{
 			"regular":"google"
@@ -758,7 +758,7 @@
 		"added":{
 			"regular":1554
 		},
-		"categories":["home"],
+		"categories":["home","music"],
 		"codepoint":"f030",
 		"contributor":{
 			"regular":"christopher-schreiner"
@@ -1847,7 +1847,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["other"],
+		"categories":["music"],
 		"contributor":{
 			"regular":"google"
 		},
@@ -1896,7 +1896,7 @@
 		"added":{
 			"regular":1932
 		},
-		"categories":["other"],
+		"categories":["science"],
 		"codepoint":"f767",
 		"contributor":{
 			"regular":"roberto-graham"
@@ -2828,7 +2828,7 @@
 		}
 	},
 	"blinds":{
-		"categories":["other"],
+		"categories":["home"],
 		"codepoint":"f0ac",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -3154,7 +3154,7 @@
 		}
 	},
 	"bookmark-music":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f0c2",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -3209,7 +3209,7 @@
 		"added":{
 			"regular":1554
 		},
-		"categories":["home"],
+		"categories":["home","music"],
 		"codepoint":"f5dc",
 		"contributor":{
 			"regular":"google"
@@ -7319,7 +7319,7 @@
 		"added":{
 			"regular":1712
 		},
-		"categories":["other"],
+		"categories":["tech"],
 		"codepoint":"f696",
 		"contributor":{
 			"regular":"google"
@@ -8933,7 +8933,7 @@
 		}
 	},
 	"file-music":{
-		"categories":["files"],
+		"categories":["files","music"],
 		"codepoint":"f223",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -11487,7 +11487,7 @@
 		"added":{
 			"regular":1932
 		},
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f770",
 		"contributor":{
 			"regular":"japanyoshi"
@@ -11497,7 +11497,7 @@
 		}
 	},
 	"guitar-electric":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f2c4",
 		"contributor":{
 			"regular":"japanyoshi"
@@ -11510,7 +11510,7 @@
 		}
 	},
 	"guitar-pick":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f2c5",
 		"contributor":{
 			"regular":"gabriel"
@@ -11520,7 +11520,7 @@
 		}
 	},
 	"guitar-pick-outline":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f2c6",
 		"contributor":{
 			"regular":"gabriel"
@@ -13457,7 +13457,7 @@
 		}
 	},
 	"library-music":{
-		"categories":["files"],
+		"categories":["files","music"],
 		"codepoint":"f333",
 		"contributor":{
 			"regular":"google"
@@ -14502,7 +14502,7 @@
 	},
 	"microphone":{
 		"aliases":["keyboard-voice"],
-		"categories":["tech"],
+		"categories":["music","tech"],
 		"codepoint":"f36c",
 		"contributor":{
 			"regular":"google"
@@ -14513,7 +14513,7 @@
 	},
 	"microphone-off":{
 		"aliases":["mic-off"],
-		"categories":["tech"],
+		"categories":["music","tech"],
 		"codepoint":"f36d",
 		"contributor":{
 			"regular":"google"
@@ -14524,7 +14524,7 @@
 	},
 	"microphone-outline":{
 		"aliases":["mic-none"],
-		"categories":["tech"],
+		"categories":["music","tech"],
 		"codepoint":"f36e",
 		"contributor":{
 			"regular":"google"
@@ -14545,7 +14545,7 @@
 		}
 	},
 	"microphone-variant":{
-		"categories":["tech"],
+		"categories":["music","tech"],
 		"codepoint":"f370",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14878,7 +14878,7 @@
 		"added":{
 			"regular":1932
 		},
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f759",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14889,7 +14889,7 @@
 		"keywords":["note","sound"]
 	},
 	"music-box":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f384",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14900,7 +14900,7 @@
 		"keywords":["note","sound"]
 	},
 	"music-box-outline":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f385",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14911,7 +14911,7 @@
 		"keywords":["note","sound"]
 	},
 	"music-circle":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f386",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14922,7 +14922,7 @@
 		"keywords":["note","sound"]
 	},
 	"music-note":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f387",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14964,7 +14964,7 @@
 		"keywords":["sound"]
 	},
 	"music-note-eighth":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f388",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14977,7 +14977,7 @@
 		}
 	},
 	"music-note-half":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f389",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14990,7 +14990,7 @@
 		}
 	},
 	"music-note-off":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f38a",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -15004,7 +15004,7 @@
 		}
 	},
 	"music-note-quarter":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f38b",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -15017,7 +15017,7 @@
 		}
 	},
 	"music-note-sixteenth":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f38c",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -15030,7 +15030,7 @@
 		}
 	},
 	"music-note-whole":{
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f38d",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -15046,7 +15046,7 @@
 		"added":{
 			"regular":1932
 		},
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f75a",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -16798,7 +16798,7 @@
 		"added":{
 			"regular":1712
 		},
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f67c",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -17732,7 +17732,7 @@
 		}
 	},
 	"radio":{
-		"categories":["home","tech"],
+		"categories":["home","music","tech"],
 		"codepoint":"f439",
 		"contributor":{
 			"regular":"google"
@@ -18542,7 +18542,7 @@
 		"added":{
 			"regular":1554
 		},
-		"categories":["other"],
+		"categories":["music"],
 		"codepoint":"f609",
 		"contributor":{
 			"regular":"google"
@@ -20115,7 +20115,7 @@
 		"keywords":["soya"]
 	},
 	"speaker":{
-		"categories":["home"],
+		"categories":["home","music"],
 		"codepoint":"f4c3",
 		"contributor":{
 			"regular":"google"
@@ -20125,7 +20125,7 @@
 		}
 	},
 	"speaker-off":{
-		"categories":["home"],
+		"categories":["home","music"],
 		"codepoint":"f4c4",
 		"contributor":{
 			"regular":"austin-andrews"
