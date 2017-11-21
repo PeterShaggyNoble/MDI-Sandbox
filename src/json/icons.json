@@ -2071,6 +2071,7 @@
 		}
 	},
 	"barcode-scan":{
+		"aliases":["barcode-scanner"],
 		"categories":["other"],
 		"codepoint":"f072",
 		"contributor":{
@@ -3821,6 +3822,7 @@
 		}
 	},
 	"calendar-blank":{
+		"aliases":["calendar-today"],
 		"categories":["time"],
 		"codepoint":"f0ee",
 		"contributor":{
@@ -8117,7 +8119,7 @@
 		}
 	},
 	"email":{
-		"aliases":["local-post-office","mail","markunread"],
+		"aliases":["envelope","local-post-office","mail","markunread"],
 		"categories":["places"],
 		"codepoint":"f1ee",
 		"contributor":{
@@ -8126,13 +8128,13 @@
 		"data":{
 			"regular":"M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"
 		},
-		"keywords":["e-mail","envelope","letter","notification","support"]
+		"keywords":["envelope","letter","notification","support"]
 	},
 	"email-alert":{
 		"added":{
 			"regular":1836
 		},
-		"aliases":["email-warning"],
+		"aliases":["email-warning","envelope-alert","envelope-warning"],
 		"categories":["other"],
 		"codepoint":"f6ce",
 		"contributor":{
@@ -8141,10 +8143,10 @@
 		"data":{
 			"regular":"M16,9V7L10,11L4,7V9L10,13L16,9M16,5A2,2 0 0,1 18,7V16A2,2 0 0,1 16,18H4C2.89,18 2,17.1 2,16V7A2,2 0 0,1 4,5H16M20,12V7H22V12H20M20,16V14H22V16H20Z"
 		},
-		"keywords":["e-mail","envelope","letter","mail","notification","support"]
+		"keywords":["letter","mail","notification","support"]
 	},
 	"email-open":{
-		"aliases":["drafts"],
+		"aliases":["drafts","envelope-open"],
 		"categories":["other"],
 		"codepoint":"f1ef",
 		"contributor":{
@@ -8153,7 +8155,7 @@
 		"data":{
 			"regular":"M4,8L12,13L20,8V8L12,3L4,8V8M22,8V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V8C2,7.27 2.39,6.64 2.97,6.29L12,0.64L21.03,6.29C21.61,6.64 22,7.27 22,8Z"
 		},
-		"keywords":["e-mail","envelope","letter","mail","notification","support"],
+		"keywords":["letter","mail","notification","support"],
 		"updated":{
 			"regular":1554
 		}
@@ -8162,7 +8164,7 @@
 		"added":{
 			"regular":1554
 		},
-		"categories":["other"],
+		"categories":["envelope-open-outline","other"],
 		"codepoint":"f5ef",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -8170,10 +8172,10 @@
 		"data":{
 			"regular":"M12,15.36L4,10.36V18H20V10.36L12,15.36M4,8L12,13L20,8V8L12,3L4,8V8M22,8V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V8C2,7.27 2.39,6.64 2.97,6.29L12,0.64L21.03,6.29C21.61,6.64 22,7.27 22,8Z"
 		},
-		"keywords":["e-mail","envelope","letter","mail","notification","support"]
+		"keywords":["letter","mail","notification","support"]
 	},
 	"email-outline":{
-		"aliases":["mail-outline"],
+		"aliases":["envelope-outline","mail-outline"],
 		"categories":["other"],
 		"codepoint":"f1f0",
 		"contributor":{
@@ -8182,12 +8184,13 @@
 		"data":{
 			"regular":"M4,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4C2.89,20 2,19.1 2,18V6C2,4.89 2.89,4 4,4M12,11L20,6H4L12,11M4,18H20V8.37L12,13.36L4,8.37V18Z"
 		},
-		"keywords":["e-mail","envelope","letter","notification","support"],
+		"keywords":["letter","notification","support"],
 		"updated":{
 			"regular":2046
 		}
 	},
 	"email-secure":{
+		"aliases":["envelope-secure"],
 		"categories":["other"],
 		"codepoint":"f1f1",
 		"contributor":{
@@ -8196,12 +8199,13 @@
 		"data":{
 			"regular":"M20.5,0A2.5,2.5 0 0,1 23,2.5V3A1,1 0 0,1 24,4V8A1,1 0 0,1 23,9H18A1,1 0 0,1 17,8V4A1,1 0 0,1 18,3V2.5A2.5,2.5 0 0,1 20.5,0M12,11L4,6V8L12,13L16.18,10.39C16.69,10.77 17.32,11 18,11H22V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4H15V8C15,8.36 15.06,8.7 15.18,9L12,11M20.5,1A1.5,1.5 0 0,0 19,2.5V3H22V2.5A1.5,1.5 0 0,0 20.5,1Z"
 		},
-		"keywords":["e-mail","envelope","letter","lock","mail","notification","support"]
+		"keywords":["letter","lock","mail","notification","support"]
 	},
 	"email-variant":{
 		"added":{
 			"regular":1554
 		},
+		"aliases":["envelope-variant"],
 		"categories":["other"],
 		"codepoint":"f5f0",
 		"contributor":{
@@ -8210,7 +8214,7 @@
 		"data":{
 			"regular":"M12,13L2,6.76V6C2,4.89 2.89,4 4,4H20A2,2 0 0,1 22,6V6.75L12,13M22,18A2,2 0 0,1 20,20H4C2.89,20 2,19.1 2,18V9.11L4,10.36V18H20V10.36L22,9.11V18Z"
 		},
-		"keywords":["e-mail","envelope","letter","mail","notification","support"]
+		"keywords":["letter","mail","notification","support"]
 	},
 	"emby":{
 		"added":{
@@ -8741,7 +8745,7 @@
 		}
 	},
 	"ferry":{
-		"aliases":["boat","cargo-ship","directions-boat","ship"],
+		"aliases":["boat","cargo-ship","directions-boat","directions-ferry","ship"],
 		"categories":["travel"],
 		"codepoint":"f213",
 		"contributor":{
@@ -8752,7 +8756,7 @@
 		}
 	},
 	"file":{
-		"aliases":["insert-drive-file"],
+		"aliases":["draft","insert-drive-file"],
 		"categories":["files"],
 		"codepoint":"f214",
 		"contributor":{
@@ -9539,6 +9543,7 @@
 		}
 	},
 	"folder-google-drive":{
+		"aliases":["folder-mydrive"],
 		"categories":["files","google"],
 		"codepoint":"f24e",
 		"contributor":{
@@ -10759,6 +10764,7 @@
 		}
 	},
 	"gauge":{
+		"aliases":["swap-driving-apps-wheel"],
 		"categories":["home","science"],
 		"codepoint":"f29a",
 		"contributor":{
@@ -11167,6 +11173,7 @@
 		}
 	},
 	"google-chrome":{
+		"aliases":["chromecast"],
 		"categories":["google"],
 		"codepoint":"f2af",
 		"contributor":{
@@ -11401,6 +11408,7 @@
 		}
 	},
 	"google-wallet":{
+		"aliases":["wallet-product"],
 		"categories":["google"],
 		"codepoint":"f2c0",
 		"contributor":{
@@ -11794,7 +11802,7 @@
 		"keywords":["favourite","like","love"]
 	},
 	"heart-outline":{
-		"aliases":["favorite-border","favourite-border"],
+		"aliases":["favorite-border","favorite-outline","favourite-border","favourite-outline"],
 		"categories":["science"],
 		"codepoint":"f2d5",
 		"contributor":{
@@ -13946,6 +13954,7 @@
 		}
 	},
 	"map-marker-circle":{
+		"aliases":["explore-nearby"],
 		"categories":["places"],
 		"codepoint":"f34f",
 		"contributor":{
@@ -15969,7 +15978,8 @@
 		}
 	},
 	"open-in-new":{
-		"categories":["external-link"],
+		"aliases":["external-link"],
+		"categories":["other"],
 		"codepoint":"f3cc",
 		"contributor":{
 			"regular":"google"
@@ -17270,6 +17280,7 @@
 		}
 	},
 	"poll":{
+		"aliases":["bar-chart"],
 		"categories":["other"],
 		"codepoint":"f41f",
 		"contributor":{
@@ -17400,6 +17411,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["power-off"],
 		"categories":["home","power"],
 		"codepoint":"f6a5",
 		"contributor":{
@@ -17509,7 +17521,7 @@
 		}
 	},
 	"printer":{
-		"aliases":["local-printshop"],
+		"aliases":["local-print-shop","local-printshop"],
 		"categories":["home","places","tech"],
 		"codepoint":"f42a",
 		"contributor":{
@@ -19526,7 +19538,7 @@
 		}
 	},
 	"silverware":{
-		"aliases":["local-dining","restaurant-menu"],
+		"aliases":["local-dining","local-restaurant","restaurant-menu"],
 		"categories":["food","places"],
 		"codepoint":"f4a3",
 		"contributor":{
@@ -21543,7 +21555,7 @@
 		}
 	},
 	"ticket":{
-		"aliases":["local-activity","local-play"],
+		"aliases":["local-activity","local-attraction","local-play"],
 		"categories":["places"],
 		"codepoint":"f516",
 		"contributor":{
@@ -22221,7 +22233,7 @@
 		"added":{
 			"regular":1650
 		},
-		"aliases":["equaliser-vertical"],
+		"aliases":["equaliser-vertical","instant-mix"],
 		"categories":["player","tech"],
 		"codepoint":"f66a",
 		"contributor":{
@@ -24314,6 +24326,7 @@
 		}
 	},
 	"youtube-play":{
+		"aliases":["video-youtube"],
 		"categories":["google"],
 		"codepoint":"f5c3",
 		"contributor":{
