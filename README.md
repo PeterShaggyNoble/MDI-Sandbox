@@ -15,8 +15,12 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
-- **2017-11-17:** Added a games category.
+- **2017-11-22:** Added a [tool for generating GitHub previews](https://petershaggynoble.github.io/MDI-Sandbox/tools/preview/).
+- **2017-11-20:** New [music](https://petershaggynoble.github.io/MDI-Sandbox/?categories=music) category added.
+- **2017-11-17:** New [games](https://petershaggynoble.github.io/MDI-Sandbox/?categories=games) category added.
 - **2017-11-16:** Created a web app for Chrome mobile.
+- **2017-11-14:** Created a [preview file](https://petershaggynoble.github.io/MDI-Sandbox/extended/) for the new icons in Google's Material Icons Extended set.
+- **2017-11-10:** Added a counter for filtered icons.
 - **2017-11-09:** Added an options menu to allow downloading of currently filtered icons.
 - **2017-11-09:** Community icons can now be highlighted via the main menu.
 - **2017-11-07:** Added vector downloads to the icon editor.
@@ -26,10 +30,10 @@ Only major changes and additions will be noted here.
 - **2017-11-02:** Overhauled the design.
 - **2017-10-27:** Added PNG downloads with basic editor.
 - **2017-10-25:** Switched from flex layout to grid layout for icons.
-- **2017-10-19:** Added stanadlone version for local use.
+- **2017-10-19:** Added [standalone version](https://petershaggynoble.github.io/MDI-Sandbox/standalone/) which can be downloaded for local use.
 - **2017-10-16:** Added filters for contributors.
 - **2017-10-13:** Categories now serve as filters, rather than each having its own individual section.
 - **2017-10-12:** Added the ability to copy the SVG path of an icon.
-- **2017-10-11:** Added a sction for "retired" icons, for the benefit of those who still have use for them.
+- **2017-10-11:** Added a section for ["retired" icons](https://petershaggynoble.github.io/MDI-Sandbox/?section=retired), for the benefit of those who still have use for them.
 - **2017-10-10:** Extracted all data to JSON files.
 - **2017-10-10:** GitHib project launched.
