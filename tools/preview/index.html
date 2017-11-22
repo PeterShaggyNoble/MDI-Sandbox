@@ -180,7 +180,6 @@
 				context.globalCompositeOperation=`source-over`;
 			}
 			context.fillText(name.value.toLowerCase().replace(/ /g,`-`),11,282);
-			context.setTransform(1,0,0,1,0,0);
 			context.drawImage(image,11,10);
 			URL.revokeObjectURL(image.src);
 		},0);
