@@ -202,6 +202,17 @@
 				URL.revokeObjectURL(background.src);
 				data.dispatchEvent(new Event(`input`));
 			},0);
+			await new Promise(resolve=>{
+				let script=document.createElement`script`;
+				script.async=1;
+				script.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
+				document.body.append(script);
+				script.addEventListener(`load`,resolve,0);
+			});
+			window.dataLayer=window.dataLayer||[];
+			let gtag=function(){window.dataLayer.push(arguments);};
+			gtag(`js`,new Date());
+			gtag(`config`,`UA-109147935-1`);
 		})();
 	}
 </script>
