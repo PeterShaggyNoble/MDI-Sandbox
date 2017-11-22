@@ -1,4 +1,4 @@
 *.php
-build/
-trash/
-wip/
+/build/
+/trash/
+/wip/
