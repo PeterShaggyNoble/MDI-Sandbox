@@ -4,8 +4,15 @@
 1. **Important Note:** This is a side-project to the main [Material Design Icons](https://materialdesignicons.com/) project. To request a new icon, suggest an alias or make a contribution to the icon pack, please [create an issue](https://github.com/Templarian/MaterialDesign/issues) in the main repository.
 2. This repository is currently a work in progress, being my first project on GitHub. As such, please refrain from submitting any pull requests for now. If you have a request or suggestion then please [submit an issue](https://github.com/PeterShaggyNoble/MDI-Sandbox/issues) instead.
 
-## Standalone Version
-A single-file, standalone version is now available, which you can find in the [`standalone`](https://github.com/PeterShaggyNoble/MDI-Sandbox/tree/master/standalone) directory. It can be run locally ~but note that it does currently need access to the internet in order to download the Roboto font from Google~. Also, unless you run the file through a web server, it can't access `window.localStorage` and, therefore, all functionality related to favourites is disabled.
+## Additional Tools
+### Standalone Version
+A single-file, standalone version can be downloaded from the menu on the site or found in the [`standalone` directory](https://github.com/PeterShaggyNoble/MDI-Sandbox/tree/master/standalone) in the repository. It can be run locally but, unless you run the file through a web server, it can't access `window.localStorage` and, therefore, all functionality related to favourites is disabled.
+
+### Material Icons Extended
+A preview of the extra icons in Google's "Material Icons Extended" set is available at [petershaggynoble.github.io/MDI-Sandbox/extended/](https://petershaggynoble.github.io/MDI-Sandbox/extended/). Icons can be downloaded but note that the `transform` attribute is used on the `path` elements to scale them down from 512 pixels.
+
+### Preview Generator
+Create customised icon preview images which can be copied & pasted directly into GitHub issues (or anywhere else) at [petershaggynoble.github.io/MDI-Sandbox/preview/](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 
 ## How to Contribute
 > Coming soon ...
