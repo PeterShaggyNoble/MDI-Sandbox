@@ -177,7 +177,7 @@ body.highlight #highlight::after{
 	line-height:48px;
 	padding:0 16px;
 }
-#menu>h3::before{
+#menu>h3.cp::before{
 	content:"\f35f";
 	display:inine-block;
 	float:right;
@@ -191,7 +191,7 @@ body.highlight #highlight::after{
 #menu>h3.open::before{
 	transform:rotate(90deg);
 }
-#menu>ol{
+#menu>ol,#extras{
 	border-bottom:1px solid #bdbdbd;
 }
 #sections{
@@ -278,18 +278,21 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 	opacity:1;
 	transition-duration:inherit;
 }
-/*  links  */
+/*  extras & links  */
+#extras{
+	padding:8px 0;
+}
 #links{
 	padding-top:8px;
 }
-#links a{
+#menu a{
 	padding:0 16px;
 	transition:background .225s cubic-bezier(.4,0,.2,1),color .225s cubic-bezier(.4,0,.2,1);
 }
-#links a:active,#links a:focus,#links a:hover{
+#menu a:active,#menu a:focus,#menu a:hover{
 	color:#303f9f;
 }
-#links a::before{
+#menu a::before{
 	color:#757575;
 	font-size:24px;
 	margin:0 36px 0 0;
@@ -297,7 +300,7 @@ ol#sections>li:last-child::before,#sections>li:last-child::after{
 	vertical-align:middle;
 	width:24px;
 }
-#links a:active::before,#links a:focus::before{
+#menu a:active::before,#menu a:focus::before{
 	color:#303f9f;
 	transition-duration:inherit;
 }
@@ -802,10 +805,10 @@ dialog>button:active{
 	body.menu #menu{
 		box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
 	}
-	#menu>p:hover,#menu>ol>li:hover,#links a:hover{
+	#menu>p:hover,#menu>ol>li:hover,#menu a:hover{
 		background:#eee;
 	}
-	#menu>p:focus,#menu>ol>li:focus,#links a:active,#links a:focus{
+	#menu>p:focus,#menu>ol>li:focus,#menu a:active,#menu a:focus{
 		background:#e0e0e0;
 	}
 }
@@ -1046,10 +1049,10 @@ dialog>button:active{
 		max-height:calc(100% - 64px);
 		top:64px;
 	}
-	#menu>p:hover,#menu>ol>li:hover,#links a:hover{
+	#menu>p:hover,#menu>ol>li:hover,#menu a:hover{
 		background:rgba(0,0,0,.03);
 	}
-	#menu>p:focus,#menu>ol>li:focus,#links a:active,#links a:focus{
+	#menu>p:focus,#menu>ol>li:focus,#menu a:active,#menu a:focus{
 		background:rgba(0,0,0,.06);
 	}
 	body.menu>#content{
