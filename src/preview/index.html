@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <title>MDI Preview Generator</title>
-<link href="../../img/icon16.png" rel="shortcut icon">
+<link href="../img/icon16.png" rel="shortcut icon">
 <meta charset="utf-8">
 <meta content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0,width=device-width" name="viewport">
 <meta name="robots" content="noodp">
@@ -11,7 +11,7 @@
 		font-family:Roboto;
 		font-style:normal;
 		font-weight:400;
-		src:local("Roboto"),local("Roboto-Regular"),url(fnt/roboto.woff2) format("woff2");
+		src:local("Roboto"),local("Roboto-Regular"),url(../fnt/roboto.woff2) format("woff2");
 		unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215;
 	}
 	*,*::before,*::after{
@@ -193,100 +193,98 @@
 	<input checked id="wip" type="checkbox"><label for="wip">Work in Progress</label>
 	<canvas height="294" width="325"></canvas>
 </section>
-<script>
-	{
-		const 	data=document.getElementById`data`,
-			name=document.getElementById`name`,
-			colour=document.getElementById`colour`,
-			action=document.getElementById`action`,
-			wip=document.getElementById`wip`,
-			canvas=document.querySelector`canvas`,
-			context=canvas.getContext`2d`,
-			width=canvas.width,
-			height=canvas.height,
-			svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
-			path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
-			icon=path.cloneNode(1),
-			background=new Image,
-			xml=new XMLSerializer,
-			image=new Image,
-			generate=event=>{
-				clearTimeout(timer);
-				timer=setTimeout(_=>{
-					switch(event.target){
-						case data:
-							data.style.height=`24px`;
-							data.style.height=data.scrollHeight+1+`px`;
-							path.setAttribute(`d`,data.value);
-							break;
-						case colour:
-							path.setAttribute(`fill`,context.fillStyle=`#`+colour.value);
-							icon.setAttribute(`fill`,`#`+colour.value);
-							break;
-						case action:
-							icon.setAttribute(`d`,action.value);
-							break;
-					}
-					image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}));
-				},50);
-			};
-		let 	use=document.createElementNS(`http://www.w3.org/2000/svg`,`use`),
-			timer;
-		context.font=`14px Roboto`;
-		svg.setAttribute(`height`,284);
-		svg.setAttribute(`viewBox`,`0 0 314 284`);
-		svg.setAttribute(`width`,314);
-		path.setAttribute(`fill`,context.fillStyle=`#`+colour.value);
-		path.setAttribute(`id`,`path`);
-		svg.append(path);
-		use.setAttribute(`href`,`#path`);
-		use.setAttribute(`transform`,`translate(0,34) scale(2,2)`);
-		icon.setAttribute(`fill`,`#`+colour.value);
-		icon.setAttribute(`transform`,`translate(282,259) scale(.75,.75)`);
-		svg.append(use,use=use.cloneNode(1),icon);
-		use.setAttribute(`transform`,`translate(59,0) scale(10,10)`);
-		background.src=`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUUAAAEmBAMAAAAHOp+aAAAAKlBMVEX////u7u739/f6+vrx8fHi4uLd3d39/f329vbPz8/f39/09PTp6enY2NjMrDZ4AAACXUlEQVR42u3asUsCURzAcTPBwUXBwaEhHFJoCRze4FJgS3OOLQ3RKN3wXHXI4P6CxqApGkQXB5dWb+7/iQOFd3coN0jv9+59v0VwtHx4b/jpu1ciIqIDabPMP4OelVRCUg26b7umapQkVoNwYKVVQqLPjYeyThn7pbj6//9ZmsZgbjzUVMo4sWVsmcaXa+Oh0kkaT9e2jNGVwRjXjYeTWcp4a8t4jxEjRq+NDUsVbR0xYsSIESNzpvB7nfrOJdIYrIdfu4aREmnUlzeNXc2FFmmMz1LC7c9UjUQaU2dSMo2JMB7JKHLOOLGOel9yjOY5rtlUjcQYt+e42cpajDGY7zHWlBjj9jNFtkpHjHFc32M8mWH0y9iwVNHWESNGjBgxMmd832uMGDFiZM64u44YMWLEiJE54/teY8SIEaO3c8aFd5rmPSmzYSTn3bB5T8qsuZDzjj2+q7AKs7+S7iq4cOfDibszGDFy38y3vcaIESNG5oy764gRI0aMGJkzvu81RowYMTJn3F1HjBgxYsTInPF9rzFixIiROePuOmLEiBEjRuaM73uNESNGjMwZd9cRI0aMGDEyZ3zfa4wYMWJkzri7jhgxYsSIkTnj+15jxIgRI3PG3XXEiBEjRozMGd/3GiNGjBiZM+6uI0aMGDFiZM74vtcYMWIsnHFtyxjlNlYnD+9W+m2Nchv7Z0Mr/SzzG4NwYKWVio350kHPSkqXiIjoYHdPovuMjR/TtuQ2sfG5LbqL2PjYFh1GjJLCiFFSGDFKCiNGSWHEKCmMGCWF8Ti9xsZv0WdS3Y0jZ3t/niRZx+dg9dwAAAAASUVORK5CYII=`;
-		image.addEventListener(`load`,_=>{
-			context.clearRect(0,0,width,height);
-			context.drawImage(background,0,0);
-			if(colour.value!==`9e9e9e`){
-				context.globalCompositeOperation=`overlay`;
-				context.fillRect(0,0,width,height);
-				context.globalCompositeOperation=`source-over`;
-			}
-			if(wip.checked){
-				context.save();
-				context.font=`18px Roboto`;
-				context.translate(28,250);
-				context.rotate(-Math.PI/2);
-				context.fillText(`Work in Progress`,0,0);
-				context.restore();
-				context.save();
-				context.globalAlpha=.87;
-				context.translate(54,250);
-				context.rotate(-Math.PI/2);
-				context.fillText(`Unreleased Draft`,0,0);
-				context.restore();
-			}
-			context.fillText(name.value.toLowerCase().replace(/ /g,`-`),11,282);
-			context.drawImage(image,11,10);
-			URL.revokeObjectURL(image.src);
-		},0);
-		document.addEventListener(`input`,generate,1);
-		document.addEventListener(`change`,generate,1);
-		data.dispatchEvent(new Event(`input`));
-		(async _=>{
-			await new Promise(resolve=>{
-				let script=document.createElement`script`;
-				script.async=1;
-				script.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
-				document.body.append(script);
-				script.addEventListener(`load`,resolve,0);
-			});
-			window.dataLayer=window.dataLayer||[];
-			let gtag=function(){window.dataLayer.push(arguments);};
-			gtag(`js`,new Date());
-			gtag(`config`,`UA-109147935-1`);
-		})();
-	}
-</script>
+<script>{
+	const 	data=document.getElementById`data`,
+		name=document.getElementById`name`,
+		colour=document.getElementById`colour`,
+		action=document.getElementById`action`,
+		wip=document.getElementById`wip`,
+		canvas=document.querySelector`canvas`,
+		context=canvas.getContext`2d`,
+		width=canvas.width,
+		height=canvas.height,
+		svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
+		path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
+		icon=path.cloneNode(1),
+		background=new Image,
+		xml=new XMLSerializer,
+		image=new Image,
+		generate=event=>{
+			clearTimeout(timer);
+			timer=setTimeout(_=>{
+				switch(event.target){
+					case data:
+						data.style.height=`24px`;
+						data.style.height=data.scrollHeight+1+`px`;
+						path.setAttribute(`d`,data.value);
+						break;
+					case colour:
+						path.setAttribute(`fill`,context.fillStyle=`#`+colour.value);
+						icon.setAttribute(`fill`,`#`+colour.value);
+						break;
+					case action:
+						icon.setAttribute(`d`,action.value);
+						break;
+				}
+				image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}));
+			},50);
+		};
+	let 	use=document.createElementNS(`http://www.w3.org/2000/svg`,`use`),
+		timer;
+	context.font=`14px Roboto`;
+	svg.setAttribute(`height`,284);
+	svg.setAttribute(`viewBox`,`0 0 314 284`);
+	svg.setAttribute(`width`,314);
+	path.setAttribute(`fill`,context.fillStyle=`#`+colour.value);
+	path.setAttribute(`id`,`path`);
+	svg.append(path);
+	use.setAttribute(`href`,`#path`);
+	use.setAttribute(`transform`,`translate(0,34) scale(2,2)`);
+	icon.setAttribute(`fill`,`#`+colour.value);
+	icon.setAttribute(`transform`,`translate(282,259) scale(.75,.75)`);
+	svg.append(use,use=use.cloneNode(1),icon);
+	use.setAttribute(`transform`,`translate(59,0) scale(10,10)`);
+	background.src=`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUUAAAEmBAMAAAAHOp+aAAAAKlBMVEX////u7u739/f6+vrx8fHi4uLd3d39/f329vbPz8/f39/09PTp6enY2NjMrDZ4AAACXUlEQVR42u3asUsCURzAcTPBwUXBwaEhHFJoCRze4FJgS3OOLQ3RKN3wXHXI4P6CxqApGkQXB5dWb+7/iQOFd3coN0jv9+59v0VwtHx4b/jpu1ciIqIDabPMP4OelVRCUg26b7umapQkVoNwYKVVQqLPjYeyThn7pbj6//9ZmsZgbjzUVMo4sWVsmcaXa+Oh0kkaT9e2jNGVwRjXjYeTWcp4a8t4jxEjRq+NDUsVbR0xYsSIESNzpvB7nfrOJdIYrIdfu4aREmnUlzeNXc2FFmmMz1LC7c9UjUQaU2dSMo2JMB7JKHLOOLGOel9yjOY5rtlUjcQYt+e42cpajDGY7zHWlBjj9jNFtkpHjHFc32M8mWH0y9iwVNHWESNGjBgxMmd832uMGDFiZM64u44YMWLEiJE54/teY8SIEaO3c8aFd5rmPSmzYSTn3bB5T8qsuZDzjj2+q7AKs7+S7iq4cOfDibszGDFy38y3vcaIESNG5oy764gRI0aMGJkzvu81RowYMTJn3F1HjBgxYsTInPF9rzFixIiROePuOmLEiBEjRuaM73uNESNGjMwZd9cRI0aMGDEyZ3zfa4wYMWJkzri7jhgxYsSIkTnj+15jxIgRI3PG3XXEiBEjRozMGd/3GiNGjBiZM+6uI0aMGDFiZM74vtcYMWIsnHFtyxjlNlYnD+9W+m2Nchv7Z0Mr/SzzG4NwYKWVio350kHPSkqXiIjoYHdPovuMjR/TtuQ2sfG5LbqL2PjYFh1GjJLCiFFSGDFKCiNGSWHEKCmMGCWF8Ti9xsZv0WdS3Y0jZ3t/niRZx+dg9dwAAAAASUVORK5CYII=`;
+	image.addEventListener(`load`,_=>{
+		context.clearRect(0,0,width,height);
+		context.drawImage(background,0,0);
+		if(colour.value!==`9e9e9e`){
+			context.globalCompositeOperation=`overlay`;
+			context.fillRect(0,0,width,height);
+			context.globalCompositeOperation=`source-over`;
+		}
+		if(wip.checked){
+			context.save();
+			context.font=`18px Roboto`;
+			context.translate(28,250);
+			context.rotate(-Math.PI/2);
+			context.fillText(`Work in Progress`,0,0);
+			context.restore();
+			context.save();
+			context.globalAlpha=.87;
+			context.translate(54,250);
+			context.rotate(-Math.PI/2);
+			context.fillText(`Unreleased Draft`,0,0);
+			context.restore();
+		}
+		context.fillText(name.value.toLowerCase().replace(/ /g,`-`),11,282);
+		context.drawImage(image,11,10);
+		URL.revokeObjectURL(image.src);
+	},0);
+	document.addEventListener(`input`,generate,1);
+	document.addEventListener(`change`,generate,1);
+	data.dispatchEvent(new Event(`input`));
+	(async _=>{
+		await new Promise(resolve=>{
+			let script=document.createElement`script`;
+			script.async=1;
+			script.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
+			document.body.append(script);
+			script.addEventListener(`load`,resolve,0);
+		});
+		window.dataLayer=window.dataLayer||[];
+		let gtag=function(){window.dataLayer.push(arguments);};
+		gtag(`js`,new Date());
+		gtag(`config`,`UA-109147935-1`);
+	})();
+}</script>
