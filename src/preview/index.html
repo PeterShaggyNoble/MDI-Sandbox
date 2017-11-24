@@ -278,7 +278,7 @@
 			context.fillText(`Unreleased Draft`,0,0);
 			context.restore();
 		}
-		context.fillText(name.value.toLowerCase().replace(/ /g,`-`),11,282);
+		context.fillText(name.value.trim().toLowerCase().replace(/ |_/g,`-`),11,282);
 		context.drawImage(image,11,10);
 		URL.revokeObjectURL(image.src);
 	},0);
