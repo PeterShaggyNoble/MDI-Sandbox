@@ -740,8 +740,8 @@
 		border-radius:2px;
 		color:#303f9f;
 		line-height:36px;
-		padding:0 8px;
 		margin:24px 8px 8px 0;
+		padding:0 8px;
 		transition:background .195s cubic-bezier(.4,0,.2,1);
 		min-width:72px;
 	}
@@ -1178,8 +1178,8 @@
 		<li class="cp fwm pr wsnw" data-icon="&#xf21d;">Export Settings
 		<li class="cp fwm pr wsnw" data-icon="&#xf450;">Reset Editor
 	</ul>
-	<button class="cp fwm pr tac ttu">Close</button>
-	<button autofocus class="cp fwm pr tac ttu">Save</button>
+	<button class="cp fwm tac ttu">Close</button>
+	<button autofocus class="cp fwm tac ttu">Save</button>
 </dialog>
 <script>
 	{
@@ -1196,6 +1196,7 @@
 			d=document,
 			h=d.documentElement,
 			b=d.body,
+			offline=!navigator.onLine,
 			page={
 				url:new URL(location),
 				size:(b.offsetWidth>1199)+(b.offsetWidth>1499),
@@ -1240,6 +1241,12 @@
 						html:this.options.lastElementChild
 					};
 					this.actions.svg=this.actions.link.nextElementSibling;
+					this.header.addEventListener(`click`,event=>{
+						if(event.target.nodeName.toLowerCase()===`a`&&offline){
+							page.alert`Could not connect.`;
+							event.preventDefault();
+						}
+					},0);
 					this.main.addEventListener(`click`,event=>{
 						let	target=event.target,
 							parent=target.parentNode,
@@ -1717,7 +1724,7 @@
 								this.data?page.copy(target.dataset.copy,target.dataset.confirm):page.alert`Not yet available.`;
 								break;
 							case this.actions.link:
-								this.retired?page.alert`No longer available.`:location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`;
+								this.retired?page.alert`No longer available.`:!offline?location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`Could not connect.`;
 								break;
 							default:
 								if(this.type=target.dataset.type)

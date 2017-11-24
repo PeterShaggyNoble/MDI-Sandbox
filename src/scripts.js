@@ -15,6 +15,7 @@
 		d=document,
 		h=d.documentElement,
 		b=d.body,
+		offline=!navigator.onLine,
 	/** PAGE **/
 		page={
 			url:new URL(location),
@@ -60,6 +61,12 @@
 					html:this.options.lastElementChild
 				};
 				this.actions.svg=this.actions.link.nextElementSibling;
+				this.header.addEventListener(`click`,event=>{
+					if(event.target.nodeName.toLowerCase()===`a`&&offline){
+						page.alert`Could not connect.`;
+						event.preventDefault();
+					}
+				},0);
 				this.main.addEventListener(`click`,event=>{
 					let 	target=event.target,
 						parent=target.parentNode,
@@ -542,7 +549,7 @@
 							this.data?page.copy(target.dataset.copy,target.dataset.confirm):page.alert`Not yet available.`;
 							break;
 						case this.actions.link:
-							this.retired?page.alert`No longer available.`:location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`;
+							this.retired?page.alert`No longer available.`:!offline?location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`Could not connect.`;
 							break;
 						default:
 							if(this.type=target.dataset.type)

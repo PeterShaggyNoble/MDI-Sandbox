@@ -757,8 +757,8 @@ dialog>button{
 	border-radius:2px;
 	color:#303f9f;
 	line-height:36px;
-	padding:0 8px;
 	margin:24px 8px 8px 0;
+	padding:0 8px;
 	transition:background .195s cubic-bezier(.4,0,.2,1);
 	min-width:72px;
 }

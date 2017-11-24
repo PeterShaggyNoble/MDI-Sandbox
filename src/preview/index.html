@@ -272,7 +272,7 @@
 		URL.revokeObjectURL(image.src);
 	},0);
 	document.addEventListener(`input`,generate,1);
-	document.addEventListener(`change`,generate,1);
+	wip.addEventListener(`change`,generate,1);
 	data.dispatchEvent(new Event(`input`));
 	(async _=>{
 		await new Promise(resolve=>{
