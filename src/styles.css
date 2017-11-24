@@ -661,7 +661,6 @@ dialog>figure.light{
 	background-image:linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121),linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121);
 }
 dialog>figure>svg{
-	box-sizing:content-box;
 	left:50%;
 	top:50%;
 	transform:translate(-50%,-50%);
@@ -687,7 +686,6 @@ dialog>figure.light>span{
 }
 dialog>figure>span:first-of-type{
 	background:#fff;
-	background-clip:content-box;
 	height:24px;
 	max-height:256px;
 	left:50%;

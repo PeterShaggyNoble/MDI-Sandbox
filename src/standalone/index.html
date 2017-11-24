@@ -644,7 +644,6 @@
 		background-image:linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121),linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121);
 	}
 	dialog>figure>svg{
-		box-sizing:content-box;
 		left:50%;
 		top:50%;
 		transform:translate(-50%,-50%);
@@ -670,7 +669,6 @@
 	}
 	dialog>figure>span:first-of-type{
 		background:#fff;
-		background-clip:content-box;
 		height:24px;
 		max-height:256px;
 		left:50%;
@@ -1085,6 +1083,7 @@
 			<ul id="extras">
 				<li><a class="db fwm" data-icon="&#xf2c1;" href="https://petershaggynoble.github.io/MDI-Sandbox/preview/" tabindex="-1">Preview Generator</a>
 				<li><a class="db fwm" data-icon="&#xf349;" href="https://petershaggynoble.github.io/MDI-Sandbox/extended/" tabindex="-1">Extended Icons</a>
+				<li><a class="db fwm" data-icon="&#xf0e3;" href="https://petershaggynoble.github.io/MDI-Sandbox/editor/" tabindex="-1">Icon Editor</a>
 			</ul>
 			<aside id="links">
 				<ul>
@@ -26637,7 +26636,7 @@
 									if(this.settings.padding>(this.inputs.padding.max=(256-this.settings.size)/2))
 										this.settings.padding=this.inputs.padding.value=parseInt(this.inputs.padding.max);
 									this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.settings.size+2*this.settings.padding}px`;
-									if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
+									if(this.settings.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
 										this.background.style.borderRadius=`${this.settings.radius=this.inputs.radius.value=parseInt(this.inputs.radius.max)}px`;
 									break;
 								case this.inputs.fill:

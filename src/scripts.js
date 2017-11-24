@@ -888,7 +888,7 @@
 								if(this.settings.padding>(this.inputs.padding.max=(256-this.settings.size)/2))
 									this.settings.padding=this.inputs.padding.value=parseInt(this.inputs.padding.max);
 								this.background.style.height=this.background.style.width=this.horizontal.style.height=this.vertical.style.width=`${this.dimensions=this.settings.size+2*this.settings.padding}px`;
-								if(this.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
+								if(this.settings.radius>(this.inputs.radius.max=Math.floor(this.dimensions/2)))
 									this.background.style.borderRadius=`${this.settings.radius=this.inputs.radius.value=parseInt(this.inputs.radius.max)}px`;
 								break;
 							case this.inputs.fill:

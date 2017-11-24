@@ -14,6 +14,9 @@ A preview of the extra icons in Google's "Material Icons Extended" set is availa
 ### Preview Generator
 Create customised icon preview images which can be copied & pasted directly into GitHub issues (or anywhere else) at [petershaggynoble.github.io/MDI-Sandbox/preview/](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 
+### Icon Editor
+Use the [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/) to create PNGs using the path data from _any_ 24*24 or 512*512 SVG.
+
 ## How to Contribute
 > Coming soon ...
 
@@ -22,7 +25,8 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
-- **2017-11-22:** Added a [tool for generating GitHub previews](https://petershaggynoble.github.io/MDI-Sandbox/tools/preview/).
+- **2017-11-22:** Added an [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/).
+- **2017-11-22:** Added a [tool for generating GitHub previews](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 - **2017-11-20:** New [music](https://petershaggynoble.github.io/MDI-Sandbox/?categories=music) category added.
 - **2017-11-17:** New [games](https://petershaggynoble.github.io/MDI-Sandbox/?categories=games) category added.
 - **2017-11-16:** Created a web app for Chrome mobile.
