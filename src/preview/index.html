@@ -62,6 +62,14 @@
 		padding:0 16px 16px;
 		width:357px;
 	}
+	@media(max-width:373px){
+		body{
+			padding:0;
+		}
+		section{
+			min-width:100%;
+		}
+	}
 	h1{
 		background:#303f9f;
 		border-radius:2px 2px 0 0;
@@ -70,7 +78,10 @@
 		font-weight:normal;
 		line-height:48px;
 		padding:0 16px;
+		position:sticky;
 		margin:0 -16px 8px;
+		top:0;
+		z-index:2;
 	}
 	label{
 		color:#757575;
@@ -155,7 +166,7 @@
 	}
 	canvas{
 		height:294px;
-		margin:16px 0 0;
+		margin:16px auto 0;
 		width:325px;
 	}
 </style>

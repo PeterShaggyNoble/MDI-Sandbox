@@ -1300,8 +1300,7 @@
 					editor.dialog.append(this.textarea);
 					this.textarea.value=string;
 					this.textarea.select();
-					d.execCommand`copy`;
-					this.textarea.value=``;
+					d.execCommand`cut`;
 					this.textarea.remove();
 					message&&this.alert(`${message} copied to clipboard.`);
 				},
@@ -26771,10 +26770,11 @@
 					page.download(xml,`${this.inputs.name.value}.${this.inputs.format.value}`);
 				},
 				load(){
+					let event=new Event(`input`);
 					for(let key in this.inputs)
 						if(this.inputs.hasOwnProperty(key)&&key!=="name"){
 							this.inputs[key].value=page.params.get(key)||page.storage&&page.storage[`png-${key}`]||this.inputs[key].getAttribute`value`||this.inputs[key].firstElementChild.getAttribute`value`;
-							this.inputs[key].dispatchEvent(new Event(`input`));
+							this.inputs[key].dispatchEvent(event);
 						}
 				},
 				open(name){

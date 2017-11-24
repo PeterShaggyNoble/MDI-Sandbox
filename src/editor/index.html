@@ -75,6 +75,14 @@
 		padding:0 16px 16px;
 		width:320px;
 	}
+	@media(max-width:336px){
+		body{
+			padding:0;
+		}
+		section{
+			min-width:100%;
+		}
+	}
 	h1{
 		background:#303f9f;
 		border-radius:2px 2px 0 0;
@@ -84,15 +92,21 @@
 		line-height:48px;
 		padding:0 16px;
 		margin:0 -16px;
+		position:sticky;
+		top:0;
 		width:calc(100% + 32px);
+		z-index:3;
 	}
 	figure{
 		background:linear-gradient(45deg,#e0e0e0 25%,transparent 25%,transparent 75%,#e0e0e0 75%,#e0e0e0) 0 0 / 16px,linear-gradient(45deg,#e0e0e0 25%,transparent 25%,transparent 75%,#e0e0e0 75%,#e0e0e0) 8px 8px / 16px;
+		background-color:#fff;
 		height:320px;
 		margin:0 -16px 16px;
-		position:relative;
+		position:sticky;
+		top:48px;
 		transition:background .195s cubic-bezier(.4,0,.2,1);
 		width:calc(100% + 32px);
+		z-index:2;
 	}
 	figure.light{
 		background-color:#616161;
@@ -259,7 +273,8 @@
 		image=new Image,
 		convert=hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 		test=([r,g,b])=>(r*299+g*587+b*114)/1000;
-	let dimensions=24,luminance;
+	let 	dimensions=24,
+		luminance;
 	data.style.height=data.scrollHeight+1+`px`;
 	svg.setAttribute(`height`,24);
 	svg.setAttribute(`viewBox`,`0 0 24 24`);
