@@ -15,7 +15,7 @@ A preview of the extra icons in Google's "Material Icons Extended" set is availa
 Create customised icon preview images which can be copied & pasted directly into GitHub issues (or anywhere else) at [petershaggynoble.github.io/MDI-Sandbox/preview/](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 
 ### Icon Editor
-The [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/) build on the editor included on the site to allow creation of PNGs using the path data from _any_ 24x24 or 512x512 (vertically flipped) SVG.
+The [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/) build on the editor included on the site to allow creation of PNGs using the path data from _any_ 24x24, 48x48 or 512x512 (vertically flipped) SVG.
 
 ## How to Contribute
 > Coming soon ...

@@ -274,7 +274,7 @@
 		convert=hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 		test=([r,g,b])=>(r*299+g*587+b*114)/1000;
 	let 	dimensions=24,
-		luminance;
+		luminance,size;
 	data.style.height=data.scrollHeight+1+`px`;
 	svg.setAttribute(`height`,24);
 	svg.setAttribute(`viewBox`,`0 0 24 24`);
@@ -301,7 +301,8 @@
 					target.style.height=`24px`;
 					target.style.height=target.scrollHeight+1+`px`;
 					path.setAttribute(`d`,values.data=value);
-					path.setAttribute(`transform`,(value.match(/(\d|\.)+/g)||[]).some(x=>parseFloat(x)>24)?`scale(.046875) scale(1,-1) translate(0,-512)`:``);
+					size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
+					size>24?path.setAttribute(`transform`,size>48?`scale(.046875) scale(1,-1) translate(0,-512)`:`scale(.5)`):path.removeAttribute(`transform`);
 					break;
 				case inputs.size:
 					svg.setAttribute(`height`,values.size=parseInt(value));
@@ -340,6 +341,7 @@
 			}
 		}
 	},1);
+	inputs.data.dispatchEvent(new Event(`input`))
 	button.addEventListener(`click`,_=>{
 		context.clearRect(0,0,canvas.width,canvas.height);
 		canvas.height=canvas.width=dimensions;
