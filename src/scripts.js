@@ -317,20 +317,20 @@
 								check=icon.categories&&icon.categories.some(category=>
 									this.categories.has(category)
 								);
-							if(this.contributors.size)
+								if(this.contributors.size)
 								check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
-							if(words)
+								if(words)
 								check=check&&words.every(word=>
 									icon.keywords.some(item=>
 										item.startsWith(word)
 									)
 								);
-							icon.articles.main.classList.toggle(`dn`,!check);
-							matches+=check;
+								icon.articles.main.classList.toggle(`dn`,!check);
+								matches+=check;
+							}
 						}
-					}
 				this.counter.nodeValue=` (${this.filtered?matches:icons.total}/${icons.total})`;
-				this.error.classList.toggle(`dn`,matches);
+				this.error.classList.toggle(`dn`,!this.filtered||matches);
 				this.clearall.classList.toggle(`clear`,this.filtered);
 				if(this.filtered){
 					this.url=`${page.address}?`;
@@ -364,6 +364,12 @@
 					let article,key;
 					for(key in icons.list)
 						icons.list.hasOwnProperty(key)&&(article=icons.list[key].articles.main)&&article.classList.remove`dn`;
+					this.filtered=0;
+					page.section.classList.remove`filtered`;
+					this.heading.nodeValue=`Search Results`;
+					this.counter.nodeValue=` (${icons.total}/${icons.total})`;
+					this.error.classList.add`dn`;
+					this.clearall.classList.remove`clear`;
 				}
 				menu.goto(page.section);
 			}
