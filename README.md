@@ -25,6 +25,7 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2017-11-28:** Two new section show which icons have been [renamed](https://petershaggynoble.github.io/MDI-Sandbox/?section=renamed) in or [removed](https://petershaggynoble.github.io/MDI-Sandbox/?section=removed) from the latest release.
 - **2017-11-22:** Added a [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/).
 - **2017-11-22:** Added a [tool for generating GitHub previews](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 - **2017-11-20:** New [music](https://petershaggynoble.github.io/MDI-Sandbox/?categories=music) category added.

@@ -14,6 +14,16 @@
 		"name":"Updated in v{v}",
 		"section":true
 	},
+	"renamed":{
+		"icon":"rename-box",
+		"name":"Renamed in v{v}",
+		"section":true
+	},
+	"removed":{
+		"icon":"delete",
+		"name":"Removed in v{v}",
+		"section":true
+	},
 	"soon":{
 		"icon":"update",
 		"name":"Coming Soon",

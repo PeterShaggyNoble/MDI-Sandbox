@@ -519,7 +519,7 @@
 			figure:$`preview`,
 			heading:$`name`,
 			init(){
-				page.size>0&&this.aside.classList.remove`oz`;
+				page.size&&this.aside.classList.remove`oz`;
 				this.heading.append(T``);
 				this.figure.append(this.svg=N`svg`);
 				this.svg.classList.add`pa`;
@@ -533,7 +533,7 @@
 						this.open(icon);
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
-				}else if(page.size>0){
+				}else if(page.size){
 					this.open(icon=(page.params.get`edit`||Object.keys(icons.list)[0]));
 					Object.values(icons.list[icon].articles)[0].classList.add`active`;
 				}
@@ -542,7 +542,7 @@
 					switch(target){
 						case this.aside:
 						case this.heading:
-							page.size<1&&this.toggle();
+							!page.size&&this.toggle();
 							break;
 						case this.actions.favourite:
 							favourites.toggle(this.name);
@@ -600,18 +600,18 @@
 				if(page.light)
 					this.actions.url.dataset.copy+=`font=light&`;
 				this.actions.url.dataset.copy+=`icon=${name}`;
-				if(page.size>0){
+				if(page.size){
 					this.heading.classList.add`oz`;
 					this.svg.classList.add`oz`;
 				}else this.toggle();
 				setTimeout(_=>{
 					this.heading.firstChild.nodeValue=this.name;
 					this.path.setAttribute(`d`,this.data);
-					if(page.size>0){
+					if(page.size){
 						this.heading.classList.remove`oz`;
 						this.svg.classList.remove`oz`;
 					}
-				},page.size>0&&195);
+				},page.size&&195);
 			},
 			toggle(){
 				this.aside.classList.toggle(`oz`,!(this.show=!this.show));
@@ -765,6 +765,8 @@
 					(category=categories.list.favourites)&&page.storage[`mdi-${key}`]&&category.section.append(icon.articles.favourite=article.cloneNode(1));
 					(category=categories.list.new)&&icon.added&&icon.added[page.font]===version&&category.section.append(icon.articles.new=article.cloneNode(1));
 					(category=categories.list.updated)&&icon.updated&&icon.updated[page.font]===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
+					(category=categories.list.renamed)&&icon.renamed&&icon.renamed[page.font]===version&&category.section.append(icon.articles.renamed=article.cloneNode(1));
+					(category=categories.list.removed)&&icon.retired===version&&category.section.append(icon.articles.removed=article.cloneNode(1));
 					(category=categories.list.soon)&&icon.added&&icon.added[page.font]===`{next}`&&category.section.append(icon.articles.soon=article.cloneNode(1));
 					(category=categories.list.retired)&&icon.retired&&category.section.append(icon.articles.retired=article.cloneNode(1));
 					(!icon.retired||icon.retired==="{soon}")&&++this.total&&page.section.append(icon.articles.main=article);

@@ -541,7 +541,6 @@ body.mdil>#content>section>article::before{
 	z-index:2;
 }
 #actions>li{
-	height:48px;
 	padding:0 16px;
 	transition-duration:.225s,.225s,.195s;
 	transition-property:background,color,height,opacity;
@@ -549,7 +548,6 @@ body.mdil>#content>section>article::before{
 }
 #actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info:not(.retired)>#actions>li:nth-last-child(2){
 	border-bottom:1px solid #e0e0e0;
-	height:49px;
 }
 #info>#actions>li:hover{
 	background:#eee;
@@ -561,8 +559,9 @@ body.mdil>#content>section>article::before{
 }
 #info.nocopy>#actions>li[data-copy]:not([data-confirm="Path data"]):not([data-confirm=Link]),
 #info.retired>#actions>li:last-child{
-	height:0;
-	opacity:0;
+	background:#fff;
+	color:#757575;
+	cursor:not-allowed;
 }
 #actions>li::before{
 	color:#757575;
@@ -574,6 +573,10 @@ body.mdil>#content>section>article::before{
 }
 #actions>li:focus::before{
 	color:#303f9f;
+}
+#info.nocopy>#actions>li[data-copy]:not([data-confirm="Path data"]):not([data-confirm=Link])::before,
+#info.retired>#actions>li:last-child::before{
+	color:#bdbdbd;
 }
 
 /** FOOTER **/
