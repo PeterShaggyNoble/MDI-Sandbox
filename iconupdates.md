@@ -35,36 +35,36 @@ Italicised icons are due to be removed in the next release.
 
 ## [MaterialDesign/icons/svg](https://github.com/Templarian/MaterialDesign/tree/master/icons/svg)
 ### Rename
-- [ ] `arrow-compress-all` -> `arrow-collapse-all`
-- [ ] `arrow-compress` -> `arrow-collapse`
-- [ ] `bookmark-outline-plus` -> `bookmark-plus-outline`
-- [ ] `briefcase-checked` -> `briefcase-check`
-- [ ] `calendar-check-multiple` -> `calendar-multiple-check`
-- [ ] `cloud-outline-off` -> `cloud-off-outline`
-- [ ] `comment-multipe-outline` -> `comment-multiple-outline`
-- [ ] `eye-outline-off` -> `eye-off-outline`
-- [ ] `format-object-inline` -> `format-wrap-inline`
-- [ ] `format-object-square` -> `format-wrap-square`
-- [ ] `format-object-tight` -> `format-wrap-tight`
-- [ ] `format-object-top-bottom` -> `format-wrap-top-bottom`
-- [ ] `github` -> `github-circle`
-- [ ] `google-circles-invite` -> `google-circles-group`
-- [ ] `heart-half-full-outline` -> `heart-half-full`
-- [ ] `image-mutliple` -> `image-multiple`
-- [ ] `lock-screen` -> `lock-pattern`
-- [ ] `lock-unlocked-outline` -> `lock-open-outline`
-- [ ] `lock-unlocked` -> `lock-open`
-- [ ] `network-download` -> `download-network`
-- [ ] `network-question` -> `help-network`
-- [ ] `network-upload` -> `upload-network`
-- [ ] `nutriton` -> `nutrition`
-- [ ] `phone-dots` -> `phone-settings`
-- [ ] `rotate-90` -> `format-rotate-90`
-- [ ] `ticket-star` -> `ticket`
-- [ ] `tile-four` -> `view-grid`
-- [ ] `toggle-switch-on` -> `toggle-switch`
-- [ ] `vibration` -> `vibrate`
-- [ ] `white-balance-irradescent` -> `white-balance-iridescent`
+- [x] `arrow-compress-all` -> `arrow-collapse-all`
+- [x] `arrow-compress` -> `arrow-collapse`
+- [x] `bookmark-outline-plus` -> `bookmark-plus-outline`
+- [x] `briefcase-checked` -> `briefcase-check`
+- [x] `calendar-check-multiple` -> `calendar-multiple-check`
+- [x] `cloud-outline-off` -> `cloud-off-outline`
+- [x] `comment-multipe-outline` -> `comment-multiple-outline`
+- [x] `eye-outline-off` -> `eye-off-outline`
+- [x] `format-object-inline` -> `format-wrap-inline`
+- [x] `format-object-square` -> `format-wrap-square`
+- [x] `format-object-tight` -> `format-wrap-tight`
+- [x] `format-object-top-bottom` -> `format-wrap-top-bottom`
+- [x] `github` -> `github-circle`
+- [x] `google-circles-invite` -> `google-circles-group`
+- [x] `heart-half-full-outline` -> `heart-half-full`
+- [x] `image-mutliple` -> `image-multiple`
+- [x] `lock-screen` -> `lock-pattern`
+- [x] `lock-unlocked-outline` -> `lock-open-outline`
+- [x] `lock-unlocked` -> `lock-open`
+- [x] `network-download` -> `download-network`
+- [x] `network-question` -> `help-network`
+- [x] `network-upload` -> `upload-network`
+- [x] `nutriton` -> `nutrition`
+- [x] `phone-dots` -> `phone-settings`
+- [x] `rotate-90` -> `format-rotate-90`
+- [x] `ticket-star` -> `ticket`
+- [x] `tile-four` -> `view-grid`
+- [x] `toggle-switch-on` -> `toggle-switch`
+- [x] `vibration` -> `vibrate`
+- [x] `white-balance-irradescent` -> `white-balance-iridescent`
 ### Add
 - [ ] `account-star`
 - [ ] `biohazard`
@@ -139,45 +139,45 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 
 ## [MaterialDesign/icons/design](https://github.com/Templarian/MaterialDesign/tree/master/icons/design)
 ### Rename
-- [ ] `arrow-compress-all` -> `arrow-collapse-all`
-- [ ] `arrow-compress` -> `arrow-collapse`
-- [ ] `battery-charging-wireless-100` -> `battery-charging-wireless`
-- [ ] `bookmark-outline-plus` -> `bookmark-plus-outline`
-- [ ] `briefcase-checked` -> `briefcase-check`
-- [ ] `calendar-check-multiple` -> `calendar-multiple-check`
-- [ ] `cloud-outline-off` -> `cloud-off-outline`
-- [ ] `comment-multipe-outline` -> `comment-multiple-outline`
-- [ ] `eye-outline-off` -> `eye-off-outline`
-- [ ] `format-object-float-center` -> `format-float-center`
-- [ ] `format-object-float-left` -> `format-float-left`
-- [ ] `format-object-float-none` -> `format-float-none`
-- [ ] `format-object-float-right` -> `format-float-right`
-- [ ] `format-object-inline` -> `format-wrap-inline`
-- [ ] `format-object-square` -> `format-wrap-square`
-- [ ] `format-object-tight` -> `format-wrap-tight`
-- [ ] `format-object-top-bottom` -> `format-wrap-top-bottom`
-- [ ] `github` -> `github-circle`
-- [ ] `google-circles-invite` -> `google-circles-group`
-- [ ] `heart-half-full-outline` -> `heart-half-full`
-- [ ] `image-mutliple` -> `image-multiple`
-- [ ] `lock-screen` -> `lock-pattern`
-- [ ] `lock-unlocked-outline` -> `lock-open-outline`
-- [ ] `lock-unlocked` -> `lock-open`
-- [ ] `move-and-resize-variant` -> `move-resize-variant`
-- [ ] `move-and-resize` -> `move-resize`
-- [ ] `network-download` -> `download-network`
-- [ ] `network-question` -> `help-network`
-- [ ] `network-upload` -> `upload-network`
-- [ ] `nutriton` -> `nutrition`
-- [ ] `phone-dots` -> `phone-settings`
-- [ ] `rotate-90` -> `format-rotate-90`
-- [ ] `ticket-star` -> `ticket`
-- [ ] `tile-four` -> `view-grid`
-- [ ] `toggle-switch-on` -> `toggle-switch`
-- [ ] `vibration` -> `vibrate`
-- [ ] `white-balance-irradescent` -> `white-balance-iridescent`
+- [x] `arrow-compress-all` -> `arrow-collapse-all`
+- [x] `arrow-compress` -> `arrow-collapse`
+- [x] `bookmark-outline-plus` -> `bookmark-plus-outline`
+- [x] `briefcase-checked` -> `briefcase-check`
+- [x] `calendar-check-multiple` -> `calendar-multiple-check`
+- [x] `cloud-outline-off` -> `cloud-off-outline`
+- [x] `comment-multipe-outline` -> `comment-multiple-outline`
+- [x] `eye-outline-off` -> `eye-off-outline`
+- [x] `format-object-float-center` -> `format-float-center`
+- [x] `format-object-float-left` -> `format-float-left`
+- [x] `format-object-float-none` -> `format-float-none`
+- [x] `format-object-float-right` -> `format-float-right`
+- [x] `format-object-inline` -> `format-wrap-inline`
+- [x] `format-object-square` -> `format-wrap-square`
+- [x] `format-object-tight` -> `format-wrap-tight`
+- [x] `format-object-top-bottom` -> `format-wrap-top-bottom`
+- [x] `github` -> `github-circle`
+- [x] `google-circles-invite` -> `google-circles-group`
+- [x] `heart-half-full-outline` -> `heart-half-full`
+- [x] `image-mutliple` -> `image-multiple`
+- [x] `lock-screen` -> `lock-pattern`
+- [x] `lock-unlocked-outline` -> `lock-open-outline`
+- [x] `lock-unlocked` -> `lock-open`
+- [x] `move-and-resize-variant` -> `move-resize-variant`
+- [x] `move-and-resize` -> `move-resize`
+- [x] `network-download` -> `download-network`
+- [x] `network-question` -> `help-network`
+- [x] `network-upload` -> `upload-network`
+- [x] `nutriton` -> `nutrition`
+- [x] `phone-dots` -> `phone-settings`
+- [x] `rotate-90` -> `format-rotate-90`
+- [x] `ticket-star` -> `ticket`
+- [x] `tile-four` -> `view-grid`
+- [x] `toggle-switch-on` -> `toggle-switch`
+- [x] `vibration` -> `vibrate`
+- [x] `white-balance-irradescent` -> `white-balance-iridescent`
 ### Add
 - [ ] `account-star`
+- [ ] `battery-charging-wireless`
 - [ ] `biohazard`
 - [ ] `case-sensitive-alt`
 - [ ] `close-box`
@@ -202,6 +202,7 @@ A lot of these icons are either works in progress or legacy icons
 - [ ] `arduino`
 - [ ] `arrow-down-drop`
 - [ ] `battery-100`
+- [ ] `battery-charging-wireless-100`
 - [ ] `battery-standard`
 - [ ] `beam`
 - [ ] `box-download`
