@@ -15,7 +15,7 @@ A preview of the extra icons in Google's "Material Icons Extended" set is availa
 Create customised icon preview images which can be copied & pasted directly into GitHub issues (or anywhere else) at [petershaggynoble.github.io/MDI-Sandbox/preview/](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 
 ### Icon Editor
-The [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/) build on the editor included on the site to allow creation of PNGs using the path data from _any_ 24x24, 48x48 or 512x512 (vertically flipped) SVG.
+The [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/) expands on the editor included on the site to allow creation of PNGs using the path data from _any_ 24x24, 48x48 or 512x512 (vertically flipped) SVG. Also includes the ability to add `block-helper` or `color-helper` as an overlay.
 
 ## How to Contribute
 > Coming soon ...
@@ -25,6 +25,7 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2017-11-29:** Added helper icons to the [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/).
 - **2017-11-28:** Two new sections show which icons have been [renamed](https://petershaggynoble.github.io/MDI-Sandbox/?section=renamed) in or [removed](https://petershaggynoble.github.io/MDI-Sandbox/?section=removed) from the latest release.
 - **2017-11-22:** Added a [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/).
 - **2017-11-22:** Added a [tool for generating GitHub previews](https://petershaggynoble.github.io/MDI-Sandbox/preview/).

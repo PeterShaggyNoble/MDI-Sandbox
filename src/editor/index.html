@@ -176,17 +176,26 @@
 		margin:8px 0;
 		width:176px;
 	}
-	input,textarea{
+	input,select,textarea{
 		border-bottom:1px solid #bdbdbd;
 		line-height:23px;
 		margin:0 0 8px;
 		transition:border .195s cubic-bezier(.4,0,.2,1);
 	}
-	input{
+	input,select{
 		display:inline-block;
 		height:24px;
-		padding:0 4px;
 		width:calc(100% - 176px);
+	}
+	input{
+		padding:0 4px;
+	}
+	select{
+		background:url('data:image/svg+xml;utf8,<svg fill="#757575" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7,10L12,15L17,10H7Z"/></svg>') right -2px no-repeat;
+		padding:0 24px 0 4px;
+	}
+	option:checked{
+		display:none;
 	}
 	textarea{
 		max-height:116px;
@@ -228,10 +237,17 @@
 	<figure></figure>
 	<label for="data">Data</label><textarea id="data" required spellcheck="false" rows=2>M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z</textarea>
 	<label for="size">Icon Size: </label><input id="size" max="320" min="12" required type="number" value="24">
-	<label for="fill">Icon Colour: </label><input class="dib tar ttl vam" id="fill" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="000">
+	<label for="fill">Icon Colour: </label><input id="fill" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="212121">
 	<label for="opacity">Icon Opacity: </label><input id="opacity" max="100" min="0" required type="number" value="100">
+	<label for="helper">Helper Icon</label><select id="helper">
+		<option selected value="">None</option>
+		<option value="M12,0A12,12 0 0,1 24,12A12,12 0 0,1 12,24A12,12 0 0,1 0,12A12,12 0 0,1 12,0M12,2A10,10 0 0,0 2,12C2,14.4 2.85,16.6 4.26,18.33L18.33,4.26C16.6,2.85 14.4,2 12,2M12,22A10,10 0 0,0 22,12C22,9.6 21.15,7.4 19.74,5.67L5.67,19.74C7.4,21.15 9.6,22 12,22Z">Block</option>
+		<option value="M0,24H24V20H0V24Z">Colour</option>
+	</select>
+	<label for="colour">Helper Colour: </label><input id="colour" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="d50000">
+	<label for="fade">Helper Opacity: </label><input id="fade" max="100" min="0" required type="number" value="100">
 	<label for="padding">Padding: </label><input id="padding" max="148" min="0" required type="number" value="0">
-	<label for="colour">Background Colour: </label><input class="dib tar ttl vam" id="colour" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="fff">
+	<label for="background">Background Colour: </label><input class="dib tar ttl vam" id="background" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="fff">
 	<label for="alpha">Background Opacity: </label><input id="alpha" max="100" min="0" required type="number" value="0">
 	<label for="radius">Round Corners: </label><input id="radius" max="12" min="0" required type="number" value="0">
 	<label for="name">File Name: </label><input id="name" required type="text" value="vector-square">
@@ -244,18 +260,21 @@
 			size:document.getElementById`size`,
 			fill:document.getElementById`fill`,
 			opacity:document.getElementById`opacity`,
-			padding:document.getElementById`padding`,
+			helper:document.getElementById`helper`,
 			colour:document.getElementById`colour`,
+			fade:document.getElementById`fade`,
+			padding:document.getElementById`padding`,
+			background:document.getElementById`background`,
 			alpha:document.getElementById`alpha`,
 			radius:document.getElementById`radius`,
 			name:document.getElementById`name`
 		},
 		values={
-			fill:"000",
 			size:24,
 			opacity:1,
+			fade:1,
 			padding:0,
-			colour:"fff",
+			background:"fff",
 			alpha:0,
 			radius:0,
 			name:"vector-square"
@@ -266,6 +285,7 @@
 		vertical=background.cloneNode(0),
 		svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 		path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
+		helper=path.cloneNode(1),
 		canvas=document.createElement`canvas`,
 		context=canvas.getContext`2d`,
 		a=document.createElement`a`,
@@ -280,7 +300,10 @@
 	svg.setAttribute(`viewBox`,`0 0 24 24`);
 	svg.setAttribute(`width`,24);
 	path.setAttribute(`d`,values.data=inputs.data.value);
-	svg.append(path);
+	path.setAttribute(`fill`,`#${values.fill=inputs.fill.value}`);
+	helper.setAttribute(`d`,values.helper=``);
+	helper.setAttribute(`fill`,`#${values.colour=inputs.colour.value}`);
+	svg.append(path,helper);
 	figure.append(background,horizontal,vertical,svg);
 	image.addEventListener(`load`,_=>{
 		context.drawImage(image,values.padding,values.padding);
@@ -320,13 +343,22 @@
 				case inputs.opacity:
 					path.setAttribute(`fill-opacity`,(values.opacity=parseInt(value))/100);
 					break;
+				case inputs.helper:
+					helper.setAttribute(`d`,values.helper=value);
+					break;
+				case inputs.colour:
+					helper.setAttribute(`fill`,`#${values.colour=value}`);
+					break;
+				case inputs.fade:
+					helper.setAttribute(`fill-opacity`,(values.fade=parseInt(value))/100);
+					break;
 				case inputs.padding:
 					background.style.height=background.style.width=horizontal.style.height=vertical.style.width=`${dimensions=values.size+2*(values.padding=parseInt(value))}px`;
 					if(values.radius>(inputs.radius.max=Math.floor(dimensions/2)))
 						background.style.borderRadius=`${values.radius=inputs.radius.value=inputs.radius.max}px`;
 					break;
-				case inputs.colour:
-					background.style.backgroundColor=`#${values.colour=value}`;
+				case inputs.background:
+					background.style.backgroundColor=`#${values.background=value}`;
 					break;
 				case inputs.alpha:
 					background.style.opacity=(values.alpha=parseInt(value))/100;
@@ -345,7 +377,7 @@
 		context.clearRect(0,0,canvas.width,canvas.height);
 		canvas.height=canvas.width=dimensions;
 		if(values.alpha){
-			context.fillStyle=`rgba(${convert(values.colour)},${values.alpha/100})`;
+			context.fillStyle=`rgba(${convert(values.background)},${values.alpha/100})`;
 			context.beginPath();
 			context.moveTo(values.radius,0);
 			context.arcTo(dimensions,0,dimensions,dimensions,values.radius);
