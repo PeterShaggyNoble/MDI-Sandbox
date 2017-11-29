@@ -141,6 +141,7 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 ### Rename
 - [x] `arrow-compress-all` -> `arrow-collapse-all`
 - [x] `arrow-compress` -> `arrow-collapse`
+- [x] `battery-charging-wireless-100` -> `battery-charging-wireless`
 - [x] `bookmark-outline-plus` -> `bookmark-plus-outline`
 - [x] `briefcase-checked` -> `briefcase-check`
 - [x] `calendar-check-multiple` -> `calendar-multiple-check`
@@ -177,7 +178,6 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 - [x] `white-balance-irradescent` -> `white-balance-iridescent`
 ### Add
 - [ ] `account-star`
-- [ ] `battery-charging-wireless`
 - [ ] `biohazard`
 - [ ] `case-sensitive-alt`
 - [ ] `close-box`
@@ -202,7 +202,6 @@ A lot of these icons are either works in progress or legacy icons
 - [ ] `arduino`
 - [ ] `arrow-down-drop`
 - [ ] `battery-100`
-- [ ] `battery-charging-wireless-100`
 - [ ] `battery-standard`
 - [ ] `beam`
 - [ ] `box-download`

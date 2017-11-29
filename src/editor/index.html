@@ -165,8 +165,11 @@
 	}
 	path{
 		transition-duration:.195s;
-		transition-property:d,fill,fill-opacity;
+		transition-property:d,fill,fill-opacity,opacity;
 		transition-timing-function:cubic-bezier(.4,0,.2,1);
+	}
+	path[d=""]{
+		opacity:0;
 	}
 	label{
 		color:#757575;

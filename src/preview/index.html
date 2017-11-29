@@ -92,32 +92,30 @@
 		width:75px;
 	}
 	input[type=checkbox]+label{
-		line-height:20px;
+		line-height:24px;
 		padding:0 32px 0 0;
 		position:relative;
 		width:auto;
 	}
 	input[type=checkbox]+label::before{
-		border:2px solid #bdbdbd;
-		border-radius:2px;
+		background:url('data:image/svg+xml;utf8,<svg fill="#bdbdbd" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z"/></svg>') center center no-repeat;
 		content:"";
-		height:20px;
+		height:24px;
 		position:absolute;
 		right:0;
 		top:0;
-		width:20px;
+		width:24px;
 	}
 	input[type=checkbox]+label::after{
-		border-radius:2px;
-		background:#303f9f url('data:image/svg+xml;utf8,<svg fill="#fff" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>') center center no-repeat;
+		background:url('data:image/svg+xml;utf8,<svg fill="#303f9f" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"/></svg>') center center no-repeat;
 		content:"";
-		height:20px;
+		height:24px;
 		opacity:0;
 		position:absolute;
 		right:0;
 		top:0;
 		transition:opacity .195s cubic-bezier(.4,0,.2,1);
-		width:20px;
+		width:24px;
 	}
 	input[type=checkbox]:checked+label::after{
 		opacity:1;
@@ -244,10 +242,11 @@
 		timer;
 	context.font=`14px Roboto`;
 	svg.setAttribute(`height`,284);
-	svg.setAttribute(`viewBox`,`0 0 314 284`);
+	svg.setAttribute(`viewBox`,`0 0 325 294`);
 	svg.setAttribute(`width`,314);
 	path.setAttribute(`fill`,context.fillStyle=`#`+colour.value);
 	path.setAttribute(`id`,`path`);
+	use.setAttribute(`transform`,`translate(11,10)`);
 	svg.append(path);
 	use.setAttribute(`href`,`#path`);
 	use.setAttribute(`transform`,`translate(0,34) scale(2,2)`);
