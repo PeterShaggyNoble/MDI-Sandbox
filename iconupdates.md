@@ -1,0 +1,265 @@
+# GitHub Icon Updates
+
+## [MaterialDesign-SVG/svg](https://github.com/Templarian/MaterialDesign-SVG/tree/master/svg)
+### Rename
+There are no icons to rename at this time.
+### Add
+All missing icons are due to be added in the next release.
+### Remove
+Italicised icons are due to be removed in the next release.
+- [ ] `account-star-variant`
+- [ ] `appnet`
+- [ ] `arrow-compress-all`
+- [ ] `arrow-compress`
+- [ ] `arrow-down-circle`
+- [ ] `arrow-left-circle`
+- [ ] `arrow-right-circle`
+- [ ] `arrow-up-circle`
+- [ ] *`burst-mode`*
+- [ ] `cloud-outline-off`
+- [ ] `eye-outline-off`
+- [ ] `format-quote`
+- [ ] `heart-half-part-outline`
+- [ ] `heart-half-part`
+- [ ] `network-download`
+- [ ] `network-question`
+- [ ] `network-upload`
+- [ ] *`rdio`*
+- [ ] *`readability`*
+- [ ] `rotate-90`
+- [ ] `unfold-less`
+- [ ] `unfold-more`
+- [ ] *`vine`*
+
+---
+
+## [MaterialDesign/icons/svg](https://github.com/Templarian/MaterialDesign/tree/master/icons/svg)
+### Rename
+- [ ] `arrow-compress-all` -> `arrow-collapse-all`
+- [ ] `arrow-compress` -> `arrow-collapse`
+- [ ] `bookmark-outline-plus` -> `bookmark-plus-outline`
+- [ ] `briefcase-checked` -> `briefcase-check`
+- [ ] `calendar-check-multiple` -> `calendar-multiple-check`
+- [ ] `cloud-outline-off` -> `cloud-off-outline`
+- [ ] `comment-multipe-outline` -> `comment-multiple-outline`
+- [ ] `eye-outline-off` -> `eye-off-outline`
+- [ ] `format-object-inline` -> `format-wrap-inline`
+- [ ] `format-object-square` -> `format-wrap-square`
+- [ ] `format-object-tight` -> `format-wrap-tight`
+- [ ] `format-object-top-bottom` -> `format-wrap-top-bottom`
+- [ ] `github` -> `github-circle`
+- [ ] `google-circles-invite` -> `google-circles-group`
+- [ ] `heart-half-full-outline` -> `heart-half-full`
+- [ ] `image-mutliple` -> `image-multiple`
+- [ ] `lock-screen` -> `lock-pattern`
+- [ ] `lock-unlocked-outline` -> `lock-open-outline`
+- [ ] `lock-unlocked` -> `lock-open`
+- [ ] `network-download` -> `download-network`
+- [ ] `network-question` -> `help-network`
+- [ ] `network-upload` -> `upload-network`
+- [ ] `nutriton` -> `nutrition`
+- [ ] `phone-dots` -> `phone-settings`
+- [ ] `rotate-90` -> `format-rotate-90`
+- [ ] `ticket-star` -> `ticket`
+- [ ] `tile-four` -> `view-grid`
+- [ ] `toggle-switch-on` -> `toggle-switch`
+- [ ] `vibration` -> `vibrate`
+- [ ] `white-balance-irradescent` -> `white-balance-iridescent`
+### Add
+- [ ] `account-star`
+- [ ] `biohazard`
+- [ ] `case-sensitive-alt`
+- [ ] `close-box`
+- [ ] `close-box-outline`
+- [ ] `firefox`
+- [ ] `guitar-pick`
+- [ ] `guitar-pick-outline`
+- [ ] `houzz`
+- [ ] `math-compass`
+- [ ] `motorbike`
+- [ ] `regex`
+- [ ] `trophy`
+- [ ] `trophy-award`
+- [ ] `trophy-variant`
+- [ ] `wrap`
+### Remove
+Italicised icons are due to be removed in the next release. Bold icons are works in progress(?).
+- [ ] `appnet`
+- [ ] `arrow-down-drop`
+- [ ] `battery-standard`
+- [ ] `beam`
+- [ ] `box-download`
+- [ ] `box-upload`
+- [ ] `brightness`
+- [ ] *`burst-mode`*
+- [ ] **`calculator-off`**
+- [ ] **`calendar-select`**
+- [ ] `check-bookmark`
+- [ ] `clapperboard`
+- [ ] `controller-xbox`
+- [ ] `data`
+- [ ] `dice`
+- [ ] `document`
+- [ ] **`ebay`**
+- [ ] `file-image-box`
+- [ ] `file-move`
+- [ ] `fill`
+- [ ] `flag-checkered-variant`
+- [ ] **`flickr-after`**
+- [ ] **`flickr-before`**
+- [ ] **`folder-outline-lock`**
+- [ ] `footer`
+- [ ] `format-color`
+- [ ] `format-header-down`
+- [ ] `format-header-up`
+- [ ] `indent`
+- [ ] **`linode`**
+- [ ] `no`
+- [ ] `not-equal`
+- [ ] `outbox`
+- [ ] `outdent`
+- [ ] `people`
+- [ ] `person-box`
+- [ ] `person-minus`
+- [ ] `person-plus`
+- [ ] `picture`
+- [ ] `plane`
+- [ ] `question-mark-circle`
+- [ ] `quick-reply`
+- [ ] **`rabbit`**
+- [ ] *`rdio`*
+- [ ] **`spreadsheet`**
+- [ ] **`star-of-david`**
+- [ ] `trash`
+- [ ] *`vine`*
+- [ ] `volume`
+- [ ] `youtube`
+
+---
+
+## [MaterialDesign/icons/design](https://github.com/Templarian/MaterialDesign/tree/master/icons/design)
+### Rename
+- [ ] `arrow-compress-all` -> `arrow-collapse-all`
+- [ ] `arrow-compress` -> `arrow-collapse`
+- [ ] `battery-charging-wireless-100` -> `battery-charging-wireless`
+- [ ] `bookmark-outline-plus` -> `bookmark-plus-outline`
+- [ ] `briefcase-checked` -> `briefcase-check`
+- [ ] `calendar-check-multiple` -> `calendar-multiple-check`
+- [ ] `cloud-outline-off` -> `cloud-off-outline`
+- [ ] `comment-multipe-outline` -> `comment-multiple-outline`
+- [ ] `eye-outline-off` -> `eye-off-outline`
+- [ ] `format-object-float-center` -> `format-float-center`
+- [ ] `format-object-float-left` -> `format-float-left`
+- [ ] `format-object-float-none` -> `format-float-none`
+- [ ] `format-object-float-right` -> `format-float-right`
+- [ ] `format-object-inline` -> `format-wrap-inline`
+- [ ] `format-object-square` -> `format-wrap-square`
+- [ ] `format-object-tight` -> `format-wrap-tight`
+- [ ] `format-object-top-bottom` -> `format-wrap-top-bottom`
+- [ ] `github` -> `github-circle`
+- [ ] `google-circles-invite` -> `google-circles-group`
+- [ ] `heart-half-full-outline` -> `heart-half-full`
+- [ ] `image-mutliple` -> `image-multiple`
+- [ ] `lock-screen` -> `lock-pattern`
+- [ ] `lock-unlocked-outline` -> `lock-open-outline`
+- [ ] `lock-unlocked` -> `lock-open`
+- [ ] `move-and-resize-variant` -> `move-resize-variant`
+- [ ] `move-and-resize` -> `move-resize`
+- [ ] `network-download` -> `download-network`
+- [ ] `network-question` -> `help-network`
+- [ ] `network-upload` -> `upload-network`
+- [ ] `nutriton` -> `nutrition`
+- [ ] `phone-dots` -> `phone-settings`
+- [ ] `rotate-90` -> `format-rotate-90`
+- [ ] `ticket-star` -> `ticket`
+- [ ] `tile-four` -> `view-grid`
+- [ ] `toggle-switch-on` -> `toggle-switch`
+- [ ] `vibration` -> `vibrate`
+- [ ] `white-balance-irradescent` -> `white-balance-iridescent`
+### Add
+- [ ] `account-star`
+- [ ] `biohazard`
+- [ ] `case-sensitive-alt`
+- [ ] `close-box`
+- [ ] `close-box-outline`
+- [ ] `firefox`
+- [ ] `guitar-pick`
+- [ ] `guitar-pick-outline`
+- [ ] `houzz`
+- [ ] `math-compass`
+- [ ] `motorbike`
+- [ ] `ornament`
+- [ ] `ornament-variant`
+- [ ] `regex`
+- [ ] `trophy-award`
+- [ ] `trophy-variant`
+- [ ] `wrap`
+### Remove
+A lot of these icons are either works in progress or legacy icons
+- [ ] `500px`
+- [ ] `account-move`
+- [ ] `appnet`
+- [ ] `arduino`
+- [ ] `arrow-down-drop`
+- [ ] `battery-100`
+- [ ] `battery-standard`
+- [ ] `beam`
+- [ ] `box-download`
+- [ ] `box-upload`
+- [ ] `brightness`
+- [ ] `burst-mode`
+- [ ] `calculator-off`
+- [ ] `calendar-multiselect`
+- [ ] `calendar-select`
+- [ ] `clapperboard`
+- [ ] `controller-xbox`
+- [ ] `cubes`
+- [ ] `data`
+- [ ] `dice-d12`
+- [ ] `dice`
+- [ ] `document`
+- [ ] `ebay`
+- [ ] `faq`
+- [ ] `file-image-box`
+- [ ] `file-move`
+- [ ] `fill`
+- [ ] `flag-checkered-variant`
+- [ ] `flickr-after`
+- [ ] `flickr-before`
+- [ ] `folder-outline-lock`
+- [ ] `format-header-down`
+- [ ] `format-header-up`
+- [ ] `gauge-0`
+- [ ] `glass-template`
+- [ ] `gokart`
+- [ ] `hexagon-move`
+- [ ] `indent`
+- [ ] `ir-remote`
+- [ ] `linode`
+- [ ] `mountain`
+- [ ] `nfc-enabled`
+- [ ] `no`
+- [ ] `not-equal`
+- [ ] `outdent`
+- [ ] `paypal-above`
+- [ ] `people`
+- [ ] `person-box`
+- [ ] `person-minus`
+- [ ] `person-plus`
+- [ ] `picture`
+- [ ] `plane`
+- [ ] `qrcode-variant`
+- [ ] `question-mark-circle`
+- [ ] `quick-reply`
+- [ ] `rabbit`
+- [ ] `rdio`
+- [ ] `remove-circle`
+- [ ] `shoe-running`
+- [ ] `spreadsheet`
+- [ ] `star-of-david`
+- [ ] `theme-color`
+- [ ] `vector-rectangle-radius`
+- [ ] `vine`
+- [ ] `volume`
+- [ ] `water-bag`
+- [ ] `youtube`
