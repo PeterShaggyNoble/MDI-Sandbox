@@ -2,7 +2,7 @@
 
 ## [MaterialDesign-SVG/svg](https://github.com/Templarian/MaterialDesign-SVG/tree/master/svg)
 ### Rename
-There are no icons to rename at this time.
+There are no icons to be renamed at this time.
 ### Add
 All missing icons are due to be added in the next release.
 ### Remove
@@ -35,36 +35,7 @@ Italicised icons are due to be removed in the next release.
 
 ## [MaterialDesign/icons/svg](https://github.com/Templarian/MaterialDesign/tree/master/icons/svg)
 ### Rename
-- [x] `arrow-compress-all` -> `arrow-collapse-all`
-- [x] `arrow-compress` -> `arrow-collapse`
-- [x] `bookmark-outline-plus` -> `bookmark-plus-outline`
-- [x] `briefcase-checked` -> `briefcase-check`
-- [x] `calendar-check-multiple` -> `calendar-multiple-check`
-- [x] `cloud-outline-off` -> `cloud-off-outline`
-- [x] `comment-multipe-outline` -> `comment-multiple-outline`
-- [x] `eye-outline-off` -> `eye-off-outline`
-- [x] `format-object-inline` -> `format-wrap-inline`
-- [x] `format-object-square` -> `format-wrap-square`
-- [x] `format-object-tight` -> `format-wrap-tight`
-- [x] `format-object-top-bottom` -> `format-wrap-top-bottom`
-- [x] `github` -> `github-circle`
-- [x] `google-circles-invite` -> `google-circles-group`
-- [x] `heart-half-full-outline` -> `heart-half-full`
-- [x] `image-mutliple` -> `image-multiple`
-- [x] `lock-screen` -> `lock-pattern`
-- [x] `lock-unlocked-outline` -> `lock-open-outline`
-- [x] `lock-unlocked` -> `lock-open`
-- [x] `network-download` -> `download-network`
-- [x] `network-question` -> `help-network`
-- [x] `network-upload` -> `upload-network`
-- [x] `nutriton` -> `nutrition`
-- [x] `phone-dots` -> `phone-settings`
-- [x] `rotate-90` -> `format-rotate-90`
-- [x] `ticket-star` -> `ticket`
-- [x] `tile-four` -> `view-grid`
-- [x] `toggle-switch-on` -> `toggle-switch`
-- [x] `vibration` -> `vibrate`
-- [x] `white-balance-irradescent` -> `white-balance-iridescent`
+There are no icons to be renamed at this time.
 ### Add
 - [ ] `account-star`
 - [ ] `biohazard`
@@ -139,43 +110,7 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 
 ## [MaterialDesign/icons/design](https://github.com/Templarian/MaterialDesign/tree/master/icons/design)
 ### Rename
-- [x] `arrow-compress-all` -> `arrow-collapse-all`
-- [x] `arrow-compress` -> `arrow-collapse`
-- [x] `battery-charging-wireless-100` -> `battery-charging-wireless`
-- [x] `bookmark-outline-plus` -> `bookmark-plus-outline`
-- [x] `briefcase-checked` -> `briefcase-check`
-- [x] `calendar-check-multiple` -> `calendar-multiple-check`
-- [x] `cloud-outline-off` -> `cloud-off-outline`
-- [x] `comment-multipe-outline` -> `comment-multiple-outline`
-- [x] `eye-outline-off` -> `eye-off-outline`
-- [x] `format-object-float-center` -> `format-float-center`
-- [x] `format-object-float-left` -> `format-float-left`
-- [x] `format-object-float-none` -> `format-float-none`
-- [x] `format-object-float-right` -> `format-float-right`
-- [x] `format-object-inline` -> `format-wrap-inline`
-- [x] `format-object-square` -> `format-wrap-square`
-- [x] `format-object-tight` -> `format-wrap-tight`
-- [x] `format-object-top-bottom` -> `format-wrap-top-bottom`
-- [x] `github` -> `github-circle`
-- [x] `google-circles-invite` -> `google-circles-group`
-- [x] `heart-half-full-outline` -> `heart-half-full`
-- [x] `image-mutliple` -> `image-multiple`
-- [x] `lock-screen` -> `lock-pattern`
-- [x] `lock-unlocked-outline` -> `lock-open-outline`
-- [x] `lock-unlocked` -> `lock-open`
-- [x] `move-and-resize-variant` -> `move-resize-variant`
-- [x] `move-and-resize` -> `move-resize`
-- [x] `network-download` -> `download-network`
-- [x] `network-question` -> `help-network`
-- [x] `network-upload` -> `upload-network`
-- [x] `nutriton` -> `nutrition`
-- [x] `phone-dots` -> `phone-settings`
-- [x] `rotate-90` -> `format-rotate-90`
-- [x] `ticket-star` -> `ticket`
-- [x] `tile-four` -> `view-grid`
-- [x] `toggle-switch-on` -> `toggle-switch`
-- [x] `vibration` -> `vibrate`
-- [x] `white-balance-irradescent` -> `white-balance-iridescent`
+There are no icons to be renamed at this time.
 ### Add
 - [ ] `account-star`
 - [ ] `biohazard`
@@ -195,7 +130,7 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 - [ ] `trophy-variant`
 - [ ] `wrap`
 ### Remove
-A lot of these icons are either works in progress or legacy icons
+Many of these icons are either works in progress or legacy icons.
 - [ ] `500px`
 - [ ] `account-move`
 - [ ] `appnet`
