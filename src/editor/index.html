@@ -168,9 +168,6 @@
 		transition-property:d,fill,fill-opacity,opacity;
 		transition-timing-function:cubic-bezier(.4,0,.2,1);
 	}
-	path[d=""]{
-		opacity:0;
-	}
 	label{
 		color:#757575;
 		cursor:pointer;
@@ -306,6 +303,7 @@
 	path.setAttribute(`fill`,`#${values.fill=inputs.fill.value}`);
 	helper.setAttribute(`d`,values.helper=``);
 	helper.setAttribute(`fill`,`#${values.colour=inputs.colour.value}`);
+	helper.setAttribute(`fill-opacity`,0);
 	svg.append(path,helper);
 	figure.append(background,horizontal,vertical,svg);
 	image.addEventListener(`load`,_=>{
@@ -347,7 +345,9 @@
 					path.setAttribute(`fill-opacity`,(values.opacity=parseInt(value))/100);
 					break;
 				case inputs.helper:
-					helper.setAttribute(`d`,values.helper=value);
+					values.helper=value;
+					value&&helper.setAttribute(`d`,value);
+					helper.setAttribute(`fill-opacity`,value?values.fade:0);
 					break;
 				case inputs.colour:
 					helper.setAttribute(`fill`,`#${values.colour=value}`);

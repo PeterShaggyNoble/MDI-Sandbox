@@ -162,10 +162,57 @@
 	textarea:hover::-webkit-scrollbar-thumb{
 		background:#9e9e9e;
 	}
-	canvas{
+	figure{
+		background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUUAAAEmBAMAAAAHOp+aAAAAKlBMVEX////u7u739/f6+vrx8fHi4uLd3d39/f329vbPz8/f39/09PTp6enY2NjMrDZ4AAACXUlEQVR42u3asUsCURzAcTPBwUXBwaEhHFJoCRze4FJgS3OOLQ3RKN3wXHXI4P6CxqApGkQXB5dWb+7/iQOFd3coN0jv9+59v0VwtHx4b/jpu1ciIqIDabPMP4OelVRCUg26b7umapQkVoNwYKVVQqLPjYeyThn7pbj6//9ZmsZgbjzUVMo4sWVsmcaXa+Oh0kkaT9e2jNGVwRjXjYeTWcp4a8t4jxEjRq+NDUsVbR0xYsSIESNzpvB7nfrOJdIYrIdfu4aREmnUlzeNXc2FFmmMz1LC7c9UjUQaU2dSMo2JMB7JKHLOOLGOel9yjOY5rtlUjcQYt+e42cpajDGY7zHWlBjj9jNFtkpHjHFc32M8mWH0y9iwVNHWESNGjBgxMmd832uMGDFiZM64u44YMWLEiJE54/teY8SIEaO3c8aFd5rmPSmzYSTn3bB5T8qsuZDzjj2+q7AKs7+S7iq4cOfDibszGDFy38y3vcaIESNG5oy764gRI0aMGJkzvu81RowYMTJn3F1HjBgxYsTInPF9rzFixIiROePuOmLEiBEjRuaM73uNESNGjMwZd9cRI0aMGDEyZ3zfa4wYMWJkzri7jhgxYsSIkTnj+15jxIgRI3PG3XXEiBEjRozMGd/3GiNGjBiZM+6uI0aMGDFiZM74vtcYMWIsnHFtyxjlNlYnD+9W+m2Nchv7Z0Mr/SzzG4NwYKWVio350kHPSkqXiIjoYHdPovuMjR/TtuQ2sfG5LbqL2PjYFh1GjJLCiFFSGDFKCiNGSWHEKCmMGCWF8Ti9xsZv0WdS3Y0jZ3t/niRZx+dg9dwAAAAASUVORK5CYII) no-repeat;
 		height:294px;
 		margin:16px auto 0;
+		position:relative;
 		width:325px;
+	}
+	canvas,p,span,svg{
+		position:absolute;
+	}
+	canvas,span,svg{
+		left:0;
+		top:0;
+	}
+	.hide{
+		opacity:0;
+	}
+	span{
+		background:#9e9e9e;
+		bottom:0;
+		mix-blend-mode:overlay;
+		right:0;
+		transition:background .195s cubic-bezier(.4,0,.2,1),opacity .195s cubic-bezier(.4,0,.2,1);
+	}
+	p{
+		color:#9e9e9e;
+	}
+	p+p{
+		transform:rotate(-90deg);
+		transform-origin:0 0;
+		transition:color .195s cubic-bezier(.4,0,.2,1),opacity .195s cubic-bezier(.4,0,.2,1);
+	}
+	p:first-of-type{
+		left:11px;
+		top:269px;
+		transition:color .195s cubic-bezier(.4,0,.2,1);
+	}
+	p:nth-of-type(2){
+		font-size:18px;
+		left:11px;
+		top:250px;
+	}
+	p:last-of-type{
+		left:41px;
+		top:250px;
+	}
+	path{
+		transition:fill .195s cubic-bezier(.4,0,.2,1),fill-opacity .195s cubic-bezier(.4,0,.2,1);
+	}
+	canvas{
+		opacity:0;
 	}
 </style>
 <section>
@@ -200,7 +247,21 @@
 		<option value="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z">Link Externally</option>
 	</select>
 	<input checked id="wip" type="checkbox"><label for="wip">Work in Progress</label>
-	<canvas height="294" width="325"></canvas>
+	<figure>
+		<figcaption>
+			<span class="hide"></span>
+			<p>vector-square</p>
+			<p>Work in Progress</p>
+			<p>Unreleased Draft</p>
+		</figcaption>
+		<svg height="294" viewBox="0 0 325 294" width="325">
+			<path d="M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z" fill="#8b8b8b" id="path" transform="translate(11,10)"/>
+			<use href="#path" transform="translate(-11,24) scale(2,2)"/>
+			<use href="#path" transform="translate(-40,-90) scale(10,10)"/>
+			<path d="" fill="#8b8b8b" fill-opacity="0" transform="translate(293,269) scale(.75,.75)"/>
+		</svg>
+		<canvas height="294" width="325"></canvas>
+	</figure>
 </section>
 <script>{
 	const 	data=document.getElementById`data`,
@@ -208,53 +269,60 @@
 		colour=document.getElementById`colour`,
 		action=document.getElementById`action`,
 		wip=document.getElementById`wip`,
+		span=document.querySelector`span`,
+		text=document.querySelectorAll`p`,
+		svg=document.querySelector`svg`,
+		path=svg.firstElementChild,
+		icon=svg.lastElementChild,
 		canvas=document.querySelector`canvas`,
 		context=canvas.getContext`2d`,
 		width=canvas.width,
 		height=canvas.height,
-		svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
-		path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
-		icon=path.cloneNode(1),
 		background=new Image,
 		xml=new XMLSerializer,
 		image=new Image,
 		generate=event=>{
 			clearTimeout(timer);
 			timer=setTimeout(_=>{
-				switch(event.target){
+				target=event.target;
+				value=target.value;
+				delay=0;
+				switch(target){
 					case data:
 						data.style.height=`24px`;
 						data.style.height=data.scrollHeight+1+`px`;
-						path.setAttribute(`d`,data.value);
+						path.setAttribute(`d`,value);
+						break;
+					case name:
+						text[0].firstChild.nodeValue=value;
 						break;
 					case colour:
-						path.setAttribute(`fill`,context.fillStyle=`#`+colour.value);
-						icon.setAttribute(`fill`,`#`+colour.value);
+						path.setAttribute(`fill`,context.fillStyle=`#`+value);
+						icon.setAttribute(`fill`,span.style.background=`#`+value);
+						span.classList.toggle(`hide`,value===`9b9b9b`);
+						text.forEach(p=>
+							p.style.color=`#`+value
+						);
+						delay=200;
 						break;
 					case action:
-						icon.setAttribute(`d`,action.value);
+						value&&icon.setAttribute(`d`,value);
+						icon.setAttribute(`fill-opacity`,value?1:0);
+						delay=200;
 						break;
+					case wip:
+						text[1].classList.toggle(`hide`,!target.checked);
+						text[2].classList.toggle(`hide`,!target.checked);
 				}
-				image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}));
+				timer=setTimeout(_=>
+					image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}))
+				,delay);
 			},50);
 		};
-	let 	use=document.createElementNS(`http://www.w3.org/2000/svg`,`use`),
-		timer;
+	let delay,target,timer,value;
 	context.font=`14px Roboto`;
-	svg.setAttribute(`height`,284);
-	svg.setAttribute(`viewBox`,`0 0 325 294`);
-	svg.setAttribute(`width`,314);
-	path.setAttribute(`fill`,context.fillStyle=`#`+colour.value);
-	path.setAttribute(`id`,`path`);
-	use.setAttribute(`transform`,`translate(11,10)`);
-	svg.append(path);
-	use.setAttribute(`href`,`#path`);
-	use.setAttribute(`transform`,`translate(0,34) scale(2,2)`);
-	icon.setAttribute(`fill`,`#`+colour.value);
-	icon.setAttribute(`transform`,`translate(282,259) scale(.75,.75)`);
-	svg.append(use,use=use.cloneNode(1),icon);
-	use.setAttribute(`transform`,`translate(59,0) scale(10,10)`);
-	background.src=`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUUAAAEmBAMAAAAHOp+aAAAAKlBMVEX////u7u739/f6+vrx8fHi4uLd3d39/f329vbPz8/f39/09PTp6enY2NjMrDZ4AAACXUlEQVR42u3asUsCURzAcTPBwUXBwaEhHFJoCRze4FJgS3OOLQ3RKN3wXHXI4P6CxqApGkQXB5dWb+7/iQOFd3coN0jv9+59v0VwtHx4b/jpu1ciIqIDabPMP4OelVRCUg26b7umapQkVoNwYKVVQqLPjYeyThn7pbj6//9ZmsZgbjzUVMo4sWVsmcaXa+Oh0kkaT9e2jNGVwRjXjYeTWcp4a8t4jxEjRq+NDUsVbR0xYsSIESNzpvB7nfrOJdIYrIdfu4aREmnUlzeNXc2FFmmMz1LC7c9UjUQaU2dSMo2JMB7JKHLOOLGOel9yjOY5rtlUjcQYt+e42cpajDGY7zHWlBjj9jNFtkpHjHFc32M8mWH0y9iwVNHWESNGjBgxMmd832uMGDFiZM64u44YMWLEiJE54/teY8SIEaO3c8aFd5rmPSmzYSTn3bB5T8qsuZDzjj2+q7AKs7+S7iq4cOfDibszGDFy38y3vcaIESNG5oy764gRI0aMGJkzvu81RowYMTJn3F1HjBgxYsTInPF9rzFixIiROePuOmLEiBEjRuaM73uNESNGjMwZd9cRI0aMGDEyZ3zfa4wYMWJkzri7jhgxYsSIkTnj+15jxIgRI3PG3XXEiBEjRozMGd/3GiNGjBiZM+6uI0aMGDFiZM74vtcYMWIsnHFtyxjlNlYnD+9W+m2Nchv7Z0Mr/SzzG4NwYKWVio350kHPSkqXiIjoYHdPovuMjR/TtuQ2sfG5LbqL2PjYFh1GjJLCiFFSGDFKCiNGSWHEKCmMGCWF8Ti9xsZv0WdS3Y0jZ3t/niRZx+dg9dwAAAAASUVORK5CYII=`;
+	context.fillStyle=`#`+colour.value;
+	background.src=`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUUAAAEmBAMAAAAHOp+aAAAAKlBMVEX////u7u739/f6+vrx8fHi4uLd3d39/f329vbPz8/f39/09PTp6enY2NjMrDZ4AAACXUlEQVR42u3asUsCURzAcTPBwUXBwaEhHFJoCRze4FJgS3OOLQ3RKN3wXHXI4P6CxqApGkQXB5dWb+7/iQOFd3coN0jv9+59v0VwtHx4b/jpu1ciIqIDabPMP4OelVRCUg26b7umapQkVoNwYKVVQqLPjYeyThn7pbj6//9ZmsZgbjzUVMo4sWVsmcaXa+Oh0kkaT9e2jNGVwRjXjYeTWcp4a8t4jxEjRq+NDUsVbR0xYsSIESNzpvB7nfrOJdIYrIdfu4aREmnUlzeNXc2FFmmMz1LC7c9UjUQaU2dSMo2JMB7JKHLOOLGOel9yjOY5rtlUjcQYt+e42cpajDGY7zHWlBjj9jNFtkpHjHFc32M8mWH0y9iwVNHWESNGjBgxMmd832uMGDFiZM64u44YMWLEiJE54/teY8SIEaO3c8aFd5rmPSmzYSTn3bB5T8qsuZDzjj2+q7AKs7+S7iq4cOfDibszGDFy38y3vcaIESNG5oy764gRI0aMGJkzvu81RowYMTJn3F1HjBgxYsTInPF9rzFixIiROePuOmLEiBEjRuaM73uNESNGjMwZd9cRI0aMGDEyZ3zfa4wYMWJkzri7jhgxYsSIkTnj+15jxIgRI3PG3XXEiBEjRozMGd/3GiNGjBiZM+6uI0aMGDFiZM74vtcYMWIsnHFtyxjlNlYnD+9W+m2Nchv7Z0Mr/SzzG4NwYKWVio350kHPSkqXiIjoYHdPovuMjR/TtuQ2sfG5LbqL2PjYFh1GjJLCiFFSGDFKCiNGSWHEKCmMGCWF8Ti9xsZv0WdS3Y0jZ3t/niRZx+dg9dwAAAAASUVORK5CYII`;
 	image.addEventListener(`load`,_=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(background,0,0);
@@ -278,7 +346,7 @@
 			context.restore();
 		}
 		context.fillText(name.value.trim().toLowerCase().replace(/ |_/g,`-`),11,282);
-		context.drawImage(image,11,10);
+		context.drawImage(image,0,0);
 		URL.revokeObjectURL(image.src);
 	},0);
 	document.addEventListener(`input`,generate,1);
