@@ -35,13 +35,14 @@ Italicised icons are due to be removed in the next release.
 
 ## [MaterialDesign/icons/svg](https://github.com/Templarian/MaterialDesign/tree/master/icons/svg)
 ### Rename
-There are no icons to be renamed at this time.
+- [ ] `currency-btc` -> `bitcoin`
 ### Add
 - [ ] `account-star`
 - [ ] `biohazard`
 - [ ] `case-sensitive-alt`
 - [ ] `close-box`
 - [ ] `close-box-outline`
+- [ ] `currency-btc`
 - [ ] `firefox`
 - [ ] `guitar-pick`
 - [ ] `guitar-pick-outline`
@@ -110,13 +111,14 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 
 ## [MaterialDesign/icons/design](https://github.com/Templarian/MaterialDesign/tree/master/icons/design)
 ### Rename
-There are no icons to be renamed at this time.
+- [ ] `currency-btc` -> `bitcoin`
 ### Add
 - [ ] `account-star`
 - [ ] `biohazard`
 - [ ] `case-sensitive-alt`
 - [ ] `close-box`
 - [ ] `close-box-outline`
+- [ ] `currency-btc`
 - [ ] `firefox`
 - [ ] `guitar-pick`
 - [ ] `guitar-pick-outline`

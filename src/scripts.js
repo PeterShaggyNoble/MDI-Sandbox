@@ -15,9 +15,10 @@
 		d=document,
 		h=d.documentElement,
 		b=d.body,
-		offline=!navigator.onLine,
+
 	/** PAGE **/
 		page={
+			offline:navigator.onLine===false,
 			url:new URL(location),
 			size:(b.offsetWidth>1199)+(b.offsetWidth>1499),
 			anchor:C`a`,
@@ -62,7 +63,7 @@
 				};
 				this.actions.svg=this.actions.link.nextElementSibling;
 				this.header.addEventListener(`click`,event=>{
-					if(event.target.nodeName.toLowerCase()===`a`&&offline){
+					if(event.target.nodeName.toLowerCase()===`a`&&this.offline){
 						page.alert`Could not connect.`;
 						event.preventDefault();
 					}
@@ -306,30 +307,32 @@
 				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
 				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
-					matches=0,
+					matches=this.filtered?0:icons.total,
 					article,check,icon,key;
 				for(key in icons.list)
 					if(icons.list.hasOwnProperty(key)){
 						icon=icons.list[key];
 						if(icon.articles.main){
 							check=1;
-							if(this.categories.size)
-								check=icon.categories&&icon.categories.some(category=>
-									this.categories.has(category)
-								);
+							if(this.filtered){
+								if(this.categories.size)
+									check=icon.categories&&icon.categories.some(category=>
+										this.categories.has(category)
+									);
 								if(this.contributors.size)
-								check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
+									check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
 								if(words)
-								check=check&&words.every(word=>
-									icon.keywords.some(item=>
+									check=check&&words.every(word=>
+										icon.keywords.some(item=>
 										item.startsWith(word)
-									)
-								);
-								icon.articles.main.classList.toggle(`dn`,!check);
+										)
+									);
 								matches+=check;
 							}
+							icon.articles.main.classList.toggle(`dn`,!check);
 						}
-				this.counter.nodeValue=` (${this.filtered?matches:icons.total}/${icons.total})`;
+					}
+				this.counter.nodeValue=` (${matches}/${icons.total})`;
 				this.error.classList.toggle(`dn`,!this.filtered||matches);
 				this.clearall.classList.toggle(`clear`,this.filtered);
 				if(this.filtered){
@@ -361,15 +364,7 @@
 						contributors.list[key].item.classList.remove`active`;
 					this.contributors.clear();
 					this.text=this.input.value=``;
-					let article,key;
-					for(key in icons.list)
-						icons.list.hasOwnProperty(key)&&(article=icons.list[key].articles.main)&&article.classList.remove`dn`;
-					this.filtered=0;
-					page.section.classList.remove`filtered`;
-					this.heading.nodeValue=`Search Results`;
-					this.counter.nodeValue=` (${icons.total}/${icons.total})`;
-					this.error.classList.add`dn`;
-					this.clearall.classList.remove`clear`;
+					this.apply();
 				}
 				menu.goto(page.section);
 			}
@@ -554,7 +549,7 @@
 							this.data?page.copy(target.dataset.copy,target.dataset.confirm):page.alert`Not yet available.`;
 							break;
 						case this.actions.link:
-							this.retired?page.alert`No longer available.`:!offline?location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`Could not connect.`;
+							this.retired?page.alert`No longer available.`:!page.offline?location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`Could not connect.`;
 							break;
 						default:
 							if(this.type=target.dataset.type)
