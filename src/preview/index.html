@@ -295,7 +295,7 @@
 						path.setAttribute(`d`,value);
 						break;
 					case name:
-						text[0].firstChild.nodeValue=value;
+						text.name.firstChild.nodeValue=value;
 						break;
 					case colour:
 						path.setAttribute(`fill`,context.fillStyle=`#`+value);
@@ -303,7 +303,7 @@
 						span.classList.toggle(`hide`,value===`9b9b9b`);
 						for(key in text)
 							if(text.hasOwnProperty(key))
-								text[key].style.color=`#`+value
+								text[key].style.color=`#`+value;
 						delay=200;
 						break;
 					case action:
