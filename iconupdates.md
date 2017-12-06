@@ -6,30 +6,7 @@ There are no icons to be renamed at this time.
 ### Add
 All missing icons are due to be added in the next release.
 ### Remove
-Italicised icons are due to be removed in the next release.
-- [ ] `account-star-variant`
-- [ ] `appnet`
-- [ ] `arrow-compress-all`
-- [ ] `arrow-compress`
-- [ ] `arrow-down-circle`
-- [ ] `arrow-left-circle`
-- [ ] `arrow-right-circle`
-- [ ] `arrow-up-circle`
-- [ ] *`burst-mode`*
-- [ ] `cloud-outline-off`
-- [ ] `eye-outline-off`
-- [ ] `format-quote`
-- [ ] `heart-half-part-outline`
-- [ ] `heart-half-part`
-- [ ] `network-download`
-- [ ] `network-question`
-- [ ] `network-upload`
-- [ ] *`rdio`*
-- [ ] *`readability`*
-- [ ] `rotate-90`
-- [ ] `unfold-less`
-- [ ] `unfold-more`
-- [ ] *`vine`*
+There are no icons to be removed at this time.
 
 ---
 
