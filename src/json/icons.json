@@ -23310,7 +23310,6 @@
 	},
 	"vine":{
 		"categories":["logos"],
-		"codepoint":"f578",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -24553,7 +24552,7 @@
 			"regular":2119
 		},
 		"categories":["google"],
-		"codepoint":"f848",
+		"codepoint":"f448",
 		"contributor":{
 			"regular":"google"
 		},
