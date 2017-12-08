@@ -13,6 +13,9 @@ There are no icons to be removed at this time.
 ## [MaterialDesign/icons/svg](https://github.com/Templarian/MaterialDesign/tree/master/icons/svg)
 ### Rename
 - [ ] `currency-btc` -> `bitcoin`
+- [ ] `car-convertable` -> `car-convertible`
+- [ ] `flag-outline-variant` -> `flag-variant-outline`
+- [ ] `stackoverflow` -> `stack-overflow`
 ### Add
 - [ ] `account-star`
 - [ ] `biohazard`
@@ -20,6 +23,7 @@ There are no icons to be removed at this time.
 - [ ] `close-box`
 - [ ] `close-box-outline`
 - [ ] `currency-btc`
+- [ ] `finance`
 - [ ] `firefox`
 - [ ] `guitar-pick`
 - [ ] `guitar-pick-outline`
@@ -40,7 +44,7 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 - [ ] `box-download`
 - [ ] `box-upload`
 - [ ] `brightness`
-- [ ] *`burst-mode`*
+- [ ] `burst-mode`
 - [ ] **`calculator-off`**
 - [ ] **`calendar-select`**
 - [ ] `check-bookmark`
@@ -76,11 +80,11 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 - [ ] `question-mark-circle`
 - [ ] `quick-reply`
 - [ ] **`rabbit`**
-- [ ] *`rdio`*
+- [ ] `rdio`
 - [ ] **`spreadsheet`**
 - [ ] **`star-of-david`**
 - [ ] `trash`
-- [ ] *`vine`*
+- [ ] `vine`
 - [ ] `volume`
 - [ ] `youtube`
 
@@ -89,6 +93,9 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 ## [MaterialDesign/icons/design](https://github.com/Templarian/MaterialDesign/tree/master/icons/design)
 ### Rename
 - [ ] `currency-btc` -> `bitcoin`
+- [ ] `car-convertable` -> `car-convertible`
+- [ ] `flag-outline-variant` -> `flag-variant-outline`
+- [ ] `stackoverflow` -> `stack-overflow`
 ### Add
 - [ ] `account-star`
 - [ ] `biohazard`
@@ -96,6 +103,7 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 - [ ] `close-box`
 - [ ] `close-box-outline`
 - [ ] `currency-btc`
+- [ ] `finance`
 - [ ] `firefox`
 - [ ] `guitar-pick`
 - [ ] `guitar-pick-outline`
