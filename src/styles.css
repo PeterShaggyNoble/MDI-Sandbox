@@ -1,4 +1,9 @@
-/** VIEWPORT **/
+/** VARIABLES **/
+:root{
+	--colour:#512da8;
+	--highlight:#ede7f6;
+	--timing-function:cubic-bezier(.4,0,.2,1);
+}/** VIEWPORT **/
 @viewport{initial-scale:1;maximum-scale:1;minimum-scale:1;user-scalable:0;width:device-width;}
 
 /** IMPORT FONTS **/
@@ -18,7 +23,7 @@
 }
 @font-face{
 	font-family:mdi;
-	src:url(fnt/mdi2046.woff2) format("woff2");
+	src:url(fnt/mdi2119.woff2) format("woff2");
 	font-weight:normal;
 	font-style:normal;
 }
@@ -62,11 +67,6 @@
 }
 
 /** PAGE **/
-:root{
-	--colour:#303f9f;
-	--highlight:#e8eaf6;
-	--timing-function:cubic-bezier(.4,0,.2,1);
-}
 body{
 	background:#e0e0e0;
 	font-size:14px;
@@ -1064,6 +1064,21 @@ dialog>button:active{
 	body.menu>#content{
 		margin-left:320px;
 	}
+	/*#content>section{
+		grid-template-columns:repeat(auto-fill,minmax(112px,1fr));
+	}
+	#content>section>article{
+		height:112px;
+	}
+	#content>section>article::before{
+		font-size:64px;
+		line-height:64px;
+		width:64px;
+	}
+	#content>section>article>svg{
+		height:64px;
+		width:64px;
+	}*/
 }
 
 /**  DISPLAYS  **/

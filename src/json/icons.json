@@ -222,12 +222,13 @@
 	},
 	"account-multiple-plus-outline":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["users"],
 		"contributor":{
 			"regular":"rowan"
 		},
+		"codepoint":"f7ff",
 		"data":{
 			"regular":"M13.5,5A3.5,3.5 0 0,0 10,8.5A3.5,3.5 0 0,0 13.5,12C14.25,12 14.94,11.76 15.5,11.36C16.07,11.76 16.76,12 17.5,12A3.5,3.5 0 0,0 21,8.5A3.5,3.5 0 0,0 17.5,5C16.76,5 16.08,5.25 15.5,5.65C14.95,5.24 14.25,5 13.5,5M13.5,6.5A2,2 0 0,1 15.5,8.5A2,2 0 0,1 13.5,10.5A2,2 0 0,1 11.5,8.5A2,2 0 0,1 13.5,6.5M17.5,6.5A2,2 0 0,1 19.5,8.5A2,2 0 0,1 17.5,10.5C17.14,10.5 16.81,10.4 16.5,10.23C16.82,9.72 17,9.13 17,8.5C17,7.87 16.82,7.28 16.5,6.77C16.81,6.6 17.14,6.5 17.5,6.5M3,8V11H0V13H3V16H5V13H8V11H5V8H3M13.5,13C11.33,13 7,14.08 7,16.25V19H24V16.25C24,14.08 19.67,13 17.5,13C16.95,13 16.25,13.08 15.5,13.22C14.78,13.08 14.07,13 13.5,13M13.5,14.5C15.94,14.5 18.5,15.71 18.5,16.25V17.5H8.5V16.25C8.5,15.71 11.06,14.5 13.5,14.5M19.08,14.66C20.93,15 22.5,15.83 22.5,16.25V17.5H20V16.25C20,15.63 19.64,15.1 19.08,14.66Z"
 		}
@@ -280,12 +281,13 @@
 	},
 	"account-plus-outline":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["users"],
 		"contributor":{
 			"regular":"rowan"
 		},
+		"codepoint":"f800",
 		"data":{
 			"regular":"M15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4M15,5.9C16.16,5.9 17.1,6.84 17.1,8C17.1,9.16 16.16,10.1 15,10.1A2.1,2.1 0 0,1 12.9,8A2.1,2.1 0 0,1 15,5.9M4,7V10H1V12H4V15H6V12H9V10H6V7H4M15,13C12.33,13 7,14.33 7,17V20H23V17C23,14.33 17.67,13 15,13M15,14.9C17.97,14.9 21.1,16.36 21.1,17V18.1H8.9V17C8.9,16.36 12,14.9 15,14.9Z"
 		}
@@ -704,12 +706,13 @@
 	},
 	"allo":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["google"],
 		"contributor":{
 			"regular":"google"
 		},
+		"codepoint":"f801",
 		"data":{
 			"regular":"M22,12V21C22,21.5 21.76,21.82 21.3,21.96C20.85,22.1 20.5,21.97 20.2,21.56L18.66,19.45C16.78,21.14 14.56,22 12,22C9.25,22 6.9,21 4.95,19.05C3,17.1 2,14.75 2,12C2,9.25 3,6.9 4.95,4.95C6.9,3 9.25,2 12,2C14.75,2 17.1,3 19.05,4.95C21,6.9 22,9.25 22,12Z"
 		}
@@ -1869,9 +1872,10 @@
 	},
 	"artist":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["music"],
+		"codepoint":"f802",
 		"contributor":{
 			"regular":"google"
 		},
@@ -1904,6 +1908,7 @@
 		"keywords":["star"]
 	},
 	"at":{
+		"aliases":["alternate-email"],
 		"categories":["characters"],
 		"codepoint":"f065",
 		"contributor":{
@@ -1913,14 +1918,15 @@
 			"regular":"M12,15C12.81,15 13.5,14.7 14.11,14.11C14.7,13.5 15,12.81 15,12C15,11.19 14.7,10.5 14.11,9.89C13.5,9.3 12.81,9 12,9C11.19,9 10.5,9.3 9.89,9.89C9.3,10.5 9,11.19 9,12C9,12.81 9.3,13.5 9.89,14.11C10.5,14.7 11.19,15 12,15M12,2C14.75,2 17.1,3 19.05,4.95C21,6.9 22,9.25 22,12V13.45C22,14.45 21.65,15.3 21,16C20.3,16.67 19.5,17 18.5,17C17.3,17 16.31,16.5 15.56,15.5C14.56,16.5 13.38,17 12,17C10.63,17 9.45,16.5 8.46,15.54C7.5,14.55 7,13.38 7,12C7,10.63 7.5,9.45 8.46,8.46C9.45,7.5 10.63,7 12,7C13.38,7 14.55,7.5 15.54,8.46C16.5,9.45 17,10.63 17,12V13.45C17,13.86 17.16,14.22 17.46,14.53C17.76,14.84 18.11,15 18.5,15C18.92,15 19.27,14.84 19.57,14.53C19.87,14.22 20,13.86 20,13.45V12C20,9.81 19.23,7.93 17.65,6.35C16.07,4.77 14.19,4 12,4C9.81,4 7.93,4.77 6.35,6.35C4.77,7.93 4,9.81 4,12C4,14.19 4.77,16.07 6.35,17.65C7.93,19.23 9.81,20 12,20H17V22H12C9.25,22 6.9,21 4.95,19.05C3,17.1 2,14.75 2,12C2,9.25 3,6.9 4.95,4.95C6.9,3 9.25,2 12,2Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
  	"atlassian":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["logos"],
+		"codepoint":"f803",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2005,9 +2011,10 @@
 	},
 	"azure":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["logos"],
+		"codepoint":"f804",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -2149,7 +2156,7 @@
 			"regular":"M2,16.25C2,16.25 4,3.75 12,3.75C20,3.75 22,16.25 22,16.25C22,16.25 20,20.25 12,20.25C4,20.25 2,16.25 2,16.25M3.35,15.65C3.35,15.65 4.3,19 12,19C17,19 20,17.8 20.65,15.85C21.3,13.9 15.65,7.6 14.65,7.6C13.65,7.6 11.2,12 10.45,12C8.45,12 8.9,10 7.15,10C5.4,10 3.35,15.65 3.35,15.65Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"basket":{
@@ -2185,10 +2192,11 @@
 	},
 	"basketball":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["youtube-sports"],
 		"categories":["google","sport"],
+		"codepoint":"f805",
 		"contributor":{
 			"regular":"google"
 		},
@@ -2394,9 +2402,10 @@
 	},
 	"battery-charging-wireless":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f806",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2406,9 +2415,10 @@
 	},
 	"battery-charging-wireless-10":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f807",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2418,9 +2428,10 @@
 	},
 	"battery-charging-wireless-20":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f808",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2430,9 +2441,10 @@
 	},
 	"battery-charging-wireless-30":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f809",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2442,9 +2454,10 @@
 	},
 	"battery-charging-wireless-40":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f80a",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2454,9 +2467,10 @@
 	},
 	"battery-charging-wireless-50":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f80b",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2466,9 +2480,10 @@
 	},
 	"battery-charging-wireless-60":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f80c",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2478,9 +2493,10 @@
 	},
 	"battery-charging-wireless-70":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f80d",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2490,9 +2506,10 @@
 	},
 	"battery-charging-wireless-80":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f80e",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2502,9 +2519,10 @@
 	},
 	"battery-charging-wireless-90":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f80f",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2514,10 +2532,11 @@
 	},
 	"battery-charging-wireless-alert":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["battery-charging-wireless-warning"],
 		"categories":["home","power"],
+		"codepoint":"f810",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2527,9 +2546,10 @@
 	},
 	"battery-charging-wireless-outline":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home","power"],
+		"codepoint":"f811",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -2622,7 +2642,6 @@
 		}
 	},
 	"beam":{
-		"added":"{soon}",
 		"categories":["logos"],
 		"contributor":{
 			"regular":"community"
@@ -2832,14 +2851,15 @@
 		},
 		"keywords":["atlassian"],
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"bitcoin":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["logos"],
+		"codepoint":"f812",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -3498,7 +3518,7 @@
 			"regular":"M10,2H14A2,2 0 0,1 16,4V6H20A2,2 0 0,1 22,8V19A2,2 0 0,1 20,21H4C2.89,21 2,20.1 2,19V8C2,6.89 2.89,6 4,6H8V4C8,2.89 8.89,2 10,2M14,6V4H10V6H14Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"briefcase-check":{
@@ -3511,7 +3531,7 @@
 			"regular":"M10,2H14A2,2 0 0,1 16,4V6H20A2,2 0 0,1 22,8V19A2,2 0 0,1 20,21H4A2,2 0 0,1 2,19V8A2,2 0 0,1 4,6H8V4A2,2 0 0,1 10,2M14,6V4H10V6H14M10.5,17.5L17.09,10.91L15.68,9.5L10.5,14.67L8.41,12.59L7,14L10.5,17.5Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"briefcase-download":{
@@ -3524,14 +3544,15 @@
 			"regular":"M10,2H14A2,2 0 0,1 16,4V6H20A2,2 0 0,1 22,8V19A2,2 0 0,1 20,21H4C2.89,21 2,20.1 2,19V8C2,6.89 2.89,6 4,6H8V4C8,2.89 8.89,2 10,2M14,6V4H10V6H14M12,19L17,14H14V10H10V14H7L12,19Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"briefcase-outline":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f813",
 		"contributor":{
 			"regular":"google"
 		},
@@ -3549,7 +3570,7 @@
 			"regular":"M10,2H14A2,2 0 0,1 16,4V6H20A2,2 0 0,1 22,8V19A2,2 0 0,1 20,21H4C2.89,21 2,20.1 2,19V8C2,6.89 2.89,6 4,6H8V4C8,2.89 8.89,2 10,2M14,6V4H10V6H14M12,9L7,14H10V18H14V14H17L12,9Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"brightness-1":{
@@ -3718,14 +3739,13 @@
 	},
 	"burst-mode":{
 		"categories":["other"],
-		"codepoint":"f5de",
 		"contributor":{
 			"regular":"google"
 		},
 		"data":{
 			"regular":"M1,5H3V19H1V5M5,5H7V19H5V5M22,5H10C9.45,5 9,5.45 9,6V18C9,18.55 9.45,19 10,19H22C22.55,19 23,18.55 23,18V6C23,5.45 22.55,5 22,5M11,17L13.5,13.85L15.29,16L17.79,12.78L21,17H11Z"
 		},
-		"retired":"{next}"
+		"retired":2119
 	},
 	"bus":{
 		"aliases":["directions-bus"],
@@ -4363,7 +4383,7 @@
 			"regular":"M5,14H19L17.5,9.5H6.5L5,14M17.5,19A1.5,1.5 0 0,0 19,17.5A1.5,1.5 0 0,0 17.5,16A1.5,1.5 0 0,0 16,17.5A1.5,1.5 0 0,0 17.5,19M6.5,19A1.5,1.5 0 0,0 8,17.5A1.5,1.5 0 0,0 6.5,16A1.5,1.5 0 0,0 5,17.5A1.5,1.5 0 0,0 6.5,19M18.92,9L21,15V23A1,1 0 0,1 20,24H19A1,1 0 0,1 18,23V22H6V23A1,1 0 0,1 5,24H4A1,1 0 0,1 3,23V15L5.08,9C5.28,8.42 5.85,8 6.5,8H17.5C18.15,8 18.72,8.42 18.92,9M12,0C14.12,0 16.15,0.86 17.65,2.35L16.23,3.77C15.11,2.65 13.58,2 12,2C10.42,2 8.89,2.65 7.77,3.77L6.36,2.35C7.85,0.86 9.88,0 12,0M12,4C13.06,4 14.07,4.44 14.82,5.18L13.4,6.6C13.03,6.23 12.53,6 12,6C11.5,6 10.97,6.23 10.6,6.6L9.18,5.18C9.93,4.44 10.94,4 12,4Z"
 		}
 	},
-	"car-convertable":{
+	"car-convertible":{
 		"added":{
 			"regular":2046
 		},
@@ -4375,9 +4395,8 @@
 		"data":{
 			"regular":"M16,6L15,6.75L17.5,10H13.5V8.5H12V10H3C1.89,10 1,10.89 1,12V15H3A3,3 0 0,0 6,18A3,3 0 0,0 9,15H15A3,3 0 0,0 18,18A3,3 0 0,0 21,15H23V12C23,10.89 22.11,10 21,10H19L16,6M6,13.5A1.5,1.5 0 0,1 7.5,15A1.5,1.5 0 0,1 6,16.5A1.5,1.5 0 0,1 4.5,15A1.5,1.5 0 0,1 6,13.5M18,13.5A1.5,1.5 0 0,1 19.5,15A1.5,1.5 0 0,1 18,16.5A1.5,1.5 0 0,1 16.5,15A1.5,1.5 0 0,1 18,13.5Z"
 		},
-		"keywords":["convertible"],
 		"renamed":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"car-estate":{
@@ -4806,10 +4825,11 @@
 	},
 	"cellphone-wireless":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["mobile-phone-wireless","smartphone-wireless"],
 		"categories":["tech"],
+		"codepoint":"f814",
 		"contributor":{
 			"regular":"community"
 		},
@@ -5915,10 +5935,11 @@
 	},
  	"clover":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["luck"],
 		"categories":["nature"],
+		"codepoint":"f815",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -6081,7 +6102,7 @@
 			"regular":"M15.09,12L12,14.08V14.09L8.91,12L12,9.92V9.92L15.09,12M12,2C11.84,2 11.68,2.06 11.53,2.15L2.5,8.11C2.27,8.22 2.09,8.43 2,8.67V14.92C2,15.33 2,15.33 2.15,15.53L11.53,21.86C11.67,21.96 11.84,22 12,22C12.16,22 12.33,21.95 12.47,21.85L21.85,15.5C22,15.33 22,15.33 22,14.92V8.67C21.91,8.42 21.73,8.22 21.5,8.1L12.47,2.15C12.32,2.05 12.16,2 12,2M16.58,13L19.59,15.04L12.83,19.6V15.53L16.58,13M19.69,8.9L16.58,11L12.83,8.47V4.38L19.69,8.9M20.33,10.47V13.53L18.07,12L20.33,10.47M7.42,13L11.17,15.54V19.6L4.41,15.04L7.42,13M4.31,8.9L11.17,4.39V8.5L7.42,11L4.31,8.9M3.67,10.5L5.93,12L3.67,13.54V10.5Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"coffee":{
@@ -6299,9 +6320,10 @@
 	},
 	"comment-question":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f816",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -6321,9 +6343,10 @@
 	},
 	"comment-remove":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f5de",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -6505,9 +6528,10 @@
 	},
 	"content-save-outline":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["editor","tech"],
+		"codepoint":"f817",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -6871,7 +6895,7 @@
 			"regular":"M6,4H8V2H10V4H12V2H14V4.03C16.25,4.28 18,6.18 18,8.5C18,9.8 17.45,11 16.56,11.8C17.73,12.61 18.5,13.97 18.5,15.5C18.5,18 16.5,20 14,20V22H12V20H10V22H8V20H6L6.5,18H8V6H6V4M10,13V18H14A2.5,2.5 0 0,0 16.5,15.5A2.5,2.5 0 0,0 14,13H10M10,6V11H13.5A2.5,2.5 0 0,0 16,8.5A2.5,2.5 0 0,0 13.5,6H13.5L10,6Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"currency-chf":{
@@ -7293,10 +7317,11 @@
 	},
 	"delete-restore":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["bin-restore","restore-from-trash","trash-restore"],
 		"categories":["other"],
+		"codepoint":"f818",
 		"contributor":{
 			"regular":"google"
 		},
@@ -7532,7 +7557,7 @@
 		},
 		"keywords":["10","sided","ten"],
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"dice-d20":{
@@ -7829,9 +7854,10 @@
 	},
 	"door":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home"],
+		"codepoint":"f819",
 		"contributor":{
 			"regular":"japanyoshi"
 		},
@@ -7841,9 +7867,10 @@
 	},
 	"door-closed":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home"],
+		"codepoint":"f81a",
 		"contributor":{
 			"regular":"japanyoshi"
 		},
@@ -7853,9 +7880,10 @@
 	},
 	"door-open":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home"],
+		"codepoint":"f81b",
 		"contributor":{
 			"regular":"japanyoshi"
 		},
@@ -8764,9 +8792,10 @@
 	},
 	"fan-off":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home"],
+		"codepoint":"f81c",
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -9059,9 +9088,10 @@
 	},
 	"file-percent":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["files"],
+		"codepoint":"f81d",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -9276,9 +9306,10 @@
 	},
 	"finance":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["money"],
+		"codepoint":"f81e",
 		"contributor":{
 			"regular":"google"
 		},
@@ -9373,19 +9404,6 @@
 			"regular":"M14.5,6H20V16H13L12.5,14H7V21H5V4H14L14.5,6M7,6V12H13L13.5,14H18V8H14L13.5,6H7Z"
 		}
 	},
-	"flag-outline-variant":{
-		"categories":["other"],
-		"codepoint":"f23e",
-		"contributor":{
-			"regular":"austin-andrews"
-		},
-		"data":{
-			"regular":"M6,3A1,1 0 0,1 7,4V4.88C8.06,4.44 9.5,4 11,4C14,4 14,6 16,6C19,6 20,4 20,4V12C20,12 19,14 16,14C13,14 13,12 11,12C8,12 7,14 7,14V21H5V4A1,1 0 0,1 6,3M7,7.25V11.5C7,11.5 9,10 11,10C13,10 14,12 16,12C18,12 18,11 18,11V7.5C18,7.5 17,8 16,8C14,8 13,6 11,6C9,6 7,7.25 7,7.25Z"
-		},
-		"updated":{
-			"regular":"{next}"
-		}
-	},
 	"flag-triangle":{
 		"categories":["other"],
 		"codepoint":"f23f",
@@ -9404,6 +9422,19 @@
 		},
 		"data":{
 			"regular":"M6,3A1,1 0 0,1 7,4V4.88C8.06,4.44 9.5,4 11,4C14,4 14,6 16,6C19,6 20,4 20,4V12C20,12 19,14 16,14C13,14 13,12 11,12C8,12 7,14 7,14V21H5V4A1,1 0 0,1 6,3Z"
+		}
+	},
+	"flag-variant-outline":{
+		"categories":["other"],
+		"codepoint":"f23e",
+		"contributor":{
+			"regular":"austin-andrews"
+		},
+		"data":{
+			"regular":"M6,3A1,1 0 0,1 7,4V4.88C8.06,4.44 9.5,4 11,4C14,4 14,6 16,6C19,6 20,4 20,4V12C20,12 19,14 16,14C13,14 13,12 11,12C8,12 7,14 7,14V21H5V4A1,1 0 0,1 6,3M7,7.25V11.5C7,11.5 9,10 11,10C13,10 14,12 16,12C18,12 18,11 18,11V7.5C18,7.5 17,8 16,8C14,8 13,6 11,6C9,6 7,7.25 7,7.25Z"
+		},
+		"renamed":{
+			"regular":2119
 		}
 	},
 	"flash":{
@@ -9429,10 +9460,11 @@
 	},
 	"flash-circle":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["amp","lightning-bolt-circle","offline-bolt"],
 		"categories":["other"],
+		"codepoint":"f81f",
 		"contributor":{
 			"regular":"google"
 		},
@@ -9571,9 +9603,10 @@
 	},
 	"floor-plan":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["home"],
+		"codepoint":"f820",
 		"contributor":{
 			"regular":"community"
 		},
@@ -10668,9 +10701,10 @@
 	},
 	"forum-outline":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f821",
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -11167,7 +11201,7 @@
 			"regular":"M8,2A3,3 0 0,0 5,5V16.5H8V5H19A3,3 0 0,0 16,2H8M16,7.5V19H5A3,3 0 0,0 8,22H16A3,3 0 0,0 19,19V7.5H16Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"glasses":{
@@ -11205,10 +11239,11 @@
 	},
 	"golf":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["golf-course"],
 		"categories":["places","sport"],
+		"codepoint":"f822",
 		"contributor":{
 			"regular":"google"
 		},
@@ -11383,9 +11418,10 @@
 	},
 	"google-home":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["google","tech"],
+		"codepoint":"f823",
 		"contributor":{
 			"regular":"google"
 		},
@@ -11643,9 +11679,10 @@
 	},
 	"guy-fawkes-mask":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f824",
 		"contributor":{
 			"regular":"augustin-ursu"
 		},
@@ -12098,10 +12135,11 @@
 	},
 	"home-account":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["home-user"],
 		"categories":["home","users"],
+		"codepoint":"f825",
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -12152,10 +12190,11 @@
 	},
 	"home-heart":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["family"],
 		"categories":["google","home"],
+		"codepoint":"f826",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -12168,7 +12207,7 @@
 			"regular":1554
 		},
 		"aliases":["house-map-marker"],
-		"categories":["home","places","travel"],
+		"categories":["home","places"],
 		"codepoint":"f5f8",
 		"contributor":{
 			"regular":"cody"
@@ -12284,9 +12323,10 @@
 	},
 	"hot-tub":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f827",
 		"contributor":{
 			"regular":"google"
 		},
@@ -12327,9 +12367,10 @@
 	},
 	"hulu":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["logos"],
+		"codepoint":"f828",
 		"contributor":{
 			"regular":"community"
 		},
@@ -12465,14 +12506,15 @@
 			"regular":"M16.91,18.12C14.09,18.12 18.43,2.13 18.43,2.13H15.53C15.53,2.13 14.34,5.89 13.55,10.07H11.05C11.11,9.21 11.15,8.34 11.13,7.5C11,0.59 7,1.87 5.18,3.45C3.47,4.95 2.03,7.8 2,10C2.27,10 3.35,10 3.35,10C3.35,10 4.25,5.88 7.07,5.88C9.89,5.88 5.54,21.87 5.54,21.87H8.45C8.45,21.87 9.95,17.59 10.7,12.81L13.09,12.8C12.95,14.04 12.91,15.4 12.93,16.67C13.04,23.56 17.06,22.08 18.86,20.5C20.67,18.92 22,15.58 22,14H20.61C20.62,14.12 19.73,18.12 16.91,18.12V18.12Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"ice-cream":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["food","places"],
+		"codepoint":"f829",
 		"contributor":{
 			"regular":"cody"
 		},
@@ -12662,9 +12704,10 @@
 	},
 	"image-off":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f82a",
 		"contributor":{
 			"regular":"rowan"
 		},
@@ -12858,7 +12901,7 @@
 		},
 		"keywords":["atlassian"],
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"jsfiddle":{
@@ -12871,7 +12914,7 @@
 			"regular":"M16.45,17.5C17.45,17.5 18.3,17.15 19,16.5C19.67,15.8 20,15 20,14C20,13.05 19.66,12.22 18.96,11.53C18.26,10.84 17.41,10.5 16.41,10.5C15.47,10.5 14.64,10.83 13.92,11.5L9.14,15.56C8.7,16 8.17,16.22 7.55,16.22C6.92,16.22 6.39,16 5.95,15.56C5.5,15.13 5.3,14.61 5.3,14C5.3,13.42 5.5,12.91 5.95,12.47C6.39,12.03 6.92,11.81 7.55,11.81C8.14,11.81 8.69,12.03 9.19,12.47L9.94,13.13L10.92,12.23L10.08,11.53C9.39,10.84 8.55,10.5 7.55,10.5C6.58,10.5 5.74,10.84 5.04,11.53C4.34,12.22 4,13.05 4,14C4,15 4.34,15.8 5.04,16.5C5.74,17.15 6.59,17.5 7.59,17.5C8.53,17.5 9.36,17.16 10.08,16.5L14.86,12.42C15.27,12 15.8,11.81 16.45,11.81C17.08,11.81 17.61,12.03 18.05,12.47C18.5,12.91 18.7,13.42 18.7,14C18.7,14.61 18.5,15.13 18.05,15.56C17.61,16 17.08,16.22 16.45,16.22C15.89,16.22 15.34,16 14.81,15.5L14.06,14.86L13.08,15.75L13.92,16.45C14.61,17.14 15.45,17.5 16.45,17.5M19.36,10.03C20.64,10.13 21.73,10.65 22.64,11.6C23.55,12.55 24,13.69 24,15C24,16.38 23.5,17.55 22.5,18.54C21.54,19.5 20.36,20 19,20H6C4.34,20 2.93,19.43 1.76,18.26C0.59,17.09 0,15.67 0,14C0,12.55 0.5,11.23 1.57,10.05C2.62,8.88 3.88,8.22 5.34,8.06C6,6.84 6.92,5.86 8.11,5.11C9.3,4.36 10.59,4 12,4C13.69,4 15.26,4.58 16.71,5.77C18.16,6.95 19.05,8.38 19.36,10.03Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"json":{
@@ -12889,10 +12932,11 @@
 	},
 	"karate":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["martial-arts"],
 		"categories":["sport"],
+		"codepoint":"f82b",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -13114,10 +13158,11 @@
 	},
 	"ladybug":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["bugfood","ladybird"],
 		"categories":["nature"],
+		"codepoint":"f82c",
 		"contributor":{
 			"regular":"google"
 		},
@@ -13415,9 +13460,10 @@
 	},
  	"lastpass":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["logos"],
+		"codepoint":"f446",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -14290,7 +14336,7 @@
 			"regular":"M4.37,7.3C4.4,7.05 4.3,6.81 4.12,6.65L2.25,4.4V4.06H8.05L12.53,13.89L16.47,4.06H22V4.4L20.4,5.93C20.27,6.03 20.2,6.21 20.23,6.38V17.62C20.2,17.79 20.27,17.97 20.4,18.07L21.96,19.6V19.94H14.12V19.6L15.73,18.03C15.89,17.88 15.89,17.83 15.89,17.59V8.5L11.4,19.9H10.8L5.57,8.5V16.14C5.5,16.46 5.63,16.78 5.86,17L7.96,19.57V19.9H2V19.57L4.1,17C4.33,16.78 4.43,16.46 4.37,16.14V7.3Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"memory":{
@@ -15462,9 +15508,10 @@
 	},
 	"notebook":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f82d",
 		"contributor":{
 			"regular":"community"
 		},
@@ -16875,9 +16922,10 @@
 	},
 	"phone-return":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f82e",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -17381,9 +17429,10 @@
 	},
 	"poker-chip":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["games"],
+		"codepoint":"f82f",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -17999,14 +18048,13 @@
 	},
 	"rdio":{
 		"categories":["logos"],
-		"codepoint":"f446",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
 		"data":{
 			"regular":"M19.29,10.84C19.35,11.22 19.38,11.61 19.38,12C19.38,16.61 15.5,20.35 10.68,20.35C5.87,20.35 2,16.61 2,12C2,7.39 5.87,3.65 10.68,3.65C11.62,3.65 12.53,3.79 13.38,4.06V9.11C13.38,9.11 10.79,7.69 8.47,9.35C6.15,11 6.59,12.76 6.59,12.76C6.59,12.76 6.7,15.5 9.97,15.5C13.62,15.5 14.66,12.19 14.66,12.19V4.58C15.36,4.93 16,5.36 16.65,5.85C18.2,6.82 19.82,7.44 21.67,7.39C21.67,7.39 22,7.31 22,8C22,8.4 21.88,8.83 21.5,9.25C21.5,9.25 20.78,10.33 19.29,10.84Z"
 		},
-		"retired":"{next}"
+		"retired":2119
 	},
 	"react":{
 		"added":{
@@ -18033,14 +18081,13 @@
 	},
 	"readability":{
 		"categories":["logos"],
-		"codepoint":"f448",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
 		"data":{
 			"regular":"M12,4C15.15,4 17.81,6.38 18.69,9.65C18,10.15 17.58,10.93 17.5,11.81L17.32,13.91C15.55,13 13.78,12.17 12,12.17C10.23,12.17 8.45,13 6.68,13.91L6.5,11.77C6.42,10.89 6,10.12 5.32,9.61C6.21,6.36 8.86,4 12,4M17.05,17H6.95L6.73,14.47C8.5,13.59 10.24,12.75 12,12.75C13.76,12.75 15.5,13.59 17.28,14.47L17.05,17M5,19V18L3.72,14.5H3.5A2.5,2.5 0 0,1 1,12A2.5,2.5 0 0,1 3.5,9.5C4.82,9.5 5.89,10.5 6,11.81L6.5,18V19H5M19,19H17.5V18L18,11.81C18.11,10.5 19.18,9.5 20.5,9.5A2.5,2.5 0 0,1 23,12A2.5,2.5 0 0,1 20.5,14.5H20.28L19,18V19Z"
 		},
-		"retired":"{next}"
+		"retired":2119
 	},
 	"receipt":{
 		"categories":["other"],
@@ -18624,7 +18671,7 @@
 		},
 		"keywords":["emergency","exit","runner","running"],
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"sale":{
@@ -19255,10 +19302,11 @@
 	},
 	"shape":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["category"],
 		"categories":["other"],
+		"codepoint":"f830",
 		"contributor":{
 			"regular":"google"
 		},
@@ -19281,10 +19329,11 @@
 	},
 	"shape-outline":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["theme"],
 		"categories":["other"],
+		"codepoint":"f831",
 		"contributor":{
 			"regular":"google"
 		},
@@ -19396,10 +19445,11 @@
 	},
 	"ship-wheel":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["voyager"],
 		"categories":["travel"],
+		"codepoint":"f832",
 		"contributor":{
 			"regular":"google"
 		},
@@ -19986,9 +20036,10 @@
 	},
 	"soccer-field":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["football-pitch"],
+		"codepoint":"f833",
 		"categories":["sport"],
 		"contributor":{
 			"regular":"rowan"
@@ -20418,7 +20469,8 @@
 		},
 		"keywords":["exchange"]
 	},
-	"stackoverflow":{
+	"stack-overflow":{
+		"keywords":["stackoverflow"],
 		"categories":["logos"],
 		"codepoint":"f4cc",
 		"contributor":{
@@ -20427,9 +20479,8 @@
 		"data":{
 			"regular":"M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z"
 		},
-		"keywords":["overflow"],
 		"renamed":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"stadium":{
@@ -21013,9 +21064,10 @@
 	},
 	"table-column":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["editor"],
+		"codepoint":"f834",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -21085,10 +21137,11 @@
 	},
 	"table-of-contents":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["toc"],
 		"categories":["other"],
+		"codepoint":"f835",
 		"contributor":{
 			"regular":"google"
 		},
@@ -21098,9 +21151,10 @@
 	},
 	"table-row":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["editor"],
+		"codepoint":"f836",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -21150,9 +21204,10 @@
 	},
 	"table-settings":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["editor"],
+		"codepoint":"f837",
 		"contributor":{
 			"regular":"community"
 		},
@@ -21349,10 +21404,11 @@
 	},
 	"television-box":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["tv-box","tv-guide"],
 		"categories":["other"],
+		"codepoint":"f838",
 		"contributor":{
 			"regular":"google"
 		},
@@ -21376,10 +21432,11 @@
 	},
 	"television-classic-off":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["tv-classic-off"],
 		"categories":["home","tech"],
+		"codepoint":"f839",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -21399,10 +21456,11 @@
 	},
 	"television-off":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["tv-off"],
 		"categories":["home","tech"],
+		"codepoint":"f83a",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -21634,7 +21692,7 @@
 			"regular":"M19,15H23V3H19M15,3H6C5.17,3 4.46,3.5 4.16,4.22L1.14,11.27C1.05,11.5 1,11.74 1,12V14A2,2 0 0,0 3,16H9.31L8.36,20.57C8.34,20.67 8.33,20.77 8.33,20.88C8.33,21.3 8.5,21.67 8.77,21.94L9.83,23L16.41,16.41C16.78,16.05 17,15.55 17,15V5C17,3.89 16.1,3 15,3Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"thumb-down-outline":{
@@ -21648,7 +21706,7 @@
 			"regular":"M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"thumb-up":{
@@ -21662,7 +21720,7 @@
 			"regular":"M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"thumb-up-outline":{
@@ -21676,7 +21734,7 @@
 			"regular":"M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"thumbs-up-down":{
@@ -21690,7 +21748,7 @@
 			"regular":"M22.5,10H15.75C15.13,10 14.6,10.38 14.37,10.91L12.11,16.2C12.04,16.37 12,16.56 12,16.75V18A1,1 0 0,0 13,19H18.18L17.5,22.18V22.42C17.5,22.73 17.63,23 17.83,23.22L18.62,24L23.56,19.06C23.83,18.79 24,18.41 24,18V11.5A1.5,1.5 0 0,0 22.5,10M12,6A1,1 0 0,0 11,5H5.82L6.5,1.82V1.59C6.5,1.28 6.37,1 6.17,0.79L5.38,0L0.44,4.94C0.17,5.21 0,5.59 0,6V12.5A1.5,1.5 0 0,0 1.5,14H8.25C8.87,14 9.4,13.62 9.63,13.09L11.89,7.8C11.96,7.63 12,7.44 12,7.25V6Z"
 		},
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"ticket":{
@@ -22006,9 +22064,11 @@
 	},
 	"towing":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
+		"aliases":["auto-towing"],
 		"categories":["travel"],
+		"codepoint":"f83b",
 		"contributor":{
 			"regular":"google"
 		},
@@ -22155,7 +22215,7 @@
 		},
 		"keywords":["atlassian"],
 		"updated":{
-			"regular":"{next}"
+			"regular":2119
 		}
 	},
 	"trending-down":{
@@ -22634,9 +22694,10 @@
 	},
 	"upload-multiple":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["networking"],
+		"codepoint":"f83c",
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -22919,9 +22980,10 @@
 	},
 	"venmo":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["logos"],
+		"codepoint":"f578",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -22977,10 +23039,11 @@
 	},
 	"video-4k-box":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["4k"],
 		"categories":["other"],
+		"codepoint":"f83d",
 		"contributor":{
 			"regular":"google"
 		},
@@ -22990,10 +23053,11 @@
 	},
 	"video-input-antenna":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["settings-input-antenna"],
 		"categories":["other"],
+		"codepoint":"f83e",
 		"contributor":{
 			"regular":"google"
 		},
@@ -23003,10 +23067,11 @@
 	},
 	"video-input-component":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["settings-input-component","settings-input-composite","video-input-composite"],
 		"categories":["other"],
+		"codepoint":"f83f",
 		"contributor":{
 			"regular":"google"
 		},
@@ -23016,10 +23081,11 @@
 	},
 	"video-input-hdmi":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["settings-input-hdmi"],
 		"categories":["other"],
+		"codepoint":"f840",
 		"contributor":{
 			"regular":"google"
 		},
@@ -23029,10 +23095,11 @@
 	},
 	"video-input-svideo":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"aliases":["settings-input-svideo"],
 		"categories":["other"],
+		"codepoint":"f841",
 		"contributor":{
 			"regular":"google"
 		},
@@ -23114,9 +23181,10 @@
 	},
 	"view-dashboard-variant":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["other"],
+		"codepoint":"f842",
 		"contributor":{
 			"regular":"google"
 		},
@@ -23242,14 +23310,13 @@
 	},
 	"vine":{
 		"categories":["logos"],
-		"codepoint":"f578",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
 		"data":{
 			"regular":"M19.89,11.95C19.43,12.06 19,12.1 18.57,12.1C16.3,12.1 14.55,10.5 14.55,7.76C14.55,6.41 15.08,5.7 15.82,5.7C16.5,5.7 17,6.33 17,7.61C17,8.34 16.79,9.14 16.65,9.61C16.65,9.61 17.35,10.83 19.26,10.46C19.67,9.56 19.89,8.39 19.89,7.36C19.89,4.6 18.5,3 15.91,3C13.26,3 11.71,5.04 11.71,7.72C11.71,10.38 12.95,12.67 15,13.71C14.14,15.43 13.04,16.95 11.9,18.1C9.82,15.59 7.94,12.24 7.17,5.7H4.11C5.53,16.59 9.74,20.05 10.86,20.72C11.5,21.1 12.03,21.08 12.61,20.75C13.5,20.24 16.23,17.5 17.74,14.34C18.37,14.33 19.13,14.26 19.89,14.09V11.95Z"
 		},
-		"retired":"{next}"
+		"retired":2119
 	},
 	"violin":{
 		"added":{
@@ -23314,7 +23381,7 @@
 		"added":{
 			"regular":1554
 		},
-		"categories":["logos","travel"],
+		"categories":["logos"],
 		"codepoint":"f57c",
 		"contributor":{
 			"regular":"christopher-schreiner"
@@ -23444,9 +23511,10 @@
 	},
 	"vuejs":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["logos"],
+		"codepoint":"f843",
 		"contributor":{
 			"regular":"austin-andrews"
 		},
@@ -24142,7 +24210,7 @@
 		}
 	},
 	"worker":{
-		"categories":["other"],
+		"categories":["users"],
 		"codepoint":"f5b5",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -24185,9 +24253,10 @@
 	},
 	"xamarin":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["logos"],
+		"codepoint":"f844",
 		"contributor":{
 			"regular":"augustin-ursu"
 		},
@@ -24197,9 +24266,10 @@
 	},
 	"xamarin-outline":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["logos"],
+		"codepoint":"f845",
 		"contributor":{
 			"regular":"augustin-ursu"
 		},
@@ -24442,10 +24512,11 @@
 	},
 	"youtube-creator-studio":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["google"],
-		"contributor":{
+		"codepoint":"f846",
+ 		"contributor":{
 			"regular":"google"
 		},
 		"data":{
@@ -24454,9 +24525,10 @@
 	},
 	"youtube-gaming":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["google"],
+		"codepoint":"f847",
 		"contributor":{
 			"regular":"google"
 		},
@@ -24477,9 +24549,10 @@
 	},
 	"youtube-tv":{
 		"added":{
-			"regular":"{next}"
+			"regular":2119
 		},
 		"categories":["google"],
+		"codepoint":"f448",
 		"contributor":{
 			"regular":"google"
 		},
