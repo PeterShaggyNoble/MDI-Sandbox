@@ -4,7 +4,7 @@
 ### Rename
 There are no icons to be renamed at this time.
 ### Add
-All missing icons are due to be added in the next release.
+There are no icons to be added at this time.
 ### Remove
 There are no icons to be removed at this time.
 
