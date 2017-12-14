@@ -17603,7 +17603,7 @@
 		}
 	},
 	"power":{
-		"aliases":["power-settings-new"],
+		"aliases":["power-settings-new","shutdown"],
 		"categories":["home","power"],
 		"codepoint":"f425",
 		"contributor":{

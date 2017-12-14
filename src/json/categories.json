@@ -10,7 +10,7 @@
 		"section":true
 	},
 	"updated":{
-		"icon":"update",
+		"icon":"sync",
 		"name":"Updated in v{v}",
 		"section":true
 	},
