@@ -106,6 +106,11 @@
 						loader.remove()
 					,375);
 				},600);
+				let 	date=new Date(),
+					month=date.getMonth(),
+					day=date.getDate();
+				if(month===11&&day>12||month===0&&day<6)
+					this.header.classList.add("snow");
 			},
 			alert(message){
 				clearTimeout(this.timer);
