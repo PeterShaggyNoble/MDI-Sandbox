@@ -1310,11 +1310,6 @@
 							loader.remove()
 						,375);
 					},600);
-					let	date=new Date(),
-						month=date.getMonth(),
-						day=date.getDate();
-					if(month===11&&day>12||month===0&&day<6)
-						this.header.classList.add("snow");
 				},
 				alert(message){
 					clearTimeout(this.timer);
@@ -26908,6 +26903,9 @@
 					this.dialog.addEventListener(`click`,event=>{
 						let target=event.target;
 						switch(target){
+							case this.dialog:
+								this.close(0);
+								break;
 							case this.link:
 								let url=`${page.address}?`;
 								if(page.light)
