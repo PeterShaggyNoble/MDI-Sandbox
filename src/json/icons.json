@@ -12220,6 +12220,18 @@
 		},
 		"keywords":["person"]
 	},
+	"home-alert":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["home"],
+		"contributor":{
+			"regular":"michael-richins"
+		},
+		"data":{
+			"regular":"M12,3L2,12H5V20H19V12H22L12,3M13,18H11V16H13V18M13,14H11V9H13V14Z"
+		}
+	},
 	"home-assistant":{
 		"added":{
 			"regular":2046
@@ -17017,6 +17029,30 @@
 		},
 		"data":{
 			"regular":"M21,6V11H19.5V7.5H13.87L16.3,9.93L15.24,11L11,6.75L15.24,2.5L16.3,3.57L13.87,6H21M8.82,8.58C9.08,8.32 9.17,7.93 9.06,7.58C8.69,6.42 8.5,5.22 8.5,4A1,1 0 0,0 7.5,3H4A1,1 0 0,0 3,4A17,17 0 0,0 20,21A1,1 0 0,0 21,20V16.5A1,1 0 0,0 20,15.5C18.79,15.5 17.58,15.31 16.43,14.93C16.08,14.82 15.69,14.91 15.43,15.17L13.23,17.37C10.39,15.92 8.09,13.62 6.64,10.78L8.82,8.58Z"
+		}
+	},
+	"phone-rotate-landscape":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["other"],
+		"contributor":{
+			"regular":"michael-richins"
+		},
+		"data":{
+			"regular":"M9,1H3A2,2 0 0,0 1,3V16A2,2 0 0,0 3,18H9A2,2 0 0,0 11,16V3A2,2 0 0,0 9,1M9,15H3V3H9V15M21,13H13V15H21V21H9V20H6V21A2,2 0 0,0 8,23H21A2,2 0 0,0 23,21V15A2,2 0 0,0 21,13M23,10L19,8L20.91,7.09C19.74,4.31 17,2.5 14,2.5V1A9,9 0 0,1 23,10Z"
+		}
+	},
+	"phone-rotate-portrait":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["other"],
+		"contributor":{
+			"regular":"michael-richins"
+		},
+		"data":{
+			"regular":"M9,1H3A2,2 0 0,0 1,3V16A2,2 0 0,0 3,18H4V15H3V3H9V11H11V3A2,2 0 0,0 9,1M23,21V15A2,2 0 0,0 21,13H8A2,2 0 0,0 6,15V21A2,2 0 0,0 8,23H21A2,2 0 0,0 23,21M9,21V15H21V21H9M23,10H21.5C21.5,7 19.69,4.27 16.92,3.09L16,5L14,1A9,9 0 0,1 23,10Z"
 		}
 	},
 	"phone-settings":{
