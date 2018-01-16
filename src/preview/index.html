@@ -298,7 +298,7 @@
 						path.setAttribute(`transform`,size>24?size>48?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.5) translate(22,20)`:`translate(11,10)`);
 						break;
 					case name:
-						text.name.firstChild.nodeValue=value;
+						text.name.firstChild.nodeValue=value.trim().toLowerCase().replace(/ |_/g,`-`);
 						break;
 					case colour:
 						path.setAttribute(`fill`,context.fillStyle=`#`+value);
