@@ -80,7 +80,7 @@
 						case this.actions.svg:
 						case this.actions.html:
 							let svg=target===this.actions.svg;
-							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" iconSize="24">`}<svg><defs>${filter.filtered?this.build():this.package||(this.package=this.build())}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
+							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${filter.filtered?this.build():this.package||(this.package=this.build())}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
 							this.options.blur();
 							break;
 						default:
@@ -404,7 +404,7 @@
 						case this.actions.svg:
 						case this.actions.html:
 							let svg=target===this.actions.svg;
-							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" iconSize="24">`}<svg><defs>${this.build()}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`mdi-favourites.${svg?`svg`:`html`}`);
+							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${this.build()}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`mdi-favourites.${svg?`svg`:`html`}`);
 							this.menu.blur();
 							break;
 						case this.actions.import:

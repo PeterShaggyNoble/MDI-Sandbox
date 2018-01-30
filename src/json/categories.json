@@ -90,10 +90,6 @@
 		"icon":"currency-eur",
 		"name":"Money & Payments"
 	},
-	"networking":{
-		"icon":"lan-connect",
-		"name":"Networking"
-	},
 	"music":{
 		"icon":"music-note",
 		"name":"Music"
@@ -102,6 +98,10 @@
 		"icon":"nature",
 		"name":"Nature & Animals"
 	},
+	"networking":{
+		"icon":"lan-connect",
+		"name":"Networking"
+	},
 	"places":{
 		"icon":"map-marker",
 		"name":"Places & Landmarks"
@@ -109,6 +109,10 @@
 	"power":{
 		"icon":"power",
 		"name":"Power"
+	},
+	"programming":{
+		"icon":"json",
+		"name":"Programming"
 	},
 	"science":{
 		"icon":"flask",

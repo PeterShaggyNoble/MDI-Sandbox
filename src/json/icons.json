@@ -406,6 +406,7 @@
 		}
 	},
 	"airballoon":{
+		"aliases":["hot-air-balloon"],
 		"categories":["travel"],
 		"codepoint":"f01c",
 		"contributor":{
@@ -413,8 +414,7 @@
 		},
 		"data":{
 			"regular":"M11,23A2,2 0 0,1 9,21V19H15V21A2,2 0 0,1 13,23H11M12,1C12.71,1 13.39,1.09 14.05,1.26C15.22,2.83 16,5.71 16,9C16,11.28 15.62,13.37 15,16A2,2 0 0,1 13,18H11A2,2 0 0,1 9,16C8.38,13.37 8,11.28 8,9C8,5.71 8.78,2.83 9.95,1.26C10.61,1.09 11.29,1 12,1M20,8C20,11.18 18.15,15.92 15.46,17.21C16.41,15.39 17,11.83 17,9C17,6.17 16.41,3.61 15.46,1.79C18.15,3.08 20,4.82 20,8M4,8C4,4.82 5.85,3.08 8.54,1.79C7.59,3.61 7,6.17 7,9C7,11.83 7.59,15.39 8.54,17.21C5.85,15.92 4,11.18 4,8Z"
-		},
-		"keywords":["balloon","hot"]
+		}
 	},
 	"airplane":{
 		"aliases":["aeroplane","airplanemode-active","flight","local-airport"],
@@ -839,6 +839,7 @@
 		}
 	},
 	"android-studio":{
+		"aliases":["math-compass-variant"],
 		"categories":["google"],
 		"codepoint":"f034",
 		"contributor":{
@@ -852,7 +853,7 @@
 		"added":{
 			"regular":1722
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f6b1",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -865,7 +866,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f6be",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -3340,7 +3341,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f6c5",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -4759,7 +4760,7 @@
 		"added":{
 			"regular":2046
 		},
-		"aliases":["closed-circuit-television"],
+		"aliases":["closed-circuit-television","security-camera"],
 		"categories":["home","tech"],
 		"codepoint":"f7ad",
 		"contributor":{
@@ -4767,8 +4768,7 @@
 		},
 		"data":{
 			"regular":"M18.15,4.94C17.77,4.91 17.37,5 17,5.2L8.35,10.2C7.39,10.76 7.07,12 7.62,12.94L9.12,15.53C9.67,16.5 10.89,16.82 11.85,16.27L13.65,15.23C13.92,15.69 14.32,16.06 14.81,16.27V18.04C14.81,19.13 15.7,20 16.81,20H22V18.04H16.81V16.27C17.72,15.87 18.31,14.97 18.31,14C18.31,13.54 18.19,13.11 17.97,12.73L20.5,11.27C21.47,10.71 21.8,9.5 21.24,8.53L19.74,5.94C19.4,5.34 18.79,5 18.15,4.94M6.22,13.17L2,13.87L2.75,15.17L4.75,18.63L5.5,19.93L8.22,16.63L6.22,13.17Z"
-		},
-		"keywords":["camera"]
+		}
 	},
 	"ceiling-light":{
 		"added":{
@@ -5141,6 +5141,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["done-outline","tick-outline"],
 		"categories":["characters"],
 		"contributor":{
 			"regular":"google"
@@ -6008,7 +6009,7 @@
 		}
 	},
 	"code-array":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f168",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -6018,7 +6019,7 @@
 		}
 	},
 	"code-braces":{
-		"categories":["characters"],
+		"categories":["characters","programming"],
 		"codepoint":"f169",
 		"contributor":{
 			"regular":"cody"
@@ -6028,7 +6029,7 @@
 		}
 	},
 	"code-brackets":{
-		"categories":["characters"],
+		"categories":["characters","programming"],
 		"codepoint":"f16a",
 		"contributor":{
 			"regular":"cody"
@@ -6039,7 +6040,7 @@
 		"keywords":["square"]
 	},
 	"code-equal":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f16b",
 		"contributor":{
 			"regular":"cody"
@@ -6049,7 +6050,7 @@
 		}
 	},
 	"code-greater-than":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f16c",
 		"contributor":{
 			"regular":"cody"
@@ -6059,7 +6060,7 @@
 		}
 	},
 	"code-greater-than-or-equal":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f16d",
 		"contributor":{
 			"regular":"cody"
@@ -6069,7 +6070,7 @@
 		}
 	},
 	"code-less-than":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f16e",
 		"contributor":{
 			"regular":"cody"
@@ -6079,7 +6080,7 @@
 		}
 	},
 	"code-less-than-or-equal":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f16f",
 		"contributor":{
 			"regular":"cody"
@@ -6089,7 +6090,7 @@
 		}
 	},
 	"code-not-equal":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f170",
 		"contributor":{
 			"regular":"cody"
@@ -6099,7 +6100,7 @@
 		}
 	},
 	"code-not-equal-variant":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f171",
 		"contributor":{
 			"regular":"cody"
@@ -6109,7 +6110,7 @@
 		}
 	},
 	"code-parentheses":{
-		"categories":["characters"],
+		"categories":["characters","programming"],
 		"codepoint":"f172",
 		"contributor":{
 			"regular":"cody"
@@ -6120,7 +6121,7 @@
 		"keywords":["brackets"]
 	},
 	"code-string":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f173",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -6130,7 +6131,7 @@
 		}
 	},
 	"code-tags":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f174",
 		"contributor":{
 			"regular":"google"
@@ -6143,7 +6144,7 @@
 		"added":{
 			"regular":1712
 		},
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f693",
 		"contributor":{
 			"regular":"cody"
@@ -6153,7 +6154,7 @@
 		}
 	},
 	"codepen":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f175",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -6992,14 +6993,17 @@
 		"added":{
 			"regular":2046
 		},
-		"aliases":["ethereum"],
-		"categories":["logos","money"],
+		"aliases":["ethereum","xi"],
+		"categories":["money"],
 		"codepoint":"f7ba",
 		"contributor":{
 			"regular":"rowan"
 		},
 		"data":{
-			"regular":"M12,1.75L5.75,12.25L12,16L18.25,12.25L12,1.75M5.75,13.5L12,22.25L18.25,13.5L12,17.25L5.75,13.5Z"
+			"regular":"M6,5H18V7H6M7,11H17V13H7M5.5,17H18.5V19H5.5"
+		},
+		"updated":{
+			"regular":"{next}"
 		}
 	},
 	"currency-eur":{
@@ -8641,6 +8645,18 @@
 		},
 		"data":{
 			"regular":"M11,3H13V7H11V3M8,4H10V8H14V4H16V11H12.82L8,6.18V4M20,20.72L18.73,22L14,17.27V22H10V13.27L2,5.27L3.28,4L20,20.72Z"
+		}
+	},
+	"ethereum":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["logos"],
+		"contributor":{
+			"regular":"rowan"
+		},
+		"data":{
+			"regular":"M12,1.75L5.75,12.25L12,16L18.25,12.25L12,1.75M5.75,13.5L12,22.25L18.25,13.5L12,17.25L5.75,13.5Z"
 		}
 	},
 	"etsy":{
@@ -10952,7 +10968,7 @@
 		}
 	},
 	"function":{
-		"categories":["characters"],
+		"categories":["characters","programming"],
 		"codepoint":"f295",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -10965,7 +10981,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["characters"],
+		"categories":["characters","programming"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -11065,7 +11081,46 @@
 			"regular":"google"
 		},
 		"data":{
-			"regular":"M17.3,18C19,16.5 20,14.4 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12C4,14.4 5,16.5 6.7,18C8.2,16.7 10,16 12,16C14,16 15.9,16.7 17.3,18M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M7,9A1,1 0 0,1 8,10A1,1 0 0,1 7,11A1,1 0 0,1 6,10A1,1 0 0,1 7,9M10,6A1,1 0 0,1 11,7A1,1 0 0,1 10,8A1,1 0 0,1 9,7A1,1 0 0,1 10,6M17,9A1,1 0 0,1 18,10A1,1 0 0,1 17,11A1,1 0 0,1 16,10A1,1 0 0,1 17,9M14.4,6.1C14.9,6.3 15.1,6.9 15,7.4L13.6,10.8C13.8,11.1 14,11.5 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12C10,11 10.7,10.1 11.7,10L13.1,6.7C13.3,6.1 13.9,5.9 14.4,6.1Z"
+			"regular":"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12C20,14.4 19,16.5 17.3,18C15.9,16.7 14,16 12,16C10,16 8.2,16.7 6.7,18C5,16.5 4,14.4 4,12A8,8 0 0,1 12,4M14,5.89C13.62,5.9 13.26,6.15 13.1,6.54L11.81,9.77L11.71,10C11,10.13 10.41,10.6 10.14,11.26C9.73,12.29 10.23,13.45 11.26,13.86C12.29,14.27 13.45,13.77 13.86,12.74C14.12,12.08 14,11.32 13.57,10.76L13.67,10.5L14.96,7.29L14.97,7.26C15.17,6.75 14.92,6.17 14.41,5.96C14.28,5.91 14.15,5.89 14,5.89M10,6A1,1 0 0,0 9,7A1,1 0 0,0 10,8A1,1 0 0,0 11,7A1,1 0 0,0 10,6M7,9A1,1 0 0,0 6,10A1,1 0 0,0 7,11A1,1 0 0,0 8,10A1,1 0 0,0 7,9M17,9A1,1 0 0,0 16,10A1,1 0 0,0 17,11A1,1 0 0,0 18,10A1,1 0 0,0 17,9Z"
+		},
+		"updated":{
+			"regular":"{next}"
+		}
+	},
+	"gauge-empty":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["science"],
+		"contributor":{
+			"regular":"rowan"
+		},
+		"data":{
+			"regular":"M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12C4,14.4 5,16.5 6.7,18C8.1,16.7 10,16 12,16C14,16 15.8,16.7 17.3,18C19,16.5 20,14.4 20,12A8,8 0 0,0 12,4M14,6A1,1 0 0,1 15,7A1,1 0 0,1 14,8A1,1 0 0,1 13,7A1,1 0 0,1 14,6M10,6A1,1 0 0,1 11,7A1,1 0 0,1 10,8A1,1 0 0,1 9,7A1,1 0 0,1 10,6M6.91,8.94C7.04,8.94 7.16,8.97 7.3,9L10.5,10.32L10.77,10.43C11.33,10 12.09,9.88 12.75,10.15C13.77,10.56 14.27,11.73 13.85,12.75C13.44,13.77 12.27,14.27 11.25,13.85C10.59,13.59 10.12,13 10,12.28L9.77,12.18L6.55,10.88L6.53,10.87C6,10.66 5.77,10.08 5.97,9.56C6.13,9.18 6.5,8.93 6.91,8.94V8.94M17,9A1,1 0 0,1 18,10A1,1 0 0,1 17,11A1,1 0 0,1 16,10A1,1 0 0,1 17,9Z"
+		}
+	},
+	"gauge-full":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["science"],
+		"contributor":{
+			"regular":"rowan"
+		},
+		"data":{
+			"regular":"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12C20,14.4 19,16.5 17.3,18C15.9,16.7 14,16 12,16C10,16 8.2,16.7 6.7,18C5,16.5 4,14.4 4,12A8,8 0 0,1 12,4M10,6A1,1 0 0,0 9,7A1,1 0 0,0 10,8A1,1 0 0,0 11,7A1,1 0 0,0 10,6M14,6A1,1 0 0,0 13,7A1,1 0 0,0 14,8A1,1 0 0,0 15,7A1,1 0 0,0 14,6M17.09,8.94C16.96,8.94 16.84,8.97 16.7,9L13.5,10.32L13.23,10.43C12.67,10 11.91,9.88 11.25,10.15C10.23,10.56 9.73,11.73 10.15,12.75C10.56,13.77 11.73,14.27 12.75,13.85C13.41,13.59 13.88,13 14,12.28L14.23,12.18L17.45,10.88L17.47,10.87C18,10.66 18.23,10.08 18.03,9.56C17.87,9.18 17.5,8.93 17.09,8.94M7,9A1,1 0 0,0 6,10A1,1 0 0,0 7,11A1,1 0 0,0 8,10A1,1 0 0,0 7,9Z"
+		}
+	},
+	"gauge-low":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["science"],
+		"contributor":{
+			"regular":"rowan"
+		},
+		"data":{
+			"regular":"M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12C4,14.4 5,16.5 6.7,18C8.1,16.7 10,16 12,16C14,16 15.8,16.7 17.3,18C19,16.5 20,14.4 20,12A8,8 0 0,0 12,4M10,5.89C10.38,5.9 10.74,6.15 10.9,6.54L12.19,9.77L12.29,10C13,10.13 13.59,10.6 13.86,11.26C14.27,12.29 13.77,13.45 12.74,13.86C11.71,14.27 10.55,13.77 10.14,12.74C9.88,12.08 10,11.32 10.43,10.76L10.33,10.5L9.04,7.29L9.03,7.26C8.83,6.75 9.08,6.17 9.59,5.96C9.72,5.91 9.85,5.89 10,5.89V5.89M14,6A1,1 0 0,1 15,7A1,1 0 0,1 14,8A1,1 0 0,1 13,7A1,1 0 0,1 14,6M17,9A1,1 0 0,1 18,10A1,1 0 0,1 17,11A1,1 0 0,1 16,10A1,1 0 0,1 17,9M7,9A1,1 0 0,1 8,10A1,1 0 0,1 7,11A1,1 0 0,1 6,10A1,1 0 0,1 7,9Z"
 		}
 	},
 	"gavel":{
@@ -11259,7 +11314,7 @@
 		}
 	},
 	"git":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f2a2",
 		"contributor":{
 			"regular":"cody"
@@ -11269,7 +11324,7 @@
 		}
 	},
 	"github-box":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f2a3",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -11282,7 +11337,7 @@
 		}
 	},
 	"github-circle":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f2a4",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -11295,7 +11350,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f6da",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -11734,7 +11789,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"contributor":{
 			"regular":"michael-richins"
 		},
@@ -12254,6 +12309,19 @@
 		},
 		"keywords":["hd"]
 	},
+	"high-definition-box":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["player"],
+		"contributor":{
+			"regular":"google"
+		},
+		"data":{
+			"regular":"M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M11,15H9.5V13H7.5V15H6V9H7.5V11.5H9.5V9H11V15M13,9H17A1,1 0 0,1 18,10V14A1,1 0 0,1 17,15H13V9M14.5,13.5H16.5V10.5H14.5V13.5Z"
+		},
+		"keywords":["hd"]
+	},
 	"highway":{
 		"added":{
 			"regular":1554
@@ -12320,6 +12388,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["home-warning"],
 		"categories":["home"],
 		"contributor":{
 			"regular":"michael-richins"
@@ -13098,8 +13167,20 @@
 			"regular":2119
 		}
 	},
+	"jquery":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["logos","programming"],
+		"contributor":{
+			"regular":"community"
+		},
+		"data":{
+			"regular":"M22.88,10.41C20.77,12.18 17.61,11.9 15.84,9.79C14.06,7.67 14.34,4.5 16.45,2.75L16.96,2.37C15.27,4.19 15.16,7.03 16.8,9C18.43,10.94 21.25,11.32 23.34,9.97L22.88,10.41M21.1,14.5C17.93,17.17 13.2,16.76 10.54,13.58C7.87,10.41 8.29,5.68 11.46,3L12.38,2.36C9.96,5.09 9.84,9.26 12.26,12.14C14.68,15 18.8,15.63 21.91,13.72L21.1,14.5M19.97,19.38C15.53,23.11 8.9,22.53 5.17,18.08C1.45,13.64 2.03,7 6.47,3.29L7.58,2.5C4.07,6.3 3.85,12.23 7.28,16.32C10.71,20.4 16.59,21.22 20.96,18.43L19.97,19.38Z"
+		}
+	},
 	"jsfiddle":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f304",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13115,7 +13196,7 @@
 		"added":{
 			"regular":1650
 		},
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f626",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13435,7 +13516,7 @@
 		"added":{
 			"regular":1650
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f671",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13448,7 +13529,7 @@
 		"added":{
 			"regular":1650
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f672",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13458,7 +13539,7 @@
 		}
 	},
 	"language-csharp":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f31b",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13468,7 +13549,7 @@
 		}
 	},
 	"language-css3":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f31c",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13481,7 +13562,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f7d2",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13491,7 +13572,7 @@
 		}
 	},
 	"language-html5":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f31d",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13501,7 +13582,7 @@
 		}
 	},
 	"language-javascript":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f31e",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13511,7 +13592,7 @@
 		}
 	},
 	"language-php":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f31f",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13521,7 +13602,7 @@
 		}
 	},
 	"language-python":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f320",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13531,7 +13612,7 @@
 		}
 	},
 	"language-python-text":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f321",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -13544,7 +13625,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f7d3",
 		"contributor":{
 			"regular":"rowan"
@@ -13557,7 +13638,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f6e4",
 		"contributor":{
 			"regular":"rowan"
@@ -13570,7 +13651,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f6e5",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -14462,7 +14543,7 @@
 		"keywords":["alcohol","drink","glass","liquor"]
 	},
 	"material-ui":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f357",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -15427,6 +15508,18 @@
 		},
 		"keywords":["mute","note","sound"]
 	},
+	"nativescript":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["logos","programming"],
+		"contributor":{
+			"regular":"community"
+		},
+		"data":{
+			"regular":"M7.5,3H16.5C19,3 21,5 21,7.5V16.5C21,19 19,21 16.5,21H7.5C5,21 3,19 3,16.5V7.5C3,5 5,3 7.5,3M6,13.5V16.5A1.5,1.5 0 0,0 7.5,18H9V10.5L15,18H16.5A1.5,1.5 0 0,0 18,16.5V13.5A1.5,1.5 0 0,1 19.5,12A1.5,1.5 0 0,1 18,10.5V7.5A1.5,1.5 0 0,0 16.5,6H15V13.5L9,6H7.5A1.5,1.5 0 0,0 6,7.5V10.5A1.5,1.5 0 0,1 4.5,12A1.5,1.5 0 0,1 6,13.5Z"
+		}
+	},
 	"nature":{
 		"categories":["nature"],
 		"codepoint":"f38e",
@@ -15615,7 +15708,7 @@
 		}
 	},
 	"nodejs":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f399",
 		"contributor":{
 			"regular":"cody"
@@ -15727,7 +15820,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f6f6",
 		"contributor":{
 			"regular":"case-sandberg"
@@ -16315,6 +16408,19 @@
 			"regular":"M1.96,4.8L14,3.08V5H20L21,5A1,1 0 0,1 22,6V10A1,1 0 0,1 21,11H20V19H14V21L1.96,19.21V4.8M11,16.75V8.25L9,8.5V12.75L7,8.75L5,9V16L6.5,16.25V10.75L9,16.5L11,16.75M14,14H18V13H14V14M14,11H18V10H14V11M14,8H18V7H14V8M14,16V17H18V16H14Z"
 		},
 		"keywords":["microsoft"]
+	},
+	"onepassword":{
+		"added":{
+			"regular":"{next}"
+		},
+		"aliases":["1password"],
+		"categories":["logos"],
+		"contributor":{
+			"regular":"michael-richins"
+		},
+		"data":{
+			"regular":"M12,1C5.92,1 1,5.92 1,12C1,18.08 5.92,23 12,23C18.08,23 23,18.08 23,12C23,5.92 18.08,1 12,1M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M13,13.5C13,14.13 13.4,14.7 14,14.91V18H10V11.91C10.78,11.64 11.19,10.8 10.93,10C10.78,9.58 10.44,9.24 10,9.09V6H14V12.09C13.4,12.3 13,12.87 13,13.5Z"
+		}
 	},
 	"opacity":{
 		"added":{
@@ -17703,7 +17809,7 @@
 		}
 	},
 	"polymer":{
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f421",
 		"contributor":{
 			"regular":"google"
@@ -18290,7 +18396,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f707",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -18932,7 +19038,7 @@
 		"added":{
 			"regular":2046
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f7eb",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -20725,7 +20831,7 @@
 	},
 	"stack-overflow":{
 		"keywords":["stackoverflow"],
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f4cc",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -21164,7 +21270,7 @@
 		"added":{
 			"regular":1836
 		},
-		"categories":["logos"],
+		"categories":["programming"],
 		"codepoint":"f720",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -21625,6 +21731,19 @@
 			"regular":"M5,11L6.5,6.5H17.5L19,11M17.5,16A1.5,1.5 0 0,1 16,14.5A1.5,1.5 0 0,1 17.5,13A1.5,1.5 0 0,1 19,14.5A1.5,1.5 0 0,1 17.5,16M6.5,16A1.5,1.5 0 0,1 5,14.5A1.5,1.5 0 0,1 6.5,13A1.5,1.5 0 0,1 8,14.5A1.5,1.5 0 0,1 6.5,16M18.92,6C18.72,5.42 18.16,5 17.5,5H15V3H9V5H6.5C5.84,5 5.28,5.42 5.08,6L3,12V20A1,1 0 0,0 4,21H5A1,1 0 0,0 6,20V19H18V20A1,1 0 0,0 19,21H20A1,1 0 0,0 21,20V12L18.92,6Z"
 		}
 	},
+	"teach":{
+		"added":{
+			"regular":"{next}"
+		},
+		"aliases":["teacher","teaching"],
+		"categories":["other"],
+		"contributor":{
+			"regular":"michael-richins"
+		},
+		"data":{
+			"regular":"M20,17A2,2 0 0,0 22,15V4A2,2 0 0,0 20,2H9.46C9.81,2.61 10,3.3 10,4H20V15H11V17M15,7V9H9V22H7V16H5V22H3V14H1.5V9A2,2 0 0,1 3.5,7H15M8,4A2,2 0 0,1 6,6A2,2 0 0,1 4,4A2,2 0 0,1 6,2A2,2 0 0,1 8,4Z"
+		}
+	},
 	"teamviewer":{
 		"categories":["logos"],
 		"codepoint":"f500",
@@ -21925,6 +22044,7 @@
 		"added":{
 			"regular":2046
 		},
+		"aliases":["comic-bubble"],
 		"categories":["other"],
 		"codepoint":"f7f5",
 		"contributor":{
@@ -21938,6 +22058,7 @@
 		"added":{
 			"regular":2046
 		},
+		"aliases":["comic-thought-bubble-outline"],
 		"categories":["other"],
 		"codepoint":"f7f6",
 		"contributor":{
@@ -23803,7 +23924,7 @@
 		"added":{
 			"regular":2119
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f843",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -24238,7 +24359,7 @@
 		"added":{
 			"regular":1650
 		},
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f62f",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -24557,6 +24678,7 @@
 		"added":{
 			"regular":2119
 		},
+		"aliases":["microsoft-xamarin"],
 		"categories":["logos"],
 		"codepoint":"f844",
 		"contributor":{
@@ -24570,6 +24692,7 @@
 		"added":{
 			"regular":2119
 		},
+		"aliases":["microsoft-xamarin-outline"],
 		"categories":["logos"],
 		"codepoint":"f845",
 		"contributor":{
@@ -24583,7 +24706,7 @@
 		"added":{
 			"regular":1650
 		},
-		"categories":["logos"],
+		"categories":["logos","programming"],
 		"codepoint":"f673",
 		"contributor":{
 			"regular":"austin-andrews"
@@ -24743,7 +24866,7 @@
 		}
 	},
 	"xml":{
-		"categories":["other"],
+		"categories":["programming"],
 		"codepoint":"f5c0",
 		"contributor":{
 			"regular":"austin-andrews"
