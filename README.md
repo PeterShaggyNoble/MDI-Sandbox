@@ -25,6 +25,7 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2018-02-12:** Added overlays to the [preview generator](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 - **2018-01-30:** New [programming](https://petershaggynoble.github.io/MDI-Sandbox/?categories=programming) category added.
 - **2017-12-11:** Material Design Icons v2.1.19 released.
 - **2017-11-29:** Added helper icons to the [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/).
