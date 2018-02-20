@@ -324,7 +324,7 @@
 								if(words)
 									check=check&&words.every(word=>
 										icon.keywords.some(item=>
-										item.startsWith(word)
+											item.startsWith(word)
 										)
 									);
 								matches+=check;
