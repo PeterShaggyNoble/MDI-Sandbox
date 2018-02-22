@@ -30,10 +30,10 @@
 			init(){
 				this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
 				this.params=this.url.searchParams;
-				this.light=this.params.get`font`===`light`;
-				this.font=this.light?`light`:`regular`;
+				this.light=this.params.get`set`===`light`;
+				this.set=this.light?`light`:`regular`;
 				b.classList.add(this.light?`mdil`:`mdi`);
-				version=versions[this.font];
+				version=versions[`regular`/*this.set*/];
 				this.message.append(T``);
 				try{
 					this.storage=localStorage;
@@ -56,6 +56,7 @@
 				,600);
 				info.init();
 				editor.init();
+				svgs.init();
 				this.options=this.section.querySelector`ul`,
 				this.actions={
 					link:this.options.firstElementChild,
@@ -74,19 +75,17 @@
 						current=this.main.querySelector`article.active`;
 					switch(target){
 						case this.actions.link:
-							page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`font=light&`:``}section=icons`,`Link`);
-							this.options.blur();
+							page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`set=light&`:``}section=icons`,`Link`);
 							break;
 						case this.actions.svg:
 						case this.actions.html:
 							let svg=target===this.actions.svg;
 							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${filter.filtered?this.build():this.package||(this.package=this.build())}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
-							this.options.blur();
 							break;
 						default:
 							switch(target.nodeName.toLowerCase()){
 								case`svg`:
-									parent.nodeName.toLowerCase()===`header`&&!target.classList.contains`trigger`&&page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.parentNode.id}`,`Link`);
+									parent.nodeName.toLowerCase()===`header`&&!target.classList.contains`trigger`&&page.copy(`${page.address}?${page.light?`set=light&`:``}section=${parent.parentNode.id}`,`Link`);
 									break;
 								case`article`:
 									if(current!==target){
@@ -102,7 +101,6 @@
 				setTimeout(_=>{
 					let loader=$`load`;
 					loader.classList.add(`oz`,`pen`);
-					svgs.init();
 					setTimeout(_=>
 						loader.remove()
 					,375);
@@ -117,7 +115,7 @@
 				,5e3);
 			},
 			build:_=>Object.entries(icons.list).map(([key,icon],data)=>
-				icon.articles.main&&!icon.articles.main.classList.contains`dn`&&(data=icon.data[page.font])?`<g id="${key}"><path d="${data}"/></g>`:``
+				icon.articles.main&&!icon.articles.main.classList.contains`dn`&&(data=icon.data[page.set])?`<g id="${key}"><path d="${data}"/></g>`:``
 			).join``,
 			copy(string,message){
 				editor.dialog.append(this.textarea);
@@ -164,17 +162,20 @@
 			sections:$`sections`,
 			switch:C`p`,
 			init(){
-				this.switch.classList.add`cp`;
-				this.switch.dataset.icon=page.light?`\uf335`:`\uf6e8`;
+				/*this.switch.classList.add(`cp`,`fwm`);
+				this.switch.id=`switch`;
 				this.switch.tabIndex=-1;
-				this.switch.append(T(`View ${page.light?`Regular`:`Light`} Icons`));
-				/*this.menu.prepend(this.switch);*/
+				this.switch.append(this.svg=N`svg`,this.text=T(`View ${page.light?`Regular`:`Light`} Icons`));
+				this.svg.classList.add(`dib`,`pen`,`vam`);
+				this.svg.dataset.icons=`lightbulb-outline,lightbulb`;
+				this.menu.prepend(this.switch);*/
 				let section=page.params.get`section`;
 				section&&(section=$(section))&&setTimeout(_=>
 					this.goto(section)
 				,600);
 				this.nav.addEventListener(`click`,event=>{
-					let target=event.target;
+					let 	target=event.target,
+						articles,icon,key;
 					target.blur();
 					switch(target){
 						case this.nav:
@@ -183,9 +184,33 @@
 						case this.navicon:
 							this.toggle();
 							break;
-						case this.switch:
-							location.href=page.light?`./`:`?font=light`;
-							break;
+						/*case this.switch:
+							b.classList.toggle`mdi`;
+							b.classList.toggle`mdil`;
+							page.light=!page.light;
+							page.set=page.light?`light`:`regular`;
+							this.text.nodeValue=`View ${page.light?`Regular`:`Light`} Icons`;
+							h.scrollTop=page.section.offsetTop-(page.size?16:8)-page.header.offsetHeight;
+							for(key in icons.list)
+								if(icons.list.hasOwnProperty(key)){
+									for(article in icons.list[key].articles)
+										if(icons.list[key].articles.hasOwnProperty(article))
+											if(icons.list[key].articles[article].classList.contains`active`){
+												icons.list[key].articles[article].classList.remove`active`;
+												icon=key;
+											}
+									if(icon){
+										icon=icons.list[key].data[page.set]&&icon;
+										break;
+									}
+								}
+							if(!icon&&page.size)
+								icon=Object.keys(icons.list).find(key=>icons.list[key].data[page.set]);
+							if(icon){
+								info.open(icon);
+								icons.list[icon].articles.main.classList.add`active`;
+							}
+							break;*/
 						case this.highlight:
 							b.classList.toggle`highlight`;
 							page.size<2&&this.toggle();
@@ -230,29 +255,28 @@
 				},0);
 				if(page.size===2)
 					this.toggle();
-				else 
-					d.addEventListener(`touchstart`,event=>{
-						this.width=this.menu.offsetWidth;
-						this.clientx=event.touches[0].clientX;
-						if(([page.main,b].includes(event.target)&&!this.show&&this.clientx<=50)||(this.show&&this.clientx>this.width)){
-							this.touchstart();
-							d.addEventListener(`touchmove`,this.functions.move=event=>{
-								let clientx=event.touches[0].clientX-this.clientx;
-								this.nav.style.background=`rgba(0,0,0,${Math.min((clientx+(this.show?285.185:0))/285.185*.54,.54)})`;
-								this.menu.style.left=`${this.show?Math.min(Math.max(clientx,-this.width),0):Math.min(Math.max(clientx,0)-this.width,0)}px`;
-								this.menu.style.boxShadow=`0 14px 28px rgba(0,0,0,${Math.min((clientx+(this.show?500:0))/500*.25,.25)}),0 10px 10px rgba(0,0,0,${Math.min((clientx+(this.show?545.545:0))/545.545*.22,.22)})`;
-								event.stopPropagation();
-							},0);
-							d.addEventListener(`touchend`,this.functions.end=event=>
-								this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx),0
-							);
+				else d.addEventListener(`touchstart`,event=>{
+					this.width=this.menu.offsetWidth;
+					this.clientx=event.touches[0].clientX;
+					if(([page.main,b].includes(event.target)&&!this.show&&this.clientx<=50)||(this.show&&this.clientx>this.width)){
+						this.touchstart();
+						d.addEventListener(`touchmove`,this.functions.move=event=>{
+							let clientx=event.touches[0].clientX-this.clientx;
+							this.nav.style.background=`rgba(0,0,0,${Math.min((clientx+(this.show?285.185:0))/285.185*.54,.54)})`;
+							this.menu.style.left=`${this.show?Math.min(Math.max(clientx,-this.width),0):Math.min(Math.max(clientx,0)-this.width,0)}px`;
+							this.menu.style.boxShadow=`0 14px 28px rgba(0,0,0,${Math.min((clientx+(this.show?500:0))/500*.25,.25)}),0 10px 10px rgba(0,0,0,${Math.min((clientx+(this.show?545.545:0))/545.545*.22,.22)})`;
 							event.stopPropagation();
-						}
-					},0);
+						},0);
+						d.addEventListener(`touchend`,this.functions.end=event=>
+							this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx),0
+						);
+						event.stopPropagation();
+					}
+				},0);
 			},
 			goto(section){
 				clearInterval(this.timer);
-				let 	to=section.offsetTop-8-page.header.offsetHeight,
+				let 	to=section.offsetTop-(page.size?16:8)-page.header.offsetHeight,
 					top=h.scrollTop,
 					step=(to-top)/10;
 				this.timer=setInterval(_=>
@@ -338,7 +362,7 @@
 										this.categories.has(category)
 									);
 								if(this.contributors.size)
-									check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.font]);
+									check=check&&icon.contributor&&this.contributors.has(icon.contributor[page.set]);
 								if(words)
 									check=check&&words.every(word=>
 										icon.keywords.some(item=>
@@ -356,7 +380,7 @@
 				if(this.filtered){
 					this.url=`${page.address}?`;
 					if(page.light)
-						this.url+=`font=light&`;
+						this.url+=`set=light&`;
 					if(this.categories.size){
 						this.url+=`categories=${[...this.categories].sort().join`,`}`;
 						if(this.contributors.size||this.text)
@@ -370,7 +394,7 @@
 					if(this.text)
 						this.url+=`filter=${encodeURIComponent(this.text)}`;
 					if(h.scrollTop<page.section.offsetTop-page.header.offsetHeight)
-						h.scrollTop=page.section.offsetTop-8-page.header.offsetHeight
+						h.scrollTop=page.section.offsetTop-(page.size?16:8)-page.header.offsetHeight;
 				}
 			},
 			clear(){
@@ -432,15 +456,12 @@
 						case this.actions.html:
 							let svg=target===this.actions.svg;
 							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${this.build()}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`mdi-favourites.${svg?`svg`:`html`}`);
-							this.menu.blur();
 							break;
 						case this.actions.import:
 							b.append(this.input);
-							this.menu.blur();
 							this.input.click();
 							break;
 						case this.actions.export:
-							this.menu.blur();
 							page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).filter(key=>key.startsWith`mdi-`).join`,`))}`,`mdi-favourites.txt`);
 							break;
 						case this.actions.clear:
@@ -454,7 +475,6 @@
 											delete icon.articles.favourite;
 										}
 									}
-							this.menu.blur();
 							page.alert`Favourites cleared.`;
 							break;
 					}
@@ -466,7 +486,7 @@
 				this.actions[key].lastChild.nodeValue=text;
 			},
 			build:_=>Object.keys(page.storage).map((key,data)=>
-				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(data=icons.list[key].data[page.font])?`<g id="${key}"><path d="${data}"/></g>`:``
+				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(data=icons.list[key].data[page.set])?`<g id="${key}"><path d="${data}"/></g>`:``
 			).join``,
 			load(event){
 				let msg=`complete`;
@@ -557,7 +577,7 @@
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
 				}else if(page.size){
-					this.open(icon=(page.params.get`edit`||Object.keys(icons.list)[0]));
+					this.open(icon=(page.params.get`edit`||Object.keys(icons.list).find(key=>icons.list[key].data[page.set])));
 					Object.values(icons.list[icon].articles)[0].classList.add`active`;
 				}
 				this.aside.addEventListener(`click`,event=>{
@@ -599,7 +619,7 @@
 			},
 			open(name){
 				this.icon=icons.list[this.name=name];
-				this.data=this.actions.data.dataset.copy=this.icon.data[page.font];
+				this.data=this.actions.data.dataset.copy=this.icon.data[page.set];
 				let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 				this.aside.classList.toggle(`nocopy`,!(this.copy=!!codepoint));
 				this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
@@ -621,7 +641,7 @@
 				this.actions.html.dataset.copy=`<span class="${page.light?`mdil`:`mdi`}-${name}"></span>`;
 				this.actions.url.dataset.copy=`${page.address}?`;
 				if(page.light)
-					this.actions.url.dataset.copy+=`font=light&`;
+					this.actions.url.dataset.copy+=`set=light&`;
 				this.actions.url.dataset.copy+=`icon=${name}`;
 				if(page.size){
 					this.heading.classList.add`oz`;
@@ -678,12 +698,6 @@
 				this.svg.classList.add(`dib`,`pen`,`vam`);
 				this.item.append(this.svg,T``);
 				!page.storage&&delete this.list.favourites;
-				if(page.light){
-					delete this.list.new;
-					delete this.list.updated;
-					delete this.list.soon;
-					delete this.list.retired;
-				}
 				for(let key in this.list)
 					this.list.hasOwnProperty(key)&&this.add(key);
 			},
@@ -703,7 +717,7 @@
 					section.append(this.error.cloneNode(1));
 					page.section.before(category.section=section);
 				}else category.count=icons.array.filter(icon=>
-					icon.categories&&icon.data[page.font]&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
+					icon.categories&&icon.data.regular&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
 				).length;
 				if(category.section||category.count){
 					item.lastChild.nodeValue=name;
@@ -737,7 +751,7 @@
 					img=this.img.cloneNode(1),
 					item=this.item.cloneNode(1);
 				contributor.count=icons.array.filter(icon=>
-					icon.contributor&&icon.data[page.font]&&(!icon.retired||icon.retired==="{soon}")&&icon.contributor[page.font]===key
+					icon.contributor&&icon.data.regular&&(!icon.retired||icon.retired==="{soon}")&&icon.contributor.regular===key
 				).length;
 				if(contributor.count){
 					item.dataset.contributor=key;
@@ -753,6 +767,7 @@
 	/** ICONS **/
 		icons={
 			article:C`article`,
+			path:N`path`,
 			svg:N`svg`,
 			total:0,
 			init(){
@@ -763,17 +778,17 @@
 				this.svg.setAttribute(`height`,24);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				this.svg.setAttribute(`width`,24);
-				this.svg.append(N`path`);
 				for(let key in this.list)
 					this.list.hasOwnProperty(key)&&this.add(key);
 			},
 			add(key){
 				let 	icon=this.list[key],
 					article=this.article.cloneNode(1),
-					svg=this.svg.cloneNode(1),
+					svg=this.svg.cloneNode(0),
+					path=this.path.cloneNode(1),
 					keywords=new Set(key.split`-`),
 					data,category;
-				if(data=icon.data[page.font]){
+				if(data=icon.data.regular){
 					icon.aliases&&icon.aliases.forEach(alias=>
 						alias.split`-`.forEach(word=>
 							keywords.add(word)
@@ -783,17 +798,24 @@
 						keywords.add(word)
 					);
 					icon.keywords=[...keywords].sort();
-					svg.firstElementChild.setAttribute(`d`,data);
+					path.setAttribute(`d`,data);
+					svg.append(path);
+					if(data=icon.data.light){
+						article.classList.add`light`;
+						path=path.cloneNode(1);
+						path.setAttribute(`d`,data);
+						svg.append(path);
+					}
 					article.prepend(svg);
 					article.classList.toggle(`community`,icon.contributor.regular!=="google");
 					article.lastChild.nodeValue=key;
 					icon.articles={};
 					(category=categories.list.favourites)&&page.storage[`mdi-${key}`]&&category.section.append(icon.articles.favourite=article.cloneNode(1));
-					(category=categories.list.new)&&icon.added&&icon.added[page.font]===version&&category.section.append(icon.articles.new=article.cloneNode(1));
-					(category=categories.list.updated)&&icon.updated&&icon.updated[page.font]===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
-					(category=categories.list.renamed)&&icon.renamed&&icon.renamed[page.font]===version&&category.section.append(icon.articles.renamed=article.cloneNode(1));
+					(category=categories.list.new)&&icon.added&&icon.added.regular===version&&category.section.append(icon.articles.new=article.cloneNode(1));
+					(category=categories.list.updated)&&icon.updated&&icon.updated.regular===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
+					(category=categories.list.renamed)&&icon.renamed&&icon.renamed.regular===version&&category.section.append(icon.articles.renamed=article.cloneNode(1));
 					(category=categories.list.removed)&&icon.retired===version&&category.section.append(icon.articles.removed=article.cloneNode(1));
-					(category=categories.list.soon)&&icon.added&&icon.added[page.font]===`{next}`&&category.section.append(icon.articles.soon=article.cloneNode(1));
+					(category=categories.list.soon)&&icon.added&&icon.added.regular===`{next}`&&category.section.append(icon.articles.soon=article.cloneNode(1));
 					(category=categories.list.retired)&&icon.retired&&category.section.append(icon.articles.retired=article.cloneNode(1));
 					(!icon.retired||icon.retired==="{soon}")&&++this.total&&page.section.append(icon.articles.main=article);
 				}else delete this.list[key];
@@ -870,7 +892,7 @@
 						case this.link:
 							let url=`${page.address}?`;
 							if(page.light)
-								url+=`font=light&`;
+								url+=`set=light&`;
 							url+=`edit=${this.name}`;
 							for(let key in this.settings)
 								if(this.settings.hasOwnProperty(key))
@@ -1069,7 +1091,7 @@
 			open(name){
 				clearTimeout(this.timer);
 				this.name=this.inputs.name.value=name;
-				this.path.setAttribute(`d`,this.data=icons.list[name].data[page.font]);
+				this.path.setAttribute(`d`,this.data=icons.list[name].data[page.set]);
 				this.dialog.showModal();
 				this.dialog.classList.remove(`oz`,`pen`);
 				b.addEventListener(`keydown`,this.fn=event=>{
