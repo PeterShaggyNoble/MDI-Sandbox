@@ -85,8 +85,8 @@
 							break;
 						default:
 							switch(target.nodeName.toLowerCase()){
-								case`p`:
-									parent.nodeName.toLowerCase()===`header`&&page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.parentNode.id}`,`Link`);
+								case`svg`:
+									parent.nodeName.toLowerCase()===`header`&&!target.classList.contains`trigger`&&page.copy(`${page.address}?${page.light?`font=light&`:``}section=${parent.parentNode.id}`,`Link`);
 									break;
 								case`article`:
 									if(current!==target){
@@ -102,6 +102,7 @@
 				setTimeout(_=>{
 					let loader=$`load`;
 					loader.classList.add(`oz`,`pen`);
+					svgs.init();
 					setTimeout(_=>
 						loader.remove()
 					,375);
@@ -131,6 +132,23 @@
 				this.anchor.download=name;
 				this.anchor.click();
 				URL.revokeObjectURL(this.anchor.href);
+			}
+		},
+	/** SVGS **/
+		svgs={
+			path:N`path`,
+			init(){
+				this.nodes=d.querySelectorAll`svg[data-icons]`;
+				this.nodes.forEach(svg=>{
+					svg.setAttribute(`height`,24);
+					svg.setAttribute(`viewBox`,`0 0 24 24`);
+					svg.setAttribute(`width`,24);
+					svg.dataset.icons.split`,`.forEach(path=>{
+						svg.append(this.path=this.path.cloneNode(1));
+						this.path.setAttribute(`d`,icons.list[path].data.regular);
+					});
+					svg.removeAttribute`data-icons`;
+				});
 			}
 		},
 	/** MENU **/
@@ -376,16 +394,27 @@
 			menu:C`ul`,
 			input:C`input`,
 			item:C`li`,
+			svg:N`svg`,
+			title:N`title`,
 			init(){
 				this.menu.classList.add(`options`,`oh`,`pa`);
-				this.menu.tabIndex=-1;
+				this.svg.tabIndex=this.menu.tabIndex=-1;
+				this.svg.classList.add(`trigger`,`cp`,`pa`);
+				this.svg.dataset.icons=`dots-vertical`;
+				this.title.append(T`Options`);
+				this.svg.append(this.title);
+				this.section=categories.list.favourites.section;
+				this.section.firstElementChild.append(this.svg,this.menu);
 				this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
-				this.item.append(T``);
-				this.additem(`svg`,`\uf6b1`,`SVG for Angular`);
-				this.additem(`html`,`\uf421`,`HTML for Polymer`);
-				this.additem(`import`,`\uf220`,`Import Favourites`);
-				this.additem(`export`,`\uf21d`,`Export Favourites`);
-				this.additem(`clear`,`\uf1c0`,`Clear Favourites`);
+				this.item.append(this.svg=this.svg.cloneNode(0),T``);
+				this.svg.classList.remove(`trigger`,`cp`,`pa`);
+				this.svg.classList.add(`dib`,`pen`,`vam`);
+				this.svg.removeAttribute`tabindex`;
+				this.additem(`svg`,`angular`,`SVG for Angular`);
+				this.additem(`html`,`polymer`,`HTML for Polymer`);
+				this.additem(`import`,`import`,`Import Favourites`);
+				this.additem(`export`,`export`,`Export Favourites`);
+				this.additem(`clear`,`delete`,`Clear Favourites`);
 				this.input.accept=`.txt,text/plain`;
 				this.input.classList.add(`ln`,`pa`);
 				this.input.type=`file`;
@@ -396,8 +425,6 @@
 				this.reader.addEventListener(`load`,event=>
 					this.load(event)
 				,0);
-				this.section=categories.list.favourites.section;
-				this.section.firstElementChild.append(this.menu);
 				this.articles=this.section.getElementsByTagName`article`;
 				this.menu.addEventListener(`click`,event=>{
 					switch(event.target){
@@ -433,10 +460,10 @@
 					}
 				},0);
 			},
-			additem(key,codepoint,text){
+			additem(key,icons,text){
 				this.menu.append(this.actions[key]=this.item.cloneNode(1));
-				this.actions[key].dataset.icon=codepoint;
-				this.actions[key].firstChild.nodeValue=text;
+				this.actions[key].firstElementChild.dataset.icons=icons;
+				this.actions[key].lastChild.nodeValue=text;
 			},
 			build:_=>Object.keys(page.storage).map((key,data)=>
 				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(data=icons.list[key].data[page.font])?`<g id="${key}"><path d="${data}"/></g>`:``
@@ -452,7 +479,7 @@
 								page.storage.setItem(item,1);
 								this.section.append(this.icon.articles.favourite=(this.icon.articles.main||this.icon.articles.retired).cloneNode(1));
 								if(info.name===name){
-									info.actions.favourite.dataset.icon=`\uf4d1`;
+									info.actions.favourite.classList.add`remove`;
 									info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
 								}
 							}
@@ -475,7 +502,7 @@
 			},
 			toggle(name){
 				this.icon=icons.list[name];
-				info.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf4ce`:`\uf4d1`;
+				info.actions.favourite.classList.toggle(`remove`,!this.icon.articles.favourite);
 				info.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
 				let msg=`added to`;
 				if(this.icon.articles.favourite){
@@ -515,6 +542,7 @@
 			heading:$`name`,
 			init(){
 				page.size&&this.aside.classList.remove`oz`;
+				page.size&&this.heading.firstElementChild.remove();
 				this.heading.append(T``);
 				this.figure.append(this.svg=N`svg`);
 				this.svg.classList.add`pa`;
@@ -536,7 +564,7 @@
 					let target=event.target;
 					switch(target){
 						case this.aside:
-						case this.heading:
+						case this.heading.firstElementChild:
 							!page.size&&this.toggle();
 							break;
 						case this.actions.favourite:
@@ -581,8 +609,8 @@
 					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.data}"/></vector>`
 				};
 				if(page.storage){
-					this.actions.favourite.dataset.icon=this.icon.articles.favourite?`\uf4d1`:`\uf4ce`;
-					this.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Remove from`:`Add to`} Favourites`;
+					this.actions.favourite.classList.toggle(`remove`,!!this.icon.articles.favourite);
+					this.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
 				}
 				if(codepoint){
 					this.actions.icon.dataset.copy=String.fromCharCode(`0x${codepoint}`);
@@ -600,7 +628,7 @@
 					this.svg.classList.add`oz`;
 				}else this.toggle();
 				setTimeout(_=>{
-					this.heading.firstChild.nodeValue=this.name;
+					this.heading.lastChild.nodeValue=this.name;
 					this.path.setAttribute(`d`,this.data);
 					if(page.size){
 						this.heading.classList.remove`oz`;
@@ -630,20 +658,25 @@
 			heading:C`h2`,
 			error:C`p`,
 			item:C`li`,
-			link:C`p`,
+			link:N`svg`,
 			section:C`section`,
+			svg:N`svg`,
+			title:N`title`,
 			init(){
 				this.section.classList.add(`dg`,`pr`);
+				this.header.classList.add`ps`;
 				this.heading.classList.add(`oh`,`toe`,`wsnw`);
 				this.heading.append(T``);
-				this.link.classList.add(`cp`,`oh`,`pa`,`wsnw`);
-				this.link.dataset.icon=`\uf337`;
-				this.link.append(T`Copy Link`);
+				this.link.classList.add(`cp`,`pa`);
+				this.link.dataset.icons=`link`;
+				this.title.append(T`Copy Link`);
+				this.link.append(this.title);
 				this.error.classList.add`fwm`;
 				this.error.append(T`No icons available in this section.`);
 				this.item.classList.add(`cp`,`oh`);
 				this.item.tabIndex=-1;
-				this.item.append(T``);
+				this.svg.classList.add(`dib`,`pen`,`vam`);
+				this.item.append(this.svg,T``);
 				!page.storage&&delete this.list.favourites;
 				if(page.light){
 					delete this.list.new;
@@ -673,11 +706,11 @@
 					icon.categories&&icon.data[page.font]&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
 				).length;
 				if(category.section||category.count){
-					item.firstChild.nodeValue=name;
+					item.lastChild.nodeValue=name;
 					if(category.count)
-						item.firstChild.nodeValue+=` (${category.count})`;
+						item.lastChild.nodeValue+=` (${category.count})`;
 					item.dataset.category=key;
-					item.dataset.icon=String.fromCharCode(`0x${icons.list[category.icon].codepoint}`);
+					item.firstElementChild.dataset.icons=category.icon;
 					category.section?filter.clearall.before(category.item=item):menu.categories.append(category.item=item);
 				}else delete this.list[key];
 			}
@@ -686,12 +719,15 @@
 		contributors={
 			img:C`img`,
 			item:C`li`,
+			svg:N`svg`,
 			init(){
 				this.item.classList.add(`cp`,`oh`);
 				this.item.tabIndex=-1;
 				this.item.append(T``);
 				this.img.classList.add(`pen`,`vam`);
 				this.img.height=this.img.width=24;
+				this.svg.classList.add(`dib`,`pen`,`vam`);
+				this.svg.dataset.icons=`account`;
 				for(let key in this.list)
 					this.list.hasOwnProperty(key)&&this.add(key);
 			},
@@ -708,7 +744,7 @@
 					if(image){
 						img.src=`data:image/png;base64,${image}`;
 						item.prepend(img);
-					}else item.dataset.icon=`\uf004`;
+					}else item.prepend(this.svg.cloneNode(1));
 					item.lastChild.nodeValue=`${contributor.name} (${contributor.count})`;
 					menu.contributors.append(contributor.item=item);
 				}else delete this.list[key];
@@ -735,7 +771,6 @@
 				let 	icon=this.list[key],
 					article=this.article.cloneNode(1),
 					svg=this.svg.cloneNode(1),
-					codepoint=icon.codepoint,
 					keywords=new Set(key.split`-`),
 					data,category;
 				if(data=icon.data[page.font]){
@@ -748,12 +783,8 @@
 						keywords.add(word)
 					);
 					icon.keywords=[...keywords].sort();
-					if(codepoint&&(!icon.updated||icon.updated[page.font]!=="{next}"))
-						article.dataset.icon=String.fromCharCode(`0x${codepoint}`);
-					else{
-						svg.firstElementChild.setAttribute(`d`,data);
-						article.prepend(svg);
-					}
+					svg.firstElementChild.setAttribute(`d`,data);
+					article.prepend(svg);
 					article.classList.toggle(`community`,icon.contributor.regular!=="google");
 					article.lastChild.nodeValue=key;
 					icon.articles={};
