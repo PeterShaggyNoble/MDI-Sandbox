@@ -51,12 +51,12 @@
 				this.storage&&favourites.init();
 				icons.init();
 				menu.init();
+				svgs.init();
 				setTimeout(_=>
 					filter.init()
 				,600);
 				info.init();
 				editor.init();
-				svgs.init();
 				this.options=this.section.querySelector`ul`,
 				this.actions={
 					link:this.options.firstElementChild,
@@ -138,9 +138,9 @@
 			init(){
 				this.nodes=d.querySelectorAll`svg[data-icons]`;
 				this.nodes.forEach(svg=>{
-					svg.setAttribute(`height`,24);
+					svg.setAttribute(`height`,svg.getAttribute`height`||24);
 					svg.setAttribute(`viewBox`,`0 0 24 24`);
-					svg.setAttribute(`width`,24);
+					svg.setAttribute(`width`,svg.getAttribute`width`||24);
 					svg.dataset.icons.split`,`.forEach(path=>{
 						svg.append(this.path=this.path.cloneNode(1));
 						this.path.setAttribute(`d`,icons.list[path].data.regular);
@@ -564,12 +564,8 @@
 				page.size&&this.aside.classList.remove`oz`;
 				page.size&&this.heading.firstElementChild.remove();
 				this.heading.append(T``);
-				this.figure.append(this.svg=N`svg`);
-				this.svg.classList.add`pa`;
-				this.svg.setAttribute(`height`,112);
-				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.svg.setAttribute(`width`,112);
-				this.svg.append(this.path=N`path`);
+				this.svg=this.figure.firstElementChild;
+				this.path=this.svg.firstElementChild;
 				let icon=page.params.get`icon`;
 				if(icon){
 					if(icons.list[icon]){
@@ -716,14 +712,23 @@
 					section.append(header);
 					section.append(this.error.cloneNode(1));
 					page.section.before(category.section=section);
-				}else category.count=icons.array.filter(icon=>
-					icon.categories&&icon.data.regular&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
-				).length;
-				if(category.section||category.count){
+				}else category.counts={
+					light:icons.array.filter(icon=>
+						icon.categories&&icon.data.light&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
+					).length,
+					regular:icons.array.filter(icon=>
+						icon.categories&&icon.data.regular&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
+					).length
+				};
+				if(category.section||category.counts.light+category.counts.regular){
 					item.lastChild.nodeValue=name;
-					if(category.count)
-						item.lastChild.nodeValue+=` (${category.count})`;
 					item.dataset.category=key;
+					if(!category.section){
+						item.lastChild.before(this.svg=this.svg.cloneNode(1));
+						this.svg.dataset.icons=`check`;
+						item.dataset.light=category.counts.light;
+						item.dataset.regular=category.counts.regular;
+					}
 					item.firstElementChild.dataset.icons=category.icon;
 					category.section?filter.clearall.before(category.item=item):menu.categories.append(category.item=item);
 				}else delete this.list[key];
@@ -741,7 +746,6 @@
 				this.img.classList.add(`pen`,`vam`);
 				this.img.height=this.img.width=24;
 				this.svg.classList.add(`dib`,`pen`,`vam`);
-				this.svg.dataset.icons=`account`;
 				for(let key in this.list)
 					this.list.hasOwnProperty(key)&&this.add(key);
 			},
@@ -749,17 +753,31 @@
 				let 	contributor=this.list[key],
 					image=contributor.image,
 					img=this.img.cloneNode(1),
-					item=this.item.cloneNode(1);
-				contributor.count=icons.array.filter(icon=>
-					icon.contributor&&icon.data.regular&&(!icon.retired||icon.retired==="{soon}")&&icon.contributor.regular===key
-				).length;
-				if(contributor.count){
+					item=this.item.cloneNode(1),
+					svg;
+				contributor.counts={
+					light:icons.array.filter(icon=>
+						icon.contributor&&icon.data.light&&(!icon.retired||icon.retired==="{soon}")&&icon.contributor.light===key
+					).length,
+					regular:icons.array.filter(icon=>
+						icon.contributor&&icon.data.regular&&(!icon.retired||icon.retired==="{soon}")&&icon.contributor.regular===key
+					).length
+				};
+				if(contributor.counts.light+contributor.counts.regular){
 					item.dataset.contributor=key;
+					item.dataset.light=contributor.counts.light;
+					item.dataset.regular=contributor.counts.regular;
 					if(image){
 						img.src=`data:image/png;base64,${image}`;
 						item.prepend(img);
-					}else item.prepend(this.svg.cloneNode(1));
-					item.lastChild.nodeValue=`${contributor.name} (${contributor.count})`;
+						img.after(svg=this.svg.cloneNode(1));
+					}else{
+						item.prepend(svg=this.svg.cloneNode(1));
+						svg.dataset.icons=`account`;
+						svg.after(svg=this.svg.cloneNode(1));
+					}
+					item.lastChild.nodeValue=contributor.name;
+					svg.dataset.icons=`check`;
 					menu.contributors.append(contributor.item=item);
 				}else delete this.list[key];
 			}
@@ -785,10 +803,21 @@
 				let 	icon=this.list[key],
 					article=this.article.cloneNode(1),
 					svg=this.svg.cloneNode(0),
-					path=this.path.cloneNode(1),
 					keywords=new Set(key.split`-`),
-					data,category;
+					data,category,light,regular;
 				if(data=icon.data.regular){
+					article.classList.add`regular`;
+					svg.append(regular=this.path.cloneNode(1));
+					regular.classList.add`regular`;
+					regular.setAttribute(`d`,data);
+				}
+				if(data=icon.data.light){
+					article.classList.add`light`;
+					svg.append(light=this.path.cloneNode(1));
+					light.classList.add`light`;
+					light.setAttribute(`d`,data);
+				}
+				if(regular||light){
 					icon.aliases&&icon.aliases.forEach(alias=>
 						alias.split`-`.forEach(word=>
 							keywords.add(word)
@@ -798,14 +827,6 @@
 						keywords.add(word)
 					);
 					icon.keywords=[...keywords].sort();
-					path.setAttribute(`d`,data);
-					svg.append(path);
-					if(data=icon.data.light){
-						article.classList.add`light`;
-						path=path.cloneNode(1);
-						path.setAttribute(`d`,data);
-						svg.append(path);
-					}
 					article.prepend(svg);
 					article.classList.toggle(`community`,icon.contributor.regular!=="google");
 					article.lastChild.nodeValue=key;
@@ -877,12 +898,9 @@
 				this.cancel=this.save.previousElementSibling;
 				this.figure=this.dialog.querySelector`figure`;
 				this.background.classList.add(`pa`,`pen`);
-				this.figure.append(this.background,this.horizontal=this.background.cloneNode(1),this.vertical=this.background.cloneNode(1),this.svg=N`svg`);
-				this.svg.classList.add`pa`;
-				this.svg.setAttribute(`height`,24);
-				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.svg.setAttribute(`width`,24);
-				this.svg.append(this.path=N`path`);
+				this.svg=this.figure.firstElementChild;
+				this.path=this.svg.firstElementChild;
+				this.figure.prepend(this.background,this.horizontal=this.background.cloneNode(1),this.vertical=this.background.cloneNode(1));
 				this.dialog.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){

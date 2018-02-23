@@ -178,8 +178,8 @@ body.highlight #highlight>svg>path+path{
 }
 /*  lists  */
 body.mdil #highlight,
-body.mdil #menu>ol,
-body.mdil #menu>h3{
+body.mdi #sections~ol>li[data-regular="0"],
+body.mdil #sections~ol>li[data-light="0"]{
 	display:none;
 }
 #menu>h3{
@@ -223,14 +223,14 @@ body.mdil #menu>h3{
 #menu>p:focus,#menu>p:hover,#menu>ol>li:focus,#menu>ol>li:hover{
 	color:var(--colour);
 }
-#menu>p>svg,#menu>ol>li>svg{
+#menu>p>svg,#menu>ol>li>svg:first-of-type{
 	fill:#757575;
 	height:24px;
 	margin:0 36px 0 0;
 	transition:fill .225s var(--timing-function);
 	width:24px;
 }
-#menu>p:focus>svg,#menu>ol>li[data-icon]:focus>svg{
+#menu>p:focus>svg,#menu>ol>li:focus>svg:first-of-type{
 	fill:var(--colour);
 	transition-duration:inherit;
 }
@@ -255,25 +255,25 @@ body.mdil #menu>h3{
 	opacity:1;
 	transform:rotatey(0deg);
 }
+body.mdi #sections~ol>li::after{
+	content:" (" attr(data-regular) ")";
+}
+body.mdil #sections~ol>li::after{
+	content:" (" attr(data-light) ")";
+}
 #contributors>li>img{
 	background:var(--colour);
 	border-radius:50%;
 	margin:0 36px 0 0;
 }
-#categories>li::after,#contributors>li::after{
-	color:var(--colour);
-	content:"\f12c";
-	display:inine-block;
+#categories>li>svg:last-of-type,ol#contributors>li>svg:last-of-type{
+	fill:var(--colour);
 	float:right;
-	font-family:mdi;
-	font-size:24px;
-	margin:0 0 0 8px;
+	margin:12px 0 12px 8px;
 	opacity:0;
 	transition:opacity .225s var(--timing-function);
-	vertical-align:middle;
-	width:24px;
 }
-#categories>li.active::after,#contributors>li.active::after{
+#categories>li.active>svg:last-of-type,#contributors>li.active>svg:last-of-type{
 	opacity:1;
 	transition-duration:inherit;
 }
@@ -409,14 +409,15 @@ body.mdi.highlight>#content>section>article.active{
 	margin:0 auto 16px;
 	width:48px;
 }
+body.mdi>#content>section>article:not(.regular),
 body.mdil>#content>section>article:not(.light){
 	display:none;
 }
 #content>section>article>svg>path{
 	transition:opacity .225s var(--timing-function);
 }
-body.mdi>#content>section>article>svg>path+path,
-body.mdil>#content>section>article>svg>path:first-child{
+body.mdi>#content>section>article>svg>path:not(.regular),
+body.mdil>#content>section>article>svg>path:not(.light){
 	opacity:0;
 }
 #content>section>p:last-of-type{
