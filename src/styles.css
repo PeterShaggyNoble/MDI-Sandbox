@@ -513,7 +513,7 @@ body.mdil>#content>section>article>svg>path:not(.light){
 	transition-property:background,color,height,opacity;
 	transition-timing-function:var(--timing-function);
 }
-#actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info:not(.retired)>#actions>li:nth-last-child(2){
+#actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info>#actions>li:nth-last-child(2){
 	border-bottom:1px solid #e0e0e0;
 }
 #info>#actions>li:hover{

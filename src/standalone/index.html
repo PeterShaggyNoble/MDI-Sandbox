@@ -497,7 +497,7 @@
 		transition-property:background,color,height,opacity;
 		transition-timing-function:var(--timing-function);
 	}
-	#actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info:not(.retired)>#actions>li:nth-last-child(2){
+	#actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info>#actions>li:nth-last-child(2){
 		border-bottom:1px solid #e0e0e0;
 	}
 	#info>#actions>li:hover{
@@ -1109,7 +1109,7 @@
 		<li class="cp oh" data-confirm="JavaScript" data-copy="" tabindex="-1"><svg class="dib pen vam" data-icons="code-parentheses"></svg>Copy JavaScript Unicode Sequence
 		<li class="cp oh" data-confirm="HTML" data-copy="" tabindex="-1"><svg class="dib pen vam" data-icons="code-tags"></svg>Copy HTML Tag
 		<li class="cp oh" data-confirm="Link" tabindex="-1"><svg class="dib pen vam" data-icons="link"></svg>Copy Direct Link
-		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="dots-horizontal"></svg>More Options
+		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="open-in-new"></svg>View on materialdesignicons.com
 	</ul>
 </aside>
 <footer>
@@ -1457,8 +1457,8 @@
 					this.svg.removeAttribute`tabindex`;
 					this.additem(`svg`,`angular`,`SVG for Angular`);
 					this.additem(`html`,`polymer`,`HTML for Polymer`);
-					this.additem(`import`,`import`,`Import Favourites`);
-					this.additem(`export`,`export`,`Export Favourites`);
+					this.additem(`import`,`file-import`,`Import Favourites`);
+					this.additem(`export`,`file-export`,`Export Favourites`);
 					this.additem(`clear`,`delete`,`Clear Favourites`);
 					this.input.accept=`.txt,text/plain`;
 					this.input.classList.add(`ln`,`pa`);
@@ -1544,7 +1544,7 @@
 				toggle(name){
 					this.icon=icons.list[name];
 					info.actions.favourite.classList.toggle(`remove`,!this.icon.articles.favourite);
-					info.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
+					info.actions.favourite.lastChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
 					let msg=`added to`;
 					if(this.icon.articles.favourite){
 						page.storage.removeItem(`mdi-${name}`);
@@ -1646,7 +1646,7 @@
 					};
 					if(page.storage){
 						this.actions.favourite.classList.toggle(`remove`,!!this.icon.articles.favourite);
-						this.actions.favourite.firstChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
+						this.actions.favourite.lastChild.nodeValue=`${this.icon.articles.favourite?`Remove from`:`Add to`} Favourites`;
 					}
 					if(codepoint){
 						this.actions.icon.dataset.copy=String.fromCharCode(`0x${codepoint}`);
