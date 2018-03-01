@@ -638,20 +638,6 @@ dialog>figure.light{
 	background-color:#616161;
 	background-image:linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121),linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121);
 }
-dialog>figure>svg{
-	left:50%;
-	top:50%;
-	transform:translate(-50%,-50%);
-	transition-duration:.195s;
-	transition-property:height,width;
-	transition-timing-function:var(--timing-function);
-	z-index:2;
-}
-dialog>figure>svg>path{
-	transition-duration:.195s;
-	transition-property:fill,fill-opacity;
-	transition-timing-function:var(--timing-function);
-}
 dialog>figure>span{
 	border:0 solid rgba(76,175,80,.54);
 	transition-duration:.195s;
@@ -691,6 +677,24 @@ dialog>figure>span:last-of-type{
 	width:24px;
 	max-width:256px;
 }
+dialog>figure>svg{
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	transition-duration:.195s;
+	transition-property:height,width;
+	transition-timing-function:var(--timing-function);
+	z-index:2;
+}
+dialog>figure>svg>path{
+	transition-duration:.195s;
+	transition-property:fill,fill-opacity;
+	transition-timing-function:var(--timing-function);
+}
+/*dialog>figure>canvas{
+	height:100%;
+	width:100%;
+}*/
 dialog>section{
 	overscroll-behavior:contain;
 	padding:8px;
