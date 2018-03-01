@@ -59,6 +59,8 @@
 		background:#fff;
 		border-radius:2px;
 		box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+		display:flex;
+		flex-wrap:wrap;
 		padding:0 16px 16px;
 		width:357px;
 	}
@@ -81,6 +83,7 @@
 		position:sticky;
 		margin:0 -16px 8px;
 		top:0;
+		width:calc(100% + 32px);
 		z-index:2;
 	}
 	label{
@@ -196,6 +199,19 @@
 	path{
 		transition:fill .195s cubic-bezier(.4,0,.2,1),fill-opacity .195s cubic-bezier(.4,0,.2,1);
 	}
+	button{
+		background:#512da8;
+		border-radius:2px;
+		box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+		color:#fff;
+		cursor:pointer;
+		font-weight:500;
+		line-height:36px;
+		margin:16px 0 0 auto;
+		padding:0 16px;
+		text-align:center;
+		text-transform:uppercase;
+	}
 </style>
 <section>
 	<h1>MDI Preview Generator</h1>
@@ -271,6 +287,7 @@
 		</svg>
 		<canvas height="294" width="325"></canvas>
 	</figure>
+	<button>Save</button>
 </section>
 <script>{
 	const 	inputs={
@@ -296,6 +313,8 @@
 		context=canvas.getContext`2d`,
 		width=canvas.width,
 		height=canvas.height,
+		button=document.querySelector`button`,
+		a=document.createElement`a`,
 		background=new Image,
 		xml=new XMLSerializer,
 		image=new Image,
@@ -380,6 +399,15 @@
 		}
 		context.fillText(inputs.name.value.trim().toLowerCase().replace(/ |_/g,`-`),11,282);
 		context.drawImage(image,0,0);
+		URL.revokeObjectURL(image.src);
+	},0);
+	button.addEventListener(`click`,_=>{
+		canvas.toBlob(blob=>{
+			a.href=URL.createObjectURL(blob);
+			a.download=text.name.firstChild.nodeValue+`.png`;
+			a.click();
+			URL.revokeObjectURL(a.href);
+		});
 		URL.revokeObjectURL(image.src);
 	},0);
 	document.addEventListener(`input`,generate,1);
