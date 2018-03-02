@@ -9864,7 +9864,7 @@
 		}
 	},
 	"flash":{
-		"aliases":["flash-on","lightning-bolt"],
+		"aliases":["electricity","flash-on","lightning-bolt"],
 		"categories":["power","weather"],
 		"codepoint":"f241",
 		"contributor":{

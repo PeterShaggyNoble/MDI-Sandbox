@@ -308,13 +308,14 @@
 							if(value){
 								size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
 								path.setAttribute(`transform`,size>24?size>48?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.5) translate(22,20)`:`translate(11,10)`);
+								inputs.name.value=``;
 								for(key in icons)
 									if(icons.hasOwnProperty(key))
 										if(icons[key].data.regular===value||icons[key].data.light===value){
 											inputs.name.value=key;
-											inputs.name.dispatchEvent(new Event(`input`));
 											break;
 										}
+								inputs.name.dispatchEvent(new Event(`input`));
 							}
 							break;
 						case inputs.overlay:
