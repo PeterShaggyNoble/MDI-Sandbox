@@ -621,6 +621,7 @@ dialog>header{
 	border-radius:2px 2px 0 0;
 	padding:0 16px;
 	width:100%;
+	z-index:3;
 }
 dialog>header>h2{
 	color:#fff;
@@ -633,6 +634,7 @@ dialog>figure{
 	margin:0 0 16px;
 	transition:background .195s var(--timing-function);
 	width:320px;
+	z-index:2;
 }
 dialog>figure.light{
 	background-color:#616161;
@@ -691,10 +693,11 @@ dialog>figure>svg>path{
 	transition-property:fill,fill-opacity;
 	transition-timing-function:var(--timing-function);
 }
-/*dialog>figure>canvas{
+dialog>figure>canvas{
 	height:100%;
 	width:100%;
-}*/
+	z-index:3;
+}
 dialog>section{
 	overscroll-behavior:contain;
 	padding:8px;

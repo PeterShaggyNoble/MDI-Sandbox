@@ -852,13 +852,13 @@
 				alpha:$`png-alpha`,
 				radius:$`png-radius`,
 				format:$`png-format`,
-				name:$`png-name`,
 				size:$`png-size`
 			},
+			loaded:0,
 			settings:{},
 			xml:new XMLSerializer(),
 			background:C`span`,
-			canvas:C`canvas`,
+			canvas:Q`dialog>figure>canvas`,
 			dialog:Q`dialog`,
 			init(){
 				this.menu=this.dialog.querySelector`ul`;
@@ -931,7 +931,6 @@
 								page.storage.hasOwnProperty(key)&&key.startsWith`png-`&&page.storage.removeItem(key);
 							this.menu.blur();
 							this.load();
-							this.inputs.name.value=this.name;
 							page.alert`Settings cleared.`;
 							break;
 						case this.cancel:
@@ -954,11 +953,13 @@
 					}
 				},0);
 				this.dialog.addEventListener(`input`,event=>{
+					clearTimeout(this.timer);
 					let 	target=event.target,
 						value=target.value;
 					if(target.validity.valid){
 						switch(target){
 							case this.inputs.size:
+								this.loaded=1;
 								this.svg.setAttribute(`height`,this.settings.size=parseInt(value));
 								this.svg.setAttribute(`width`,this.settings.size);
 								if(this.settings.padding>(this.inputs.padding.max=(256-this.settings.size)/2))
@@ -990,7 +991,9 @@
 								this.background.style.borderRadius=`${this.settings.radius=parseInt(value)}px`;
 								break;
 						}
-						page.storage&&target!==this.inputs.name&&page.storage.setItem(target.id,value);
+						if(this.loaded)
+							this.timer=setTimeout(_=>this.draw(),200);
+						page.storage&&page.storage.setItem(target.id,value);
 					}
 				},1);
 				this.load();
@@ -1004,28 +1007,9 @@
 			},
 			convert:hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 			downloadpng(){
-				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
-				this.canvas.height=this.canvas.width=this.dimensions;
-				if(this.settings.alpha){
-					this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha/100})`;
-					this.context.beginPath();
-					this.context.moveTo(this.settings.radius,0);
-					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
-					this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.settings.radius);
-					this.context.arcTo(0,this.dimensions,0,0,this.settings.radius);
-					this.context.arcTo(0,0,this.dimensions,0,this.settings.radius);
-					this.context.closePath();
-					this.context.fill();
-				}
-				let image=new Image();
-				image.src=URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
-				image.addEventListener(`load`,_=>{
-					this.context.drawImage(image,this.settings.padding,this.settings.padding);
-					URL.revokeObjectURL(image.src);
-					this.canvas.toBlob(blob=>
-						page.download(URL.createObjectURL(blob),`${this.inputs.name.value}.png`)
-					);
-				},0);
+				this.canvas.toBlob(blob=>
+					page.download(URL.createObjectURL(blob),`${this.name}.png`)
+				);
 			},
 			downloadxml(){
 				let 	padding=this.settings.padding/this.settings.size*24,
@@ -1096,19 +1080,40 @@
 						xml+=`android:pathData="${this.data}"/></vector>`;
 						break;
 				}
-				page.download(xml,`${this.inputs.name.value}.${this.inputs.format.value}`);
+				page.download(xml,`${this.name}.${this.inputs.format.value}`);
+			},
+			draw(){
+				this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+				this.canvas.height=this.canvas.width=this.dimensions;
+				if(this.settings.alpha){
+					this.context.fillStyle=`rgba(${this.convert(this.settings.colour)},${this.settings.alpha/100})`;
+					this.context.beginPath();
+					this.context.moveTo(this.settings.radius,0);
+					this.context.arcTo(this.dimensions,0,this.dimensions,this.dimensions,this.settings.radius);
+					this.context.arcTo(this.dimensions,this.dimensions,0,this.dimensions,this.settings.radius);
+					this.context.arcTo(0,this.dimensions,0,0,this.settings.radius);
+					this.context.arcTo(0,0,this.dimensions,0,this.settings.radius);
+					this.context.closePath();
+					this.context.fill();
+				}
+				let image=new Image;
+				image.src=URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
+				image.addEventListener(`load`,_=>{
+					this.context.drawImage(image,this.settings.padding,this.settings.padding);
+					URL.revokeObjectURL(image.src);
+				},0);
 			},
 			load(){
 				let event=new Event(`input`);
 				for(let key in this.inputs)
-					if(this.inputs.hasOwnProperty(key)&&key!=="name"){
+					if(this.inputs.hasOwnProperty(key)){
 						this.inputs[key].value=page.params.get(key)||page.storage&&page.storage[`png-${key}`]||this.inputs[key].getAttribute`value`||this.inputs[key].firstElementChild.getAttribute`value`;
 						this.inputs[key].dispatchEvent(event);
 					}
 			},
 			open(name){
 				clearTimeout(this.timer);
-				this.name=this.inputs.name.value=name;
+				this.name=name;
 				this.path.setAttribute(`d`,this.data=icons.list[name].data[page.set]);
 				this.dialog.showModal();
 				this.dialog.classList.remove(`oz`,`pen`);
@@ -1119,6 +1124,7 @@
 						event.stopPropagation();
 					}
 				},0);
+				this.draw();
 			},
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000
 		};
