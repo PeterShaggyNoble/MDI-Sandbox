@@ -1,7 +1,7 @@
 /** VARIABLES **/
 :root{
-	--colour:#512da8;
-	--highlight:#ede7f6;
+	--colour:#e64a19;
+	--highlight:#fbe9e7;
 	--timing-function:cubic-bezier(.4,0,.2,1);
 }/** VIEWPORT **/
 @viewport{initial-scale:1;maximum-scale:1;minimum-scale:1;user-scalable:0;width:device-width;}
@@ -706,11 +706,7 @@ dialog>section{
 dialog>section>label{
 	line-height:32px;
 	margin:0 0 8px;
-	width:calc(100% - 96px);
-}
-dialog>section>label:last-of-type{
-	margin:0;
-	width:88px;
+	width:calc(100% - 120px);
 }
 dialog>section>input,dialog>section>select{
 	border-bottom:1px solid #bdbdbd;
@@ -719,11 +715,7 @@ dialog>section>input,dialog>section>select{
 	margin:0 0 16px 0;
 	padding:0 8px;
 	transition:border .195s var(--timing-function);
-	width:88px;
-}
-dialog>section>input:last-of-type{
-	margin:4px 0 0;
-	width:calc(100% - 96px);
+	width:112px;
 }
 dialog>section>input:invalid{
 	border-color:#f44336;
