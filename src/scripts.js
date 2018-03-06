@@ -854,7 +854,6 @@
 				format:$`png-format`,
 				size:$`png-size`
 			},
-			loaded:0,
 			settings:{},
 			event:new Event(`input`),
 			image:new Image,
@@ -960,13 +959,11 @@
 					}
 				},0);
 				this.dialog.addEventListener(`input`,event=>{
-					clearTimeout(this.timer);
 					let 	target=event.target,
 						value=target.value;
 					if(target.validity.valid){
 						switch(target){
 							case this.inputs.size:
-								this.loaded=1;
 								this.svg.setAttribute(`height`,this.settings.size=parseInt(value));
 								this.svg.setAttribute(`width`,this.settings.size);
 								if(this.settings.padding>(this.inputs.padding.max=(256-this.settings.size)/2))
@@ -998,8 +995,8 @@
 								this.background.style.borderRadius=`${this.settings.radius=parseInt(value)}px`;
 								break;
 						}
-						if(this.loaded)
-							this.timer=setTimeout(_=>this.draw(),200);
+						clearTimeout(this.timer);
+						this.timer=setTimeout(_=>this.draw(),200);
 						page.storage&&page.storage.setItem(target.id,value);
 					}
 				},1);

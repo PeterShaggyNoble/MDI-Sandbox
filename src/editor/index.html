@@ -300,8 +300,10 @@
 		canvas=document.querySelector`canvas`,
 		context=canvas.getContext`2d`,
 		a=document.createElement`a`,
-		xml=new XMLSerializer,
+		storage=localStorage,
+		event=new Event(`input`),
 		image=new Image,
+		xml=new XMLSerializer,
 		convert=hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 		test=([r,g,b])=>(r*299+g*587+b*114)/1000,
 		draw=_=>{
@@ -337,7 +339,6 @@
 		context.drawImage(image,values.padding,values.padding);
 		URL.revokeObjectURL(image.src);
 	},0);
-	draw();
 	document.body.addEventListener(`input`,event=>{
 		let 	target=event.target,
 			value=target.value;
@@ -400,8 +401,14 @@
 				clearTimeout(timer);
 				setTimeout(_=>draw(),200);
 			}
+			storage.setItem(`aie-`+target.id,value);
 		}
 	},1);
+	for(let key in inputs)
+		if(inputs.hasOwnProperty(key)&&storage[`aie-`+key]){
+			inputs[key].value=storage[`aie-`+key];
+			inputs[key].dispatchEvent(event);
+		}
 	button.addEventListener(`click`,_=>{
 		canvas.toBlob(blob=>{
 			a.href=URL.createObjectURL(blob);
