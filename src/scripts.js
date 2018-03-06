@@ -856,6 +856,8 @@
 			},
 			loaded:0,
 			settings:{},
+			event:new Event(`input`),
+			image:new Image,
 			xml:new XMLSerializer(),
 			background:C`span`,
 			canvas:Q`dialog>figure>canvas`,
@@ -901,8 +903,13 @@
 				this.svg=this.figure.firstElementChild;
 				this.path=this.svg.firstElementChild;
 				this.figure.prepend(this.background,this.horizontal=this.background.cloneNode(1),this.vertical=this.background.cloneNode(1));
+				this.image.addEventListener(`load`,_=>{
+					this.context.drawImage(this.image,this.settings.padding,this.settings.padding);
+					URL.revokeObjectURL(this.image.src);
+				},0);
 				this.dialog.addEventListener(`click`,event=>{
-					let target=event.target;
+					let 	target=event.target,
+						key;
 					switch(target){
 						case this.dialog:
 							this.close(0);
@@ -912,7 +919,7 @@
 							if(page.light)
 								url+=`set=light&`;
 							url+=`edit=${this.name}`;
-							for(let key in this.settings)
+							for(key in this.settings)
 								if(this.settings.hasOwnProperty(key))
 									url+=`&${key}=${this.settings[key]}`;
 							page.copy(url,`Link`);
@@ -927,7 +934,7 @@
 							page.download(`data:text/plain;base64,${btoa(btoa(Object.entries(page.storage).filter(entry=>entry[0].startsWith`png-`).map(item=>item.join`:`).join`,`))}`,`mdi-settings.txt`);
 							break;
 						case this.clear:
-							for(let key in page.storage)
+							for(key in page.storage)
 								page.storage.hasOwnProperty(key)&&key.startsWith`png-`&&page.storage.removeItem(key);
 							this.menu.blur();
 							this.load();
@@ -1096,19 +1103,13 @@
 					this.context.closePath();
 					this.context.fill();
 				}
-				let image=new Image;
-				image.src=URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
-				image.addEventListener(`load`,_=>{
-					this.context.drawImage(image,this.settings.padding,this.settings.padding);
-					URL.revokeObjectURL(image.src);
-				},0);
+				this.image.src=URL.createObjectURL(new Blob([this.xml.serializeToString(this.svg)],{type:`image/svg+xml;charset=utf-8`}));
 			},
 			load(){
-				let event=new Event(`input`);
 				for(let key in this.inputs)
 					if(this.inputs.hasOwnProperty(key)){
 						this.inputs[key].value=page.params.get(key)||page.storage&&page.storage[`png-${key}`]||this.inputs[key].getAttribute`value`||this.inputs[key].firstElementChild.getAttribute`value`;
-						this.inputs[key].dispatchEvent(event);
+						this.inputs[key].dispatchEvent(this.event);
 					}
 			},
 			open(name){

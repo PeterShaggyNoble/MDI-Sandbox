@@ -155,6 +155,7 @@
 	}
 	svg{
 		left:50%;
+		pointer-events:none;
 		position:absolute;
 		top:50%;
 		transform:translate(-50%,-50%);
@@ -167,6 +168,13 @@
 		transition-duration:.195s;
 		transition-property:d,fill,fill-opacity,opacity;
 		transition-timing-function:cubic-bezier(.4,0,.2,1);
+	}
+	canvas{
+		height:100%;
+		opacity:0;
+		position:relative;
+		width:100%;
+		z-index:3;
 	}
 	label{
 		color:#757575;
@@ -235,7 +243,9 @@
 </style>
 <section>
 	<h1>MDI Icon Editor</h1>
-	<figure></figure>
+	<figure>
+		<canvas></canvas>
+	</figure>
 	<label for="data">Data</label><textarea id="data" required spellcheck="false" rows="2">M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z</textarea>
 	<label for="size">Icon Size: </label><input id="size" max="320" min="12" required type="number" value="24">
 	<label for="fill">Icon Colour: </label><input id="fill" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="212121">
@@ -287,15 +297,31 @@
 		svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 		path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
 		helper=path.cloneNode(1),
-		canvas=document.createElement`canvas`,
+		canvas=document.querySelector`canvas`,
 		context=canvas.getContext`2d`,
 		a=document.createElement`a`,
 		xml=new XMLSerializer,
 		image=new Image,
 		convert=hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
-		test=([r,g,b])=>(r*299+g*587+b*114)/1000;
+		test=([r,g,b])=>(r*299+g*587+b*114)/1000,
+		draw=_=>{
+			context.clearRect(0,0,canvas.width,canvas.height);
+			canvas.height=canvas.width=dimensions;
+			if(values.alpha){
+				context.fillStyle=`rgba(${convert(values.background)},${values.alpha/100})`;
+				context.beginPath();
+				context.moveTo(values.radius,0);
+				context.arcTo(dimensions,0,dimensions,dimensions,values.radius);
+				context.arcTo(dimensions,dimensions,0,dimensions,values.radius);
+				context.arcTo(0,dimensions,0,0,values.radius);
+				context.arcTo(0,0,dimensions,0,values.radius);
+				context.closePath();
+				context.fill();
+			}
+			image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}));
+		};
 	let 	dimensions=24,
-		luminance,size;
+		luminance,size,timer;
 	data.style.height=data.scrollHeight+1+`px`;
 	svg.setAttribute(`height`,24);
 	svg.setAttribute(`viewBox`,`0 0 24 24`);
@@ -306,17 +332,12 @@
 	helper.setAttribute(`fill`,`#${values.colour=inputs.colour.value}`);
 	helper.setAttribute(`fill-opacity`,0);
 	svg.append(path,helper);
-	figure.append(background,horizontal,vertical,svg);
+	figure.prepend(background,horizontal,vertical,svg);
 	image.addEventListener(`load`,_=>{
 		context.drawImage(image,values.padding,values.padding);
-		canvas.toBlob(blob=>{
-			a.href=URL.createObjectURL(blob);
-			a.download=values.name+`.png`;
-			a.click();
-			URL.revokeObjectURL(a.href);
-		});
 		URL.revokeObjectURL(image.src);
 	},0);
+	draw();
 	document.body.addEventListener(`input`,event=>{
 		let 	target=event.target,
 			value=target.value;
@@ -375,23 +396,19 @@
 					values.name=value;
 					break;
 			}
+			if(target!==inputs.name){
+				clearTimeout(timer);
+				setTimeout(_=>draw(),200);
+			}
 		}
 	},1);
 	button.addEventListener(`click`,_=>{
-		context.clearRect(0,0,canvas.width,canvas.height);
-		canvas.height=canvas.width=dimensions;
-		if(values.alpha){
-			context.fillStyle=`rgba(${convert(values.background)},${values.alpha/100})`;
-			context.beginPath();
-			context.moveTo(values.radius,0);
-			context.arcTo(dimensions,0,dimensions,dimensions,values.radius);
-			context.arcTo(dimensions,dimensions,0,dimensions,values.radius);
-			context.arcTo(0,dimensions,0,0,values.radius);
-			context.arcTo(0,0,dimensions,0,values.radius);
-			context.closePath();
-			context.fill();
-		}
-		image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}));
+		canvas.toBlob(blob=>{
+			a.href=URL.createObjectURL(blob);
+			a.download=values.name+`.png`;
+			a.click();
+			URL.revokeObjectURL(a.href);
+		});
 	},0);
 	(async _=>{
 		await new Promise(resolve=>{
