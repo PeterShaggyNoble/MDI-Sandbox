@@ -19,6 +19,7 @@
 	/** PAGE **/
 		page={
 			offline:navigator.onLine===false,
+			packages:{},
 			url:new URL(location),
 			size:(b.offsetWidth>1199)+(b.offsetWidth>1499),
 			anchor:C`a`,
@@ -62,7 +63,8 @@
 					link:this.options.firstElementChild,
 					html:this.options.lastElementChild
 				};
-				this.actions.svg=this.actions.link.nextElementSibling;
+				this.actions.json=this.actions.link.nextElementSibling;
+				this.actions.svg=this.actions.html.previousElementSibling;
 				this.header.addEventListener(`click`,event=>{
 					if(event.target.nodeName.toLowerCase()===`a`&&this.offline){
 						page.alert`Could not connect.`;
@@ -77,10 +79,13 @@
 						case this.actions.link:
 							page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`set=light&`:``}section=icons`,`Link`);
 							break;
+						case this.actions.json:
+							page.download(`data:text/json;utf8,{${filter.filtered?this.build`jsono`:this.packages.json||(this.packages.jsono=this.build`jsono`)}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
+							break;
 						case this.actions.svg:
 						case this.actions.html:
 							let svg=target===this.actions.svg;
-							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${filter.filtered?this.build():this.package||(this.package=this.build())}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
+							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${filter.filtered?this.build`xml`:this.packages.xml||(this.packages.xml=this.build`xml`)}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
 							break;
 						default:
 							switch(target.nodeName.toLowerCase()){
@@ -114,9 +119,11 @@
 					this.message.classList.add`oz`
 				,5e3);
 			},
-			build:_=>Object.entries(icons.list).map(([key,icon],data)=>
-				icon.articles.main&&!icon.articles.main.classList.contains`dn`&&(data=icon.data[page.set])?`<g id="${key}"><path d="${data}"/></g>`:``
-			).join``,
+			build:type=>Object.entries(icons.list).filter(([key,icon])=>
+				icon.articles.main&&!icon.articles.main.classList.contains`dn`&&icon.data[page.set]
+			).map(([key,icon])=>
+				type===`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}":"${icon.data[page.set]}"`
+			).join(type===`xml`?``:`,`),
 			copy(string,message){
 				editor.dialog.append(this.textarea);
 				this.textarea.value=string;
@@ -434,6 +441,7 @@
 				this.svg.classList.remove(`trigger`,`cp`,`pa`);
 				this.svg.classList.add(`dib`,`pen`,`vam`);
 				this.svg.removeAttribute`tabindex`;
+				this.additem(`json`,`json`,`JSON Object`);
 				this.additem(`svg`,`angular`,`SVG for Angular`);
 				this.additem(`html`,`polymer`,`HTML for Polymer`);
 				this.additem(`import`,`file-import`,`Import Favourites`);
@@ -452,10 +460,13 @@
 				this.articles=this.section.getElementsByTagName`article`;
 				this.menu.addEventListener(`click`,event=>{
 					switch(event.target){
+						case this.actions.json:
+							page.download(`data:text/json;utf8,{${this.build`jsono`}}`,`mdi-favourites.json`);
+							break;
 						case this.actions.svg:
 						case this.actions.html:
 							let svg=target===this.actions.svg;
-							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${this.build()}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`mdi-favourites.${svg?`svg`:`html`}`);
+							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${this.build`xml`}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`mdi-favourites.${svg?`svg`:`html`}`);
 							break;
 						case this.actions.import:
 							b.append(this.input);
@@ -485,9 +496,11 @@
 				this.actions[key].firstElementChild.dataset.icons=icons;
 				this.actions[key].lastChild.nodeValue=text;
 			},
-			build:_=>Object.keys(page.storage).map((key,data)=>
-				key.startsWith`mdi-`&&icons.list[key=key.substr(4)]&&(data=icons.list[key].data[page.set])?`<g id="${key}"><path d="${data}"/></g>`:``
-			).join``,
+			build:type=>Object.entries(icons.list).filter(([key,icon])=>
+				icon.articles.favourite&&icon.data[page.set]
+			).map(([key,icon])=>
+				type===`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}":"${icon.data[page.set]}"`
+			).join(type===`xml`?``:`,`),
 			load(event){
 				let msg=`complete`;
 				try{
