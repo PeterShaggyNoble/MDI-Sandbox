@@ -261,7 +261,7 @@
 	<label for="background">Background Colour: </label><input class="dib tar ttl vam" id="background" pattern="^([A-Fa-f0-9]{3}){1,2}$" required type="text" value="fff">
 	<label for="alpha">Background Opacity: </label><input id="alpha" max="100" min="0" required type="number" value="0">
 	<label for="radius">Round Corners: </label><input id="radius" max="12" min="0" required type="number" value="0">
-	<label for="name">File Name: </label><input id="name" required type="text" value="vector-square">
+	<label for="name">File Name: </label><input id="name" type="text" value="vector-square">
 	<button>Save</button>
 </section>
 <script>{
@@ -291,19 +291,19 @@
 			name:"vector-square"
 		},
 		button=document.querySelector`button`,
-		background=document.createElement`span`,
-		horizontal=background.cloneNode(0),
-		vertical=background.cloneNode(0),
-		svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
-		path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
-		helper=path.cloneNode(1),
 		canvas=document.querySelector`canvas`,
 		context=canvas.getContext`2d`,
 		a=document.createElement`a`,
-		storage=localStorage,
+		background=document.createElement`span`,
+		horizontal=background.cloneNode(0),
+		path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
+		helper=path.cloneNode(1),
+		vertical=background.cloneNode(0),
+		svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 		event=new Event(`input`),
 		image=new Image,
 		xml=new XMLSerializer,
+		storage=localStorage,
 		convert=hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 		test=([r,g,b])=>(r*299+g*587+b*114)/1000,
 		draw=_=>{
@@ -412,7 +412,7 @@
 	button.addEventListener(`click`,_=>{
 		canvas.toBlob(blob=>{
 			a.href=URL.createObjectURL(blob);
-			a.download=values.name+`.png`;
+			a.download=`${values.name||`mdi-icon`}.png`;
 			a.click();
 			URL.revokeObjectURL(a.href);
 		});

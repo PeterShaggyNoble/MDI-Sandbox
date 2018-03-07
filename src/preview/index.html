@@ -259,6 +259,7 @@
 <script>
 	(async _=>{
 		const 	icons=await(await fetch`../json/icons.json`).json(),
+			extended=await(await fetch`../json/extended.json`).json(),
 			inputs={
 				canvas:document.getElementById`canvas`,
 				data:document.getElementById`data`,
@@ -315,6 +316,13 @@
 											inputs.name.value=key;
 											break;
 										}
+								if(!inputs.name.value)
+									for(key in extended)
+										if(extended.hasOwnProperty(key))
+											if(extended[key].data===value){
+												inputs.name.value=key;
+												break;
+											}
 								inputs.name.dispatchEvent(new Event(`input`));
 							}
 							break;
