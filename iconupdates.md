@@ -12,28 +12,38 @@ There are no icons to be removed at this time.
 
 ## [MaterialDesign/icons/svg](https://github.com/Templarian/MaterialDesign/tree/master/icons/svg)
 ### Rename
-- [ ] `currency-btc` -> `bitcoin`
 - [ ] `car-convertable` -> `car-convertible`
+- [ ] `checkbox-intermediate` -> `checkbox-intermediate`
+- [ ] `currency-eth` -> `ethereum`
 - [ ] `flag-outline-variant` -> `flag-variant-outline`
+- [ ] `martini` -> `glass-cocktail`
 - [ ] `stackoverflow` -> `stack-overflow`
 ### Add
 - [ ] `account-star`
+- [ ] `airport`
 - [ ] `biohazard`
 - [ ] `case-sensitive-alt`
 - [ ] `close-box`
 - [ ] `close-box-outline`
-- [ ] `currency-btc`
-- [ ] `finance`
+- [ ] `crane`
+- [ ] `currency-eth`
+- [ ] `docker`
 - [ ] `firefox`
 - [ ] `guitar-pick`
 - [ ] `guitar-pick-outline`
 - [ ] `houzz`
 - [ ] `math-compass`
 - [ ] `motorbike`
+- [ ] `pier`
+- [ ] `pier-crane`
 - [ ] `regex`
+- [ ] `salesforce`
 - [ ] `trophy`
 - [ ] `trophy-award`
 - [ ] `trophy-variant`
+- [ ] `watch-export-variant`
+- [ ] `watch-import-variant`
+- [ ] `weather-hurricane`
 - [ ] `wrap`
 ### Remove
 Italicised icons are due to be removed in the next release. Bold icons are works in progress(?).
@@ -92,18 +102,22 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 
 ## [MaterialDesign/icons/design](https://github.com/Templarian/MaterialDesign/tree/master/icons/design)
 ### Rename
-- [ ] `currency-btc` -> `bitcoin`
 - [ ] `car-convertable` -> `car-convertible`
+- [ ] `checkbox-intermediate` -> `checkbox-intermediate`
+- [ ] `currency-eth` -> `ethereum`
 - [ ] `flag-outline-variant` -> `flag-variant-outline`
+- [ ] `martini` -> `glass-cocktail`
 - [ ] `stackoverflow` -> `stack-overflow`
 ### Add
 - [ ] `account-star`
+- [ ] `airport`
 - [ ] `biohazard`
 - [ ] `case-sensitive-alt`
 - [ ] `close-box`
 - [ ] `close-box-outline`
-- [ ] `currency-btc`
-- [ ] `finance`
+- [ ] `crane`
+- [ ] `currency-eth`
+- [ ] `docker`
 - [ ] `firefox`
 - [ ] `guitar-pick`
 - [ ] `guitar-pick-outline`
@@ -112,9 +126,15 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 - [ ] `motorbike`
 - [ ] `ornament`
 - [ ] `ornament-variant`
+- [ ] `pier`
+- [ ] `pier-crane`
 - [ ] `regex`
+- [ ] `salesforce`
 - [ ] `trophy-award`
 - [ ] `trophy-variant`
+- [ ] `watch-export-variant`
+- [ ] `watch-import-variant`
+- [ ] `weather-hurricane`
 - [ ] `wrap`
 ### Remove
 Many of these icons are either works in progress or legacy icons.
@@ -130,6 +150,7 @@ Many of these icons are either works in progress or legacy icons.
 - [ ] `box-upload`
 - [ ] `brightness`
 - [ ] `burst-mode`
+- [ ] `cad-box`
 - [ ] `calculator-off`
 - [ ] `calendar-multiselect`
 - [ ] `calendar-select`
@@ -137,13 +158,14 @@ Many of these icons are either works in progress or legacy icons.
 - [ ] `controller-xbox`
 - [ ] `cubes`
 - [ ] `data`
-- [ ] `dice-d12`
 - [ ] `dice`
 - [ ] `document`
 - [ ] `ebay`
 - [ ] `faq`
+- [ ] `file-cad`
 - [ ] `file-image-box`
 - [ ] `file-move`
+- [ ] `file-tree-lock`
 - [ ] `fill`
 - [ ] `flag-checkered-variant`
 - [ ] `flickr-after`
