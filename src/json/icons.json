@@ -9433,6 +9433,18 @@
 			"regular":"M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15.68,15C15.34,13.3 13.82,12 12,12C10.55,12 9.3,12.82 8.68,14C7.17,14.18 6,15.45 6,17A3,3 0 0,0 9,20H15.5A2.5,2.5 0 0,0 18,17.5C18,16.18 16.97,15.11 15.68,15Z"
 		}
 	},
+	"file-compare":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["files"],
+		"contributor":{
+			"regular":"michael-irigoyen"
+		},
+		"data":{
+			"regular":"M10,18H6V16H10V18M10,14H6V12H10V14M10,1V2H6C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H10V23H12V1H10M20,8V20C20,21.11 19.11,22 18,22H14V20H18V11H14V9H18.5L14,4.5V2L20,8M16,14H14V12H16V14M16,18H14V16H16V18Z"
+		}
+	},
 	"file-delimited":{
 		"aliases":["file-csv"],
 		"categories":["files"],
@@ -19367,7 +19379,7 @@
 		"categories":["food"],
 		"codepoint":"f7e9",
 		"contributor":{
-			"regular":"community"
+			"regular":"colton-wiscombe"
 		},
 		"data":{
 			"regular":"M22,11H19.7C19.4,9.9 18.9,8.8 18.2,8L21.6,2.6L19.9,1.5L16.7,6.6C16.3,6.3 16,6.1 15.5,5.9L16.4,2.3L14.5,1.8L13.7,5.2C13.1,5.1 12.6,5 12,5C8.3,5 5.2,7.6 4.3,11H2C2,15.1 4.5,18.6 8,20.2V22H16V20.2C19.5,18.6 22,15.1 22,11M12,7C14.6,7 16.8,8.7 17.6,11H6.4C7.2,8.7 9.4,7 12,7Z"
@@ -19380,7 +19392,7 @@
 		"categories":["other"],
 		"codepoint":"f7ea",
 		"contributor":{
-			"regular":"community"
+			"regular":"colton-wiscombe"
 		},
 		"data":{
 			"regular":"M12,10L8,4.4L9.6,2H14.4L16,4.4L12,10M15.5,6.8L14.3,8.5C16.5,9.4 18,11.5 18,14A6,6 0 0,1 12,20A6,6 0 0,1 6,14C6,11.5 7.5,9.4 9.7,8.5L8.5,6.8C5.8,8.1 4,10.8 4,14A8,8 0 0,0 12,22A8,8 0 0,0 20,14C20,10.8 18.2,8.1 15.5,6.8Z"
@@ -21264,7 +21276,7 @@
 		"categories":["food"],
 		"codepoint":"f7ed",
 		"contributor":{
-			"regular":"community"
+			"regular":"colton-wiscombe"
 		},
 		"data":{
 			"regular":"M13.9,7.5C13.9,6.8 14.1,6.3 14.2,6H14.8L15.7,3.5H16.5V2H7.5V3.5H8.3L9.2,6H9.8C10,6.3 10.1,6.8 10.1,7.5C10.1,8.8 6,13.7 6,17.6V19.6C6,21 8.7,21.9 12,21.9C15.3,21.9 18,21 18,19.6V17.6C18,13.7 13.9,8.8 13.9,7.5M12,15A2,2 0 0,1 10,13A2,2 0 0,1 12,11A2,2 0 0,1 14,13A2,2 0 0,1 12,15Z"
@@ -21905,6 +21917,18 @@
 		},
 		"keywords":["switch"]
 	},
+	"swap-horizontal-variant":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["arrows"],
+		"contributor":{
+			"regular":"google"
+		},
+		"data":{
+			"regular":"M4,6L8,10V7H16A2,2 0 0,1 18,9A2,2 0 0,1 16,11H8A4,4 0 0,0 4,15A4,4 0 0,0 8,19H16V22L20,18L16,14V17H8A2,2 0 0,1 6,15A2,2 0 0,1 8,13H16A4,4 0 0,0 20,9A4,4 0 0,0 16,5H8V2L4,6Z"
+		}
+	},
 	"swap-vertical":{
 		"aliases":["import-export"],
 		"categories":["arrows"],
@@ -21916,6 +21940,19 @@
 			"regular":"M9,3L5,7H8V14H10V7H13M16,17V10H14V17H11L15,21L19,17H16Z"
 		},
 		"keywords":["switch"]
+	},
+	"swap-vetrical-variant":{
+		"added":{
+			"regular":"{next}"
+		},
+		"aliases":["swap-calls"],
+		"categories":["arrows"],
+		"contributor":{
+			"regular":"google"
+		},
+		"data":{
+			"regular":"M18,4L14,8H17V16A2,2 0 0,1 15,18A2,2 0 0,1 13,16V8A4,4 0 0,0 9,4A4,4 0 0,0 5,8V16H2L6,20L10,16H7V8A2,2 0 0,1 9,6A2,2 0 0,1 11,8V16A4,4 0 0,0 15,20A4,4 0 0,0 19,16V8H22L18,4Z"
+		}
 	},
 	"swim":{
 		"categories":["places","sport","travel"],
