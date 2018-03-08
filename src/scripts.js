@@ -647,7 +647,7 @@
 					this.actions.css.dataset.copy=`\\${codepoint}`;
 					this.actions.js.dataset.copy=`\\u${codepoint}`;
 				}
-				this.actions.html.dataset.copy=`<span class="${page.light?`mdil`:`mdi`}-${name}"></span>`;
+				this.actions.html.dataset.copy=`<span class="${page.light?`mdil`:`mdi`} ${page.light?`mdil`:`mdi`}-${name}"></span>`;
 				this.actions.url.dataset.copy=`${page.address}?`;
 				if(page.light)
 					this.actions.url.dataset.copy+=`set=light&`;
