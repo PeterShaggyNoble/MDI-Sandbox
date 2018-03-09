@@ -423,7 +423,7 @@
 			constructor(icons,text){
 				favourites.menu.append(favourites.item=favourites.item.cloneNode(1));
 				favourites.item.firstElementChild.dataset.icons=icons;
-				favourites.item.lastChild.nodeValue=text
+				favourites.item.lastChild.nodeValue=text;
 				return favourites.item;
 			}
 		},
