@@ -167,7 +167,7 @@
 			nav:$`nav`,
 			navicon:$`navicon`,
 			sections:$`sections`,
-			switch:C`p`,
+			/*switch:C`p`,*/
 			init(){
 				/*this.switch.classList.add(`cp`,`fwm`);
 				this.switch.id=`switch`;

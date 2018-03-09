@@ -1217,7 +1217,6 @@
 				nav:$`nav`,
 				navicon:$`navicon`,
 				sections:$`sections`,
-				switch:C`p`,
 				init(){
 					let section=page.params.get`section`;
 					section&&(section=$(section))&&setTimeout(_=>
@@ -6171,7 +6170,7 @@
 						}
 					},
 					"calendar-check":{
-						"aliases":["event-available"],
+						"aliases":["calendar-task","event-available"],
 						"categories":["time"],
 						"codepoint":"f0ef",
 						"contributor":{
@@ -6239,7 +6238,7 @@
 						"added":{
 							"regular":1712
 						},
-						"aliases":["date-range"],
+						"aliases":["calendar-week","date-range"],
 						"categories":["time"],
 						"codepoint":"f678",
 						"contributor":{
@@ -6275,6 +6274,7 @@
 						}
 					},
 					"calendar-today":{
+						"aliases":["calendar-day"],
 						"categories":["time"],
 						"codepoint":"f0f6",
 						"contributor":{
@@ -22880,6 +22880,7 @@
 						}
 					},
 					"sitemap":{
+						"aliases":["flowchart","workflow"],
 						"categories":["other"],
 						"codepoint":"f4aa",
 						"contributor":{
