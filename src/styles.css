@@ -956,7 +956,7 @@ dialog>button:active{
 		margin:16px;
 	}
 	body.mdi #icons.filtered{
-		min-height:calc(100vh - 88px);
+		min-height:calc(100vh - 96px);
 	}
 	#info{
 		width:320px;

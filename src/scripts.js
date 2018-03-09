@@ -276,7 +276,7 @@
 						},0);
 						d.addEventListener(`touchend`,this.functions.end=event=>
 							this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx),0
-						);
+						,0);
 						event.stopPropagation();
 					}
 				},0);
@@ -325,12 +325,12 @@
 					menu.categories.previousElementSibling.classList.add`open`;
 					for(let key of this.categories=new Set(this.categories.split`,`))
 						categories.list[key].item.classList.add`active`;
-				}else this.categories=new Set();
+				}else this.categories=new Set;
 				if(this.contributors=page.params.get`contributors`){
 					menu.contributors.previousElementSibling.classList.add`open`;
 					for(let key of this.contributors=new Set(this.contributors.split`,`))
 						contributors.list[key].item.classList.add`active`;
-				}else this.contributors=new Set();
+				}else this.contributors=new Set;
 				if(this.text=page.params.get`filter`)
 					this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 				if(this.categories.size||this.contributors.size||this.text)
@@ -419,9 +419,16 @@
 			}
 		},
 	/** FAVOURITES **/
+		item=class{
+			constructor(icons,text){
+				favourites.menu.append(favourites.item=favourites.item.cloneNode(1));
+				favourites.item.firstElementChild.dataset.icons=icons;
+				favourites.item.lastChild.nodeValue=text
+				return favourites.item;
+			}
+		},
 		favourites={
-			actions:{},
-			reader:new FileReader(),
+			reader:new FileReader,
 			menu:C`ul`,
 			input:C`input`,
 			item:C`li`,
@@ -441,12 +448,14 @@
 				this.svg.classList.remove(`trigger`,`cp`,`pa`);
 				this.svg.classList.add(`dib`,`pen`,`vam`);
 				this.svg.removeAttribute`tabindex`;
-				this.additem(`json`,`json`,`JSON Object`);
-				this.additem(`svg`,`angular`,`SVG for Angular`);
-				this.additem(`html`,`polymer`,`HTML for Polymer`);
-				this.additem(`import`,`file-import`,`Import Favourites`);
-				this.additem(`export`,`file-export`,`Export Favourites`);
-				this.additem(`clear`,`delete`,`Clear Favourites`);
+				this.actions={
+					json:new item(`json`,`JSON Object`),
+					svg:new item(`angular`,`SVG for Angular`),
+					html:new item(`polymer`,`HTML for Polymer`),
+					import:new item(`file-import`,`Import Favourites`),
+					export:new item(`file-export`,`Export Favourites`),
+					clear:new item(`delete`,`Clear Favourites`)
+				};
 				this.input.accept=`.txt,text/plain`;
 				this.input.classList.add(`ln`,`pa`);
 				this.input.type=`file`;
@@ -569,7 +578,7 @@
 			},
 			downloads:{},
 			show:0,
-			xml:new XMLSerializer(),
+			xml:new XMLSerializer,
 			aside:$`info`,
 			figure:$`preview`,
 			heading:$`name`,
@@ -870,7 +879,7 @@
 			settings:{},
 			event:new Event(`input`),
 			image:new Image,
-			xml:new XMLSerializer(),
+			xml:new XMLSerializer,
 			background:C`span`,
 			canvas:Q`dialog>figure>canvas`,
 			dialog:Q`dialog`,
@@ -878,7 +887,7 @@
 				this.menu=this.dialog.querySelector`ul`;
 				if(page.storage){
 					this.input=C`input`;
-					this.reader=new FileReader();
+					this.reader=new FileReader;
 					this.link=this.menu.firstElementChild;
 					this.import=this.link.nextElementSibling;
 					this.export=this.import.nextElementSibling;
@@ -1152,14 +1161,14 @@
 			b.append(script);
 			script.addEventListener(`load`,resolve,0);
 		});
-		let 	date=new Date(),
+		let 	date=new Date,
 			month=date.getMonth(),
 			day=date.getDate();
 		if(month===11&&day>12||month===0&&day<6)
 			this.header.classList.add("snow");
 		window.dataLayer=window.dataLayer||[];
 		let gtag=function(){window.dataLayer.push(arguments);};
-		gtag(`js`,new Date());
+		gtag(`js`,date);
 		gtag(`config`,`UA-109147935-1`);
 	})();
 }

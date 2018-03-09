@@ -165,8 +165,9 @@
 				a.href=`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">`+target.firstChild.outerHTML;
 				a.download=target.lastChild.nodeValue.replace(/ /g,`-`)+`.svg`;
 				a.click();
+				URL.revokeObjectURL(a.href);
 			}
-		});
+		},0);
 		await new Promise(resolve=>{
 			let script=document.createElement`script`;
 			script.async=1;
@@ -176,7 +177,7 @@
 		});
 		window.dataLayer=window.dataLayer||[];
 		let gtag=function(){window.dataLayer.push(arguments);};
-		gtag(`js`,new Date());
+		gtag(`js`,new Date);
 		gtag(`config`,`UA-109147935-1`);
 	})();
 }</script>
