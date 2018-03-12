@@ -318,8 +318,7 @@
 			counter:C`span`,
 			init(){
 				this.button=this.input.nextElementSibling;
-				this.heading.append(this.counter);
-				this.counter.append(this.counter=T``);
+				this.heading.appendChild(this.counter).append(this.counter=T``);
 				this.heading=this.heading.firstChild;
 				if(this.categories=page.params.get`categories`){
 					menu.categories.previousElementSibling.classList.add`open`;
@@ -436,11 +435,10 @@
 			title:N`title`,
 			init(){
 				this.menu.classList.add(`options`,`oh`,`pa`);
-				this.svg.tabIndex=this.menu.tabIndex=-1;
 				this.svg.classList.add(`trigger`,`cp`,`pa`);
 				this.svg.dataset.icons=`dots-vertical`;
-				this.title.append(T`Options`);
-				this.svg.append(this.title);
+				this.menu.tabIndex=this.svg.tabIndex=-1;
+				this.svg.appendChild(this.title).append(T`Options`);
 				this.section=categories.list.favourites.section;
 				this.section.firstElementChild.append(this.svg,this.menu);
 				this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
@@ -731,8 +729,7 @@
 					heading.firstChild.nodeValue=name;
 					header.append(heading);
 					key!==`favourites`&&header.append(this.link.cloneNode(1));
-					section.append(header);
-					section.append(this.error.cloneNode(1));
+					section.append(header,this.error.cloneNode(1));
 					page.section.before(category.section=section);
 				}else category.counts={
 					light:icons.array.filter(icon=>
@@ -826,7 +823,7 @@
 					article=this.article.cloneNode(1),
 					svg=this.svg.cloneNode(0),
 					keywords=new Set(key.split`-`),
-					data,category,light,regular;
+					category,data,light,regular;
 				if(data=icon.data.regular){
 					article.classList.add`regular`;
 					svg.append(regular=this.path.cloneNode(1));
@@ -839,7 +836,7 @@
 					light.classList.add`light`;
 					light.setAttribute(`d`,data);
 				}
-				if(regular||light){
+				if(svg.hasChildNodes()){
 					icon.aliases&&icon.aliases.forEach(alias=>
 						alias.split`-`.forEach(word=>
 							keywords.add(word)

@@ -2621,6 +2621,7 @@
 		"added":{
 			"regular":2119
 		},
+		"aliases":["battery-charging-wireless-100","battery-charging-wireless-full"],
 		"categories":["home","power"],
 		"codepoint":"f806",
 		"contributor":{
@@ -2765,6 +2766,7 @@
 		"added":{
 			"regular":2119
 		},
+		"aliases":["battery-charging-wireless-0","battery-charging-wireless-empty"],
 		"categories":["home","power"],
 		"codepoint":"f811",
 		"contributor":{
