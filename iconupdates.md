@@ -13,7 +13,7 @@ There are no icons to be removed at this time.
 ## [MaterialDesign/icons/svg](https://github.com/Templarian/MaterialDesign/tree/master/icons/svg)
 ### Rename
 - [ ] `car-convertable` -> `car-convertible`
-- [ ] `checkbox-intermediate` -> `checkbox-intermediate`
+- [ ] `checkbox-indeterminate` -> `checkbox-intermediate`
 - [ ] `currency-eth` -> `ethereum`
 - [ ] `flag-outline-variant` -> `flag-variant-outline`
 - [ ] `martini` -> `glass-cocktail`
@@ -103,7 +103,7 @@ Italicised icons are due to be removed in the next release. Bold icons are works
 ## [MaterialDesign/icons/design](https://github.com/Templarian/MaterialDesign/tree/master/icons/design)
 ### Rename
 - [ ] `car-convertable` -> `car-convertible`
-- [ ] `checkbox-intermediate` -> `checkbox-intermediate`
+- [ ] `checkbox-indeterminate` -> `checkbox-intermediate`
 - [ ] `currency-eth` -> `ethereum`
 - [ ] `flag-outline-variant` -> `flag-variant-outline`
 - [ ] `martini` -> `glass-cocktail`
