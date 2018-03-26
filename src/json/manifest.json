@@ -1,5 +1,5 @@
 {
-	"background_color":"#e64a19",
+	"background_color":"#388e3c",
 	"description":"A jacked up cheatsheet for https://materialdesignicons.com/",
 	"display":"standalone",
 	"icons":[{
@@ -30,5 +30,5 @@
 	"scope":"../",
 	"short_name":"MDI",
 	"start_url":"../",
-	"theme_color":"#e64a19"
+	"theme_color":"#388e3c"
 }
