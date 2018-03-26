@@ -25,6 +25,8 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2018-03-26:** Material Design Icons v2.2.43 released.
+- **2018-03-07:** Added the option to download favourites and currently filtered icons as a JSON file.
 - **2018-03-05:** Material Design Icons v2.1.99 released.
 - **2018-02-12:** Added overlays to the [preview generator](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 - **2018-01-30:** New [programming](https://petershaggynoble.github.io/MDI-Sandbox/?categories=programming) category added.

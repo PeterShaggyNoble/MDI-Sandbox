@@ -3,7 +3,7 @@
 	let 	version;
 	const 	versions={
 			light:`0.2.63`,
-			regular:`2.1.99`
+			regular:`2.2.43`
 		},
 	/** METHODS **/
 		$=i=>d.getElementById(i),
