@@ -34,7 +34,8 @@
 				this.light=this.params.get`set`===`light`;
 				this.set=this.light?`light`:`regular`;
 				b.classList.add(this.light?`mdil`:`mdi`);
-				version=versions[`regular`/*this.set*/];
+				version=versions[`regular`];
+				/*version=versions[this.set];*/
 				this.message.append(T``);
 				try{
 					this.storage=localStorage;

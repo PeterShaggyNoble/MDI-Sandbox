@@ -188,19 +188,19 @@
 	<h1>MDI Preview Generator</h1>
 	<label for="canvas">Canvas</label><select id="canvas">
 		<option value="000">Black</option>
-		<option value="2196f3">Blue</option>
-		<option value="607d8b">Blue Grey</option>
-		<option value="795548">Brown</option>
-		<option value="ff5722">Deep Orange</option>
-		<option value="673ab7">Deep Purple</option>
-		<option value="4caf50">Green</option>
-		<option selected value="757575">Grey</option>
-		<option value="3f51b5">Indigo</option>
-		<option value="ff9800">Orange</option>
-		<option value="e91e63">Pink</option>
-		<option value="9c27b0">Purple</option>
-		<option value="f44336">Red</option>
-		<option value="009688">Teal</option>
+		<option value="1976d2">Blue</option>
+		<option value="455a64">Blue Grey</option>
+		<option value="5d4037">Brown</option>
+		<option value="e64a19">Deep Orange</option>
+		<option value="512da8">Deep Purple</option>
+		<option value="388e3c">Green</option>
+		<option selected value="616161">Grey</option>
+		<option value="303f9f">Indigo</option>
+		<option value="f57c00">Orange</option>
+		<option value="c2185b">Pink</option>
+		<option value="7b1fa2">Purple</option>
+		<option value="d32f2f">Red</option>
+		<option value="00796b">Teal</option>
 	</select>
 	<label for="data">Path</label><input id="data" required spellcheck="false" type="text" value="M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z">
 	<label for="overlay">Overlay</label><input id="overlay" spellcheck="false" type="text" value="">
@@ -244,14 +244,14 @@
 		</figcaption>
 		<svg height="294" viewBox="0 0 325 294" width="325">
 			<defs>
-				<path d="M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z" fill="#757575" id="path" transform="translate(11,10)"/>
+				<path d="M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z" fill="#616161" id="path" transform="translate(11,10)"/>
 				<path d="" id="ghost" fill="#d50000" fill-opacity="0" transform="translate(11,10)"/>
 			</defs>
 			<use href="#path"/>
 			<use href="#path" transform="translate(-11,24) scale(2,2)"/>
 			<use href="#path" transform="translate(-40,-90) scale(10,10)"/>
 			<use href="#ghost" transform="translate(-40,-90) scale(10,10)"/>
-			<path d="" fill="#757575" fill-opacity="0" transform="translate(293,269) scale(.75,.75)"/>
+			<path d="" fill="#616161" fill-opacity="0" transform="translate(293,269) scale(.75,.75)"/>
 		</svg>
 		<canvas height="294" width="325"></canvas>
 	</figure>
@@ -299,7 +299,7 @@
 						case inputs.canvas:
 							path.setAttribute(`fill`,context.fillStyle=`#`+value);
 							icon.setAttribute(`fill`,span.style.background=`#`+value);
-							span.classList.toggle(`hide`,value===`757575`);
+							span.classList.toggle(`hide`,value===`616161`);
 							for(key in text)
 								if(text.hasOwnProperty(key))
 									text[key].style.color=`#`+value;
@@ -369,7 +369,7 @@
 		image.addEventListener(`load`,_=>{
 			context.clearRect(0,0,width,height);
 			context.drawImage(background,0,0);
-			if(inputs.canvas.value!==`757575`){
+			if(inputs.canvas.value!==`616161`){
 				context.globalCompositeOperation=`overlay`;
 				context.fillRect(0,0,width,height);
 				context.globalCompositeOperation=`source-over`;

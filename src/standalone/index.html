@@ -1191,7 +1191,112 @@
 					this.light=this.params.get`set`===`light`;
 					this.set=this.light?`light`:`regular`;
 					b.classList.add(this.light?`mdil`:`mdi`);
-					version=versions[`regular`		svgs={
+					version=versions[`regular`];
+					this.message.append(T``);
+					try{
+						this.storage=localStorage;
+					}catch(e){
+						page.alert`Favourites not available.`;
+						for(let key in favourites)
+							delete favourites[key];
+						info.actions.favourite.remove();
+						delete info.actions.favourite;
+					}
+					this.textarea.classList.add(`ln`,`pf`);
+					categories.init();
+					version=+version.replace(/\./g,``);
+					contributors.init();
+					this.storage&&favourites.init();
+					icons.init();
+					menu.init();
+					svgs.init();
+					setTimeout(_=>
+						filter.init()
+					,600);
+					info.init();
+					editor.init();
+					this.options=this.section.querySelector`ul`,
+					this.actions={
+						link:this.options.firstElementChild,
+						html:this.options.lastElementChild
+					};
+					this.actions.json=this.actions.link.nextElementSibling;
+					this.actions.svg=this.actions.html.previousElementSibling;
+					this.header.addEventListener(`click`,event=>{
+						if(event.target.nodeName.toLowerCase()===`a`&&this.offline){
+							page.alert`Could not connect.`;
+							event.preventDefault();
+						}
+					},0);
+					this.main.addEventListener(`click`,event=>{
+						let	target=event.target,
+							parent=target.parentNode,
+							current=this.main.querySelector`article.active`;
+						switch(target){
+							case this.actions.link:
+								page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?${page.light?`set=light&`:``}section=icons`,`Link`);
+								break;
+							case this.actions.json:
+								page.download(`data:text/json;utf8,{${filter.filtered?this.build`jsono`:this.packages.json||(this.packages.jsono=this.build`jsono`)}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
+								break;
+							case this.actions.svg:
+							case this.actions.html:
+								let svg=target===this.actions.svg;
+								page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${filter.filtered?this.build`xml`:this.packages.xml||(this.packages.xml=this.build`xml`)}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
+								break;
+							default:
+								switch(target.nodeName.toLowerCase()){
+									case`svg`:
+										parent.nodeName.toLowerCase()===`header`&&!target.classList.contains`trigger`&&page.copy(`${page.address}?${page.light?`set=light&`:``}section=${parent.parentNode.id}`,`Link`);
+										break;
+									case`article`:
+										if(current!==target){
+											current&&current.classList.remove`active`;
+											info.open(target.lastChild.nodeValue);
+											target.classList.add`active`;
+										}
+										break;
+								}
+								break;
+						}
+					},0);
+					setTimeout(_=>{
+						let loader=$`load`;
+						loader.classList.add(`oz`,`pen`);
+						setTimeout(_=>
+							loader.remove()
+						,375);
+					},600);
+				},
+				alert(message){
+					clearTimeout(this.timer);
+					this.message.firstChild.nodeValue=message;
+					this.message.classList.remove`oz`;
+					this.timer=setTimeout(_=>
+						this.message.classList.add`oz`
+					,5e3);
+				},
+				build:type=>Object.entries(icons.list).filter(([key,icon])=>
+					icon.articles.main&&!icon.articles.main.classList.contains`dn`&&icon.data[page.set]
+				).map(([key,icon])=>
+					type===`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}":"${icon.data[page.set]}"`
+				).join(type===`xml`?``:`,`),
+				copy(string,message){
+					editor.dialog.append(this.textarea);
+					this.textarea.value=string;
+					this.textarea.select();
+					d.execCommand`cut`;
+					this.textarea.remove();
+					message&&this.alert(`${message} copied to clipboard.`);
+				},
+				download(data,name){
+					this.anchor.href=data;
+					this.anchor.download=name;
+					this.anchor.click();
+					URL.revokeObjectURL(this.anchor.href);
+				}
+			},
+			svgs={
 				path:N`path`,
 				init(){
 					this.nodes=d.querySelectorAll`svg[data-icons]`;
