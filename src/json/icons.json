@@ -11987,6 +11987,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["logic-gate-and"],
 		"categories":["programming"],
 		"contributor":{
 			"regular":"nick"
@@ -11999,6 +12000,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["logic-gate-nand"],
 		"categories":["programming"],
 		"contributor":{
 			"regular":"nick"
@@ -12011,6 +12013,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["logic-gate-not"],
 		"categories":["programming"],
 		"contributor":{
 			"regular":"nick"
@@ -12023,6 +12026,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["logic-gate-nor"],
 		"categories":["programming"],
 		"contributor":{
 			"regular":"nick"
@@ -12035,6 +12039,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["logic-gate-or"],
 		"categories":["programming"],
 		"contributor":{
 			"regular":"nick"
@@ -12047,6 +12052,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["logic-gate-xnor"],
 		"categories":["programming"],
 		"contributor":{
 			"regular":"nick"
@@ -12059,6 +12065,7 @@
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["logic-gate-xor"],
 		"categories":["programming"],
 		"contributor":{
 			"regular":"nick"
