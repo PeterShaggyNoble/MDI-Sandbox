@@ -349,7 +349,7 @@
 					target.style.height=target.scrollHeight+1+`px`;
 					path.setAttribute(`d`,values.data=value);
 					size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
-					size>24?path.setAttribute(`transform`,size>48?`scale(.046875) scale(1,-1) translate(0,-512)`:`scale(.5)`):path.removeAttribute(`transform`);
+					size>24?path.setAttribute(`transform`,size>48?size>480?`scale(.046875) scale(1,-1) translate(0,-512)`:`scale(.05) scale(1,-1) translate(0,-480)`:`scale(.5)`):path.removeAttribute(`transform`);
 					break;
 				case inputs.size:
 					svg.setAttribute(`height`,values.size=parseInt(value));
