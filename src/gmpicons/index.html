@@ -135,7 +135,6 @@
 			a=document.createElement`a`,
 			icons=await(await fetch`../json/gmp.json`).json(),
 			actions=[`complete`,`ignore`,`new`];
-		console.log(icons)
 		let 	article=document.createElement`article`,
 			svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 			path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
@@ -168,8 +167,7 @@
 				a.click();
 				URL.revokeObjectURL(a.href);
 			}
-		},0);
-		await new Promise(resolve=>{
+		},0);	await new Promise(resolve=>{
 			let script=document.createElement`script`;
 			script.async=1;
 			script.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
