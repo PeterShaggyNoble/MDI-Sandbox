@@ -13425,7 +13425,7 @@
 		"keywords":["road"]
 	},
 	"history":{
-		"aliases":["latest","recent"],
+		"aliases":["clock-arrow","counterclockwise","latest","recent"],
 		"categories":["other"],
 		"codepoint":"f2da",
 		"contributor":{
@@ -20392,7 +20392,8 @@
 		}
 	},
 	"rotate-left":{
-		"categories":["editor"],
+		"aliases":["arrow-rotate-left"],
+		"categories":["arrows","editor"],
 		"codepoint":"f465",
 		"contributor":{
 			"regular":"google"
@@ -20412,7 +20413,8 @@
 		}
 	},
 	"rotate-right":{
-		"categories":["editor"],
+		"aliases":["arrow-rotate-right"],
+		"categories":["arrows","editor"],
 		"codepoint":"f467",
 		"contributor":{
 			"regular":"google"
@@ -23374,6 +23376,18 @@
 			"regular":"M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4A2,2 0 0,0 2,4V11C2,11.55 2.22,12.05 2.59,12.42L11.59,21.42C11.95,21.78 12.45,22 13,22C13.55,22 14.05,21.78 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.45 21.77,11.94 21.41,11.58M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M17.27,15.27L13,19.54L8.73,15.27C8.28,14.81 8,14.19 8,13.5A2.5,2.5 0 0,1 10.5,11C11.19,11 11.82,11.28 12.27,11.74L13,12.46L13.73,11.73C14.18,11.28 14.81,11 15.5,11A2.5,2.5 0 0,1 18,13.5C18,14.19 17.72,14.82 17.27,15.27Z"
 		}
 	},
+	"tag-minus":{
+		"added":{
+			"regular":"{next}"
+		},
+		"categories":["other"],
+		"contributor":{
+			"regular":"rowan"
+		},
+		"data":{
+			"regular":"M21.41,11.58L12.41,2.58C12.04,2.21 11.53,2 11,2H4A2,2 0 0,0 2,4V11C2,11.53 2.21,12.04 2.59,12.41L3,12.81C3.9,12.27 4.94,12 6,12A6,6 0 0,1 12,18C12,19.06 11.72,20.09 11.18,21L11.58,21.4C11.95,21.78 12.47,22 13,22C13.53,22 14.04,21.79 14.41,21.41L21.41,14.41C21.79,14.04 22,13.53 22,13C22,12.47 21.79,11.96 21.41,11.58M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M10,19H2V17H10V19Z"
+		}
+	},
 	"tag-multiple":{
 		"categories":["other"],
 		"codepoint":"f4fb",
@@ -24376,7 +24390,7 @@
 		"added":{
 			"regular":"{next}"
 		},
-		"aliases":["animation"],
+		"aliases":["animation","motion","translate"],
 		"categories":["other"],
 		"contributor":{
 			"regular":"google"
@@ -24937,6 +24951,7 @@
 		"added":{
 			"regular":1712
 		},
+		"aliases":["clock-arrow","clockwise"],
 		"categories":["other"],
 		"codepoint":"f6af",
 		"contributor":{
