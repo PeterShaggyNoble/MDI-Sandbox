@@ -136,7 +136,9 @@
 			download(data,name){
 				this.anchor.href=data;
 				this.anchor.download=name;
+				b.append(this.anchor);
 				this.anchor.click();
+				this.anchor.remove();
 				URL.revokeObjectURL(this.anchor.href);
 			}
 		},
