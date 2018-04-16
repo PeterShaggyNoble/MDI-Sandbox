@@ -60,6 +60,10 @@
 	-webkit-appearance:none;
 	margin:0;
 }
+svg{
+	height:24px;
+	width:24px;
+}
 
 /** PAGE **/
 body{
@@ -226,10 +230,8 @@ body.mdil #sections~ol>li[data-light="0"]{
 }
 #menu>p>svg,#menu>ol>li>svg:first-of-type{
 	fill:#757575;
-	height:24px;
 	margin:0 36px 0 0;
 	transition:fill .225s var(--timing-function);
-	width:24px;
 }
 #menu>p:focus>svg,#menu>ol>li:focus>svg:first-of-type{
 	fill:var(--colour);
@@ -497,10 +499,12 @@ body.mdil>#content>section>article>svg>path:not(.light){
 }
 #preview>svg{
 	fill:#fff;
+	height:112px;
 	left:50%;
 	top:50%;
 	transform:translate(-50%,-50%);
 	transition:opacity .195s var(--timing-function);
+	width:112px;
 }
 /*  actions  */
 #actions{
@@ -572,6 +576,10 @@ body.mdil>#content>section>article>svg>path:not(.light){
 	right:0;
 	transition:opacity .375s var(--timing-function);
 	z-index:3;
+}
+#load>svg{
+	height:56px;
+	width:56px;
 }
 #load g{
 	animation:rotate 1.4s linear infinite;
@@ -684,12 +692,14 @@ dialog>figure>span:last-of-type{
 	max-width:256px;
 }
 dialog>figure>svg{
+	height:auto;
 	left:50%;
 	top:50%;
 	transform:translate(-50%,-50%);
 	transition-duration:.195s;
 	transition-property:height,width;
 	transition-timing-function:var(--timing-function);
+	width:auto;
 	z-index:2;
 }
 dialog>figure>svg>path{

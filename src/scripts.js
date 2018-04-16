@@ -148,9 +148,9 @@
 			init(){
 				this.nodes=d.querySelectorAll`svg[data-icons]`;
 				this.nodes.forEach(svg=>{
-					svg.setAttribute(`height`,svg.getAttribute`height`||24);
+					/*svg.setAttribute(`height`,svg.getAttribute`height`||24);*/
 					svg.setAttribute(`viewBox`,`0 0 24 24`);
-					svg.setAttribute(`width`,svg.getAttribute`width`||24);
+					/*svg.setAttribute(`width`,svg.getAttribute`width`||24);*/
 					svg.dataset.icons.split`,`.forEach(path=>{
 						svg.append(this.path=this.path.cloneNode(1));
 						this.path.setAttribute(`d`,icons.list[path].data.regular);
@@ -815,9 +815,9 @@
 				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 				this.article.append(T``);
 				this.svg.classList.add(`db`,`pen`);
-				this.svg.setAttribute(`height`,24);
+				/*this.svg.setAttribute(`height`,24);*/
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.svg.setAttribute(`width`,24);
+				/*this.svg.setAttribute(`width`,24);*/
 				for(let key in this.list)
 					this.list.hasOwnProperty(key)&&this.add(key);
 			},
