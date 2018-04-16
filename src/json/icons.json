@@ -17228,10 +17228,11 @@
 			"regular":"M1,21H21V1"
 		}
 	},
-	"network-strength-alert":{
+	"network-strength-4-alert":{
 		"added":{
 			"regular":"{next}"
 		},
+		"aliases":["network-strength-4-warning"],
 		"categories":["networking"],
 		"contributor":{
 			"regular":"cody"
