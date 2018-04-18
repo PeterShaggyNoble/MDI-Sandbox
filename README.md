@@ -25,6 +25,7 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2018-04-18:** Removed GMP page and added new page for [other Google icons](https://petershaggynoble.github.io/MDI-Sandbox/other/), including AOG icons.
 - **2018-04-18:** Material Design Icons v2.3.50 released.
 - **2018-04-03:** Created a [preview file](https://petershaggynoble.github.io/MDI-Sandbox/gmpicons/) for the Google's GMP icon set.
 - **2018-03-26:** Material Design Icons v2.2.43 released.

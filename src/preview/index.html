@@ -262,7 +262,7 @@
 	(async _=>{
 		const 	icons=await(await fetch`../json/icons.json`).json(),
 			extended=await(await fetch`../json/extended.json`).json(),
-			gmp=await(await fetch`../json/gmp.json`).json(),
+			other=await(await fetch`../json/other.json`).json(),
 			inputs={
 				canvas:document.getElementById`canvas`,
 				data:document.getElementById`data`,
@@ -328,9 +328,9 @@
 												break;
 											}
 								if(!inputs.name.value)
-									for(key in gmp)
-										if(gmp.hasOwnProperty(key))
-											if(gmp[key].data===value){
+									for(key in other)
+										if(other.hasOwnProperty(key))
+											if(other[key].data===value){
 												inputs.name.value=key;
 												transform=`scale(.05) scale(1,-1) translate(220,-680)`;
 												break;
