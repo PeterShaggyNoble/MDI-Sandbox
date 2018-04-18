@@ -2382,9 +2382,9 @@ class MDI{
 		if($attr)
 			$attr=" $attr";
 		if($fill)
-			$attr=" fill=\"#".str_replace("#","",$fill)."\"".$attr;
+			$attr=" fill=\"#".str_replace("#","",$fill)."\"$attr";
 		if($size)
-			$attr=" width=\"$size\" height=\"$size\"".$attr;
+			$attr=" width=\"$size\" height=\"$size\"$attr";
 		return	"<svg viewBox=\"0 0 24 24\"$attr>".
 			$title.
 			"<path d=\"$this\"/>".
