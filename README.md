@@ -25,6 +25,8 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2018-04-18:** Material Design Icons v2.3.50 released.
+- **2018-04-03:** Created a [preview file](https://petershaggynoble.github.io/MDI-Sandbox/gmpicons/) for the Google's GMP icon set.
 - **2018-03-26:** Material Design Icons v2.2.43 released.
 - **2018-03-07:** Added the option to download favourites and currently filtered icons as a JSON file.
 - **2018-03-05:** Material Design Icons v2.1.99 released.
