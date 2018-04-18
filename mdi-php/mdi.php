@@ -2390,6 +2390,24 @@ class MDI{
 			"<path d=\"$this\"/>".
 			"</svg>";
 	}
+	public function utf8($params=[]){
+		$params=array_merge(self::defaults,$params);
+		if($params["fill"])
+			$params["fill"]=" fill='%23".str_replace("#","",$params["fill"])."'";
+		return	"data:image/svg+xml;utf8,".
+			"<svg".$params["fill"]." height='".$params["size"]."' viewBox='0 0 24 24' width='".$params["size"]."' xmlns='http://www.w3.org/2000/svg'>".
+			"<path d='$this'/>".
+			"</svg>";
+	}
+	public function base64($params=[]){
+		$params=array_merge(self::defaults,$params);
+		if($params["fill"])
+			$params["fill"]=" fill=\"#".str_replace("#","",$params["fill"])."\"";
+		return	"data:image/svg+xml;base64,".
+			base64_encode("<svg".$params["fill"]." height=\"".$params["size"]."\" viewBox=\"0 0 24 24\" width=\"".$params["size"]."\" xmlns=\"http://www.w3.org/2000/svg\">".
+			"<path d=\"$this\"/>".
+			"</svg>");
+	}
 	public function file($params=[]){
 		$params=array_merge(self::defaults,$params);
 		header("Content-Type:image/svg+xml");
@@ -2415,14 +2433,112 @@ if(isset($_GET["mdi-icon"])){
 }
 /* DELETE BELOW */
 else{
-	echo	MDI(isset($_GET["test"])?$_GET["test"]:"vector-square").
-		"<br>".
+	$args=[];
+	if(isset($_GET["fill"]))
+		$args["fill"]=$_GET["fill"];
+	if(isset($_GET["size"]))
+		$args["size"]=$_GET["size"];
+	echo	"<!DOCTYPE html>".
+		"<title>mdi.php Tests</title>".
+		"<meta charset=\"utf-8\">".
+		"<meta content=\"initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0,width=device-width\" name=\"viewport\">".
+		"<meta name=\"robots\" content=\"nofollow,noindex,noodp\">".
+		"<meta content=\"#".(isset($args["fill"])?$args["fill"]:"c2185b")."\" name=\"theme-color\">".
+		"<style>@font-face{".
+		"font-family:Roboto;".
+		"font-style:normal;".
+		"font-weight:400;".
+		"src:local(\"Roboto\"),local(\"Roboto-Regular\"),url(../fnt/roboto.woff2) format(\"woff2\");".
+		"unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;".
+		"}".
+		"@font-face{".
+		"font-family:Roboto;".
+		"font-style:normal;".
+		"font-weight:500;".
+		"src:local(\"Roboto Medium\"),local(\"Roboto-Medium\"),url(../fnt/roboto-medium.woff2) format(\"woff2\");".
+		"unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;".
+		"}".
+		"*{".
+		"border:0;".
+		"box-sizing:border-box;".
+		"font-weight:400;".
+		"margin:0;".
+		"padding:0;".
+		"}".
+		"body{".
+		"align-items:flex-start;".
+		"background:#e0e0e0;".
+		"color:#212121;".
+		"display:flex;".
+		"font-family:Roboto;".
+		"font-size:14px;".
+		"justify-content:center;".
+		"padding:16px;".
+		"}".
+		"article{".
+		"background:#fff;".
+		"border-radius:2px;".
+		"box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);".
+		"padding:0 16px 16px;".
+		"width:500px;".
+		"}".
+		"h1{".
+		"background:#".(isset($args["fill"])?$args["fill"]:"c2185b").";".
+		"color:#fff;".
+		"font-size:20px;".
+		"font-weight:700;".
+		"line-height:48px;".
+		"margin:0 -16px 16px;".
+		"padding:0 16px;".
+		"}".
+		"h2{".
+		"font-size:24px;".
+		"line-height:32px;".
+		"margin:0 0 8px;".
+		"}".
+		"pre{".
+		"background:#eee;".
+		"border-radius:2px;".
+		"font-family:consolas,lucida console,courier new,monospace;".
+		"font-size:12px;".
+		"line-height:20px;".
+		"margin:0 0 16px;".
+		"overflow:hidden;".
+		"padding:0 4px;".
+		"white-space:pre-wrap;".
+		"}".
+		"svg{".
+		"margin:0 0 16px;".
+		"}".
+		"pre+img{".
+		"margin:-8px 0 16px;".
+		"}".
+		"</style>".
+		"<article>".
+		"<h1>MDI(\"icon-name\")</h1>".
+		"<pre>".
+		MDI(isset($_GET["test"])?$_GET["test"]:"vector-square").
+		"</pre>".
+		"<h1>MDI(\"icon-name\")->svg(options)</h1>".
 		MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->svg(
 			isset($_GET["title"])?$_GET["title"]:"",
 			isset($_GET["size"])?$_GET["size"]:MDI::defaults["size"],
 			isset($_GET["fill"])?$_GET["fill"]:MDI::defaults["fill"],
 			["class"=>"test"]
-		);
+		).
+		"<h1>MDI(\"icon-name\")->utf8(options)</h1>".
+		"<pre>".
+		str_replace("<","&lt;",MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->utf8($args)).
+		"</pre>".
+		"<img src=\"".MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->utf8($args)."\">".
+		"<h1>MDI(\"icon-name\")->base64(options)</h1>".
+		"<pre>".
+		str_replace("<","&lt;",MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->base64($args)).
+		"</pre>".
+		"<img src=\"".MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->base64($args)."\">".
+		"<h1>MDI(\"icon-name\")->file(options)</h1>".
+		"<img src=\"mdi.php?mdi-icon=".(isset($_GET["test"])?$_GET["test"]:"vector-square").(isset($args["fill"])?"&amp;mdi-fill=".$args["fill"]:"").(isset($args["size"])?"&amp;mdi-size=".$args["size"]:"")."\">".
+		"</article>";
 }
 /* DELETE ABOVE */
 ?>
