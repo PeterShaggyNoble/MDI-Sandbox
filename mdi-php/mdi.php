@@ -6,12 +6,12 @@ error_reporting(E_ALL);
 /* ADD NOTE ABOUT EDITING DEFAULTS
    + URL OF USAGE INTRUCTIONS */
 class MDI{
-	public const defaults=[
+	const defaults=[
 		"fill"=>"212121",
 		"icon"=>"help-circle-outline",
 		"size"=>24
 	];
-	private const data=[
+	const data=[
 		"access-point"=>"M4.93,4.93C3.12,6.74 2,9.24 2,12C2,14.76 3.12,17.26 4.93,19.07L6.34,17.66C4.89,16.22 4,14.22 4,12C4,9.79 4.89,7.78 6.34,6.34L4.93,4.93M19.07,4.93L17.66,6.34C19.11,7.78 20,9.79 20,12C20,14.22 19.11,16.22 17.66,17.66L19.07,19.07C20.88,17.26 22,14.76 22,12C22,9.24 20.88,6.74 19.07,4.93M7.76,7.76C6.67,8.85 6,10.35 6,12C6,13.65 6.67,15.15 7.76,16.24L9.17,14.83C8.45,14.11 8,13.11 8,12C8,10.89 8.45,9.89 9.17,9.17L7.76,7.76M16.24,7.76L14.83,9.17C15.55,9.89 16,10.89 16,12C16,13.11 15.55,14.11 14.83,14.83L16.24,16.24C17.33,15.15 18,13.65 18,12C18,10.35 17.33,8.85 16.24,7.76M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z",
 		"access-point-network"=>"M4.93,2.93C3.12,4.74 2,7.24 2,10C2,12.76 3.12,15.26 4.93,17.07L6.34,15.66C4.89,14.22 4,12.22 4,10C4,7.79 4.89,5.78 6.34,4.34L4.93,2.93M19.07,2.93L17.66,4.34C19.11,5.78 20,7.79 20,10C20,12.22 19.11,14.22 17.66,15.66L19.07,17.07C20.88,15.26 22,12.76 22,10C22,7.24 20.88,4.74 19.07,2.93M7.76,5.76C6.67,6.85 6,8.35 6,10C6,11.65 6.67,13.15 7.76,14.24L9.17,12.83C8.45,12.11 8,11.11 8,10C8,8.89 8.45,7.89 9.17,7.17L7.76,5.76M16.24,5.76L14.83,7.17C15.55,7.89 16,8.89 16,10C16,11.11 15.55,12.11 14.83,12.83L16.24,14.24C17.33,13.15 18,11.65 18,10C18,8.35 17.33,6.85 16.24,5.76M12,8A2,2 0 0,0 10,10A2,2 0 0,0 12,12A2,2 0 0,0 14,10A2,2 0 0,0 12,8M11,14V18H10A1,1 0 0,0 9,19H2V21H9A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21H22V19H15A1,1 0 0,0 14,18H13V14H11Z",
 		"account"=>"M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z",
@@ -2443,7 +2443,6 @@ else{
 		"<meta charset=\"utf-8\">".
 		"<meta content=\"initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0,width=device-width\" name=\"viewport\">".
 		"<meta name=\"robots\" content=\"nofollow,noindex,noodp\">".
-		"<meta content=\"#".(isset($args["fill"])?$args["fill"]:"c2185b")."\" name=\"theme-color\">".
 		"<style>@font-face{".
 		"font-family:Roboto;".
 		"font-style:normal;".
@@ -2466,12 +2465,13 @@ else{
 		"padding:0;".
 		"}".
 		"body{".
-		"align-items:flex-start;".
+		"align-items:center;".
 		"background:#e0e0e0;".
 		"color:#212121;".
 		"display:flex;".
 		"font-family:Roboto;".
 		"font-size:14px;".
+		"min-height:100vh;".
 		"justify-content:center;".
 		"padding:16px;".
 		"}".
@@ -2483,7 +2483,7 @@ else{
 		"width:500px;".
 		"}".
 		"h1{".
-		"background:#".(isset($args["fill"])?$args["fill"]:"c2185b").";".
+		"background:#".(isset($args["fill"])?$args["fill"]:MDI::defaults["fill"]).";".
 		"color:#fff;".
 		"font-size:20px;".
 		"font-weight:700;".
@@ -2491,26 +2491,20 @@ else{
 		"margin:0 -16px 16px;".
 		"padding:0 16px;".
 		"}".
-		"h2{".
-		"font-size:24px;".
-		"line-height:32px;".
-		"margin:0 0 8px;".
-		"}".
 		"pre{".
 		"background:#eee;".
 		"border-radius:2px;".
 		"font-family:consolas,lucida console,courier new,monospace;".
 		"font-size:12px;".
-		"line-height:20px;".
+		"line-height:24px;".
 		"margin:0 0 16px;".
-		"overflow:hidden;".
+		"overflow:auto;".
 		"padding:0 4px;".
-		"white-space:pre-wrap;".
 		"}".
 		"svg{".
 		"margin:0 0 16px;".
 		"}".
-		"pre+img{".
+		"pre+img,pre+svg{".
 		"margin:-8px 0 16px;".
 		"}".
 		"</style>".
@@ -2519,24 +2513,24 @@ else{
 		"<pre>".
 		MDI(isset($_GET["test"])?$_GET["test"]:"vector-square").
 		"</pre>".
-		"<h1>MDI(\"icon-name\")->svg(options)</h1>".
+		"<h1>MDI(\"icon-name\")->svg(options?)</h1>".
 		MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->svg(
 			isset($_GET["title"])?$_GET["title"]:"",
 			isset($_GET["size"])?$_GET["size"]:MDI::defaults["size"],
 			isset($_GET["fill"])?$_GET["fill"]:MDI::defaults["fill"],
 			["class"=>"test"]
 		).
-		"<h1>MDI(\"icon-name\")->utf8(options)</h1>".
+		"<h1>MDI(\"icon-name\")->utf8(options?)</h1>".
 		"<pre>".
 		str_replace("<","&lt;",MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->utf8($args)).
 		"</pre>".
 		"<img src=\"".MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->utf8($args)."\">".
-		"<h1>MDI(\"icon-name\")->base64(options)</h1>".
+		"<h1>MDI(\"icon-name\")->base64(options?)</h1>".
 		"<pre>".
 		str_replace("<","&lt;",MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->base64($args)).
 		"</pre>".
 		"<img src=\"".MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->base64($args)."\">".
-		"<h1>MDI(\"icon-name\")->file(options)</h1>".
+		"<h1>MDI(\"icon-name\")->file(options?)</h1>".
 		"<img src=\"mdi.php?mdi-icon=".(isset($_GET["test"])?$_GET["test"]:"vector-square").(isset($args["fill"])?"&amp;mdi-fill=".$args["fill"]:"").(isset($args["size"])?"&amp;mdi-size=".$args["size"]:"")."\">".
 		"</article>";
 }
