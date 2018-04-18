@@ -1,4 +1,4 @@
-index.php
+*.php
 wip.json
 /build/
 /src/wip/
