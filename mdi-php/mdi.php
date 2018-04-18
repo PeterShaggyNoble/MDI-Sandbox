@@ -2433,6 +2433,7 @@ if(isset($_GET["mdi-icon"])){
 }
 /* DELETE BELOW */
 else{
+	$icon=isset($_GET["icon"])?$_GET["icon"]:"vector-square";
 	$args=[];
 	if(isset($_GET["fill"]))
 		$args["fill"]=$_GET["fill"];
@@ -2511,27 +2512,27 @@ else{
 		"<article>".
 		"<h1>MDI(\"icon-name\")</h1>".
 		"<pre>".
-		MDI(isset($_GET["test"])?$_GET["test"]:"vector-square").
+		MDI($icon).
 		"</pre>".
 		"<h1>MDI(\"icon-name\")->svg(options?)</h1>".
-		MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->svg(
+		MDI(isset($_GET["icon"])?$_GET["icon"]:"vector-square")->svg(
 			isset($_GET["title"])?$_GET["title"]:"",
 			isset($_GET["size"])?$_GET["size"]:MDI::defaults["size"],
 			isset($_GET["fill"])?$_GET["fill"]:MDI::defaults["fill"],
-			["class"=>"test"]
+			["class"=>"mdi"]
 		).
 		"<h1>MDI(\"icon-name\")->utf8(options?)</h1>".
 		"<pre>".
-		str_replace("<","&lt;",MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->utf8($args)).
+		str_replace("<","&lt;",MDI($icon)->utf8($args)).
 		"</pre>".
-		"<img src=\"".MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->utf8($args)."\">".
+		"<img src=\"".MDI($icon)->utf8($args)."\">".
 		"<h1>MDI(\"icon-name\")->base64(options?)</h1>".
 		"<pre>".
-		str_replace("<","&lt;",MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->base64($args)).
+		str_replace("<","&lt;",MDI($icon)->base64($args)).
 		"</pre>".
-		"<img src=\"".MDI(isset($_GET["test"])?$_GET["test"]:"vector-square")->base64($args)."\">".
+		"<img src=\"".MDI($icon)->base64($args)."\">".
 		"<h1>MDI(\"icon-name\")->file(options?)</h1>".
-		"<img src=\"mdi.php?mdi-icon=".(isset($_GET["test"])?$_GET["test"]:"vector-square").(isset($args["fill"])?"&amp;mdi-fill=".$args["fill"]:"").(isset($args["size"])?"&amp;mdi-size=".$args["size"]:"")."\">".
+		"<img src=\"mdi.php?mdi-icon=$icon".(isset($args["fill"])?"&amp;mdi-fill=".$args["fill"]:"").(isset($args["size"])?"&amp;mdi-size=".$args["size"]:"")."\">".
 		"</article>";
 }
 /* DELETE ABOVE */
