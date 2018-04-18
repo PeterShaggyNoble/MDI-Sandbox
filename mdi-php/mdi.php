@@ -2515,7 +2515,7 @@ else{
 		MDI($icon).
 		"</pre>".
 		"<h1>MDI(\"icon-name\")->svg(options?)</h1>".
-		MDI(isset($_GET["icon"])?$_GET["icon"]:"vector-square")->svg(
+		MDI($icon)->svg(
 			isset($_GET["title"])?$_GET["title"]:"",
 			isset($_GET["size"])?$_GET["size"]:MDI::defaults["size"],
 			isset($_GET["fill"])?$_GET["fill"]:MDI::defaults["fill"],
