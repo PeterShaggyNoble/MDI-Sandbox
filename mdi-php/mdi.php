@@ -2514,24 +2514,24 @@ else{
 		"<pre>".
 		MDI($icon).
 		"</pre>".
-		"<h1>MDI(\"icon-name\")->svg(options?)</h1>".
+		"<h1>MDI(\"icon-name\")->svg()</h1>".
 		MDI($icon)->svg(
 			isset($_GET["title"])?$_GET["title"]:"",
 			isset($_GET["size"])?$_GET["size"]:MDI::defaults["size"],
 			isset($_GET["fill"])?$_GET["fill"]:MDI::defaults["fill"],
 			["class"=>"mdi"]
 		).
-		"<h1>MDI(\"icon-name\")->utf8(options?)</h1>".
+		"<h1>MDI(\"icon-name\")->utf8()</h1>".
 		"<pre>".
 		str_replace("<","&lt;",MDI($icon)->utf8($args)).
 		"</pre>".
 		"<img src=\"".MDI($icon)->utf8($args)."\">".
-		"<h1>MDI(\"icon-name\")->base64(options?)</h1>".
+		"<h1>MDI(\"icon-name\")->base64()</h1>".
 		"<pre>".
 		str_replace("<","&lt;",MDI($icon)->base64($args)).
 		"</pre>".
 		"<img src=\"".MDI($icon)->base64($args)."\">".
-		"<h1>MDI(\"icon-name\")->file(options?)</h1>".
+		"<h1>MDI(\"icon-name\")->file()</h1>".
 		"<img src=\"mdi.php?mdi-icon=$icon".(isset($args["fill"])?"&amp;mdi-fill=".$args["fill"]:"").(isset($args["size"])?"&amp;mdi-size=".$args["size"]:"")."\">".
 		"</article>";
 }
