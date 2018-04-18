@@ -1,7 +1,7 @@
 /** VARIABLES **/
 :root{
-	--colour:#388e3c;
-	--highlight:#e8f5e9;
+	--colour:#c2185b;
+	--highlight:#fce4ec;
 	--timing-function:cubic-bezier(.4,0,.2,1);
 }/** VIEWPORT **/
 @viewport{initial-scale:1;maximum-scale:1;minimum-scale:1;user-scalable:0;width:device-width;}

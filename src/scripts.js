@@ -3,7 +3,7 @@
 	let 	version;
 	const 	versions={
 			light:`0.2.63`,
-			regular:`2.2.43`
+			regular:`2.3.50`
 		},
 	/** METHODS **/
 		$=i=>d.getElementById(i),
@@ -15,7 +15,6 @@
 		d=document,
 		h=d.documentElement,
 		b=d.body,
-
 	/** PAGE **/
 		page={
 			offline:navigator.onLine===false,
