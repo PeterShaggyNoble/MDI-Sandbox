@@ -2433,7 +2433,7 @@ if(isset($_GET["mdi-icon"])){
 }
 /* DELETE BELOW */
 else{
-	$icon=isset($_GET["icon"])?$_GET["icon"]:"vector-square";
+	$icon=isset($_GET["icon"])?$_GET["icon"]:"";
 	$args=[];
 	if(isset($_GET["fill"]))
 		$args["fill"]=$_GET["fill"];
