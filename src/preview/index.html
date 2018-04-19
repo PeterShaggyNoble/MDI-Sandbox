@@ -140,14 +140,14 @@
 		opacity:0;
 	}
 	span{
-		background:#757575;
+		background:#1976d2;
 		bottom:0;
 		mix-blend-mode:overlay;
 		right:0;
 		transition:background .195s cubic-bezier(.4,0,.2,1),opacity .195s cubic-bezier(.4,0,.2,1);
 	}
 	p{
-		color:#757575;
+		color:#1976d2;
 	}
 	p+p{
 		transform:rotate(-90deg);
@@ -189,13 +189,13 @@
 	<h1>MDI Preview Generator</h1>
 	<label for="canvas">Canvas</label><select id="canvas">
 		<option value="000">Black</option>
-		<option value="1976d2">Blue</option>
+		<option selected value="1976d2">Blue</option>
 		<option value="455a64">Blue Grey</option>
 		<option value="5d4037">Brown</option>
 		<option value="e64a19">Deep Orange</option>
 		<option value="512da8">Deep Purple</option>
 		<option value="388e3c">Green</option>
-		<option selected value="616161">Grey</option>
+		<option value="616161">Grey</option>
 		<option value="303f9f">Indigo</option>
 		<option value="f57c00">Orange</option>
 		<option value="c2185b">Pink</option>
@@ -238,21 +238,21 @@
 	</select>
 	<figure>
 		<figcaption>
-			<span class="hide"></span>
+			<span></span>
 			<p>vector-square</p>
 			<p>Work in Progress</p>
 			<p>Unreleased Draft</p>
 		</figcaption>
 		<svg height="294" viewBox="0 0 325 294" width="325">
 			<defs>
-				<path d="M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z" fill="#616161" id="path" transform="translate(11,10)"/>
+				<path d="M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z" fill="#1976d2" id="path" transform="translate(11,10)"/>
 				<path d="" id="ghost" fill="#d50000" fill-opacity="0" transform="translate(11,10)"/>
 			</defs>
 			<use href="#path"/>
 			<use href="#path" transform="translate(-11,24) scale(2,2)"/>
 			<use href="#path" transform="translate(-40,-90) scale(10,10)"/>
 			<use href="#ghost" transform="translate(-40,-90) scale(10,10)"/>
-			<path d="" fill="#616161" fill-opacity="0" transform="translate(293,269) scale(.75,.75)"/>
+			<path d="" fill="#1976d2" fill-opacity="0" transform="translate(293,269) scale(.75,.75)"/>
 		</svg>
 		<canvas height="294" width="325"></canvas>
 	</figure>
