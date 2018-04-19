@@ -25,6 +25,7 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2018-04-19:** Material Design Icons v2.3.54 released.
 - **2018-04-19:** Added a work in progress of `mdi.php`. See [MaterialDesign/#3087](https://github.com/Templarian/MaterialDesign/issues/3087) for more information.
 - **2018-04-18:** Removed GMP page and added new page for [other Google icons](https://petershaggynoble.github.io/MDI-Sandbox/other/), including AOG icons.
 - **2018-04-18:** Material Design Icons v2.3.50 released.
