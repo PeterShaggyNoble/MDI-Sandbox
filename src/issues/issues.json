@@ -1115,6 +1115,13 @@
 		},
 		"labels": [
 			{
+				"id": 240987868,
+				"url": "https://api.github.com/repos/Templarian/MaterialDesign/labels/Brand%20Icon%20:bookmark:",
+				"name": "Brand Icon :bookmark:",
+				"color": "eb6420",
+				"default": false
+			},
+			{
 				"id": 112550457,
 				"url": "https://api.github.com/repos/Templarian/MaterialDesign/labels/Icon%20Request%20:pencil2:",
 				"name": "Icon Request :pencil2:",
