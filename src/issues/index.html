@@ -266,10 +266,10 @@
 			check=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 			path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
 			tr,td,a,
-			brand,contribution,high,low,stock,
+			brand,contribution,high,low,rejected,stock,
 			haslabel=(issue,name)=>issue.labels.find(label=>label.name===labels[name]);
 		issues=issues.filter(issue=>!issue.pull_request&&!haslabel(issue,`close`)&&!haslabel(issue,`info`));
-		issues.sort((x,y)=>x.reactions.total_count>y.reactions.total_count?-1:x.reactions.total_count<y.reactions.total_count?1:x.comments>y.comments?-1:x.comments<y.comments?1:x.updated_at>y.updated_at?-1:1);
+		issues.sort((x,y)=>x.reactions&&y.reactions&&x.reactions.total_count>y.reactions.total_count?-1:x.reactions&&y.reactions&&x.reactions.total_count<y.reactions.total_count?1:x.comments>y.comments?-1:x.comments<y.comments?1:x.updated_at>y.updated_at?-1:1);
 		check.setAttribute(`viewBox`,`0 0 24 24`);
 		path.setAttribute(`d`,`M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z`);
 		check.append(path);
@@ -278,6 +278,7 @@
 			contribution=haslabel(issue,`contribution`);
 			high=haslabel(issue,`high`);
 			low=haslabel(issue,`low`);
+			rejected=haslabel(issue,`rejected`);
 			stock=haslabel(issue,`stock`);
 			tr=tr?tr.cloneNode(0):document.createElement`tr`;
 			tr.classList.toggle(`soon`,!!contribution&&!low);
@@ -296,14 +297,14 @@
 			td.append(document.createTextNode(issue.title));
 			tr.append(td);
 			td=td.cloneNode(0);
-			td.append(document.createTextNode(low?`Low Priority`:contribution?`Coming Soon`:high?`High Priority`:`Pending`));
+			td.append(document.createTextNode(rejected?`Rejected`:low?`Low Priority`:contribution?`Coming Soon`:high?`High Priority`:`Pending`));
 			tr.append(td);
 			td=td.cloneNode(0);
 			if(stock)
 				td.append(check.cloneNode(1));
 			tr.append(td);
 			td=td.cloneNode(0);
-			td.append(document.createTextNode(issue.reactions.total_count));
+			td.append(document.createTextNode(issue.reactions?issue.reactions.total_count:0));
 			tr.append(td);
 			td=td.cloneNode(0);
 			td.append(document.createTextNode(issue.comments));
