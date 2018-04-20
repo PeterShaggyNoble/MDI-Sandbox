@@ -25,7 +25,7 @@
 		box-sizing:border-box;
 		color:#212121;
 		font-family:Roboto,arial,sans-serif;
-		font-size:14px;
+		font-size:0;
 		-webkit-font-smoothing:antialiased;
 		font-style:normal;
 		font-weight:400;
@@ -51,7 +51,7 @@
 	body{
 		background:#fff;
 		color:#212121;
-		padding:0 16px;
+		padding:80px 16px;
 	}
 	header{
 		background:#c2185b;
@@ -63,7 +63,7 @@
 		position:fixed;
 		right:0;
 		top:0;
-		z-index:2;
+		z-index:3;
 	}
 	h1{
 		font-size:18px;
@@ -71,14 +71,46 @@
 		line-height:64px;
 		margin:0;
 	}
+	label,table{
+		font-size:14px;
+	}
+	input{
+		display:none;
+	}
+	label{
+		background:#eee;
+		border:1px solid #e0e0e0;
+		cursor:pointer;
+		display:inline-block;
+		line-height:48px;
+		position:relative;
+		margin:0 -1px -1px 0;
+		transition:border .375s cubic-bezier(.4,0,.2,1),background .375s cubic-bezier(.4,0,.2,1);
+		padding:0 16px;
+		z-index:2;
+	}
+	input:checked+label{
+		background:#fff;
+		border-bottom-color:#fff;
+	}
+	@media(min-width:793px){
+		label:first-of-type{
+			margin-left:calc(50% - 380px);
+		}
+	}
+	#nav_icons:checked~#brands,#nav_brands:checked~#icons{
+		display:none;
+	}
 	table{
 		border:1px solid #e0e0e0;
 		border-collapse:collapse;
 		border-radius:2px;
-		margin:80px auto;
+		margin:0 auto;
+		position:relative;
 		table-layout:fixed;
 		width:100%;
 		max-width:760px;
+		z-index:1;
 	}
 	th,td{
 		border-bottom:1px solid #e0e0e0;
@@ -137,7 +169,24 @@
 <header>
 	<h1>MDI GitHub Issues</h1>
 </header>
-<table>
+<input checked name="nav" id="nav_icons" type="radio" value="">
+<label for="nav_icons">Icons</label>
+<input name="nav" id="nav_brands" type="radio">
+<label for="nav_brands">Brands</label>
+<table id="icons">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Issue</th>
+			<th>Status</th>
+			<th><svg viewBox="0 0 24 24"><path d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z"/></svg></th>
+			<th><svg viewBox="0 0 24 24"><path d="M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z"/></svg></th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+<table id="brands">
 	<thead>
 		<tr>
 			<th>#</th>
@@ -163,9 +212,13 @@
 				json=await response.json();
 		}*/
 		let 	issues=await(await fetch(`issues.json`)).json(),
-		 	tbody=document.querySelector`tbody`,
+		 	tbody={
+				icons:document.getElementById`icons`.querySelector`tbody`,
+				brands:document.getElementById`brands`.querySelector`tbody`
+			},
 			tr,td;
-		issues.sort((x,y)=>x.comments+x.reactions.total_count>y.comments+y.reactions.total_count?-1:1);
+		issues=issues.filter(issue=>!issue.pull_request&&!issue.labels.find(label=>label.name===`Consider Closing :door:`||label.name===`Needs More Information :information_source:`));
+		issues.sort((x,y)=>x.comments+x.reactions.total_count>y.comments+y.reactions.total_count?-1:x.comments+x.reactions.total_count<y.comments+y.reactions.total_count?1:x.number<y.number?-1:1);
 		issues.forEach(issue=>{
 			tr=tr?tr.cloneNode(0):document.createElement`tr`;
 			td=td?td.cloneNode(0):document.createElement`td`;
@@ -175,8 +228,7 @@
 			td.append(document.createTextNode(issue.title));
 			tr.append(td);
 			td=td.cloneNode(0);
-			if(issue.labels.find(label=>label.name===`Contribution :heavy_check_mark:`))
-				td.append(document.createTextNode`Coming Soon`);
+			td.append(document.createTextNode(issue.labels.find(label=>label.name===`Contribution :heavy_check_mark:`)?`Coming Soon`:`Pending`));
 			tr.append(td);
 			td=td.cloneNode(0);
 			td.append(document.createTextNode(issue.comments));
@@ -184,7 +236,7 @@
 			td=td.cloneNode(0);
 			td.append(document.createTextNode(issue.reactions.total_count));
 			tr.append(td);
-			tbody.append(tr);
+			tbody[issue.labels.find(label=>label.name===`Brand Icon :bookmark:`)?`brands`:`icons`].append(tr);
 		});
 		tbody.addEventListener(`click`,event=>window.location=`https://github.com/Templarian/MaterialDesign/issues/`+event.target.parentNode.dataset.issue);
 		await new Promise(resolve=>{
