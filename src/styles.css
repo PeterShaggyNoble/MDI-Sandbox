@@ -383,6 +383,9 @@ body.mdil #icons span{
 	right:8px;
 	top:12px;
 }
+#content>section>header>svg>path{
+	pointer-events:none;
+}
 #content>section>article{
 	background:#fff;
 	border-radius:2px;
