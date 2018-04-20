@@ -238,7 +238,8 @@
 			tr.append(td);
 			tbody[issue.labels.find(label=>label.name===`Brand Icon :bookmark:`)?`brands`:`icons`].append(tr);
 		});
-		tbody.addEventListener(`click`,event=>window.location=`https://github.com/Templarian/MaterialDesign/issues/`+event.target.parentNode.dataset.issue);
+		tbody.icons.addEventListener(`click`,event=>window.location=`https://github.com/Templarian/MaterialDesign/issues/`+event.target.parentNode.dataset.issue);
+		tbody.brands.addEventListener(`click`,event=>window.location=`https://github.com/Templarian/MaterialDesign/issues/`+event.target.parentNode.dataset.issue);
 		await new Promise(resolve=>{
 			let script=document.createElement`script`;
 			script.async=1;
