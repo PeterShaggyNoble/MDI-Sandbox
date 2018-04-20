@@ -14,6 +14,13 @@
 		src:local("Roboto"),local("Roboto-Regular"),url(../fnt/roboto.woff2) format("woff2");
 		unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215;
 	}
+	@font-face{
+		font-family:Roboto;
+		font-style:normal;
+		font-weight:500;
+		src:local("Roboto Medium"),local("Roboto-Medium"),url(../fnt/roboto-medium.woff2) format("woff2");
+		unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+	}
 	*,*::before,*::after{
 		-moz-appearance:none;
 		-webkit-appearance:none;
@@ -150,6 +157,9 @@
 	tbody>tr{
 		cursor:pointer;
 	}
+	tbody>tr.soon>td:nth-child(3){
+		font-weight:500;
+	}
 	td{
 		height:48px;
 		overflow:hidden;
@@ -233,14 +243,16 @@
 			},
 			svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 			path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
-			tr,td;
-		issues=issues.filter(issue=>!issue.pull_request&&!issue.labels.find(label=>label.name===`Consider Closing :door:`||label.name===`Needs More Information :information_source:`));
+			tr,td,
+			haslabel=(issue,name)=>issue.labels.find(label=>label.name===name);
+		issues=issues.filter(issue=>!issue.pull_request&&!haslabel(issue,`Consider Closing :door:`)&&!haslabel(issue,`Needs More Information :information_source:`));
 		issues.sort((x,y)=>x.comments+x.reactions.total_count>y.comments+y.reactions.total_count?-1:x.comments+x.reactions.total_count<y.comments+y.reactions.total_count?1:x.number<y.number?-1:1);
 		svg.setAttribute(`viewBox`,`0 0 24 24`);
 		path.setAttribute(`d`,`M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z`);
 		svg.append(path);
 		issues.forEach(issue=>{
 			tr=tr?tr.cloneNode(0):document.createElement`tr`;
+			tr.classList.toggle(`soon`,!!haslabel(issue,`Contribution :heavy_check_mark:`)&&!haslabel(issue,`Low Priority :arrow_down:`));
 			td=td?td.cloneNode(0):document.createElement`td`;
 			td.append(document.createTextNode(tr.dataset.issue=issue.number));
 			tr.append(td);
@@ -248,10 +260,10 @@
 			td.append(document.createTextNode(issue.title));
 			tr.append(td);
 			td=td.cloneNode(0);
-			td.append(document.createTextNode(issue.labels.find(label=>label.name===`Low Priority :arrow_down:`)?`Low Priority`:issue.labels.find(label=>label.name===`Contribution :heavy_check_mark:`)?`Coming Soon`:issue.labels.find(label=>label.name===`High Priority :grey_exclamation:`)?`High Priority`:`Pending`));
+			td.append(document.createTextNode(haslabel(issue,`Low Priority :arrow_down:`)?`Low Priority`:haslabel(issue,`Contribution :heavy_check_mark:`)?`Coming Soon`:haslabel(issue,`High Priority :grey_exclamation:`)?`High Priority`:`Pending`));
 			tr.append(td);
 			td=td.cloneNode(0);
-			if(issue.labels.find(label=>label.name===`Stock Google Icon :squirrel:`))
+			if(haslabel(issue,`Stock Google Icon :squirrel:`))
 				td.append(svg.cloneNode(1));
 			tr.append(td);
 			td=td.cloneNode(0);
@@ -260,7 +272,7 @@
 			td=td.cloneNode(0);
 			td.append(document.createTextNode(issue.reactions.total_count));
 			tr.append(td);
-			tbody[issue.labels.find(label=>label.name===`Brand Icon :bookmark:`)?`brands`:`icons`].append(tr);
+			tbody[haslabel(issue,`Brand Icon :bookmark:`)?`brands`:`icons`].append(tr);
 		});
 		tbody.icons.addEventListener(`click`,event=>window.location=`https://github.com/Templarian/MaterialDesign/issues/`+event.target.parentNode.dataset.issue);
 		tbody.brands.addEventListener(`click`,event=>window.location=`https://github.com/Templarian/MaterialDesign/issues/`+event.target.parentNode.dataset.issue);
