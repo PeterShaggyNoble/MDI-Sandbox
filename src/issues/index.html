@@ -123,30 +123,26 @@
 		border-bottom:1px solid #e0e0e0;
 		line-height:24px;
 		padding:8px 44px 8px 12px;
-		text-align:left;
 	}
 	th:first-child,td:first-child{
 		padding-left:24px;
+		text-align:center;
 		width:120px;
 	}
 	th:nth-child(3),td:nth-child(3){
 		width:144px;
 	}
 	th:nth-child(4),td:nth-child(4){
-		text-align:right;
+		text-align:center;
 		width:80px;
 	}
 	th:nth-child(5),td:nth-child(5){
-		text-align:right;
-		width:92px;
-	}
-	th:nth-child(6),td:nth-child(6){
-		text-align:right;
+		text-align:center;
 		width:92px;
 	}
 	th:last-child,td:last-child{
 		padding-right:24px;
-		text-align:right;
+		text-align:center;
 		width:72px;
 	}
 	th{
@@ -237,6 +233,28 @@
 				json=await response.json();
 		}*/
 		let 	issues=await(await fetch(`issues.json`)).json(),
+			labels={
+				alias:`Alias :arrows_clockwise:`,
+				alpha:`Alpha-Numeric Font :capital_abcd:`,
+				brand:`Brand Icon :bookmark:`,
+				change:`Breaking Change :heavy_exclamation_mark:`,
+				bug:`Bug :beetle:`,
+				close:`Consider Closing :door:`,
+				contribution:`Contribution :heavy_check_mark:`,
+				docs:`Documentation :book:`,
+				dupe:`Duplicate/Already Included :bookmark_tabs:`,
+				high:`High Priority :grey_exclamation:`,
+				home:`Home Assistant :house:`,
+				request:`Icon Request :pencil2:`,
+				language:`Language Conflict :triangular_flag_on_post:`,
+				low:`Low Priority :arrow_down:`,
+				info:`Needs More Information :information_source:`,
+				question:`Question :grey_question:`,
+				rejected:`Rejected :negative_squared_cross_mark:`,
+				feature:`Site Feature :computer:`,
+				stock:`Stock Google Icon :squirrel:`,
+				font:`Webfont Feature :ab:`
+			},
 		 	tbody={
 				icons:document.getElementById`icons`.querySelector`tbody`,
 				brands:document.getElementById`brands`.querySelector`tbody`
@@ -244,15 +262,15 @@
 			svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 			path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
 			tr,td,
-			haslabel=(issue,name)=>issue.labels.find(label=>label.name===name);
-		issues=issues.filter(issue=>!issue.pull_request&&!haslabel(issue,`Consider Closing :door:`)&&!haslabel(issue,`Needs More Information :information_source:`));
+			haslabel=(issue,name)=>issue.labels.find(label=>label.name===labels[name]);
+		issues=issues.filter(issue=>!issue.pull_request&&!haslabel(issue,`close`)&&!haslabel(issue,`info`));
 		issues.sort((x,y)=>x.comments+x.reactions.total_count>y.comments+y.reactions.total_count?-1:x.comments+x.reactions.total_count<y.comments+y.reactions.total_count?1:x.number<y.number?-1:1);
 		svg.setAttribute(`viewBox`,`0 0 24 24`);
 		path.setAttribute(`d`,`M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z`);
 		svg.append(path);
 		issues.forEach(issue=>{
 			tr=tr?tr.cloneNode(0):document.createElement`tr`;
-			tr.classList.toggle(`soon`,!!haslabel(issue,`Contribution :heavy_check_mark:`)&&!haslabel(issue,`Low Priority :arrow_down:`));
+			tr.classList.toggle(`soon`,!!haslabel(issue,`contribution`)&&!haslabel(issue,`low`));
 			td=td?td.cloneNode(0):document.createElement`td`;
 			td.append(document.createTextNode(tr.dataset.issue=issue.number));
 			tr.append(td);
@@ -260,10 +278,10 @@
 			td.append(document.createTextNode(issue.title));
 			tr.append(td);
 			td=td.cloneNode(0);
-			td.append(document.createTextNode(haslabel(issue,`Low Priority :arrow_down:`)?`Low Priority`:haslabel(issue,`Contribution :heavy_check_mark:`)?`Coming Soon`:haslabel(issue,`High Priority :grey_exclamation:`)?`High Priority`:`Pending`));
+			td.append(document.createTextNode(haslabel(issue,`low`)?`Low Priority`:haslabel(issue,`contribution`)?`Coming Soon`:haslabel(issue,`high`)?`High Priority`:`Pending`));
 			tr.append(td);
 			td=td.cloneNode(0);
-			if(haslabel(issue,`Stock Google Icon :squirrel:`))
+			if(haslabel(issue,`stock`))
 				td.append(svg.cloneNode(1));
 			tr.append(td);
 			td=td.cloneNode(0);
@@ -272,7 +290,7 @@
 			td=td.cloneNode(0);
 			td.append(document.createTextNode(issue.reactions.total_count));
 			tr.append(td);
-			tbody[haslabel(issue,`Brand Icon :bookmark:`)?`brands`:`icons`].append(tr);
+			tbody[haslabel(issue,`brand`)?`brands`:`icons`].append(tr);
 		});
 		tbody.icons.addEventListener(`click`,event=>window.location=`https://github.com/Templarian/MaterialDesign/issues/`+event.target.parentNode.dataset.issue);
 		tbody.brands.addEventListener(`click`,event=>window.location=`https://github.com/Templarian/MaterialDesign/issues/`+event.target.parentNode.dataset.issue);
