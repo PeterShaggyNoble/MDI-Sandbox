@@ -228,7 +228,7 @@
 			td.append(document.createTextNode(issue.title));
 			tr.append(td);
 			td=td.cloneNode(0);
-			td.append(document.createTextNode(issue.labels.find(label=>label.name===`Contribution :heavy_check_mark:`)?`Coming Soon`:`Pending`));
+			td.append(document.createTextNode(issue.labels.find(label=>label.name===`Contribution :heavy_check_mark:`)?issue.labels.find(label=>label.name===`Low Priority :arrow_down:`)?`Low Priority`:`Coming Soon`:issue.labels.find(label=>label.name===`High Priority :grey_exclamation:`)?`High Priority`:`Pending`));
 			tr.append(td);
 			td=td.cloneNode(0);
 			td.append(document.createTextNode(issue.comments));
