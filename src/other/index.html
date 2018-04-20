@@ -170,12 +170,13 @@
 				a.remove();
 				URL.revokeObjectURL(a.href);
 			}
-		},0);	await new Promise(resolve=>{
-			let script=document.createElement`script`;
-			script.async=1;
-			script.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
-			document.body.append(script);
-			script.addEventListener(`load`,resolve,0);
+		},0);
+		await new Promise(resolve=>{
+			let js=document.createElement`script`;
+			js.async=1;
+			js.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
+			document.body.append(js);
+			js.addEventListener(`load`,resolve,0);
 		});
 		window.dataLayer=window.dataLayer||[];
 		let gtag=function(){window.dataLayer.push(arguments);};
