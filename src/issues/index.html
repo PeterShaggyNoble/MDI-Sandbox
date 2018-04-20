@@ -168,10 +168,10 @@
 		background:#eee;
 	}
 	tbody:hover>tr>td{
-		background:none;
+		background:#fff;
 	}
 	tbody>tr:hover>td{
-		background:#eee;
+		background:#fce4ec;
 		transition-duration:.195s;
 	}
 	a{
@@ -191,6 +191,13 @@
 	}
 	a>svg{
 		fill:#757575;
+		transition:fill .225s cubic-bezier(.4,0,.2,1);
+	}
+	a:hover>svg{
+		fill:#212121;
+	}
+	a:active>svg,a:focus>svg{
+		fill:#c2185b;
 	}
 </style>
 <header>
@@ -303,7 +310,7 @@
 				a.append(check.cloneNode(1));
 				a.firstElementChild.firstElementChild.setAttribute(`d`,`M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z`);
 			}
-			a.href=issue.url;
+			a.href=issue.html_url;
 			td.append(a);
 			tr.append(td);
 			td=td.cloneNode(0);
