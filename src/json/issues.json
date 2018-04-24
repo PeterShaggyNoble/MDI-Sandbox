@@ -1,5 +1,20 @@
 [
 	{
+		"brand":true,
+		"comments":1,
+		"created":"2018-04-24T15:59:01Z",
+		"downvotes":0,
+		"id":3104,
+		"labels":["Brand Icon","Contribution","Icon Request"],
+		"milestone":"Version 2.4.xx",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"npm-variant",
+		"updated":"2018-04-24T16:02:57Z",
+		"upvotes":0,
+		"user":"PeterShaggyNoble"
+	},{
 		"brand":false,
 		"comments":0,
 		"created":"2018-04-24T09:02:23Z",
@@ -10,8 +25,8 @@
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
-		"title":"icon request",
-		"updated":"2018-04-24T14:07:37Z",
+		"title":"LTE \/ VoLTE",
+		"updated":"2018-04-24T16:08:10Z",
 		"upvotes":0,
 		"user":"Kordter"
 	},{
@@ -391,6 +406,21 @@
 		"user":"PeterShaggyNoble"
 	},{
 		"brand":false,
+		"comments":0,
+		"created":"2018-04-16T11:27:13Z",
+		"downvotes":0,
+		"id":3064,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Backlog",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Settings Helper",
+		"updated":"2018-04-24T16:55:32Z",
+		"upvotes":0,
+		"user":"PeterShaggyNoble"
+	},{
+		"brand":false,
 		"comments":1,
 		"created":"2018-04-14T14:43:48Z",
 		"downvotes":0,
@@ -435,6 +465,36 @@
 		"upvotes":0,
 		"user":"hvbhome"
 	},{
+		"brand":false,
+		"comments":2,
+		"created":"2018-04-12T15:58:19Z",
+		"downvotes":0,
+		"id":3053,
+		"labels":["Contribution","Icon Request","Stock Google Icon"],
+		"milestone":"Backlog",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":true,
+		"title":"Meeting Room",
+		"updated":"2018-04-24T16:38:07Z",
+		"upvotes":0,
+		"user":"PeterShaggyNoble"
+	},{
+		"brand":false,
+		"comments":0,
+		"created":"2018-04-12T11:42:30Z",
+		"downvotes":0,
+		"id":3052,
+		"labels":["Contribution","Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":true,
+		"title":"Tram side view (Google Maps)",
+		"updated":"2018-04-24T16:38:14Z",
+		"upvotes":0,
+		"user":"CoDEmanX"
+	},{
 		"brand":true,
 		"comments":1,
 		"created":"2018-04-12T11:08:52Z",
@@ -477,6 +537,36 @@
 		"stock":false,
 		"title":"Antenna variants? (Send signal)",
 		"updated":"2018-04-14T22:18:05Z",
+		"upvotes":0,
+		"user":"CoDEmanX"
+	},{
+		"brand":false,
+		"comments":1,
+		"created":"2018-04-11T22:13:55Z",
+		"downvotes":0,
+		"id":3046,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Backlog",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"pan-variant",
+		"updated":"2018-04-24T16:55:46Z",
+		"upvotes":0,
+		"user":"CoDEmanX"
+	},{
+		"brand":false,
+		"comments":0,
+		"created":"2018-04-11T20:20:34Z",
+		"downvotes":0,
+		"id":3045,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Backlog",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"vector-link",
+		"updated":"2018-04-24T16:55:53Z",
 		"upvotes":0,
 		"user":"CoDEmanX"
 	},{
@@ -556,6 +646,21 @@
 		"user":"dominique-debert"
 	},{
 		"brand":false,
+		"comments":1,
+		"created":"2018-04-09T08:04:54Z",
+		"downvotes":0,
+		"id":3030,
+		"labels":["Consider Closing","Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"New Pill icon",
+		"updated":"2018-04-24T16:56:05Z",
+		"upvotes":0,
+		"user":"dominique-debert"
+	},{
+		"brand":false,
 		"comments":2,
 		"created":"2018-04-06T18:49:27Z",
 		"downvotes":0,
@@ -612,6 +717,21 @@
 		"stock":false,
 		"title":"Science, Chemistry, Biology icons",
 		"updated":"2018-04-13T14:43:27Z",
+		"upvotes":0,
+		"user":"henriquecm"
+	},{
+		"brand":false,
+		"comments":1,
+		"created":"2018-04-06T03:58:09Z",
+		"downvotes":0,
+		"id":3018,
+		"labels":["Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Cart icons",
+		"updated":"2018-04-24T16:56:21Z",
 		"upvotes":0,
 		"user":"henriquecm"
 	},{
@@ -794,6 +914,21 @@
 		"updated":"2018-04-09T11:59:38Z",
 		"upvotes":0,
 		"user":"dreasn"
+	},{
+		"brand":false,
+		"comments":0,
+		"created":"2018-03-26T19:16:45Z",
+		"downvotes":0,
+		"id":2967,
+		"labels":["Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":true,
+		"title":"Location Disabled Icon",
+		"updated":"2018-04-24T16:38:42Z",
+		"upvotes":0,
+		"user":"DavidCRivera"
 	},{
 		"brand":false,
 		"comments":1,
@@ -1049,6 +1184,21 @@
 		"updated":"2018-03-14T21:27:13Z",
 		"upvotes":0,
 		"user":"feralheart"
+	},{
+		"brand":true,
+		"comments":3,
+		"created":"2018-03-07T04:44:34Z",
+		"downvotes":0,
+		"id":2883,
+		"labels":["Brand Icon","Icon Request","Low Priority"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Low Priority",
+		"stock":false,
+		"title":"Ko-Fi",
+		"updated":"2018-04-24T16:04:22Z",
+		"upvotes":0,
+		"user":"NOMADE55"
 	},{
 		"brand":false,
 		"comments":2,
@@ -1516,6 +1666,21 @@
 		"user":"esamk"
 	},{
 		"brand":false,
+		"comments":5,
+		"created":"2018-01-22T23:21:36Z",
+		"downvotes":0,
+		"id":2762,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Version 2.4.xx",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Decision",
+		"updated":"2018-04-24T16:56:28Z",
+		"upvotes":0,
+		"user":"MrGrigri"
+	},{
+		"brand":false,
 		"comments":1,
 		"created":"2018-01-18T14:40:13Z",
 		"downvotes":0,
@@ -1756,6 +1921,21 @@
 		"user":"opus1269"
 	},{
 		"brand":false,
+		"comments":0,
+		"created":"2017-12-26T19:47:29Z",
+		"downvotes":0,
+		"id":2703,
+		"labels":["Contribution","High Priority","Icon Request"],
+		"milestone":"Version 2.4.xx",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"table-merge-cells",
+		"updated":"2018-04-24T16:56:38Z",
+		"upvotes":0,
+		"user":"goyney"
+	},{
+		"brand":false,
 		"comments":3,
 		"created":"2017-12-23T19:59:39Z",
 		"downvotes":0,
@@ -1829,6 +2009,21 @@
 		"updated":"2018-03-26T09:25:53Z",
 		"upvotes":0,
 		"user":"DragonVirus"
+	},{
+		"brand":false,
+		"comments":0,
+		"created":"2017-12-21T15:20:06Z",
+		"downvotes":0,
+		"id":2692,
+		"labels":["Contribution","High Priority","Icon Request"],
+		"milestone":"Version 2.4.xx",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"file-download",
+		"updated":"2018-04-24T16:56:51Z",
+		"upvotes":0,
+		"user":"goyney"
 	},{
 		"brand":false,
 		"comments":1,
@@ -1921,6 +2116,21 @@
 		"user":"CoDEmanX"
 	},{
 		"brand":false,
+		"comments":0,
+		"created":"2017-12-11T19:59:16Z",
+		"downvotes":0,
+		"id":2670,
+		"labels":["Contribution","High Priority","Icon Request"],
+		"milestone":"Backlog",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"comment-next, comment-previous",
+		"updated":"2018-04-24T16:57:00Z",
+		"upvotes":0,
+		"user":"goyney"
+	},{
+		"brand":false,
 		"comments":4,
 		"created":"2017-12-11T16:25:50Z",
 		"downvotes":0,
@@ -1951,6 +2161,21 @@
 		"user":"chances"
 	},{
 		"brand":false,
+		"comments":3,
+		"created":"2017-12-08T19:53:19Z",
+		"downvotes":0,
+		"id":2664,
+		"labels":["Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":1,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Penguin",
+		"updated":"2018-04-24T16:57:20Z",
+		"upvotes":1,
+		"user":"augustin32"
+	},{
+		"brand":false,
 		"comments":6,
 		"created":"2017-12-08T14:08:29Z",
 		"downvotes":0,
@@ -1964,6 +2189,21 @@
 		"updated":"2017-12-15T16:27:52Z",
 		"upvotes":0,
 		"user":"Stas-tolpekin"
+	},{
+		"brand":false,
+		"comments":0,
+		"created":"2017-12-06T12:49:48Z",
+		"downvotes":0,
+		"id":2661,
+		"labels":["Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":true,
+		"title":"A Few Icons from Analytics",
+		"updated":"2018-04-24T16:38:52Z",
+		"upvotes":0,
+		"user":"PeterShaggyNoble"
 	},{
 		"brand":false,
 		"comments":2,
@@ -2039,6 +2279,21 @@
 		"updated":"2018-03-28T17:01:36Z",
 		"upvotes":0,
 		"user":"awmottaz"
+	},{
+		"brand":true,
+		"comments":0,
+		"created":"2017-11-28T21:47:05Z",
+		"downvotes":0,
+		"id":2639,
+		"labels":["Brand Icon","Contribution","Icon Request"],
+		"milestone":"Backlog",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"sharepoint",
+		"updated":"2018-04-24T16:04:37Z",
+		"upvotes":0,
+		"user":"goyney"
 	},{
 		"brand":false,
 		"comments":3,
@@ -2341,6 +2596,21 @@
 		"user":"OctoberJemini"
 	},{
 		"brand":false,
+		"comments":4,
+		"created":"2017-11-01T14:29:33Z",
+		"downvotes":0,
+		"id":2572,
+		"labels":["Consider Closing","Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Alternate Filter Icons",
+		"updated":"2018-04-24T16:57:42Z",
+		"upvotes":0,
+		"user":"OctoberJemini"
+	},{
+		"brand":false,
 		"comments":2,
 		"created":"2017-10-30T00:58:14Z",
 		"downvotes":0,
@@ -2596,6 +2866,36 @@
 		"user":"xaviergonz"
 	},{
 		"brand":false,
+		"comments":2,
+		"created":"2017-10-13T11:03:03Z",
+		"downvotes":0,
+		"id":2514,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Backlog",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Record Circle (+Outline)",
+		"updated":"2018-04-24T16:57:50Z",
+		"upvotes":0,
+		"user":"PeterShaggyNoble"
+	},{
+		"brand":false,
+		"comments":0,
+		"created":"2017-10-12T10:31:59Z",
+		"downvotes":0,
+		"id":2510,
+		"labels":["Contribution","Icon Request","Stock Google Icon"],
+		"milestone":"Version 2.4.xx",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":true,
+		"title":"Switch Account (Variant)",
+		"updated":"2018-04-24T16:39:48Z",
+		"upvotes":0,
+		"user":"PeterShaggyNoble"
+	},{
+		"brand":false,
 		"comments":6,
 		"created":"2017-10-09T19:58:07Z",
 		"downvotes":0,
@@ -2671,6 +2971,21 @@
 		"user":"huajianjiang"
 	},{
 		"brand":false,
+		"comments":0,
+		"created":"2017-10-06T15:37:00Z",
+		"downvotes":0,
+		"id":2493,
+		"labels":["Contribution","Icon Request","Stock Google Icon"],
+		"milestone":"Version 2.4.xx",
+		"reactions":1,
+		"status":"Coming Soon",
+		"stock":true,
+		"title":"Phone icons from Android Device Manager",
+		"updated":"2018-04-24T16:39:54Z",
+		"upvotes":1,
+		"user":"GreenTurtwig"
+	},{
+		"brand":false,
 		"comments":3,
 		"created":"2017-10-04T22:38:53Z",
 		"downvotes":0,
@@ -2729,6 +3044,21 @@
 		"updated":"2017-10-04T16:31:11Z",
 		"upvotes":0,
 		"user":"whitelizard"
+	},{
+		"brand":false,
+		"comments":3,
+		"created":"2017-10-01T13:32:59Z",
+		"downvotes":0,
+		"id":2482,
+		"labels":["Consider Closing","Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"bulletproof-vest",
+		"updated":"2018-04-24T16:58:05Z",
+		"upvotes":0,
+		"user":"augustin32"
 	},{
 		"brand":false,
 		"comments":4,
@@ -2866,6 +3196,21 @@
 		"user":"finity69x2"
 	},{
 		"brand":false,
+		"comments":0,
+		"created":"2017-09-22T15:31:56Z",
+		"downvotes":0,
+		"id":2453,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Version 2.4.xx",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Television controls",
+		"updated":"2018-04-24T16:58:32Z",
+		"upvotes":0,
+		"user":"GreenTurtwig"
+	},{
+		"brand":false,
 		"comments":3,
 		"created":"2017-09-21T22:39:48Z",
 		"downvotes":0,
@@ -2926,6 +3271,21 @@
 		"user":"MrGrigri"
 	},{
 		"brand":false,
+		"comments":1,
+		"created":"2017-09-17T15:54:00Z",
+		"downvotes":0,
+		"id":2429,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Version 2.4.xx",
+		"reactions":1,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Knives",
+		"updated":"2018-04-24T16:58:55Z",
+		"upvotes":1,
+		"user":"augustin32"
+	},{
+		"brand":false,
 		"comments":4,
 		"created":"2017-09-15T07:16:15Z",
 		"downvotes":0,
@@ -2952,6 +3312,21 @@
 		"stock":false,
 		"title":"aws (Amazon Web Services)",
 		"updated":"2017-09-11T03:23:40Z",
+		"upvotes":0,
+		"user":"mikegchambers"
+	},{
+		"brand":false,
+		"comments":9,
+		"created":"2017-09-11T02:45:30Z",
+		"downvotes":0,
+		"id":2412,
+		"labels":["Contribution","High Priority","Icon Request"],
+		"milestone":"Version 2.4.xx",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"video-classic",
+		"updated":"2018-04-24T16:59:03Z",
 		"upvotes":0,
 		"user":"mikegchambers"
 	},{
@@ -3464,6 +3839,21 @@
 		"updated":"2018-03-08T17:14:47Z",
 		"upvotes":0,
 		"user":"AdrianVovk"
+	},{
+		"brand":false,
+		"comments":0,
+		"created":"2017-07-20T23:48:40Z",
+		"downvotes":0,
+		"id":2265,
+		"labels":["Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":true,
+		"title":"Missing Material.io Icons",
+		"updated":"2018-04-24T16:42:03Z",
+		"upvotes":0,
+		"user":"k5cents"
 	},{
 		"brand":false,
 		"comments":1,
@@ -4004,6 +4394,21 @@
 		"updated":"2017-10-10T17:34:11Z",
 		"upvotes":1,
 		"user":"ricardorado9"
+	},{
+		"brand":false,
+		"comments":1,
+		"created":"2017-06-11T11:32:04Z",
+		"downvotes":0,
+		"id":2149,
+		"labels":["Contribution","Icon Request","Stock Google Icon"],
+		"milestone":"Version 2.4.xx",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":true,
+		"title":"Ballot icon",
+		"updated":"2018-04-24T16:42:20Z",
+		"upvotes":0,
+		"user":"stfield"
 	},{
 		"brand":false,
 		"comments":4,
@@ -4561,6 +4966,21 @@
 		"user":"k5cents"
 	},{
 		"brand":false,
+		"comments":0,
+		"created":"2017-03-29T15:34:18Z",
+		"downvotes":0,
+		"id":1974,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Version 2.4.xx",
+		"reactions":1,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Calendar Minus",
+		"updated":"2018-04-24T16:59:13Z",
+		"upvotes":1,
+		"user":"ButchMonkey"
+	},{
+		"brand":false,
 		"comments":4,
 		"created":"2017-03-29T07:26:46Z",
 		"downvotes":0,
@@ -4951,6 +5371,21 @@
 		"user":"victor-perez"
 	},{
 		"brand":false,
+		"comments":2,
+		"created":"2017-02-04T17:22:56Z",
+		"downvotes":0,
+		"id":1836,
+		"labels":["Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"File Plus, Open folders and around the Clock",
+		"updated":"2018-04-24T16:59:27Z",
+		"upvotes":0,
+		"user":"offvalley"
+	},{
+		"brand":false,
 		"comments":7,
 		"created":"2017-02-01T21:55:53Z",
 		"downvotes":0,
@@ -4994,6 +5429,21 @@
 		"updated":"2018-03-06T17:06:36Z",
 		"upvotes":0,
 		"user":"kylerw"
+	},{
+		"brand":false,
+		"comments":16,
+		"created":"2017-01-31T17:32:14Z",
+		"downvotes":0,
+		"id":1824,
+		"labels":["Alias","Contribution","High Priority","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Icons for calendar",
+		"updated":"2018-04-24T17:00:08Z",
+		"upvotes":0,
+		"user":"KlausEichinger"
 	},{
 		"brand":false,
 		"comments":0,
@@ -5071,6 +5521,21 @@
 		"user":"Enorio"
 	},{
 		"brand":false,
+		"comments":7,
+		"created":"2017-01-26T08:11:17Z",
+		"downvotes":0,
+		"id":1802,
+		"labels":["Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":1,
+		"status":"Pending",
+		"stock":true,
+		"title":"Restaurant & Restaurant Menu",
+		"updated":"2018-04-24T16:42:48Z",
+		"upvotes":1,
+		"user":"nmcardoso"
+	},{
+		"brand":false,
 		"comments":2,
 		"created":"2017-01-25T20:30:42Z",
 		"downvotes":0,
@@ -5114,6 +5579,21 @@
 		"updated":"2017-01-31T14:54:50Z",
 		"upvotes":0,
 		"user":"bebenins"
+	},{
+		"brand":false,
+		"comments":5,
+		"created":"2017-01-21T19:25:19Z",
+		"downvotes":0,
+		"id":1788,
+		"labels":["Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":true,
+		"title":"Google Fit Scales Icons",
+		"updated":"2018-04-24T16:43:31Z",
+		"upvotes":0,
+		"user":"MaximilianKeppeler"
 	},{
 		"brand":false,
 		"comments":2,
@@ -5356,6 +5836,21 @@
 		"user":"eddieberklee"
 	},{
 		"brand":false,
+		"comments":0,
+		"created":"2016-12-16T18:50:05Z",
+		"downvotes":0,
+		"id":1706,
+		"labels":["Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":true,
+		"title":"Missing google icon list",
+		"updated":"2018-04-24T16:43:50Z",
+		"upvotes":0,
+		"user":"justechn"
+	},{
+		"brand":false,
 		"comments":12,
 		"created":"2016-12-12T08:03:49Z",
 		"downvotes":0,
@@ -5401,6 +5896,21 @@
 		"user":"ambitmaster"
 	},{
 		"brand":false,
+		"comments":2,
+		"created":"2016-12-09T20:54:59Z",
+		"downvotes":0,
+		"id":1692,
+		"labels":["High Priority","Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":0,
+		"status":"High Priority",
+		"stock":true,
+		"title":"Missing google's MD icons",
+		"updated":"2018-04-24T16:44:17Z",
+		"upvotes":0,
+		"user":"raonicaselli"
+	},{
+		"brand":false,
 		"comments":3,
 		"created":"2016-12-06T17:21:41Z",
 		"downvotes":0,
@@ -5429,6 +5939,21 @@
 		"updated":"2018-01-17T15:46:59Z",
 		"upvotes":0,
 		"user":"metalla030"
+	},{
+		"brand":false,
+		"comments":4,
+		"created":"2016-12-05T01:22:12Z",
+		"downvotes":0,
+		"id":1681,
+		"labels":["Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Nought?",
+		"updated":"2018-04-24T17:01:06Z",
+		"upvotes":0,
+		"user":"JamesCoyle"
 	},{
 		"brand":false,
 		"comments":3,
@@ -5641,6 +6166,21 @@
 		"user":"reinert"
 	},{
 		"brand":false,
+		"comments":1,
+		"created":"2016-10-25T13:26:34Z",
+		"downvotes":0,
+		"id":1599,
+		"labels":["Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":true,
+		"title":"Missed Google Material Design Icons",
+		"updated":"2018-04-24T16:44:39Z",
+		"upvotes":0,
+		"user":"SuperITMan"
+	},{
+		"brand":false,
 		"comments":7,
 		"created":"2016-10-21T21:57:28Z",
 		"downvotes":0,
@@ -5669,6 +6209,21 @@
 		"updated":"2018-03-14T15:59:34Z",
 		"upvotes":0,
 		"user":"sleman"
+	},{
+		"brand":false,
+		"comments":3,
+		"created":"2016-10-20T17:17:47Z",
+		"downvotes":0,
+		"id":1586,
+		"labels":["Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":false,
+		"title":"Upload SVGs to MD",
+		"updated":"2018-04-24T17:01:31Z",
+		"upvotes":0,
+		"user":"AlexMichaelUX"
 	},{
 		"brand":false,
 		"comments":2,
@@ -5789,6 +6344,21 @@
 		"updated":"2018-03-02T11:48:28Z",
 		"upvotes":0,
 		"user":"st-clair-clarke"
+	},{
+		"brand":false,
+		"comments":2,
+		"created":"2016-10-06T16:11:36Z",
+		"downvotes":0,
+		"id":1555,
+		"labels":["Icon Request","Stock Google Icon"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":true,
+		"title":"Requested icons. ",
+		"updated":"2018-04-24T16:45:05Z",
+		"upvotes":0,
+		"user":"erstaeuble"
 	},{
 		"brand":false,
 		"comments":1,
@@ -6014,6 +6584,21 @@
 		"updated":"2018-01-04T16:14:24Z",
 		"upvotes":0,
 		"user":"Glurt"
+	},{
+		"brand":false,
+		"comments":0,
+		"created":"2016-08-30T23:39:02Z",
+		"downvotes":0,
+		"id":1476,
+		"labels":["Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Request: no-search icon",
+		"updated":"2018-04-24T17:01:52Z",
+		"upvotes":0,
+		"user":"MrGrigri"
 	},{
 		"brand":false,
 		"comments":0,
@@ -6481,6 +7066,21 @@
 		"user":"jandrei"
 	},{
 		"brand":false,
+		"comments":1,
+		"created":"2016-06-27T09:21:46Z",
+		"downvotes":0,
+		"id":1318,
+		"labels":["Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Weather Icon set",
+		"updated":"2018-04-24T17:02:11Z",
+		"upvotes":0,
+		"user":"adbstyle"
+	},{
+		"brand":false,
 		"comments":8,
 		"created":"2016-06-23T18:37:38Z",
 		"downvotes":0,
@@ -6674,6 +7274,21 @@
 		"updated":"2016-06-27T07:46:56Z",
 		"upvotes":0,
 		"user":"AeonDave"
+	},{
+		"brand":false,
+		"comments":3,
+		"created":"2016-06-06T02:40:12Z",
+		"downvotes":0,
+		"id":1269,
+		"labels":["Contribution","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"New icon - bank plus",
+		"updated":"2018-04-24T17:02:36Z",
+		"upvotes":0,
+		"user":"rosemarystanley"
 	},{
 		"brand":false,
 		"comments":0,
@@ -7666,6 +8281,21 @@
 		"user":"adrientetar"
 	},{
 		"brand":false,
+		"comments":4,
+		"created":"2015-11-24T09:25:21Z",
+		"downvotes":0,
+		"id":861,
+		"labels":["Consider Closing","Contribution","Home Assistant","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"Some smarthome icons",
+		"updated":"2018-04-24T17:02:50Z",
+		"upvotes":0,
+		"user":"panzaeron"
+	},{
+		"brand":false,
 		"comments":2,
 		"created":"2015-11-19T18:57:00Z",
 		"downvotes":0,
@@ -8444,6 +9074,21 @@
 		"updated":"2017-03-08T14:41:41Z",
 		"upvotes":0,
 		"user":"rpi-odoo"
+	},{
+		"brand":false,
+		"comments":18,
+		"created":"2015-07-27T09:09:43Z",
+		"downvotes":0,
+		"id":541,
+		"labels":["Bug","Contribution","High Priority","Icon Request"],
+		"milestone":"Version 2.4.xx",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"New \/ Updated Weather Icons",
+		"updated":"2018-04-24T17:03:30Z",
+		"upvotes":0,
+		"user":"SaltySeaDog"
 	},{
 		"brand":false,
 		"comments":0,
