@@ -156,7 +156,7 @@
 					/*svg.setAttribute(`width`,svg.getAttribute`width`||24);*/
 					svg.dataset.icons.split`,`.forEach(path=>{
 						svg.append(this.path=this.path.cloneNode(1));
-						this.path.setAttribute(`d`,icons.list[path].data.regular);
+						this.path.setAttribute(`d`,icons.list[path]?icons.list[path].data.regular:icons.list["help-circle-outline"].data.regular);
 					});
 					svg.removeAttribute`data-icons`;
 				});
