@@ -248,28 +248,6 @@
 		let 	api=1,
 			response=await fetch`http://dev.materialdesignicons.com/api/github/issues`.catch(async _=>(api=0,await fetch`../json/issues.json`)),
 			issues=await response.json(),
-			labels={
-				alias:`Alias`,
-				alpha:`Alpha-Numeric Font`,
-				brand:`Brand Icon`,
-				change:`Breaking Change`,
-				bug:`Bug`,
-				close:`Consider Closing`,
-				contribution:`Contribution`,
-				docs:`Documentation :book:`,
-				dupe:`Duplicate/Already Included`,
-				high:`High Priority`,
-				home:`Home Assistant`,
-				request:`Icon Request`,
-				language:`Language Conflict`,
-				low:`Low Priority`,
-				info:`Needs More Information`,
-				question:`Question`,
-				rejected:`Rejected`,
-				feature:`Site Feature`,
-				stock:`Stock Google Icon`,
-				font:`Webfont Feature`
-			},
 		 	tbody={
 				icons:document.getElementById`icons`.querySelector`tbody`,
 				brands:document.getElementById`brands`.querySelector`tbody`
@@ -280,13 +258,19 @@
 			},
 			check=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 			path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
-			tr,td,a;
-		issues=issues.filter(issue=>issue.labels.every(label=>label!==labels.close&&label!==labels.info));
-		issues.sort((x,y)=>x.reactions>y.reactions?-1:x.reactions<y.reactions?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1);
+			tr,td,a,
+			react=api?`plus`:`reactions`;
+		issues=issues.filter(issue=>issue.labels.every(label=>!label.startsWith`Consider Closing`&&!label.startsWith`Needs More Information`));
+		issues.sort((x,y)=>x[react]>y[react]?-1:x[react]<y[react]?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1);
 		check.setAttribute(`viewBox`,`0 0 24 24`);
 		path.setAttribute(`d`,`M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z`);
 		check.append(path);
 		issues.forEach(issue=>{
+			if(api){
+				issue.brand=issue.labels.some(label=>label.startsWith`Brand Icon`);
+				issue.status=issue.labels.some(label=>label.startsWith`Rejected`)?`Rejected`:issue.labels.some(label=>label.startsWith`Low Priority`)?`Low Priority`:issue.labels.some(label=>label.startsWith`Contribution`)?`Coming Soon`:issue.labels.some(label=>label.startsWith`High Priority`)?`High Priority`:`Pending`;
+				issue.stock=issue.labels.some(label=>label.startsWith`Stock Google Icon`);
+			}
 			tr=tr?tr.cloneNode(0):document.createElement`tr`;
 			tr.classList.toggle(`soon`,issue.status===`Coming Soon`);
 			td=td?td.cloneNode(0):document.createElement`td`;
@@ -300,7 +284,7 @@
 				a.append(check.cloneNode(1));
 				a.firstElementChild.firstElementChild.setAttribute(`d`,`M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z`);
 			}
-			a.href=`https://github.com/Templarian/MaterialDesign/issues/`+issue.id;
+			a.href=`https://github.com/Templarian/MaterialDesign/issues/`+issue[api?`number`:`id`];
 			td.append(a);
 			tr.append(td);
 			td=td.cloneNode(0);
@@ -314,7 +298,7 @@
 				td.append(check.cloneNode(1));
 			tr.append(td);
 			td=td.cloneNode(0);
-			td.append(document.createTextNode(issue.reactions));
+			td.append(document.createTextNode(issue[react]));
 			tr.append(td);
 			td=td.cloneNode(0);
 			td.append(document.createTextNode(issue.comments));
