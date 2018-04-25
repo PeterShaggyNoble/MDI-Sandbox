@@ -1302,10 +1302,10 @@
 					,5e3);
 				},
 				build:type=>Object.entries(icons.list).filter(([key,icon])=>
-					icon.articles.main&&!icon.articles.main.classList.contains`dn`&&icon.data[page.set]
-				).map(([key,icon])=>
-					type==`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${icon.data[page.set]}"`
-				).join(type==`xml`?``:`,`),
+						icon.articles.main&&!icon.articles.main.classList.contains`dn`&&icon.data[page.set]
+					).map(([key,icon])=>
+						type==`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${icon.data[page.set]}"`
+					).join(type==`xml`?``:`,`),
 				copy(string,message){
 					editor.dialog.append(this.textarea);
 					this.textarea.value=string;
@@ -1322,7 +1322,7 @@
 					this.anchor.remove();
 					URL.revokeObjectURL(this.anchor.href);
 				},
-				getphp:async _=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php`).text()).replace(/\n/\* DELETE BELOW \*/\n[\s\S]+?\n/\* DELETE ABOVE \*/\n/g,``).replace(/\n/\*[\s\S]+\*/\n/,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
+				getphp:async _=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php`).text()).replace(/\n/\* DELETE BELOW \*/\n.+?\n/\* DELETE ABOVE \*/\n\n|/\*.+?\*/\n/gs,``).replace(/const data=\[.+?\]/s,`const data=[]`)
 			},
 			svgs={
 				path:N`path`,
