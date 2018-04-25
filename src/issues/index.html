@@ -245,7 +245,9 @@
 </table>
 <script>{
 	(async _=>{
-		let 	issues=await(await fetch(`../json/issues.json`)).json(),
+		let 	api=1,
+			response=await fetch`http://dev.materialdesignicons.com/api/github/issues`.catch(async _=>(api=0,await fetch`../json/issues.json`)),
+			issues=await response.json(),
 			labels={
 				alias:`Alias`,
 				alpha:`Alpha-Numeric Font`,
@@ -320,11 +322,11 @@
 			tbody[issue.brand?`brands`:`icons`].append(tr);
 		});
 		await new Promise(resolve=>{
-			let js=document.createElement`script`;
-			js.async=1;
-			js.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
-			document.body.append(js);
-			script.addEventListener(`load`,resolve,0);
+			let ga=document.createElement`script`;
+			ga.async=1;
+			ga.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
+			document.body.append(ga);
+			ga.addEventListener(`load`,resolve,0);
 		});
 		window.dataLayer=window.dataLayer||[];
 		let gtag=function(){window.dataLayer.push(arguments);};

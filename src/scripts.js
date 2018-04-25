@@ -1162,11 +1162,11 @@
 		icons.array=Object.values(icons.list=await(await fetch`json/icons.json`).json());
 		page.init();
 		await new Promise(resolve=>{
-			let script=C`script`;
-			script.async=1;
-			script.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
-			b.append(script);
-			script.addEventListener(`load`,resolve,0);
+			let ga=C`script`;
+			ga.async=1;
+			ga.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
+			b.append(ga);
+			ga.addEventListener(`load`,resolve,0);
 		});
 		let 	date=new Date,
 			month=date.getMonth(),
