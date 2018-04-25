@@ -1068,7 +1068,7 @@
 				<li><a class="db fwm" href="https://petershaggynoble.github.io/MDI-Sandbox/extended/" tabindex="-1"><svg class="dib pen vam" data-icons="new-box"></svg>Stock Icon Preview</a>
 				<li><a class="db fwm" href="https://petershaggynoble.github.io/MDI-Sandbox/editor/" tabindex="-1"><svg class="dib pen vam" data-icons="brush"></svg>Icon Editor</a>
 				<li><a class="db fwm" href="https://petershaggynoble.github.io/MDI-Sandbox/issues/" tabindex="-1"><svg class="dib pen vam" data-icons="github-box"></svg>Issue Tracker</a>
-				<li><a class="db fwm" download="mdi.php" href="https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php" tabindex="-1"><svg class="dib pen vam" data-icons="language-php"></svg>PHP Library</a>
+				<li><a class="db fwm" download href="https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php" tabindex="-1"><svg class="dib pen vam" data-icons="language-php"></svg>PHP Library (WIP)</a>
 			</ul>
 			<aside id="links">
 				<ul>
@@ -1100,7 +1100,7 @@
 				<li class="cp fwm wsnw"><svg class="dib pen vam" data-icons="json"></svg>JSON Object
 				<li class="cp fwm wsnw"><svg class="dib pen vam" data-icons="angular"></svg>SVG for Angular
 				<li class="cp fwm wsnw"><svg class="dib pen vam" data-icons="polymer"></svg>HTML for Polymer
-				<li class="cp fwm wsnw"><svg class="dib pen vam" data-icons="language-php"></svg>PHP Library
+				<li class="cp fwm wsnw"><svg class="dib pen vam" data-icons="language-php"></svg>PHP Library (WIP)
 			</ul>
 		</header>
 		<p class="dn fwm">No icons matched your query
@@ -1249,7 +1249,7 @@
 							event.preventDefault();
 						}
 					},0);
-					this.main.addEventListener(`click`,event=>{
+					this.main.addEventListener(`click`,async event=>{
 						let	target=event.target,
 							parent=target.parentNode,
 							current=this.main.querySelector`article.active`;
@@ -1261,7 +1261,7 @@
 								page.download(`data:text/json;utf8,{${filter.filtered?this.build`jsono`:this.packages.json||(this.packages.jsono=this.build`jsono`)}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
 								break;
 							case this.actions.php:
-								page.download(`data:text/php;utf8,<?php\n\n// NOTE: This library is a work in progress and not yet fit for production use.\n// For usage instructions and to provide feedback please see:\n// https://github.com/Templarian/MaterialDesign/issues/3087\n\nclass MDI{\n\tconst defaults=[\n\t\t"fill"=>"212121",\n\t\t"icon"=>"help-circle-outline",\n\t\t"size"=>24\n\t];\n\tconst data[${filter.filtered?this.build`php`:this.packages.php||(this.packages.php=this.build`php`)}];\n\tpublic function __construct($name){\n\t\t$this->path=self::data[$name&&isset(self::data[$name])?$name:self::defaults["icon"]];\n\t}\n\tprivate function __toString(){\n\t\treturn$this->path;\n\t}\n\tpublic function svg($title="",$size=0,$fill="",$attr=[]){\n\t\tif($title)\n\t\t\t$title="<title>$title</title>";\n\t\t$attr=implode(" ",array_map(\n\t\t\tfunction($val,$key){\n\t\t\t\treturn"$key=\\"$val\\"";\n\t\t\t},\n\t\t\t$attr,\n\t\t\tarray_keys($attr)\n\t\t));\n\t\tif($attr)\n\t\t\t$attr=" $attr";\n\t\tif($fill)\n\t\t\t$attr=" fill=\\"#".str_replace("#","",$fill)."\\"$attr";\n\t\tif($size)\n\t\t\t$attr=" width=\\"$size\\" height=\\"$size\\"$attr";\n\t\treturn\t"<svg viewBox=\\"0 0 24 24\\"$attr>".\n\t\t\t$title.\n\t\t\t"<path d=\\"$this\\"/>".\n\t\t\t"</svg>";\n\t}\n\tpublic function utf8($params=[]){\n\t\t$params=array_merge(self::defaults,$params);\n\t\tif($params["fill"])\n\t\t\t$params["fill"]=" fill='%23".str_replace("#","",$params["fill"])."'";\n\t\treturn\t"data:image/svg+xml;utf8,".\n\t\t\t"<svg".$params["fill"]." height='".$params["size"]."' viewBox='0 0 24 24' width='".$params["size"]."' xmlns='http://www.w3.org/2000/svg'>".\n\t\t\t"<path d='$this'/>".\n\t\t\t"</svg>";\n\t}\n\tpublic function base64($params=[]){\n\t\t$params=array_merge(self::defaults,$params);\n\t\tif($params["fill"])\n\t\t\t$params["fill"]=" fill=\\"#".str_replace("#","",$params["fill"])."\\"";\n\t\treturn\t"data:image/svg+xml;base64,".\n\t\t\tbase64_encode("<svg".$params["fill"]." height=\\"".$params["size"]."\\" viewBox=\\"0 0 24 24\\" width=\\"".$params["size"]."\\" xmlns=\\"http://www.w3.org/2000/svg\\">".\n\t\t\t"<path d=\\"$this\\"/>".\n\t\t\t"</svg>");\n\t}\n\tpublic function file($params=[]){\n\t\t$params=array_merge(self::defaults,$params);\n\t\theader("Content-Type:image/svg+xml");\n\t\tif($params["fill"])\n\t\t\t$params["fill"]=" fill=\\"#".str_replace("#","",$params["fill"])."\\"";\n\t\techo\t"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>".\n\t\t\t"<!DOCTYPE svg PUBLIC \\"-//W3C//DTD SVG 1.1//EN\\" \\"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\\">".\n\t\t\t"<svg".$params["fill"]." height=\\"".$params["size"]."\\" viewBox=\\"0 0 24 24\\" width=\\"".$params["size"]."\\" xmlns=\\"http://www.w3.org/2000/svg\\">".\n\t\t\t"<path d=\\"$this\\"/>".\n\t\t\t"</svg>";\n\t}\n};\nfunction MDI($name){\n\treturn new MDI($name);\n}\nif(isset($_GET["mdi-icon"])){\n\t$args=[];\n\tif(isset($_GET["mdi-fill"]))\n\t\t$args["fill"]=$_GET["mdi-fill"];\n\tif(isset($_GET["mdi-size"]))\n\t\t$args["size"]=$_GET["mdi-size"];\n\tMDI($_GET["mdi-icon"])->file($args);\n}\n?>`,`${filter.filtered?`mdi-custom`:`mdi`}.php`);
+								page.download(`data:text/php;utf8,`+(await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build`php`:this.packages.php||(this.packages.php=this.build`php`)}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
 								break;
 							case this.actions.svg:
 							case this.actions.html:
@@ -1320,7 +1320,8 @@
 					this.anchor.click();
 					this.anchor.remove();
 					URL.revokeObjectURL(this.anchor.href);
-				}
+				},
+				getphp:async _=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php`).text()).replace(/\n/\* DELETE BELOW \*/\n[\s\S]+?\n/\* DELETE ABOVE \*/\n/g,``).replace(/\n/\*[\s\S]+\*/\n/,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
 			},
 			svgs={
 				path:N`path`,
@@ -1592,7 +1593,7 @@
 						json:new item(`json`,`JSON Object`),
 						svg:new item(`angular`,`SVG for Angular`),
 						html:new item(`polymer`,`HTML for Polymer`),
-						php:new item(`language-php`,`PHP Library`),
+						php:new item(`language-php`,`PHP Library (WIP)`),
 						import:new item(`file-import`,`Import Favourites`),
 						export:new item(`file-export`,`Export Favourites`),
 						clear:new item(`delete`,`Clear Favourites`)
@@ -1608,13 +1609,13 @@
 						this.load(event)
 					,0);
 					this.articles=this.section.getElementsByTagName`article`;
-					this.menu.addEventListener(`click`,event=>{
+					this.menu.addEventListener(`click`,async event=>{
 						switch(event.target){
 							case this.actions.json:
 								page.download(`data:text/json;utf8,{${this.build`jsono`}}`,`mdi-favourites.json`);
 								break;
 							case this.actions.php:
-								page.download(`data:text/php;utf8,<?php\n\n// NOTE: This library is a work in progress and not yet fit for production use.\n// For usage instructions and to provide feedback please see:\n// https://github.com/Templarian/MaterialDesign/issues/3087\n\nclass MDI{\n\tconst defaults=[\n\t\t"fill"=>"212121",\n\t\t"icon"=>"help-circle-outline",\n\t\t"size"=>24\n\t];\n\tconst data[${this.build`php`}];\n\tpublic function __construct($name){\n\t\t$this->path=self::data[$name&&isset(self::data[$name])?$name:self::defaults["icon"]];\n\t}\n\tprivate function __toString(){\n\t\treturn$this->path;\n\t}\n\tpublic function svg($title="",$size=0,$fill="",$attr=[]){\n\t\tif($title)\n\t\t\t$title="<title>$title</title>";\n\t\t$attr=implode(" ",array_map(\n\t\t\tfunction($val,$key){\n\t\t\t\treturn"$key=\\"$val\\"";\n\t\t\t},\n\t\t\t$attr,\n\t\t\tarray_keys($attr)\n\t\t));\n\t\tif($attr)\n\t\t\t$attr=" $attr";\n\t\tif($fill)\n\t\t\t$attr=" fill=\\"#".str_replace("#","",$fill)."\\"$attr";\n\t\tif($size)\n\t\t\t$attr=" width=\\"$size\\" height=\\"$size\\"$attr";\n\t\treturn\t"<svg viewBox=\\"0 0 24 24\\"$attr>".\n\t\t\t$title.\n\t\t\t"<path d=\\"$this\\"/>".\n\t\t\t"</svg>";\n\t}\n\tpublic function utf8($params=[]){\n\t\t$params=array_merge(self::defaults,$params);\n\t\tif($params["fill"])\n\t\t\t$params["fill"]=" fill='%23".str_replace("#","",$params["fill"])."'";\n\t\treturn\t"data:image/svg+xml;utf8,".\n\t\t\t"<svg".$params["fill"]." height='".$params["size"]."' viewBox='0 0 24 24' width='".$params["size"]."' xmlns='http://www.w3.org/2000/svg'>".\n\t\t\t"<path d='$this'/>".\n\t\t\t"</svg>";\n\t}\n\tpublic function base64($params=[]){\n\t\t$params=array_merge(self::defaults,$params);\n\t\tif($params["fill"])\n\t\t\t$params["fill"]=" fill=\\"#".str_replace("#","",$params["fill"])."\\"";\n\t\treturn\t"data:image/svg+xml;base64,".\n\t\t\tbase64_encode("<svg".$params["fill"]." height=\\"".$params["size"]."\\" viewBox=\\"0 0 24 24\\" width=\\"".$params["size"]."\\" xmlns=\\"http://www.w3.org/2000/svg\\">".\n\t\t\t"<path d=\\"$this\\"/>".\n\t\t\t"</svg>");\n\t}\n\tpublic function file($params=[]){\n\t\t$params=array_merge(self::defaults,$params);\n\t\theader("Content-Type:image/svg+xml");\n\t\tif($params["fill"])\n\t\t\t$params["fill"]=" fill=\\"#".str_replace("#","",$params["fill"])."\\"";\n\t\techo\t"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>".\n\t\t\t"<!DOCTYPE svg PUBLIC \\"-//W3C//DTD SVG 1.1//EN\\" \\"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\\">".\n\t\t\t"<svg".$params["fill"]." height=\\"".$params["size"]."\\" viewBox=\\"0 0 24 24\\" width=\\"".$params["size"]."\\" xmlns=\\"http://www.w3.org/2000/svg\\">".\n\t\t\t"<path d=\\"$this\\"/>".\n\t\t\t"</svg>";\n\t}\n};\nfunction MDI($name){\n\treturn new MDI($name);\n}\nif(isset($_GET["mdi-icon"])){\n\t$args=[];\n\tif(isset($_GET["mdi-fill"]))\n\t\t$args["fill"]=$_GET["mdi-fill"];\n\tif(isset($_GET["mdi-size"]))\n\t\t$args["size"]=$_GET["mdi-size"];\n\tMDI($_GET["mdi-icon"])->file($args);\n}\n?>`,`mdi-favourites.php`);
+								page.download(`data:text/php;utf8,`+(await page.getphp()).replace(/const data=\[\]/,`const data=[${this.build`php`}]`),`mdi-favourites.php`);
 								break;
 							case this.actions.svg:
 							case this.actions.html:

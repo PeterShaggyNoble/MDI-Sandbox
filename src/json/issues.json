@@ -1,21 +1,5 @@
 [
 	{
-		"brand":true,
-		"comments":1,
-		"created":"2018-04-25T11:40:53Z",
-		"downvotes":0,
-		"home":false,
-		"id":3115,
-		"labels":["Brand Icon","Icon Request"],
-		"milestone":null,
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"musical.ly",
-		"updated":"2018-04-25T11:55:16Z",
-		"upvotes":0,
-		"user":"elisabeth21"
-	},{
 		"brand":false,
 		"comments":0,
 		"created":"2018-04-25T11:03:13Z",
@@ -1351,12 +1335,12 @@
 		"home":false,
 		"id":2909,
 		"labels":["Brand Icon","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 2.4.xx",
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
 		"title":"Strava",
-		"updated":"2018-03-30T00:46:29Z",
+		"updated":"2018-04-25T12:03:17Z",
 		"upvotes":0,
 		"user":"dbybanez"
 	},{
@@ -4079,22 +4063,6 @@
 		"updated":"2017-10-03T08:00:41Z",
 		"upvotes":0,
 		"user":"damianobarbati"
-	},{
-		"brand":true,
-		"comments":4,
-		"created":"2017-08-20T03:22:11Z",
-		"downvotes":0,
-		"home":false,
-		"id":2337,
-		"labels":["Brand Icon","Contribution","Icon Request","Low Priority"],
-		"milestone":null,
-		"reactions":0,
-		"status":"Low Priority",
-		"stock":false,
-		"title":"Dashcoin",
-		"updated":"2018-04-20T11:14:55Z",
-		"upvotes":0,
-		"user":"Isaachi1"
 	},{
 		"brand":false,
 		"comments":1,
@@ -9553,7 +9521,7 @@
 		"user":"derwaldgeist"
 	},{
 		"brand":false,
-		"comments":1,
+		"comments":4,
 		"created":"2015-09-30T01:17:52Z",
 		"downvotes":0,
 		"home":false,
@@ -9564,7 +9532,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"License Plate icon",
-		"updated":"2017-12-14T11:23:07Z",
+		"updated":"2018-04-25T13:48:55Z",
 		"upvotes":0,
 		"user":"smileapplications"
 	},{
