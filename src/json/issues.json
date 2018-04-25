@@ -1,5 +1,21 @@
 [
 	{
+		"brand":true,
+		"comments":1,
+		"created":"2018-04-25T11:40:53Z",
+		"downvotes":0,
+		"home":false,
+		"id":3115,
+		"labels":["Brand Icon","Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":false,
+		"title":"musical.ly",
+		"updated":"2018-04-25T11:55:16Z",
+		"upvotes":0,
+		"user":"elisabeth21"
+	},{
 		"brand":false,
 		"comments":0,
 		"created":"2018-04-25T11:03:13Z",
@@ -6484,15 +6500,15 @@
 		"comments":6,
 		"created":"2016-12-10T23:40:56Z",
 		"downvotes":0,
-		"home":false,
+		"home":true,
 		"id":1694,
-		"labels":["Alias","Icon Request","Stock Google Icon"],
+		"labels":["Alias","Home Assistant","Icon Request","Stock Google Icon"],
 		"milestone":"Backlog",
 		"reactions":0,
 		"status":"Pending",
 		"stock":true,
 		"title":"leak_add, leak_remove (+aliases proximity sensor)",
-		"updated":"2018-04-25T10:42:58Z",
+		"updated":"2018-04-25T11:34:40Z",
 		"upvotes":0,
 		"user":"ambitmaster"
 	},{
@@ -6599,12 +6615,12 @@
 		"home":false,
 		"id":1658,
 		"labels":["Brand Icon","Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 2.4.xx",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Add firebase icon",
-		"updated":"2018-04-14T18:37:17Z",
+		"updated":"2018-04-25T11:37:41Z",
 		"upvotes":0,
 		"user":"jalasem"
 	},{

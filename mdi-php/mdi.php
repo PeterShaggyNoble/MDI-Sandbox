@@ -1,10 +1,17 @@
 <?php
+
+// NOTE: This library is a work in progress and not yet fit for production use.
+// For usage instructions and to provide feedback please see:
+// https://github.com/Templarian/MaterialDesign/issues/3087
+
 /* DELETE BELOW */
 ini_set("display_errors",1);
 error_reporting(E_ALL);
 /* DELETE ABOVE */
+
 /* ADD NOTE ABOUT EDITING DEFAULTS
    + URL OF USAGE INTRUCTIONS */
+
 class MDI{
 	const defaults=[
 		"fill"=>"212121",
@@ -2431,6 +2438,7 @@ if(isset($_GET["mdi-icon"])){
 		$args["size"]=$_GET["mdi-size"];
 	MDI($_GET["mdi-icon"])->file($args);
 }
+
 /* DELETE BELOW */
 else{
 	$icon=isset($_GET["icon"])?$_GET["icon"]:"";
@@ -2536,4 +2544,5 @@ else{
 		"</article>";
 }
 /* DELETE ABOVE */
+
 ?>
