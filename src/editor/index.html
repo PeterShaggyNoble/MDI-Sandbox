@@ -266,7 +266,7 @@
 	<button>Save</button>
 </section>
 <script>
-	(async _=>{
+	(async ()=>{
 		const 	icons=await(await fetch`../json/icons.json`).json(),
 			extended=await(await fetch`../json/extended.json`).json(),
 			other=await(await fetch`../json/other.json`).json(),
@@ -311,7 +311,7 @@
 			storage=localStorage,
 			convert=hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 			test=([r,g,b])=>(r*299+g*587+b*114)/1000,
-			draw=_=>{
+			draw=()=>{
 				context.clearRect(0,0,canvas.width,canvas.height);
 				canvas.height=canvas.width=dimensions;
 				if(values.alpha){
@@ -340,7 +340,7 @@
 		helper.setAttribute(`fill-opacity`,0);
 		svg.append(path,helper);
 		figure.prepend(background,horizontal,vertical,svg);
-		image.addEventListener(`load`,_=>{
+		image.addEventListener(`load`,()=>{
 			context.drawImage(image,values.padding,values.padding);
 			URL.revokeObjectURL(image.src);
 		},0);
@@ -429,7 +429,7 @@
 				}
 				if(target!==inputs.name){
 					clearTimeout(timer);
-					setTimeout(_=>draw(),200);
+					setTimeout(()=>draw(),200);
 				}
 				storage.setItem(`aie-`+target.id,value);
 			}
@@ -439,7 +439,7 @@
 				inputs[key].value=storage[`aie-`+key];
 				inputs[key].dispatchEvent(event);
 			}
-		button.addEventListener(`click`,_=>{
+		button.addEventListener(`click`,()=>{
 			canvas.toBlob(blob=>{
 				a.href=URL.createObjectURL(blob);
 				a.download=`${values.name||`mdi-icon`}.png`;

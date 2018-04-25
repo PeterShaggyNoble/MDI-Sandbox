@@ -53,7 +53,7 @@
 				icons.init();
 				menu.init();
 				svgs.init();
-				setTimeout(_=>
+				setTimeout(()=>
 					filter.init()
 				,600);
 				info.init();
@@ -107,10 +107,10 @@
 							break;
 					}
 				},0);
-				setTimeout(_=>{
+				setTimeout(()=>{
 					let loader=$`load`;
 					loader.classList.add(`oz`,`pen`);
-					setTimeout(_=>
+					setTimeout(()=>
 						loader.remove()
 					,375);
 				},600);
@@ -119,7 +119,7 @@
 				clearTimeout(this.timer);
 				this.message.firstChild.nodeValue=message;
 				this.message.classList.remove`oz`;
-				this.timer=setTimeout(_=>
+				this.timer=setTimeout(()=>
 					this.message.classList.add`oz`
 				,5e3);
 			},
@@ -144,7 +144,7 @@
 				this.anchor.remove();
 				URL.revokeObjectURL(this.anchor.href);
 			},
-			getphp:async _=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php`).text()).replace(/\n\/\* DELETE BELOW \*\/\n.+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*.+?\*\/\n/gs,``).replace(/const data=\[.+?\]/s,`const data=[]`)
+			getphp:async ()=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php`).text()).replace(/\n\/\* DELETE BELOW \*\/\n.+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*.+?\*\/\n/gs,``).replace(/const data=\[.+?\]/s,`const data=[]`)
 		},
 	/** SVGS **/
 		svgs={
@@ -184,7 +184,7 @@
 				this.svg.dataset.icons=`lightbulb-outline,lightbulb`;
 				this.menu.prepend(this.switch);*/
 				let section=page.params.get`section`;
-				section&&(section=$(section))&&setTimeout(_=>
+				section&&(section=$(section))&&setTimeout(()=>
 					this.goto(section)
 				,800);
 				this.nav.addEventListener(`click`,event=>{
@@ -293,7 +293,7 @@
 				let 	to=section.offsetTop-(page.size?16:8)-page.header.offsetHeight,
 					top=h.scrollTop,
 					step=(to-top)/10;
-				this.timer=setInterval(_=>
+				this.timer=setInterval(()=>
 					Math.round(top)===Math.round(to)?clearInterval(this.timer):h.scrollTop=(top+=step)
 				,10);
 			},
@@ -342,14 +342,14 @@
 				if(this.categories.size||this.contributors.size||this.text)
 					filter.apply();
 				else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
-				this.input.addEventListener(`input`,_=>{
+				this.input.addEventListener(`input`,()=>{
 					clearTimeout(this.timer);
-					this.timer=setTimeout(_=>{
+					this.timer=setTimeout(()=>{
 						this.text=this.input.value.toLowerCase().replace(/\+/g,`%2b`);
 						this.apply();
 					},50);
 				},0);
-				this.button.addEventListener(`click`,_=>{
+				this.button.addEventListener(`click`,()=>{
 					this.input.focus();
 					if(this.text){
 						this.text=this.input.value=``;
@@ -465,7 +465,7 @@
 				this.input.accept=`.txt,text/plain`;
 				this.input.classList.add(`ln`,`pa`);
 				this.input.type=`file`;
-				this.input.addEventListener(`change`,_=>{
+				this.input.addEventListener(`change`,()=>{
 					this.input.files[0].type===`text/plain`&&this.reader.readAsText(this.input.files[0]);
 					this.input.remove();
 				},0);
@@ -674,7 +674,7 @@
 					this.heading.classList.add`oz`;
 					this.svg.classList.add`oz`;
 				}else this.toggle();
-				setTimeout(_=>{
+				setTimeout(()=>{
 					this.heading.lastChild.nodeValue=this.name;
 					this.path.setAttribute(`d`,this.data);
 					if(page.size){
@@ -903,7 +903,7 @@
 					this.input.accept=`.txt,text/plain`;
 					this.input.classList.add(`ln`,`pa`);
 					this.input.type=`file`;
-					this.input.addEventListener(`change`,_=>{
+					this.input.addEventListener(`change`,()=>{
 						this.input.files[0].type===`text/plain`&&this.reader.readAsText(this.input.files[0]);
 						this.input.remove();
 					},0);
@@ -932,7 +932,7 @@
 				this.svg=this.figure.firstElementChild;
 				this.path=this.svg.firstElementChild;
 				this.figure.prepend(this.background,this.horizontal=this.background.cloneNode(1),this.vertical=this.background.cloneNode(1));
-				this.image.addEventListener(`load`,_=>{
+				this.image.addEventListener(`load`,()=>{
 					this.context.drawImage(this.image,this.settings.padding,this.settings.padding);
 					URL.revokeObjectURL(this.image.src);
 				},0);
@@ -1026,7 +1026,7 @@
 								break;
 						}
 						clearTimeout(this.timer);
-						this.timer=setTimeout(_=>this.draw(),200);
+						this.timer=setTimeout(()=>this.draw(),200);
 						page.storage&&page.storage.setItem(target.id,value);
 					}
 				},1);
@@ -1037,7 +1037,7 @@
 			close(value){
 				b.removeEventListener(`keydown`,this.fn);
 				this.dialog.classList.add(`oz`,`pen`);
-				this.timer=setTimeout(_=>this.dialog.close(value),225);
+				this.timer=setTimeout(()=>this.dialog.close(value),225);
 			},
 			convert:hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 			downloadpng(){
@@ -1157,7 +1157,7 @@
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000
 		};
 	/** INITIATE **/
-	(async _=>{
+	(async ()=>{
 		categories.list=await(await fetch`json/categories.json`).json();
 		contributors.list=await(await fetch`json/contributors.json`).json();
 		icons.array=Object.values(icons.list=await(await fetch`json/icons.json`).json());

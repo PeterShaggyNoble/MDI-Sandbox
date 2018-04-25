@@ -263,9 +263,9 @@
 	</tbody>
 </table>
 <script>{
-	(async _=>{
+	(async ()=>{
 		let 	api=1,
-			response=await fetch`http://dev.materialdesignicons.com/api/github/issues`.catch(async _=>(api=0,await fetch`../json/issues.json`)),
+			response=await fetch`http://dev.materialdesignicons.com/api/github/issues`.catch(async ()=>(api=0,await fetch`../json/issues.json`)),
 			issues=await response.json(),
 		 	tbody={
 				icons:document.getElementById`icons`.querySelector`tbody`,
