@@ -642,7 +642,7 @@ table.issues{
 }
 @media(max-width:759px){
 	body{
-		padding-top:72px;
+		padding-top:64px;
 	}
 	#header{
 		height:56px;

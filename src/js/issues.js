@@ -1,6 +1,6 @@
 (async ()=>{
-	let 	api=1,
-		response=await fetch`http://dev.materialdesignicons.com/api/github/issues`.catch(async ()=>(api=0,await fetch`../json/issues.json`)),
+/*	let 	response=await fetch`http://dev.materialdesignicons.com/api/github/issues`.catch(async ()=>await fetch`../json/issues.json`),*/
+	let 	response=await fetch`../json/issues.json`,
 		issues=await response.json(),
 		tables={
 			icons:document.getElementById`icons`,
@@ -19,10 +19,11 @@
 		tabs=document.getElementById`tabs`,
 		current=document.querySelector`p.current`,
 		table=tables.icons,
-		tr,td,a,x,
-		react=api?`plus`:`reactions`;
+		tr,td,a,x;
 	issues=issues.filter(issue=>issue.labels.every(label=>!label.startsWith`Consider Closing`&&!label.startsWith`Needs More Information`));
-	issues.sort((x,y)=>x[react]>y[react]?-1:x[react]<y[react]?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1);
+	issues[0].reactions?
+		issues.sort((x,y)=>x.reactions>y.reactions?-1:x.reactions<y.reactions?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1):
+		issues.sort((x,y)=>x.plus>y.plus?-1:x.plus<y.plus?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1)
 	svg.classList.add`vam`;
 	svg.setAttribute(`viewBox`,`0 0 24 24`);
 	path.setAttribute(`d`,`M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z`);
@@ -39,14 +40,12 @@
 		}
 	},0);
 	issues.forEach(issue=>{
-		if(api){
-			issue.brand=issue.labels.some(label=>label.startsWith`Brand Icon`);
-			issue.home=issue.labels.some(label=>label.startsWith`Home Assistant`);
-			issue.id=issue.number;
-			delete issue.number;
-			issue.status=issue.labels.some(label=>label.startsWith`Rejected`)?`Rejected`:issue.labels.some(label=>label.startsWith`Low Priority`)?`Low Priority`:issue.labels.some(label=>label.startsWith`Contribution`)?`Coming Soon`:issue.labels.some(label=>label.startsWith`High Priority`)?`High Priority`:`Pending`;
-			issue.stock=issue.labels.some(label=>label.startsWith`Stock Google Icon`);
-		}
+		issue.brand=issue.brand||issue.labels.some(label=>label.startsWith`Brand Icon`);
+		issue.home=issue.home||issue.labels.some(label=>label.startsWith`Home Assistant`);
+		issue.id=issue.id||issue.number;
+		issue.status=issue.status||issue.labels.some(label=>label.startsWith`Rejected`)?`Rejected`:issue.labels.some(label=>label.startsWith`Low Priority`)?`Low Priority`:issue.labels.some(label=>label.startsWith`Contribution`)?`Coming Soon`:issue.labels.some(label=>label.startsWith`High Priority`)?`High Priority`:`Pending`;
+		issue.stock=issue.stock||issue.labels.some(label=>label.startsWith`Stock Google Icon`);
+		issue.reactions=issue.reactions||issue.plus||0;
 		tr=tr?tr.cloneNode(0):document.createElement`tr`;
 		if(td)
 			td=td.cloneNode(0);
@@ -80,7 +79,7 @@
 			td.append(svg.cloneNode(1));
 		tr.append(td);
 		td=td.cloneNode(0);
-		td.append(document.createTextNode(issue[react]));
+		td.append(document.createTextNode(issue.reactions));
 		tr.append(td);
 		td=td.cloneNode(0);
 		td.append(document.createTextNode(issue.comments));
