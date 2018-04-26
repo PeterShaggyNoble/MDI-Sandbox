@@ -10,7 +10,8 @@
 		--colour:#c2185b;
 		--highlight:#fce4ec;
 		--timing-function:cubic-bezier(.4,0,.2,1);
-	}@viewport{initial-scale:1;maximum-scale:1;minimum-scale:1;user-scalable:0;width:device-width;}
+	}
+	@viewport{initial-scale:1;maximum-scale:1;minimum-scale:1;user-scalable:0;width:device-width;}
 	@font-face{
 		font-family:Roboto;
 		font-style:normal;
@@ -166,18 +167,10 @@
 		opacity:0;
 		transition:opacity .195s var(--timing-function);
 	}
-	body.mdil #switch>svg>path:first-child{
-		opacity:0;
-	}
-	body.mdil #switch>svg>path+path{
-		opacity:1;
-	}
 	body.highlight #highlight>svg>path+path{
 		opacity:1;
 	}
-	body.mdil #highlight,
-	body.mdi #sections~ol>li[data-regular="0"],
-	body.mdil #sections~ol>li[data-light="0"]{
+	body.mdi #sections~ol>li[data-regular="0"]{
 		display:none;
 	}
 	#menu>h3{
@@ -254,9 +247,6 @@
 	body.mdi #sections~ol>li::after{
 		content:" (" attr(data-regular) ")";
 	}
-	body.mdil #sections~ol>li::after{
-		content:" (" attr(data-light) ")";
-	}
 	#contributors>li>img{
 		background:var(--colour);
 		border-radius:50%;
@@ -275,9 +265,6 @@
 	}
 	#extras{
 		padding:8px 0;
-	}
-	body.mdil #extras{
-		padding:0 0 8px;
 	}
 	#links{
 		padding-top:8px;
@@ -348,10 +335,6 @@
 	section#favourites{
 		z-index:2;
 	}
-	body.mdil>#content>section:not(#icons),
-	body.mdil #icons span{
-		display:none;
-	}
 	#content>section>header{
 		background:var(--colour);
 		border-radius:2px 2px 0 0;
@@ -406,15 +389,13 @@
 		margin:0 auto 16px;
 		width:48px;
 	}
-	body.mdi>#content>section>article:not(.regular),
-	body.mdil>#content>section>article:not(.light){
+	body.mdi>#content>section>article:not(.regular){
 		display:none;
 	}
 	#content>section>article>svg>path{
 		transition:opacity .225s var(--timing-function);
 	}
-	body.mdi>#content>section>article>svg>path:not(.regular),
-	body.mdil>#content>section>article>svg>path:not(.light){
+	body.mdi>#content>section>article>svg>path:not(.regular){
 		opacity:0;
 	}
 	#content>section>p:last-of-type{
@@ -1073,14 +1054,14 @@
 			</ul>
 			<aside id="links">
 				<ul>
-					<li><a class="db" href="https://materialdesignicons.com/" tabindex="-1"><svg class="dib pen vam" data-icons="vector-square"></svg>materialdesignicons.com</a>
-					<li><a class="db" href="https://www.npmjs.com/org/mdi" tabindex="-1"><svg class="dib pen vam" data-icons="npm"></svg>@mdi</a>
-					<li><a class="db" href="https://github.com/Templarian/MaterialDesign/" tabindex="-1"><svg class="dib pen vam" data-icons="github-circle"></svg>GitHub Project</a>
-					<li><a class="db" href="https://twitter.com/MaterialIcons/" tabindex="-1"><svg class="dib pen vam" data-icons="twitter"></svg>@MaterialIcons</a>
-					<li><a class="db" href="https://chrome.google.com/webstore/detail/materialdesignicons-picke/edjaedpifkihpjkcgknfokmibkoafhme/" tabindex="-1"><svg class="dib vam" data-icons="google-chrome"></svg>Chrome Extension</a>
-					<li><a class="db" href="https://addons.mozilla.org/en-US/firefox/addon/materialdesignicons-picker/" tabindex="-1"><svg class="dib pen vam" data-icons="firefox"></svg>Firefox Extension</a>
-					<li><a class="db" href="https://material.io/icons/" tabindex="-1"><svg class="dib pen vam" data-icons="google"></svg>Stock Icons</a>
-					<li><a class="db" href="https://material.io/guidelines/style/icons.html#icons-system-icons" tabindex="-1"><svg class="dib pen vam" data-icons="layers"></svg>Design Guidelines</a>
+					<li><a class="db fwm" href="https://materialdesignicons.com/" tabindex="-1"><svg class="dib pen vam" data-icons="vector-square"></svg>materialdesignicons.com</a>
+					<li><a class="db fwm" href="https://www.npmjs.com/org/mdi" tabindex="-1"><svg class="dib pen vam" data-icons="npm"></svg>@mdi</a>
+					<li><a class="db fwm" href="https://github.com/Templarian/MaterialDesign/" tabindex="-1"><svg class="dib pen vam" data-icons="github-circle"></svg>GitHub Project</a>
+					<li><a class="db fwm" href="https://twitter.com/MaterialIcons/" tabindex="-1"><svg class="dib pen vam" data-icons="twitter"></svg>@MaterialIcons</a>
+					<li><a class="db fwm" href="https://chrome.google.com/webstore/detail/materialdesignicons-picke/edjaedpifkihpjkcgknfokmibkoafhme/" tabindex="-1"><svg class="dib vam" data-icons="google-chrome"></svg>Chrome Extension</a>
+					<li><a class="db fwm" href="https://addons.mozilla.org/en-US/firefox/addon/materialdesignicons-picker/" tabindex="-1"><svg class="dib pen vam" data-icons="firefox"></svg>Firefox Extension</a>
+					<li><a class="db fwm" href="https://material.io/icons/" tabindex="-1"><svg class="dib pen vam" data-icons="google"></svg>Stock Icons</a>
+					<li><a class="db fwm" href="https://material.io/guidelines/style/icons.html#icons-system-icons" tabindex="-1"><svg class="dib pen vam" data-icons="layers"></svg>Design Guidelines</a>
 				</ul>
 			</aside>
 		</div>
@@ -1207,7 +1188,7 @@
 				section:$`icons`,
 				textarea:C`textarea`,
 				init(){
-					this.address=`${this.url.protocol}//${this.url.host+this.url.pathname}`;
+					this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
 					this.params=this.url.searchParams;
 					this.light=this.params.get`set`===`light`;
 					this.set=this.light?`light`:`regular`;
@@ -1322,7 +1303,7 @@
 					this.anchor.remove();
 					URL.revokeObjectURL(this.anchor.href);
 				},
-				getphp:async ()=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php`).text()).replace(/\n/\* DELETE BELOW \*/\n.+?\n/\* DELETE ABOVE \*/\n\n|/\*.+?\*/\n/gs,``).replace(/const data=\[.+?\]/s,`const data=[]`)
+				getphp:async ()=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php`).text()).replace(/\n\/\* DELETE BELOW \*\/\n.+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*.+?\*\/\n/gs,``).replace(/const data=\[.+?\]/s,`const data=[]`)
 			},
 			svgs={
 				path:N`path`,
@@ -1421,7 +1402,7 @@
 								event.stopPropagation();
 							},0);
 							d.addEventListener(`touchend`,this.functions.end=event=>
-								this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx),0
+								this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx)
 							,0);
 							event.stopPropagation();
 						}

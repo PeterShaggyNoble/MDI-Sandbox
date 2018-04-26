@@ -25,10 +25,10 @@
 		"type":"image/png"
 	}],
 	"lang":"en",
-	"name":"Material Design Icons",
+	"name":"MDI Sandbox",
 	"orientation":"any",
-	"scope":"../",
+	"scope":"/MDI-Sandbox/",
 	"short_name":"MDI",
-	"start_url":"../",
+	"start_url":"/MDI-Sandbox/",
 	"theme_color":"#c2185b"
 }

@@ -282,7 +282,7 @@
 							event.stopPropagation();
 						},0);
 						d.addEventListener(`touchend`,this.functions.end=event=>
-							this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx),0
+							this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx)
 						,0);
 						event.stopPropagation();
 					}
