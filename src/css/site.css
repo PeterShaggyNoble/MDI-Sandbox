@@ -26,7 +26,6 @@
 
 /** NORMALISE **/
 *,*::before,*::after{
-	-moz-appearance:none;
 	-webkit-appearance:none;
 	appearance:none;
 	background:none;

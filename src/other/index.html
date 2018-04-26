@@ -145,9 +145,14 @@
 			document.body.append(ga);
 			ga.addEventListener(`load`,resolve,0);
 		});
+		let 	date=new Date,
+			month=date.getMonth(),
+			day=date.getDate();
+		if(month===11&&day>12||month===0&&day<6)
+			this.header.classList.add("snow");
 		window.dataLayer=window.dataLayer||[];
 		let gtag=function(){window.dataLayer.push(arguments);};
-		gtag(`js`,new Date);
+		gtag(`js`,date);
 		gtag(`config`,`UA-109147935-1`);
 	})();
 }</script>
