@@ -1187,7 +1187,7 @@
 				section:$`icons`,
 				textarea:C`textarea`,
 				init(){
-					this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
+					this.address=`${this.url.protocol}//${this.url.host+this.url.pathname}`;
 					this.params=this.url.searchParams;
 					this.light=this.params.get`set`===`light`;
 					this.set=this.light?`light`:`regular`;
@@ -1388,24 +1388,9 @@
 					},0);
 					if(page.size===2)
 						this.toggle();
-					else d.addEventListener(`touchstart`,event=>{
-						this.width=this.menu.offsetWidth;
-						this.clientx=event.touches[0].clientX;
-						if(([page.main,b].includes(event.target)&&!this.show&&this.clientx<=50)||(this.show&&this.clientx>this.width)){
-							this.touchstart();
-							d.addEventListener(`touchmove`,this.functions.move=event=>{
-								let clientx=event.touches[0].clientX-this.clientx;
-								this.nav.style.background=`rgba(0,0,0,${Math.min((clientx+(this.show?285.185:0))/285.185*.54,.54)})`;
-								this.menu.style.left=`${this.show?Math.min(Math.max(clientx,-this.width),0):Math.min(Math.max(clientx,0)-this.width,0)}px`;
-								this.menu.style.boxShadow=`0 14px 28px rgba(0,0,0,${Math.min((clientx+(this.show?500:0))/500*.25,.25)}),0 10px 10px rgba(0,0,0,${Math.min((clientx+(this.show?545.545:0))/545.545*.22,.22)})`;
-								event.stopPropagation();
-							},0);
-							d.addEventListener(`touchend`,this.functions.end=event=>
-								this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx)
-							,0);
-							event.stopPropagation();
-						}
-					},0);
+					else d.addEventListener(`touchstart`,event=>
+						this.touchstart(event)
+					,0);
 				},
 				goto(section){
 					clearInterval(this.timer);
@@ -1428,11 +1413,24 @@
 					this.nav.removeAttribute`style`;
 					this.menu.removeAttribute`style`;
 					clientx>=this.width/2&&this.toggle();
-					b.classList.remove`dragging`;
 				},
-				touchstart(){
-					b.classList.add`dragging`;
-					this.nav.style.transition=this.menu.style.transition=`none`;
+				touchstart(event){
+					this.width=this.menu.offsetWidth;
+					this.clientx=event.touches[0].clientX;
+					if(([page.main,b].includes(event.target)&&!this.show&&this.clientx<=50)||(this.show&&this.clientx>this.width)){
+						this.nav.style.transition=this.menu.style.transition=`none`;
+						d.addEventListener(`touchmove`,this.functions.move=event=>{
+						let clientx=event.touches[0].clientX-this.clientx;
+						this.nav.style.background=`rgba(0,0,0,${Math.min((clientx+(this.show?285.185:0))/285.185*.54,.54)})`;
+							this.menu.style.left=`${this.show?Math.min(Math.max(clientx,-this.width),0):Math.min(Math.max(clientx,0)-this.width,0)}px`;
+							this.menu.style.boxShadow=`0 14px 28px rgba(0,0,0,${Math.min((clientx+(this.show?500:0))/500*.25,.25)}),0 10px 10px rgba(0,0,0,${Math.min((clientx+(this.show?545.545:0))/545.545*.22,.22)})`;
+							event.stopPropagation();
+						},0);
+						d.addEventListener(`touchend`,this.functions.end=event=>
+							this.touchend(this.show?this.clientx-event.changedTouches[0].clientX:event.changedTouches[0].clientX-this.clientx)
+						,0);
+						event.stopPropagation();
+					}
 				}
 			},
 			filter={

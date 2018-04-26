@@ -25,7 +25,11 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
-- **2018-04-19:** Material Design Icons v2.3.54 released.
+- **2018-04-26:** Added a tab for Google icons to the [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/).
+- **2018-04-26:** Created a template for the additional pages on the site.
+- **2018-04-25:** Added a tab for home automation icons to the [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/).
+- **2018-04-20:** Added an [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/) to show the most popular icon requests.
+- **2018-04-19:** Material Design Icons v2.3.54 released, replacing v2.3.50.
 - **2018-04-19:** Added a work in progress of `mdi.php`. See [MaterialDesign/#3087](https://github.com/Templarian/MaterialDesign/issues/3087) for more information.
 - **2018-04-18:** Removed GMP page and added new page for [other Google icons](https://petershaggynoble.github.io/MDI-Sandbox/other/), including AOG icons.
 - **2018-04-18:** Material Design Icons v2.3.50 released.
