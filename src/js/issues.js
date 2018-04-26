@@ -23,7 +23,7 @@
 	issues=issues.filter(issue=>issue.labels.every(label=>!label.startsWith`Consider Closing`&&!label.startsWith`Needs More Information`));
 	issues[0].reactions?
 		issues.sort((x,y)=>x.reactions>y.reactions?-1:x.reactions<y.reactions?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1):
-		issues.sort((x,y)=>x.plus>y.plus?-1:x.plus<y.plus?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1)
+		issues.sort((x,y)=>x.plus>y.plus?-1:x.plus<y.plus?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1);
 	svg.classList.add`vam`;
 	svg.setAttribute(`viewBox`,`0 0 24 24`);
 	path.setAttribute(`d`,`M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z`);
