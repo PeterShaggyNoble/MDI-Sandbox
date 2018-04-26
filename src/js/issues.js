@@ -43,7 +43,7 @@
 		issue.brand=issue.brand||issue.labels.some(label=>label.startsWith`Brand Icon`);
 		issue.home=issue.home||issue.labels.some(label=>label.startsWith`Home Assistant`);
 		issue.id=issue.id||issue.number;
-		issue.status=issue.status||issue.labels.some(label=>label.startsWith`Rejected`)?`Rejected`:issue.labels.some(label=>label.startsWith`Low Priority`)?`Low Priority`:issue.labels.some(label=>label.startsWith`Contribution`)?`Coming Soon`:issue.labels.some(label=>label.startsWith`High Priority`)?`High Priority`:`Pending`;
+		issue.status=issue.status||(issue.labels.some(label=>label.startsWith`Rejected`)?`Rejected`:issue.labels.some(label=>label.startsWith`Low Priority`)?`Low Priority`:issue.labels.some(label=>label.startsWith`Contribution`)?`Coming Soon`:issue.labels.some(label=>label.startsWith`High Priority`)?`High Priority`:`Pending`);
 		issue.stock=issue.stock||issue.labels.some(label=>label.startsWith`Stock Google Icon`);
 		issue.reactions=issue.reactions||issue.plus||0;
 		tr=tr?tr.cloneNode(0):document.createElement`tr`;
