@@ -32,7 +32,7 @@
 		while(target.nodeName.toLowerCase()!==`article`&&target!==document.body)
 			target=target.parentNode;
 		if(target.nodeName.toLowerCase()===`article`&&!target.classList.contains(`complete`)){
-			a.href=`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">`+target.firstChild.outerHTML;
+			a.href=`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">`+target.firstChild.outerHTML;
 			a.download=target.lastChild.nodeValue.replace(/ /g,`-`)+`.svg`;
 			document.body.append(a);
 			a.click();

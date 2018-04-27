@@ -649,7 +649,7 @@
 				this.aside.classList.toggle(`nocopy`,!(this.copy=!!codepoint));
 				this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
 				this.downloads={
-					svg:`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
+					svg:`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
 					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.data}"/></vector>`
 				};
@@ -1065,7 +1065,7 @@
 				}
 				switch(this.inputs.format.value){
 					case`svg`:
-						xml=`data:text/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="${this.dimensions}" viewBox="0 0 ${dimensions} ${dimensions}" width="${this.dimensions}" xmlns="http://www.w3.org/2000/svg">`;
+						xml=`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="${this.dimensions}" viewBox="0 0 ${dimensions} ${dimensions}" width="${this.dimensions}" xmlns="http://www.w3.org/2000/svg">`;
 						if(alpha){
 							xml+=`<path fill="#${this.settings.colour}" `;
 							if(alpha<1)
