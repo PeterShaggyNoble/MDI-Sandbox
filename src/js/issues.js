@@ -21,7 +21,7 @@
 		table=tables.icons,
 		tr,td,a,x;
 	issues=issues.filter(issue=>issue.labels.every(label=>!label.startsWith`Consider Closing`&&!label.startsWith`Needs More Information`));
-	issues[0].reactions?
+	issues[0].hasOwnProperty`reactions`?
 		issues.sort((x,y)=>x.reactions>y.reactions?-1:x.reactions<y.reactions?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1):
 		issues.sort((x,y)=>x.plus>y.plus?-1:x.plus<y.plus?1:x.comments>y.comments?-1:x.comments<y.comments?1:Date.parse(x.updated)>Date.parse(y.updated)?-1:1);
 	svg.classList.add`vam`;
