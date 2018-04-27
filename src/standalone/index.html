@@ -1049,7 +1049,7 @@
 				<li><a class="db fwm" href="https://petershaggynoble.github.io/MDI-Sandbox/other/" tabindex="-1"><svg class="dib pen vam" data-icons="google"></svg>Other Google Icons</a>
 				<li><a class="db fwm" href="https://petershaggynoble.github.io/MDI-Sandbox/editor/" tabindex="-1"><svg class="dib pen vam" data-icons="brush"></svg>Icon Editor</a>
 				<li><a class="db fwm" href="https://petershaggynoble.github.io/MDI-Sandbox/issues/" tabindex="-1"><svg class="dib pen vam" data-icons="github-box"></svg>Issue Tracker</a>
-				<li><a class="db fwm" download href="https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php" tabindex="-1"><svg class="dib pen vam" data-icons="language-php"></svg>PHP Library (WIP)</a>
+				<li><a class="db fwm" download href="https://petershaggynoble.github.io/MDI-Sandbox/libraries/mdi-php/mdi.php" tabindex="-1"><svg class="dib pen vam" data-icons="language-php"></svg>PHP Library (WIP)</a>
 			</ul>
 			<aside id="links">
 				<ul>
@@ -1302,7 +1302,7 @@
 					this.anchor.remove();
 					URL.revokeObjectURL(this.anchor.href);
 				},
-				getphp:async ()=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php`).text()).replace(/\n\/\* DELETE BELOW \*\/\n.+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*.+?\*\/\n/gs,``).replace(/const data=\[.+?\]/s,`const data=[]`)
+				getphp:async ()=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/libraries/mdi-php/mdi.php`).text()).replace(/\n\/\* DELETE BELOW \*\/\n[\s\S]+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*[\s\S]+?\*\/\n/g,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
 			},
 			svgs={
 				path:N`path`,

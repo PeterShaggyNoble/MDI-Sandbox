@@ -2379,6 +2379,15 @@ class MDI{
 	public function svg($title="",$size=0,$fill="",$attr=[]){
 		if($title)
 			$title="<title>$title</title>";
+		$attr["viewBox"]="0 0 24 24";
+		$attr["xmlns"]="http://www.w3.org/2000/svg";
+		if($size){
+			$attr["width"]=$size;
+			$attr["height"]=$size;
+		}
+		if($fill)
+			$attr["fill"]="#".str_replace("#","",$fill);
+		ksort($attr);
 		$attr=implode(" ",array_map(
 			function($val,$key){
 				return"$key=\"$val\"";
@@ -2388,14 +2397,25 @@ class MDI{
 		));
 		if($attr)
 			$attr=" $attr";
-		if($fill)
-			$attr=" fill=\"#".str_replace("#","",$fill)."\"$attr";
-		if($size)
-			$attr=" width=\"$size\" height=\"$size\"$attr";
-		return	"<svg viewBox=\"0 0 24 24\"$attr>".
+		return	"<svg$attr>".
 			$title.
 			"<path d=\"$this\"/>".
 			"</svg>";
+	}
+	public function path($fill="",$attr=[]){
+		if($fill)
+			$attr["fill"]="#".str_replace("#","",$fill);
+		ksort($attr);
+		$attr=implode(" ",array_map(
+			function($val,$key){
+				return"$key=\"$val\"";
+			},
+			$attr,
+			array_keys($attr)
+		));
+		if($attr)
+			$attr=" $attr";
+		return	"<path$attr d=\"$this\"/>";
 	}
 	public function utf8($params=[]){
 		$params=array_merge(self::defaults,$params);
@@ -2523,12 +2543,27 @@ else{
 		MDI($icon).
 		"</pre>".
 		"<h1>MDI(\"icon-name\")->svg()</h1>".
+		"<pre>".
+		str_replace("<","&lt;",MDI($icon)->svg(
+			isset($_GET["title"])?$_GET["title"]:"",
+			isset($_GET["size"])?$_GET["size"]:MDI::defaults["size"],
+			isset($_GET["fill"])?$_GET["fill"]:MDI::defaults["fill"],
+			["class"=>"mdi"]
+		)).
+		"</pre>".
 		MDI($icon)->svg(
 			isset($_GET["title"])?$_GET["title"]:"",
 			isset($_GET["size"])?$_GET["size"]:MDI::defaults["size"],
 			isset($_GET["fill"])?$_GET["fill"]:MDI::defaults["fill"],
 			["class"=>"mdi"]
 		).
+		"<h1>MDI(\"icon-name\")->path()</h1>".
+		"<pre>".
+		str_replace("<","&lt;",MDI($icon)->path(
+			isset($_GET["fill"])?$_GET["fill"]:MDI::defaults["fill"],
+			["class"=>"mdi"]
+		)).
+		"</pre>".
 		"<h1>MDI(\"icon-name\")->utf8()</h1>".
 		"<pre>".
 		str_replace("<","&lt;",MDI($icon)->utf8($args)).

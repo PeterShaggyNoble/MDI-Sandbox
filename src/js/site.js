@@ -144,7 +144,7 @@
 				this.anchor.remove();
 				URL.revokeObjectURL(this.anchor.href);
 			},
-			getphp:async ()=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/mdi-php/mdi.php`).text()).replace(/\n\/\* DELETE BELOW \*\/\n.+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*.+?\*\/\n/gs,``).replace(/const data=\[.+?\]/s,`const data=[]`)
+			getphp:async ()=>page.php=page.php||(await(await fetch`https://petershaggynoble.github.io/MDI-Sandbox/libraries/mdi-php/mdi.php`).text()).replace(/\n\/\* DELETE BELOW \*\/\n[\s\S]+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*[\s\S]+?\*\/\n/g,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
 		},
 	/** SVGS **/
 		svgs={
