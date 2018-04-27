@@ -19183,6 +19183,7 @@
 		}
 	},
 	"pin":{
+		"aliases":["keep"],
 		"categories":["places"],
 		"codepoint":"f403",
 		"contributor":{
@@ -19193,6 +19194,7 @@
 		}
 	},
 	"pin-off":{
+		"aliases":["keep-off"],
 		"categories":["places"],
 		"codepoint":"f404",
 		"contributor":{
@@ -19206,6 +19208,7 @@
 		"added":{
 			"regular":2354
 		},
+		"aliases":["keep-off-outline"],
 		"categories":["places"],
 		"codepoint":"f92f",
 		"contributor":{
@@ -19219,6 +19222,7 @@
 		"added":{
 			"regular":2354
 		},
+		"aliases":["keep-outline"],
 		"categories":["places"],
 		"codepoint":"f930",
 		"contributor":{
@@ -24405,6 +24409,7 @@
 		}
 	},
 	"theme-light-dark":{
+		"aliases":["sun-moon-stars"],
 		"categories":["weather"],
 		"codepoint":"f50e",
 		"contributor":{
