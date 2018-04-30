@@ -1,6 +1,22 @@
 [
 	{
 		"brand":false,
+		"comments":3,
+		"created":"2018-04-29T18:30:38Z",
+		"downvotes":0,
+		"home":false,
+		"id":3135,
+		"labels":["Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":false,
+		"title":"set-top-box device",
+		"updated":"2018-04-30T04:56:33Z",
+		"upvotes":0,
+		"user":"garyt72"
+	},{
+		"brand":false,
 		"comments":0,
 		"created":"2018-04-28T11:23:06Z",
 		"downvotes":0,
@@ -95,38 +111,6 @@
 		"updated":"2018-04-27T15:21:08Z",
 		"upvotes":0,
 		"user":"velasarius"
-	},{
-		"brand":true,
-		"comments":0,
-		"created":"2018-04-27T14:55:49Z",
-		"downvotes":0,
-		"home":false,
-		"id":3123,
-		"labels":["Brand Icon","Icon Request"],
-		"milestone":null,
-		"reactions":2,
-		"status":"Pending",
-		"stock":false,
-		"title":"language-go",
-		"updated":"2018-04-27T14:55:49Z",
-		"upvotes":2,
-		"user":"Templarian"
-	},{
-		"brand":true,
-		"comments":0,
-		"created":"2018-04-26T11:33:23Z",
-		"downvotes":0,
-		"home":false,
-		"id":3119,
-		"labels":["Brand Icon","Icon Request","Stock Google Icon"],
-		"milestone":"Backlog",
-		"reactions":4,
-		"status":"Pending",
-		"stock":true,
-		"title":"Material Design",
-		"updated":"2018-04-26T15:48:27Z",
-		"upvotes":4,
-		"user":"PeterShaggyNoble"
 	},{
 		"brand":false,
 		"comments":0,
@@ -360,12 +344,12 @@
 		"id":3098,
 		"labels":["Contribution","Icon Request"],
 		"milestone":null,
-		"reactions":2,
+		"reactions":3,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Progress",
 		"updated":"2018-04-25T09:05:00Z",
-		"upvotes":2,
+		"upvotes":3,
 		"user":"GreenTurtwig"
 	},{
 		"brand":false,
@@ -591,22 +575,6 @@
 		"updated":"2018-04-17T18:40:28Z",
 		"upvotes":1,
 		"user":"MrGrigri"
-	},{
-		"brand":false,
-		"comments":0,
-		"created":"2018-04-17T18:38:01Z",
-		"downvotes":0,
-		"home":false,
-		"id":3073,
-		"labels":["Icon Request","Stock Google Icon"],
-		"milestone":"Version 2.4.xx",
-		"reactions":2,
-		"status":"Pending",
-		"stock":true,
-		"title":"ic_important_devices",
-		"updated":"2018-04-18T10:05:12Z",
-		"upvotes":2,
-		"user":"bseib"
 	},{
 		"brand":false,
 		"comments":0,
@@ -1407,22 +1375,6 @@
 		"updated":"2018-04-14T23:00:49Z",
 		"upvotes":0,
 		"user":"jpfgit"
-	},{
-		"brand":false,
-		"comments":10,
-		"created":"2018-03-21T15:42:10Z",
-		"downvotes":0,
-		"home":true,
-		"id":2941,
-		"labels":["Contribution","Home Assistant","Icon Request"],
-		"milestone":null,
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"receiver",
-		"updated":"2018-03-22T16:58:22Z",
-		"upvotes":0,
-		"user":"fnolis"
 	},{
 		"brand":false,
 		"comments":2,
@@ -2760,12 +2712,12 @@
 		"id":2636,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
 		"milestone":"Version 2.4.xx",
-		"reactions":3,
+		"reactions":4,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Toolbox Icon",
 		"updated":"2018-04-14T22:44:00Z",
-		"upvotes":3,
+		"upvotes":4,
 		"user":"OctoberJemini"
 	},{
 		"brand":false,
@@ -3471,22 +3423,6 @@
 		"updated":"2017-10-12T00:17:23Z",
 		"upvotes":0,
 		"user":"huajianjiang"
-	},{
-		"brand":false,
-		"comments":3,
-		"created":"2017-10-06T15:37:00Z",
-		"downvotes":0,
-		"home":false,
-		"id":2493,
-		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 2.4.xx",
-		"reactions":2,
-		"status":"Coming Soon",
-		"stock":true,
-		"title":"Phone icons from Android Device Manager",
-		"updated":"2018-04-29T05:55:34Z",
-		"upvotes":2,
-		"user":"GreenTurtwig"
 	},{
 		"brand":false,
 		"comments":3,
@@ -5686,14 +5622,14 @@
 		"downvotes":0,
 		"home":true,
 		"id":1964,
-		"labels":["Contribution","High Priority","Home Assistant","Icon Request"],
+		"labels":["High Priority","Home Assistant","Icon Request"],
 		"milestone":"Backlog",
-		"reactions":7,
-		"status":"Coming Soon",
+		"reactions":8,
+		"status":"High Priority",
 		"stock":false,
 		"title":"Home icon set with ground, 1st and attic floors for home automation",
-		"updated":"2018-04-18T10:34:17Z",
-		"upvotes":7,
+		"updated":"2018-04-29T21:09:38Z",
+		"upvotes":8,
 		"user":"james-fry"
 	},{
 		"brand":false,
@@ -7057,22 +6993,6 @@
 		"user":"AsafAgranat"
 	},{
 		"brand":false,
-		"comments":9,
-		"created":"2016-10-09T11:15:08Z",
-		"downvotes":0,
-		"home":true,
-		"id":1560,
-		"labels":["Contribution","High Priority","Home Assistant","Icon Request"],
-		"milestone":"Version 2.4.xx",
-		"reactions":1,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Shower, Bath & Toilet",
-		"updated":"2018-04-25T09:50:50Z",
-		"upvotes":1,
-		"user":"GRA0007"
-	},{
-		"brand":false,
 		"comments":2,
 		"created":"2016-10-08T22:30:18Z",
 		"downvotes":0,
@@ -8120,12 +8040,12 @@
 		"id":1266,
 		"labels":["Icon Request"],
 		"milestone":null,
-		"reactions":0,
+		"reactions":1,
 		"status":"Pending",
 		"stock":false,
 		"title":"Calendar Find",
 		"updated":"2016-06-06T16:46:46Z",
-		"upvotes":0,
+		"upvotes":1,
 		"user":"TemplePlay"
 	},{
 		"brand":false,
@@ -8639,22 +8559,6 @@
 		"updated":"2016-03-03T14:11:46Z",
 		"upvotes":0,
 		"user":"CoDEmanX"
-	},{
-		"brand":false,
-		"comments":3,
-		"created":"2016-03-02T09:33:52Z",
-		"downvotes":0,
-		"home":false,
-		"id":1074,
-		"labels":["Contribution","High Priority","Icon Request"],
-		"milestone":"Version 2.4.xx",
-		"reactions":1,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Suggest few religious icons",
-		"updated":"2018-04-16T11:00:01Z",
-		"upvotes":1,
-		"user":"choxnox"
 	},{
 		"brand":false,
 		"comments":3,
