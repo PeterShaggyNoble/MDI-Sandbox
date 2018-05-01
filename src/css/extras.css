@@ -310,6 +310,9 @@ section#preview{
 	height:auto;
 	width:auto;
 }
+#preview feDropShadow{
+	transition:flood-color .195s var(--timing-function);
+}
 #preview path,#preview rect,#preview text{
 	transition:fill .195s var(--timing-function),fill-opacity .195s var(--timing-function),stroke .195s var(--timing-function);
 }

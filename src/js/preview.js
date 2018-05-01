@@ -17,11 +17,11 @@
 			disclaimer:document.querySelector`text:last-of-type`,
 		},
 		svg=document.querySelector`figure>svg`,
+		shadow=document.querySelector`feDropShadow`,
 		grid=document.querySelector`#grid>path`,
 		path=document.getElementById`path`,
 		ghost=document.getElementById`ghost`,
-		group=document.querySelector`g`,
-		caption=group.lastElementChild,
+		caption=document.querySelector`g>rect:last-of-type`,
 		icon=document.querySelector`figure>svg>path:last-of-type`,
 		canvas=document.querySelector`canvas`,
 		context=canvas.getContext`2d`,
@@ -41,10 +41,11 @@
 				delay=0;
 				switch(target){
 					case inputs.canvas:
-						group.setAttribute(`stroke`,/*context.fillStyle=*/`#`+value);
+						shadow.setAttribute(`flood-color`,`#`+value);
 						grid.setAttribute(`stroke`,`#`+value);
 						path.setAttribute(`fill`,`#`+value);
 						caption.setAttribute(`fill`,`#`+value);
+						caption.setAttribute(`stroke`,`#`+value);
 						icon.setAttribute(`fill`,`#`+value);
 						for(key in text)
 							if(text.hasOwnProperty(key))
