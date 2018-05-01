@@ -295,7 +295,7 @@ section>button{
 /*  preview  */
 section#preview{
 	padding:8px 16px 16px;
-	width:352px;
+	width:672px;
 }
 #preview>label{
 	width:75px;
@@ -306,12 +306,12 @@ section#preview{
 #preview>figure{
 	height:296px;
 	margin:0 auto;
-	width:320px;
+	width:640px;
 }
 #preview canvas,#preview span,#preview svg{
 	left:0;
 	top:0;
-}
+}#preview canvas{left:320px;}
 #preview svg{
 	height:auto;
 	width:auto;
@@ -422,7 +422,7 @@ section#editor{
 	transition-property:d,fill,fill-opacity,opacity;
 	transition-timing-function:var(--timing-function);
 }
-canvas{
+#editor canvas{
 	height:100%;
 	width:100%;
 	z-index:3;
