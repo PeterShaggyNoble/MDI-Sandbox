@@ -84,7 +84,7 @@
 							page.download(`data:text/json;utf8,{${filter.filtered?this.build`jsono`:this.packages.json||(this.packages.jsono=this.build`jsono`)}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
 							break;
 						case this.actions.php:
-							page.download(`data:text/php;utf8,`+(await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build`php`:this.packages.php||(this.packages.php=this.build`php`)}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
+							page.download(`data:text/php;utf8,`+(page.php=page.php||await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build`php`:this.packages.php||(this.packages.php=this.build`php`)}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
 							break;
 						case this.actions.svg:
 						case this.actions.html:
@@ -128,12 +128,16 @@
 				).map(([key,icon])=>
 					type==`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${icon.data[page.set]}"`
 				).join(type==`xml`?``:`,`),
-			copy(string,message){
-				editor.dialog.append(this.textarea);
-				this.textarea.value=string;
-				this.textarea.select();
-				d.execCommand`cut`;
-				this.textarea.remove();
+			async copy(string,message){
+				if(navigator.clipboard)
+					await navigator.clipboard.writeText(string);
+				else{
+					editor.dialog.append(this.textarea);
+					this.textarea.value=string;
+					this.textarea.select();
+					d.execCommand`cut`;
+					this.textarea.remove();
+				}
 				message&&this.alert(`${message} copied to clipboard.`);
 			},
 			download(data,name){
