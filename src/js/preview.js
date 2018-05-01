@@ -11,7 +11,6 @@
 			action:document.getElementById`action`,
 			type:document.getElementById`type`
 		},
-		span=document.querySelector`figcaption span`,
 		text={
 			name:document.querySelector`figcaption>p`,
 			type:document.querySelector`figcaption>p+p`,
@@ -19,10 +18,10 @@
 		},
 		svg=document.querySelector`figure>svg`,
 		grid=document.querySelector`#grid>path`,
-		rects=document.querySelector`g`,
 		path=document.getElementById`path`,
 		ghost=document.getElementById`ghost`,
-		caption=rects.lastElementChild,
+		group=document.querySelector`g`,
+		caption=group.lastElementChild,
 		icon=svg.lastElementChild,
 		canvas=document.querySelector`canvas`,
 		context=canvas.getContext`2d`,
@@ -40,12 +39,11 @@
 				delay=0;
 				switch(target){
 					case inputs.canvas:
-						rects.setAttribute(`stroke`,context.fillStyle=`#`+value);
+						group.setAttribute(`stroke`,context.fillStyle=`#`+value);
 						grid.setAttribute(`stroke`,`#`+value);
 						path.setAttribute(`fill`,`#`+value);
 						caption.setAttribute(`fill`,`#`+value);
-						icon.setAttribute(`fill`,span.style.background=`#`+value);
-						span.classList.toggle(`oz`,value===`616161`);
+						icon.setAttribute(`fill`,`#`+value);
 						for(key in text)
 							if(text.hasOwnProperty(key))
 								text[key].style.color=`#`+value;

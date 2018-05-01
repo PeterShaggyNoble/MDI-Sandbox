@@ -295,7 +295,7 @@ section>button{
 /*  preview  */
 section#preview{
 	padding:8px 16px 16px;
-	width:672px;
+	width:352px;
 }
 #preview>label{
 	width:75px;
@@ -306,22 +306,15 @@ section#preview{
 #preview>figure{
 	height:296px;
 	margin:0 auto;
-	width:640px;
+	width:320px;
 }
-#preview canvas,#preview span,#preview svg{
+#preview canvas,#preview svg{
 	left:0;
 	top:0;
-}#preview canvas{left:320px;}
+}
 #preview svg{
 	height:auto;
 	width:auto;
-}
-#preview span{
-	background:#1976d2;
-	bottom:0;
-	mix-blend-mode:overlay;
-	right:0;
-	transition:background .195s var(--timing-function),opacity .195s var(--timing-function);
 }
 #preview p{
 	color:#1976d2;
@@ -333,7 +326,7 @@ section#preview{
 }
 #preview p:first-of-type{
 	left:11px;
-	top:270px;
+	top:271px;
 	transition:color .195s var(--timing-function);
 }
 #preview p:nth-of-type(2){
