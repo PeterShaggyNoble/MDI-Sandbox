@@ -18,8 +18,11 @@
 			disclaimer:document.querySelector`figcaption>p+p+p`,
 		},
 		svg=document.querySelector`figure>svg`,
+		grid=document.querySelector`#grid>path`,
+		rects=document.querySelector`g`,
 		path=document.getElementById`path`,
 		ghost=document.getElementById`ghost`,
+		caption=rects.lastElementChild,
 		icon=svg.lastElementChild,
 		canvas=document.querySelector`canvas`,
 		context=canvas.getContext`2d`,
@@ -27,7 +30,6 @@
 		height=canvas.height,
 		button=document.querySelector`button`,
 		a=document.createElement`a`,
-		background=new Image,
 		xml=new XMLSerializer,
 		image=new Image,
 		generate=event=>{
@@ -38,7 +40,10 @@
 				delay=0;
 				switch(target){
 					case inputs.canvas:
-						path.setAttribute(`fill`,context.fillStyle=`#`+value);
+						rects.setAttribute(`stroke`,context.fillStyle=`#`+value);
+						grid.setAttribute(`stroke`,`#`+value);
+						path.setAttribute(`fill`,`#`+value);
+						caption.setAttribute(`fill`,`#`+value);
 						icon.setAttribute(`fill`,span.style.background=`#`+value);
 						span.classList.toggle(`oz`,value===`616161`);
 						for(key in text)
@@ -118,16 +123,10 @@
 	let delay,key,size,target,timer,transform,value;
 	context.font=`14px Roboto`;
 	context.fillStyle=`#`+inputs.canvas.value;
-	background.src=`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUUAAAEmBAMAAAAHOp+aAAAAKlBMVEX////u7u739/f6+vrx8fHi4uLd3d39/f329vbPz8/f39/09PTp6enY2NjMrDZ4AAACXUlEQVR42u3asUsCURzAcTPBwUXBwaEhHFJoCRze4FJgS3OOLQ3RKN3wXHXI4P6CxqApGkQXB5dWb+7/iQOFd3coN0jv9+59v0VwtHx4b/jpu1ciIqIDabPMP4OelVRCUg26b7umapQkVoNwYKVVQqLPjYeyThn7pbj6//9ZmsZgbjzUVMo4sWVsmcaXa+Oh0kkaT9e2jNGVwRjXjYeTWcp4a8t4jxEjRq+NDUsVbR0xYsSIESNzpvB7nfrOJdIYrIdfu4aREmnUlzeNXc2FFmmMz1LC7c9UjUQaU2dSMo2JMB7JKHLOOLGOel9yjOY5rtlUjcQYt+e42cpajDGY7zHWlBjj9jNFtkpHjHFc32M8mWH0y9iwVNHWESNGjBgxMmd832uMGDFiZM64u44YMWLEiJE54/teY8SIEaO3c8aFd5rmPSmzYSTn3bB5T8qsuZDzjj2+q7AKs7+S7iq4cOfDibszGDFy38y3vcaIESNG5oy764gRI0aMGJkzvu81RowYMTJn3F1HjBgxYsTInPF9rzFixIiROePuOmLEiBEjRuaM73uNESNGjMwZd9cRI0aMGDEyZ3zfa4wYMWJkzri7jhgxYsSIkTnj+15jxIgRI3PG3XXEiBEjRozMGd/3GiNGjBiZM+6uI0aMGDFiZM74vtcYMWIsnHFtyxjlNlYnD+9W+m2Nchv7Z0Mr/SzzG4NwYKWVio350kHPSkqXiIjoYHdPovuMjR/TtuQ2sfG5LbqL2PjYFh1GjJLCiFFSGDFKCiNGSWHEKCmMGCWF8Ti9xsZv0WdS3Y0jZ3t/niRZx+dg9dwAAAAASUVORK5CYII`;
 	image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}));
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
-		context.drawImage(background,0,0);
-		if(inputs.canvas.value!==`616161`){
-			context.globalCompositeOperation=`overlay`;
-			context.fillRect(0,0,width,height);
-			context.globalCompositeOperation=`source-over`;
-		}
+		context.drawImage(image,0,0);
 		if(inputs.type.value){
 			context.save();
 			context.font=`18px Roboto`;
@@ -142,8 +141,7 @@
 			context.fillText(text.disclaimer.firstChild.nodeValue,0,0);
 			context.restore();
 		}
-		context.fillText(inputs.name.value.trim().toLowerCase().replace(/ |_/g,`-`),11,282);
-		context.drawImage(image,0,0);
+		context.fillText(inputs.name.value.trim().toLowerCase().replace(/ |_/g,`-`),11,283);
 		URL.revokeObjectURL(image.src);
 	},0);
 	button.addEventListener(`click`,()=>{
@@ -155,7 +153,6 @@
 			a.remove();
 			URL.revokeObjectURL(a.href);
 		});
-		URL.revokeObjectURL(image.src);
 	},0);
 	document.addEventListener(`input`,generate,1);
 })();

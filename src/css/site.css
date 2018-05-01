@@ -406,7 +406,7 @@ body.mdil #icons span{
 }
 body.mdi.highlight>#content>section>article.community{
 	background:var(--highlight);
-	color:var(--colour);
+	color:#424242;
 }
 #content>section>article.active,
 body.mdi.highlight>#content>section>article.active{
