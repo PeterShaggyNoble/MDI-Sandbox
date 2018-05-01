@@ -56,7 +56,7 @@
 		}
 	};
 	menu.init();
-	(async ()=>{
+	(async()=>{
 		await new Promise(resolve=>{
 			let ga=document.createElement`script`;
 			ga.async=1;

@@ -1,4 +1,4 @@
-(async ()=>{
+(async()=>{
 	const 	script=document.querySelector`script`,
 		a=document.createElement`a`,
 		icons=await(await fetch`../json/other.json`).json(),

@@ -1,4 +1,4 @@
-(async ()=>{
+(async()=>{
 	const 	icons=await(await fetch`../json/icons.json`).json(),
 		extended=await(await fetch`../json/extended.json`).json(),
 		other=await(await fetch`../json/other.json`).json(),
@@ -12,9 +12,9 @@
 			type:document.getElementById`type`
 		},
 		text={
-			name:document.querySelector`figcaption>p`,
-			type:document.querySelector`figcaption>p+p`,
-			disclaimer:document.querySelector`figcaption>p+p+p`,
+			name:document.querySelector`text`,
+			type:document.querySelector`text+text`,
+			disclaimer:document.querySelector`text:last-of-type`,
 		},
 		svg=document.querySelector`figure>svg`,
 		grid=document.querySelector`#grid>path`,
@@ -22,7 +22,7 @@
 		ghost=document.getElementById`ghost`,
 		group=document.querySelector`g`,
 		caption=group.lastElementChild,
-		icon=svg.lastElementChild,
+		icon=document.querySelector`figure>svg>path:last-of-type`,
 		canvas=document.querySelector`canvas`,
 		context=canvas.getContext`2d`,
 		width=canvas.width,
@@ -31,6 +31,8 @@
 		a=document.createElement`a`,
 		xml=new XMLSerializer,
 		image=new Image,
+		draw=()=>image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`})),
+		/*draw=async()=>context.transferFromImageBitmap(await createImageBitmap(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`})).catch(console.log)),*/
 		generate=event=>{
 			clearTimeout(timer);
 			timer=setTimeout(()=>{
@@ -39,14 +41,14 @@
 				delay=0;
 				switch(target){
 					case inputs.canvas:
-						group.setAttribute(`stroke`,context.fillStyle=`#`+value);
+						group.setAttribute(`stroke`,/*context.fillStyle=*/`#`+value);
 						grid.setAttribute(`stroke`,`#`+value);
 						path.setAttribute(`fill`,`#`+value);
 						caption.setAttribute(`fill`,`#`+value);
 						icon.setAttribute(`fill`,`#`+value);
 						for(key in text)
 							if(text.hasOwnProperty(key))
-								text[key].style.color=`#`+value;
+								text[key].setAttribute(`fill`,`#`+value);
 						delay=200;
 						break;
 					case inputs.data:
@@ -96,7 +98,7 @@
 						delay=200;
 						break;
 					case inputs.name:
-						text.name.firstChild.nodeValue=value.trim().toLowerCase().replace(/ |_/g,`-`);
+						text.name.textContent=value.trim().toLowerCase().replace(/ |_/g,`-`);
 						break;
 					case inputs.action:
 						value&&icon.setAttribute(`d`,value);
@@ -105,41 +107,23 @@
 						break;
 					case inputs.type:
 						if(value){
-							text.type.firstChild.nodeValue=value;
-							text.disclaimer.firstChild.nodeValue=target.options[target.selectedIndex].dataset.disclaimer;
+							text.type.textContent=value;
+							text.disclaimer.textContent=target.options[target.selectedIndex].dataset.disclaimer;
 						}
 						delay=value?0:200;
-						text.type.classList.toggle(`oz`,!target.value);
-						text.disclaimer.classList.toggle(`oz`,!target.value);
+						text.type.setAttribute(`fill-opacity`,value?1:0);
+						text.disclaimer.setAttribute(`fill-opacity`,value?1:0);
 				}
 				timer=setTimeout(()=>{
 					target===inputs.overlay&&ghost.setAttribute(`d`,value);
-					image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}))
+					draw();
 				},delay);
 			},50);
 		};
 	let delay,key,size,target,timer,transform,value;
-	context.font=`14px Roboto`;
-	context.fillStyle=`#`+inputs.canvas.value;
-	image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`}));
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);
-		if(inputs.type.value){
-			context.save();
-			context.font=`18px Roboto`;
-			context.translate(28,250);
-			context.rotate(-Math.PI/2);
-			context.fillText(text.type.firstChild.nodeValue,0,0);
-			context.restore();
-			context.save();
-			context.globalAlpha=.87;
-			context.translate(54,250);
-			context.rotate(-Math.PI/2);
-			context.fillText(text.disclaimer.firstChild.nodeValue,0,0);
-			context.restore();
-		}
-		context.fillText(inputs.name.value.trim().toLowerCase().replace(/ |_/g,`-`),11,283);
 		URL.revokeObjectURL(image.src);
 	},0);
 	button.addEventListener(`click`,()=>{
@@ -153,4 +137,5 @@
 		});
 	},0);
 	document.addEventListener(`input`,generate,1);
+	draw();
 })();

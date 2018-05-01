@@ -1,4 +1,4 @@
-(async ()=>{
+(async()=>{
 	const 	icons=await(await fetch`../json/icons.json`).json(),
 		extended=await(await fetch`../json/extended.json`).json(),
 		other=await(await fetch`../json/other.json`).json(),

@@ -12,7 +12,7 @@
 	},
 	"aog_nav20_firebase":{
 		"data":"M401 104l-146 -81q-15 -8 -30 0l-144 81l261 263q3 2 7 2q9 0 10 -8zM188 363l-91 -151l38 239q1 8 10 8q6 0 8 -5l43 -79zM278 338l-191 -192l145 246q3 6 9 6t8 -6z",
-		"action":"new"
+		"action":"complete"
 	},
 	"aog_nav20_overview":{
 		"data":"M192 72h-96v168h-56l200 180l200 -180h-56v-168h-96v120h-96v-120z",

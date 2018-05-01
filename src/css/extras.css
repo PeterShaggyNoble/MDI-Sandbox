@@ -304,42 +304,21 @@ section#preview{
 	width:calc(100% - 75px);
 }
 #preview>figure{
-	height:296px;
 	margin:0 auto;
-	width:320px;
-}
-#preview canvas,#preview svg{
-	left:0;
-	top:0;
 }
 #preview svg{
 	height:auto;
 	width:auto;
 }
-#preview p{
-	color:#1976d2;
-}
-#preview p+p{
-	transform:rotate(-90deg);
-	transform-origin:0 0;
-	transition:color .195s var(--timing-function),opacity .195s var(--timing-function);
-}
-#preview p:first-of-type{
-	left:11px;
-	top:271px;
-	transition:color .195s var(--timing-function);
-}
-#preview p:nth-of-type(2){
-	font-size:18px;
-	left:11px;
-	top:250px;
-}
-#preview p:last-of-type{
-	left:41px;
-	top:250px;
-}
-#preview path,#preview rect{
+#preview path,#preview rect,#preview text{
 	transition:fill .195s var(--timing-function),fill-opacity .195s var(--timing-function),stroke .195s var(--timing-function);
+}
+#preview text:nth-of-type(2){
+	font-size:18px;
+}
+#preview canvas{
+	left:0;
+	top:0;
 }
 
 /*  editor  */

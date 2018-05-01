@@ -1,5 +1,5 @@
-(async ()=>{
-/*	let 	response=await fetch`http://dev.materialdesignicons.com/api/github/issues`.catch(async ()=>await fetch`../json/issues.json`),*/
+(async()=>{
+/*	let 	response=await fetch`http://dev.materialdesignicons.com/api/github/issues`.catch(async()=>await fetch`../json/issues.json`),*/
 	let 	response=await fetch`../json/issues.json`,
 		issues=await response.json(),
 		tables={
