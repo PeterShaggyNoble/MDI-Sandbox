@@ -621,10 +621,10 @@
 		margin:0 0 24px;
 	}
 	#upload>label{
-		font-size:12px;
+		font-size:14px;
 		line-height:24px;
 		margin:0 8px 8px 16px;
-		width:72px;
+		width:80px;
 	}
 	#upload>input{
 		border-bottom:1px solid #bdbdbd;
@@ -632,7 +632,7 @@
 		height:24px;
 		margin:0 16px 8px 0;
 		transition:border .195s var(--timing-function);
-		width:calc(100% - 112px);
+		width:calc(100% - 120px);
 	}
 	#upload>input.error{
 		border-color:#f44336;
@@ -640,7 +640,7 @@
 	#upload>p{
 		color:rgba(0,0,0,.54);
 		font-size:12px;
-		padding:0 16px 0 96px;
+		padding:0 16px 0 104px;
 		transition:color .195s var(--timing-function);
 		width:100%;
 	}
@@ -1207,11 +1207,11 @@
 	<header class="pr">
 		<h2>Add Icon to Library</h2>
 	</header>
-	<label class="cp dib vat" for="upload-name">Icon Name: </label>
-	<input class="dib ttl vat" id="upload-name" pattern="^[A-Za-z][A-Za-z\-\d]+?[A-Za-z\d]$" required type="text" value="">
+	<label class="cp dib vam" for="upload-name">Icon Name: </label>
+	<input class="dib ttl vam" id="upload-name" pattern="^[A-Za-z][A-Za-z\-\d]+?[A-Za-z\d]$" required type="text" value="">
 	<p>The icon name may consist of lowercase letters, numbers &amp; hyphens only, must begin with a letter and must end with a letter or number.</p>
-	<label class="cp dib vat" for="upload-data">Path Data: </label>
-	<input class="dib vat" id="upload-data" pattern="^([A-Za-z][\d \.\-,]*)+$" required type="text" value="">
+	<label class="cp dib vam" for="upload-data">Path Data: </label>
+	<input class="dib vam" id="upload-data" pattern="^([A-Za-z][\d \.\-,]*)+$" required type="text" value="">
 	<p>Path data must fit within a 24*24 viewbox.</p>
 	<button class="cp fwm tac ttu">Close</button>
 	<button autofocus class="cp fwm tac ttu">Add Icon</button>
@@ -1692,14 +1692,14 @@
 								break;
 							case this.actions.clear:
 								page.storage.removeItem`favourites`;
+								for(let key in this.list)
+									if(this.list.hasOwnProperty(key)&&parseInt(this.list[key]))
+										delete this.list[key];
 								for(let key in this.articles)
-									if(this.articles.hasOwnProperty(key)){
+									if(this.articles.hasOwnProperty(key)&&!this.list[key]){
 										this.articles[key].remove();
 										delete this.articles[key];
 									}
-								for(let key in this.list)
-									if(this.list.hasOwnProperty(key))
-										delete this.list[key];
 								page.alert`Favourites cleared.`;
 								break;
 						}
@@ -1914,7 +1914,7 @@
 					this.path=this.svg.firstElementChild;
 					let icon=page.params.get`icon`;
 					if(icon){
-						if(favourites.list[icon]){
+						if(page.storage&&favourites.list[icon]){
 							this.open(icon);
 							favourites.articles[icon].classList.add`active`;
 						}else if(icons.list[icon]){
@@ -1922,8 +1922,8 @@
 							Object.values(icons.list[icon].articles)[0].classList.add`active`;
 						}
 					}else if(page.size){
-						this.open(icon=(page.params.get`edit`||Object.keys(icons.list).find(key=>icons.list[key].data[page.set])));
-						if(favourites.list[icon])
+						this.open(icon=(page.params.get`edit`||(page.storage&&Object.keys(favourites.list)[0])||Object.keys(icons.list).find(key=>icons.list[key].data[page.set])));
+						if(page.storage&&favourites.list[icon])
 							favourites.articles[icon].classList.add`active`;
 						else if(icons.list[icon])
 							Object.values(icons.list[icon].articles)[0].classList.add`active`;
@@ -1973,7 +1973,7 @@
 						this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 						this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 						this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
-					}else{
+					}else if(page.storage){
 						this.icon=this.data=this.actions.data.dataset.copy=favourites.list[name];
 						this.codepoint=0;
 						this.aside.classList.add(`nocopy`,`retired`);

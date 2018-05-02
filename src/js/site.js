@@ -519,14 +519,14 @@
 							break;
 						case this.actions.clear:
 							page.storage.removeItem`favourites`;
+							for(let key in this.list)
+								if(this.list.hasOwnProperty(key)&&parseInt(this.list[key]))
+									delete this.list[key];
 							for(let key in this.articles)
-								if(this.articles.hasOwnProperty(key)){
+								if(this.articles.hasOwnProperty(key)&&!this.list[key]){
 									this.articles[key].remove();
 									delete this.articles[key];
 								}
-							for(let key in this.list)
-								if(this.list.hasOwnProperty(key))
-									delete this.list[key];
 							page.alert`Favourites cleared.`;
 							break;
 					}
@@ -742,7 +742,7 @@
 				this.path=this.svg.firstElementChild;
 				let icon=page.params.get`icon`;
 				if(icon){
-					if(favourites.list[icon]){
+					if(page.storage&&favourites.list[icon]){
 						this.open(icon);
 						favourites.articles[icon].classList.add`active`;
 					}else if(icons.list[icon]){
@@ -750,8 +750,8 @@
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
 				}else if(page.size){
-					this.open(icon=(page.params.get`edit`||Object.keys(icons.list).find(key=>icons.list[key].data[page.set])));
-					if(favourites.list[icon])
+					this.open(icon=(page.params.get`edit`||(page.storage&&Object.keys(favourites.list)[0])||Object.keys(icons.list).find(key=>icons.list[key].data[page.set])));
+					if(page.storage&&favourites.list[icon])
 						favourites.articles[icon].classList.add`active`;
 					else if(icons.list[icon])
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
@@ -801,7 +801,7 @@
 					this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 					this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 					this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
-				}else{
+				}else if(page.storage){
 					this.icon=this.data=this.actions.data.dataset.copy=favourites.list[name];
 					this.codepoint=0;
 					this.aside.classList.add(`nocopy`,`retired`);

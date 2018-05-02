@@ -675,10 +675,10 @@ dialog>button:active{
 	margin:0 0 24px;
 }
 #upload>label{
-	font-size:12px;
+	font-size:14px;
 	line-height:24px;
 	margin:0 8px 8px 16px;
-	width:72px;
+	width:80px;
 }
 #upload>input{
 	border-bottom:1px solid #bdbdbd;
@@ -686,7 +686,7 @@ dialog>button:active{
 	height:24px;
 	margin:0 16px 8px 0;
 	transition:border .195s var(--timing-function);
-	width:calc(100% - 112px);
+	width:calc(100% - 120px);
 }
 #upload>input.error{
 	border-color:#f44336;
@@ -694,7 +694,7 @@ dialog>button:active{
 #upload>p{
 	color:rgba(0,0,0,.54);
 	font-size:12px;
-	padding:0 16px 0 96px;
+	padding:0 16px 0 104px;
 	transition:color .195s var(--timing-function);
 	width:100%;
 }
