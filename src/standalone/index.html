@@ -1744,7 +1744,7 @@
 				},
 				add(key){
 					if(icons.list[key]&&icons.list[key].data.regular){
-						this.path=this.path.cloneNode(1)
+						this.path=this.path.cloneNode(1);
 						this.path.setAttribute(`d`,icons.list[key].data.regular);
 					}else if(!parseInt(this.list[key])){
 						this.path=this.path.cloneNode(1);
@@ -1767,13 +1767,20 @@
 				close(value){
 					b.removeEventListener(`keydown`,this.fn);
 					this.dialog.classList.add(`oz`,`pen`);
-					this.timer=setTimeout(()=>this.dialog.close(value),225);
+					this.timer=setTimeout(()=>{
+						this.dialog.close(value);
+						this.name.value=this.data.value=``;
+						this.name.classList.remove`error`;
+						this.name.nextElementSibling.firstChild.nodeValue=`The icon name may consist of lowercase letters, numbers &amp; hyphens only, must begin with a letter and must end with a letter or number.`;
+						this.data.classList.remove`error`;
+					},225);
 				},
 				load(event){
 					let msg=`complete`,list;
 					try{
 						list=JSON.parse(atob(event.target.result));
-					}catch(e){
+					}catch(err){
+						console.log(err);
 						try{
 							list=JSON.parse(`{${atob(event.target.result).split`,`.map(key=>
 								`"${key.substr(4)}":1`
@@ -1872,10 +1879,6 @@
 							this.close();
 							page.alert(`${name} added to library.`);
 							this.articles[name].click();
-							this.name.value=this.data.value=``;
-							this.name.classList.remove`error`;
-							this.data.classList.remove`error`;
-							this.name.nextElementSibling.firstChild.nodeValue=`The icon name may consist of lowercase letters, numbers &amp; hyphens only, must begin with a letter and must end with a letter or number.`;
 						}
 					}
 				},
@@ -2430,7 +2433,6 @@
 						article.classList.toggle(`community`,icon.contributor.regular!=="google");
 						article.lastChild.nodeValue=key;
 						icon.articles={};
-		//				(category=categories.list.favourites)&&page.storage[`mdi-${key}`]&&category.section.append(icon.articles.favourite=article.cloneNode(1));
 						(category=categories.list.new)&&icon.added&&icon.added.regular===version&&category.section.append(icon.articles.new=article.cloneNode(1));
 						(category=categories.list.updated)&&icon.updated&&icon.updated.regular===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
 						(category=categories.list.renamed)&&icon.renamed&&icon.renamed.regular===version&&category.section.append(icon.articles.renamed=article.cloneNode(1));
