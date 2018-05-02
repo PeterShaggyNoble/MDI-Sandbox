@@ -404,7 +404,8 @@ body.mdil #icons span{
 	background:#e0e0e0;
 	color:#212121;
 }
-body.mdi.highlight>#content>section>article.community{
+body.mdi.highlight>#content>section>article.community,
+#content>section>article.custom{
 	background:var(--highlight);
 	color:#424242;
 }

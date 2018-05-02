@@ -125,9 +125,9 @@
 			},
 			build:type=>Object.entries(icons.list).filter(([key,icon])=>
 					icon.articles.main&&!icon.articles.main.classList.contains`dn`&&icon.data[page.set]
-				).map(([key,icon])=>
-					type==`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${icon.data[page.set]}"`
-				).join(type==`xml`?``:`,`),
+			).map(([key,icon])=>
+				type==`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${icon.data[page.set]}"`
+			).join(type==`xml`?``:`,`),
 			async copy(string,message){
 				try{
 					await navigator.clipboard.writeText(string);
@@ -579,6 +579,7 @@
 				}else delete this.list[key];
 				if(this.list[key]){
 					this.articles[key]=this.article.cloneNode(1);
+					this.articles[key].classList.toggle(`custom`,!parseInt(this.list[key]));
 					this.svg=this.svg.cloneNode(0);
 					this.svg.append(this.path);
 					this.articles[key].prepend(this.svg);
@@ -586,9 +587,7 @@
 					this.section.append(this.articles[key]);
 				}
 			},
-			build:type=>Object.keys(favourites.list).sort((first,second)=>
-				first>second?1:-1
-			).map(key=>
+			build:type=>Object.keys(favourites.list).sort().map(key=>
 				type==`xml`?`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data[page.set]:favourites.list[key]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${parseInt(favourites.list[key])?icons.list[key].data[page.set]:favourites.list[key]}"`
 			).join(type==`xml`?``:`,`),
 			close(value){
@@ -648,9 +647,7 @@
 			sort(){
 				let keys=Object.keys(this.articles);
 				if(keys.length>1)
-					keys.sort((first,second)=>
-						first>second?1:-1
-					).forEach(key=>
+					keys.sort().forEach(key=>
 						this.section.append(this.section.removeChild(this.articles[key]))
 					);
 			},
@@ -750,7 +747,7 @@
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
 				}else if(page.size){
-					this.open(icon=(page.params.get`edit`||(page.storage&&Object.keys(favourites.list)[0])||Object.keys(icons.list).find(key=>icons.list[key].data[page.set])));
+					this.open(icon=(page.params.get`edit`||(page.storage&&Object.keys(favourites.list).sort()[0])||Object.keys(icons.list).find(key=>icons.list[key].data[page.set])));
 					if(page.storage&&favourites.list[icon])
 						favourites.articles[icon].classList.add`active`;
 					else if(icons.list[icon])
