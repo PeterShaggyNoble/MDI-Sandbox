@@ -25,6 +25,7 @@ A while back we began to drop Font Awesome from our projects in favour of the mu
 
 ## Change Log
 Only major changes and additions will be noted here.
+- **2018-05-01:** Updated the [preview generator](https://petershaggynoble.github.io/MDI-Sandbox/preview/) to work off a single SVG file, with some minor redesigning.
 - **2018-04-26:** Added a tab for Google icons to the [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/).
 - **2018-04-26:** Created a template for the additional pages on the site.
 - **2018-04-25:** Added a tab for home automation icons to the [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/).
