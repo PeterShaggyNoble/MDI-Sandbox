@@ -75,7 +75,7 @@
 		</figure>
 	</header>
 	<ul class="fwm oa pr toe wsnw" id="actions">
-		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="star,star-off"></svg>Add to Favourites
+		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="star,star-off,delete"></svg>Add to Favourites
 		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="brush"></svg>Edit Icon
 		<li class="cp oh" data-type="svg" tabindex="-1"><svg class="dib pen vam" data-icons="xml"></svg>Download SVG
 		<li class="cp oh" data-type="xml" tabindex="-1"><svg class="dib pen vam" data-icons="android"></svg>Download Vector Drawable
@@ -95,7 +95,7 @@
 	<p class="oz pen pf" id="message">
 	<figure class="cw pf tac" id="load"><svg viewBox="0 0 56 56"><title>Loading ...</title><g><circle cx="28" cy="28" r="16"/></g></svg></figure>
 </footer>
-<dialog class="df oz pen pf">
+<dialog class="df oz pen pf" id="editor">
 	<header class="pr">
 		<h2>Edit PNG</h2>
 		<svg class="trigger cp pa" data-icons="dots-vertical" tabindex="1"><title>Options</title></svg>
@@ -137,5 +137,18 @@
 	</section>
 	<button class="cp fwm tac ttu">Close</button>
 	<button autofocus class="cp fwm tac ttu">Save</button>
+</dialog>
+<dialog class="df oz pen pf" id="upload">
+	<header class="pr">
+		<h2>Add Icon to Library</h2>
+	</header>
+	<label class="cp dib vat" for="upload-name">Icon Name: </label>
+	<input class="dib ttl vat" id="upload-name" pattern="^[A-Za-z][A-Za-z\-\d]+?[A-Za-z\d]$" required type="text" value="">
+	<p>The icon name may consist of lowercase letters, numbers &amp; hyphens only, must begin with a letter and must end with a letter or number.</p>
+	<label class="cp dib vat" for="upload-data">Path Data: </label>
+	<input class="dib vat" id="upload-data" pattern="^([A-Za-z][\d \.\-,]*)+$" required type="text" value="">
+	<p>Path data must fit within a 24*24 viewbox.</p>
+	<button class="cp fwm tac ttu">Close</button>
+	<button autofocus class="cp fwm tac ttu">Add Icon</button>
 </dialog>
 <script src="js/site.js"></script>

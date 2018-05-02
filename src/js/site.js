@@ -84,7 +84,7 @@
 							page.download(`data:text/json;utf8,{${filter.filtered?this.build`jsono`:this.packages.json||(this.packages.jsono=this.build`jsono`)}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
 							break;
 						case this.actions.php:
-							page.download(`data:text/php;utf8,`+(page.php=page.php||await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build`php`:this.packages.php||(this.packages.php=this.build`php`)}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
+							page.download(`data:text/php;utf8,`+(await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build`php`:this.packages.php||(this.packages.php=this.build`php`)}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
 							break;
 						case this.actions.svg:
 						case this.actions.html:
@@ -121,7 +121,7 @@
 				this.message.classList.remove`oz`;
 				this.timer=setTimeout(()=>
 					this.message.classList.add`oz`
-				,5e3);
+				,5000);
 			},
 			build:type=>Object.entries(icons.list).filter(([key,icon])=>
 					icon.articles.main&&!icon.articles.main.classList.contains`dn`&&icon.data[page.set]
@@ -129,9 +129,9 @@
 					type==`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${icon.data[page.set]}"`
 				).join(type==`xml`?``:`,`),
 			async copy(string,message){
-				if(navigator.clipboard)
+				try{
 					await navigator.clipboard.writeText(string);
-				else{
+				}catch(_){
 					editor.dialog.append(this.textarea);
 					this.textarea.value=string;
 					this.textarea.select();
@@ -156,9 +156,7 @@
 			init(){
 				this.nodes=d.querySelectorAll`svg[data-icons]`;
 				this.nodes.forEach(svg=>{
-					/*svg.setAttribute(`height`,svg.getAttribute`height`||24);*/
 					svg.setAttribute(`viewBox`,`0 0 24 24`);
-					/*svg.setAttribute(`width`,svg.getAttribute`width`||24);*/
 					svg.dataset.icons.split`,`.forEach(path=>{
 						svg.append(this.path=this.path.cloneNode(1));
 						this.path.setAttribute(`d`,icons.list[path]?icons.list[path].data.regular:icons.list["help-circle-outline"].data.regular);
@@ -302,7 +300,7 @@
 			touchstart(event){
 				this.width=this.menu.offsetWidth;
 				this.clientx=event.touches[0].clientX;
-				if(([page.main,b].includes(event.target)&&!this.show&&this.clientx<=50)||(this.show&&this.clientx>this.width)){
+				if(((event.target===page.main||event.target===b)&&!this.show&&this.clientx<=50)||(this.show&&this.clientx>this.width)){
 					this.nav.style.transition=this.menu.style.transition=`none`;
 					d.addEventListener(`touchmove`,this.functions.move=event=>{
 					let clientx=event.touches[0].clientX-this.clientx;
@@ -427,43 +425,65 @@
 			}
 		},
 	/** FAVOURITES **/
-		item=class{
-			constructor(icons,text){
-				favourites.menu.append(favourites.item=favourites.item.cloneNode(1));
-				favourites.item.firstElementChild.dataset.icons=icons;
-				favourites.item.lastChild.nodeValue=text;
-				return favourites.item;
-			}
-		},
 		favourites={
+			articles:{},
 			reader:new FileReader,
-			menu:C`ul`,
+			article:C`article`,
+			data:$`upload-data`,
+			dialog:$`upload`,
 			input:C`input`,
+			name:$`upload-name`,
+			menu:C`ul`,
 			item:C`li`,
+			path:N`path`,
 			svg:N`svg`,
 			title:N`title`,
 			init(){
+				this.list=page.storage[`favourites`];
+	/*			this.list=page.storage[`favourites`]||`{}`;
+				for(let key in page.storage)page.storage.hasOwnProperty(key)&&key.startsWith`mdi-`&&page.storage.removeItem(key));*/
+				if(!this.list){
+					this.list=`{${Object.keys(page.storage).filter(key=>
+						key.startsWith`mdi-`
+					).map(key=>{
+						page.storage.removeItem(`mdi-${key}`);
+						return `"${key.substr(4)}":1`;
+					}).join`,`}}`;
+				}
+				this.list=JSON.parse(this.list);
+				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
+				this.section=categories.list.favourites.section;
+				this.article.append(T``);
+				this.svg.classList.add(`db`,`pen`);
+				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
+				for(let key in this.list)
+					this.list.hasOwnProperty(key)&&this.add(key);
+				this.write();
+				this.sort();
 				this.menu.classList.add(`options`,`oh`,`pa`);
+				this.section.firstElementChild.append(this.svg=this.svg.cloneNode(0),this.menu);
+				this.svg.classList.remove(`db`,`pen`);
 				this.svg.classList.add(`trigger`,`cp`,`pa`);
 				this.svg.dataset.icons=`dots-vertical`;
 				this.menu.tabIndex=this.svg.tabIndex=-1;
 				this.svg.appendChild(this.title).append(T`Options`);
-				this.section=categories.list.favourites.section;
-				this.section.firstElementChild.append(this.svg,this.menu);
 				this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
 				this.item.append(this.svg=this.svg.cloneNode(0),T``);
 				this.svg.classList.remove(`trigger`,`cp`,`pa`);
 				this.svg.classList.add(`dib`,`pen`,`vam`);
 				this.svg.removeAttribute`tabindex`;
 				this.actions={
-					json:new item(`json`,`JSON Object`),
-					svg:new item(`angular`,`SVG for Angular`),
-					html:new item(`polymer`,`HTML for Polymer`),
-					php:new item(`language-php`,`PHP Library (WIP)`),
-					import:new item(`file-import`,`Import Favourites`),
-					export:new item(`file-export`,`Export Favourites`),
-					clear:new item(`delete`,`Clear Favourites`)
+					add:new this.Item(`plus-circle`,`Add Icon`),
+					json:new this.Item(`json`,`JSON Object`),
+					svg:new this.Item(`angular`,`SVG for Angular`),
+					html:new this.Item(`polymer`,`HTML for Polymer`),
+					php:new this.Item(`language-php`,`PHP Library (WIP)`),
+					import:new this.Item(`file-import`,`Import Favourites`),
+					export:new this.Item(`file-export`,`Export Favourites`),
+					clear:new this.Item(`delete`,`Clear Favourites`)
 				};
+				this.svg.classList.remove(`dib`,`vam`);
+				this.svg.classList.add(`db`);
 				this.input.accept=`.txt,text/plain`;
 				this.input.classList.add(`ln`,`pa`);
 				this.input.type=`file`;
@@ -474,9 +494,11 @@
 				this.reader.addEventListener(`load`,event=>
 					this.load(event)
 				,0);
-				this.articles=this.section.getElementsByTagName`article`;
 				this.menu.addEventListener(`click`,async event=>{
 					switch(event.target){
+						case this.actions.add:
+							this.open();
+							break;
 						case this.actions.json:
 							page.download(`data:text/json;utf8,{${this.build`jsono`}}`,`mdi-favourites.json`);
 							break;
@@ -493,83 +515,199 @@
 							this.input.click();
 							break;
 						case this.actions.export:
-							page.download(`data:text/plain;base64,${btoa(btoa(Object.keys(page.storage).filter(key=>key.startsWith`mdi-`).join`,`))}`,`mdi-favourites.txt`);
+							page.download(`data:text/plain;base64,${btoa(btoa(JSON.stringify(this.list)))}`,`mdi-favourites.txt`);
 							break;
 						case this.actions.clear:
-							let icon;
-							for(let key in page.storage)
-								if(page.storage.hasOwnProperty(key))
-									if(key.startsWith`mdi-`){
-										page.storage.removeItem(key);
-										if((icon=icons.list[key.substr(4)])&&icon.articles.favourite){
-											icon.articles.favourite.remove();
-											delete icon.articles.favourite;
-										}
-									}
+							page.storage.removeItem`favourites`;
+							for(let key in this.articles)
+								if(this.articles.hasOwnProperty(key)){
+									this.articles[key].remove();
+									delete this.articles[key];
+								}
+							for(let key in this.list)
+								if(this.list.hasOwnProperty(key))
+									delete this.list[key];
 							page.alert`Favourites cleared.`;
 							break;
 					}
 				},0);
+				this.save=this.dialog.lastElementChild;
+				this.cancel=this.save.previousElementSibling;
+				this.dialog.addEventListener(`blur`,event=>{
+					let target=event.target;
+					if(target.nodeName.toLowerCase()===`input`)
+						target.classList.toggle(`error`,!target.validity.valid);
+				},1);
+				this.dialog.addEventListener(`click`,event=>{
+					switch(event.target){
+						case this.cancel:
+						case this.dialog:
+							this.close(0);
+							break;
+						case this.save:
+							this.upload();
+							break;
+					}
+				},0);
+				this.dialog.addEventListener(`keydown`,event=>{
+					if(this.dialog.open){
+						if(event.keyCode===13)
+							this.upload();
+						else if(event.keyCode===27){
+							this.close(0);
+							event.preventDefault();
+							event.stopPropagation();
+						}
+					}
+				},0);
 			},
-			additem(key,icons,text){
-				this.menu.append(this.actions[key]=this.item.cloneNode(1));
-				this.actions[key].firstElementChild.dataset.icons=icons;
-				this.actions[key].lastChild.nodeValue=text;
+			Item:class{
+				constructor(icons,text){
+					favourites.menu.append(favourites.item=favourites.item.cloneNode(1));
+					favourites.item.firstElementChild.dataset.icons=icons;
+					favourites.item.lastChild.nodeValue=text;
+					return favourites.item;
+				}
 			},
-			build:type=>Object.entries(icons.list).filter(([key,icon])=>
-				icon.articles.favourite&&icon.data[page.set]
-			).map(([key,icon])=>
-				type==`xml`?`<g id="${key}"><path d="${icon.data[page.set]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${icon.data[page.set]}"`
+			add(key){
+				if(icons.list[key]&&icons.list[key].data.regular){
+					this.path=this.path.cloneNode(1)
+					this.path.setAttribute(`d`,icons.list[key].data.regular);
+				}else if(!parseInt(this.list[key])){
+					this.path=this.path.cloneNode(1);
+					this.path.setAttribute(`d`,this.list[key]);
+				}else delete this.list[key];
+				if(this.list[key]){
+					this.articles[key]=this.article.cloneNode(1);
+					this.svg=this.svg.cloneNode(0);
+					this.svg.append(this.path);
+					this.articles[key].prepend(this.svg);
+					this.articles[key].lastChild.nodeValue=key;
+					this.section.append(this.articles[key]);
+				}
+			},
+			build:type=>Object.keys(favourites.list).sort((first,second)=>
+				first>second?1:-1
+			).map(key=>
+				type==`xml`?`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data[page.set]:favourites.list[key]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${parseInt(favourites.list[key])?icons.list[key].data[page.set]:favourites.list[key]}"`
 			).join(type==`xml`?``:`,`),
+			close(value){
+				b.removeEventListener(`keydown`,this.fn);
+				this.dialog.classList.add(`oz`,`pen`);
+				this.timer=setTimeout(()=>this.dialog.close(value),225);
+			},
 			load(event){
-				let msg=`complete`;
+				let msg=`complete`,list;
 				try{
-					atob(event.target.result).split`,`.forEach(item=>{
-						let name=item.substr(4);
-						this.icon=icons.list[name];
-						if(this.icon){
-							if(!this.icon.articles.favourite){
-								page.storage.setItem(item,1);
-								this.section.append(this.icon.articles.favourite=(this.icon.articles.main||this.icon.articles.retired).cloneNode(1));
-								if(info.name===name){
-									info.actions.favourite.classList.add`remove`;
-									info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
-								}
+					list=JSON.parse(atob(event.target.result));
+				}catch(e){
+					try{
+						list=JSON.parse(`{${atob(event.target.result).split`,`.map(key=>
+							`"${key.substr(4)}":1`
+						).join`,`}}`);
+					}catch(err){
+						console.log(err);
+						msg=`failed`;
+					}
+				}
+				if(msg===`complete`){
+					for(let key in list)
+						if(list.hasOwnProperty(key)&&!this.list[key]){
+							this.list[key]=list[key];
+							this.add(key);
+							if(info.name===key&&parseInt(list[key])){
+								info.actions.favourite.classList.add`remove`;
+								info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
 							}
 						}
-					});
-					this.articles.length>1&&this.sort();
-				}catch(error){
-					console.log(error);
-					msg=`failed`;
+					this.write();
+					this.sort();
 				}
 				page.alert(`Import ${msg}.`);
 				this.input.value=``;
 			},
+			open(name){
+				clearTimeout(this.timer);
+				this.dialog.showModal();
+				this.dialog.classList.remove(`oz`,`pen`);
+				b.addEventListener(`keydown`,this.fn=event=>{
+					if(event.keyCode===27){
+						this.close(0);
+						event.preventDefault();
+						event.stopPropagation();
+					}
+				},0);
+			},
 			sort(){
-				[...this.articles].sort((first,second)=>
-					first.lastChild.nodeValue>second.lastChild.nodeValue?1:-1
-				).forEach(article=>
-					this.section.append(this.section.removeChild(article))
-				);
+				let keys=Object.keys(this.articles);
+				if(keys.length>1)
+					keys.sort((first,second)=>
+						first>second?1:-1
+					).forEach(key=>
+						this.section.append(this.section.removeChild(this.articles[key]))
+					);
 			},
 			toggle(name){
-				this.icon=icons.list[name];
-				info.actions.favourite.classList.toggle(`remove`,!this.icon.articles.favourite);
-				info.actions.favourite.lastChild.nodeValue=`${this.icon.articles.favourite?`Add to`:`Remove from`} Favourites`;
-				let msg=`added to`;
-				if(this.icon.articles.favourite){
-					page.storage.removeItem(`mdi-${name}`);
-					this.icon.articles.favourite.remove();
-					delete this.icon.articles.favourite;
-					msg=`removed from`;
+				let article=this.articles[name];
+				if(icons.list[name]){
+					info.actions.favourite.classList.toggle(`remove`,!article);
+					info.actions.favourite.lastChild.nodeValue=`${article?`Add to`:`Remove from`} Favourites`;
+					let msg=`added to`;
+					if(article){
+						this.articles[name].remove();
+						delete this.articles[name];
+						delete this.list[name];
+						msg=`removed from`;
+					}else{
+						this.list[name]=1;
+						this.add(name);
+					}
+					page.alert(`${name} ${msg} favourites.`);
 				}else{
-					page.storage.setItem(`mdi-${name}`,1);
-					this.section.append(this.icon.articles.favourite=(this.icon.articles.main||this.icon.articles.retired).cloneNode(1));
-					this.icon.articles.favourite.classList.remove`active`;
-					this.articles.length>1&&this.sort();
+					if(article){
+						this.articles[name].remove();
+						delete this.articles[name];
+						delete this.list[name];
+						page.alert(`${name} deleted from library.`);
+					}
 				}
-				page.alert(`${name} ${msg} favourites.`);
+				this.sort();
+				this.write();
+			},
+			upload(){
+				let 	valid=true,
+					data,match,name;
+				this.name.classList.toggle(`error`,!this.name.validity.valid);
+				this.data.classList.toggle(`error`,!this.data.validity.valid);
+				if(this.name.validity.valid&&this.data.validity.valid){
+					name=this.name.value.trim().toLowerCase();
+					data=this.data.value.trim();
+					if(icons.list[name]||this.list[name]){
+						valid=false;
+						this.name.classList.add`error`;
+						this.name.nextElementSibling.firstChild.nodeValue=`This name is already in use.`;
+					}
+					if(Math.max(...match=data.match(/(\d|\.)+/g).map(x=>parseFloat(x)))>24||Math.min(...match)<0){
+						valid=false;
+						this.data.classList.add`error`;
+					}
+					if(valid){
+						this.list[name]=data;
+						this.add(name);
+						this.sort();
+						this.write();
+						this.close();
+						page.alert(`${name} added to library.`);
+						this.articles[name].click();
+						this.name.value=this.data.value=``;
+						this.name.classList.remove`error`;
+						this.data.classList.remove`error`;
+						this.name.nextElementSibling.firstChild.nodeValue=`The icon name may consist of lowercase letters, numbers &amp; hyphens only, must begin with a letter and must end with a letter or number.`;
+					}
+				}
+			},
+			write(){
+				page.storage.setItem(`favourites`,JSON.stringify(this.list));
 			}
 		},
 	/** SIDEBAR **/
@@ -601,13 +739,19 @@
 				this.path=this.svg.firstElementChild;
 				let icon=page.params.get`icon`;
 				if(icon){
-					if(icons.list[icon]){
+					if(favourites.list[icon]){
+						this.open(icon);
+						favourites.articles[icon].classList.add`active`;
+					}else if(icons.list[icon]){
 						this.open(icon);
 						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 					}
 				}else if(page.size){
 					this.open(icon=(page.params.get`edit`||Object.keys(icons.list).find(key=>icons.list[key].data[page.set])));
-					Object.values(icons.list[icon].articles)[0].classList.add`active`;
+					if(favourites.list[icon])
+						favourites.articles[icon].classList.add`active`;
+					else if(icons.list[icon])
+						Object.values(icons.list[icon].articles)[0].classList.add`active`;
 				}
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
@@ -647,27 +791,35 @@
 				:page.alert`Unknown icon.`;
 			},
 			open(name){
+				let custom,library;
 				this.icon=icons.list[this.name=name];
-				this.data=this.actions.data.dataset.copy=this.icon.data[page.set];
-				let codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
-				this.aside.classList.toggle(`nocopy`,!(this.copy=!!codepoint));
-				this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
+				if(this.icon){
+					this.data=this.actions.data.dataset.copy=this.icon.data[page.set];
+					this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
+					this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
+					this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
+				}else{
+					this.icon=this.data=this.actions.data.dataset.copy=favourites.list[name];
+					this.codepoint=0;
+					this.aside.classList.add(`nocopy`,`retired`);
+				}
 				this.downloads={
 					svg:`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
 					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.data}"/></vector>`
 				};
 				if(page.storage){
-					this.actions.favourite.classList.toggle(`remove`,!!this.icon.articles.favourite);
-					this.actions.favourite.lastChild.nodeValue=`${this.icon.articles.favourite?`Remove from`:`Add to`} Favourites`;
+					this.actions.favourite.classList.toggle(`remove`,library=!!favourites.articles[this.name]&&!!parseInt(favourites.list[this.name]));
+					this.actions.favourite.classList.toggle(`delete`,custom=!!favourites.articles[this.name]&&!parseInt(favourites.list[this.name]));
+					this.actions.favourite.lastChild.nodeValue=custom?`Delete from Library`:`${library?`Remove from`:`Add to`} Favourites`;
 				}
-				if(codepoint){
-					this.actions.icon.dataset.copy=String.fromCharCode(`0x${codepoint}`);
-					this.actions.entity.dataset.copy=`&#x${codepoint};`;
-					this.actions.css.dataset.copy=`\\${codepoint}`;
-					this.actions.js.dataset.copy=`\\u${codepoint}`;
+				if(this.codepoint){
+					this.actions.icon.dataset.copy=String.fromCharCode(`0x${this.codepoint}`);
+					this.actions.entity.dataset.copy=`&#x${this.codepoint};`;
+					this.actions.css.dataset.copy=`\\${this.codepoint}`;
+					this.actions.js.dataset.copy=`\\u${this.codepoint}`;
+					this.actions.html.dataset.copy=`<span class="${page.light?`mdil`:`mdi`} ${page.light?`mdil`:`mdi`}-${name}"></span>`;
 				}
-				this.actions.html.dataset.copy=`<span class="${page.light?`mdil`:`mdi`} ${page.light?`mdil`:`mdi`}-${name}"></span>`;
 				this.actions.url.dataset.copy=`${page.address}?`;
 				if(page.light)
 					this.actions.url.dataset.copy+=`set=light&`;
@@ -825,9 +977,7 @@
 				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 				this.article.append(T``);
 				this.svg.classList.add(`db`,`pen`);
-				/*this.svg.setAttribute(`height`,24);*/
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				/*this.svg.setAttribute(`width`,24);*/
 				for(let key in this.list)
 					this.list.hasOwnProperty(key)&&this.add(key);
 			},
@@ -863,7 +1013,7 @@
 					article.classList.toggle(`community`,icon.contributor.regular!=="google");
 					article.lastChild.nodeValue=key;
 					icon.articles={};
-					(category=categories.list.favourites)&&page.storage[`mdi-${key}`]&&category.section.append(icon.articles.favourite=article.cloneNode(1));
+	//				(category=categories.list.favourites)&&page.storage[`mdi-${key}`]&&category.section.append(icon.articles.favourite=article.cloneNode(1));
 					(category=categories.list.new)&&icon.added&&icon.added.regular===version&&category.section.append(icon.articles.new=article.cloneNode(1));
 					(category=categories.list.updated)&&icon.updated&&icon.updated.regular===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
 					(category=categories.list.renamed)&&icon.renamed&&icon.renamed.regular===version&&category.section.append(icon.articles.renamed=article.cloneNode(1));
@@ -891,8 +1041,8 @@
 			image:new Image,
 			xml:new XMLSerializer,
 			background:C`span`,
-			canvas:Q`dialog>figure>canvas`,
-			dialog:Q`dialog`,
+			canvas:Q`#editor>figure>canvas`,
+			dialog:$`editor`,
 			init(){
 				this.menu=this.dialog.querySelector`ul`;
 				if(page.storage){
@@ -1034,7 +1184,7 @@
 				},1);
 				this.load();
 				let name=page.params.get`edit`;
-				name&&icons.list[name]&&this.open(name);
+				name&&(icons.list[name]||favourites.list[name])&&this.open(name);
 			},
 			close(value){
 				b.removeEventListener(`keydown`,this.fn);
@@ -1144,7 +1294,10 @@
 			open(name){
 				clearTimeout(this.timer);
 				this.name=name;
-				this.path.setAttribute(`d`,this.data=icons.list[name].data[page.set]);
+				if(icons.list[name])
+					this.path.setAttribute(`d`,this.data=icons.list[name].data[page.set]);
+				else if(favourites.list[name])
+					this.path.setAttribute(`d`,this.data=favourites.list[name]);
 				this.dialog.showModal();
 				this.dialog.classList.remove(`oz`,`pen`);
 				b.addEventListener(`keydown`,this.fn=event=>{
