@@ -343,6 +343,43 @@ body.mdi #sections~ol>li::after{
 	fill:currentcolor;
 }
 
+/** NEWS **/
+#content>aside{
+	background:#fff;
+	border-radius:2px;
+	box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+	z-index:1;
+}
+#content>aside>header{
+	background:var(--colour);
+	border-radius:2px 2px 0 0;
+	padding:0 16px;
+	top:64px;
+	z-index:2;
+}
+#content>aside>header>h2{
+	color:#fff;
+	font-size:20px;
+	line-height:48px;
+}
+#content>aside>p{
+	line-height:20px;
+	padding:16px;
+}
+@media(max-width:759px){
+	#content>aside{
+		margin:8px;
+	}
+	#content>aside>header{
+		top:56px;
+	}
+}
+@media(min-width:760px){
+	#content>aside{
+		margin:16px;
+	}
+}
+
 /** CONTENT **/
 #content{
 	transition:margin .225s var(--timing-function);
@@ -526,7 +563,7 @@ body.mdi>#content>section>article>svg>path:not(.regular){
 	transition-property:background,color,height,opacity;
 	transition-timing-function:var(--timing-function);
 }
-#actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info>#actions>li:nth-last-child(2){
+#actions>li:nth-last-child(12),#actions>li:nth-last-child(11),#actions>li:nth-last-child(8),#info>#actions>li:nth-last-child(2){
 	border-bottom:1px solid #e0e0e0;
 }
 #info>#actions>li:hover{
@@ -537,7 +574,7 @@ body.mdi>#content>section>article>svg>path:not(.regular){
 	background:#e0e0e0;
 	color:var(--colour);
 }
-#info.nocopy>#actions>li[data-copy]:not([data-confirm="Path data"]):not([data-confirm=Link]),
+#info.nocopy>#actions>li[data-copy]:not([data-confirm="Markup"]):not([data-confirm="Path data"]):not([data-confirm=Link]),
 #info.retired>#actions>li:last-child{
 	background:#fff;
 	color:#757575;
@@ -552,11 +589,13 @@ body.mdi>#content>section>article>svg>path:not(.regular){
 	fill:var(--colour);
 }
 #actions>li.delete>svg>path,
-#actions>li.remove>svg>path{
+#actions>li.remove>svg>path,
+#actions>li.restore>svg>path{
 	transition:opacity .225s var(--timing-function);
 }
 #actions>li.delete>svg>path:first-child,
 #actions>li.remove>svg>path:first-child,
+#actions>li.restore>svg>path:first-child,
 #actions>li>svg>path+path{
 	opacity:0;
 }
@@ -566,7 +605,10 @@ body.mdi>#content>section>article>svg>path:not(.regular){
 #actions>li.delete>svg>path:nth-of-type(3){
 	opacity:1;
 }
-#info.nocopy>#actions>li[data-copy]:not([data-confirm="Path data"]):not([data-confirm=Link])>svg,
+#actions>li.restore>svg>path:nth-of-type(4){
+	opacity:1;
+}
+#info.nocopy>#actions>li[data-copy]:not([data-confirm="Markup"]):not([data-confirm="Path data"]):not([data-confirm=Link])>svg,
 #info.retired>#actions>li:last-child>svg{
 	fill:#bdbdbd;
 }
@@ -681,6 +723,15 @@ dialog>button:active{
 	margin:0 8px 8px 16px;
 	width:80px;
 }
+#upload>label:first-of-type::after{
+	color:rgba(0,0,0,.38);
+	content:"my-";
+	left:88px;
+	line-height:23px;
+	pointer-events:none;
+	position:absolute;
+	top:0;
+}
 #upload>input{
 	border-bottom:1px solid #bdbdbd;
 	line-height:23px;
@@ -688,6 +739,9 @@ dialog>button:active{
 	margin:0 16px 8px 0;
 	transition:border .195s var(--timing-function);
 	width:calc(100% - 120px);
+}
+#upload-name{
+	padding:0 0 0 24px;
 }
 #upload>input.error{
 	border-color:#f44336;

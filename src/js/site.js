@@ -38,12 +38,13 @@
 				this.message.append(T``);
 				try{
 					this.storage=localStorage;
-				}catch(e){
+				}catch(_){
 					page.alert`Favourites not available.`;
 					for(let key in favourites)
 						delete favourites[key];
 					info.actions.favourite.remove();
 					delete info.actions.favourite;
+					Q`#content>aside`.remove();
 				}
 				this.textarea.classList.add(`ln`,`pf`);
 				categories.init();
@@ -533,10 +534,14 @@
 				},0);
 				this.save=this.dialog.lastElementChild;
 				this.cancel=this.save.previousElementSibling;
-				this.dialog.addEventListener(`blur`,event=>{
+				this.dialog.addEventListener(`input`,event=>{
 					let target=event.target;
-					if(target.nodeName.toLowerCase()===`input`)
+					this.timer&&clearTimeout(this.timer);
+					this.timer=setTimeout(()=>{
 						target.classList.toggle(`error`,!target.validity.valid);
+						if(target===this.data)
+							target.nextElementSibling.firstChild.nodeValue=target.validity.valid?`Path data must fit within a 24*24 viewbox.`:`Invalid path data.`;
+					},250);
 				},1);
 				this.dialog.addEventListener(`click`,event=>{
 					switch(event.target){
@@ -599,6 +604,7 @@
 					this.name.classList.remove`error`;
 					this.name.nextElementSibling.firstChild.nodeValue=`The icon name may consist of lowercase letters, numbers &amp; hyphens only, must begin with a letter and must end with a letter or number.`;
 					this.data.classList.remove`error`;
+					this.data.nextElementSibling.firstChild.nodeValue=`Path data must fit within a 24*24 viewbox.`;
 				},225);
 			},
 			load(event){
@@ -647,16 +653,17 @@
 			sort(){
 				let keys=Object.keys(this.articles);
 				if(keys.length>1)
-					keys.sort().forEach(key=>
+					keys.sort((first,second)=>
+						first.replace(/^my-/,``)>second.replace(/^my-/,``)?1:-1
+					).forEach(key=>
 						this.section.append(this.section.removeChild(this.articles[key]))
 					);
 			},
 			toggle(name){
-				let article=this.articles[name];
+				let article=this.articles[name],msg,src;
 				if(icons.list[name]){
 					info.actions.favourite.classList.toggle(`remove`,!article);
 					info.actions.favourite.lastChild.nodeValue=`${article?`Add to`:`Remove from`} Favourites`;
-					let msg=`added to`;
 					if(article){
 						this.articles[name].remove();
 						delete this.articles[name];
@@ -665,16 +672,27 @@
 					}else{
 						this.list[name]=1;
 						this.add(name);
+						msg=`added to`;
 					}
-					page.alert(`${name} ${msg} favourites.`);
+					src=`favourites`
 				}else{
+					info.actions.favourite.classList.toggle(`delete`,!article);
+					info.actions.favourite.classList.toggle(`restore`,article);
+					info.actions.favourite.lastChild.nodeValue=`${article?`Restore to`:`Delete from`} Library`;
 					if(article){
-						this.articles[name].remove();
+						article.remove();
 						delete this.articles[name];
 						delete this.list[name];
-						page.alert(`${name} deleted from library.`);
+						msg=`deleted from`;
+					}else{
+						this.list[name]=info.data;
+						this.add(name);
+						this.articles[name].classList.add`active`;
+						msg=`restored to`;
 					}
+					src=`library`;
 				}
+				page.alert(`${name} ${msg} ${src}.`);
 				this.sort();
 				this.write();
 			},
@@ -684,16 +702,17 @@
 				this.name.classList.toggle(`error`,!this.name.validity.valid);
 				this.data.classList.toggle(`error`,!this.data.validity.valid);
 				if(this.name.validity.valid&&this.data.validity.valid){
-					name=this.name.value.trim().toLowerCase();
+					name=`my-`+this.name.value.trim().toLowerCase();
 					data=this.data.value.trim();
 					if(icons.list[name]||this.list[name]){
 						valid=false;
 						this.name.classList.add`error`;
 						this.name.nextElementSibling.firstChild.nodeValue=`This name is already in use.`;
 					}
-					if(Math.max(...match=data.match(/(\d|\.)+/g).map(x=>parseFloat(x)))>24||Math.min(...match)<0){
+					if(valid&&Math.max(...match=data.match(/(\d|\.)+/g).map(x=>parseFloat(x)))>24||Math.min(...match)<0){
 						valid=false;
 						this.data.classList.add`error`;
+						this.data.nextElementSibling.firstChild.nodeValue=`Path data must fit within a 24*24 viewbox.`;
 					}
 					if(valid){
 						this.list[name]=data;
@@ -715,12 +734,13 @@
 			actions:{
 				favourite:Q`#actions>:first-child`,
 				export:Q`#actions>:nth-child(2)`,
+				markup:Q`#actions>[data-confirm="Markup"]`,
 				data:Q`#actions>[data-confirm="Path data"]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
 				codepoint:Q`#actions>[data-confirm="Code point"]`,
-				entity:Q`#actions>[data-confirm=Entity]`,
+				/*entity:Q`#actions>[data-confirm=Entity]`,
 				css:Q`#actions>[data-confirm=CSS]`,
-				js:Q`#actions>[data-confirm=JavaScript]`,
+				js:Q`#actions>[data-confirm=JavaScript]`,*/
 				html:Q`#actions>[data-confirm=HTML]`,
 				url:Q`#actions>[data-confirm=Link]`,
 				link:Q`#actions>:last-child`
@@ -766,17 +786,18 @@
 						case this.actions.export:
 							this.data?editor.open(this.name):page.alert`Not yet available.`;
 							break;
+						case this.actions.markup:
 						case this.actions.data:
 							this.data?page.copy(target.dataset.copy,target.dataset.confirm):page.alert`Not yet available.`;
 							break;
 						case this.actions.link:
-							this.retired?page.alert`No longer available.`:!page.offline?location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`Could not connect.`;
+							this.custom||this.retired?page.alert(`No${this.custom?`t`:` longer`} available.`):!page.offline?location.href=`https://materialdesignicons.com/icon/${this.name}${page.light?`/light`:``}`:page.alert`Could not connect.`;
 							break;
 						default:
 							if(this.type=target.dataset.type)
 								this.download();
 							else if(target.parentNode===this.actions.link.parentNode)
-								this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.retired?` longer`:`t yet`} available.`);
+								this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.retired?` longer`:`t${this.custom?``:` yet`}`} available.`);
 							break;
 					}
 				},0);
@@ -794,15 +815,18 @@
 				let custom,library;
 				this.icon=icons.list[this.name=name];
 				if(this.icon){
+					this.custom=0;
 					this.data=this.actions.data.dataset.copy=this.icon.data[page.set];
 					this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 					this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 					this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
 				}else if(page.storage){
+					this.custom=1;
 					this.icon=this.data=this.actions.data.dataset.copy=favourites.list[name];
-					this.codepoint=0;
+					this.codepoint=this.copy=0;
 					this.aside.classList.add(`nocopy`,`retired`);
 				}
+				this.actions.markup.dataset.copy=`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`;
 				this.downloads={
 					svg:`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
@@ -815,9 +839,9 @@
 				}
 				if(this.codepoint){
 					this.actions.icon.dataset.copy=String.fromCharCode(`0x${this.codepoint}`);
-					this.actions.entity.dataset.copy=`&#x${this.codepoint};`;
+					/*this.actions.entity.dataset.copy=`&#x${this.codepoint};`;
 					this.actions.css.dataset.copy=`\\${this.codepoint}`;
-					this.actions.js.dataset.copy=`\\u${this.codepoint}`;
+					this.actions.js.dataset.copy=`\\u${this.codepoint}`;*/
 					this.actions.html.dataset.copy=`<span class="${page.light?`mdil`:`mdi`} ${page.light?`mdil`:`mdi`}-${name}"></span>`;
 				}
 				this.actions.url.dataset.copy=`${page.address}?`;
