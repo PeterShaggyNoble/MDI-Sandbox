@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2018-05-03:** Add your own custom icons to the library using the new entry in the "My Favourites" menu.
 - **2018-05-01:** Updated the [preview generator](https://petershaggynoble.github.io/MDI-Sandbox/preview/) to work off a single SVG file, with some minor redesigning.
 - **2018-04-26:** Added a tab for Google icons to the [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/).
 - **2018-04-26:** Created a template for the additional pages on the site.

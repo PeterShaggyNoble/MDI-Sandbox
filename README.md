@@ -7,7 +7,7 @@
 ### Icon Library
 The main section of this project; a jacked up "cheatsheet" for MDI. Features include:
 - Build your own library by adding icons to your favourites.
-- Add your own custom icons to your library (Coming soon).
+- Add your own custom icons to your library.
 - Filter icons by keywords, categories and/or contributors.
 - Download your library, filtered icons or individual icons in a variety of formats.
 - Copy icon info such as SVG markup, path data and codepoints directly to your clipboard.
@@ -33,7 +33,6 @@ A single-file, standalone version can be downloaded from the menu on the site or
 
 ## Coming Soon
 Some upcoming features that are being planned or worked on include:
-- the ability to add your own custom icons to the library which can then be included when exporting your favourites,
 - a tool to automatically generate previews of icons included in the MDI library,
 - a PHP library, which can be downloaded for testing through the Sandbox (see [this issue](https://github.com/Templarian/MaterialDesign/issues/3087) for more details),
 - a JavaScript library, and,
