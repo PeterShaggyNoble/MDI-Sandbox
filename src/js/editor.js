@@ -94,7 +94,7 @@
 					transform=inputs.name.value=``;
 					for(key in icons)
 						if(icons.hasOwnProperty(key))
-							if(icons[key].data.regular===value||icons[key].data.light===value){
+							if(icons[key].data===value){
 								inputs.name.value=key;
 								break;
 							}
