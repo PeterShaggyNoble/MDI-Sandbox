@@ -206,6 +206,10 @@ body.highlight #highlight>svg>path+path{
 	transition-property:background,color,height,opacity;
 	transition-timing-function:var(--timing-function);
 }
+#menu>ol>li[data-count]::after{
+	color:#616161;
+	content:" (" attr(data-count) ")";
+}
 #menu>ol>li:last-child{
 	margin-bottom:8px;
 	transition-property:background,color,height,margin,opacity;
@@ -472,6 +476,10 @@ body.highlight>#content>section>article.active{
 	line-height:48px;
 	padding:0 16px 0 8px;
 	transition:background .225s var(--timing-function),color .225s var(--timing-function);
+}
+.options>li:first-of-type,
+#favourites .options>li:nth-of-type(5){
+	border-bottom:1px solid #e0e0e0;
 }
 .options>li:first-of-type{
 	border-radius:2px 2px 0 0;

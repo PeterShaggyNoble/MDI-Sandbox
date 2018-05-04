@@ -1,17 +1,20 @@
 {
-	/** VERSION **/
-	let version=`2.3.54`;
-	/** METHODS **/
+	
+	let version={
+		str:`2.3.54`,
+		int:2354
+	};
+	
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
 		C=e=>d.createElement(e),
 		N=e=>d.createElementNS(`http://www.w3.org/2000/svg`,e),
 		T=t=>d.createTextNode(t),
-	/** CONSTANTS **/
+	
 		d=document,
 		h=d.documentElement,
 		b=d.body,
-	/** PAGE **/
+	
 		page={
 			offline:navigator.onLine===false,
 			packages:{},
@@ -39,7 +42,6 @@
 				}
 				this.textarea.classList.add(`ln`,`pf`);
 				categories.init();
-				version=+version.replace(/\./g,``);
 				contributors.init();
 				this.storage&&favourites.init();
 				icons.init();
@@ -142,7 +144,7 @@
 			},
 			getphp:async()=>page.php=page.php||(await(await fetch(`${this.address}/libraries/mdi-php/mdi.php`)).text()).replace(/\n\/\* DELETE BELOW \*\/\n[\s\S]+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*[\s\S]+?\*\/\n/g,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
 		},
-	/** SVGS **/
+	
 		svgs={
 			path:N`path`,
 			init(){
@@ -157,7 +159,7 @@
 				});
 			}
 		},
-	/** MENU **/
+	
 		menu={
 			functions:{},
 			show:0,
@@ -273,7 +275,7 @@
 				}
 			}
 		},
-	/** FILTERS **/
+	
 		filter={
 			clearall:menu.sections.lastElementChild,
 			error:page.section.querySelector`p`,
@@ -299,6 +301,7 @@
 				if(this.categories.size||this.contributors.size||this.text)
 					filter.apply();
 				else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
+				this.clearall.dataset.count=icons.total;
 				this.input.addEventListener(`input`,()=>{
 					clearTimeout(this.timer);
 					this.timer=setTimeout(()=>{
@@ -379,7 +382,7 @@
 				menu.goto(page.section);
 			}
 		},
-	/** FAVOURITES **/
+	
 		favourites={
 			articles:{},
 			reader:new FileReader,
@@ -395,8 +398,7 @@
 			title:N`title`,
 			init(){
 				this.list=page.storage[`favourites`];
-	/*			this.list=page.storage[`favourites`]||`{}`;
-				for(let key in page.storage)page.storage.hasOwnProperty(key)&&key.startsWith`mdi-`&&page.storage.removeItem(key));*/
+	
 				if(!this.list){
 					this.list=`{${Object.keys(page.storage).filter(key=>
 						key.startsWith`mdi-`
@@ -615,6 +617,7 @@
 					).forEach(key=>
 						this.section.append(this.section.removeChild(this.articles[key]))
 					);
+				categories.list.favourites.item.dataset.count=keys.length;
 			},
 			toggle(name){
 				let article=this.articles[name],msg,src;
@@ -686,7 +689,7 @@
 				page.storage.setItem(`favourites`,JSON.stringify(this.list));
 			}
 		},
-	/** SIDEBAR **/
+	
 		info={
 			actions:{
 				favourite:Q`#actions>:first-child`,
@@ -695,9 +698,7 @@
 				data:Q`#actions>[data-confirm="Path data"]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
 				codepoint:Q`#actions>[data-confirm="Code point"]`,
-				/*entity:Q`#actions>[data-confirm=Entity]`,
-				css:Q`#actions>[data-confirm=CSS]`,
-				js:Q`#actions>[data-confirm=JavaScript]`,*/
+				
 				html:Q`#actions>[data-confirm=HTML]`,
 				url:Q`#actions>[data-confirm=Link]`,
 				link:Q`#actions>:last-child`
@@ -796,9 +797,7 @@
 				}
 				if(this.codepoint){
 					this.actions.icon.dataset.copy=String.fromCharCode(`0x${this.codepoint}`);
-					/*this.actions.entity.dataset.copy=`&#x${this.codepoint};`;
-					this.actions.css.dataset.copy=`\\${this.codepoint}`;
-					this.actions.js.dataset.copy=`\\u${this.codepoint}`;*/
+					
 					this.actions.html.dataset.copy=`<span class="mdi mdi-${name}"></span>`;
 				}
 				this.actions.url.dataset.copy=`${page.address}?icon=${name}`;
@@ -831,7 +830,7 @@
 				}
 			}
 		},
-	/** CATEGORIES **/
+	
 		categories={
 			header:C`header`,
 			heading:C`h2`,
@@ -866,31 +865,46 @@
 					header=this.header.cloneNode(1),
 					heading=this.heading.cloneNode(1),
 					item=this.item.cloneNode(1),
-					name=category.name.replace(`{v}`,version);
+					name=category.name.replace(`{v}`,version.str);
 				if(category.section){
 					section.id=key;
 					heading.firstChild.nodeValue=name;
 					header.append(heading);
 					key!==`favourites`&&header.append(this.link.cloneNode(1));
 					section.append(header,this.error.cloneNode(1));
-					page.section.before(category.section=section);
+					if(key!==`favourites`)
+						category.count=icons.array.filter(icon=>{
+							switch(key){
+								case`new`:
+									return icon.added===version.int;
+								case`soon`:
+									return icon.added===`{next}`;
+								case`retired`:
+									return icon.retired&&icon.retired!==`{soon}`&&icon.retired!==`{next}`;
+								default:
+									return icon[key]===version.int;
+							}
+						}).length;
+					if(key===`favourites`||category.count)
+						page.section.before(category.section=section);
 				}else category.count=icons.array.filter(icon=>
 						icon.categories&&icon.data&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
 				).length;
-				if(category.section||category.count){
+				if(key===`favourites`||category.count){
 					item.lastChild.nodeValue=name;
 					item.dataset.category=key;
+					if(category.hasOwnProperty`count`)
+						item.dataset.count=category.count;
 					if(!category.section){
 						item.lastChild.before(this.svg=this.svg.cloneNode(1));
 						this.svg.dataset.icons=`check`;
-						item.dataset.count=category.count;
 					}
 					item.firstElementChild.dataset.icons=category.icon;
 					category.section?filter.clearall.before(category.item=item):menu.categories.append(category.item=item);
 				}else delete this.list[key];
 			}
 		},
-	/** CONTRIBUTORS **/
+	
 		contributors={
 			img:C`img`,
 			item:C`li`,
@@ -932,7 +946,7 @@
 				}else delete this.list[key];
 			}
 		},
-	/** ICONS **/
+	
 		icons={
 			article:C`article`,
 			path:N`path`,
@@ -969,17 +983,17 @@
 					article.classList.toggle(`community`,icon.contributor!=="google");
 					article.lastChild.nodeValue=key;
 					icon.articles={};
-					(category=categories.list.new)&&icon.added&&icon.added===version&&category.section.append(icon.articles.new=article.cloneNode(1));
-					(category=categories.list.updated)&&icon.updated&&icon.updated===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
-					(category=categories.list.renamed)&&icon.renamed&&icon.renamed===version&&category.section.append(icon.articles.renamed=article.cloneNode(1));
-					(category=categories.list.removed)&&icon.retired===version&&category.section.append(icon.articles.removed=article.cloneNode(1));
+					(category=categories.list.new)&&icon.added&&icon.added===version.int&&category.section.append(icon.articles.new=article.cloneNode(1));
+					(category=categories.list.updated)&&icon.updated&&icon.updated===version.int&&category.section.append(icon.articles.updated=article.cloneNode(1));
+					(category=categories.list.renamed)&&icon.renamed&&icon.renamed===version.int&&category.section.append(icon.articles.renamed=article.cloneNode(1));
+					(category=categories.list.removed)&&icon.retired===version.int&&category.section.append(icon.articles.removed=article.cloneNode(1));
 					(category=categories.list.soon)&&icon.added&&icon.added===`{next}`&&category.section.append(icon.articles.soon=article.cloneNode(1));
 					(category=categories.list.retired)&&icon.retired&&category.section.append(icon.articles.retired=article.cloneNode(1));
 					(!icon.retired||icon.retired==="{soon}")&&++this.total&&page.section.append(icon.articles.main=article);
 				}else delete this.list[key];
 			}
 		},
-	/** EDITOR **/
+	
 		editor={
 			inputs:{
 				fill:$`png-fill`,
@@ -1263,7 +1277,7 @@
 			},
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000
 		};
-	/** INITIATE **/
+	
 	(async()=>{
 		categories.list=await(await fetch`json/categories.json`).json();
 		contributors.list=await(await fetch`json/contributors.json`).json();

@@ -198,6 +198,10 @@
 		transition-property:background,color,height,opacity;
 		transition-timing-function:var(--timing-function);
 	}
+	#menu>ol>li[data-count]::after{
+		color:#616161;
+		content:" (" attr(data-count) ")";
+	}
 	#menu>ol>li:last-child{
 		margin-bottom:8px;
 		transition-property:background,color,height,margin,opacity;
@@ -456,6 +460,10 @@
 		line-height:48px;
 		padding:0 16px 0 8px;
 		transition:background .225s var(--timing-function),color .225s var(--timing-function);
+	}
+	.options>li:first-of-type,
+	#favourites .options>li:nth-of-type(5){
+		border-bottom:1px solid #e0e0e0;
 	}
 	.options>li:first-of-type{
 		border-radius:2px 2px 0 0;
@@ -1275,15 +1283,22 @@
 </dialog>
 <script>
 	{
-		let version=`2.3.54`;
+		
+		let version={
+			str:`2.3.54`,
+			int:2354
+		};
+		
 		const	$=i=>d.getElementById(i),
 			Q=s=>d.querySelector(s),
 			C=e=>d.createElement(e),
 			N=e=>d.createElementNS(`http://www.w3.org/2000/svg`,e),
 			T=t=>d.createTextNode(t),
+		
 			d=document,
 			h=d.documentElement,
 			b=d.body,
+		
 			page={
 				offline:navigator.onLine===false,
 				packages:{},
@@ -1311,7 +1326,6 @@
 					}
 					this.textarea.classList.add(`ln`,`pf`);
 					categories.init();
-					version=+version.replace(/\./g,``);
 					contributors.init();
 					this.storage&&favourites.init();
 					icons.init();
@@ -1414,6 +1428,7 @@
 				},
 				getphp:async()=>page.php=page.php||(await(await fetch(`${this.address}/libraries/mdi-php/mdi.php`)).text()).replace(/\n\/\* DELETE BELOW \*\/\n[\s\S]+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*[\s\S]+?\*\/\n/g,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
 			},
+		
 			svgs={
 				path:N`path`,
 				init(){
@@ -1428,6 +1443,7 @@
 					});
 				}
 			},
+		
 			menu={
 				functions:{},
 				show:0,
@@ -1543,6 +1559,7 @@
 					}
 				}
 			},
+		
 			filter={
 				clearall:menu.sections.lastElementChild,
 				error:page.section.querySelector`p`,
@@ -1568,6 +1585,7 @@
 					if(this.categories.size||this.contributors.size||this.text)
 						filter.apply();
 					else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
+					this.clearall.dataset.count=icons.total;
 					this.input.addEventListener(`input`,()=>{
 						clearTimeout(this.timer);
 						this.timer=setTimeout(()=>{
@@ -1648,6 +1666,7 @@
 					menu.goto(page.section);
 				}
 			},
+		
 			favourites={
 				articles:{},
 				reader:new FileReader,
@@ -1663,6 +1682,7 @@
 				title:N`title`,
 				init(){
 					this.list=page.storage[`favourites`];
+		
 					if(!this.list){
 						this.list=`{${Object.keys(page.storage).filter(key=>
 							key.startsWith`mdi-`
@@ -1881,6 +1901,7 @@
 						).forEach(key=>
 							this.section.append(this.section.removeChild(this.articles[key]))
 						);
+					categories.list.favourites.item.dataset.count=keys.length;
 				},
 				toggle(name){
 					let article=this.articles[name],msg,src;
@@ -1952,6 +1973,7 @@
 					page.storage.setItem(`favourites`,JSON.stringify(this.list));
 				}
 			},
+		
 			info={
 				actions:{
 					favourite:Q`#actions>:first-child`,
@@ -1960,6 +1982,7 @@
 					data:Q`#actions>[data-confirm="Path data"]`,
 					icon:Q`#actions>[data-confirm=Icon]`,
 					codepoint:Q`#actions>[data-confirm="Code point"]`,
+					
 					html:Q`#actions>[data-confirm=HTML]`,
 					url:Q`#actions>[data-confirm=Link]`,
 					link:Q`#actions>:last-child`
@@ -2058,6 +2081,7 @@
 					}
 					if(this.codepoint){
 						this.actions.icon.dataset.copy=String.fromCharCode(`0x${this.codepoint}`);
+						
 						this.actions.html.dataset.copy=`<span class="mdi mdi-${name}"></span>`;
 					}
 					this.actions.url.dataset.copy=`${page.address}?icon=${name}`;
@@ -2090,6 +2114,7 @@
 					}
 				}
 			},
+		
 			categories={
 				header:C`header`,
 				heading:C`h2`,
@@ -2124,24 +2149,39 @@
 						header=this.header.cloneNode(1),
 						heading=this.heading.cloneNode(1),
 						item=this.item.cloneNode(1),
-						name=category.name.replace(`{v}`,version);
+						name=category.name.replace(`{v}`,version.str);
 					if(category.section){
 						section.id=key;
 						heading.firstChild.nodeValue=name;
 						header.append(heading);
 						key!==`favourites`&&header.append(this.link.cloneNode(1));
 						section.append(header,this.error.cloneNode(1));
-						page.section.before(category.section=section);
+						if(key!==`favourites`)
+							category.count=icons.array.filter(icon=>{
+								switch(key){
+									case`new`:
+										return icon.added===version.int;
+									case`soon`:
+										return icon.added===`{next}`;
+									case`retired`:
+										return icon.retired&&icon.retired!==`{soon}`&&icon.retired!==`{next}`;
+									default:
+										return icon[key]===version.int;
+								}
+							}).length;
+						if(key===`favourites`||category.count)
+							page.section.before(category.section=section);
 					}else category.count=icons.array.filter(icon=>
 							icon.categories&&icon.data&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
 					).length;
-					if(category.section||category.count){
+					if(key===`favourites`||category.count){
 						item.lastChild.nodeValue=name;
 						item.dataset.category=key;
+						if(category.hasOwnProperty`count`)
+							item.dataset.count=category.count;
 						if(!category.section){
 							item.lastChild.before(this.svg=this.svg.cloneNode(1));
 							this.svg.dataset.icons=`check`;
-							item.dataset.count=category.count;
 						}
 						item.firstElementChild.dataset.icons=category.icon;
 						category.section?filter.clearall.before(category.item=item):menu.categories.append(category.item=item);
@@ -2180,7 +2220,7 @@
 					},
 					"retired":{
 						"icon":"history",
-						"name":"Legacy Icons",
+						"name":"Retired Icons",
 						"section":true
 					},
 					"other":{
@@ -2285,6 +2325,7 @@
 					}
 				}
 			},
+		
 			contributors={
 				img:C`img`,
 				item:C`li`,
@@ -2437,6 +2478,7 @@
 					}
 				}
 			},
+		
 			icons={
 				article:C`article`,
 				path:N`path`,
@@ -2473,10 +2515,10 @@
 						article.classList.toggle(`community`,icon.contributor!=="google");
 						article.lastChild.nodeValue=key;
 						icon.articles={};
-						(category=categories.list.new)&&icon.added&&icon.added===version&&category.section.append(icon.articles.new=article.cloneNode(1));
-						(category=categories.list.updated)&&icon.updated&&icon.updated===version&&category.section.append(icon.articles.updated=article.cloneNode(1));
-						(category=categories.list.renamed)&&icon.renamed&&icon.renamed===version&&category.section.append(icon.articles.renamed=article.cloneNode(1));
-						(category=categories.list.removed)&&icon.retired===version&&category.section.append(icon.articles.removed=article.cloneNode(1));
+						(category=categories.list.new)&&icon.added&&icon.added===version.int&&category.section.append(icon.articles.new=article.cloneNode(1));
+						(category=categories.list.updated)&&icon.updated&&icon.updated===version.int&&category.section.append(icon.articles.updated=article.cloneNode(1));
+						(category=categories.list.renamed)&&icon.renamed&&icon.renamed===version.int&&category.section.append(icon.articles.renamed=article.cloneNode(1));
+						(category=categories.list.removed)&&icon.retired===version.int&&category.section.append(icon.articles.removed=article.cloneNode(1));
 						(category=categories.list.soon)&&icon.added&&icon.added===`{next}`&&category.section.append(icon.articles.soon=article.cloneNode(1));
 						(category=categories.list.retired)&&icon.retired&&category.section.append(icon.articles.retired=article.cloneNode(1));
 						(!icon.retired||icon.retired==="{soon}")&&++this.total&&page.section.append(icon.articles.main=article);
@@ -19128,6 +19170,7 @@
 	}
 }
 			},
+		
 			editor={
 				inputs:{
 					fill:$`png-fill`,
@@ -19411,6 +19454,7 @@
 				},
 				test:([r,g,b])=>(r*299+g*587+b*114)/1000
 			};
+		
 		icons.array=Object.values(icons.list);
 		page.init();
 	}
