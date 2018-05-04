@@ -1,20 +1,16 @@
 {
-	
 	let version={
 		str:`2.3.54`,
 		int:2354
 	};
-	
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
 		C=e=>d.createElement(e),
 		N=e=>d.createElementNS(`http://www.w3.org/2000/svg`,e),
 		T=t=>d.createTextNode(t),
-	
 		d=document,
 		h=d.documentElement,
 		b=d.body,
-	
 		page={
 			offline:navigator.onLine===false,
 			packages:{},
@@ -43,7 +39,8 @@
 				this.textarea.classList.add(`ln`,`pf`);
 				categories.init();
 				contributors.init();
-				this.storage&&favourites.init();
+				if(this.storage)
+					favourites.init();
 				icons.init();
 				menu.init();
 				svgs.init();
@@ -88,11 +85,13 @@
 						default:
 							switch(target.nodeName.toLowerCase()){
 								case`svg`:
-									parent.nodeName.toLowerCase()===`header`&&!target.classList.contains`trigger`&&page.copy(`${page.address}?section=${parent.parentNode.id}`,`Link`);
+									if(parent.nodeName.toLowerCase()===`header`&&!target.classList.contains`trigger`)
+										page.copy(`${page.address}?section=${parent.parentNode.id}`,`Link`);
 									break;
 								case`article`:
 									if(current!==target){
-										current&&current.classList.remove`active`;
+										if(current)
+											current.classList.remove`active`;
 										info.open(target.lastChild.nodeValue);
 										target.classList.add`active`;
 									}
@@ -118,7 +117,7 @@
 				,5000);
 			},
 			build:type=>Object.entries(icons.list).filter(([key,icon])=>
-					icon.articles.main&&!icon.articles.main.classList.contains`dn`&&icon.data
+					icon.articles.main&&!icon.articles.main.classList.contains`dn`
 			).map(([key,icon])=>
 				type==`xml`?`<g id="${key}"><path d="${icon.data}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${icon.data}"`
 			).join(type==`xml`?``:`,`),
@@ -132,7 +131,8 @@
 					d.execCommand`cut`;
 					this.textarea.remove();
 				}
-				message&&this.alert(`${message} copied to clipboard.`);
+				if(message)
+					this.alert(`${message} copied to clipboard.`);
 			},
 			download(data,name){
 				this.anchor.href=data;
@@ -144,7 +144,6 @@
 			},
 			getphp:async()=>page.php=page.php||(await(await fetch(`${this.address}/libraries/mdi-php/mdi.php`)).text()).replace(/\n\/\* DELETE BELOW \*\/\n[\s\S]+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*[\s\S]+?\*\/\n/g,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
 		},
-	
 		svgs={
 			path:N`path`,
 			init(){
@@ -159,7 +158,6 @@
 				});
 			}
 		},
-	
 		menu={
 			functions:{},
 			show:0,
@@ -172,27 +170,32 @@
 			sections:$`sections`,
 			init(){
 				let section=page.params.get`section`;
-				section&&(section=$(section))&&setTimeout(()=>
-					this.goto(section)
-				,800);
+				if(section)
+					if(section=$(section))
+						setTimeout(()=>
+							this.goto(section)
+						,800);
 				this.nav.addEventListener(`click`,event=>{
 					let 	target=event.target,
 						articles,icon,key;
 					target.blur();
 					switch(target){
 						case this.nav:
-							page.size<2&&this.toggle();
+							if(page.size<2)
+								this.toggle();
 							break;
 						case this.navicon:
 							this.toggle();
 							break;
 						case this.highlight:
 							b.classList.toggle`highlight`;
-							page.size<2&&this.toggle();
+							if(page.size<2)
+								this.toggle();
 							break;
 						case filter.clearall:
 							filter.clear();
-							page.size<2&&this.toggle();
+							if(page.size<2)
+								this.toggle();
 							break;
 						case this.categories.previousElementSibling:
 						case this.contributors.previousElementSibling:
@@ -206,7 +209,8 @@
 									case this.sections:
 										if(category=categories.list[category].section){
 											this.goto(category);
-											page.size<2&&this.toggle();
+											if(page.size<2)
+												this.toggle();
 										}
 										break;
 									case this.categories:
@@ -245,16 +249,18 @@
 			},
 			toggle(){
 				b.classList.toggle(`menu`,this.show=!this.show);
-				page.size<2&&this.show?b.addEventListener(`keydown`,this.functions.close=event=>
-					event.keyCode===27&&this.toggle()
-				,0):b.removeEventListener(`keydown`,this.functions.close);
+				if(page.size<2)
+					this.show?b.addEventListener(`keydown`,this.functions.close=event=>
+						event.keyCode===27&&this.toggle()
+					,0):b.removeEventListener(`keydown`,this.functions.close);
 			},
 			touchend(clientx){
 				d.removeEventListener(`touchmove`,this.functions.move);
 				d.removeEventListener(`touchend`,this.functions.end);
 				this.nav.removeAttribute`style`;
 				this.menu.removeAttribute`style`;
-				clientx>=this.width/2&&this.toggle();
+				if(clientx>=this.width/2)
+					this.toggle();
 			},
 			touchstart(event){
 				this.width=this.menu.offsetWidth;
@@ -275,7 +281,6 @@
 				}
 			}
 		},
-	
 		filter={
 			clearall:menu.sections.lastElementChild,
 			error:page.section.querySelector`p`,
@@ -299,7 +304,9 @@
 				if(this.text=page.params.get`filter`)
 					this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 				if(this.categories.size||this.contributors.size||this.text)
-					filter.apply();
+					setTimeout(()=>
+						filter.apply()
+					,600);
 				else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
 				this.clearall.dataset.count=icons.total;
 				this.input.addEventListener(`input`,()=>{
@@ -318,7 +325,8 @@
 				},0);
 			},
 			apply(){
-				h.scrollTop<page.section.offsetTop-page.header.offsetHeight&&menu.goto(page.section);
+				if(h.scrollTop<page.section.offsetTop-page.header.offsetHeight)
+					menu.goto(page.section);
 				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
 				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
@@ -382,7 +390,6 @@
 				menu.goto(page.section);
 			}
 		},
-	
 		favourites={
 			articles:{},
 			reader:new FileReader,
@@ -398,7 +405,6 @@
 			title:N`title`,
 			init(){
 				this.list=page.storage[`favourites`];
-	
 				if(!this.list){
 					this.list=`{${Object.keys(page.storage).filter(key=>
 						key.startsWith`mdi-`
@@ -414,7 +420,8 @@
 				this.svg.classList.add(`db`,`pen`);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				for(let key in this.list)
-					this.list.hasOwnProperty(key)&&this.add(key);
+					if(this.list.hasOwnProperty(key))
+						this.add(key);
 				this.write();
 				this.sort();
 				this.menu.classList.add(`options`,`oh`,`pa`);
@@ -445,7 +452,8 @@
 				this.input.classList.add(`ln`,`pa`);
 				this.input.type=`file`;
 				this.input.addEventListener(`change`,()=>{
-					this.input.files[0].type===`text/plain`&&this.reader.readAsText(this.input.files[0]);
+					if(this.input.files[0].type===`text/plain`)
+						this.reader.readAsText(this.input.files[0]);
 					this.input.remove();
 				},0);
 				this.reader.addEventListener(`load`,event=>
@@ -492,7 +500,8 @@
 				this.cancel=this.save.previousElementSibling;
 				this.dialog.addEventListener(`input`,event=>{
 					let target=event.target;
-					this.timer&&clearTimeout(this.timer);
+					if(this.timer)
+						clearTimeout(this.timer);
 					this.timer=setTimeout(()=>{
 						target.classList.toggle(`error`,!target.validity.valid);
 						if(target===this.data)
@@ -681,7 +690,8 @@
 						this.write();
 						this.close();
 						page.alert(`${name} added to library.`);
-						this.articles[name].click();
+						if(page.size)
+							this.articles[name].click();
 					}
 				}
 			},
@@ -689,7 +699,6 @@
 				page.storage.setItem(`favourites`,JSON.stringify(this.list));
 			}
 		},
-	
 		info={
 			actions:{
 				favourite:Q`#actions>:first-child`,
@@ -698,7 +707,6 @@
 				data:Q`#actions>[data-confirm="Path data"]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
 				codepoint:Q`#actions>[data-confirm="Code point"]`,
-				
 				html:Q`#actions>[data-confirm=HTML]`,
 				url:Q`#actions>[data-confirm=Link]`,
 				link:Q`#actions>:last-child`
@@ -710,8 +718,10 @@
 			figure:$`preview`,
 			heading:$`name`,
 			init(){
-				page.size&&this.aside.classList.remove`oz`;
-				page.size&&this.heading.firstElementChild.remove();
+				if(page.size)
+					this.aside.classList.remove`oz`;
+				if(page.size)
+					this.heading.firstElementChild.remove();
 				this.heading.append(T``);
 				this.svg=this.figure.firstElementChild;
 				this.path=this.svg.firstElementChild;
@@ -736,7 +746,8 @@
 					switch(target){
 						case this.aside:
 						case this.heading.firstElementChild:
-							!page.size&&this.toggle();
+							if(!page.size)
+								this.toggle();
 							break;
 						case this.actions.favourite:
 							favourites.toggle(this.name);
@@ -797,7 +808,6 @@
 				}
 				if(this.codepoint){
 					this.actions.icon.dataset.copy=String.fromCharCode(`0x${this.codepoint}`);
-					
 					this.actions.html.dataset.copy=`<span class="mdi mdi-${name}"></span>`;
 				}
 				this.actions.url.dataset.copy=`${page.address}?icon=${name}`;
@@ -825,12 +835,12 @@
 					},0);
 				else{
 					let current=page.main.querySelector`article.active`;
-					current&&current.classList.remove`active`;
+					if(current)
+						current.classList.remove`active`;
 					b.removeEventListener(`keydown`,this.close);
 				}
 			}
 		},
-	
 		categories={
 			header:C`header`,
 			heading:C`h2`,
@@ -855,9 +865,11 @@
 				this.item.tabIndex=-1;
 				this.svg.classList.add(`dib`,`pen`,`vam`);
 				this.item.append(this.svg,T``);
-				!page.storage&&delete this.list.favourites;
+				if(!page.storage)
+					delete this.list.favourites;
 				for(let key in this.list)
-					this.list.hasOwnProperty(key)&&this.add(key);
+					if(this.list.hasOwnProperty(key))
+						this.add(key);
 			},
 			add(key){
 				let 	category=this.list[key],
@@ -870,9 +882,8 @@
 					section.id=key;
 					heading.firstChild.nodeValue=name;
 					header.append(heading);
-					key!==`favourites`&&header.append(this.link.cloneNode(1));
-					section.append(header,this.error.cloneNode(1));
-					if(key!==`favourites`)
+					if(key!==`favourites`){
+						header.append(this.link.cloneNode(1));
 						category.count=icons.array.filter(icon=>{
 							switch(key){
 								case`new`:
@@ -880,15 +891,17 @@
 								case`soon`:
 									return icon.added===`{next}`;
 								case`retired`:
-									return icon.retired&&icon.retired!==`{soon}`&&icon.retired!==`{next}`;
+									return parseInt(icon.retired);
 								default:
 									return icon[key]===version.int;
 							}
 						}).length;
+					}else section.append(this.error);
+					section.prepend(header);
 					if(key===`favourites`||category.count)
 						page.section.before(category.section=section);
 				}else category.count=icons.array.filter(icon=>
-						icon.categories&&icon.data&&(!icon.retired||icon.retired==="{soon}")&&icon.categories.includes(key)
+					icon.categories&&icon.data&&!parseInt(icon.retired)&&icon.categories.includes(key)
 				).length;
 				if(key===`favourites`||category.count){
 					item.lastChild.nodeValue=name;
@@ -904,7 +917,6 @@
 				}else delete this.list[key];
 			}
 		},
-	
 		contributors={
 			img:C`img`,
 			item:C`li`,
@@ -917,7 +929,8 @@
 				this.img.height=this.img.width=24;
 				this.svg.classList.add(`dib`,`pen`,`vam`);
 				for(let key in this.list)
-					this.list.hasOwnProperty(key)&&this.add(key);
+					if(this.list.hasOwnProperty(key))
+						this.add(key);
 			},
 			add(key){
 				let 	contributor=this.list[key],
@@ -926,7 +939,7 @@
 					item=this.item.cloneNode(1),
 					svg;
 				contributor.count=icons.array.filter(icon=>
-					icon.contributor&&icon.data&&(!icon.retired||icon.retired==="{soon}")&&icon.contributor===key
+					icon.contributor&&icon.data&&!parseInt(icon.retired)&&icon.contributor===key
 				).length;
 				if(contributor.count){
 					item.dataset.contributor=key;
@@ -946,7 +959,6 @@
 				}else delete this.list[key];
 			}
 		},
-	
 		icons={
 			article:C`article`,
 			path:N`path`,
@@ -959,7 +971,7 @@
 				this.svg.classList.add(`db`,`pen`);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				for(let key in this.list)
-					this.list.hasOwnProperty(key)&&this.add(key);
+					if(this.list.hasOwnProperty(key))this.add(key);
 			},
 			add(key){
 				let 	icon=this.list[key],
@@ -970,30 +982,40 @@
 				if(data=icon.data){
 					svg.append(path=this.path.cloneNode(1));
 					path.setAttribute(`d`,data);
-					icon.aliases&&icon.aliases.forEach(alias=>
-						alias.split`-`.forEach(word=>
+					if(icon.aliases)
+						icon.aliases.forEach(alias=>
+							alias.split`-`.forEach(word=>
+								keywords.add(word)
+							)
+						);
+					if(icon.keywords)
+						icon.keywords.forEach(word=>
 							keywords.add(word)
-						)
-					);
-					icon.keywords&&icon.keywords.forEach(word=>
-						keywords.add(word)
-					);
+						);
 					icon.keywords=[...keywords].sort();
 					article.prepend(svg);
 					article.classList.toggle(`community`,icon.contributor!=="google");
 					article.lastChild.nodeValue=key;
 					icon.articles={};
-					(category=categories.list.new)&&icon.added&&icon.added===version.int&&category.section.append(icon.articles.new=article.cloneNode(1));
-					(category=categories.list.updated)&&icon.updated&&icon.updated===version.int&&category.section.append(icon.articles.updated=article.cloneNode(1));
-					(category=categories.list.renamed)&&icon.renamed&&icon.renamed===version.int&&category.section.append(icon.articles.renamed=article.cloneNode(1));
-					(category=categories.list.removed)&&icon.retired===version.int&&category.section.append(icon.articles.removed=article.cloneNode(1));
-					(category=categories.list.soon)&&icon.added&&icon.added===`{next}`&&category.section.append(icon.articles.soon=article.cloneNode(1));
-					(category=categories.list.retired)&&icon.retired&&category.section.append(icon.articles.retired=article.cloneNode(1));
-					(!icon.retired||icon.retired==="{soon}")&&++this.total&&page.section.append(icon.articles.main=article);
+					if((category=categories.list.new)&&icon.added&&icon.added===version.int)
+						category.section.append(icon.articles.new=article.cloneNode(1));
+					if((category=categories.list.updated)&&icon.updated&&icon.updated===version.int)
+						category.section.append(icon.articles.updated=article.cloneNode(1));
+					if((category=categories.list.renamed)&&icon.renamed&&icon.renamed===version.int)
+						category.section.append(icon.articles.renamed=article.cloneNode(1));
+					if((category=categories.list.removed)&&icon.retired===version.int)
+						category.section.append(icon.articles.removed=article.cloneNode(1));
+					if((category=categories.list.soon)&&icon.added&&icon.added===`{next}`)
+						category.section.append(icon.articles.soon=article.cloneNode(1));
+					if((category=categories.list.retired)&&parseInt(icon.retired))
+						category.section.append(icon.articles.retired=article.cloneNode(1));
+					if(!parseInt(icon.retired)){
+						++this.total;
+						page.section.append(icon.articles.main=article);
+					}
 				}else delete this.list[key];
 			}
 		},
-	
 		editor={
 			inputs:{
 				fill:$`png-fill`,
@@ -1025,7 +1047,8 @@
 					this.input.classList.add(`ln`,`pa`);
 					this.input.type=`file`;
 					this.input.addEventListener(`change`,()=>{
-						this.input.files[0].type===`text/plain`&&this.reader.readAsText(this.input.files[0]);
+						if(this.input.files[0].type===`text/plain`)
+							this.reader.readAsText(this.input.files[0]);
 						this.input.remove();
 					},0);
 					this.reader.addEventListener(`load`,event=>{
@@ -1034,7 +1057,8 @@
 							atob(event.target.result).split`,`.forEach(entry=>{
 								entry=entry.split`:`;
 								let key=entry[0];
-								this.inputs[key.substr(4)]&&page.storage.setItem(key,entry[1]);
+								if(this.inputs[key.substr(4)])
+									page.storage.setItem(key,entry[1]);
 							});
 						}catch(error){
 							console.log(error);
@@ -1082,7 +1106,8 @@
 							break;
 						case this.clear:
 							for(key in page.storage)
-								page.storage.hasOwnProperty(key)&&key.startsWith`png-`&&page.storage.removeItem(key);
+								if(page.storage.hasOwnProperty(key)&&key.startsWith`png-`)
+									page.storage.removeItem(key);
 							this.menu.blur();
 							this.load();
 							page.alert`Settings cleared.`;
@@ -1145,12 +1170,15 @@
 						}
 						clearTimeout(this.timer);
 						this.timer=setTimeout(()=>this.draw(),200);
-						page.storage&&page.storage.setItem(target.id,value);
+						if(page.storage)
+							page.storage.setItem(target.id,value);
 					}
 				},1);
 				this.load();
 				let name=page.params.get`edit`;
-				name&&(icons.list[name]||favourites.list[name])&&this.open(name);
+				if(name)
+					if(icons.list[name]||favourites.list[name])
+						this.open(name);
 			},
 			close(value){
 				b.removeEventListener(`keydown`,this.fn);
@@ -1173,14 +1201,22 @@
 					radius=this.settings.radius/this.dimensions*dimensions;
 					iscircle=radius===dimensions/2;
 					data=`M${radius},0`;
-					!iscircle&&(data+=`H${dimensions-radius}`);
-					radius&&(data+=`${arc=`A${radius},${radius} 0 0 1 `}${dimensions},${radius}`);
-					!iscircle&&(data+=`V${dimensions-radius}`);
-					radius&&(data+=`${arc}${dimensions-radius},${dimensions}`);
-					!iscircle&&(data+=`H${radius}`);
-					radius&&(data+=`${arc}0,${dimensions-radius}`);
-					!iscircle&&(data+=`V${radius}`);
-					radius&&(data+=`${arc+radius},0`);
+					if(!iscircle)
+						data+=`H${dimensions-radius}`;
+					if(radius)
+						data+=`${arc=`A${radius},${radius} 0 0 1 `}${dimensions},${radius}`;
+					if(!iscircle)
+						data+=`V${dimensions-radius}`;
+					if(radius)
+						data+=`${arc}${dimensions-radius},${dimensions}`;
+					if(!iscircle)
+						data+=`H${radius}`;
+					if(radius)
+						data+=`${arc}0,${dimensions-radius}`;
+					if(!iscircle)
+						data+=`V${radius}`;
+					if(radius)
+						data+=`${arc+radius},0`;
 					data+=`Z`;
 				}
 				switch(this.inputs.format.value){
@@ -1277,7 +1313,6 @@
 			},
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000
 		};
-	
 	(async()=>{
 		categories.list=await(await fetch`json/categories.json`).json();
 		contributors.list=await(await fetch`json/contributors.json`).json();
