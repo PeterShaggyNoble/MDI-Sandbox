@@ -895,7 +895,8 @@
 					header=this.header.cloneNode(1),
 					heading=this.heading.cloneNode(1),
 					item=this.item.cloneNode(1),
-					name=category.name.replace(`{v}`,version.str);
+					name=category.name.replace(`{v}`,version.str),
+					fn;
 				if(category.section){
 					section.id=key;
 					heading.firstChild.nodeValue=name;
@@ -908,26 +909,18 @@
 							header.append(this.link.cloneNode(1));
 							switch(key){
 								case`new`:
-									category.count=icons.array.filter(icon=>
-										icon.added===version.int
-									);
+									fn=icon=>icon.added===version.int;
 									break;
 								case`soon`:
-									category.count=icons.array.filter(icon=>
-										icon.added===`{next}`
-									);
+									fn=icon=>icon.added===`{next}`;
 									break;
 								case`retired`:
-									category.count=icons.array.filter(icon=>
-										parseInt(icon.retired)
-									);
+									fn=icon=>parseInt(icon.retired);
 									break;
 								default:
-									category.count=icons.array.filter(icon=>
-										icon[key]===version.int
-									);
+									fn=icon=>icon[key]===version.int;
 							}
-							category.count=category.count.length;
+							category.count=icons.array.filter(fn).length;
 					}
 					section.prepend(header);
 					if(key===`favourites`||category.count)
