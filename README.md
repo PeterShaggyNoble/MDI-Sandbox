@@ -5,7 +5,7 @@
 
 ## Features & Tools
 
-![](http://mdi/img/readme.png)
+![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme.png)
 ### Icon Library
 The main section of this project; a jacked up "cheatsheet" for MDI. Features include:
 - Build your own library by adding icons to your favourites.
