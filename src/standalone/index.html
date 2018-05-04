@@ -1381,7 +1381,6 @@
 										}
 										break;
 								}
-								break;
 						}
 					},0);
 					setTimeout(()=>{
@@ -1513,7 +1512,6 @@
 											break;
 									}
 								}
-								break;
 						}
 					},0);
 					if(page.size===2)
@@ -1534,9 +1532,11 @@
 				toggle(){
 					b.classList.toggle(`menu`,this.show=!this.show);
 					if(page.size<2)
-						this.show?b.addEventListener(`keydown`,this.functions.close=event=>
-							event.keyCode===27&&this.toggle()
-						,0):b.removeEventListener(`keydown`,this.functions.close);
+						if(this.show)
+							b.addEventListener(`keydown`,this.functions.close=event=>
+								event.keyCode===27&&this.toggle()
+								,0);
+						else b.removeEventListener(`keydown`,this.functions.close);
 				},
 				touchend(clientx){
 					d.removeEventListener(`touchmove`,this.functions.move);
@@ -1805,12 +1805,15 @@
 					},0);
 					this.dialog.addEventListener(`keydown`,event=>{
 						if(this.dialog.open){
-							if(event.keyCode===13)
-								this.upload();
-							else if(event.keyCode===27){
-								this.close(0);
-								event.preventDefault();
-								event.stopPropagation();
+							switch(event.keyCode){
+								case 13:
+									this.upload();
+									break;
+								case 27:
+									this.close(0);
+									event.preventDefault();
+									event.stopPropagation();
+									break;
 							}
 						}
 					},0);
@@ -2037,32 +2040,47 @@
 								favourites.toggle(this.name);
 								break;
 							case this.actions.export:
-								this.data?editor.open(this.name):page.alert`Not yet available.`;
+								if(this.data)
+									editor.open(this.name);
+								else page.alert`Not yet available.`;
 								break;
 							case this.actions.markup:
 							case this.actions.data:
-								this.data?page.copy(target.dataset.copy,target.dataset.confirm):page.alert`Not yet available.`;
+								if(this.data)
+									page.copy(target.dataset.copy,target.dataset.confirm);
+								else page.alert`Not yet available.`;
 								break;
 							case this.actions.link:
-								this.custom||this.retired?page.alert(`No${this.custom?`t`:` longer`} available.`):!page.offline?location.href=`https://materialdesignicons.com/icon/${this.name}`:page.alert`Could not connect.`;
+								if(this.custom)
+									page.alert`Not available.`;
+								else if(this.retired)
+									page.alert`No longer available.`;
+								else if(!page.offline)
+									location.href=`https://materialdesignicons.com/icon/${this.name}`;
+								else page.alert`Could not connect.`;
 								break;
 							default:
 								if(this.type=target.dataset.type)
 									this.download();
 								else if(target.parentNode===this.actions.link.parentNode)
-									this.copy||target===this.actions.url?page.copy(target.dataset.copy,target.dataset.confirm):page.alert(`No${this.retired?` longer`:`t${this.custom?``:` yet`}`} available.`);
-								break;
+									if(this.copy||target===this.actions.url)
+										page.copy(target.dataset.copy,target.dataset.confirm);
+									else if(this.retired)
+										page.alert`No longer available.`;
+									else if(this.custom)
+										page.alert`Not available.`;
+									else page.alert(`Not yet available.`);
 						}
 					},0);
 				},
 				download(){
-					this.icon?
-						this.data?
-							this.downloads[this.type]?
-								page.download(this.downloads[this.type],`${this.name}.${this.type}`)
-							:page.alert`Unknown file type.`
-						:page.alert`Download not available.`
-					:page.alert`Unknown icon.`;
+					if(this.icon)
+						if(this.data)
+							if(this.downloads[this.type])
+								page.download(this.downloads[this.type],`${this.name}.${this.type}`);
+							else page.alert`Unknown file type.`;
+						else page.alert`Download not available.`;
+					else page.alert`Unknown icon.`;
 				},
 				open(name){
 					let custom,library;
@@ -2166,21 +2184,35 @@
 						section.id=key;
 						heading.firstChild.nodeValue=name;
 						header.append(heading);
-						if(key!==`favourites`){
-							header.append(this.link.cloneNode(1));
-							category.count=icons.array.filter(icon=>{
+						switch(key){
+							case`favourites`:
+								section.append(this.error);
+								break;
+							default:
+								header.append(this.link.cloneNode(1));
 								switch(key){
 									case`new`:
-										return icon.added===version.int;
+										category.count=icons.array.filter(icon=>
+											icon.added===version.int
+										);
+										break;
 									case`soon`:
-										return icon.added===`{next}`;
+										category.count=icons.array.filter(icon=>
+											icon.added===`{next}`
+										);
+										break;
 									case`retired`:
-										return parseInt(icon.retired);
+										category.count=icons.array.filter(icon=>
+											parseInt(icon.retired)
+										);
+										break;
 									default:
-										return icon[key]===version.int;
+										category.count=icons.array.filter(icon=>
+											icon[key]===version.int
+										);
 								}
-							}).length;
-						}else section.append(this.error);
+								category.count=category.count.length;
+						}
 						section.prepend(header);
 						if(key===`favourites`||category.count)
 							page.section.before(category.section=section);
@@ -2197,7 +2229,9 @@
 							this.svg.dataset.icons=`check`;
 						}
 						item.firstElementChild.dataset.icons=category.icon;
-						category.section?filter.clearall.before(category.item=item):menu.categories.append(category.item=item);
+						if(category.section)
+							filter.clearall.before(category.item=item);
+						else menu.categories.append(category.item=item);
 					}else delete this.list[key];
 				},
 				list:{
@@ -19293,18 +19327,33 @@
 								this.close(0);
 								break;
 							case this.save:
-								(this.settings.format=this.inputs.format.value)!==`png`?this.downloadxml():this.downloadpng();
+								switch(this.settings.format=this.inputs.format.value){
+									case`png`:
+										this.downloadpng();
+										break;
+									default:
+										this.downloadxml();
+								}
 								break;
 						}
 					},0);
 					this.dialog.addEventListener(`keydown`,event=>{
 						if(this.dialog.open){
-							if(event.keyCode===13)
-								(this.settings.format=this.inputs.format.value)!==`png`?this.downloadxml():this.downloadpng();
-							else if(event.keyCode===27){
-								this.close(0);
-								event.preventDefault();
-								event.stopPropagation();
+							switch(event.keyCode){
+								case 13:
+									switch(this.settings.format=this.inputs.format.value){
+										case`png`:
+											this.downloadpng();
+											break;
+										default:
+											this.downloadxml();
+									}
+									break;
+								case 27:
+									this.close(0);
+									event.preventDefault();
+									event.stopPropagation();
+									break;
 							}
 						}
 					},0);
