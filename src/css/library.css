@@ -538,9 +538,7 @@ body.highlight>#content>section>article.active{
 #actions>li:focus>svg{
 	fill:var(--colour);
 }
-#actions>li.delete>svg>path,
-#actions>li.remove>svg>path,
-#actions>li.restore>svg>path{
+#actions>li>svg>path{
 	transition:opacity .225s var(--timing-function);
 }
 #actions>li.delete>svg>path:first-child,
