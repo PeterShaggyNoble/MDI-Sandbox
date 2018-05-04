@@ -5,8 +5,9 @@
 
 ## Features & Tools
 
-![](http://petershaggynoble.github.io/MDI-Sandbox/img/readme/library.png)
 ### Icon Library
+![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme/library.png)
+
 The main section of this project; a jacked up "cheatsheet" for MDI. Features include:
 - Build your own library by adding icons to your favourites.
 - Add your own custom icons to your library.
@@ -18,13 +19,14 @@ The main section of this project; a jacked up "cheatsheet" for MDI. Features inc
 - See which icons will be [available in the next release](https://petershaggynoble.github.io/MDI-Sandbox/?section=soon).
 - Access [icons which have since been removed](https://petershaggynoble.github.io/MDI-Sandbox/?section=retired) from the MDI library.
 
------
-
-![](http://petershaggynoble.github.io/MDI-Sandbox/img/readme/previews.png)
 ### Preview Generator
+![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme/previews.png)
+
 Create customised icon preview images which can be copied & pasted directly into GitHub issues (or anywhere else) at [petershaggynoble.github.io/MDI-Sandbox/preview/](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 
 ### Additional Google Icons
+![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme/extended.png)
+
 A preview of the extra icons in Google's "Material Icons Extended" set is available at [petershaggynoble.github.io/MDI-Sandbox/extended/](https://petershaggynoble.github.io/MDI-Sandbox/extended/) and their GMP & AOG icons at [petershaggynoble.github.io/MDI-Sandbox/other/](https://petershaggynoble.github.io/MDI-Sandbox/other/). Icons can be downloaded but note that the `transform` attribute is used on the `path` elements to scale them down to 24 pixels.
 
 ### Issue Tracker
