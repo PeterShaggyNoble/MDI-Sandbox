@@ -4,6 +4,8 @@
 - One of the main purposes of this Sandbox is for me to play wround with ECMAScript 6+ features I don't normally get to work with. As such I can only guarantee that the website will work in the latest version(s) of Google Chrome.
 
 ## Features & Tools
+
+![](http://mdi/img/readme.png)
 ### Icon Library
 The main section of this project; a jacked up "cheatsheet" for MDI. Features include:
 - Build your own library by adding icons to your favourites.
