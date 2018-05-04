@@ -5,7 +5,7 @@
 
 ## Features & Tools
 
-![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme.png)
+![](http://petershaggynoble.github.io/MDI-Sandbox/img/readme/library.png)
 ### Icon Library
 The main section of this project; a jacked up "cheatsheet" for MDI. Features include:
 - Build your own library by adding icons to your favourites.
@@ -18,6 +18,9 @@ The main section of this project; a jacked up "cheatsheet" for MDI. Features inc
 - See which icons will be [available in the next release](https://petershaggynoble.github.io/MDI-Sandbox/?section=soon).
 - Access [icons which have since been removed](https://petershaggynoble.github.io/MDI-Sandbox/?section=retired) from the MDI library.
 
+-----
+
+![](http://petershaggynoble.github.io/MDI-Sandbox/img/readme/previews.png)
 ### Preview Generator
 Create customised icon preview images which can be copied & pasted directly into GitHub issues (or anywhere else) at [petershaggynoble.github.io/MDI-Sandbox/preview/](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 
