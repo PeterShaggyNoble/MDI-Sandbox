@@ -1,7 +1,7 @@
 {
-	"favourites":{
-		"icon":"star",
-		"name":"My Favourites",
+	"library":{
+		"icon":"image-multiple",
+		"name":"My Library",
 		"section":true
 	},
 	"new":{

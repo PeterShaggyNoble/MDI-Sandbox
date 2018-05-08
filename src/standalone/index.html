@@ -1173,7 +1173,7 @@
 		<header class="ps">
 			<h2 class="oh toe wsnw">Important Notice</h2>
 		</header>
-		<p>To accommodate the new feature that allows you to add your own custom icons to the library I have had to rewrite how your favourites are stored. If you're reading this message then that storage has already been updated automatically. However, if you keep a backup of your favourites you should note that support for the old format will be removed next Friday, the 11th of May. In order to ensure you can import your backup after that date please export your favourites again using the menu in the header of the "My Favourites" section below.</p>
+		<p>To accommodate the new feature that allows you to add your own custom icons to the library I have had to rewrite how your icon library is stored. If you're reading this message then that storage has already been updated automatically. However, if you keep a backup of your library you should note that support for the old format will be removed next Friday, the 11th of May. In order to ensure you can import your backup after that date please export your library again using the menu in the header of the "My Library" section below.</p>
 	</aside>
 	<section class="dg pr" id="icons">
 		<header class="ps">
@@ -1200,7 +1200,7 @@
 		</figure>
 	</header>
 	<ul class="fwm oa pr toe wsnw" id="actions">
-		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="star,star-off,delete,delete-restore"></svg>Add to Favourites
+		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="plus-circle,minus-circle,delete,delete-restore"></svg>Add to Library
 		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="brush"></svg>Edit Icon
 		<li class="cp oh" data-type="svg" tabindex="-1"><svg class="dib pen vam" data-icons="svg"></svg>Download SVG
 		<li class="cp oh" data-type="xml" tabindex="-1"><svg class="dib pen vam" data-icons="android"></svg>Download Vector Drawable
@@ -1306,11 +1306,11 @@
 					try{
 						this.storage=localStorage;
 					}catch(_){
-						page.alert`Favourites not available.`;
+						page.alert`Your library is not available.`;
 						for(let key in favourites)
 							delete favourites[key];
-						info.actions.favourite.remove();
-						delete info.actions.favourite;
+						info.actions.library.remove();
+						delete info.actions.library;
 						Q`#content>aside`.remove();
 					}
 					this.textarea.classList.add(`ln`,`pf`);
@@ -1692,7 +1692,7 @@
 					}
 					this.list=JSON.parse(this.list);
 					this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
-					this.section=categories.list.favourites.section;
+					this.section=categories.list.library.section;
 					this.article.append(T``);
 					this.svg.classList.add(`db`,`pen`);
 					this.svg.setAttribute(`viewBox`,`0 0 24 24`);
@@ -1719,9 +1719,9 @@
 						svg:new this.Item(`angular`,`SVG for Angular`),
 						html:new this.Item(`polymer`,`HTML for Polymer`),
 						php:new this.Item(`language-php`,`PHP Library (WIP)`),
-						import:new this.Item(`file-import`,`Import Favourites`),
-						export:new this.Item(`file-export`,`Export Favourites`),
-						clear:new this.Item(`delete`,`Clear Favourites`)
+						import:new this.Item(`file-import`,`Import Library`),
+						export:new this.Item(`file-export`,`Export Library`),
+						clear:new this.Item(`delete`,`Clear Library`)
 					};
 					this.svg.classList.remove(`dib`,`vam`);
 					this.svg.classList.add(`db`);
@@ -1742,22 +1742,22 @@
 								this.open();
 								break;
 							case this.actions.json:
-								page.download(`data:text/json;utf8,{${this.build`jsono`}}`,`mdi-favourites.json`);
+								page.download(`data:text/json;utf8,{${this.build`jsono`}}`,`mdi-library.json`);
 								break;
 							case this.actions.php:
-								page.download(`data:text/php;utf8,`+(await page.getphp()).replace(/const data=\[\]/,`const data=[${this.build`php`}]`),`mdi-favourites.php`);
+								page.download(`data:text/php;utf8,`+(await page.getphp()).replace(/const data=\[\]/,`const data=[${this.build`php`}]`),`mdi-library.php`);
 								break;
 							case this.actions.svg:
 							case this.actions.html:
 								let svg=target===this.actions.svg;
-								page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${this.build`xml`}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`mdi-favourites.${svg?`svg`:`html`}`);
+								page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${this.build`xml`}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`mdi-library.${svg?`svg`:`html`}`);
 								break;
 							case this.actions.import:
 								b.append(this.input);
 								this.input.click();
 								break;
 							case this.actions.export:
-								page.download(`data:text/plain;base64,${btoa(btoa(JSON.stringify(this.list)))}`,`mdi-favourites.txt`);
+								page.download(`data:text/plain;base64,${btoa(btoa(JSON.stringify(this.list)))}`,`mdi-library.txt`);
 								break;
 							case this.actions.clear:
 								page.storage.removeItem`favourites`;
@@ -1769,7 +1769,7 @@
 										this.articles[key].remove();
 										delete this.articles[key];
 									}
-								page.alert`Favourites cleared.`;
+								page.alert`Library cleared.`;
 								break;
 						}
 					},0);
@@ -1876,8 +1876,8 @@
 								this.list[key]=list[key];
 								this.add(key);
 								if(info.name===key&&parseInt(list[key])){
-									info.actions.favourite.classList.add`remove`;
-									info.actions.favourite.firstChild.nodeValue=`Remove from Favourites`;
+									info.actions.library.classList.add`remove`;
+									info.actions.library.firstChild.nodeValue=`Remove from Library`;
 								}
 							}
 						this.write();
@@ -1906,13 +1906,13 @@
 						).forEach(key=>
 							this.section.append(this.section.removeChild(this.articles[key]))
 						);
-					categories.list.favourites.item.dataset.count=keys.length;
+					categories.list.library.item.dataset.count=keys.length;
 				},
 				toggle(name){
 					let article=this.articles[name],msg,src;
 					if(icons.list[name]){
-						info.actions.favourite.classList.toggle(`remove`,!article);
-						info.actions.favourite.lastChild.nodeValue=`${article?`Add to`:`Remove from`} Favourites`;
+						info.actions.library.classList.toggle(`remove`,!article);
+						info.actions.library.lastChild.nodeValue=`${article?`Add to`:`Remove from`} Library`;
 						if(article){
 							this.articles[name].remove();
 							delete this.articles[name];
@@ -1925,9 +1925,9 @@
 						}
 						src=`favourites`
 					}else{
-						info.actions.favourite.classList.toggle(`delete`,!article);
-						info.actions.favourite.classList.toggle(`restore`,article);
-						info.actions.favourite.lastChild.nodeValue=`${article?`Restore to`:`Delete from`} Library`;
+						info.actions.library.classList.toggle(`delete`,!article);
+						info.actions.library.classList.toggle(`restore`,article);
+						info.actions.library.lastChild.nodeValue=`${article?`Restore to`:`Delete from`} Library`;
 						if(article){
 							article.remove();
 							delete this.articles[name];
@@ -1981,7 +1981,7 @@
 			},
 			info={
 				actions:{
-					favourite:Q`#actions>:first-child`,
+					library:Q`#actions>:first-child`,
 					export:Q`#actions>:nth-child(2)`,
 					markup:Q`#actions>[data-confirm="Markup"]`,
 					data:Q`#actions>[data-confirm="Path data"]`,
@@ -2029,7 +2029,7 @@
 								if(!page.size)
 									this.toggle();
 								break;
-							case this.actions.favourite:
+							case this.actions.library:
 								favourites.toggle(this.name);
 								break;
 							case this.actions.export:
@@ -2097,9 +2097,9 @@
 						xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.data}"/></vector>`
 					};
 					if(page.storage){
-						this.actions.favourite.classList.toggle(`remove`,library=!!favourites.articles[this.name]&&!!parseInt(favourites.list[this.name]));
-						this.actions.favourite.classList.toggle(`delete`,custom=!!favourites.articles[this.name]&&!parseInt(favourites.list[this.name]));
-						this.actions.favourite.lastChild.nodeValue=custom?`Delete from Library`:`${library?`Remove from`:`Add to`} Favourites`;
+						this.actions.library.classList.toggle(`remove`,library=!!favourites.articles[this.name]&&!!parseInt(favourites.list[this.name]));
+						this.actions.library.classList.toggle(`delete`,custom=!!favourites.articles[this.name]&&!parseInt(favourites.list[this.name]));
+						this.actions.library.lastChild.nodeValue=`${custom?`Delete from `:library?`Remove from`:`Add to`} Library`;
 					}
 					if(this.codepoint){
 						this.actions.icon.dataset.copy=String.fromCharCode(`0x${this.codepoint}`);
@@ -2161,7 +2161,7 @@
 					this.svg.classList.add(`dib`,`pen`,`vam`);
 					this.item.append(this.svg,T``);
 					if(!page.storage)
-						delete this.list.favourites;
+						delete this.list.library;
 					for(let key in this.list)
 						if(this.list.hasOwnProperty(key))
 							this.add(key);
@@ -2179,7 +2179,7 @@
 						heading.firstChild.nodeValue=name;
 						header.append(heading);
 						switch(key){
-							case`favourites`:
+							case`library`:
 								section.append(this.error);
 								break;
 							default:
@@ -2200,12 +2200,12 @@
 								category.count=icons.array.filter(fn).length;
 						}
 						section.prepend(header);
-						if(key===`favourites`||category.count)
+						if(key===`library`||category.count)
 							page.section.before(category.section=section);
 					}else category.count=icons.array.filter(icon=>
 						icon.categories&&icon.data&&!parseInt(icon.retired)&&icon.categories.includes(key)
 					).length;
-					if(key===`favourites`||category.count){
+					if(key===`library`||category.count){
 						item.lastChild.nodeValue=name;
 						item.dataset.category=key;
 						if(category.hasOwnProperty`count`)
@@ -2221,9 +2221,9 @@
 					}else delete this.list[key];
 				},
 				list:{
-					"favourites":{
-						"icon":"star",
-						"name":"My Favourites",
+					"library":{
+						"icon":"image-multiple",
+						"name":"My Library",
 						"section":true
 					},
 					"new":{
