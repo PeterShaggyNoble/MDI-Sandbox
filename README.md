@@ -39,11 +39,12 @@ The [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/)
 A single-file, standalone version can be downloaded from the menu on the site or found in the [`standalone` directory](https://github.com/PeterShaggyNoble/MDI-Sandbox/tree/master/standalone) in the repository. It can be run locally and offline but, unless you run the file through a web server, it can't access `window.localStorage` and, therefore, all functionality related to favourites will be disabled.
 
 ## Coming Soon
-Some upcoming features that are being planned or worked on include:
+Some upcoming features that are being planned or worked on include, in no particular order:
 - a tool to automatically generate previews of icons included in the MDI library,
-- a PHP library, which can be downloaded for testing through the Sandbox (see [this issue](https://github.com/Templarian/MaterialDesign/issues/3087) for more details),
-- a JavaScript library, and,
-- a tool to keep the issue tracker automatically updated.
+- a PHP library, which can already be downloaded for testing through the Sandbox (see [this issue](https://github.com/Templarian/MaterialDesign/issues/3087) for more details),
+- a JavaScript library,
+- a tool to keep the issue tracker automatically updated, and,
+- a new library section for [rejected icons](https://github.com/Templarian/MaterialDesign/issues?q=is%3Aclosed+label%3A%22Rejected+%3Anegative_squared_cross_mark%3A%22).
 
 New features will occasionally be available to preview & test at [petershaggynoble.github.io/MDI-Sandbox/src/](https://petershaggynoble.github.io/MDI-Sandbox/src/).
 
