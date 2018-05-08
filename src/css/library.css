@@ -616,6 +616,7 @@ dialog{
 	flex-wrap:wrap;
 	justify-content:flex-end;
 	left:50%;
+	top:16px;
 	transform:translatex(-50%);
 	z-index:5;
 }
@@ -804,17 +805,14 @@ dialog>button:active{
 #editor option:checked{
 	display:none;
 }
-@media(max-height:772px){
-	#dialog{
-		top:16px;
+@media(min-height:309px){
+	#upload{
+		top:calc(50% - 147px);
 	}
 }
 @media(min-height:773px){
 	#editor{
 		top:calc(50% - 386px);
-	}
-	#upload{
-		top:calc(50% - 147px);
 	}
 }
 @media(max-width:1499px){
