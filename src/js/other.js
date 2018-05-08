@@ -2,11 +2,11 @@
 	const 	script=document.querySelector`script`,
 		a=document.createElement`a`,
 		icons=await(await fetch`../json/other.json`).json(),
-		actions=[`complete`,`ignore`,`new`];
+		statuses=[`complete`,`ignore`,`new`];
 	let 	article=document.createElement`article`,
 		svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 		path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
-		action,data,key,target;
+		status,data,key,target;
 	article.classList.add(`oh`,`pr`,`tac`);
 	svg.classList.add`db`;
 	/*svg.setAttribute(`height`,24);*/
@@ -16,9 +16,9 @@
 	for(key in icons)
 		if(icons.hasOwnProperty(key)){
 			article=article.cloneNode(0);
-			if(action=icons[key].action)
-				actions.forEach(x=>article.classList.toggle(x,action===x));
-			else article.classList.remove(...actions);
+			if(status=icons[key].status)
+				statuses.forEach(x=>article.classList.toggle(x,status===x));
+			else article.classList.remove(...statuses);
 			svg=svg.cloneNode(0);
 			path=path.cloneNode(1);
 			path.setAttribute(`d`,data=icons[key].data);
