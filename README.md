@@ -24,6 +24,9 @@ The main section of this project; a jacked up "cheatsheet" for MDI. Features inc
 
 Create customised icon preview images which can be copied & pasted directly into GitHub issues (or anywhere else) at [petershaggynoble.github.io/MDI-Sandbox/preview/](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 
+Or, to save you some work, there's also an automated preview generator available at [mdi.houseofdesign.ie/tools/preview/](http://mdi.houseofdesign.ie/tools/preview/). Use the `icon` querystring parameter to provide an icon name from the [main library](https://petershaggynoble.github.io/MDI-Sandbox/), [Material Icons Extended](https://petershaggynoble.github.io/MDI-Sandbox/extended/) or the [other Google icons](https://petershaggynoble.github.io/MDI-Sandbox/other/) and a preview will be generated that you can either download or link to directly. You can also use the optional `action` parameter to provide the name of an icon from the main library to be shown in the bottom right corner.
+> **Example:** http://mdi.houseofdesign.ie/tools/preview/?icon=vector-square&action=link.
+
 ### Additional Google Icons
 ![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme/extended.png)
 
@@ -40,7 +43,8 @@ A single-file, standalone version can be downloaded from the menu on the site or
 
 ## Coming Soon
 Some upcoming features that are being planned or worked on include, in no particular order:
-- a tool to automatically generate previews of icons included in the MDI library,
+- allowing the use of custom path data in the automated preview generator,
+- adding the stock Google icons to the automated preview generator,
 - a PHP library, which can already be downloaded for testing through the Sandbox (see [this issue](https://github.com/Templarian/MaterialDesign/issues/3087) for more details),
 - a JavaScript library,
 - a tool to keep the issue tracker automatically updated, and,
