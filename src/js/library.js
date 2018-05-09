@@ -917,6 +917,9 @@
 								case`retired`:
 									fn=icon=>parseInt(icon.retired);
 									break;
+								case`rejected`:
+									fn=icon=>icon.rejected;
+									break;
 								default:
 									fn=icon=>icon[key]===version.int;
 							}
@@ -966,7 +969,7 @@
 					item=this.item.cloneNode(1),
 					svg;
 				contributor.count=icons.array.filter(icon=>
-					icon.contributor&&icon.data&&!parseInt(icon.retired)&&icon.contributor===key
+					icon.contributor&&icon.data&&!parseInt(icon.retired)&&!icon.rejected&&icon.contributor===key
 				).length;
 				if(contributor.count){
 					item.dataset.contributor=key;
@@ -1036,7 +1039,9 @@
 						category.section.append(icon.articles.soon=article.cloneNode(1));
 					if((category=categories.list.retired)&&parseInt(icon.retired))
 						category.section.append(icon.articles.retired=article.cloneNode(1));
-					if(!parseInt(icon.retired)){
+					if((category=categories.list.rejected)&&parseInt(icon.rejected))
+						category.section.append(icon.articles.rejected=article.cloneNode(1));
+					if(!parseInt(icon.retired)&&!icon.rejected){
 						++this.total;
 						page.section.append(icon.articles.main=article);
 					}

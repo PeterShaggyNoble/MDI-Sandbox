@@ -1173,7 +1173,7 @@
 		<header class="ps">
 			<h2 class="oh toe wsnw">Important Notice</h2>
 		</header>
-		<p>To accommodate the new feature that allows you to add your own custom icons to the library I have had to rewrite how your icon library is stored. If you're reading this message then that storage has already been updated automatically. However, if you keep a backup of your library you should note that support for the old format will be removed next Friday, the 11th of May. In order to ensure you can import your backup after that date please export your library again using the menu in the header of the "My Library" section below.</p>
+		<p>To accommodate the new feature that allows you to add custom icons your library (formerly favourites) I have had to rewrite how your library is stored. If you're reading this message then that storage has already been updated automatically. However, if you keep a backup of your library you should note that support for the old format will be removed next Friday, the 11th of May. In order to ensure you can import your backup after that date please export your library again using the menu in the header of the "My Library" section below.</p>
 	</aside>
 	<section class="dg pr" id="icons">
 		<header class="ps">
@@ -2194,6 +2194,9 @@
 									case`retired`:
 										fn=icon=>parseInt(icon.retired);
 										break;
+									case`rejected`:
+										fn=icon=>icon.rejected;
+										break;
 									default:
 										fn=icon=>icon[key]===version.int;
 								}
@@ -2254,6 +2257,11 @@
 					"retired":{
 						"icon":"history",
 						"name":"Retired Icons",
+						"section":true
+					},
+					"rejected":{
+						"icon":"cancel",
+						"name":"Rejected Suggestions",
 						"section":true
 					},
 					"other":{
@@ -2380,7 +2388,7 @@
 						item=this.item.cloneNode(1),
 						svg;
 					contributor.count=icons.array.filter(icon=>
-						icon.contributor&&icon.data&&!parseInt(icon.retired)&&icon.contributor===key
+						icon.contributor&&icon.data&&!parseInt(icon.retired)&&!icon.rejected&&icon.contributor===key
 					).length;
 					if(contributor.count){
 						item.dataset.contributor=key;
@@ -2561,7 +2569,9 @@
 							category.section.append(icon.articles.soon=article.cloneNode(1));
 						if((category=categories.list.retired)&&parseInt(icon.retired))
 							category.section.append(icon.articles.retired=article.cloneNode(1));
-						if(!parseInt(icon.retired)){
+						if((category=categories.list.rejected)&&parseInt(icon.rejected))
+							category.section.append(icon.articles.rejected=article.cloneNode(1));
+						if(!parseInt(icon.retired)&&!icon.rejected){
 							++this.total;
 							page.section.append(icon.articles.main=article);
 						}
@@ -16107,6 +16117,7 @@
 		"data":"M4,4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4H4M4,6H11V8.13C9.24,8.59 8,10.18 8,12C8,13.82 9.24,15.41 11,15.87V18H4V16H7V8H4V6M13,6H20V8H17V16H20V18H13V15.87C14.76,15.41 16,13.82 16,12C16,10.18 14.76,8.59 13,8.13V6M4,10H5V14H4V10M19,10H20V14H19V10M13,10.27C13.62,10.63 14,11.29 14,12C14,12.71 13.62,13.37 13,13.73V10.27M11,10.27V13.73C10.38,13.37 10,12.71 10,12C10,11.29 10.38,10.63 11,10.27Z"
 	},
 	"sofa":{
+		"aliases":["couch"],
 		"categories":["other"],
 		"codepoint":"f4b9",
 		"contributor":"cody",
