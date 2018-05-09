@@ -632,7 +632,7 @@
 				categories.list.library.item.dataset.count=keys.length;
 			},
 			toggle(name){
-				let article=this.articles[name],msg,src;
+				let article=this.articles[name],msg;
 				if(icons.list[name]){
 					info.actions.library.classList.toggle(`remove`,!article);
 					info.actions.library.lastChild.nodeValue=`${article?`Add to`:`Remove from`} Library`;
@@ -646,7 +646,6 @@
 						this.add(name);
 						msg=`added to`;
 					}
-					src=`favourites`
 				}else{
 					info.actions.library.classList.toggle(`delete`,!article);
 					info.actions.library.classList.toggle(`restore`,article);
@@ -662,9 +661,8 @@
 						this.articles[name].classList.add`active`;
 						msg=`restored to`;
 					}
-					src=`library`;
 				}
-				page.alert(`${name} ${msg} ${src}.`);
+				page.alert(`${name} ${msg} library.`);
 				this.sort();
 				this.write();
 			},
@@ -767,7 +765,7 @@
 							else page.alert`Not yet available.`;
 							break;
 						case this.actions.link:
-							if(this.custom)
+							if(this.custom||this.rejected)
 								page.alert`Not available.`;
 							else if(this.retired)
 								page.alert`No longer available.`;
@@ -783,7 +781,7 @@
 									page.copy(target.dataset.copy,target.dataset.confirm);
 								else if(this.retired)
 									page.alert`No longer available.`;
-								else if(this.custom)
+								else if(this.custom||this.rejected)
 									page.alert`Not available.`;
 								else page.alert(`Not yet available.`);
 					}
@@ -805,12 +803,14 @@
 					this.custom=0;
 					this.data=this.actions.data.dataset.copy=this.icon.data;
 					this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
+					this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`;
+					this.rejected=!!this.icon.rejected;
 					this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
-					this.aside.classList.toggle(`retired`,this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`);
+					this.aside.classList.toggle(`retired`,this.retired||this.rejected);
 				}else if(page.storage){
 					this.custom=1;
 					this.icon=this.data=this.actions.data.dataset.copy=favourites.list[name];
-					this.codepoint=this.copy=0;
+					this.codepoint=this.copy=this.rejected=0;
 					this.aside.classList.add(`nocopy`,`retired`);
 				}
 				this.actions.markup.dataset.copy=`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`;
