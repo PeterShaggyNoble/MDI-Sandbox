@@ -18,6 +18,9 @@ The main section of this project; a jacked up "cheatsheet" for MDI. Features inc
 - See which icons were [added](https://petershaggynoble.github.io/MDI-Sandbox/?section=new), [updated](https://petershaggynoble.github.io/MDI-Sandbox/?section=updated), [renamed](https://petershaggynoble.github.io/MDI-Sandbox/?section=renamed) or  [removed](https://petershaggynoble.github.io/MDI-Sandbox/?section=removed) in the latest release.
 - See which icons will be [available in the next release](https://petershaggynoble.github.io/MDI-Sandbox/?section=soon).
 - Access [icons which have since been removed](https://petershaggynoble.github.io/MDI-Sandbox/?section=retired) from the MDI library.
+- Access a *small* selection of [icons which were rejected](https://petershaggynoble.github.io/MDI-Sandbox/?section=rejected) for inclusion in MDI.
+
+> **Note:** Rejected icons are provided as-is, having not passed through the usual quality control measures before being added to the main library.
 
 ### Preview Generator
 ![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme/previews.png)
@@ -46,9 +49,8 @@ Some upcoming features that are being planned or worked on include, in no partic
 - allowing the use of custom path data in the automated preview generator,
 - adding the stock Google icons to the automated preview generator,
 - a PHP library, which can already be downloaded for testing through the Sandbox (see [this issue](https://github.com/Templarian/MaterialDesign/issues/3087) for more details),
-- a JavaScript library,
-- a tool to keep the issue tracker automatically updated, and,
-- a new library section for [rejected icons](https://github.com/Templarian/MaterialDesign/issues?q=is%3Aclosed+label%3A%22Rejected+%3Anegative_squared_cross_mark%3A%22).
+- a JavaScript library, and,
+- a tool to keep the issue tracker automatically updated.
 
 New features will occasionally be available to preview & test at [petershaggynoble.github.io/MDI-Sandbox/src/](https://petershaggynoble.github.io/MDI-Sandbox/src/).
 

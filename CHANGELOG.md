@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2018-05-09** Added a section for [rejected sugestions](https://petershaggynoble.github.io/MDI-Sandbox/?section=rejected), for the benefit of those who might have use for them.
 - **2018-05-09:** Added an automated preview generator - see [README.md](README.md#preview-generator) for usage instructions.
 - **2018-05-08:** "My Favourites" renamed as "My Library".
 - **2018-05-04:** Implemented [OpenSearch](https://github.com/dewitt/opensearch).
@@ -42,6 +43,6 @@ Only major changes and additions will be noted here.
 - **2017-10-16:** Added filters for contributors.
 - **2017-10-13:** Categories now serve as filters, rather than each having its own individual section.
 - **2017-10-12:** Added the ability to copy the SVG path of an icon.
-- **2017-10-11:** Added a section for ["retired" icons](https://petershaggynoble.github.io/MDI-Sandbox/?section=retired), for the benefit of those who still have use for them.
+- **2017-10-11:** Added a section for [retired icons](https://petershaggynoble.github.io/MDI-Sandbox/?section=retired), for the benefit of those who might still have use for them.
 - **2017-10-10:** Extracted all data to JSON files.
 - **2017-10-10:** GitHub project launched.
