@@ -17,18 +17,18 @@
 		"user":"adendiamond"
 	},{
 		"brand":false,
-		"comments":0,
+		"comments":3,
 		"created":"2018-05-09T06:09:40Z",
 		"downvotes":0,
 		"home":false,
 		"id":3164,
-		"labels":["Icon Request"],
+		"labels":["Contribution","Icon Request","Stock Google Icon"],
 		"milestone":null,
 		"reactions":0,
-		"status":"Pending",
-		"stock":false,
+		"status":"Coming Soon",
+		"stock":true,
 		"title":"cellphone-off",
-		"updated":"2018-05-09T13:19:46Z",
+		"updated":"2018-05-09T14:48:27Z",
 		"upvotes":0,
 		"user":"hvbhome"
 	},{
@@ -8735,22 +8735,6 @@
 		"updated":"2017-12-13T16:26:51Z",
 		"upvotes":0,
 		"user":"rtellezi"
-	},{
-		"brand":false,
-		"comments":4,
-		"created":"2016-02-25T13:49:27Z",
-		"downvotes":0,
-		"home":false,
-		"id":1062,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.4.xx",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Broken cellphone",
-		"updated":"2018-04-14T15:55:07Z",
-		"upvotes":0,
-		"user":"walker93"
 	},{
 		"brand":false,
 		"comments":5,
