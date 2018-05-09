@@ -28,7 +28,11 @@ The main section of this project; a jacked up "cheatsheet" for MDI. Features inc
 Create customised icon preview images which can be copied & pasted directly into GitHub issues (or anywhere else) at [petershaggynoble.github.io/MDI-Sandbox/preview/](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 
 Or, to save you some work, there's also an automated preview generator available at [mdi.houseofdesign.ie/tools/preview/](http://mdi.houseofdesign.ie/tools/preview/). Use the `icon` querystring parameter to provide an icon name from the [main library](https://petershaggynoble.github.io/MDI-Sandbox/), [Material Icons Extended](https://petershaggynoble.github.io/MDI-Sandbox/extended/) or the [other Google icons](https://petershaggynoble.github.io/MDI-Sandbox/other/) and a preview will be generated that you can either download or link to directly. You can also use the optional `action` parameter to provide the name of an icon from the main library to be shown in the bottom right corner.
-> **Example:** http://mdi.houseofdesign.ie/tools/preview/?icon=vector-square&action=link.
+> **Example:** [mdi.houseofdesign.ie/tools/preview/?icon=vector-square&action=link](http://mdi.houseofdesign.ie/tools/preview/?icon=vector-square&action=link)
+
+Alternatively, instead of using the `icon` parameter to provide the name of an existing icon, you can use the `path` & `name` parameters to provide a custom path and name.
+
+> **Example:** [mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&path=M20,8...Z](http://mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&path=M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4%202,4.89%202,6V18A2,2%200%200,0%204,20H20A2,2%200%200,0%2022,18V6C22,4.89%2021.1,4%2020,4M7,22H9V24H7V22M11,22H13V24H11V22M15,22H17V24H15V22Z)
 
 ### Additional Google Icons
 ![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme/extended.png)
