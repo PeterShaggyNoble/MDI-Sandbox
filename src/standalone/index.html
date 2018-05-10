@@ -551,7 +551,6 @@
 	}
 	#actions>li.delete>svg>path:first-child,
 	#actions>li.remove>svg>path:first-child,
-	#actions>li.restore>svg>path:first-child,
 	#actions>li>svg>path+path{
 		opacity:0;
 	}
@@ -559,9 +558,6 @@
 		opacity:1;
 	}
 	#actions>li.delete>svg>path:nth-of-type(3){
-		opacity:1;
-	}
-	#actions>li.restore>svg>path:nth-of-type(4){
 		opacity:1;
 	}
 	#info.nocopy>#actions>li[data-copy]:not([data-confirm="Markup"]):not([data-confirm="Path data"]):not([data-confirm=Link])>svg,
@@ -1200,7 +1196,7 @@
 		</figure>
 	</header>
 	<ul class="fwm oa pr toe wsnw" id="actions">
-		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="plus-circle,minus-circle,delete,delete-restore"></svg>Add to Library
+		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="plus-circle,minus-circle,close-circle"></svg>Add to Library
 		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="brush"></svg>Edit Icon
 		<li class="cp oh" data-type="svg" tabindex="-1"><svg class="dib pen vam" data-icons="svg"></svg>Download SVG
 		<li class="cp oh" data-type="xml" tabindex="-1"><svg class="dib pen vam" data-icons="android"></svg>Download Vector Drawable
@@ -1925,8 +1921,7 @@
 						}
 					}else{
 						info.actions.library.classList.toggle(`delete`,!article);
-						info.actions.library.classList.toggle(`restore`,article);
-						info.actions.library.lastChild.nodeValue=`${article?`Restore to`:`Delete from`} Library`;
+						info.actions.library.lastChild.nodeValue=`${article?`Add to`:`Delete from`} Library`;
 						if(article){
 							article.remove();
 							delete this.articles[name];
@@ -2099,7 +2094,7 @@
 					if(page.storage){
 						this.actions.library.classList.toggle(`remove`,library=!!favourites.articles[this.name]&&!!parseInt(favourites.list[this.name]));
 						this.actions.library.classList.toggle(`delete`,custom=!!favourites.articles[this.name]&&!parseInt(favourites.list[this.name]));
-						this.actions.library.lastChild.nodeValue=`${custom?`Delete from `:library?`Remove from`:`Add to`} Library`;
+						this.actions.library.lastChild.nodeValue=`${custom?`Delete from`:library?`Remove from`:`Add to`} Library`;
 					}
 					if(this.codepoint){
 						this.actions.icon.dataset.copy=String.fromCharCode(`0x${this.codepoint}`);

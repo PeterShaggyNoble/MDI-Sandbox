@@ -648,8 +648,7 @@
 					}
 				}else{
 					info.actions.library.classList.toggle(`delete`,!article);
-					info.actions.library.classList.toggle(`restore`,article);
-					info.actions.library.lastChild.nodeValue=`${article?`Restore to`:`Delete from`} Library`;
+					info.actions.library.lastChild.nodeValue=`${article?`Add to`:`Delete from`} Library`;
 					if(article){
 						article.remove();
 						delete this.articles[name];
@@ -822,7 +821,7 @@
 				if(page.storage){
 					this.actions.library.classList.toggle(`remove`,library=!!favourites.articles[this.name]&&!!parseInt(favourites.list[this.name]));
 					this.actions.library.classList.toggle(`delete`,custom=!!favourites.articles[this.name]&&!parseInt(favourites.list[this.name]));
-					this.actions.library.lastChild.nodeValue=`${custom?`Delete from `:library?`Remove from`:`Add to`} Library`;
+					this.actions.library.lastChild.nodeValue=`${custom?`Delete from`:library?`Remove from`:`Add to`} Library`;
 				}
 				if(this.codepoint){
 					this.actions.icon.dataset.copy=String.fromCharCode(`0x${this.codepoint}`);

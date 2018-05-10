@@ -543,7 +543,6 @@ body.highlight>#content>section>article.active{
 }
 #actions>li.delete>svg>path:first-child,
 #actions>li.remove>svg>path:first-child,
-#actions>li.restore>svg>path:first-child,
 #actions>li>svg>path+path{
 	opacity:0;
 }
@@ -551,9 +550,6 @@ body.highlight>#content>section>article.active{
 	opacity:1;
 }
 #actions>li.delete>svg>path:nth-of-type(3){
-	opacity:1;
-}
-#actions>li.restore>svg>path:nth-of-type(4){
 	opacity:1;
 }
 #info.nocopy>#actions>li[data-copy]:not([data-confirm="Markup"]):not([data-confirm="Path data"]):not([data-confirm=Link])>svg,
