@@ -1,7 +1,10 @@
 (async()=>{
-	const 	icons=await(await fetch`../json/icons.json`).json(),
-		extended=await(await fetch`../json/extended.json`).json(),
-		other=await(await fetch`../json/other.json`).json(),
+	const 	sets=[
+			await(await fetch`../json/icons.json`).json(),
+			await(await fetch`../json/stock.json`).json(),
+			await(await fetch`../json/extended.json`).json(),
+			await(await fetch`../json/other.json`).json()
+		],
 		figure=document.querySelector`figure`,
 		inputs={
 			data:document.getElementById`data`,
@@ -41,6 +44,7 @@
 		image=new Image,
 		xml=new XMLSerializer,
 		storage=localStorage,
+		transforms=[``,`scale(.046875) scale(1,-1) translate(0,-512)`,`scale(.046875) scale(1,-1) translate(0,-512)`,`scale(.05) scale(1,-1) translate(0,-480)`],
 		convert=hex=>[((hex=parseInt(hex.length===3?hex.replace(/./g,c=>c+c):hex,16))>>16)&255,(hex>>8)&255,hex&255],
 		test=([r,g,b])=>(r*299+g*587+b*114)/1000,
 		draw=()=>{
@@ -83,7 +87,9 @@
 	},0);
 	document.body.addEventListener(`input`,event=>{
 		let 	target=event.target,
-			value=target.value;
+			value=target.value,
+			ind=-1,
+			set;
 		if(target.validity.valid){
 			switch(target){
 				case inputs.data:
@@ -92,31 +98,18 @@
 					path.setAttribute(`d`,values.data=value);
 					size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
 					transform=inputs.name.value=``;
-					for(key in icons)
-						if(icons.hasOwnProperty(key))
-							if(icons[key].data===value){
-								inputs.name.value=key;
-								break;
-							}
-					if(!inputs.name.value)
-						for(key in extended)
-							if(extended.hasOwnProperty(key))
-								if(extended[key].data===value){
+					while(!inputs.name.value&&sets[++ind])
+						for(key in (set=sets[ind]))
+							if(set.hasOwnProperty(key))
+								if(set[key].data===value){
 									inputs.name.value=key;
-									transform=`scale(.046875) scale(1,-1) translate(0,-512)`;
-									break;
-								}
-					if(!inputs.name.value)
-						for(key in other)
-							if(other.hasOwnProperty(key))
-								if(other[key].data===value){
-									inputs.name.value=key;
-									transform=`scale(.05) scale(1,-1) translate(0,-480)`;
+									transform=transforms[ind];
 									break;
 								}
 					if(!transform)
 						transform=size>48?size>480?`scale(.046875) scale(1,-1) translate(0,-512)`:`scale(.05) scale(1,-1) translate(0,-480)`:`scale(.5)`;
 					size>24?path.setAttribute(`transform`,transform):path.removeAttribute(`transform`);
+					inputs.name.dispatchEvent(new Event(`input`));
 					break;
 				case inputs.size:
 					svg.setAttribute(`height`,values.size=parseInt(value));

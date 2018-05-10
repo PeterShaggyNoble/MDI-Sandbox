@@ -1,7 +1,10 @@
 (async()=>{
-	const 	icons=await(await fetch`../json/icons.json`).json(),
-		extended=await(await fetch`../json/extended.json`).json(),
-		other=await(await fetch`../json/other.json`).json(),
+	const 	sets=[
+			await(await fetch`../json/icons.json`).json(),
+			await(await fetch`../json/stock.json`).json(),
+			await(await fetch`../json/extended.json`).json(),
+			await(await fetch`../json/other.json`).json()
+		],
 		inputs={
 			canvas:document.getElementById`canvas`,
 			data:document.getElementById`data`,
@@ -31,6 +34,7 @@
 		a=document.createElement`a`,
 		xml=new XMLSerializer,
 		image=new Image,
+		transforms=[`translate(11,10)`,`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`,`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`,`scale(.05) scale(1,-1) translate(220,-680)`],
 		draw=()=>image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`})),
 		/*draw=async()=>context.transferFromImageBitmap(await createImageBitmap(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`})).catch(console.log)),*/
 		generate=event=>{
@@ -39,6 +43,7 @@
 				target=event.target;
 				value=target.value;
 				delay=0;
+				ind=-1;
 				switch(target){
 					case inputs.canvas:
 						shadow.setAttribute(`flood-color`,`#`+value);
@@ -57,27 +62,12 @@
 						if(value){
 							size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
 							transform=inputs.name.value=``;
-							for(key in icons)
-								if(icons.hasOwnProperty(key))
-									if(icons[key].data===value){
-										inputs.name.value=key;
-										transform=`translate(11,10)`;
-										break;
-									}
-							if(!inputs.name.value)
-								for(key in extended)
-									if(extended.hasOwnProperty(key))
-										if(extended[key].data===value){
+							while(!inputs.name.value&&sets[++ind])
+								for(key in (set=sets[ind]))
+									if(set.hasOwnProperty(key))
+										if(set[key].data===value){
 											inputs.name.value=key;
-											transform=`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`;
-											break;
-										}
-							if(!inputs.name.value)
-								for(key in other)
-									if(other.hasOwnProperty(key))
-										if(other[key].data===value){
-											inputs.name.value=key;
-											transform=`scale(.05) scale(1,-1) translate(220,-680)`;
+											transform=transforms[ind];
 											break;
 										}
 							if(!transform)
@@ -121,7 +111,7 @@
 				},delay);
 			},50);
 		};
-	let delay,key,size,target,timer,transform,value;
+	let delay,ind,key,set,size,target,timer,transform,value;
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);
