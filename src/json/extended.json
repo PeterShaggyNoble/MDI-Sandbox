@@ -187,7 +187,7 @@
 	},
 	"calendar_today":{
 		"data":"M427 64v277h-342v-277h342zM427 448q17 0 29.5 -13t12.5 -30v-341q0 -17 -12.5 -30t-29.5 -13h-342q-17 0 -29.5 13t-12.5 30v341q0 17 12.5 30t29.5 13h22v43h42v-43h214v43h42v-43h22z",
-		"status":"complete"
+		"status":"ignore"
 	},
 	"calendar_view_day":{
 		"data":"M64 384h384v-43h-384v43zM64 299h384v-107h-384v107zM64 149h384v-42h-384v42z"
