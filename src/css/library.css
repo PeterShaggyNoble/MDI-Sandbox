@@ -361,7 +361,7 @@ body.highlight #highlight>svg>path+path{
 	padding:0 8px 8px;
 	z-index:1;
 }
-section#favourites{
+section#library{
 	z-index:2;
 }
 #content>section>header{
@@ -455,7 +455,7 @@ body.highlight>#content>section>article.active{
 	transition:background .225s var(--timing-function),color .225s var(--timing-function);
 }
 .options>li:first-of-type,
-#favourites .options>li:nth-of-type(5){
+#library .options>li:nth-of-type(5){
 	border-bottom:1px solid #e0e0e0;
 }
 .options>li:first-of-type{
