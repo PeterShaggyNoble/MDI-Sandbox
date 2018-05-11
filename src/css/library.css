@@ -513,7 +513,7 @@ body.highlight>#content>section>article.active{
 	transition-property:background,color,height,opacity;
 	transition-timing-function:var(--timing-function);
 }
-#actions>li:nth-last-child(12),#actions>li:nth-last-child(11),#actions>li:nth-last-child(8),#info>#actions>li:nth-last-child(2){
+#actions>li:nth-last-child(13),#actions>li:nth-last-child(12),#actions>li:nth-last-child(9),#info>#actions>li:nth-last-child(2){
 	border-bottom:1px solid #e0e0e0;
 }
 #info>#actions>li:hover{
@@ -524,7 +524,7 @@ body.highlight>#content>section>article.active{
 	background:#e0e0e0;
 	color:var(--colour);
 }
-#info.nocopy>#actions>li[data-copy]:not([data-confirm="Markup"]):not([data-confirm="Path data"]):not([data-confirm=Link]),
+#info.nocopy>#actions>li[data-copy]:not([data-confirm=Markup]):not([data-confirm=URI]):not([data-confirm="Path data"]):not([data-confirm=Link]),
 #info.retired>#actions>li:last-child{
 	background:#fff;
 	color:#757575;
@@ -552,7 +552,7 @@ body.highlight>#content>section>article.active{
 #actions>li.delete>svg>path:nth-of-type(3){
 	opacity:1;
 }
-#info.nocopy>#actions>li[data-copy]:not([data-confirm="Markup"]):not([data-confirm="Path data"]):not([data-confirm=Link])>svg,
+#info.nocopy>#actions>li[data-copy]:not([data-confirm=Markup]):not([data-confirm=URI]):not([data-confirm="Path data"]):not([data-confirm=Link])>svg,
 #info.retired>#actions>li:last-child>svg{
 	fill:#bdbdbd;
 }

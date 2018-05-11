@@ -521,7 +521,7 @@
 		transition-property:background,color,height,opacity;
 		transition-timing-function:var(--timing-function);
 	}
-	#actions>li:nth-last-child(12),#actions>li:nth-last-child(11),#actions>li:nth-last-child(8),#info>#actions>li:nth-last-child(2){
+	#actions>li:nth-last-child(13),#actions>li:nth-last-child(12),#actions>li:nth-last-child(9),#info>#actions>li:nth-last-child(2){
 		border-bottom:1px solid #e0e0e0;
 	}
 	#info>#actions>li:hover{
@@ -532,7 +532,7 @@
 		background:#e0e0e0;
 		color:var(--colour);
 	}
-	#info.nocopy>#actions>li[data-copy]:not([data-confirm="Markup"]):not([data-confirm="Path data"]):not([data-confirm=Link]),
+	#info.nocopy>#actions>li[data-copy]:not([data-confirm=Markup]):not([data-confirm=URI]):not([data-confirm="Path data"]):not([data-confirm=Link]),
 	#info.retired>#actions>li:last-child{
 		background:#fff;
 		color:#757575;
@@ -560,7 +560,7 @@
 	#actions>li.delete>svg>path:nth-of-type(3){
 		opacity:1;
 	}
-	#info.nocopy>#actions>li[data-copy]:not([data-confirm="Markup"]):not([data-confirm="Path data"]):not([data-confirm=Link])>svg,
+	#info.nocopy>#actions>li[data-copy]:not([data-confirm=Markup]):not([data-confirm=URI]):not([data-confirm="Path data"]):not([data-confirm=Link])>svg,
 	#info.retired>#actions>li:last-child>svg{
 		fill:#bdbdbd;
 	}
@@ -1202,7 +1202,8 @@
 		<li class="cp oh" data-type="xml" tabindex="-1"><svg class="dib pen vam" data-icons="android"></svg>Download Vector Drawable
 		<li class="cp oh" data-type="xaml" tabindex="-1"><svg class="dib pen vam" data-icons="windows"></svg>Download XAML
 		<li class="cp oh" data-confirm="Markup" data-copy="svg" tabindex="-1"><svg class="dib pen vam" data-icons="xml"></svg>Copy SVG markup
-		<li class="cp oh" data-confirm="Path data" data-copy="" tabindex="-1"><svg class="dib pen vam" data-icons="gesture"></svg>Copy Path Data
+		<li class="cp oh" data-confirm="URI" data-copy="data" tabindex="-1"><svg class="dib pen vam" data-icons="code-string"></svg>Copy Data URI
+		<li class="cp oh" data-confirm="Path data" data-copy="" tabindex="-1"><svg class="dib pen vam" data-icons="vector-radius"></svg>Copy Path Data
 		<li class="cp oh" data-confirm="Icon" data-copy="" tabindex="-1"><svg class="dib pen vam" data-icons="content-copy"></svg>Copy Character
 		<li class="cp oh" data-confirm="Code point" data-copy="" tabindex="-1"><svg class="dib pen vam" data-icons="numeric"></svg>Copy Code Point
 		<li class="cp oh" data-confirm="HTML" data-copy="" tabindex="-1"><svg class="dib pen vam" data-icons="code-tags"></svg>Copy HTML Tag
@@ -1977,6 +1978,7 @@
 					library:Q`#actions>:first-child`,
 					export:Q`#actions>:nth-child(2)`,
 					markup:Q`#actions>[data-confirm="Markup"]`,
+					uri:Q`#actions>[data-confirm="URI"]`,
 					data:Q`#actions>[data-confirm="Path data"]`,
 					icon:Q`#actions>[data-confirm=Icon]`,
 					codepoint:Q`#actions>[data-confirm="Code point"]`,
@@ -2031,6 +2033,7 @@
 								else page.alert`Not yet available.`;
 								break;
 							case this.actions.markup:
+							case this.actions.uri:
 							case this.actions.data:
 								if(this.data)
 									page.copy(target.dataset.copy,target.dataset.confirm);
@@ -2086,6 +2089,7 @@
 						this.aside.classList.add(`nocopy`,`retired`);
 					}
 					this.actions.markup.dataset.copy=`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`;
+					this.actions.uri.dataset.copy=`data:image/svg+xml;base64,${btoa(this.actions.markup.dataset.copy)}`;
 					this.downloads={
 						svg:`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 						xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,

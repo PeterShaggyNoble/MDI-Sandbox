@@ -704,6 +704,7 @@
 				library:Q`#actions>:first-child`,
 				export:Q`#actions>:nth-child(2)`,
 				markup:Q`#actions>[data-confirm="Markup"]`,
+				uri:Q`#actions>[data-confirm="URI"]`,
 				data:Q`#actions>[data-confirm="Path data"]`,
 				icon:Q`#actions>[data-confirm=Icon]`,
 				codepoint:Q`#actions>[data-confirm="Code point"]`,
@@ -758,6 +759,7 @@
 							else page.alert`Not yet available.`;
 							break;
 						case this.actions.markup:
+						case this.actions.uri:
 						case this.actions.data:
 							if(this.data)
 								page.copy(target.dataset.copy,target.dataset.confirm);
@@ -813,6 +815,7 @@
 					this.aside.classList.add(`nocopy`,`retired`);
 				}
 				this.actions.markup.dataset.copy=`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`;
+				this.actions.uri.dataset.copy=`data:image/svg+xml;base64,${btoa(this.actions.markup.dataset.copy)}`;
 				this.downloads={
 					svg:`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
