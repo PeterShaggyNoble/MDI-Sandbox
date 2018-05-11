@@ -570,7 +570,7 @@ body.highlight>#content>section>article.active{
 	padding:8px;
 	right:0;
 	transition:opacity .375s var(--timing-function);
-	z-index:3;
+	z-index:4;
 }
 #load>svg{
 	height:56px;

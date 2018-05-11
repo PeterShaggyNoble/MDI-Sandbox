@@ -22,7 +22,7 @@
 			message:$`message`,
 			section:$`icons`,
 			textarea:C`textarea`,
-			init(){
+			async init(){
 				this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
 				this.params=this.url.searchParams;
 				this.message.append(T``);
@@ -44,11 +44,16 @@
 				icons.init();
 				menu.init();
 				svgs.init();
-				setTimeout(()=>
-					filter.init()
-				,600);
 				info.init();
 				editor.init();
+				if(this.size<2)
+					this.load();
+				else menu.menu.addEventListener(`transitionend`,this.fn=event=>{
+					if(event.target===menu.menu){
+						this.load();
+						menu.menu.removeEventListener(event.type,this.fn);
+					}
+				},1);
 				this.options=this.section.querySelector`ul`,
 				this.actions={
 					link:this.options.firstElementChild,
@@ -99,13 +104,31 @@
 							}
 					}
 				},0);
-				setTimeout(()=>{
-					let loader=$`load`;
-					loader.classList.add(`oz`,`pen`);
-					setTimeout(()=>
-						loader.remove()
-					,375);
-				},600);
+			},
+			load(){
+				let 	loader=$`load`,
+					section=this.params.get`section`,
+					icon=this.params.get`edit`;
+				if(section)
+					if(section=$(section))
+						menu.goto(section);
+				filter.init();
+				this.interval=setInterval(()=>{
+					if(!menu.scroll){
+						clearInterval(this.interval);
+						b.classList.remove`oh`;
+						loader.classList.add(`oz`,`pen`);
+						loader.addEventListener(`transitionend`,this.fn=event=>{
+							loader.remove();
+							loader.removeEventListener(event.type,this.fn);
+							if(!this.size)
+								info.load();
+							if(icon)
+								if(icons.list[icon]||favourites.list[icon])
+									editor.open(icon);
+						},0);
+					}
+				},50);
 			},
 			alert(message){
 				clearTimeout(this.timer);
@@ -159,6 +182,7 @@
 		},
 		menu={
 			functions:{},
+			scroll:0,
 			show:0,
 			categories:$`categories`,
 			contributors:$`contributors`,
@@ -168,12 +192,6 @@
 			navicon:$`navicon`,
 			sections:$`sections`,
 			init(){
-				let section=page.params.get`section`;
-				if(section)
-					if(section=$(section))
-						setTimeout(()=>
-							this.goto(section)
-						,800);
 				this.nav.addEventListener(`click`,event=>{
 					let 	target=event.target,
 						articles,icon,key;
@@ -237,12 +255,13 @@
 				,0);
 			},
 			goto(section){
+				this.scroll=1;
 				clearInterval(this.timer);
 				let 	to=section.offsetTop-(page.size?16:8)-page.header.offsetHeight,
 					top=h.scrollTop,
 					step=(to-top)/10;
 				this.timer=setInterval(()=>
-					Math.round(top)===Math.round(to)?clearInterval(this.timer):h.scrollTop=(top+=step)
+					Math.round(top)===Math.round(to)?clearInterval(this.timer,this.scroll=0):h.scrollTop=(top+=step)
 				,10);
 			},
 			toggle(){
@@ -304,9 +323,7 @@
 				if(this.text=page.params.get`filter`)
 					this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 				if(this.categories.size||this.contributors.size||this.text)
-					setTimeout(()=>
-						filter.apply()
-					,600);
+					filter.apply();
 				else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
 				this.clearall.dataset.count=icons.total;
 				this.input.addEventListener(`input`,()=>{
@@ -726,22 +743,8 @@
 				this.heading.append(T``);
 				this.svg=this.figure.firstElementChild;
 				this.path=this.svg.firstElementChild;
-				let icon=page.params.get`icon`;
-				if(icon){
-					if(page.storage&&favourites.list[icon]){
-						this.open(icon);
-						favourites.articles[icon].classList.add`active`;
-					}else if(icons.list[icon]){
-						this.open(icon);
-						Object.values(icons.list[icon].articles)[0].classList.add`active`;
-					}
-				}else if(page.size){
-					this.open(icon=(page.params.get`edit`||(page.storage&&Object.keys(favourites.list).sort()[0])||Object.keys(icons.list).find(key=>icons.list[key].data)));
-					if(page.storage&&favourites.list[icon])
-						favourites.articles[icon].classList.add`active`;
-					else if(icons.list[icon])
-						Object.values(icons.list[icon].articles)[0].classList.add`active`;
-				}
+				if(page.size)
+					this.load();
 				this.aside.addEventListener(`click`,event=>{
 					let target=event.target;
 					switch(target){
@@ -787,6 +790,24 @@
 								else page.alert(`Not yet available.`);
 					}
 				},0);
+			},
+			load(){
+				let icon=page.params.get`edit`||page.params.get`icon`;
+				if(icon){
+					if(page.storage&&favourites.list[icon]){
+						this.open(icon);
+						favourites.articles[icon].classList.add`active`;
+					}else if(icons.list[icon]){
+						this.open(icon);
+						Object.values(icons.list[icon].articles)[0].classList.add`active`;
+					}
+				}else if(page.size){
+					this.open(icon=((page.storage&&Object.keys(favourites.list).sort()[0])||Object.keys(icons.list).find(key=>icons.list[key].data)));
+					if(page.storage&&favourites.list[icon])
+						favourites.articles[icon].classList.add`active`;
+					else if(icons.list[icon])
+						Object.values(icons.list[icon].articles)[0].classList.add`active`;
+				}
 			},
 			download(){
 				if(this.icon)
@@ -1224,10 +1245,6 @@
 					}
 				},1);
 				this.load();
-				let name=page.params.get`edit`;
-				if(name)
-					if(icons.list[name]||favourites.list[name])
-						this.open(name);
 			},
 			close(value){
 				b.removeEventListener(`keydown`,this.fn);
