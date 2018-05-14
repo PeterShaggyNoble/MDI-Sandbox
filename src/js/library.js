@@ -116,7 +116,6 @@
 				this.interval=setInterval(()=>{
 					if(!menu.scroll){
 						clearInterval(this.interval);
-						b.classList.remove`oh`;
 						loader.classList.add(`oz`,`pen`);
 						loader.addEventListener(`transitionend`,this.fn=event=>{
 							loader.remove();
