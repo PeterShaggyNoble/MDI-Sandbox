@@ -29,7 +29,7 @@
 				try{
 					this.storage=localStorage;
 				}catch(_){
-					page.alert`Your library is not available.`;
+					this.alert`Your library is not available.`;
 					for(let key in favourites)
 						delete favourites[key];
 					info.actions.library.remove();
@@ -64,7 +64,7 @@
 				this.actions.svg=this.actions.html.previousElementSibling;
 				this.header.addEventListener(`click`,event=>{
 					if(event.target.nodeName.toLowerCase()===`a`&&this.offline){
-						page.alert`Could not connect.`;
+						this.alert`Could not connect.`;
 						event.preventDefault();
 					}
 				},0);
@@ -74,24 +74,24 @@
 						current=this.main.querySelector`article.active`;
 					switch(target){
 						case this.actions.link:
-							page.copy(filter.filtered&&filter.url?filter.url:`${page.address}?section=icons`,`Link`);
+							this.copy(filter.filtered&&filter.url?filter.url:`${this.address}?section=icons`,`Link`);
 							break;
 						case this.actions.json:
-							page.download(`data:text/json;utf8,{${filter.filtered?this.build`jsono`:this.packages.json||(this.packages.jsono=this.build`jsono`)}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
+							this.download(`data:text/json;utf8,{${filter.filtered?this.build`jsono`:this.packages.json||(this.packages.jsono=this.build`jsono`)}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
 							break;
 						case this.actions.php:
-							page.download(`data:text/php;utf8,`+(await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build`php`:this.packages.php||(this.packages.php=this.build`php`)}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
+							this.download(`data:text/php;utf8,`+(await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build`php`:this.packages.php||(this.packages.php=this.build`php`)}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
 							break;
 						case this.actions.svg:
 						case this.actions.html:
 							let svg=target===this.actions.svg;
-							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${filter.filtered?this.build`xml`:this.packages.xml||(this.packages.xml=this.build`xml`)}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
+							this.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${filter.filtered?this.build`xml`:this.packages.xml||(this.packages.xml=this.build`xml`)}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
 							break;
 						default:
 							switch(target.nodeName.toLowerCase()){
 								case`svg`:
 									if(parent.nodeName.toLowerCase()===`header`&&!target.classList.contains`trigger`)
-										page.copy(`${page.address}?section=${parent.parentNode.id}`,`Link`);
+										this.copy(`${this.address}?section=${parent.parentNode.id}`,`Link`);
 									break;
 								case`article`:
 									if(current!==target){
@@ -163,7 +163,7 @@
 				this.anchor.remove();
 				URL.revokeObjectURL(this.anchor.href);
 			},
-			getphp:async()=>page.php=page.php||(await(await fetch(`${this.address}/libraries/mdi-php/mdi.php`)).text()).replace(/\n\/\* DELETE BELOW \*\/\n[\s\S]+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*[\s\S]+?\*\/\n/g,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
+			getphp:async()=>page.php=page.php||(await(await fetch(`${page.address}libraries/mdi-php/mdi.php`)).text()).replace(/\n\/\* DELETE BELOW \*\/\n[\s\S]+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*[\s\S]+?\*\/\n/g,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
 		},
 		svgs={
 			path:N`path`,
@@ -353,11 +353,11 @@
 							check=1;
 							if(this.filtered){
 								if(this.categories.size)
-									check=icon.categories&&icon.categories.some(category=>
+									check=icon.categories.some(category=>
 										this.categories.has(category)
 									);
 								if(this.contributors.size)
-									check=check&&icon.contributor&&this.contributors.has(icon.contributor);
+									check=check&&this.contributors.has(icon.contributor);
 								if(words)
 									check=check&&words.every(word=>
 										icon.keywords.some(item=>
@@ -399,8 +399,9 @@
 						contributors.list[key].item.classList.remove`active`;
 					this.contributors.clear();
 					this.text=this.input.value=``;
-					this.apply();
+					this.apply(0);
 				}
+				menu.goto(page.section);
 			}
 		},
 		favourites={
@@ -473,7 +474,8 @@
 					this.load(event)
 				,0);
 				this.menu.addEventListener(`click`,async event=>{
-					switch(event.target){
+					let target=event.target;
+					switch(target){
 						case this.actions.add:
 							this.open();
 							break;
