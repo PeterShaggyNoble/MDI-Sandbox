@@ -233,14 +233,14 @@
 										if(categories.list[category]){
 											target.classList.toggle`active`;
 											filter.categories[filter.categories.has(category)?`delete`:`add`](category);
-											filter.apply();
+											filter.apply(1);
 										}
 										break;
 									case this.contributors:
 										if(contributors.list[contributor]){
 											target.classList.toggle`active`;
 											filter.contributors[filter.contributors.has(contributor)?`delete`:`add`](contributor);
-											filter.apply();
+											filter.apply(1);
 										}
 										break;
 								}
@@ -322,27 +322,25 @@
 				if(this.text=page.params.get`filter`)
 					this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 				if(this.categories.size||this.contributors.size||this.text)
-					filter.apply();
+					this.apply(1);
 				else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
 				this.clearall.dataset.count=icons.total;
 				this.input.addEventListener(`input`,()=>{
 					clearTimeout(this.timer);
 					this.timer=setTimeout(()=>{
 						this.text=this.input.value.toLowerCase().replace(/\+/g,`%2b`);
-						this.apply();
+						this.apply(1);
 					},50);
 				},0);
 				this.button.addEventListener(`click`,()=>{
 					this.input.focus();
 					if(this.text){
 						this.text=this.input.value=``;
-						this.apply();
+						this.apply(0);
 					}
 				},0);
 			},
-			apply(){
-				if(h.scrollTop<page.section.offsetTop-page.header.offsetHeight)
-					menu.goto(page.section);
+			apply(scroll){
 				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
 				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
@@ -388,8 +386,8 @@
 					}
 					if(this.text)
 						this.url+=`filter=${encodeURIComponent(this.text)}`;
-					if(h.scrollTop<page.section.offsetTop-page.header.offsetHeight)
-						h.scrollTop=page.section.offsetTop-(page.size?16:8)-page.header.offsetHeight;
+					if(scroll&&h.scrollTop<page.section.offsetTop-page.header.offsetHeight)
+						menu.goto(page.section);
 				}
 			},
 			clear(){
@@ -403,7 +401,6 @@
 					this.text=this.input.value=``;
 					this.apply();
 				}
-				menu.goto(page.section);
 			}
 		},
 		favourites={
