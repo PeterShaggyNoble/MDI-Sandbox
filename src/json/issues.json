@@ -2,6 +2,22 @@
 	{
 		"brand":false,
 		"comments":0,
+		"created":"2018-05-15T06:41:17Z",
+		"downvotes":0,
+		"home":false,
+		"id":3176,
+		"labels":["Icon Request"],
+		"milestone":null,
+		"reactions":0,
+		"status":"Pending",
+		"stock":false,
+		"title":"Wallet with Plus Icon for Add money to wallet",
+		"updated":"2018-05-15T09:40:56Z",
+		"upvotes":0,
+		"user":"HeySmartySukh"
+	},{
+		"brand":false,
+		"comments":0,
 		"created":"2018-05-14T07:33:29Z",
 		"downvotes":0,
 		"home":false,
@@ -4657,7 +4673,7 @@
 		"user":"GreenTurtwig"
 	},{
 		"brand":false,
-		"comments":3,
+		"comments":4,
 		"created":"2017-06-19T22:28:05Z",
 		"downvotes":0,
 		"home":false,
@@ -4668,7 +4684,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Bluetooth Battery",
-		"updated":"2018-04-14T17:46:58Z",
+		"updated":"2018-05-15T00:32:10Z",
 		"upvotes":0,
 		"user":"k5cents"
 	},{
@@ -5471,22 +5487,6 @@
 		"updated":"2018-04-14T17:13:54Z",
 		"upvotes":2,
 		"user":"fraaalk"
-	},{
-		"brand":false,
-		"comments":5,
-		"created":"2017-03-28T09:21:11Z",
-		"downvotes":0,
-		"home":false,
-		"id":1968,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.4.xx",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Reset",
-		"updated":"2018-05-14T05:54:05Z",
-		"upvotes":0,
-		"user":"dontbyte"
 	},{
 		"brand":false,
 		"comments":4,
