@@ -318,43 +318,6 @@
 	#clear>svg{
 		fill:currentcolor;
 	}
-	#content>aside{
-		background:#fff;
-		border-radius:2px;
-		box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
-		z-index:1;
-	}
-	#content>aside>header{
-		background:var(--colour);
-		border-radius:2px 2px 0 0;
-		padding:0 16px;
-		z-index:2;
-	}
-	#content>aside>header>h2{
-		color:#fff;
-		font-size:20px;
-		line-height:48px;
-	}
-	#content>aside>p{
-		line-height:20px;
-		padding:16px;
-	}
-	@media(max-width:759px){
-		#content>aside{
-			margin:8px;
-		}
-		#content>aside>header{
-			top:56px;
-		}
-	}
-	@media(min-width:760px){
-		#content>aside{
-			margin:16px;
-		}
-		#content>aside>header{
-			top:64px;
-		}
-	}
 	#content{
 		transition:margin .225s var(--timing-function);
 	}
@@ -384,6 +347,10 @@
 		color:#fff;
 		font-size:20px;
 		line-height:48px;
+	}
+	#content>section:not(#icons)>header>h2::after,
+	#content>section.filtered>header>h2::after{
+		content:" (" attr(data-count) " icons)";
 	}
 	#content>section>header>svg{
 		fill:#fff;
@@ -1165,12 +1132,6 @@
 	<p><a class="db oh wsnw" href="https://github.com/PeterShaggyNoble/MDI-Sandbox/"><svg class="dib pen vam" data-icons="github-circle"><title>GitHub Project</title></svg></a></p>
 </header>
 <main id="content">
-	<aside>
-		<header class="ps">
-			<h2 class="oh toe wsnw">Important Notice</h2>
-		</header>
-		<p>To accommodate the new feature that allows you to add custom icons your library (formerly favourites) I have had to rewrite how your library is stored. If you're reading this message then that storage has already been updated automatically. However, if you keep a backup of your library you should note that support for the old format will be removed next Friday, the 11th of May. In order to ensure you can import your backup after that date please export your library again using the menu in the header of the "My Library" section below.</p>
-	</aside>
 	<section class="dg pr" id="icons">
 		<header class="ps">
 			<h2 class="oh toe wsnw">All Icons</h2>
@@ -1578,11 +1539,8 @@
 				error:page.section.querySelector`p`,
 				input:$`filter`,
 				heading:page.section.querySelector`h2`,
-				counter:C`span`,
 				init(){
 					this.button=this.input.nextElementSibling;
-					this.heading.appendChild(this.counter).append(this.counter=T``);
-					this.heading=this.heading.firstChild;
 					if(this.categories=page.params.get`categories`){
 						menu.categories.previousElementSibling.classList.add`open`;
 						for(let key of this.categories=new Set(this.categories.split`,`))
@@ -1597,7 +1555,6 @@
 						this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 					if(this.categories.size||this.contributors.size||this.text)
 						this.apply(1);
-					else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
 					this.clearall.dataset.count=icons.total;
 					this.input.addEventListener(`input`,()=>{
 						clearTimeout(this.timer);
@@ -1616,7 +1573,7 @@
 				},
 				apply(scroll){
 					page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
-					this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
+					this.heading.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
 					let	words=this.text&&this.text.split(/[\s\-]/),
 						matches=this.filtered?0:icons.total,
 						article,check,icon,key;
@@ -1643,7 +1600,7 @@
 								icon.articles.main.classList.toggle(`dn`,!check);
 							}
 						}
-					this.counter.nodeValue=` (${matches}/${icons.total})`;
+					this.heading.dataset.count=matches+`/`+icons.total;
 					this.error.classList.toggle(`dn`,!this.filtered||matches);
 					this.clearall.classList.toggle(`clear`,this.filtered);
 					if(this.filtered){
@@ -1692,15 +1649,8 @@
 				svg:N`svg`,
 				title:N`title`,
 				init(){
-					this.list=page.storage[`favourites`];
-					if(!this.list){
-						this.list=`{${Object.keys(page.storage).filter(key=>
-							key.startsWith`mdi-`
-						).map(key=>{
-							page.storage.removeItem(`mdi-${key}`);
-							return `"${key.substr(4)}":1`;
-						}).join`,`}}`;
-					}
+					this.list=page.storage[`favourites`]||`{}`;
+					for(let key in page.storage)page.storage.hasOwnProperty(key)&&key.startsWith`mdi-`&&page.storage.removeItem(key);
 					this.list=JSON.parse(this.list);
 					this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 					this.section=categories.list.library.section;
@@ -1918,7 +1868,7 @@
 						).forEach(key=>
 							this.section.append(this.section.removeChild(this.articles[key]))
 						);
-					categories.list.library.item.dataset.count=keys.length;
+					categories.list.library.heading.dataset.count=categories.list.library.item.dataset.count=keys.length;
 				},
 				toggle(name){
 					let article=this.articles[name],msg;
@@ -2195,7 +2145,7 @@
 					if(category.section){
 						section.id=key;
 						heading.firstChild.nodeValue=name;
-						header.append(heading);
+						header.append(category.heading=heading);
 						switch(key){
 							case`library`:
 								section.append(this.error);
@@ -2230,7 +2180,7 @@
 						item.lastChild.nodeValue=name;
 						item.dataset.category=key;
 						if(category.hasOwnProperty`count`)
-							item.dataset.count=category.count;
+							heading.dataset.count=item.dataset.count=category.count;
 						if(!category.section){
 							item.lastChild.before(this.svg=this.svg.cloneNode(1));
 							this.svg.dataset.icons=`check`;

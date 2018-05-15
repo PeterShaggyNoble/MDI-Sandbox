@@ -304,11 +304,8 @@
 			error:page.section.querySelector`p`,
 			input:$`filter`,
 			heading:page.section.querySelector`h2`,
-			counter:C`span`,
 			init(){
 				this.button=this.input.nextElementSibling;
-				this.heading.appendChild(this.counter).append(this.counter=T``);
-				this.heading=this.heading.firstChild;
 				if(this.categories=page.params.get`categories`){
 					menu.categories.previousElementSibling.classList.add`open`;
 					for(let key of this.categories=new Set(this.categories.split`,`))
@@ -323,7 +320,6 @@
 					this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 				if(this.categories.size||this.contributors.size||this.text)
 					this.apply(1);
-				else this.counter.nodeValue=` (${icons.total}/${icons.total})`;
 				this.clearall.dataset.count=icons.total;
 				this.input.addEventListener(`input`,()=>{
 					clearTimeout(this.timer);
@@ -342,7 +338,7 @@
 			},
 			apply(scroll){
 				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
-				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
+				this.heading.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
 					matches=this.filtered?0:icons.total,
 					article,check,icon,key;
@@ -369,7 +365,7 @@
 							icon.articles.main.classList.toggle(`dn`,!check);
 						}
 					}
-				this.counter.nodeValue=` (${matches}/${icons.total})`;
+				this.heading.dataset.count=matches+`/`+icons.total;
 				this.error.classList.toggle(`dn`,!this.filtered||matches);
 				this.clearall.classList.toggle(`clear`,this.filtered);
 				if(this.filtered){
@@ -418,15 +414,8 @@
 			svg:N`svg`,
 			title:N`title`,
 			init(){
-				this.list=page.storage[`favourites`];
-				if(!this.list){
-					this.list=`{${Object.keys(page.storage).filter(key=>
-						key.startsWith`mdi-`
-					).map(key=>{
-						page.storage.removeItem(`mdi-${key}`);
-						return `"${key.substr(4)}":1`;
-					}).join`,`}}`;
-				}
+				this.list=page.storage[`favourites`]||`{}`;
+				for(let key in page.storage)page.storage.hasOwnProperty(key)&&key.startsWith`mdi-`&&page.storage.removeItem(key);
 				this.list=JSON.parse(this.list);
 				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 				this.section=categories.list.library.section;
@@ -644,7 +633,7 @@
 					).forEach(key=>
 						this.section.append(this.section.removeChild(this.articles[key]))
 					);
-				categories.list.library.item.dataset.count=keys.length;
+				categories.list.library.heading.dataset.count=categories.list.library.item.dataset.count=keys.length;
 			},
 			toggle(name){
 				let article=this.articles[name],msg;
@@ -921,7 +910,7 @@
 				if(category.section){
 					section.id=key;
 					heading.firstChild.nodeValue=name;
-					header.append(heading);
+					header.append(category.heading=heading);
 					switch(key){
 						case`library`:
 							section.append(this.error);
@@ -956,7 +945,7 @@
 					item.lastChild.nodeValue=name;
 					item.dataset.category=key;
 					if(category.hasOwnProperty`count`)
-						item.dataset.count=category.count;
+						heading.dataset.count=item.dataset.count=category.count;
 					if(!category.section){
 						item.lastChild.before(this.svg=this.svg.cloneNode(1));
 						this.svg.dataset.icons=`check`;

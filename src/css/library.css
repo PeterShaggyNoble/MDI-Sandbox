@@ -310,43 +310,6 @@ body.highlight #highlight>svg>path+path{
 #clear>svg{
 	fill:currentcolor;
 }
-#content>aside{
-	background:#fff;
-	border-radius:2px;
-	box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
-	z-index:1;
-}
-#content>aside>header{
-	background:var(--colour);
-	border-radius:2px 2px 0 0;
-	padding:0 16px;
-	z-index:2;
-}
-#content>aside>header>h2{
-	color:#fff;
-	font-size:20px;
-	line-height:48px;
-}
-#content>aside>p{
-	line-height:20px;
-	padding:16px;
-}
-@media(max-width:759px){
-	#content>aside{
-		margin:8px;
-	}
-	#content>aside>header{
-		top:56px;
-	}
-}
-@media(min-width:760px){
-	#content>aside{
-		margin:16px;
-	}
-	#content>aside>header{
-		top:64px;
-	}
-}
 #content{
 	transition:margin .225s var(--timing-function);
 }
@@ -376,6 +339,10 @@ section#library{
 	color:#fff;
 	font-size:20px;
 	line-height:48px;
+}
+#content>section:not(#icons)>header>h2::after,
+#content>section.filtered>header>h2::after{
+	content:" (" attr(data-count) " icons)";
 }
 #content>section>header>svg{
 	fill:#fff;
