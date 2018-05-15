@@ -39,11 +39,11 @@
 				this.textarea.classList.add(`ln`,`pf`);
 				categories.init();
 				contributors.init();
+				icons.init();
 				if(this.storage)
 					favourites.init();
-				icons.init();
-				menu.init();
 				svgs.init();
+				menu.init();
 				info.init();
 				editor.init();
 				if(this.size<2)

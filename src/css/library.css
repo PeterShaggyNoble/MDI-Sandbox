@@ -153,6 +153,30 @@ body :hover::-webkit-scrollbar-thumb{
 body.menu #menu{
 	transition-duration:.225s;
 }
+#menu>p,#menu>h3,#menu>ol>li{
+	height:48px;
+	padding:0 16px;
+	transition-duration:.225s,.225s,.195s;
+	transition-property:background,color,height,opacity;
+	transition-timing-function:var(--timing-function);
+}
+#menu>p:focus,#menu>p:hover,
+#menu>ol>li:focus,#menu>ol>li:hover{
+	color:var(--colour);
+}
+#menu>p>svg,
+#menu>h3>svg:first-of-type,
+#menu>ol>li>svg:first-of-type{
+	fill:#757575;
+	margin:0 36px 0 0;
+	transition:fill .225s var(--timing-function);
+}
+#menu>p:focus>svg,
+#menu>h3.open>svg:first-of-type,
+#menu>ol>li:focus>svg:first-of-type{
+	fill:var(--colour);
+	transition-duration:inherit;
+}
 #menu>p>svg>path+path{
 	fill:var(--colour);
 	opacity:0;
@@ -163,16 +187,14 @@ body.highlight #highlight>svg>path+path{
 }
 #menu>h3{
 	color:#616161;
-	line-height:48px;
-	padding:0 16px;
 }
-#menu>h3>svg{
-	fill:currentcolor;
+#menu>h3>svg:last-of-type{
+	fill:#616161;
 	float:right;
 	margin:12px 0 12px 8px;
 	transition:transform .195s var(--timing-function);
 }
-#menu>h3.open>svg{
+#menu>h3.open>svg:last-of-type{
 	transform:rotate(90deg);
 }
 #menu>ol,#extras{
@@ -182,13 +204,6 @@ body.highlight #highlight>svg>path+path{
 	border-top:1px solid #bdbdbd;
 	margin-top:8px;
 	padding-top:8px;
-}
-#menu>p,#menu>ol>li{
-	height:48px;
-	padding:0 16px;
-	transition-duration:.225s,.225s,.195s;
-	transition-property:background,color,height,opacity;
-	transition-timing-function:var(--timing-function);
 }
 #menu>ol>li[data-count]::after{
 	color:#616161;
@@ -202,18 +217,6 @@ body.highlight #highlight>svg>path+path{
 	height:0;
 	margin:0;
 	opacity:0;
-}
-#menu>p:focus,#menu>p:hover,#menu>ol>li:focus,#menu>ol>li:hover{
-	color:var(--colour);
-}
-#menu>p>svg,#menu>ol>li>svg:first-of-type{
-	fill:#757575;
-	margin:0 36px 0 0;
-	transition:fill .225s var(--timing-function);
-}
-#menu>p:focus>svg,#menu>ol>li:focus>svg:first-of-type{
-	fill:var(--colour);
-	transition-duration:inherit;
 }
 #all{
 	transform-style:preserve-3d;
