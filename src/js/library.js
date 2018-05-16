@@ -42,9 +42,9 @@
 				icons.init();
 				if(this.storage)
 					favourites.init();
-				svgs.init();
 				menu.init();
 				info.init();
+				svgs.init();
 				editor.init();
 				if(this.size<2)
 					this.load();
@@ -306,6 +306,8 @@
 			heading:page.section.querySelector`h2`,
 			init(){
 				this.button=this.input.nextElementSibling;
+				this.counter=this.heading.dataset;
+				this.heading=this.heading.firstChild;
 				if(this.categories=page.params.get`categories`){
 					menu.categories.previousElementSibling.classList.add`open`;
 					for(let key of this.categories=new Set(this.categories.split`,`))
@@ -338,7 +340,7 @@
 			},
 			apply(scroll){
 				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
-				this.heading.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
+				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 				let 	words=this.text&&this.text.split(/[\s\-]/),
 					matches=this.filtered?0:icons.total,
 					article,check,icon,key;
@@ -365,7 +367,7 @@
 							icon.articles.main.classList.toggle(`dn`,!check);
 						}
 					}
-				this.heading.dataset.count=matches+`/`+icons.total;
+				this.counter.count=matches+`/`+icons.total;
 				this.error.classList.toggle(`dn`,!this.filtered||matches);
 				this.clearall.classList.toggle(`clear`,this.filtered);
 				if(this.filtered){

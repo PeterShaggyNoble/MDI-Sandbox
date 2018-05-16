@@ -351,10 +351,6 @@
 		font-size:20px;
 		line-height:48px;
 	}
-	#content>section:not(#icons)>header>h2::after,
-	#content>section.filtered>header>h2::after{
-		content:" (" attr(data-count) " icons)";
-	}
 	#content>section>header>svg{
 		fill:#fff;
 		right:8px;
@@ -956,6 +952,18 @@
 			display:none;
 		}
 	}
+	@media(min-width:350px){
+		#content>section:not(#icons)>header>h2::after,
+		#content>section.filtered>header>h2::after{
+			content:" (" attr(data-count) ")";
+		}
+	}
+	@media(min-width:420px){
+		#content>section:not(#icons)>header>h2::after,
+		#content>section.filtered>header>h2::after{
+			content:" (" attr(data-count) " icons)";
+		}
+	}
 	@media(min-width:760px){
 		body{
 			padding-top:64px;
@@ -1281,9 +1289,9 @@
 					icons.init();
 					if(this.storage)
 						favourites.init();
-					svgs.init();
 					menu.init();
 					info.init();
+					svgs.init();
 					editor.init();
 					if(this.size<2)
 						this.load();
@@ -1545,6 +1553,8 @@
 				heading:page.section.querySelector`h2`,
 				init(){
 					this.button=this.input.nextElementSibling;
+					this.counter=this.heading.dataset;
+					this.heading=this.heading.firstChild;
 					if(this.categories=page.params.get`categories`){
 						menu.categories.previousElementSibling.classList.add`open`;
 						for(let key of this.categories=new Set(this.categories.split`,`))
@@ -1577,7 +1587,7 @@
 				},
 				apply(scroll){
 					page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
-					this.heading.firstChild.nodeValue=this.filtered?`Search Results`:`All Icons`;
+					this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
 					let	words=this.text&&this.text.split(/[\s\-]/),
 						matches=this.filtered?0:icons.total,
 						article,check,icon,key;
@@ -1604,7 +1614,7 @@
 								icon.articles.main.classList.toggle(`dn`,!check);
 							}
 						}
-					this.heading.dataset.count=matches+`/`+icons.total;
+					this.counter.count=matches+`/`+icons.total;
 					this.error.classList.toggle(`dn`,!this.filtered||matches);
 					this.clearall.classList.toggle(`clear`,this.filtered);
 					if(this.filtered){
@@ -17941,7 +17951,8 @@
 		"categories":["home"],
 		"codepoint":"f916",
 		"contributor":"greenturtwig",
-		"data":"M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V4A2,2 0 0,0 18,2H6M7,4A1,1 0 0,1 8,5A1,1 0 0,1 7,6A1,1 0 0,1 6,5A1,1 0 0,1 7,4M10,4A1,1 0 0,1 11,5A1,1 0 0,1 10,6A1,1 0 0,1 9,5A1,1 0 0,1 10,4M12,8A6,6 0 0,1 18,14A6,6 0 0,1 12,20A6,6 0 0,1 6,14A6,6 0 0,1 12,8M9.32,10C8.91,10.89 8.5,11.78 8.5,12.67C8.5,13.55 9.32,14.45 9.32,15.33C9.32,16.22 8.5,17.11 8.5,18H9.73C9.73,17.11 10.56,16.22 10.56,15.33C10.56,14.45 9.73,13.55 9.73,12.67C9.73,11.78 10.15,10.89 10.56,10H9.32M11.79,10C11.38,10.89 10.97,11.78 10.97,12.67C10.97,13.55 11.79,14.45 11.79,15.33C11.79,16.22 10.97,17.11 10.97,18H12.21C12.21,17.11 13.03,16.22 13.03,15.33C13.03,14.45 12.21,13.55 12.21,12.67C12.21,11.78 12.62,10.89 13.03,10H11.79M14.27,10C13.85,10.89 13.44,11.78 13.44,12.67C13.44,13.55 14.27,14.45 14.27,15.33C14.27,16.22 13.44,17.11 13.44,18H14.68C14.68,17.11 15.5,16.22 15.5,15.33C15.5,14.45 14.68,13.55 14.68,12.67C14.68,11.78 15.09,10.89 15.5,10H14.27Z"
+		"data":"M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M7,4A1,1 0 0,0 6,5A1,1 0 0,0 7,6A1,1 0 0,0 8,5A1,1 0 0,0 7,4M10,4A1,1 0 0,0 9,5A1,1 0 0,0 10,6A1,1 0 0,0 11,5A1,1 0 0,0 10,4M12,8A6,6 0 0,0 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14A6,6 0 0,0 12,8M8.11,10.5H10C9.76,11.88 10,12.67 10.58,13.29C11.68,14.36 12.16,15.71 11.89,17.5H10C10.24,16.12 10,15.33 9.42,14.71C8.32,13.64 7.85,12.29 8.11,10.5M12.11,10.5H14C13.76,11.88 14,12.67 14.58,13.29C15.68,14.36 16.16,15.71 15.89,17.5H14C14.24,16.12 14,15.33 13.42,14.71C12.32,13.64 11.85,12.29 12.11,10.5Z",
+						"updated":"{next}"
 	},
 	"tumblr":{
 		"categories":["logos"],
