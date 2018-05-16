@@ -2373,7 +2373,7 @@ class MDI{
 	public function __construct($name){
 		$this->path=self::data[$name&&isset(self::data[$name])?$name:self::defaults["icon"]];
 	}
-	private function __toString(){
+	public function __toString(){
 		return$this->path;
 	}
 	public function svg($title="",$size=0,$fill="",$attr=[]){
