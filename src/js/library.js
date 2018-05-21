@@ -269,7 +269,7 @@
 					if(this.show)
 						b.addEventListener(`keydown`,this.functions.close=event=>
 							event.keyCode===27&&this.toggle()
-							,0);
+						,0);
 					else b.removeEventListener(`keydown`,this.functions.close);
 			},
 			touchend(clientx){
@@ -1384,7 +1384,7 @@
 			month=date.getMonth(),
 			day=date.getDate();
 		if(month===11&&day>12||month===0&&day<6)
-			this.header.classList.add("snow");
+			page.header.classList.add("snow");
 		window.dataLayer=window.dataLayer||[];
 		let gtag=function(){window.dataLayer.push(arguments);};
 		gtag(`js`,date);
