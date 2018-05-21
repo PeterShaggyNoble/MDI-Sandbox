@@ -60,8 +60,9 @@
 					php:this.options.lastElementChild
 				};
 				this.actions.json=this.actions.link.nextElementSibling;
-				this.actions.html=this.actions.php.previousElementSibling;
-				this.actions.svg=this.actions.html.previousElementSibling;
+				this.actions.svg=this.actions.json.nextElementSibling;
+				this.actions.polymer=this.actions.php.previousElementSibling;
+				this.actions.angular=this.actions.polymer.previousElementSibling;
 				this.header.addEventListener(`click`,event=>{
 					if(event.target.nodeName.toLowerCase()===`a`&&this.offline){
 						this.alert`Could not connect.`;
@@ -73,19 +74,22 @@
 						parent=target.parentNode,
 						current=this.main.querySelector`article.active`;
 					switch(target){
+						case this.actions.angular:
+							this.download(`data:text/svg+xml;utf8,<svg><defs>${filter.filtered?this.build(`angular`):this.packages.xml||(this.packages.xml=this.build(`angular`))}</defs></svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.svg`);
+							break;
 						case this.actions.link:
 							this.copy(filter.filtered&&filter.url?filter.url:`${this.address}?section=icons`,`Link`);
 							break;
 						case this.actions.json:
-							this.download(`data:text/json;utf8,{${filter.filtered?this.build`jsono`:this.packages.json||(this.packages.jsono=this.build`jsono`)}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
+							this.download(`data:text/json;utf8,{${filter.filtered?this.build(`jsono`):this.packages.json||(this.packages.jsono=this.build(`jsono`))}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
 							break;
 						case this.actions.php:
-							this.download(`data:text/php;utf8,`+(await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build`php`:this.packages.php||(this.packages.php=this.build`php`)}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
+							this.download(`data:text/php;utf8,`+(await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build(`php`):this.packages.php||(this.packages.php=this.build(`php`))}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
 							break;
+						case this.actions.polymer:
+							this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.html`);
 						case this.actions.svg:
-						case this.actions.html:
-							let svg=target===this.actions.svg;
-							this.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${filter.filtered?this.build`xml`:this.packages.xml||(this.packages.xml=this.build`xml`)}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`${filter.filtered?`mdi-custom`:`mdi`}.${svg?`svg`:`html`}`);
+							this.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs>${filter.filtered?this.build(`svg`):this.packages.xml||(this.packages.xml=this.build(`svg`))}</defs></svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.svg`);
 							break;
 						default:
 							switch(target.nodeName.toLowerCase()){
@@ -140,8 +144,12 @@
 			build:type=>Object.entries(icons.list).filter(([key,icon])=>
 					icon.articles.main&&!icon.articles.main.classList.contains`dn`
 			).map(([key,icon])=>
-				type==`xml`?`<g id="${key}"><path d="${icon.data}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${icon.data}"`
-			).join(type==`xml`?``:`,`),
+				type===`svg`?
+					`<path id="mdi-${key}" d="${icon.data}"/>`:
+					type===`angular`?
+						`<g id="${key}"><path d="${icon.data}"/></g>`:
+						`"${key}"${type===`php`?`=>`:`:`}"${icon.data}"`
+			).join(type===`php`||type===`json`?`,`:`:`),
 			async copy(string,message){
 				try{
 					await navigator.clipboard.writeText(string);
@@ -444,8 +452,9 @@
 				this.actions={
 					add:new this.Item(`plus-circle`,`Add Icon`),
 					json:new this.Item(`json`,`JSON Object`),
-					svg:new this.Item(`angular`,`SVG for Angular`),
-					html:new this.Item(`polymer`,`HTML for Polymer`),
+					svg:new this.Item(`svg`,`SVG Sprite`),
+					angular:new this.Item(`angular`,`SVG for Angular`),
+					polymer:new this.Item(`polymer`,`HTML for Polymer`),
 					php:new this.Item(`language-php`,`PHP Library (WIP)`),
 					import:new this.Item(`file-import`,`Import Library`),
 					export:new this.Item(`file-export`,`Export Library`),
@@ -470,16 +479,20 @@
 						case this.actions.add:
 							this.open();
 							break;
+						case this.actions.angular:
+							page.download(`data:text/svg+xml;utf8<svg><defs>${this.build(`angular`)}</defs></svg>`,`mdi-library.svg`);
+							break;
 						case this.actions.json:
-							page.download(`data:text/json;utf8,{${this.build`jsono`}}`,`mdi-library.json`);
+							page.download(`data:text/json;utf8,{${this.build(`jsono`)}}`,`mdi-library.json`);
+							break;
+						case this.actions.polymer:
+							page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${this.build(`polymer`)}</defs></svg></iron-iconset-svg>`,`mdi-library.html`);
 							break;
 						case this.actions.php:
 							page.download(`data:text/php;utf8,`+(await page.getphp()).replace(/const data=\[\]/,`const data=[${this.build`php`}]`),`mdi-library.php`);
 							break;
 						case this.actions.svg:
-						case this.actions.html:
-							let svg=target===this.actions.svg;
-							page.download(`data:${svg?`text/svg+xml;utf8,`:`text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24">`}<svg><defs>${this.build`xml`}</defs></svg>${svg?``:`</iron-iconset-svg>`}`,`mdi-library.${svg?`svg`:`html`}`);
+							page.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs>${this.build(`svg`)}</defs></svg>`,`mdi-library.svg`);
 							break;
 						case this.actions.import:
 							b.append(this.input);
@@ -570,8 +583,12 @@
 				}
 			},
 			build:type=>Object.keys(favourites.list).sort().map(key=>
-				type==`xml`?`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></g>`:`"${key}"${type==`php`?`=>`:`:`}"${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"`
-			).join(type==`xml`?``:`,`),
+				type===`svg`?
+					`<path id="mdi-${key}" d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/>`:
+					type===`angular`?
+						`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></g>`:
+						`"${key}"${type===`php`?`=>`:`:`}"${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"`
+			).join(type===`php`||type===`json`?`,`:`:`),
 			close(value){
 				b.removeEventListener(`keydown`,this.fn);
 				this.dialog.classList.add(`oz`,`pen`);
