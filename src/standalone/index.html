@@ -1332,7 +1332,7 @@
 								this.download(`data:text/json;utf8,{${filter.filtered?this.build(`jsono`):this.packages.json||(this.packages.jsono=this.build(`jsono`))}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
 								break;
 							case this.actions.php:
-								this.download(`data:text/php;utf8,`+(await this.getphp()).replace(/const data=\[\]/,`const data=[${filter.filtered?this.build(`php`):this.packages.php||(this.packages.php=this.build(`php`))}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
+								this.download(`data:text/php;utf8,`+(await this.getphp()).replace(/const library=\[\]/,`const library=[${filter.filtered?this.build(`php`):this.packages.php||(this.packages.php=this.build(`php`))}]`),`${filter.filtered?`mdi-custom`:`mdi`}.php`);
 								break;
 							case this.actions.polymer:
 								this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.html`);
@@ -1419,7 +1419,7 @@
 					this.anchor.remove();
 					URL.revokeObjectURL(this.anchor.href);
 				},
-				getphp:async()=>page.php=page.php||(await(await fetch(`${page.address}libraries/mdi-php/mdi.php`)).text()).replace(/\n\/\* DELETE BELOW \*\/\n[\s\S]+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*[\s\S]+?\*\/\n/g,``).replace(/const data=\[[\s\S]+?\]/,`const data=[]`)
+				getphp:async()=>page.php=page.php||(await(await fetch(`${page.address}libraries/mdi-php/mdi.php`)).text()).replace(/\n\/\* DELETE BELOW \*\/\n[\s\S]+?\n\/\* DELETE ABOVE \*\/\n\n|\/\*[\s\S]+?\*\/\n/g,``).replace(/const library=\[[\s\S]+?\]/,`const library=[]`)
 			},
 			svgs={
 				path:N`path`,
@@ -1737,7 +1737,7 @@
 								page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${this.build(`polymer`)}</defs></svg></iron-iconset-svg>`,`mdi-library.html`);
 								break;
 							case this.actions.php:
-								page.download(`data:text/php;utf8,`+(await page.getphp()).replace(/const data=\[\]/,`const data=[${this.build`php`}]`),`mdi-library.php`);
+								page.download(`data:text/php;utf8,`+(await page.getphp()).replace(/const library=\[\]/,`const library=[${this.build`php`}]`),`mdi-library.php`);
 								break;
 							case this.actions.svg:
 								page.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs>${this.build(`svg`)}</defs></svg>`,`mdi-library.svg`);
