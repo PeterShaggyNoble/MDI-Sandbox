@@ -1,24 +1,13 @@
 <?php
-
 // NOTE: This library is a work in progress and not yet fit for production use.
 // For usage instructions and to provide feedback please see:
 // https://github.com/Templarian/MaterialDesign/issues/3087
-
-/* TODO: ADD NOTE ABOUT EDITING DEFAULTS + URL OF USAGE INTRUCTIONS / DOCUMENTATION */
-
 namespace materialdesignicons;
-
-/* DELETE BELOW */
-ini_set("display_errors",1);
-error_reporting(E_ALL);
-/* DELETE ABOVE */
-
 const defaults=[
 	"fill"=>"212121",
 	"icon"=>"help-circle-outline",
 	"size"=>24
 ];
-
 const library=[
 	"access-point"=>"M4.93,4.93C3.12,6.74 2,9.24 2,12C2,14.76 3.12,17.26 4.93,19.07L6.34,17.66C4.89,16.22 4,14.22 4,12C4,9.79 4.89,7.78 6.34,6.34L4.93,4.93M19.07,4.93L17.66,6.34C19.11,7.78 20,9.79 20,12C20,14.22 19.11,16.22 17.66,17.66L19.07,19.07C20.88,17.26 22,14.76 22,12C22,9.24 20.88,6.74 19.07,4.93M7.76,7.76C6.67,8.85 6,10.35 6,12C6,13.65 6.67,15.15 7.76,16.24L9.17,14.83C8.45,14.11 8,13.11 8,12C8,10.89 8.45,9.89 9.17,9.17L7.76,7.76M16.24,7.76L14.83,9.17C15.55,9.89 16,10.89 16,12C16,13.11 15.55,14.11 14.83,14.83L16.24,16.24C17.33,15.15 18,13.65 18,12C18,10.35 17.33,8.85 16.24,7.76M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z",
 	"access-point-network"=>"M4.93,2.93C3.12,4.74 2,7.24 2,10C2,12.76 3.12,15.26 4.93,17.07L6.34,15.66C4.89,14.22 4,12.22 4,10C4,7.79 4.89,5.78 6.34,4.34L4.93,2.93M19.07,2.93L17.66,4.34C19.11,5.78 20,7.79 20,10C20,12.22 19.11,14.22 17.66,15.66L19.07,17.07C20.88,15.26 22,12.76 22,10C22,7.24 20.88,4.74 19.07,2.93M7.76,5.76C6.67,6.85 6,8.35 6,10C6,11.65 6.67,13.15 7.76,14.24L9.17,12.83C8.45,12.11 8,11.11 8,10C8,8.89 8.45,7.89 9.17,7.17L7.76,5.76M16.24,5.76L14.83,7.17C15.55,7.89 16,8.89 16,10C16,11.11 15.55,12.11 14.83,12.83L16.24,14.24C17.33,13.15 18,11.65 18,10C18,8.35 17.33,6.85 16.24,5.76M12,8A2,2 0 0,0 10,10A2,2 0 0,0 12,12A2,2 0 0,0 14,10A2,2 0 0,0 12,8M11,14V18H10A1,1 0 0,0 9,19H2V21H9A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21H22V19H15A1,1 0 0,0 14,18H13V14H11Z",
@@ -2507,7 +2496,6 @@ const library=[
 	"youtube-tv"=>"M2.5,4.5H21.5C22.34,4.5 23,5.15 23,6V17.5C23,18.35 22.34,19 21.5,19H2.5C1.65,19 1,18.35 1,17.5V6C1,5.15 1.65,4.5 2.5,4.5M9.71,8.5V15L15.42,11.7L9.71,8.5M17.25,21H6.65C6.35,21 6.15,20.8 6.15,20.5C6.15,20.2 6.35,20 6.65,20H17.35C17.65,20 17.85,20.2 17.85,20.5C17.85,20.8 17.55,21 17.25,21Z",
 	"zip-box"=>"M14,17H12V15H10V13H12V15H14M14,9H12V11H14V13H12V11H10V9H12V7H10V5H12V7H14M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"
 ];
-
 class MDI{
 	public function __construct($name){
 		if($name&&isset(library[$name]))
@@ -2518,11 +2506,11 @@ class MDI{
 	public function __toString(){
 		return$this->data;
 	}
-	private function setattributes($size=0,$fill="",$attributes=[]){
-		if($size)
-			$attributes["width"]=$attributes["height"]=$size;
+	private function setattributes($fill="",$size=0,$attributes=[]){
 		if($fill)
 			$attributes["fill"]="#".str_replace("#","",$fill);
+		if($size)
+			$attributes["width"]=$attributes["height"]=$size;
 		ksort($attributes);
 		$attributes=implode(" ",array_map(
 			function($val,$key){
@@ -2535,37 +2523,36 @@ class MDI{
 			$attributes=" $attributes";
 		return$attributes;
 	}
-	public function svg($title="",$size=0,$fill="",$attributes=[]){
+	public function svg($title="",$fill="",$size=0,$attributes=[]){
 		if($title)
 			$title="<title>$title</title>";
 		$attributes["viewBox"]="0 0 24 24";
 		$attributes["xmlns"]="http://www.w3.org/2000/svg";
-		$attributes=$this->setattributes($size,$fill,$attributes);
+		$attributes=$this->setattributes($fill,$size,$attributes);
 		return	"<svg$attributes>".
 			$title.
 			$this->path().
 			"</svg>";
 	}
 	public function path($fill="",$attributes=[]){
-		$attributes=$this->setattributes(0,$fill,$attributes);
+		$attributes=$this->setattributes($fill,0,$attributes);
 		return	"<path$attributes d=\"$this->data\"/>";
 	}
 	public function utf8($fill=defaults["fill"],$size=defaults["size"]){
 		return	"data:image/svg+xml;utf8,".
-			str_replace("\"","'",$this->svg("",$size,$fill));
+			str_replace("\"","'",$this->svg("",$fill,$size));
 	}
 	public function base64($fill=defaults["fill"],$size=defaults["size"]){
 		return	"data:image/svg+xml;base64,".
-			base64_encode($this->svg("",$size,$fill));
+			base64_encode($this->svg("",$fill,$size));
 	}
 	public function file($fill,$size){
 		header("content-type:image/svg+xml");
 		echo	"<?xml version=\"1.0\" encoding=\"utf-8\"?>".
 			"<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">".
-			$this->svg("",$size,$fill);
+			$this->svg("",$fill,$size);
 	}
 };
-
 function icon($name){
 	return new MDI($name);
 }
@@ -2581,151 +2568,10 @@ function utf8($name,...$arguments){
 function base64($name,...$arguments){
 	return icon($name)->base64(...$arguments);
 }
-
 if(isset($_GET["mdi-icon"])){
 	$fill=isset($_GET["mdi-fill"])?$_GET["mdi-fill"]:defaults["fill"];
 	$size=isset($_GET["mdi-size"])?$_GET["mdi-size"]:defaults["size"];
 	icon($_GET["mdi-icon"])->file($fill,$size);
 	die;
 }
-
-/* DELETE BELOW */
-else{
-	$icon=isset($_GET["icon"])?$_GET["icon"]:defaults["icon"];
-	$fill=isset($_GET["fill"])?$_GET["fill"]:defaults["fill"];
-	$size=isset($_GET["size"])?$_GET["size"]:defaults["size"];
-	$title=isset($_GET["title"])?$_GET["title"]:"";
-	echo	"<!DOCTYPE html>".
-		"<title>mdi.php Tests</title>".
-		"<link href=\"https://petershaggynoble.github.io/MDI-Sandbox/img/$fill/16.png\" rel=\"shortcut icon\">".
-		"<meta charset=\"utf-8\">".
-		"<meta content=\"initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0,width=device-width\" name=\"viewport\">".
-		"<meta name=\"robots\" content=\"nofollow,noindex,noodp\">".
-		"<style>@font-face{".
-		"font-family:Roboto;".
-		"font-style:normal;".
-		"font-weight:400;".
-		"src:local(\"Roboto\"),local(\"Roboto-Regular\"),url(../fnt/roboto.woff2) format(\"woff2\");".
-		"unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;".
-		"}".
-		"@font-face{".
-		"font-family:Roboto;".
-		"font-style:normal;".
-		"font-weight:500;".
-		"src:local(\"Roboto Medium\"),local(\"Roboto-Medium\"),url(../fnt/roboto-medium.woff2) format(\"woff2\");".
-		"unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;".
-		"}".
-		"*{".
-		"border:0;".
-		"box-sizing:border-box;".
-		"font-weight:400;".
-		"margin:0;".
-		"padding:0;".
-		"}".
-		"body{".
-		"align-items:center;".
-		"background:#e0e0e0;".
-		"color:#212121;".
-		"display:flex;".
-		"font-family:Roboto;".
-		"font-size:14px;".
-		"min-height:100vh;".
-		"justify-content:center;".
-		"padding:16px;".
-		"}".
-		"article{".
-		"background:#fff;".
-		"border-radius:2px;".
-		"box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);".
-		"padding:0 16px 16px;".
-		"width:500px;".
-		"}".
-		"h1{".
-		"background:#".($fill).";".
-		"color:#fff;".
-		"font-size:20px;".
-		"font-weight:700;".
-		"line-height:48px;".
-		"margin:0 -16px 16px;".
-		"padding:0 16px;".
-		"}".
-		"pre{".
-		"background:#eee;".
-		"border-radius:2px;".
-		"font-family:consolas,lucida console,courier new,monospace;".
-		"font-size:12px;".
-		"line-height:24px;".
-		"margin:0 0 16px;".
-		"overflow:auto;".
-		"padding:0 4px;".
-		"}".
-		"svg{".
-		"margin:0 0 16px;".
-		"}".
-		"pre+img,pre+svg{".
-		"margin:-8px 0 16px;".
-		"}".
-		"</style>".
-		"<article>".
-		"<h1>materialdesignicons\icon(\"name\")</h1>".
-		"<pre>".
-		icon($icon).
-		"</pre>".
-		"<h1>materialdesignicons\svg(\"name\",options)</h1>".
-		"<pre>".
-		str_replace("<","&lt;",svg(
-			$icon,
-			$title,
-			$size,
-			$fill,
-			["class"=>"mdi"]
-		)).
-		"</pre>".
-		svg(
-			$icon,
-			$title,
-			$size,
-			$fill,
-			["class"=>"mdi"]
-		).
-		"<h1>materialdesignicons\path(\"name\",options)</h1>".
-		"<pre>".
-		str_replace("<","&lt;",path(
-			$icon,
-			$fill,
-			["class"=>"mdi"]
-		)).
-		"</pre>".
-		"<h1>materialdesignicons\utf8(\"name\",options)</h1>".
-		"<pre>".
-		str_replace("<","&lt;",utf8(
-			$icon,
-			$fill,
-			$size
-		)).
-		"</pre>".
-		"<img src=\"".utf8(
-			$icon,
-			$fill,
-			$size
-		)."\">".
-		"<h1>materialdesignicons\base64(\"name\",options)</h1>".
-		"<pre>".
-		str_replace("<","&lt;",base64(
-			$icon,
-			$fill,
-			$size
-		)).
-		"</pre>".
-		"<img src=\"".base64(
-			$icon,
-			$fill,
-			$size
-		)."\">".
-		"<h1>Use File As Image URL</h1>".
-		"<img src=\"mdi.php?mdi-icon=$icon&amp;mdi-fill=$fill&amp;mdi-size=$size\">".
-		"</article>";
-}
-/* DELETE ABOVE */
-
 ?>
