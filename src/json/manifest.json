@@ -1,27 +1,27 @@
 {
-	"background_color":"#c2185b",
+	"background_color":"#455a64",
 	"description":"A jacked up cheatsheet for https://materialdesignicons.com/",
 	"display":"standalone",
 	"icons":[{
 		"sizes":"64x64",
-		"src":"../img/c2185b/64.png",
+		"src":"../img/455a64/64.png",
 		"type":"image/png"
 	},{
 		"density":2,
 		"sizes":"128x128",
-		"src":"../img/c2185b/128.png",
+		"src":"../img/455a64/128.png",
 		"type":"image/png"
 	},{
 		"sizes":"144x144",
-		"src":"../img/c2185b/144.png",
+		"src":"../img/455a64/144.png",
 		"type":"image/png"
 	},{
 		"sizes":"192x192",
-		"src":"../img/c2185b/192.png",
+		"src":"../img/455a64/192.png",
 		"type":"image/png"
 	},{
 		"sizes":"512x512",
-		"src":"../img/c2185b/512.png",
+		"src":"../img/455a64/512.png",
 		"type":"image/png"
 	}],
 	"lang":"en",
@@ -30,5 +30,5 @@
 	"scope":"/MDI-Sandbox/",
 	"short_name":"MDI",
 	"start_url":"/MDI-Sandbox/",
-	"theme_color":"#c2185b"
+	"theme_color":"#455a64"
 }

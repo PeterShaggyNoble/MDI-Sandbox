@@ -2502,11 +2502,12 @@ class MDI{
 			$this->data=library[$name];
 		else
 			$this->data=library[defaults["icon"]];
+//			throw new \InvalidArgumentException("Invalid icon name.")
 	}
 	public function __toString(){
 		return$this->data;
 	}
-	private function setattributes($fill="",$size=0,$attributes=[]){
+	public static function setattributes($fill="",$size=0,$attributes=[]){
 		if($fill)
 			$attributes["fill"]="#".str_replace("#","",$fill);
 		if($size)
@@ -2523,7 +2524,7 @@ class MDI{
 			$attributes=" $attributes";
 		return$attributes;
 	}
-	public function svg($title="",$fill="",$size=0,$attributes=[]){
+	public function svg($fill="",$size=0,$title="",$attributes=[]){
 		if($title)
 			$title="<title>$title</title>";
 		$attributes["viewBox"]="0 0 24 24";
@@ -2540,38 +2541,55 @@ class MDI{
 	}
 	public function utf8($fill=defaults["fill"],$size=defaults["size"]){
 		return	"data:image/svg+xml;utf8,".
-			str_replace("\"","'",$this->svg("",$fill,$size));
+			str_replace("\"","'",$this->svg($fill,$size));
 	}
 	public function base64($fill=defaults["fill"],$size=defaults["size"]){
 		return	"data:image/svg+xml;base64,".
-			base64_encode($this->svg("",$fill,$size));
+			base64_encode($this->svg($fill,$size));
 	}
 	public function file($fill,$size){
 		header("content-type:image/svg+xml");
 		echo	"<?xml version=\"1.0\" encoding=\"utf-8\"?>".
 			"<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">".
-			$this->svg("",$fill,$size);
+			$this->svg($fill,$size);
 	}
 };
-function icon($name){
+function data($name){
 	return new MDI($name);
 }
 function svg($name,...$arguments){
-	return icon($name)->svg(...$arguments);
+	$icon=new MDI($name);
+	return$icon->svg(...$arguments);
 }
 function path($name,...$arguments){
-	return icon($name)->path(...$arguments);
+	$icon=new MDI($name);
+	return$icon->path(...$arguments);
 }
 function utf8($name,...$arguments){
-	return icon($name)->utf8(...$arguments);
+	$icon=new MDI($name);
+	return$icon->utf8(...$arguments);
 }
 function base64($name,...$arguments){
-	return icon($name)->base64(...$arguments);
+	$icon=new MDI($name);
+	return$icon->base64(...$arguments);
 }
+/*function twotone($name,$fill="",$stroke="",$size=0,$title="",$attributes=[]){
+	if($title)
+		$title="<title>$title</title>";
+	$attributes["viewBox"]="0 0 24 24";
+	$attributes["xmlns"]="http://www.w3.org/2000/svg";
+	$attributes=MDI::setattributes("",$size,$attributes);
+	return	"<svg$attributes>".
+		$title.
+		path($name,$fill).
+		path("$name-outline",$stroke).
+		"</svg>";
+}*/
 if(isset($_GET["mdi-icon"])){
+	$icon=new MDI($_GET["mdi-icon"]);
 	$fill=isset($_GET["mdi-fill"])?$_GET["mdi-fill"]:defaults["fill"];
 	$size=isset($_GET["mdi-size"])?$_GET["mdi-size"]:defaults["size"];
-	icon($_GET["mdi-icon"])->file($fill,$size);
+	$icon->file($fill,$size);
 	die;
 }
 ?>
