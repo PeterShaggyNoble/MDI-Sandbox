@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2018-05-22:** Material Design Icons v2.4.85 released.
 - **2018-05-21:** Added the option to download favourites and currently filtered icons as an SVG sprite.
 - **2018-05-11:** Icons can now be copied as base-64 encoded data URIs.
 - **2018-05-10:** Added the original Google stock icons to the automated preview generator.
