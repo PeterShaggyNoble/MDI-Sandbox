@@ -35,9 +35,10 @@
 		"data":"M6,17C6,15 10,13.9 12,13.9C14,13.9 18,15 18,17V18H6M15,9A3,3 0 0,1 12,12A3,3 0 0,1 9,9A3,3 0 0,1 12,6A3,3 0 0,1 15,9M3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5C3.89,3 3,3.9 3,5Z",
 		"keywords":["person"]
 	},
-	"account-box-mutiple":{
+	"account-box-multiple":{
 		"added":2485,
 		"categories":["users"],
+		"codepoint":"f933",
 		"contributor":"google",
 		"data":"M4,6H2V20A2,2 0 0,0 4,22H18V20H4V6M20,2A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H8A2,2 0 0,1 6,16V4A2,2 0 0,1 8,2H20M17,7A3,3 0 0,0 14,4A3,3 0 0,0 11,7A3,3 0 0,0 14,10A3,3 0 0,0 17,7M8,15V16H20V15C20,13 16,11.9 14,11.9C12,11.9 8,13 8,15Z",
 		"keywords":["people","users"]
@@ -3837,6 +3838,7 @@
 	"christianity":{
 		"added":2485,
 		"categories":["places"],
+		"codepoint":"f952",
 		"contributor":"nick",
 		"data":"M10.5,2H13.5V8H19V11H13.5V22H10.5V11H5V8H10.5V2Z"
 	},
@@ -17333,11 +17335,5 @@
 		"codepoint":"f5c4",
 		"contributor":"google",
 		"data":"M14,17H12V15H10V13H12V15H14M14,9H12V11H14V13H12V11H10V9H12V7H10V5H12V7H14M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"
-	},
-	"account-box-multiple":{
-		"codepoint":"f933"
-	},
-	"christiantiy":{
-		"codepoint":"f952"
 	}
 }
