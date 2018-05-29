@@ -32,22 +32,6 @@
 		"upvotes":1,
 		"user":"ryanwinter"
 	},{
-		"brand":true,
-		"comments":2,
-		"created":"2018-05-24T04:32:19Z",
-		"downvotes":0,
-		"home":false,
-		"id":3196,
-		"labels":["Brand Icon","Icon Request"],
-		"milestone":null,
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"PowerShell",
-		"updated":"2018-05-25T14:49:45Z",
-		"upvotes":0,
-		"user":"brhinescot"
-	},{
 		"brand":false,
 		"comments":0,
 		"created":"2018-05-23T19:23:56Z",
