@@ -149,7 +149,7 @@
 					type===`angular`?
 						`<g id="${key}"><path d="${icon.data}"/></g>`:
 						`"${key}"${type===`php`?`=>`:`:`}"${icon.data}"`
-			).join(type===`php`||type===`json`?`,`:`:`),
+			).join(type===`php`||type===`jsono`?`,`:`:`),
 			async copy(string,message){
 				try{
 					await navigator.clipboard.writeText(string);
@@ -511,6 +511,10 @@
 									this.articles[key].remove();
 									delete this.articles[key];
 								}
+							this.sort();
+							info.actions.library.classList.remove`remove`;
+							if(!info.custom)
+								info.actions.library.lastChild.nodeValue=`Add to Library`;
 							page.alert`Library cleared.`;
 							break;
 					}
@@ -588,7 +592,7 @@
 					type===`angular`?
 						`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></g>`:
 						`"${key}"${type===`php`?`=>`:`:`}"${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"`
-			).join(type===`php`||type===`json`?`,`:`:`),
+			).join(type===`php`||type===`jsono`?`,`:`:`),
 			close(value){
 				b.removeEventListener(`keydown`,this.fn);
 				this.dialog.classList.add(`oz`,`pen`);
