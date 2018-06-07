@@ -5011,6 +5011,13 @@
 		"data":"M6,10H7V3H14.5C17,3 19,5 19,7.5C19,10 17,12 14.5,12H9V14H15V16H9V21H7V16H6V14H7V12H6V10M14.5,5H9V10H14.5A2.5,2.5 0 0,0 17,7.5A2.5,2.5 0 0,0 14.5,5Z",
 		"keywords":["russian"]
 	},
+	"currency-php":{
+		"added":"{next}",
+		"aliases":["philippine-peso"],
+		"categories":["money"],
+		"contributor":"michael-richins",
+		"data":"M5,2V6H3V8H5V10H3V12H5V22H7V16H13C15.7,16 18.16,14.44 19.32,12H22V10H19.92C20.03,9.34 20.03,8.66 19.92,8H22V6H19.32C18.16,3.56 15.7,2 13,2M7,4H13C14.57,4 16.06,4.74 17,6H7V4M13,14H7V12H17C16.06,13.26 14.57,14 13,14M18,9C18,9.34 17.96,9.67 17.9,10H7V8H17.9C17.96,8.33 18,8.66 18,9Z"
+	},
 	"currency-sign":{
 		"added":2046,
 		"aliases":["currency-scarab"],
@@ -5029,6 +5036,7 @@
 	},
 	"currency-twd":{
 		"added":2046,
+		"aliases":["new-taiwan-dollar"],
 		"categories":["money"],
 		"codepoint":"f7be",
 		"contributor":"japanyoshi",
@@ -8089,6 +8097,12 @@
 		"codepoint":"f6db",
 		"contributor":"google",
 		"data":"M4,2H20A2,2 0 0,1 22,4V17.33L17.33,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2M17,17V20.25L20.25,17H17M10,19H14V18H15V13C16.21,12.09 17,10.64 17,9A5,5 0 0,0 12,4A5,5 0 0,0 7,9C7,10.64 7.79,12.09 9,13V18H10V19M14,17H10V16H14V17M14,15H10V14H14V15M12,5A4,4 0 0,1 16,9C16,10.5 15.2,11.77 14,12.46V13H10V12.46C8.8,11.77 8,10.5 8,9A4,4 0 0,1 12,5Z"
+	},
+	"google-lens":{
+		"added":"{next}",
+		"categories":["google"],
+		"contributor":"google",
+		"data":"M6,2H18A4,4 0 0,1 22,6V12H20V6A2,2 0 0,0 18,4H6A2,2 0 0,0 4,6V18A2,2 0 0,0 6,20H12V22H6A4,4 0 0,1 2,18V6A4,4 0 0,1 6,2M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M18,16A2,2 0 0,1 20,18A2,2 0 0,1 18,20A2,2 0 0,1 16,18A2,2 0 0,1 18,16Z"
 	},
 	"google-maps":{
 		"categories":["google"],
@@ -16490,12 +16504,20 @@
 		"contributor":"greenturtwig",
 		"data":"M5,3C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5M6,9H7.5L8.5,12.43L9.5,9H11L9.25,15H7.75L6,9M13,9H16.5C17.35,9 18,9.65 18,10.5V11.5C18,12.1 17.6,12.65 17.1,12.9L18,15H16.5L15.65,13H14.5V15H13V9M14.5,10.5V11.5H16.5V10.5H14.5Z"
 	},
-	"visualstudio":{
+	"visual-studio":{
 		"added":1554,
+		"aliases":["visualstudio"],
 		"categories":["logos"],
 		"codepoint":"f610",
 		"contributor":"christopher-schreiner",
-		"data":"M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z"
+		"data":"M17,8.5L12.25,12.32L17,16V8.5M4.7,18.4L2,16.7V7.7L5,6.7L9.3,10.03L18,2L22,4.5V20L17,22L9.34,14.66L4.7,18.4M5,14L6.86,12.28L5,10.5V14Z",
+		"renamed":"{next}"
+	},
+	"visual-studio-code":{
+		"added":"{next}",
+		"categories":["logos"],
+		"contributor":"community",
+		"data":"M3.29,7.77L4.42,7.38L7.19,9.47L11.8,4.88L14.5,6.1L14.54,14.96L11.78,16.17L7.18,11.62L4.42,13.71L3.29,13.33L6.06,10.57L3.29,7.77M8.63,10.56L11.77,12.89V8.19L8.63,10.56M17,19.17V2.03L22,4.1V19.9L16.91,22L2,16.92L17,19.17Z"
 	},
 	"vk":{
 		"aliases":["vkontakte"],
@@ -16530,7 +16552,7 @@
 	},
 	"voice":{
 		"added":1554,
-		"aliases":["record-voice-over"],
+		"aliases":["record-voice-over","speak","talk"],
 		"categories":["users"],
 		"codepoint":"f5cb",
 		"contributor":"google",
