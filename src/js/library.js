@@ -121,15 +121,14 @@
 					if(!menu.scroll){
 						clearInterval(this.interval);
 						loader.classList.add(`oz`,`pen`);
-						loader.addEventListener(`transitionend`,this.fn=event=>{
+						loader.addEventListener(`transitionend`,event=>{
 							loader.remove();
-							loader.removeEventListener(event.type,this.fn);
 							if(!this.size)
 								info.load();
 							if(icon)
 								if(icons.list[icon]||favourites.list[icon])
 									editor.open(icon);
-						},0);
+						},0,{once:true});
 					}
 				},50);
 			},
@@ -1034,7 +1033,8 @@
 				this.svg.classList.add(`db`,`pen`);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
 				for(let key in this.list)
-					if(this.list.hasOwnProperty(key))this.add(key);
+					if(this.list.hasOwnProperty(key))
+						this.add(key);
 			},
 			add(key){
 				let 	icon=this.list[key],
@@ -1064,6 +1064,8 @@
 						category.section.append(icon.articles.new=article.cloneNode(1));
 					if((category=categories.list.updated)&&icon.updated&&icon.updated===version.int)
 						category.section.append(icon.articles.updated=article.cloneNode(1));
+					if((category=categories.list.published)&&icon.published&&icon.published===version.int)
+						category.section.append(icon.articles.published=article.cloneNode(1));
 					if((category=categories.list.renamed)&&icon.renamed&&icon.renamed===version.int)
 						category.section.append(icon.articles.renamed=article.cloneNode(1));
 					if((category=categories.list.removed)&&icon.retired===version.int)

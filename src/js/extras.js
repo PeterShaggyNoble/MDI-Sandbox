@@ -25,9 +25,11 @@
 		},
 		toggle(){
 			document.body.classList.toggle(`menu`,this.show=!this.show);
-			this.size<2&&this.show?document.body.addEventListener(`keydown`,this.functions.close=event=>
-				event.keyCode===27&&this.toggle()
-			,0):document.body.removeEventListener(`keydown`,this.functions.close);
+			if(this.size<2&&this.show)
+				document.body.addEventListener(`keydown`,this.functions.close=event=>
+					event.keyCode===27&&this.toggle()
+				,0)
+			else document.body.removeEventListener(`keydown`,this.functions.close);
 		},
 		touchend(clientx){
 			document.removeEventListener(`touchmove`,this.functions.move);

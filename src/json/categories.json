@@ -14,6 +14,11 @@
 		"name":"Updated in v{v}",
 		"section":true
 	},
+	"published":{
+		"icon":"upload",
+		"name":"Published in v{v}",
+		"section":true
+	},
 	"renamed":{
 		"icon":"rename-box",
 		"name":"Renamed in v{v}",
