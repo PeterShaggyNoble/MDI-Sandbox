@@ -815,14 +815,16 @@
 		"categories":["arrows"],
 		"codepoint":"f9b6",
 		"contributor":"michael-irigoyen",
-		"data":"M18.36,19.78H4.22V5.64L8.47,9.88L14.12,4.22L19.78,9.88L14.12,15.54L18.36,19.78M6.34,17.66H13.41L11.29,15.54L16.95,9.88L14.12,7.05L8.46,12.71L6.34,10.59V17.66Z"
+		"data":"M18.36,19.78H4.22V5.64L8.47,9.88L14.12,4.22L19.78,9.88L14.12,15.54L18.36,19.78M6.34,17.66H13.41L11.29,15.54L16.95,9.88L14.12,7.05L8.46,12.71L6.34,10.59V17.66Z",
+		"keywords":["down"]
 	},
 	"arrow-bottom-left-thick":{
 		"added":2594,
 		"categories":["arrows"],
 		"codepoint":"f9b7",
 		"contributor":"michael-irigoyen",
-		"data":"M15.5,5.69L18.31,8.5L11.94,14.89H16.89V18.31H5.69V7.11H9.12V12.06L15.5,5.69Z"
+		"data":"M15.5,5.69L18.31,8.5L11.94,14.89H16.89V18.31H5.69V7.11H9.12V12.06L15.5,5.69Z",
+		"keywords":["down"]
 	},
 	"arrow-bottom-right":{
 		"categories":["arrows"],
@@ -836,14 +838,16 @@
 		"categories":["arrows"],
 		"codepoint":"f9b8",
 		"contributor":"michael-irigoyen",
-		"data":"M9.88,15.54L4.22,9.88L9.88,4.22L15.54,9.88L19.78,5.64V19.78H5.64L9.88,15.54M17.66,10.59L15.54,12.71L9.88,7.05L7.05,9.88L12.71,15.54L10.59,17.66H17.66V10.59Z"
+		"data":"M9.88,15.54L4.22,9.88L9.88,4.22L15.54,9.88L19.78,5.64V19.78H5.64L9.88,15.54M17.66,10.59L15.54,12.71L9.88,7.05L7.05,9.88L12.71,15.54L10.59,17.66H17.66V10.59Z",
+		"keywords":["down"]
 	},
 	"arrow-bottom-right-thick":{
 		"added":2594,
 		"categories":["arrows"],
 		"codepoint":"f9b9",
 		"contributor":"michael-irigoyen",
-		"data":"M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z"
+		"data":"M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z",
+		"keywords":["down"]
 	},
 	"arrow-collapse":{
 		"added":1650,
@@ -996,14 +1000,16 @@
 		"categories":["arrows"],
 		"codepoint":"f9be",
 		"contributor":"michael-irigoyen",
-		"data":"M22,11L12,21L2,11H8V3H16V11H22M12,18L17,13H14V5H10V13H7L12,18Z"
+		"data":"M22,11L12,21L2,11H8V3H16V11H22M12,18L17,13H14V5H10V13H7L12,18Z",
+		"keywords":["bottom"]
 	},
 	"arrow-down-box":{
 		"added":1836,
 		"categories":["arrows"],
 		"codepoint":"f6bf",
 		"contributor":"austin-andrews",
-		"data":"M3,5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5M11,6V14.5L7.5,11L6.08,12.42L12,18.34L17.92,12.42L16.5,11L13,14.5V6H11Z"
+		"data":"M3,5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5M11,6V14.5L7.5,11L6.08,12.42L12,18.34L17.92,12.42L16.5,11L13,14.5V6H11Z",
+		"keywords":["bottom"]
 	},
 	"arrow-down-drop-circle":{
 		"aliases":["arrow-drop-down-circle"],
@@ -1281,14 +1287,16 @@
 		"categories":["arrows"],
 		"codepoint":"f9c2",
 		"contributor":"michael-irigoyen",
-		"data":"M14.12,8.46L19.78,14.12L14.12,19.78L8.46,14.12L4.22,18.36V4.22H18.36L14.12,8.46M6.34,13.41L8.46,11.29L14.12,16.95L16.95,14.12L11.29,8.47L13.41,6.34H6.34V13.41Z"
+		"data":"M14.12,8.46L19.78,14.12L14.12,19.78L8.46,14.12L4.22,18.36V4.22H18.36L14.12,8.46M6.34,13.41L8.46,11.29L14.12,16.95L16.95,14.12L11.29,8.47L13.41,6.34H6.34V13.41Z",
+		"keywords":["up"]
 	},
 	"arrow-top-left-thick":{
 		"added":2594,
 		"categories":["arrows"],
 		"codepoint":"f9c3",
 		"contributor":"michael-irigoyen",
-		"data":"M9.12,11.94V16.89H5.69V5.69H16.89V9.12H11.94L18.31,15.5L15.5,18.31L9.12,11.94Z"
+		"data":"M9.12,11.94V16.89H5.69V5.69H16.89V9.12H11.94L18.31,15.5L15.5,18.31L9.12,11.94Z",
+		"keywords":["up"]
 	},
 	"arrow-top-right":{
 		"categories":["arrows"],
@@ -1302,14 +1310,16 @@
 		"categories":["arrows"],
 		"codepoint":"f9c4",
 		"contributor":"michael-irigoyen",
-		"data":"M5.64,4.22H19.78V18.36L15.54,14.12L9.88,19.78L4.22,14.12L9.88,8.46L5.64,4.22M17.66,6.34H10.59L12.71,8.46L7.05,14.12L9.88,16.95L15.54,11.29L17.66,13.41V6.34H17.66Z"
+		"data":"M5.64,4.22H19.78V18.36L15.54,14.12L9.88,19.78L4.22,14.12L9.88,8.46L5.64,4.22M17.66,6.34H10.59L12.71,8.46L7.05,14.12L9.88,16.95L15.54,11.29L17.66,13.41V6.34H17.66Z",
+		"keywords":["up"]
 	},
 	"arrow-top-right-thick":{
 		"added":2594,
 		"categories":["arrows"],
 		"codepoint":"f9c5",
 		"contributor":"michael-irigoyen",
-		"data":"M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z"
+		"data":"M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z",
+		"keywords":["up"]
 	},
 	"arrow-up":{
 		"aliases":["arrow-upward"],
@@ -1369,7 +1379,8 @@
 		"categories":["arrows"],
 		"codepoint":"f9c6",
 		"contributor":"michael-irigoyen",
-		"data":"M16,13V21H8V13H2L12,3L22,13H16M7,11H10V19H14V11H17L12,6L7,11Z"
+		"data":"M16,13V21H8V13H2L12,3L22,13H16M7,11H10V19H14V11H17L12,6L7,11Z",
+		"keywords":["top"]
 	},
 	"arrow-up-box":{
 		"added":1836,
@@ -1384,7 +1395,8 @@
 		"categories":["arrows"],
 		"codepoint":"f9c7",
 		"contributor":"michael-irigoyen",
-		"data":"M16,10H22L12,0L2,10H8V14H2L12,24L22,14H16V10M14,16H17L12,21L7,16H10V8H7L12,3L17,8H14V16Z"
+		"data":"M16,10H22L12,0L2,10H8V14H2L12,24L22,14H16V10M14,16H17L12,21L7,16H10V8H7L12,3L17,8H14V16Z",
+		"keywords":["bottom","top"]
 	},
 	"arrow-up-drop-circle":{
 		"added":1554,
@@ -6851,6 +6863,7 @@
 		"data":"M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M12,18C9.95,18 8.19,16.76 7.42,15H9.13C9.76,15.9 10.81,16.5 12,16.5A3.5,3.5 0 0,0 15.5,13A3.5,3.5 0 0,0 12,9.5C10.65,9.5 9.5,10.28 8.9,11.4L10.5,13H6.5V9L7.8,10.3C8.69,8.92 10.23,8 12,8A5,5 0 0,1 17,13A5,5 0 0,1 12,18Z"
 	},
 	"file-send":{
+		"aliases":["file-move"],
 		"categories":["files"],
 		"codepoint":"f22a",
 		"contributor":"austin-andrews",
