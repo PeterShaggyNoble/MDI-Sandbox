@@ -1045,6 +1045,8 @@
 				if(data=icon.data){
 					svg.append(path=this.path.cloneNode(1));
 					path.setAttribute(`d`,data);
+					if(icon.codepoint)
+						keywords.add(icon.codepoint);
 					if(icon.aliases)
 						icon.aliases.forEach(alias=>
 							alias.split`-`.forEach(word=>
