@@ -5011,6 +5011,24 @@
 		"contributor":"google",
 		"data":"M20,0H4V2H20V0M4,24H20V22H4V24M20,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6A2,2 0 0,0 20,4M12,6.75A2.25,2.25 0 0,1 14.25,9A2.25,2.25 0 0,1 12,11.25A2.25,2.25 0 0,1 9.75,9A2.25,2.25 0 0,1 12,6.75M17,17H7V15.5C7,13.83 10.33,13 12,13C13.67,13 17,13.83 17,15.5V17Z"
 	},
+	"contain":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"michael-richins",
+		"data":"M2,3H8V5H4V19H8V21H2V3M7,17V15H9V17H7M11,17V15H13V17H11M15,17V15H17V17H15M22,3V21H16V19H20V5H16V3H22Z"
+	},
+	"contain-end":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"michael-richins",
+		"data":"M7,17V15H9V17H7M11,17V15H13V17H11M15,17V15H17V17H15M22,3V21H16V19H20V5H16V3H22Z"
+	},
+	"contain-start":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"michael-richins",
+		"data":"M2,3H8V5H4V19H8V21H2V3M7,17V15H9V17H7M11,17V15H13V17H11M15,17V15H17V17H15Z"
+	},
 	"content-copy":{
 		"categories":["editor"],
 		"codepoint":"f18f",
