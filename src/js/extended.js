@@ -17,7 +17,7 @@
 			status=icons[key].status;
 			if(!filter||filter===status){
 				article=article.cloneNode(0);
-				if(status)
+				if(status&&filter!==status)
 					statuses.forEach(x=>article.classList.toggle(x,status===x));
 				else article.classList.remove(...statuses);
 				svg=svg.cloneNode(0);
