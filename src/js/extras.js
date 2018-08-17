@@ -28,7 +28,7 @@
 			if(this.size<2&&this.show)
 				document.body.addEventListener(`keydown`,this.functions.close=event=>
 					event.keyCode===27&&this.toggle()
-				,0)
+				,0);
 			else document.body.removeEventListener(`keydown`,this.functions.close);
 		},
 		touchend(clientx){
