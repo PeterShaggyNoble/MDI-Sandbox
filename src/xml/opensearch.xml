@@ -3,6 +3,6 @@
 	<ShortName>MDI Sandbox</ShortName>
 	<Description>Search the Material Design Icons library</Description>
 	<InputEncoding>UTF-8</InputEncoding>
-	<Image height="16" width="16" type="image/png">https://petershaggynoble.github.io/MDI-Sandbox/img/512da8/16.png</Image>
+	<Image height="16" width="16" type="image/png">https://petershaggynoble.github.io/MDI-Sandbox/img/d32f2f/16.png</Image>
 	<Url type="text/html" method="get" template="https://petershaggynoble.github.io/MDI-Sandbox/?filter={searchTerms}"/>
 </OpenSearchDescription>

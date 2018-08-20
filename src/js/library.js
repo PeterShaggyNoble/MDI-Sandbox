@@ -1,7 +1,7 @@
 {
 	let version={
-		str:`2.5.94`,
-		int:2594
+		str:`2.6.95`,
+		int:2695
 	};
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),

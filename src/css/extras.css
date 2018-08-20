@@ -1,7 +1,7 @@
 /** VARIABLES **/
 :root{
-	--colour:#512da8;
-	--highlight:#ede7f6;
+	--colour:#d32f2f;
+	--highlight:#ffebee;
 	--timing-function:cubic-bezier(.4,0,.2,1);
 }
 

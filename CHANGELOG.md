@@ -1,7 +1,8 @@
 # Change Log
 Only major changes and additions will be noted here.
-- **2018-07-11:** Material Design Icons v2.5.94 released.
-- **2018-05-22:** Material Design Icons v2.4.85 released.
+- **2018-08-20:** Updated to Material Design Icons v2.6.95.
+- **2018-07-11:** Updated to Material Design Icons v2.5.94.
+- **2018-05-22:** Updated to Material Design Icons v2.4.85.
 - **2018-05-21:** Added the option to download favourites and currently filtered icons as an SVG sprite.
 - **2018-05-11:** Icons can now be copied as base-64 encoded data URIs.
 - **2018-05-10:** Added the original Google stock icons to the automated preview generator.
@@ -15,17 +16,17 @@ Only major changes and additions will be noted here.
 - **2018-04-26:** Created a template for the additional pages on the site.
 - **2018-04-25:** Added a tab for home automation icons to the [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/).
 - **2018-04-20:** Added an [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/) to show the most popular icon requests.
-- **2018-04-19:** Material Design Icons v2.3.54 released, replacing v2.3.50.
+- **2018-04-19:** Updated to Material Design Icons v2.3.54, replacing v2.3.50.
 - **2018-04-19:** Added a work in progress of `mdi.php`. See [MaterialDesign/#3087](https://github.com/Templarian/MaterialDesign/issues/3087) for more information.
 - **2018-04-18:** Removed GMP page and added new page for [other Google icons](https://petershaggynoble.github.io/MDI-Sandbox/other/), including AOG icons.
-- **2018-04-18:** Material Design Icons v2.3.50 released.
+- **2018-04-18:** Updated to Material Design Icons v2.3.50.
 - **2018-04-03:** Created a [preview file](https://petershaggynoble.github.io/MDI-Sandbox/gmpicons/) for the Google's GMP icon set.
-- **2018-03-26:** Material Design Icons v2.2.43 released.
+- **2018-03-26:** Updated to Material Design Icons v2.2.43.
 - **2018-03-07:** Added the option to download favourites and currently filtered icons as a JSON file.
-- **2018-03-05:** Material Design Icons v2.1.99 released.
+- **2018-03-05:** Updated to Material Design Icons v2.1.99.
 - **2018-02-12:** Added overlays to the [preview generator](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 - **2018-01-30:** New [programming](https://petershaggynoble.github.io/MDI-Sandbox/?categories=programming) category added.
-- **2017-12-11:** Material Design Icons v2.1.19 released.
+- **2017-12-11:** Updated to Material Design Icons v2.1.19.
 - **2017-11-29:** Added helper icons to the [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/).
 - **2017-11-28:** Two new sections show which icons have been [renamed](https://petershaggynoble.github.io/MDI-Sandbox/?section=renamed) in or [removed](https://petershaggynoble.github.io/MDI-Sandbox/?section=removed) from the latest release.
 - **2017-11-22:** Added a [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/).

@@ -1,6 +1,57 @@
 [
 	{
 		"brand":false,
+		"comments":0,
+		"created":"2018-08-19T12:37:19Z",
+		"downvotes":0,
+		"home":false,
+		"id":3412,
+		"labels":["Icon Request"],
+		"milestone":null,
+		"node_id":"MDU6SXNzdWUzNTE4OTk3MzE=",
+		"reactions":0,
+		"status":"Pending",
+		"stock":false,
+		"title":"Uppercase",
+		"updated":"2018-08-19T17:08:39Z",
+		"upvotes":0,
+		"user":"Louistwee"
+	},{
+		"brand":false,
+		"comments":1,
+		"created":"2018-08-19T12:09:44Z",
+		"downvotes":0,
+		"home":false,
+		"id":3411,
+		"labels":["Icon Request"],
+		"milestone":null,
+		"node_id":"MDU6SXNzdWUzNTE4OTc5MzM=",
+		"reactions":0,
+		"status":"Pending",
+		"stock":false,
+		"title":"Replace",
+		"updated":"2018-08-19T21:36:51Z",
+		"upvotes":0,
+		"user":"Doodlemandk"
+	},{
+		"brand":false,
+		"comments":1,
+		"created":"2018-08-18T21:44:34Z",
+		"downvotes":0,
+		"home":false,
+		"id":3409,
+		"labels":["Icon Request"],
+		"milestone":null,
+		"node_id":"MDU6SXNzdWUzNTE4NTQ1NzI=",
+		"reactions":1,
+		"status":"Pending",
+		"stock":false,
+		"title":"Robber eye mask",
+		"updated":"2018-08-18T22:32:09Z",
+		"upvotes":1,
+		"user":"SteinMaerivoet"
+	},{
+		"brand":false,
 		"comments":3,
 		"created":"2018-08-16T10:32:26Z",
 		"downvotes":0,
@@ -23,14 +74,14 @@
 		"downvotes":0,
 		"home":false,
 		"id":3399,
-		"labels":["Icon Request"],
+		"labels":["Contribution","Icon Request"],
 		"milestone":null,
 		"node_id":"MDU6SXNzdWUzNTA4ODU3ODE=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"Classic Desktop with Tower",
-		"updated":"2018-08-17T05:45:56Z",
+		"updated":"2018-08-20T08:31:24Z",
 		"upvotes":0,
 		"user":"leMaik"
 	},{
@@ -41,13 +92,13 @@
 		"home":false,
 		"id":3394,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUzNTAxMTAyNjQ=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"hand-writing",
-		"updated":"2018-08-14T09:28:11Z",
+		"updated":"2018-08-20T04:39:00Z",
 		"upvotes":0,
 		"user":"goyney"
 	},{
@@ -58,13 +109,13 @@
 		"home":false,
 		"id":3379,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUzNDk4MDgyODc=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"bag",
-		"updated":"2018-08-13T14:59:50Z",
+		"updated":"2018-08-18T18:36:23Z",
 		"upvotes":0,
 		"user":"MrGlenThomas"
 	},{
@@ -86,53 +137,19 @@
 		"user":"IanDuncanT"
 	},{
 		"brand":false,
-		"comments":7,
-		"created":"2018-08-10T17:29:53Z",
-		"downvotes":0,
-		"home":false,
-		"id":3377,
-		"labels":["Contribution","Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzNDk1OTc1Mjk=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"select-compare",
-		"updated":"2018-08-10T21:24:51Z",
-		"upvotes":0,
-		"user":"goyney"
-	},{
-		"brand":false,
-		"comments":1,
-		"created":"2018-08-09T21:12:18Z",
-		"downvotes":0,
-		"home":false,
-		"id":3375,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUzNDkyOTI2NTY=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Expand and collapse all icon",
-		"updated":"2018-08-09T21:37:31Z",
-		"upvotes":0,
-		"user":"sirisian"
-	},{
-		"brand":false,
 		"comments":3,
 		"created":"2018-08-09T12:43:31Z",
 		"downvotes":0,
 		"home":false,
 		"id":3373,
-		"labels":["Icon Request"],
-		"milestone":null,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Version 2.7.xx",
 		"node_id":"MDU6SXNzdWUzNDkxMTExNjA=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"close a tab",
-		"updated":"2018-08-10T20:37:00Z",
+		"updated":"2018-08-18T18:26:31Z",
 		"upvotes":0,
 		"user":"MrKuip"
 	},{
@@ -154,72 +171,21 @@
 		"user":"mvnmin"
 	},{
 		"brand":false,
-		"comments":4,
-		"created":"2018-08-07T03:14:08Z",
-		"downvotes":0,
-		"home":false,
-		"id":3368,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUzNDgxNTEwNTM=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"ampersand\/et",
-		"updated":"2018-08-10T20:29:19Z",
-		"upvotes":0,
-		"user":"goyney"
-	},{
-		"brand":false,
 		"comments":0,
 		"created":"2018-08-07T02:15:29Z",
 		"downvotes":0,
 		"home":false,
 		"id":3367,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 2.7.xx",
 		"node_id":"MDU6SXNzdWUzNDgxNDEyNzE=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"format-annotation-minus",
-		"updated":"2018-08-07T02:15:36Z",
+		"updated":"2018-08-17T15:42:20Z",
 		"upvotes":0,
 		"user":"goyney"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2018-08-04T06:36:52Z",
-		"downvotes":0,
-		"home":false,
-		"id":3362,
-		"labels":["Contribution","Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzNDc1OTM0MTE=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"radiator-off",
-		"updated":"2018-08-06T13:47:02Z",
-		"upvotes":0,
-		"user":"ltjessem"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2018-08-03T13:31:16Z",
-		"downvotes":0,
-		"home":false,
-		"id":3361,
-		"labels":["Contribution","Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzNDczOTc5MjA=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Window wiper",
-		"updated":"2018-08-07T11:17:54Z",
-		"upvotes":0,
-		"user":"MrKuip"
 	},{
 		"brand":false,
 		"comments":1,
@@ -245,13 +211,13 @@
 		"home":false,
 		"id":3354,
 		"labels":["Icon Request"],
-		"milestone":null,
+		"milestone":"Backlog",
 		"node_id":"MDU6SXNzdWUzNDYwODc1MDc=",
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
 		"title":"front side Baby icon need ",
-		"updated":"2018-08-06T14:21:01Z",
+		"updated":"2018-08-17T11:52:55Z",
 		"upvotes":0,
 		"user":"vosidiy"
 	},{
@@ -273,36 +239,19 @@
 		"user":"MadMax1412"
 	},{
 		"brand":false,
-		"comments":5,
-		"created":"2018-07-21T12:16:29Z",
-		"downvotes":0,
-		"home":false,
-		"id":3334,
-		"labels":["Contribution","Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzNDMzMjI1OTY=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Add general purpose advance\/percentage icon set",
-		"updated":"2018-08-07T09:44:06Z",
-		"upvotes":0,
-		"user":"memeplex"
-	},{
-		"brand":false,
-		"comments":3,
+		"comments":4,
 		"created":"2018-07-18T07:25:58Z",
 		"downvotes":0,
 		"home":false,
 		"id":3332,
 		"labels":["Icon Request"],
-		"milestone":"Version 2.7.xx",
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUzNDIyMDc3MDA=",
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
 		"title":"butterfly",
-		"updated":"2018-08-09T13:17:56Z",
+		"updated":"2018-08-18T19:04:13Z",
 		"upvotes":0,
 		"user":"pyrosmiley"
 	},{
@@ -426,7 +375,7 @@
 		"user":"PratikshaDalal"
 	},{
 		"brand":false,
-		"comments":22,
+		"comments":23,
 		"created":"2018-06-30T22:27:23Z",
 		"downvotes":0,
 		"home":false,
@@ -438,7 +387,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"thermometer  level gradient",
-		"updated":"2018-07-28T07:45:18Z",
+		"updated":"2018-08-19T05:04:57Z",
 		"upvotes":0,
 		"user":"hvbhome"
 	},{
@@ -749,19 +698,19 @@
 		"user":"PeterShaggyNoble"
 	},{
 		"brand":false,
-		"comments":3,
+		"comments":4,
 		"created":"2018-06-05T10:15:19Z",
 		"downvotes":0,
 		"home":false,
 		"id":3215,
-		"labels":["Alias","Icon Request","Needs More Information"],
+		"labels":["Alias","Icon Request"],
 		"milestone":null,
 		"node_id":"MDU6SXNzdWUzMjkzOTA4NTk=",
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
 		"title":"Greek symbols",
-		"updated":"2018-06-07T15:56:59Z",
+		"updated":"2018-08-20T09:43:36Z",
 		"upvotes":0,
 		"user":"shehezard"
 	},{
@@ -950,7 +899,7 @@
 		"title":"Wallet with plus",
 		"updated":"2018-05-15T16:19:02Z",
 		"upvotes":0,
-		"user":"HeySmartySukh"
+		"user":"sukhvi"
 	},{
 		"brand":false,
 		"comments":0,
@@ -1002,23 +951,6 @@
 		"updated":"2018-05-20T17:43:15Z",
 		"upvotes":0,
 		"user":"hvbhome"
-	},{
-		"brand":false,
-		"comments":3,
-		"created":"2018-05-10T11:39:25Z",
-		"downvotes":0,
-		"home":true,
-		"id":3166,
-		"labels":["Home Assistant","Icon Request","Stock Google Icon"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzMjE5MDIwNzM=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":true,
-		"title":"fan-variant",
-		"updated":"2018-05-14T11:54:43Z",
-		"upvotes":0,
-		"user":"GreenTurtwig"
 	},{
 		"brand":false,
 		"comments":0,
@@ -2211,23 +2143,6 @@
 		"user":"dkraft"
 	},{
 		"brand":false,
-		"comments":1,
-		"created":"2018-03-22T14:17:28Z",
-		"downvotes":0,
-		"home":false,
-		"id":2945,
-		"labels":["Contribution","Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzMDc2NjI1MTE=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Easter Egg",
-		"updated":"2018-08-01T19:54:16Z",
-		"upvotes":0,
-		"user":"eleumas"
-	},{
-		"brand":false,
 		"comments":2,
 		"created":"2018-03-22T12:44:08Z",
 		"downvotes":0,
@@ -2806,7 +2721,7 @@
 		"user":"Naesstrom"
 	},{
 		"brand":false,
-		"comments":10,
+		"comments":12,
 		"created":"2018-01-31T14:34:54Z",
 		"downvotes":0,
 		"home":false,
@@ -2818,7 +2733,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Additional Gesture Icons",
-		"updated":"2018-08-11T20:46:51Z",
+		"updated":"2018-08-20T04:05:45Z",
 		"upvotes":0,
 		"user":"0x4C4A"
 	},{
@@ -3724,7 +3639,7 @@
 		"user":"bjj"
 	},{
 		"brand":false,
-		"comments":1,
+		"comments":2,
 		"created":"2017-11-14T06:45:12Z",
 		"downvotes":0,
 		"home":true,
@@ -3736,7 +3651,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"gate-open",
-		"updated":"2018-03-09T11:24:34Z",
+		"updated":"2018-08-19T07:15:43Z",
 		"upvotes":0,
 		"user":"kovacsguido"
 	},{
@@ -4435,7 +4350,7 @@
 		"title":"One way \/ bidirectional, return, 2 way \/ multi city",
 		"updated":"2018-04-27T22:36:49Z",
 		"upvotes":0,
-		"user":"HeySmartySukh"
+		"user":"sukhvi"
 	},{
 		"brand":true,
 		"comments":0,
@@ -5271,23 +5186,6 @@
 		"user":"MrGrigri"
 	},{
 		"brand":false,
-		"comments":8,
-		"created":"2017-06-23T05:10:28Z",
-		"downvotes":0,
-		"home":false,
-		"id":2196,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUyMzgwNDIxNzA=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"MPAA Ratings",
-		"updated":"2018-04-09T11:24:58Z",
-		"upvotes":0,
-		"user":"Alekhen"
-	},{
-		"brand":false,
 		"comments":2,
 		"created":"2017-06-20T15:50:20Z",
 		"downvotes":0,
@@ -6087,7 +5985,7 @@
 		"user":"fraaalk"
 	},{
 		"brand":false,
-		"comments":21,
+		"comments":22,
 		"created":"2017-03-25T23:59:35Z",
 		"downvotes":0,
 		"home":true,
@@ -6099,7 +5997,7 @@
 		"status":"High Priority",
 		"stock":false,
 		"title":"Home icon set with ground, 1st and attic floors for home automation",
-		"updated":"2018-04-29T21:09:38Z",
+		"updated":"2018-08-20T05:37:21Z",
 		"upvotes":9,
 		"user":"james-fry"
 	},{
@@ -6699,23 +6597,6 @@
 		"user":"h4h13"
 	},{
 		"brand":true,
-		"comments":0,
-		"created":"2017-01-20T17:45:05Z",
-		"downvotes":0,
-		"home":false,
-		"id":1784,
-		"labels":["Brand Icon","Icon Request"],
-		"milestone":"Backlog",
-		"node_id":"MDU6SXNzdWUyMDIyMDA4MzQ=",
-		"reactions":1,
-		"status":"Pending",
-		"stock":false,
-		"title":"Shopify",
-		"updated":"2018-04-12T17:02:01Z",
-		"upvotes":1,
-		"user":"PeterShaggyNoble"
-	},{
-		"brand":true,
 		"comments":1,
 		"created":"2017-01-20T17:34:09Z",
 		"downvotes":0,
@@ -6918,23 +6799,6 @@
 		"updated":"2018-03-09T11:11:35Z",
 		"upvotes":0,
 		"user":"rupinderjeet"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2016-12-23T13:23:44Z",
-		"downvotes":0,
-		"home":false,
-		"id":1715,
-		"labels":["Contribution","Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUxOTczNjg3NzQ=",
-		"reactions":1,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Contribution: Dog Icon",
-		"updated":"2018-03-02T15:32:49Z",
-		"upvotes":1,
-		"user":"faelmorais"
 	},{
 		"brand":false,
 		"comments":0,
@@ -7464,19 +7328,19 @@
 		"user":"Lemick"
 	},{
 		"brand":false,
-		"comments":5,
+		"comments":6,
 		"created":"2016-10-01T08:57:05Z",
 		"downvotes":0,
 		"home":false,
 		"id":1543,
-		"labels":["Contribution","Icon Request"],
+		"labels":["Bug","Contribution","Icon Request"],
 		"milestone":"Version 2.7.xx",
 		"node_id":"MDU6SXNzdWUxODA0NDY2MTI=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Bullhorn Outline",
-		"updated":"2018-08-11T19:53:26Z",
+		"updated":"2018-08-20T04:25:07Z",
 		"upvotes":0,
 		"user":"D0Gmatist"
 	},{
@@ -7974,20 +7838,20 @@
 		"user":"sunshinetpu"
 	},{
 		"brand":false,
-		"comments":4,
+		"comments":5,
 		"created":"2016-07-18T20:44:41Z",
 		"downvotes":0,
 		"home":false,
 		"id":1367,
 		"labels":["Icon Request"],
-		"milestone":null,
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUxNjYxODkwNzM=",
-		"reactions":0,
+		"reactions":1,
 		"status":"Pending",
 		"stock":false,
 		"title":"Helicopter",
-		"updated":"2018-03-06T17:35:41Z",
-		"upvotes":0,
+		"updated":"2018-08-20T08:40:02Z",
+		"upvotes":1,
 		"user":"brunodimauro"
 	},{
 		"brand":false,
@@ -9561,13 +9425,13 @@
 		"home":false,
 		"id":792,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 2.7.xx",
 		"node_id":"MDU6SXNzdWUxMTQ1NzQ3Mjc=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Fire extinguisher",
-		"updated":"2017-12-14T12:20:09Z",
+		"updated":"2018-08-17T18:12:19Z",
 		"upvotes":0,
 		"user":"CoDEmanX"
 	},{
@@ -10592,7 +10456,7 @@
 		"user":"marco-piccolino"
 	},{
 		"brand":false,
-		"comments":4,
+		"comments":5,
 		"created":"2015-05-05T10:30:16Z",
 		"downvotes":0,
 		"home":false,
@@ -10604,7 +10468,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Partnership or Partners \/ Handshake",
-		"updated":"2018-08-07T08:48:40Z",
+		"updated":"2018-08-17T16:34:56Z",
 		"upvotes":5,
 		"user":"ugochukwu"
 	},{
@@ -10688,8 +10552,8 @@
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
-		"title":"Icon request: account-admin, rename, file attributes",
-		"updated":"2016-05-28T01:55:40Z",
+		"title":"account-admin, rename, file attributes",
+		"updated":"2018-08-20T09:38:55Z",
 		"upvotes":0,
 		"user":"BjErkan"
 	},{
@@ -10711,20 +10575,20 @@
 		"user":"dmitrykvochkin"
 	},{
 		"brand":false,
-		"comments":3,
+		"comments":4,
 		"created":"2015-04-06T18:18:11Z",
 		"downvotes":0,
 		"home":false,
 		"id":263,
-		"labels":["Icon Request"],
-		"milestone":null,
+		"labels":["High Priority","Icon Request"],
+		"milestone":"Version 2.7.xx",
 		"node_id":"MDU6SXNzdWU2NjY3MDIzNA==",
-		"reactions":0,
-		"status":"Pending",
+		"reactions":1,
+		"status":"High Priority",
 		"stock":false,
 		"title":"select-ellipse, select-free, select-fuzzy, select-by-color",
-		"updated":"2018-01-31T01:09:52Z",
-		"upvotes":0,
+		"updated":"2018-08-20T04:38:09Z",
+		"upvotes":1,
 		"user":"keeferrourke"
 	},{
 		"brand":false,
