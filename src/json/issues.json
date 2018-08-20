@@ -1,7 +1,7 @@
 [
 	{
 		"brand":false,
-		"comments":0,
+		"comments":1,
 		"created":"2018-08-19T12:37:19Z",
 		"downvotes":0,
 		"home":false,
@@ -13,24 +13,24 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Uppercase",
-		"updated":"2018-08-19T17:08:39Z",
+		"updated":"2018-08-20T15:54:02Z",
 		"upvotes":0,
 		"user":"Louistwee"
 	},{
 		"brand":false,
-		"comments":1,
+		"comments":2,
 		"created":"2018-08-19T12:09:44Z",
 		"downvotes":0,
 		"home":false,
 		"id":3411,
-		"labels":["Icon Request"],
+		"labels":["Contribution","Icon Request"],
 		"milestone":null,
 		"node_id":"MDU6SXNzdWUzNTE4OTc5MzM=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"Replace",
-		"updated":"2018-08-19T21:36:51Z",
+		"updated":"2018-08-20T16:21:28Z",
 		"upvotes":0,
 		"user":"Doodlemandk"
 	},{
@@ -4727,19 +4727,19 @@
 		"user":"farkasnorbert90"
 	},{
 		"brand":false,
-		"comments":5,
+		"comments":6,
 		"created":"2017-08-06T06:28:33Z",
 		"downvotes":0,
 		"home":false,
 		"id":2313,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Backlog",
+		"labels":["Contribution","Icon Request","Stock Google Icon"],
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUyNDgyMjg3Nzc=",
 		"reactions":0,
 		"status":"Coming Soon",
-		"stock":false,
+		"stock":true,
 		"title":"Dishwashing machine icon",
-		"updated":"2018-04-16T10:38:40Z",
+		"updated":"2018-08-20T15:31:28Z",
 		"upvotes":0,
 		"user":"vibrog"
 	},{
@@ -5985,7 +5985,7 @@
 		"user":"fraaalk"
 	},{
 		"brand":false,
-		"comments":22,
+		"comments":24,
 		"created":"2017-03-25T23:59:35Z",
 		"downvotes":0,
 		"home":true,
@@ -5997,7 +5997,7 @@
 		"status":"High Priority",
 		"stock":false,
 		"title":"Home icon set with ground, 1st and attic floors for home automation",
-		"updated":"2018-08-20T05:37:21Z",
+		"updated":"2018-08-20T15:26:02Z",
 		"upvotes":9,
 		"user":"james-fry"
 	},{
@@ -6920,19 +6920,19 @@
 		"user":"RobertoGraham"
 	},{
 		"brand":false,
-		"comments":5,
+		"comments":6,
 		"created":"2016-12-01T21:58:06Z",
 		"downvotes":0,
 		"home":false,
 		"id":1672,
-		"labels":["Icon Request"],
-		"milestone":"Backlog",
+		"labels":["Icon Request","Stock Google Icon"],
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUxOTI5NzQwNDk=",
 		"reactions":2,
 		"status":"Pending",
-		"stock":false,
+		"stock":true,
 		"title":"Solar Panel \/ Wind Turbine",
-		"updated":"2018-04-24T14:22:16Z",
+		"updated":"2018-08-20T15:33:50Z",
 		"upvotes":2,
 		"user":"DubeauJL"
 	},{
