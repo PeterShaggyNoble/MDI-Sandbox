@@ -30,7 +30,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Replace",
-		"updated":"2018-08-20T16:21:28Z",
+		"updated":"2018-08-20T18:40:40Z",
 		"upvotes":0,
 		"user":"Doodlemandk"
 	},{
@@ -696,23 +696,6 @@
 		"updated":"2018-08-08T03:34:35Z",
 		"upvotes":0,
 		"user":"PeterShaggyNoble"
-	},{
-		"brand":false,
-		"comments":4,
-		"created":"2018-06-05T10:15:19Z",
-		"downvotes":0,
-		"home":false,
-		"id":3215,
-		"labels":["Alias","Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzMjkzOTA4NTk=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"Greek symbols",
-		"updated":"2018-08-20T09:43:36Z",
-		"upvotes":0,
-		"user":"shehezard"
 	},{
 		"brand":false,
 		"comments":4,
@@ -2721,23 +2704,6 @@
 		"user":"Naesstrom"
 	},{
 		"brand":false,
-		"comments":12,
-		"created":"2018-01-31T14:34:54Z",
-		"downvotes":0,
-		"home":false,
-		"id":2783,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUyOTMxNzk2OTc=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Additional Gesture Icons",
-		"updated":"2018-08-20T04:05:45Z",
-		"upvotes":0,
-		"user":"0x4C4A"
-	},{
-		"brand":false,
 		"comments":0,
 		"created":"2018-01-31T14:22:08Z",
 		"downvotes":0,
@@ -4727,23 +4693,6 @@
 		"user":"farkasnorbert90"
 	},{
 		"brand":false,
-		"comments":6,
-		"created":"2017-08-06T06:28:33Z",
-		"downvotes":0,
-		"home":false,
-		"id":2313,
-		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 2.8.xx",
-		"node_id":"MDU6SXNzdWUyNDgyMjg3Nzc=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":true,
-		"title":"Dishwashing machine icon",
-		"updated":"2018-08-20T15:31:28Z",
-		"upvotes":0,
-		"user":"vibrog"
-	},{
-		"brand":false,
 		"comments":4,
 		"created":"2017-08-05T09:15:56Z",
 		"downvotes":0,
@@ -5662,23 +5611,6 @@
 		"user":"r1si"
 	},{
 		"brand":false,
-		"comments":6,
-		"created":"2017-05-04T17:17:08Z",
-		"downvotes":0,
-		"home":false,
-		"id":2070,
-		"labels":["Icon Request","Stock Google Icon"],
-		"milestone":"Backlog",
-		"node_id":"MDU6SXNzdWUyMjYzNTAxNzI=",
-		"reactions":1,
-		"status":"Pending",
-		"stock":true,
-		"title":"Cheque",
-		"updated":"2018-05-09T13:28:08Z",
-		"upvotes":1,
-		"user":"soundmarrow"
-	},{
-		"brand":false,
 		"comments":7,
 		"created":"2017-05-04T14:25:21Z",
 		"downvotes":0,
@@ -5985,7 +5917,7 @@
 		"user":"fraaalk"
 	},{
 		"brand":false,
-		"comments":24,
+		"comments":27,
 		"created":"2017-03-25T23:59:35Z",
 		"downvotes":0,
 		"home":true,
@@ -5997,7 +5929,7 @@
 		"status":"High Priority",
 		"stock":false,
 		"title":"Home icon set with ground, 1st and attic floors for home automation",
-		"updated":"2018-08-20T15:26:02Z",
+		"updated":"2018-08-20T22:32:30Z",
 		"upvotes":9,
 		"user":"james-fry"
 	},{
@@ -6221,23 +6153,6 @@
 		"updated":"2017-07-03T11:47:04Z",
 		"upvotes":0,
 		"user":"dintendocoltd"
-	},{
-		"brand":false,
-		"comments":4,
-		"created":"2017-02-25T06:45:14Z",
-		"downvotes":0,
-		"home":false,
-		"id":1894,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUyMTAyMTYxNTg=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"Family",
-		"updated":"2018-03-09T05:29:56Z",
-		"upvotes":0,
-		"user":"jethro-2018"
 	},{
 		"brand":false,
 		"comments":0,
@@ -7836,23 +7751,6 @@
 		"updated":"2018-04-11T14:05:24Z",
 		"upvotes":0,
 		"user":"sunshinetpu"
-	},{
-		"brand":false,
-		"comments":5,
-		"created":"2016-07-18T20:44:41Z",
-		"downvotes":0,
-		"home":false,
-		"id":1367,
-		"labels":["Icon Request"],
-		"milestone":"Version 2.8.xx",
-		"node_id":"MDU6SXNzdWUxNjYxODkwNzM=",
-		"reactions":1,
-		"status":"Pending",
-		"stock":false,
-		"title":"Helicopter",
-		"updated":"2018-08-20T08:40:02Z",
-		"upvotes":1,
-		"user":"brunodimauro"
 	},{
 		"brand":false,
 		"comments":2,
