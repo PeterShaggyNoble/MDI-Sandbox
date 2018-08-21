@@ -562,6 +562,24 @@ table.issues{
 .issues a:active>svg,.issues a:focus>svg{
 	fill:var(--colour);
 }
+/*  variants  */
+table#variants{
+	max-width:720px;
+}
+#variants th{
+	background:var(--colour);
+	color:#fff;
+}
+#variants th:nth-child(n+2),#variants td:nth-child(n+2){
+	text-align:center;
+	width:120px;
+}
+#variants svg{
+	fill:#f44336;
+}
+#variants svg.done{
+	fill:#388e3c;
+}
 
 /** BREAKPOINTS **/
 /* editor
@@ -636,7 +654,7 @@ table.issues{
 	body:not(.menu) #menu{
 		left:-280px;
 	}
-	#editor>figure,.issues th{
+	#editor>figure,#variants th,.issues th{
 		top:56px;
 	}
 }
@@ -658,7 +676,7 @@ table.issues{
 	body:not(.menu) #menu{
 		left:-320px;
 	}
-	#editor>figure,.issues th{
+	#editor>figure,#variants th,.issues th{
 		top:64px;
 	}
 }
