@@ -1,7 +1,7 @@
 # Material Design Icons Sandbox
 ## Important Notes
 - This is a side-project to the main [Material Design Icons](https://materialdesignicons.com/) project. To request a new icon, suggest an alias or make a contribution to the icon pack, please [create an issue](https://github.com/Templarian/MaterialDesign/issues) in the main repository.
-- One of the main purposes of this Sandbox is for me to play wround with ECMAScript 6+ features I don't normally get to work with. As such I can only guarantee that the website will work in the latest version(s) of Google Chrome.
+- One of the main purposes of this Sandbox is for me to play around with ECMAScript 6+ features I don't normally get to work with. As such I can only guarantee that the website will work in the latest version(s) of Google Chrome.
 
 ## Features & Tools
 
@@ -57,6 +57,6 @@ Some upcoming features that are being planned or worked on include, in no partic
 New features will occasionally be available to preview & test at [petershaggynoble.github.io/MDI-Sandbox/src/](https://petershaggynoble.github.io/MDI-Sandbox/src/).
 
 ## Background
-When [we](https://houseofdesign.ie/) began to drop Font Awesome from our projects in favour of the much more comprehensive [Material Design Icons](https://materialdesignicons.com/), so used were we to FA's website, we struggled at times to find the icons we needed on the MDI website or "[cheatsheet](https://cdn.materialdesignicons.com/2.4.85/)". So I threw together my own "cheatsheet" with the initial focus being on better categorising the icons and adding some keywords to help with searching (both of which proved to be sizable jobs!).
+When [we](https://houseofdesign.ie/) began to drop Font Awesome from our projects in favour of the much more comprehensive [Material Design Icons](https://materialdesignicons.com/), so used were we to FA's website that we struggled at times to find the icons we needed on the MDI website or "[cheatsheet](https://cdn.materialdesignicons.com/2.6.95/)". So I threw together my own "cheatsheet" with the initial focus being on better categorising the icons and adding some keywords to help with searching (both of which proved to be sizable jobs!).
 
 As it was something that only we were going to be using, I also used it as an opportunity to play around with a few things I didn't normally get to play with in my everyday work back then such as [Google's Material Design](https://material.io/guidelines/) and, more importantly, ECMAScript 6+. But then it grew, especially once [Templarian](https://github.com/Templarian) invited me to be a collaborator on the main MDI project, and I started thinking about more possibilities for use by a wider audience which led to the creation of more tools, some of them "proofs of concept" that would eventually be integrated into the new MDI site currently under development.
