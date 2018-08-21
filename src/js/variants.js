@@ -6,7 +6,7 @@
 		));
 		body=document.querySelector`tbody`,
 		variants=[`outline`,`rounded`,`sharp`];
-	let exists,key,svg,tr,td,use;
+	let key,path,svg,tr,td,use;
 	for(key in icons)
 		if(icons.hasOwnProperty(key)&&!key.endsWith`-outline`&&!key.endsWith`-rounded`&&!key.endsWith`-sharp`){
 			tr=tr?tr.cloneNode(0):document.createElement`tr`;
@@ -18,21 +18,39 @@
 			}
 			td.append(document.createTextNode(key));
 			tr.append(td);
+			td=td.cloneNode(0);
+			if(svg){
+				svg=svg.cloneNode(0);
+				svg.classList.remove`missing`;
+				path=path.cloneNode(0);
+			}else{
+				svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
+				path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
+				svg.classList.add`vam`;
+				svg.setAttribute(`viewBox`,`0 0 24 24`);
+			}
+			path.setAttribute(`d`,icons[key].data);
+			svg.append(path);
+			td.append(svg);
+			tr.append(td);
 			variants.forEach(name=>{
 				td=td.cloneNode(0);
-				if(svg){
-					svg=svg.cloneNode(0);
-					use=use.cloneNode(0);
+				svg=svg.cloneNode(0);
+				if(icons.hasOwnProperty(name=key+`-`+name)){
+					svg.classList.remove`missing`;
+					path=path.cloneNode(0);
+					path.setAttribute(`d`,icons[name].data);
+					svg.append(path);
 				}else{
-					svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
-					use=document.createElementNS(`http://www.w3.org/2000/svg`,`use`),
-					svg.classList.add`vam`;
-					svg.setAttribute(`viewBox`,`0 0 24 24`);
+					svg.classList.add`missing`;
+					if(use)
+						use=use.cloneNode(0);
+					else{
+						use=document.createElementNS(`http://www.w3.org/2000/svg`,`use`);
+						use.setAttribute(`href`,`#close-circle`);
+					}
+					svg.append(use);
 				}
-				exists=icons.hasOwnProperty(key+`-`+name);
-				svg.classList.toggle(`done`,exists);
-				use.setAttribute(`href`,`#${exists?`check`:`close`}`);
-				svg.append(use);
 				td.append(svg);
 				tr.append(td);
 			});

@@ -471,10 +471,6 @@ table{
 	table-layout:fixed;
 	width:100%;
 }
-table svg{
-	height:18px;
-	width:18px;
-}
 th{
 	font-size:13px;
 	height:56px;
@@ -541,6 +537,10 @@ table.issues{
 	text-align:center;
 	width:72px;
 }
+.issues svg{
+	height:18px;
+	width:18px;
+}
 .issues>tbody{
 	counter-reset:issues;
 }
@@ -575,7 +575,14 @@ table#variants{
 	width:120px;
 }
 #variants svg{
+	fill:currentcolor;
+	height:24px;
+	width:24px;
+}
+#variants svg.missing{
 	fill:#f44336;
+	height:18px;
+	width:18px;
 }
 #variants svg.done{
 	fill:#388e3c;
