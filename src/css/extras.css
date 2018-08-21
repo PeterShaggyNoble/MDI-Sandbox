@@ -574,19 +574,23 @@ table#variants{
 	text-align:center;
 	width:120px;
 }
+#variants tr.google{
+	color:var(--colour);
+	font-weight:500;
+}
 #variants svg{
 	fill:currentcolor;
 	height:24px;
 	width:24px;
 }
 #variants svg.missing{
-	fill:#f44336;
+	fill:#bdbdbd;
 	height:18px;
 	width:18px;
 }
-#variants svg.done{
+/*#variants svg.done{
 	fill:#388e3c;
-}
+}*/
 #variants tfoot td{
 	background:var(--colour);
 	bottom:0;

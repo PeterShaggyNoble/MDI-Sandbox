@@ -1,6 +1,6 @@
 (async()=>{
 	const 	icons=Object.assign(...Object.entries(await(await fetch`../json/icons.json`).json()).filter(([key,value])=>
-			!value.rejected&&!value.retired&&!value.categories.includes(`google`)&&!value.categories.includes(`logos`)
+			value.variants!==`none`&&!value.rejected&&!value.retired&&!value.categories.includes(`google`)&&!value.categories.includes(`logos`)
 		).map(([key,value])=>
 			({[key]:value})
 		));
@@ -17,6 +17,7 @@
 		if(icons.hasOwnProperty(key)&&!key.endsWith`-outline`&&!key.endsWith`-rounded`&&!key.endsWith`-sharp`){
 			++count;
 			tr=tr?tr.cloneNode(0):document.createElement`tr`;
+			tr.classList.toggle(`google`,icons[key].contributor===`google`);
 			if(td)
 				td=td.cloneNode(0);
 			else{
