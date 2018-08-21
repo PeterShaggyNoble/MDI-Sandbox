@@ -587,6 +587,11 @@ table#variants{
 #variants svg.done{
 	fill:#388e3c;
 }
+#variants tfoot td{
+	background:var(--colour);
+	bottom:0;
+	color:#fff;
+}
 
 /** BREAKPOINTS **/
 /* editor

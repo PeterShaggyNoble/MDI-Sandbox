@@ -5,10 +5,17 @@
 			({[key]:value})
 		));
 		body=document.querySelector`tbody`,
-		variants=[`outline`,`rounded`,`sharp`];
-	let key,path,svg,tr,td,use;
+		count=cell=0,
+		variants={
+			outline:0,
+			rounded:0,
+			sharp:0
+		},
+		counters=document.querySelectorAll`tfoot td`;
+	let key,path,svg,tr,td,type,use;
 	for(key in icons)
 		if(icons.hasOwnProperty(key)&&!key.endsWith`-outline`&&!key.endsWith`-rounded`&&!key.endsWith`-sharp`){
+			++count;
 			tr=tr?tr.cloneNode(0):document.createElement`tr`;
 			if(td)
 				td=td.cloneNode(0);
@@ -33,27 +40,33 @@
 			svg.append(path);
 			td.append(svg);
 			tr.append(td);
-			variants.forEach(name=>{
-				td=td.cloneNode(0);
-				svg=svg.cloneNode(0);
-				if(icons.hasOwnProperty(name=key+`-`+name)){
-					svg.classList.remove`missing`;
-					path=path.cloneNode(0);
-					path.setAttribute(`d`,icons[name].data);
-					svg.append(path);
-				}else{
-					svg.classList.add`missing`;
-					if(use)
-						use=use.cloneNode(0);
-					else{
-						use=document.createElementNS(`http://www.w3.org/2000/svg`,`use`);
-						use.setAttribute(`href`,`#close-circle`);
-					}
-					svg.append(use);
+			for(type in variants)
+				if(variants.hasOwnProperty(type)){
+					td=td.cloneNode(0);
+					svg=svg.cloneNode(0);
+					if(icons.hasOwnProperty(key+`-`+type)){
+						++variants[type];
+						svg.classList.remove`missing`;
+						path=path.cloneNode(0);
+						path.setAttribute(`d`,icons[key+`-`+type].data);
+						svg.append(path);
+					}else{
+						svg.classList.add`missing`;
+						if(use)
+							use=use.cloneNode(0);
+							else{
+								use=document.createElementNS(`http://www.w3.org/2000/svg`,`use`);
+								use.setAttribute(`href`,`#close-circle`);
+							}
+							svg.append(use);
+						}
+					td.append(svg);
+					tr.append(td);
 				}
-				td.append(svg);
-				tr.append(td);
-			});
 			body.appendChild(tr);
 		}
+	counters[++cell].firstChild.nodeValue=count;
+	for(type in variants)
+		if(variants.hasOwnProperty(type))
+			counters[++cell].firstChild.nodeValue=variants[type];
 })();
