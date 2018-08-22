@@ -2,23 +2,6 @@
 	{
 		"brand":false,
 		"comments":1,
-		"created":"2018-08-21T06:26:54Z",
-		"downvotes":0,
-		"home":false,
-		"id":3415,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzNTI0MDE2Mjc=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"account-cog-icon",
-		"updated":"2018-08-21T13:47:24Z",
-		"upvotes":0,
-		"user":"Ch-Lo"
-	},{
-		"brand":false,
-		"comments":1,
 		"created":"2018-08-19T12:37:19Z",
 		"downvotes":0,
 		"home":false,
@@ -52,7 +35,7 @@
 		"user":"Doodlemandk"
 	},{
 		"brand":false,
-		"comments":1,
+		"comments":2,
 		"created":"2018-08-18T21:44:34Z",
 		"downvotes":0,
 		"home":false,
@@ -64,7 +47,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Robber eye mask",
-		"updated":"2018-08-18T22:32:09Z",
+		"updated":"2018-08-22T01:32:15Z",
 		"upvotes":1,
 		"user":"SteinMaerivoet"
 	},{
@@ -205,7 +188,7 @@
 		"user":"goyney"
 	},{
 		"brand":false,
-		"comments":1,
+		"comments":2,
 		"created":"2018-07-31T08:35:10Z",
 		"downvotes":0,
 		"home":false,
@@ -217,7 +200,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"shoes icon",
-		"updated":"2018-07-31T16:32:26Z",
+		"updated":"2018-08-22T10:07:26Z",
 		"upvotes":0,
 		"user":"vosidiy"
 	},{
@@ -7549,7 +7532,7 @@
 		"user":"dnldsht"
 	},{
 		"brand":false,
-		"comments":0,
+		"comments":1,
 		"created":"2016-08-13T07:40:55Z",
 		"downvotes":0,
 		"home":false,
@@ -7561,7 +7544,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Roof icon",
-		"updated":"2016-08-14T15:41:51Z",
+		"updated":"2018-08-21T20:48:49Z",
 		"upvotes":0,
 		"user":"hisbvdis"
 	},{
@@ -8025,7 +8008,7 @@
 		"user":"Apaxe"
 	},{
 		"brand":false,
-		"comments":15,
+		"comments":16,
 		"created":"2016-06-17T11:28:42Z",
 		"downvotes":0,
 		"home":false,
@@ -8037,7 +8020,7 @@
 		"status":"High Priority",
 		"stock":false,
 		"title":"Icons with Single Letter A-Z and a-z",
-		"updated":"2018-04-27T21:25:54Z",
+		"updated":"2018-08-21T16:23:41Z",
 		"upvotes":0,
 		"user":"lalitrane234"
 	},{
