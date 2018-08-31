@@ -421,7 +421,7 @@ body.highlight>#content>section>article.active{
 	transition:background .225s var(--timing-function),color .225s var(--timing-function);
 }
 .options>li:first-of-type,
-#library .options>li:nth-of-type(6){
+#library .options>li:nth-of-type(5){
 	border-bottom:1px solid #e0e0e0;
 }
 .options>li:first-of-type{
@@ -479,7 +479,7 @@ body.highlight>#content>section>article.active{
 	transition-property:background,color,height,opacity;
 	transition-timing-function:var(--timing-function);
 }
-#actions>li:nth-last-child(13),#actions>li:nth-last-child(12),#actions>li:nth-last-child(9),#info>#actions>li:nth-last-child(2){
+#actions>li:nth-last-child(12),#actions>li:nth-last-child(11),#actions>li:nth-last-child(8),#info>#actions>li:nth-last-child(2){
 	border-bottom:1px solid #e0e0e0;
 }
 #info>#actions>li:hover{
@@ -814,7 +814,7 @@ dialog>button:active{
 	#info{
 		box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
 		height:calc(100% - 32px);
-		max-height:740px;
+		max-height:776px;
 		left:calc(50% - 160px);
 		transition:opacity .375s var(--timing-function);
 		z-index:4;
