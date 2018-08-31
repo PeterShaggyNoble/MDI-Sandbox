@@ -37,7 +37,7 @@
 	},
 	"account-box-multiple":{
 		"added":2485,
-		"aliases":["switch-account","user-box-multiple"],
+		"aliases":["account-boxes","switch-account","user-box-multiple","user-boxes"],
 		"categories":["users"],
 		"codepoint":"f933",
 		"contributor":"google",
@@ -158,12 +158,11 @@
 		"keywords":["person"]
 	},
 	"account-multiple":{
-		"aliases":["group","people","user-multiple"],
+		"aliases":["accounts","group","people","user-multiple","users"],
 		"categories":["users"],
 		"codepoint":"f00e",
 		"contributor":"google",
-		"data":"M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z",
-		"keywords":["accounts","users"]
+		"data":"M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z"
 	},
 	"account-multiple-check":{
 		"added":2354,
@@ -175,37 +174,36 @@
 	},
 	"account-multiple-minus":{
 		"added":1554,
-		"aliases":["user-multiple-minus"],
+		"aliases":["accounts-minus","user-multiple-minus","users-minus"],
 		"categories":["users"],
 		"codepoint":"f5d3",
 		"contributor":"austin-andrews",
 		"data":"M13,13C11,13 7,14 7,16V18H19V16C19,14 15,13 13,13M19.62,13.16C20.45,13.88 21,14.82 21,16V18H24V16C24,14.46 21.63,13.5 19.62,13.16M13,11A3,3 0 0,0 16,8A3,3 0 0,0 13,5A3,3 0 0,0 10,8A3,3 0 0,0 13,11M18,11A3,3 0 0,0 21,8A3,3 0 0,0 18,5C17.68,5 17.37,5.05 17.08,5.14C17.65,5.95 18,6.94 18,8C18,9.06 17.65,10.04 17.08,10.85C17.37,10.95 17.68,11 18,11M8,10H0V12H8V10Z",
-		"keywords":["accounts","people","users"]
+		"keywords":["people"]
 	},
 	"account-multiple-outline":{
-		"aliases":["people-outline","user-multiple-outline"],
+		"aliases":["accounts-outline","people-outline","user-multiple-outline","users-outline"],
 		"categories":["users"],
 		"codepoint":"f00f",
 		"contributor":"google",
-		"data":"M16.5,6.5A2,2 0 0,1 18.5,8.5A2,2 0 0,1 16.5,10.5A2,2 0 0,1 14.5,8.5A2,2 0 0,1 16.5,6.5M16.5,12A3.5,3.5 0 0,0 20,8.5A3.5,3.5 0 0,0 16.5,5A3.5,3.5 0 0,0 13,8.5A3.5,3.5 0 0,0 16.5,12M7.5,6.5A2,2 0 0,1 9.5,8.5A2,2 0 0,1 7.5,10.5A2,2 0 0,1 5.5,8.5A2,2 0 0,1 7.5,6.5M7.5,12A3.5,3.5 0 0,0 11,8.5A3.5,3.5 0 0,0 7.5,5A3.5,3.5 0 0,0 4,8.5A3.5,3.5 0 0,0 7.5,12M21.5,17.5H14V16.25C14,15.79 13.8,15.39 13.5,15.03C14.36,14.73 15.44,14.5 16.5,14.5C18.94,14.5 21.5,15.71 21.5,16.25M12.5,17.5H2.5V16.25C2.5,15.71 5.06,14.5 7.5,14.5C9.94,14.5 12.5,15.71 12.5,16.25M16.5,13C15.3,13 13.43,13.34 12,14C10.57,13.33 8.7,13 7.5,13C5.33,13 1,14.08 1,16.25V19H23V16.25C23,14.08 18.67,13 16.5,13Z",
-		"keywords":["accounts","users"]
+		"data":"M16.5,6.5A2,2 0 0,1 18.5,8.5A2,2 0 0,1 16.5,10.5A2,2 0 0,1 14.5,8.5A2,2 0 0,1 16.5,6.5M16.5,12A3.5,3.5 0 0,0 20,8.5A3.5,3.5 0 0,0 16.5,5A3.5,3.5 0 0,0 13,8.5A3.5,3.5 0 0,0 16.5,12M7.5,6.5A2,2 0 0,1 9.5,8.5A2,2 0 0,1 7.5,10.5A2,2 0 0,1 5.5,8.5A2,2 0 0,1 7.5,6.5M7.5,12A3.5,3.5 0 0,0 11,8.5A3.5,3.5 0 0,0 7.5,5A3.5,3.5 0 0,0 4,8.5A3.5,3.5 0 0,0 7.5,12M21.5,17.5H14V16.25C14,15.79 13.8,15.39 13.5,15.03C14.36,14.73 15.44,14.5 16.5,14.5C18.94,14.5 21.5,15.71 21.5,16.25M12.5,17.5H2.5V16.25C2.5,15.71 5.06,14.5 7.5,14.5C9.94,14.5 12.5,15.71 12.5,16.25M16.5,13C15.3,13 13.43,13.34 12,14C10.57,13.33 8.7,13 7.5,13C5.33,13 1,14.08 1,16.25V19H23V16.25C23,14.08 18.67,13 16.5,13Z"
 	},
 	"account-multiple-plus":{
-		"aliases":["group-add","user-multiple-plus"],
+		"aliases":["accounts-plus","group-add","user-multiple-plus","users-plus"],
 		"categories":["users"],
 		"codepoint":"f010",
 		"contributor":"google",
 		"data":"M13,13C11,13 7,14 7,16V18H19V16C19,14 15,13 13,13M19.62,13.16C20.45,13.88 21,14.82 21,16V18H24V16C24,14.46 21.63,13.5 19.62,13.16M13,11A3,3 0 0,0 16,8A3,3 0 0,0 13,5A3,3 0 0,0 10,8A3,3 0 0,0 13,11M18,11A3,3 0 0,0 21,8A3,3 0 0,0 18,5C17.68,5 17.37,5.05 17.08,5.14C17.65,5.95 18,6.94 18,8C18,9.06 17.65,10.04 17.08,10.85C17.37,10.95 17.68,11 18,11M8,10H5V7H3V10H0V12H3V15H5V12H8V10Z",
-		"keywords":["accounts","people","register","users"]
+		"keywords":["people","register"]
 	},
 	"account-multiple-plus-outline":{
 		"added":2119,
-		"aliases":["group-add-outline","user-multiple-plus-outline"],
+		"aliases":["accounts-plus-outline","group-add-outline","user-multiple-plus-outline","users-plus-outline"],
 		"categories":["users"],
 		"codepoint":"f7ff",
 		"contributor":"greenturtwig",
 		"data":"M13.5,5A3.5,3.5 0 0,0 10,8.5A3.5,3.5 0 0,0 13.5,12C14.25,12 14.94,11.76 15.5,11.36C16.07,11.76 16.76,12 17.5,12A3.5,3.5 0 0,0 21,8.5A3.5,3.5 0 0,0 17.5,5C16.76,5 16.08,5.25 15.5,5.65C14.95,5.24 14.25,5 13.5,5M13.5,6.5A2,2 0 0,1 15.5,8.5A2,2 0 0,1 13.5,10.5A2,2 0 0,1 11.5,8.5A2,2 0 0,1 13.5,6.5M17.5,6.5A2,2 0 0,1 19.5,8.5A2,2 0 0,1 17.5,10.5C17.14,10.5 16.81,10.4 16.5,10.23C16.82,9.72 17,9.13 17,8.5C17,7.87 16.82,7.28 16.5,6.77C16.81,6.6 17.14,6.5 17.5,6.5M3,8V11H0V13H3V16H5V13H8V11H5V8H3M13.5,13C11.33,13 7,14.08 7,16.25V19H24V16.25C24,14.08 19.67,13 17.5,13C16.95,13 16.25,13.08 15.5,13.22C14.78,13.08 14.07,13 13.5,13M13.5,14.5C15.94,14.5 18.5,15.71 18.5,16.25V17.5H8.5V16.25C8.5,15.71 11.06,14.5 13.5,14.5M19.08,14.66C20.93,15 22.5,15.83 22.5,16.25V17.5H20V16.25C20,15.63 19.64,15.1 19.08,14.66Z",
-		"keywords":["accounts","people","register","users"]
+		"keywords":["people","register"]
 	},
 	"account-network":{
 		"aliases":["user-network"],
@@ -326,12 +324,12 @@
 		"data":"M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M15.6,8.34C16.67,8.34 17.53,9.2 17.53,10.27C17.53,11.34 16.67,12.2 15.6,12.2A1.93,1.93 0 0,1 13.67,10.27C13.66,9.2 14.53,8.34 15.6,8.34M9.6,6.76C10.9,6.76 11.96,7.82 11.96,9.12C11.96,10.42 10.9,11.5 9.6,11.5C8.3,11.5 7.24,10.42 7.24,9.12C7.24,7.81 8.29,6.76 9.6,6.76M9.6,15.89V19.64C7.2,18.89 5.3,17.04 4.46,14.68C5.5,13.56 8.13,13 9.6,13C10.13,13 10.8,13.07 11.5,13.21C9.86,14.08 9.6,15.23 9.6,15.89M12,20C11.72,20 11.46,20 11.2,19.96V15.89C11.2,14.47 14.14,13.76 15.6,13.76C16.67,13.76 18.5,14.15 19.44,14.91C18.27,17.88 15.38,20 12,20Z"
 	},
 	"account-switch":{
-		"aliases":["user-switch"],
+		"aliases":["accounts-switch","user-switch","users-switch"],
 		"categories":["users"],
 		"codepoint":"f019",
 		"contributor":"austin-andrews",
 		"data":"M16,9C18.33,9 23,10.17 23,12.5V15H17V12.5C17,11 16.19,9.89 15.04,9.05L16,9M8,9C10.33,9 15,10.17 15,12.5V15H1V12.5C1,10.17 5.67,9 8,9M8,7A3,3 0 0,1 5,4A3,3 0 0,1 8,1A3,3 0 0,1 11,4A3,3 0 0,1 8,7M16,7A3,3 0 0,1 13,4A3,3 0 0,1 16,1A3,3 0 0,1 19,4A3,3 0 0,1 16,7M9,16.75V19H15V16.75L18.25,20L15,23.25V21H9V23.25L5.75,20L9,16.75Z",
-		"keywords":["accounts","people","person","users"]
+		"keywords":["people","person"]
 	},
 	"accusoft":{
 		"added":2199,
@@ -446,6 +444,7 @@
 		"data":"M6,6.9L3.87,4.78L5.28,3.37L7.4,5.5L6,6.9M13,1V4H11V1H13M20.13,4.78L18,6.9L16.6,5.5L18.72,3.37L20.13,4.78M4.5,10.5V12.5H1.5V10.5H4.5M19.5,10.5H22.5V12.5H19.5V10.5M6,20H18A2,2 0 0,1 20,22H4A2,2 0 0,1 6,20M12,5A6,6 0 0,1 18,11V19H6V11A6,6 0 0,1 12,5Z"
 	},
 	"alarm-multiple":{
+		"aliases":["alarms"],
 		"categories":["time"],
 		"codepoint":"f022",
 		"contributor":"austin-andrews",
@@ -2479,6 +2478,7 @@
 		"data":"M18,22H6A2,2 0 0,1 4,20V4C4,2.89 4.9,2 6,2H7V9L9.5,7.5L12,9V2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22M18,18V16H12V18H18Z"
 	},
 	"book-multiple":{
+		"aliases":["books"],
 		"categories":["other"],
 		"codepoint":"f0bb",
 		"contributor":"austin-andrews",
@@ -2506,6 +2506,7 @@
 		"data":"M9,2A2,2 0 0,0 7,4V16A2,2 0 0,0 9,18H19A2,2 0 0,0 21,16V4A2,2 0 0,0 19,2H14V7L12,5.5L10,7V2H9M3,6V20A2,2 0 0,0 5,22H17V20H5V6H3M14.59,10.17L16,11.59L17.41,10.17L18.83,11.59L17.41,13L18.83,14.41L17.41,15.83L16,14.41L14.59,15.83L13.17,14.41L14.59,13L13.17,11.59L14.59,10.17Z"
 	},
 	"book-multiple-variant":{
+		"aliases":["books-variant"],
 		"categories":["other"],
 		"codepoint":"f0bc",
 		"contributor":"austin-andrews",
@@ -3136,6 +3137,12 @@
 		"contributor":"austin-andrews",
 		"data":"M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z"
 	},
+	"calculator-variant":{
+		"added":"{next}",
+		"categories":["tech"],
+		"contributor":"michael-richins",
+		"data":"M9,2H4A2,2 0 0,0 2,4V9A2,2 0 0,0 4,11H9A2,2 0 0,0 11,9V4A2,2 0 0,0 9,2M9,7H4V6H9V7M20,13H15A2,2 0 0,0 13,15V20A2,2 0 0,0 15,22H20A2,2 0 0,0 22,20V15A2,2 0 0,0 20,13M20,19H15V18H20V19M20,17H15V16H20V17M20,2H15A2,2 0 0,0 13,4V9A2,2 0 0,0 15,11H20A2,2 0 0,0 22,9V4A2,2 0 0,0 20,2M20,7H18V9H17V7H15V6H17V4H18V6H20V7M9,13H4A2,2 0 0,0 2,15V20A2,2 0 0,0 4,22H9A2,2 0 0,0 11,20V15A2,2 0 0,0 9,13M8.62,18.91L7.91,19.62L6.5,18.21L5.09,19.62L4.38,18.91L5.79,17.5L4.38,16.09L5.09,15.38L6.5,16.79L7.91,15.38L8.62,16.09L7.21,17.5L8.62,18.91Z"
+	},
 	"calendar":{
 		"aliases":["event","insert-invitation"],
 		"categories":["time"],
@@ -3189,7 +3196,7 @@
 		"data":"M19,20V9H5V20H19M16,2H18V4H19A2,2 0 0,1 21,6V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V6A2,2 0 0,1 5,4H6V2H8V4H16V2M12,18.17L11.42,17.64C9.36,15.77 8,14.54 8,13.03C8,11.8 8.97,10.83 10.2,10.83C10.9,10.83 11.56,11.15 12,11.66C12.44,11.15 13.1,10.83 13.8,10.83C15.03,10.83 16,11.8 16,13.03C16,14.54 14.64,15.77 12.58,17.64L12,18.17Z"
 	},
 	"calendar-multiple":{
-		"aliases":["event-multiple"],
+		"aliases":["calendars","event-multiple","events"],
 		"categories":["time"],
 		"codepoint":"f0f1",
 		"contributor":"austin-andrews",
@@ -3690,6 +3697,7 @@
 		"data":"M20,14C20,12.5 19.5,12 18,12H16V11C16,10 16,10 14,10V15.4L14,19H16L18,19C19.5,19 20,18.47 20,17V14M12,12C12,10.5 11.47,10 10,10H6C4.5,10 4,10.5 4,12V19H6V16H10V19H12V12M10,7H14V5H10V7M22,9V20C22,21.11 21.11,22 20,22H4A2,2 0 0,1 2,20V9C2,7.89 2.89,7 4,7H8V5L10,3H14L16,5V7H20A2,2 0 0,1 22,9H22M16,17H18V14H16V17M6,12H10V14H6V12Z"
 	},
 	"cash":{
+		"aliases":["money"],
 		"categories":["money"],
 		"codepoint":"f114",
 		"contributor":"austin-andrews",
@@ -3697,6 +3705,7 @@
 		"keywords":["money","note"]
 	},
 	"cash-100":{
+		"aliases":["money-100"],
 		"categories":["money"],
 		"codepoint":"f115",
 		"contributor":"google",
@@ -3704,14 +3713,21 @@
 		"keywords":["money","note"]
 	},
 	"cash-multiple":{
+		"aliases":["money"],
 		"categories":["money"],
 		"codepoint":"f116",
 		"contributor":"austin-andrews",
 		"data":"M5,6H23V18H5V6M14,9A3,3 0 0,1 17,12A3,3 0 0,1 14,15A3,3 0 0,1 11,12A3,3 0 0,1 14,9M9,8A2,2 0 0,1 7,10V14A2,2 0 0,1 9,16H19A2,2 0 0,1 21,14V10A2,2 0 0,1 19,8H9M1,10H3V20H19V22H1V10Z",
 		"keywords":["money","notes"]
 	},
+	"cash-refund":{
+		"added":"{next}",
+		"categories":["money"],
+		"contributor":"michael-richins",
+		"data":"M3,11H21V23H3V11M12,15A2,2 0 0,1 14,17A2,2 0 0,1 12,19A2,2 0 0,1 10,17A2,2 0 0,1 12,15M7,13A2,2 0 0,1 5,15V19A2,2 0 0,1 7,21H17A2,2 0 0,1 19,19V15A2,2 0 0,1 17,13H7M17,5V10H15.5V6.5H9.88L12.3,8.93L11.24,10L7,5.75L11.24,1.5L12.3,2.57L9.88,5H17Z"
+	},
 	"cash-usd":{
-		"aliases":["local-atm"],
+		"aliases":["local-atm","money-usd"],
 		"categories":["money","places"],
 		"codepoint":"f117",
 		"contributor":"google",
@@ -4047,7 +4063,7 @@
 		"data":"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"
 	},
 	"check-all":{
-		"aliases":["check-multiple","done-all","tick-all"],
+		"aliases":["check-multiple","checks","done-all","tick-all","ticks"],
 		"categories":["other"],
 		"codepoint":"f12d",
 		"contributor":"google",
@@ -4151,6 +4167,7 @@
 		"data":"M19,19H5V5H15V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V11H19M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
 	},
 	"checkbox-multiple-blank":{
+		"aliases":["checkboxes-blank"],
 		"categories":["other"],
 		"codepoint":"f136",
 		"contributor":"austin-andrews",
@@ -4158,6 +4175,7 @@
 	},
 	"checkbox-multiple-blank-circle":{
 		"added":1650,
+		"aliases":["checkboxes-blank-circle"],
 		"categories":["other"],
 		"codepoint":"f63b",
 		"contributor":"cody",
@@ -4165,18 +4183,21 @@
 	},
 	"checkbox-multiple-blank-circle-outline":{
 		"added":1650,
+		"aliases":["checkboxes-blank-circle-outline"],
 		"categories":["other"],
 		"codepoint":"f63c",
 		"contributor":"cody",
 		"data":"M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10A8,8 0 0,0 14,2M14,4C17.32,4 20,6.69 20,10C20,13.32 17.32,16 14,16A6,6 0 0,1 8,10A6,6 0 0,1 14,4M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82Z"
 	},
 	"checkbox-multiple-blank-outline":{
+		"aliases":["checkboxes-blank-outline"],
 		"categories":["other"],
 		"codepoint":"f137",
 		"contributor":"austin-andrews",
 		"data":"M20,16V4H8V16H20M22,16A2,2 0 0,1 20,18H8C6.89,18 6,17.1 6,16V4C6,2.89 6.89,2 8,2H20A2,2 0 0,1 22,4V16M16,20V22H4A2,2 0 0,1 2,20V7H4V20H16Z"
 	},
 	"checkbox-multiple-marked":{
+		"aliases":["checkboxes-marked"],
 		"categories":["other"],
 		"codepoint":"f138",
 		"contributor":"austin-andrews",
@@ -4184,6 +4205,7 @@
 	},
 	"checkbox-multiple-marked-circle":{
 		"added":1650,
+		"aliases":["checkboxes-marked-circle"],
 		"categories":["other"],
 		"codepoint":"f63d",
 		"contributor":"cody",
@@ -4191,12 +4213,14 @@
 	},
 	"checkbox-multiple-marked-circle-outline":{
 		"added":1650,
+		"aliases":["checkboxes-marked-circle-outline"],
 		"categories":["other"],
 		"codepoint":"f63e",
 		"contributor":"cody",
 		"data":"M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10H20C20,13.32 17.32,16 14,16A6,6 0 0,1 8,10A6,6 0 0,1 14,4C14.43,4 14.86,4.05 15.27,4.14L16.88,2.54C15.96,2.18 15,2 14,2M20.59,3.58L14,10.17L11.62,7.79L10.21,9.21L14,13L22,5M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82Z"
 	},
 	"checkbox-multiple-marked-outline":{
+		"aliases":["checkboxes-marked-outline"],
 		"categories":["other"],
 		"codepoint":"f139",
 		"contributor":"austin-andrews",
@@ -4907,11 +4931,11 @@
 		"data":"M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z"
 	},
 	"code-brackets":{
+		"aliases":["square-brackets"],
 		"categories":["characters","programming"],
 		"codepoint":"f16a",
 		"contributor":"cody",
-		"data":"M15,4V6H18V18H15V20H20V4M4,4V20H9V18H6V6H9V4H4Z",
-		"keywords":["square"]
+		"data":"M15,4V6H18V18H15V20H20V4M4,4V20H9V18H6V6H9V4H4Z"
 	},
 	"code-equal":{
 		"categories":["programming"],
@@ -5162,12 +5186,14 @@
 	},
 	"comment-multiple":{
 		"added":2199,
+		"aliases":["comments"],
 		"categories":["other"],
 		"codepoint":"f85e",
 		"contributor":"michael-richins",
 		"data":"M12,23A1,1 0 0,1 11,22V19H7A2,2 0 0,1 5,17V7A2,2 0 0,1 7,5H21A2,2 0 0,1 23,7V17A2,2 0 0,1 21,19H16.9L13.2,22.71C13,22.89 12.76,23 12.5,23H12M3,15H1V3A2,2 0 0,1 3,1H19V3H3V15Z"
 	},
 	"comment-multiple-outline":{
+		"aliases":["comments-outline"],
 		"categories":["other"],
 		"codepoint":"f181",
 		"contributor":"austin-andrews",
@@ -5252,6 +5278,7 @@
 	},
 	"comment-text-multiple":{
 		"added":2199,
+		"aliases":["comments-text"],
 		"categories":["other"],
 		"codepoint":"f85f",
 		"contributor":"michael-richins",
@@ -5259,6 +5286,7 @@
 	},
 	"comment-text-multiple-outline":{
 		"added":2199,
+		"aliases":["comments-text-outline"],
 		"categories":["other"],
 		"codepoint":"f860",
 		"contributor":"michael-richins",
@@ -5483,6 +5511,7 @@
 		"data":"M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"
 	},
 	"credit-card-multiple":{
+		"aliases":["credit-cards"],
 		"categories":["money"],
 		"codepoint":"f19c",
 		"contributor":"austin-andrews",
@@ -5501,6 +5530,12 @@
 		"codepoint":"f675",
 		"contributor":"austin-andrews",
 		"data":"M21,18H24V20H21V23H19V20H16V18H19V15H21V18M19,8V6H3V8H19M19,12H3V18H14V20H3C1.89,20 1,19.1 1,18V6C1,4.89 1.89,4 3,4H19A2,2 0 0,1 21,6V13H19V12Z"
+	},
+	"credit-card-refund":{
+		"added":"{next}",
+		"categories":["money"],
+		"contributor":"michael-richins",
+		"data":"M18,11H6A2,2 0 0,0 4,13V21A2,2 0 0,0 6,23H18A2,2 0 0,0 20,21V13A2,2 0 0,0 18,11M18,21H6V17H18V21M18,15H6V13H18V15M17,5V10H15.5V6.5H9.88L12.3,8.93L11.24,10L7,5.75L11.24,1.5L12.3,2.57L9.88,5H17Z"
 	},
 	"credit-card-scan":{
 		"categories":["money"],
@@ -5833,10 +5868,12 @@
 		"data":"M13,6V11H18V7.75L22.25,12L18,16.25V13H13V18H16.25L12,22.25L7.75,18H11V13H6V16.25L1.75,12L6,7.75V11H11V6H7.75L12,1.75L16.25,6H13Z"
 	},
 	"cursor-pointer":{
+		"aliases":["cursor-hand"],
 		"categories":["other"],
 		"codepoint":"f1b7",
 		"contributor":"austin-andrews",
-		"data":"M10,2A2,2 0 0,1 12,4V8.5C12,8.5 14,8.25 14,9.25C14,9.25 16,9 16,10C16,10 18,9.75 18,10.75C18,10.75 20,10.5 20,11.5V15C20,16 17,21 17,22H9C9,22 7,15 4,13C4,13 3,7 8,12V4A2,2 0 0,1 10,2Z"
+		"data":"M13.75,10.19L14.38,10.32L18.55,12.4C19.25,12.63 19.71,13.32 19.65,14.06V14.19L19.65,14.32L18.75,20.44C18.69,20.87 18.5,21.27 18.15,21.55C17.84,21.85 17.43,22 17,22H10.12C9.63,22 9.18,21.82 8.85,21.47L2.86,15.5L3.76,14.5C4,14.25 4.38,14.11 4.74,14.13H5.03L9,15V4.5A2,2 0 0,1 11,2.5A2,2 0 0,1 13,4.5V10.19H13.75Z",
+		"updated":"{next}"
 	},
 	"cursor-text":{
 		"added":1554,
@@ -6089,6 +6126,12 @@
 		"data":"M8,2H16A2,2 0 0,1 18,4V20A2,2 0 0,1 16,22H8A2,2 0 0,1 6,20V4A2,2 0 0,1 8,2M8,4V6H16V4H8M16,8H8V10H16V8M16,18H14V20H16V18Z",
 		"keywords":["computer"]
 	},
+	"desktop-tower-monitor":{
+		"added":"{next}",
+		"categories":["home","tech"],
+		"contributor":"sarinmans",
+		"data":"M22,18H17A1,1 0 0,1 16,17V7A1,1 0 0,1 17,6H22A1,1 0 0,1 23,7V17A1,1 0 0,1 22,18M22,8H17V9H22V8M22,10H17V11H22V10M9,15V17H10V18H5V17H6V15H2A1,1 0 0,1 1,14V7A1,1 0 0,1 2,6H13A1,1 0 0,1 14,7V14A1,1 0 0,1 13,15H9M12,8H3V13H12V8Z"
+	},
 	"details":{
 		"categories":["other"],
 		"codepoint":"f1c6",
@@ -6227,6 +6270,7 @@
 	},
 	"dice-multiple":{
 		"added":1932,
+		"aliases":["die-multiple"],
 		"categories":["games"],
 		"codepoint":"f76d",
 		"contributor":"michael-richins",
@@ -6377,6 +6421,13 @@
 		"contributor":"michael-irigoyen",
 		"data":"M18,4C16.29,4 15.25,4.33 14.65,4.61C13.88,4.23 13,4 12,4C11,4 10.12,4.23 9.35,4.61C8.75,4.33 7.71,4 6,4C3,4 1,12 1,14C1,14.83 2.32,15.59 4.14,15.9C4.78,18.14 7.8,19.85 11.5,20V15.72C10.91,15.35 10,14.68 10,14C10,13 12,13 12,13C12,13 14,13 14,14C14,14.68 13.09,15.35 12.5,15.72V20C16.2,19.85 19.22,18.14 19.86,15.9C21.68,15.59 23,14.83 23,14C23,12 21,4 18,4M4.15,13.87C3.65,13.75 3.26,13.61 3,13.5C3.25,10.73 5.2,6.4 6.05,6C6.59,6 7,6.06 7.37,6.11C5.27,8.42 4.44,12.04 4.15,13.87M9,12A1,1 0 0,1 8,11C8,10.46 8.45,10 9,10A1,1 0 0,1 10,11C10,11.56 9.55,12 9,12M15,12A1,1 0 0,1 14,11C14,10.46 14.45,10 15,10A1,1 0 0,1 16,11C16,11.56 15.55,12 15,12M19.85,13.87C19.56,12.04 18.73,8.42 16.63,6.11C17,6.06 17.41,6 17.95,6C18.8,6.4 20.75,10.73 21,13.5C20.75,13.61 20.36,13.75 19.85,13.87Z"
 	},
+	"dog-service":{
+		"added":"{next}",
+		"aliases":["guide-dog"],
+		"categories":["nature"],
+		"contributor":"michael-richins",
+		"data":"M14,8L17,11V21H15V15H8L6,18V21H4V15L5,14V11L2,8L3,7L5,9H7V12A1,1 0 0,0 8,13H12A1,1 0 0,0 13,12V9L14,8M19,5V3L15,7L18,10L19,9L20,10L22,8L19,5M11.5,9.5L4.5,2.5C4.23,2.22 3.79,2.22 3.5,2.5V2.5C3.22,2.77 3.22,3.21 3.5,3.5L10.5,10.5C10.77,10.78 11.21,10.78 11.5,10.5V10.5C11.78,10.23 11.78,9.79 11.5,9.5Z"
+	},
 	"dog-side":{
 		"added":2695,
 		"categories":["nature"],
@@ -6487,6 +6538,7 @@
 	},
 	"download-multiple":{
 		"added":2594,
+		"aliases":["downloads"],
 		"categories":["networking"],
 		"codepoint":"f9e8",
 		"contributor":"greenturtwig",
@@ -7244,6 +7296,13 @@
 		"contributor":"michael-irigoyen",
 		"data":"M10,18H8V16H10V18M10,14H8V9H10V14M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"
 	},
+	"file-cabinet":{
+		"added":"{next}",
+		"aliases":["filing-cabinet"],
+		"categories":["other"],
+		"contributor":"michael-irigoyen",
+		"data":"M14,8H10V6H14V8M20,4V20C20,21.11 19.11,22 18,22H6C4.89,22 4,21.11 4,20V4A2,2 0 0,1 6,2H18C19.11,2 20,2.9 20,4M18,13H6V20H18V13M18,4H6V11H18V4M14,15H10V17H14V15Z"
+	},
 	"file-chart":{
 		"aliases":["file-report","file-tick"],
 		"categories":["files"],
@@ -7288,6 +7347,20 @@
 		"codepoint":"f21a",
 		"contributor":"google",
 		"data":"M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"
+	},
+	"file-document-box-multiple":{
+		"added":"{next}",
+		"aliases":["file-document-boxes"],
+		"categories":["files"],
+		"contributor":"michael-irigoyen",
+		"data":"M16,15H9V13H16M19,11H9V9H19M19,7H9V5H19M21,1H7C5.89,1 5,1.89 5,3V17C5,18.11 5.9,19 7,19H21C22.11,19 23,18.11 23,17V3C23,1.89 22.1,1 21,1M3,5V21H19V23H3A2,2 0 0,1 1,21V5H3Z"
+	},
+	"file-document-box-multiple-outline":{
+		"added":"{next}",
+		"aliases":["file-document-boxes-outine"],
+		"categories":["files"],
+		"contributor":"austin-andrews",
+		"data":"M16,15H9V13H16V15M19,11H9V9H19V11M19,7H9V5H19V7M3,5V21H19V23H3A2,2 0 0,1 1,21V5H3M21,1A2,2 0 0,1 23,3V17C23,18.11 22.11,19 21,19H7A2,2 0 0,1 5,17V3C5,1.89 5.89,1 7,1H21M7,3V17H21V3H7Z"
 	},
 	"file-document-box-outline":{
 		"added":2594,
@@ -7376,6 +7449,7 @@
 		"data":"M14,17H18V14L23,18.5L18,23V20H14V17M13,9H18.5L13,3.5V9M6,2H14L20,8V12.34C19.37,12.12 18.7,12 18,12A6,6 0 0,0 12,18C12,19.54 12.58,20.94 13.53,22H6C4.89,22 4,21.1 4,20V4A2,2 0 0,1 6,2Z"
 	},
 	"file-multiple":{
+		"aliases":["files"],
 		"categories":["files"],
 		"codepoint":"f222",
 		"contributor":"cody",
@@ -7842,6 +7916,18 @@
 		"data":"M19,17H11V16C11,14.67 13.67,14 15,14C16.33,14 19,14.67 19,16M15,9A2,2 0 0,1 17,11A2,2 0 0,1 15,13A2,2 0 0,1 13,11C13,9.89 13.9,9 15,9M20,6H12L10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6Z",
 		"keywords":["person"]
 	},
+	"folder-clock":{
+		"added":"{next}",
+		"categories":["files"],
+		"contributor":"greenturtwig",
+		"data":"M3,4C1.89,4 1,4.89 1,6V18A2,2 0 0,0 3,20H10.26C11.57,21.88 13.71,23 16,23A7,7 0 0,0 23,16C23,14.17 22.28,12.42 21,11.11V8C21,6.89 20.1,6 19,6H11L9,4H3M16,11A5,5 0 0,1 21,16A5,5 0 0,1 16,21A5,5 0 0,1 11,16A5,5 0 0,1 16,11M15,12V17L18.61,19.16L19.36,17.94L16.5,16.25V12H15Z"
+	},
+	"folder-clock-outline":{
+		"added":"{next}",
+		"categories":["files"],
+		"contributor":"austin-andrews",
+		"data":"M15,12H16.5V16.25L19.36,17.94L18.61,19.16L15,17V12M19,8H3V18H9.29C9.1,17.37 9,16.7 9,16A7,7 0 0,1 16,9C17.07,9 18.09,9.24 19,9.67V8M3,20C1.89,20 1,19.1 1,18V6A2,2 0 0,1 3,4H9L11,6H19A2,2 0 0,1 21,8V11.1C22.24,12.36 23,14.09 23,16A7,7 0 0,1 16,23C13.62,23 11.5,21.81 10.25,20H3M16,11A5,5 0 0,0 11,16A5,5 0 0,0 16,21A5,5 0 0,0 21,16A5,5 0 0,0 16,11Z"
+	},
 	"folder-download":{
 		"categories":["files"],
 		"codepoint":"f24d",
@@ -7902,19 +7988,21 @@
 		"updated":2046
 	},
 	"folder-multiple":{
+		"aliases":["folders"],
 		"categories":["files"],
 		"codepoint":"f253",
 		"contributor":"austin-andrews",
 		"data":"M22,4H14L12,2H6A2,2 0 0,0 4,4V16A2,2 0 0,0 6,18H22A2,2 0 0,0 24,16V6A2,2 0 0,0 22,4M2,6H0V11H0V20A2,2 0 0,0 2,22H20V20H2V6Z"
 	},
 	"folder-multiple-image":{
-		"aliases":["perm-media"],
+		"aliases":["folders-image","perm-media"],
 		"categories":["files"],
 		"codepoint":"f254",
 		"contributor":"google",
 		"data":"M7,15L11.5,9L15,13.5L17.5,10.5L21,15M22,4H14L12,2H6A2,2 0 0,0 4,4V16A2,2 0 0,0 6,18H22A2,2 0 0,0 24,16V6A2,2 0 0,0 22,4M2,6H0V11H0V20A2,2 0 0,0 2,22H20V20H2V6Z"
 	},
 	"folder-multiple-outline":{
+		"aliases":["folders-outline"],
 		"categories":["files"],
 		"codepoint":"f255",
 		"contributor":"austin-andrews",
@@ -8104,6 +8192,12 @@
 		"codepoint":"f754",
 		"contributor":"austin-andrews",
 		"data":"M13,15L15.5,17.5L16.92,16.08L12,11.16L7.08,16.08L8.5,17.5L11,15V21H13V15M3,3H21V5H3V3M3,7H13V9H3V7Z"
+	},
+	"format-annotation-minus":{
+		"added":"{next}",
+		"categories":["editor"],
+		"contributor":"michael-irigoyen",
+		"data":"M10.5,7H8.5L3,21H5.2L6.3,18H12.5L13.6,21H16L10.5,7M7.1,16L9.5,9.7L11.9,16H7.1M22,7H14V5H22V7Z"
 	},
 	"format-annotation-plus":{
 		"added":1650,
@@ -9567,6 +9661,7 @@
 	},
 	"heart-multiple":{
 		"added":2695,
+		"aliases":["hearts"],
 		"categories":["other"],
 		"codepoint":"fa55",
 		"contributor":"michael-irigoyen",
@@ -9575,6 +9670,7 @@
 	},
 	"heart-multiple-outline":{
 		"added":2695,
+		"aliases":["hearts-outline"],
 		"categories":["other"],
 		"codepoint":"fa56",
 		"contributor":"michael-irigoyen",
@@ -9660,6 +9756,7 @@
 	},
 	"hexagon-multiple":{
 		"added":1836,
+		"aliases":["hexagons"],
 		"categories":["other"],
 		"codepoint":"f6e0",
 		"contributor":"austin-andrews",
@@ -9706,6 +9803,18 @@
 		"categories":["other"],
 		"contributor":"sarinmans",
 		"data":"M12,5.32L18,8.69V15.31L12,18.68L6,15.31V8.69L12,5.32M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z"
+	},
+	"hexagram":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"michael-irigoyen",
+		"data":"M14.5,7.66L20.64,6.97L17,12L20.68,16.97L14.5,16.32L12.03,22L9.5,16.34L3.36,17.03L7,12L3.32,7.03L9.5,7.68L11.97,2L14.5,7.66Z"
+	},
+	"hexagram-outline":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"michael-irigoyen",
+		"data":"M12,7L13.3,9.8L16.5,9.4L14.5,12L16.4,14.5L13.2,14.1L12,17L10.7,14.2L7.5,14.6L9.5,12L7.6,9.5L10.8,9.9L12,7M12,2L9.5,7.7L3.3,7L7,12L3.4,17L9.6,16.3L12,22L14.5,16.3L20.7,16.9L17,12L20.6,7L14.4,7.7L12,2Z"
 	},
 	"high-definition":{
 		"added":2046,
@@ -10143,7 +10252,7 @@
 		"data":"M21,5V11.59L18,8.58L14,12.59L10,8.59L6,12.59L3,9.58V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5M18,11.42L21,14.43V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V12.42L6,15.41L10,11.41L14,15.41"
 	},
 	"image-filter":{
-		"aliases":["image-multiple-outline"],
+		"aliases":["image-multiple-outline","images-outline"],
 		"categories":["places"],
 		"codepoint":"f2ef",
 		"contributor":"google",
@@ -10217,7 +10326,7 @@
 		"data":"M15,3H19V0L24,5L19,10V7H15V3M21,11.94V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H12.06C12,3.33 12,3.67 12,4A8,8 0 0,0 20,12C20.33,12 20.67,12 21,11.94M19,18L14.5,12L11,16.5L8.5,13.5L5,18H19Z"
 	},
 	"image-multiple":{
-		"aliases":["collections","photo-library"],
+		"aliases":["collections","images","photo-library"],
 		"categories":["other"],
 		"codepoint":"f2f9",
 		"contributor":"google",
@@ -10289,6 +10398,7 @@
 	},
 	"inbox-multiple":{
 		"added":2243,
+		"aliases":["inboxes"],
 		"categories":["other"],
 		"codepoint":"f8af",
 		"contributor":"google",
@@ -11175,6 +11285,7 @@
 	},
 	"locker-multiple":{
 		"added":2046,
+		"aliases":["lockers"],
 		"categories":["other"],
 		"codepoint":"f7d7",
 		"contributor":"community",
@@ -11373,6 +11484,7 @@
 		"keywords":["location"]
 	},
 	"map-marker-multiple":{
+		"aliases":["map-markers"],
 		"categories":["places"],
 		"codepoint":"f350",
 		"contributor":"austin-andrews",
@@ -11541,6 +11653,12 @@
 		"contributor":"community",
 		"data":"M4.37,7.3C4.4,7.05 4.3,6.81 4.12,6.65L2.25,4.4V4.06H8.05L12.53,13.89L16.47,4.06H22V4.4L20.4,5.93C20.27,6.03 20.2,6.21 20.23,6.38V17.62C20.2,17.79 20.27,17.97 20.4,18.07L21.96,19.6V19.94H14.12V19.6L15.73,18.03C15.89,17.88 15.89,17.83 15.89,17.59V8.5L11.4,19.9H10.8L5.57,8.5V16.14C5.5,16.46 5.63,16.78 5.86,17L7.96,19.57V19.9H2V19.57L4.1,17C4.33,16.78 4.43,16.46 4.37,16.14V7.3Z",
 		"updated":2119
+	},
+	"meetup":{
+		"added":"{next}",
+		"categories":["logos"],
+		"contributor":"community",
+		"data":"M19.61,14.86C19.61,16.68 18.3,18.25 16.5,18.55C16.29,18.59 16.07,18.62 15.84,18.61C15.76,18.61 15.73,18.64 15.71,18.71C15.35,19.74 14.64,20.35 13.57,20.5C12.86,20.6 12.22,20.41 11.65,19.97C11.57,19.9 11.5,19.9 11.44,19.96C10.78,20.43 10.04,20.64 9.23,20.59C7.66,20.5 6.33,19.29 6.08,17.74C6.06,17.63 6.04,17.5 6.04,17.41C6.04,17.32 6,17.29 5.92,17.27C5.44,17.18 5,17 4.63,16.68C3.92,16.13 3.5,15.41 3.4,14.5C3.29,13.5 3.61,12.62 4.32,11.89C4.38,11.83 4.38,11.79 4.34,11.72C4.07,11.24 3.94,10.72 3.96,10.17C4,8.79 4.97,7.65 6.31,7.37C6.46,7.33 6.54,7.27 6.61,7.13C7.27,5.71 8.37,4.85 9.91,4.56C11,4.36 12,4.58 12.94,5.13C13,5.18 13.08,5.18 13.17,5.16C14.67,4.72 16,5.04 17.12,6.11C17.78,6.74 18.15,7.54 18.26,8.46C18.28,8.66 18.29,8.86 18.28,9.06C18.27,9.14 18.29,9.17 18.37,9.19C19.04,9.44 19.5,9.91 19.71,10.6C19.96,11.45 19.75,12.21 19.11,12.83C19.05,12.89 19.07,12.92 19.1,12.97C19.44,13.56 19.61,14.18 19.61,14.86M12.93,14.57C12.93,15.34 13.43,16 14.14,16.26C14.5,16.37 14.85,16.43 15.22,16.45C15.5,16.46 15.75,16.44 16,16.32C16.19,16.22 16.28,16.06 16.27,15.85C16.26,15.64 16.16,15.5 15.96,15.4C15.89,15.37 15.82,15.34 15.74,15.33C15.5,15.29 15.3,15.26 15.07,15.21C14.71,15.14 14.55,14.95 14.55,14.57C14.54,14.24 14.63,13.93 14.73,13.63C14.92,13.07 15.17,12.53 15.41,12C15.64,11.47 15.88,10.95 16.04,10.4C16.13,10.1 16.18,9.8 16.09,9.5C15.97,9 15.69,8.7 15.2,8.61C14.75,8.5 14.3,8.5 13.9,8.78C13.76,8.87 13.63,8.85 13.5,8.74C13.43,8.67 13.34,8.58 13.26,8.5C12.84,8.12 12.3,8.1 11.85,8.45C11.67,8.59 11.5,8.76 11.33,8.89C11.16,9 11,9.03 10.79,8.92C10.6,8.83 10.42,8.74 10.23,8.65C10.03,8.57 9.85,8.46 9.63,8.44C8.95,8.38 8.24,8.79 7.94,9.41C7.8,9.68 7.69,9.96 7.59,10.25C7.11,11.57 6.72,12.91 6.32,14.26C6.14,14.86 6.35,15.45 6.86,15.77C7.26,16 7.69,16.09 8.14,15.95C8.5,15.84 8.71,15.55 8.85,15.22C9.31,14.13 9.73,13 10.17,11.91C10.29,11.61 10.41,11.3 10.54,11C10.67,10.7 11.04,10.6 11.26,10.8C11.4,10.92 11.44,11.09 11.42,11.26C11.41,11.45 11.34,11.62 11.27,11.79C11,12.5 10.69,13.24 10.4,13.97C10.34,14.11 10.28,14.26 10.25,14.42C10.21,14.69 10.31,14.93 10.54,15C10.76,15.12 11,15.14 11.23,15.05C11.5,14.95 11.67,14.74 11.79,14.5C12.22,13.65 12.65,12.8 13.08,11.95C13.28,11.56 13.5,11.17 13.68,10.78C13.76,10.64 13.85,10.5 14,10.41C14.12,10.33 14.25,10.33 14.38,10.4C14.5,10.47 14.5,10.6 14.5,10.73C14.5,10.8 14.5,10.87 14.47,10.93C14.41,11.07 14.36,11.2 14.3,11.33C13.94,12.09 13.57,12.84 13.22,13.59C13.07,13.91 12.91,14.23 12.93,14.57M17.96,20.12C17.96,19.62 17.54,19.2 17.04,19.2C16.5,19.2 16.1,19.61 16.1,20.12A0.93,0.93 0 0,0 17.03,21.05A0.93,0.93 0 0,0 17.96,20.12M2.38,12.46C2.86,12.46 3.27,12.05 3.27,11.57C3.27,11.09 2.87,10.69 2.39,10.69C1.89,10.69 1.5,11.08 1.5,11.57C1.5,12.06 1.89,12.46 2.38,12.46M13.26,2.55C12.77,2.55 12.37,2.94 12.37,3.42C12.37,3.91 12.77,4.3 13.25,4.3C13.74,4.3 14.13,3.92 14.13,3.43C14.13,2.95 13.74,2.55 13.26,2.55M20.45,8.03C20.45,7.63 20.11,7.29 19.71,7.29C19.3,7.28 18.95,7.63 18.95,8.04C18.95,8.45 19.28,8.78 19.7,8.78C20.12,8.78 20.46,8.45 20.45,8.03M5.04,5.89C5.04,6.27 5.34,6.56 5.71,6.56C6.09,6.56 6.39,6.26 6.38,5.88C6.38,5.5 6.09,5.22 5.72,5.22C5.33,5.22 5.04,5.5 5.04,5.89M12.06,21.44C12.06,21.12 11.81,20.86 11.5,20.86C11.16,20.86 10.91,21.11 10.91,21.44C10.91,21.75 11.16,22 11.5,22C11.8,22 12.06,21.75 12.06,21.44M21,12.5C20.71,12.5 20.45,12.78 20.45,13.08A0.55,0.55 0 0,0 21,13.63C21.33,13.63 21.57,13.4 21.57,13.08C21.57,12.77 21.33,12.5 21,12.5M7.62,2C7.35,2 7.14,2.2 7.14,2.47C7.14,2.73 7.35,2.94 7.62,2.94A0.47,0.47 0 0,0 8.09,2.47C8.09,2.2 7.89,2 7.62,2M22.08,10C21.86,10 21.67,10.17 21.66,10.4C21.66,10.63 21.85,10.82 22.08,10.82C22.32,10.82 22.5,10.64 22.5,10.41C22.5,10.17 22.32,10 22.08,10M5.5,18.26C5.5,18.04 5.29,17.85 5.06,17.84C4.84,17.84 4.65,18.03 4.65,18.27C4.65,18.5 4.84,18.68 5.07,18.68C5.3,18.68 5.5,18.5 5.5,18.26Z"
 	},
 	"memory":{
 		"categories":["tech"],
@@ -11986,6 +12104,7 @@
 		"data":"M21,16V4H3V16H21M21,2A2,2 0 0,1 23,4V16A2,2 0 0,1 21,18H14V20H16V22H8V20H10V18H3C1.89,18 1,17.1 1,16V4C1,2.89 1.89,2 3,2H21M5,6H14V11H5V6M15,6H19V8H15V6M19,9V14H15V9H19M5,12H9V14H5V12M10,12H14V14H10V12Z"
 	},
 	"monitor-multiple":{
+		"aliases":["monitors"],
 		"categories":["home","tech"],
 		"codepoint":"f37a",
 		"contributor":"chris-litherland",
@@ -12436,6 +12555,7 @@
 	},
 	"note-multiple":{
 		"added":1722,
+		"aliases":["notes"],
 		"categories":["files"],
 		"codepoint":"f6b7",
 		"contributor":"austin-andrews",
@@ -12443,6 +12563,7 @@
 	},
 	"note-multiple-outline":{
 		"added":1722,
+		"aliases":["notes-outline"],
 		"categories":["files"],
 		"codepoint":"f6b8",
 		"contributor":"austin-andrews",
@@ -12535,7 +12656,7 @@
 		"data":"M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M11,7A2,2 0 0,0 9,9V15A2,2 0 0,0 11,17H13A2,2 0 0,0 15,15V9A2,2 0 0,0 13,7H11M11,9H13V15H11V9Z"
 	},
 	"numeric-0-box-multiple-outline":{
-		"aliases":["numeric-zero-box-multiple-outline"],
+		"aliases":["numeric-0-boxes-outline","numeric-zero-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3a2",
 		"contributor":"google",
@@ -12556,7 +12677,7 @@
 		"data":"M14,17H12V9H10V7H14M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"
 	},
 	"numeric-1-box-multiple-outline":{
-		"aliases":["filter-1","numeric-one-box-multiple-outline"],
+		"aliases":["filter-1","numeric-1-boxes-outline","numeric-one-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3a5",
 		"contributor":"google",
@@ -12589,7 +12710,7 @@
 		"data":"M15,11C15,12.11 14.1,13 13,13H11V15H15V17H9V13C9,11.89 9.9,11 11,11H13V9H9V7H13A2,2 0 0,1 15,9M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"
 	},
 	"numeric-2-box-multiple-outline":{
-		"aliases":["filter-2","numeric-two-box-multiple-outline"],
+		"aliases":["filter-2","numeric-2-boxes-outline","numeric-two-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3a8",
 		"contributor":"google",
@@ -12610,7 +12731,7 @@
 		"data":"M15,10.5A1.5,1.5 0 0,1 13.5,12C14.34,12 15,12.67 15,13.5V15C15,16.11 14.11,17 13,17H9V15H13V13H11V11H13V9H9V7H13C14.11,7 15,7.89 15,9M19,3H5C3.91,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19C20.11,21 21,20.1 21,19V5A2,2 0 0,0 19,3Z"
 	},
 	"numeric-3-box-multiple-outline":{
-		"aliases":["filter-3","numeric-three-box-multiple-outline"],
+		"aliases":["filter-3","numeric-3-boxes-outline","numeric-three-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3ab",
 		"contributor":"google",
@@ -12631,7 +12752,7 @@
 		"data":"M15,17H13V13H9V7H11V11H13V7H15M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"
 	},
 	"numeric-4-box-multiple-outline":{
-		"aliases":["filter-4","numeric-four-box-multiple-outline"],
+		"aliases":["filter-4","numeric-4-boxes-outline","numeric-four-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3ae",
 		"contributor":"google",
@@ -12652,7 +12773,7 @@
 		"data":"M15,9H11V11H13A2,2 0 0,1 15,13V15C15,16.11 14.1,17 13,17H9V15H13V13H9V7H15M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"
 	},
 	"numeric-5-box-multiple-outline":{
-		"aliases":["filter-5","numeric-five-box-multiple-outline"],
+		"aliases":["filter-5","numeric-5-boxes-outline","numeric-five-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3b1",
 		"contributor":"google",
@@ -12673,7 +12794,7 @@
 		"data":"M15,9H11V11H13A2,2 0 0,1 15,13V15C15,16.11 14.1,17 13,17H11A2,2 0 0,1 9,15V9C9,7.89 9.9,7 11,7H15M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M11,15H13V13H11V15Z"
 	},
 	"numeric-6-box-multiple-outline":{
-		"aliases":["filter-6","numeric-six-box-multiple-outline"],
+		"aliases":["filter-6","numeric-6-boxes-outline","numeric-six-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3b4",
 		"contributor":"google",
@@ -12694,7 +12815,7 @@
 		"data":"M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M11,17L15,9V7H9V9H13L9,17H11Z"
 	},
 	"numeric-7-box-multiple-outline":{
-		"aliases":["filter-7","numeric-seven-box-multiple-outline"],
+		"aliases":["filter-7","numeric-7-boxes-outline","numeric-seven-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3b7",
 		"contributor":"google",
@@ -12715,7 +12836,7 @@
 		"data":"M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M11,17H13A2,2 0 0,0 15,15V13.5A1.5,1.5 0 0,0 13.5,12A1.5,1.5 0 0,0 15,10.5V9C15,7.89 14.1,7 13,7H11A2,2 0 0,0 9,9V10.5A1.5,1.5 0 0,0 10.5,12A1.5,1.5 0 0,0 9,13.5V15C9,16.11 9.9,17 11,17M11,13H13V15H11V13M11,9H13V11H11V9Z"
 	},
 	"numeric-8-box-multiple-outline":{
-		"aliases":["filter-8","numeric-eight-box-multiple-outline"],
+		"aliases":["filter-8","numeric-8-boxes-outline","numeric-eight-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3ba",
 		"contributor":"google",
@@ -12736,7 +12857,7 @@
 		"data":"M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M13,11H11V9H13V11M13,7H11A2,2 0 0,0 9,9V11C9,12.11 9.9,13 11,13H13V15H9V17H13A2,2 0 0,0 15,15V9C15,7.89 14.1,7 13,7Z"
 	},
 	"numeric-9-box-multiple-outline":{
-		"aliases":["filter-9","numeric-nine-box-multiple-outline"],
+		"aliases":["filter-9","numeric-9-boxes-outline","numeric-nine-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3bd",
 		"contributor":"google",
@@ -12757,7 +12878,7 @@
 		"data":"M21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5M19,11H17V9H15V11H13V13H15V15H17V13H19V11M10,7H8A2,2 0 0,0 6,9V11C6,12.11 6.9,13 8,13H10V15H6V17H10A2,2 0 0,0 12,15V9C12,7.89 11.1,7 10,7M8,9H10V11H8V9Z"
 	},
 	"numeric-9-plus-box-multiple-outline":{
-		"aliases":["filter-9-plus","numeric-nine-plus-box-multiple-outline"],
+		"aliases":["filter-9-plus","numeric-9-plus-boxes-outline","numeric-nine-plus-box-multiple-outline"],
 		"categories":["characters"],
 		"codepoint":"f3c0",
 		"contributor":"google",
@@ -13357,12 +13478,13 @@
 		"contributor":"cody",
 		"data":"M4,3A1,1 0 0,0 3,4A17,17 0 0,0 20,21A1,1 0 0,0 21,20V16.5A1,1 0 0,0 20,15.5C18.75,15.5 17.55,15.3 16.43,14.93C16.08,14.82 15.69,14.9 15.41,15.17L13.21,17.37C10.38,15.93 8.06,13.62 6.62,10.78L8.82,8.57C9.1,8.31 9.18,7.92 9.07,7.57C8.7,6.45 8.5,5.25 8.5,4A1,1 0 0,0 7.5,3H4M19,11V9.5H15.5L21,4L20,3L14.5,8.5V5H13V11H19Z"
 	},
-	"phone-locked":{
-		"aliases":["telephone-locked"],
+	"phone-lock":{
+		"aliases":["phone-locked","telephone-lock","telephone-locked"],
 		"categories":["other"],
 		"codepoint":"f3f8",
 		"contributor":"google",
-		"data":"M19.2,4H15.8V3.5C15.8,2.56 16.56,1.8 17.5,1.8C18.44,1.8 19.2,2.56 19.2,3.5M20,4V3.5A2.5,2.5 0 0,0 17.5,1A2.5,2.5 0 0,0 15,3.5V4A1,1 0 0,0 14,5V9A1,1 0 0,0 15,10H20A1,1 0 0,0 21,9V5A1,1 0 0,0 20,4M20,15.5C18.75,15.5 17.55,15.3 16.43,14.93C16.08,14.82 15.69,14.9 15.41,15.18L13.21,17.38C10.38,15.94 8.06,13.62 6.62,10.79L8.82,8.59C9.1,8.31 9.18,7.92 9.07,7.57C8.7,6.45 8.5,5.25 8.5,4A1,1 0 0,0 7.5,3H4A1,1 0 0,0 3,4A17,17 0 0,0 20,21A1,1 0 0,0 21,20V16.5A1,1 0 0,0 20,15.5Z"
+		"data":"M19.2,4H15.8V3.5C15.8,2.56 16.56,1.8 17.5,1.8C18.44,1.8 19.2,2.56 19.2,3.5M20,4V3.5A2.5,2.5 0 0,0 17.5,1A2.5,2.5 0 0,0 15,3.5V4A1,1 0 0,0 14,5V9A1,1 0 0,0 15,10H20A1,1 0 0,0 21,9V5A1,1 0 0,0 20,4M20,15.5C18.75,15.5 17.55,15.3 16.43,14.93C16.08,14.82 15.69,14.9 15.41,15.18L13.21,17.38C10.38,15.94 8.06,13.62 6.62,10.79L8.82,8.59C9.1,8.31 9.18,7.92 9.07,7.57C8.7,6.45 8.5,5.25 8.5,4A1,1 0 0,0 7.5,3H4A1,1 0 0,0 3,4A17,17 0 0,0 20,21A1,1 0 0,0 21,20V16.5A1,1 0 0,0 20,15.5Z",
+		"renamed":"{next}"
 	},
 	"phone-log":{
 		"categories":["other"],
@@ -13772,7 +13894,7 @@
 		"keywords":["add"]
 	},
 	"plus-circle-multiple-outline":{
-		"aliases":["control-point-duplicate"],
+		"aliases":["control-point-duplicate","plus-circles-outline"],
 		"categories":["characters"],
 		"codepoint":"f418",
 		"contributor":"google",
@@ -15699,6 +15821,12 @@
 		"contributor":"google",
 		"data":"M19,5A2,2 0 0,0 17,3H10L7.66,5.34L19,16.68V5M3.65,3.88L2.38,5.15L5,7.77V19A2,2 0 0,0 7,21H17C17.36,21 17.68,20.9 17.97,20.74L19.85,22.62L21.12,21.35L3.65,3.88Z"
 	},
+	"sina-weibo":{
+		"added":"{next}",
+		"categories":["logos"],
+		"contributor":"community",
+		"data":"M9.82,13.87C10.89,13.87 11.77,14.74 11.77,15.82A1.95,1.95 0 0,1 9.82,17.77C8.74,17.77 7.87,16.89 7.87,15.82C7.87,14.74 8.74,13.87 9.82,13.87M14.5,3.34L15.18,3.31C18.94,3.31 22,6.37 22,10.13L21.95,10.95L20.76,10.58L20.78,10.13C20.78,7.04 18.27,4.53 15.18,4.53L14.83,4.54L14.5,3.34M15.32,6.23C17.38,6.3 19.05,8 19.08,10.06L17.84,9.68C17.65,8.56 16.78,7.68 15.67,7.5L15.32,6.23M2,15.41C1.97,14.8 2.07,12.64 4.95,9.97C8.35,6.81 9.82,7.05 9.82,7.05C9.82,7.05 13,6.75 11.06,10.46H11.13C11.6,9.96 12.62,9.21 14.69,9C16.77,8.79 16.77,10.5 16.5,11.7C18.38,12.64 19.56,14.03 19.56,15.58C19.56,18.4 15.63,20.69 10.78,20.69H10.65L10.5,20.69C7,20.69 4,19.42 2.71,17.59C2.25,16.97 2,16.29 2,15.58V15.41M9.82,11.92C6.59,11.92 3.97,13.67 3.97,15.82C3.97,17.97 6.59,19.72 9.82,19.72C13.05,19.72 15.67,17.97 15.67,15.82C15.67,13.67 13.05,11.92 9.82,11.92Z"
+	},
 	"sitemap":{
 		"aliases":["flowchart","workflow"],
 		"categories":["other"],
@@ -16260,6 +16388,18 @@
 		"contributor":"google",
 		"data":"M12,2.5L8.42,8.06L2,9.74L6.2,14.88L5.82,21.5L12,19.09L18.18,21.5L17.8,14.88L22,9.74L15.58,8.06L12,2.5M9.38,10.5C10,10.5 10.5,11 10.5,11.63A1.12,1.12 0 0,1 9.38,12.75C8.75,12.75 8.25,12.25 8.25,11.63C8.25,11 8.75,10.5 9.38,10.5M14.63,10.5C15.25,10.5 15.75,11 15.75,11.63A1.12,1.12 0 0,1 14.63,12.75C14,12.75 13.5,12.25 13.5,11.63C13.5,11 14,10.5 14.63,10.5M9,15H15C14.5,16.21 13.31,17 12,17C10.69,17 9.5,16.21 9,15Z"
 	},
+	"star-four-points":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"michael-irigoyen",
+		"data":"M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z"
+	},
+	"star-four-points-outline":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"michael-irigoyen",
+		"data":"M12,6.7L13.45,10.55L17.3,12L13.45,13.45L12,17.3L10.55,13.45L6.7,12L10.55,10.55L12,6.7M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z"
+	},
 	"star-half":{
 		"categories":["other"],
 		"codepoint":"f4d0",
@@ -16282,6 +16422,18 @@
 		"contributor":"google",
 		"data":"M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z",
 		"keywords":["achievement","award","favourite","night","rate","rating","score"]
+	},
+	"star-three-points":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"michael-irigoyen",
+		"data":"M12,2.6L9,12.4L2,19.9L12,17.6L22,20L15,12.5L12,2.6Z"
+	},
+	"star-three-points-outline":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"michael-irigoyen",
+		"data":"M12,9.5L13.2,13.5L16,16.5L12,15.6L7.9,16.5L10.7,13.5L12,9.5M12,2.6L9,12.4L2,19.9L12,17.6L22,20L15,12.5L12,2.6Z"
 	},
 	"steam":{
 		"categories":["logos"],
@@ -16808,6 +16960,7 @@
 		"data":"M21.41,11.58L12.41,2.58C12.04,2.21 11.53,2 11,2H4A2,2 0 0,0 2,4V11C2,11.53 2.21,12.04 2.59,12.41L3,12.81C3.9,12.27 4.94,12 6,12A6,6 0 0,1 12,18C12,19.06 11.72,20.09 11.18,21L11.58,21.4C11.95,21.78 12.47,22 13,22C13.53,22 14.04,21.79 14.41,21.41L21.41,14.41C21.79,14.04 22,13.53 22,13C22,12.47 21.79,11.96 21.41,11.58M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M10,19H2V17H10V19Z"
 	},
 	"tag-multiple":{
+		"aliases":["tags"],
 		"categories":["other"],
 		"codepoint":"f4fb",
 		"contributor":"austin-andrews",
@@ -17915,6 +18068,7 @@
 	},
 	"upload-multiple":{
 		"added":2119,
+		"aliases":["uploads"],
 		"categories":["networking"],
 		"codepoint":"f83c",
 		"contributor":"michael-richins",
@@ -17956,6 +18110,12 @@
 		"contributor":"community",
 		"data":"M16,13V11H21V13H16M14.83,7.76L17.66,4.93L19.07,6.34L16.24,9.17L14.83,7.76M11,16H13V21H11V16M11,3H13V8H11V3M4.93,17.66L7.76,14.83L9.17,16.24L6.34,19.07L4.93,17.66M4.93,6.34L6.34,4.93L9.17,7.76L7.76,9.17L4.93,6.34M8,13H3V11H8V13M19.07,17.66L17.66,19.07L14.83,16.24L16.24,14.83L19.07,17.66Z"
 	},
+	"variable":{
+		"added":"{next}",
+		"categories":["characters"],
+		"contributor":"michael-richins",
+		"data":"M20.41,3C21.8,5.71 22.35,8.84 22,12C21.8,15.16 20.7,18.29 18.83,21L17.3,20C18.91,17.57 19.85,14.8 20,12C20.34,9.2 19.89,6.43 18.7,4L20.41,3M5.17,3L6.7,4C5.09,6.43 4.15,9.2 4,12C3.66,14.8 4.12,17.57 5.3,20L3.61,21C2.21,18.29 1.65,15.17 2,12C2.2,8.84 3.3,5.71 5.17,3M12.08,10.68L14.4,7.45H16.93L13.15,12.45L15.35,17.37H13.09L11.71,14L9.28,17.33H6.76L10.66,12.21L8.53,7.45H10.8L12.08,10.68Z"
+	},
 	"vector-arrange-above":{
 		"categories":["editor"],
 		"codepoint":"f554",
@@ -17967,6 +18127,12 @@
 		"codepoint":"f555",
 		"contributor":"cody",
 		"data":"M20,22C21.11,22 22,21.11 22,20V9C22,7.89 21.11,7 20,7C16.33,7 12.67,7 9,7C7.89,7 7,7.89 7,9C7,12.67 7,16.33 7,20C7,21.11 7.89,22 9,22H20M20,20H9V9H20V20M5,16V14H3V3H14V5H16V3C16,1.89 15.11,1 14,1H3C1.89,1 1,1.89 1,3V14C1,15.11 1.89,16 3,16H5Z"
+	},
+	"vector-bezier":{
+		"added":"{next}",
+		"categories":["editor"],
+		"contributor":"louistwee",
+		"data":"M7.5,4A1.5,1.5 0 0,0 6,5.5A1.5,1.5 0 0,0 7.5,7C8.13,7 8.7,6.6 8.91,6H13C13.67,5.33 14.33,5 15,5H8.91C8.7,4.4 8.13,4 7.5,4M19,5C8,5 14,17 5,17V19C16,19 10,7 19,7V5M16.5,17C15.87,17 15.3,17.4 15.09,18H11C10.33,18.67 9.67,19 9,19H15.09C15.3,19.6 15.87,20 16.5,20A1.5,1.5 0 0,0 18,18.5A1.5,1.5 0 0,0 16.5,17Z"
 	},
 	"vector-circle":{
 		"categories":["editor"],

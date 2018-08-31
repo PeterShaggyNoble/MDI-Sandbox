@@ -18,23 +18,6 @@
 		"user":"oengenheiro"
 	},{
 		"brand":false,
-		"comments":0,
-		"created":"2018-08-29T17:29:28Z",
-		"downvotes":0,
-		"home":false,
-		"id":3432,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUzNTUyNjAxOTI=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"calculator-variant",
-		"updated":"2018-08-29T17:29:42Z",
-		"upvotes":0,
-		"user":"MrGrigri"
-	},{
-		"brand":false,
 		"comments":3,
 		"created":"2018-08-29T14:37:14Z",
 		"downvotes":0,
@@ -52,24 +35,24 @@
 		"user":"flaviaguaresi"
 	},{
 		"brand":false,
-		"comments":2,
+		"comments":5,
 		"created":"2018-08-28T18:45:58Z",
 		"downvotes":0,
 		"home":false,
 		"id":3430,
-		"labels":["Icon Request"],
+		"labels":["Consider Closing","Icon Request"],
 		"milestone":null,
 		"node_id":"MDU6SXNzdWUzNTQ4NTYyNjI=",
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
 		"title":"Power Strip",
-		"updated":"2018-08-29T09:39:53Z",
+		"updated":"2018-08-30T17:16:51Z",
 		"upvotes":0,
 		"user":"mdcostas"
 	},{
 		"brand":false,
-		"comments":2,
+		"comments":4,
 		"created":"2018-08-19T12:37:19Z",
 		"downvotes":0,
 		"home":false,
@@ -81,7 +64,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Uppercase",
-		"updated":"2018-08-27T10:22:09Z",
+		"updated":"2018-08-30T20:42:12Z",
 		"upvotes":0,
 		"user":"Louistwee"
 	},{
@@ -132,26 +115,9 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"island",
-		"updated":"2018-08-28T17:22:48Z",
+		"updated":"2018-08-30T17:00:49Z",
 		"upvotes":0,
 		"user":"CarlosAlbertoUFS"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2018-08-15T16:57:27Z",
-		"downvotes":0,
-		"home":false,
-		"id":3399,
-		"labels":["Contribution","Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzNTA4ODU3ODE=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Classic Desktop with Tower",
-		"updated":"2018-08-20T08:31:24Z",
-		"upvotes":0,
-		"user":"leMaik"
 	},{
 		"brand":false,
 		"comments":2,
@@ -237,23 +203,6 @@
 		"updated":"2018-08-16T04:15:28Z",
 		"upvotes":0,
 		"user":"mvnmin"
-	},{
-		"brand":false,
-		"comments":0,
-		"created":"2018-08-07T02:15:29Z",
-		"downvotes":0,
-		"home":false,
-		"id":3367,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUzNDgxNDEyNzE=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"format-annotation-minus",
-		"updated":"2018-08-17T15:42:20Z",
-		"upvotes":0,
-		"user":"goyney"
 	},{
 		"brand":false,
 		"comments":5,
@@ -356,23 +305,6 @@
 		"updated":"2018-07-09T19:25:22Z",
 		"upvotes":0,
 		"user":"DelukaDZ"
-	},{
-		"brand":false,
-		"comments":14,
-		"created":"2018-07-03T15:37:48Z",
-		"downvotes":0,
-		"home":false,
-		"id":3299,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUzMzc5NTMyODY=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Project Icon...",
-		"updated":"2018-08-08T03:34:35Z",
-		"upvotes":0,
-		"user":"jfuehner"
 	},{
 		"brand":false,
 		"comments":1,
@@ -528,23 +460,6 @@
 		"user":"goyney"
 	},{
 		"brand":false,
-		"comments":0,
-		"created":"2018-06-13T01:20:23Z",
-		"downvotes":0,
-		"home":false,
-		"id":3241,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUzMzE4MDc2ODA=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"file-document-box Variation & file-cabinet",
-		"updated":"2018-08-08T13:14:01Z",
-		"upvotes":0,
-		"user":"goyney"
-	},{
-		"brand":false,
 		"comments":2,
 		"created":"2018-06-13T01:17:41Z",
 		"downvotes":0,
@@ -575,23 +490,6 @@
 		"stock":false,
 		"title":"mailbox and snail-mail - New Variations",
 		"updated":"2018-08-10T04:20:19Z",
-		"upvotes":0,
-		"user":"goyney"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2018-06-13T00:52:46Z",
-		"downvotes":0,
-		"home":false,
-		"id":3235,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUzMzE4MDM1NjE=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"star - New Variations",
-		"updated":"2018-08-08T17:30:47Z",
 		"upvotes":0,
 		"user":"goyney"
 	},{
@@ -985,23 +883,6 @@
 		"updated":"2018-05-09T02:40:30Z",
 		"upvotes":2,
 		"user":"Alekhen"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2018-05-08T16:51:08Z",
-		"downvotes":0,
-		"home":false,
-		"id":3160,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzMjEyNjUwNTU=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"service-animal",
-		"updated":"2018-05-10T11:55:29Z",
-		"upvotes":0,
-		"user":"MrGrigri"
 	},{
 		"brand":false,
 		"comments":0,
@@ -1803,7 +1684,7 @@
 		"user":"koystinen"
 	},{
 		"brand":false,
-		"comments":4,
+		"comments":6,
 		"created":"2018-04-10T17:10:31Z",
 		"downvotes":0,
 		"home":false,
@@ -1815,7 +1696,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Signal \/ wave (analog and digital)",
-		"updated":"2018-04-14T01:48:06Z",
+		"updated":"2018-08-30T17:46:41Z",
 		"upvotes":0,
 		"user":"CoDEmanX"
 	},{
@@ -4047,23 +3928,6 @@
 		"user":"PeterShaggyNoble"
 	},{
 		"brand":false,
-		"comments":6,
-		"created":"2017-10-09T19:58:07Z",
-		"downvotes":0,
-		"home":false,
-		"id":2501,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUyNjQwMDg4MTA=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Refund",
-		"updated":"2018-08-11T20:43:37Z",
-		"upvotes":0,
-		"user":"daviscodesbugs"
-	},{
-		"brand":false,
 		"comments":10,
 		"created":"2017-10-09T13:31:56Z",
 		"downvotes":0,
@@ -4557,7 +4421,7 @@
 		"user":"derwaldgeist"
 	},{
 		"brand":false,
-		"comments":5,
+		"comments":6,
 		"created":"2017-08-30T15:58:14Z",
 		"downvotes":0,
 		"home":false,
@@ -4565,12 +4429,12 @@
 		"labels":["Contribution","Icon Request"],
 		"milestone":null,
 		"node_id":"MDU6SXNzdWUyNTQwNTE2MjQ=",
-		"reactions":2,
+		"reactions":3,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Construction and gardening tools",
-		"updated":"2018-05-08T14:05:34Z",
-		"upvotes":2,
+		"updated":"2018-08-30T20:39:44Z",
+		"upvotes":3,
 		"user":"WhatFreshHellIsThis"
 	},{
 		"brand":false,
@@ -5031,23 +4895,6 @@
 		"updated":"2018-03-08T17:15:48Z",
 		"upvotes":0,
 		"user":"nwalasek"
-	},{
-		"brand":true,
-		"comments":3,
-		"created":"2017-07-12T00:02:09Z",
-		"downvotes":0,
-		"home":false,
-		"id":2235,
-		"labels":["Brand Icon","Contribution","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUyNDIyMTg2Mzc=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Sina Weibo icon",
-		"updated":"2018-08-08T03:34:32Z",
-		"upvotes":0,
-		"user":"531149907"
 	},{
 		"brand":false,
 		"comments":0,
@@ -6680,23 +6527,6 @@
 		"updated":"2017-01-31T15:14:58Z",
 		"upvotes":0,
 		"user":"nickarellano"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2016-12-29T19:30:23Z",
-		"downvotes":0,
-		"home":false,
-		"id":1725,
-		"labels":["Contribution","High Priority","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUxOTgwNTY5MjQ=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"variable",
-		"updated":"2018-08-08T03:34:32Z",
-		"upvotes":0,
-		"user":"MrGrigri"
 	},{
 		"brand":false,
 		"comments":13,
@@ -9570,23 +9400,6 @@
 		"updated":"2015-10-06T15:03:16Z",
 		"upvotes":0,
 		"user":"metalla030"
-	},{
-		"brand":true,
-		"comments":5,
-		"created":"2015-10-05T02:12:23Z",
-		"downvotes":0,
-		"home":false,
-		"id":727,
-		"labels":["Brand Icon","Icon Request"],
-		"milestone":"Version 2.7.xx",
-		"node_id":"MDU6SXNzdWUxMDk3MjAyMzU=",
-		"reactions":1,
-		"status":"Pending",
-		"stock":false,
-		"title":"MeetUp icon",
-		"updated":"2018-07-12T10:28:10Z",
-		"upvotes":1,
-		"user":"twhetzel"
 	},{
 		"brand":false,
 		"comments":2,
