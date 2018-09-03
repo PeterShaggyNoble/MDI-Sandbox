@@ -1,7 +1,7 @@
 {
 	let version={
-		str:`2.6.95`,
-		int:2695
+		str:`2.7.94`,
+		int:2794
 	};
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
@@ -935,6 +935,9 @@
 								case`soon`:
 									fn=icon=>icon.added===`{next}`;
 									break;
+								case`removed`:
+									fn=icon=>icon.retired===version.int;
+									break;
 								case`retired`:
 									fn=icon=>parseInt(icon.retired);
 									break;
@@ -950,7 +953,7 @@
 					if(key===`library`||category.count)
 						page.section.before(category.section=section);
 				}else category.count=icons.array.filter(icon=>
-					icon.categories&&icon.data&&!parseInt(icon.retired)&&icon.categories.includes(key)
+					!icon.retired&&!icon.rejected&&icon.categories.includes(key)
 				).length;
 				if(key===`library`||category.count){
 					item.lastChild.nodeValue=name;
@@ -1021,16 +1024,11 @@
 				this.article.append(T``);
 				this.svg.classList.add(`db`,`pen`);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				this.tmp=[];
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key))
 						this.add(key);
-				console.log(this.tmp.join`\n`);
-				console.log(this.tmp.length);
 			},
 			add(key){
-				if(/(ing|ed)(\-|$)/.test(key))
-					this.tmp.push(key);
 				let 	icon=this.list[key],
 					article=this.article.cloneNode(1),
 					svg=this.svg.cloneNode(0),

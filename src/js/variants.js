@@ -1,6 +1,6 @@
 (async()=>{
 	const 	icons=Object.assign(...Object.entries(await(await fetch`../json/icons.json`).json()).filter(([key,value])=>
-			value.variants!==`none`&&!value.rejected&&!value.retired&&!value.categories.includes(`google`)&&!value.categories.includes(`logos`)
+			value.exclude!==`all`&&!value.rejected&&!value.retired&&!value.categories.includes(`google`)&&!value.categories.includes(`logos`)
 		).map(([key,value])=>
 			({[key]:value})
 		));
@@ -12,7 +12,7 @@
 			sharp:0
 		},
 		counters=document.querySelectorAll`tfoot td`;
-	let key,path,svg,tr,td,type,use;
+	let exclude,key,path,svg,tr,td,type,use;
 	for(key in icons)
 		if(icons.hasOwnProperty(key)&&!key.endsWith`-outline`&&!key.endsWith`-rounded`&&!key.endsWith`-sharp`){
 			++count;
@@ -29,7 +29,7 @@
 			td=td.cloneNode(0);
 			if(svg){
 				svg=svg.cloneNode(0);
-				svg.classList.remove`missing`;
+				svg.classList.remove(`exclude`,`missing`);
 				path=path.cloneNode(0);
 			}else{
 				svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
@@ -47,20 +47,18 @@
 					svg=svg.cloneNode(0);
 					if(icons.hasOwnProperty(key+`-`+type)){
 						++variants[type];
-						svg.classList.remove`missing`;
+						svg.classList.remove(`exclude`,`missing`);
 						path=path.cloneNode(0);
 						path.setAttribute(`d`,icons[key+`-`+type].data);
 						svg.append(path);
 					}else{
-						svg.classList.add`missing`;
-						if(use)
-							use=use.cloneNode(0);
-							else{
-								use=document.createElementNS(`http://www.w3.org/2000/svg`,`use`);
-								use.setAttribute(`href`,`#close-circle`);
-							}
-							svg.append(use);
-						}
+						exclude=icons[key].exclude&&icons[key].exclude.includes(type);
+						svg.classList.toggle(`exclude`,!!exclude);
+						svg.classList.toggle(`missing`,!exclude);
+						use=use?use.cloneNode(0):document.createElementNS(`http://www.w3.org/2000/svg`,`use`);
+						use.setAttribute(`href`,`#${exclude?`cancel`:`close-circle`}`);
+						svg.append(use);
+					}
 					td.append(svg);
 					tr.append(td);
 				}

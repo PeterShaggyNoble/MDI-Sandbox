@@ -1,6 +1,6 @@
 :root{
-	--colour:#d32f2f;
-	--highlight:#ffebee;
+	--colour:#e64a19;
+	--highlight:#fbe9e7;
 	--timing-function:cubic-bezier(.4,0,.2,1);
 }
 @viewport{initial-scale:1;maximum-scale:1;minimum-scale:1;user-scalable:0;width:device-width;}

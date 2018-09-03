@@ -1,7 +1,7 @@
 /** VARIABLES **/
 :root{
-	--colour:#d32f2f;
-	--highlight:#ffebee;
+	--colour:#e64a19;
+	--highlight:#fbe9e7;
 	--timing-function:cubic-bezier(.4,0,.2,1);
 }
 
@@ -476,6 +476,7 @@ th{
 	height:56px;
 	line-height:24px;
 	padding:8px 44px 8px 12px;
+	z-index:2;
 }
 th:first-child,td:first-child{
 	padding-left:24px;
@@ -584,6 +585,12 @@ table#variants{
 	width:24px;
 }
 #variants svg.missing{
+	fill:#f44336;
+	opacity:.54;
+	height:18px;
+	width:18px;
+}
+#variants svg.exclude{
 	fill:#bdbdbd;
 	height:18px;
 	width:18px;
