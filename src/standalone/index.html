@@ -1331,7 +1331,7 @@
 							case this.actions.polymer:
 								this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.html`);
 							case this.actions.svg:
-								this.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs>${filter.filtered?this.build(`svg`):this.packages.xml||(this.packages.xml=this.build(`svg`))}</defs></svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.svg`);
+								this.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${filter.filtered?this.build(`svg`):this.packages.xml||(this.packages.xml=this.build(`svg`))}</svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.svg`);
 								break;
 							default:
 								switch(target.nodeName.toLowerCase()){
@@ -1386,11 +1386,11 @@
 						icon.articles.main&&!icon.articles.main.classList.contains`dn`
 				).map(([key,icon])=>
 					type===`svg`?
-						`<path id="mdi-${key}" d="${icon.data}"/>`:
+						`<symbol id="mdi-${key}"><path d="${icon.data}"/></symbol>`:
 						type===`angular`?
 							`<g id="${key}"><path d="${icon.data}"/></g>`:
 							`"${key}":"${icon.data}"`
-				).join(type===`jsono`?`,`:`:`),
+				).join(type===`jsono`?`,`:``),
 				async copy(string,message){
 					try{
 						await navigator.clipboard.writeText(string);
@@ -1728,7 +1728,7 @@
 								page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${this.build(`polymer`)}</defs></svg></iron-iconset-svg>`,`mdi-library.html`);
 								break;
 							case this.actions.svg:
-								page.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs>${this.build(`svg`)}</defs></svg>`,`mdi-library.svg`);
+								page.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${this.build(`svg`)}</svg>`,`mdi-library.svg`);
 								break;
 							case this.actions.import:
 								b.append(this.input);
@@ -1824,11 +1824,11 @@
 				},
 				build:type=>Object.keys(favourites.list).sort().map(key=>
 					type===`svg`?
-						`<path id="mdi-${key}" d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/>`:
+						`<symbol id="mdi-${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></symbol>`:
 						type===`angular`?
 							`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></g>`:
 							`"${key}":"${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"`
-				).join(type===`jsono`?`,`:`:`),
+				).join(type===`jsono`?`,`:``),
 				close(value){
 					b.removeEventListener(`keydown`,this.fn);
 					this.dialog.classList.add(`oz`,`pen`);
