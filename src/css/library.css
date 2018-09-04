@@ -421,7 +421,7 @@ body.highlight>#content>section>article.active{
 	transition:background .225s var(--timing-function),color .225s var(--timing-function);
 }
 .options>li:first-of-type,
-#library .options>li:nth-of-type(5){
+#library .options>li:nth-of-type(4){
 	border-bottom:1px solid #e0e0e0;
 }
 .options>li:first-of-type{

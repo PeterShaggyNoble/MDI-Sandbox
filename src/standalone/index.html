@@ -429,7 +429,7 @@
 		transition:background .225s var(--timing-function),color .225s var(--timing-function);
 	}
 	.options>li:first-of-type,
-	#library .options>li:nth-of-type(5){
+	#library .options>li:nth-of-type(4){
 		border-bottom:1px solid #e0e0e0;
 	}
 	.options>li:first-of-type{
@@ -1307,7 +1307,6 @@
 					};
 					this.actions.json=this.actions.link.nextElementSibling;
 					this.actions.svg=this.actions.json.nextElementSibling;
-					this.actions.angular=this.actions.polymer.previousElementSibling;
 					this.header.addEventListener(`click`,event=>{
 						if(event.target.nodeName.toLowerCase()===`a`&&this.offline){
 							this.alert`Could not connect.`;
@@ -1319,9 +1318,6 @@
 							parent=target.parentNode,
 							current=this.main.querySelector`article.active`;
 						switch(target){
-							case this.actions.angular:
-								this.download(`data:text/svg+xml;utf8,<svg><defs>${filter.filtered?this.build(`angular`):this.packages.xml||(this.packages.xml=this.build(`angular`))}</defs></svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.svg`);
-								break;
 							case this.actions.link:
 								this.copy(filter.filtered&&filter.url?filter.url:`${this.address}?section=icons`,`Link`);
 								break;
@@ -1329,7 +1325,7 @@
 								this.download(`data:text/json;utf8,{${filter.filtered?this.build(`jsono`):this.packages.json||(this.packages.jsono=this.build(`jsono`))}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
 								break;
 							case this.actions.polymer:
-								this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.html`);
+								this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.html`);
 							case this.actions.svg:
 								this.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${filter.filtered?this.build(`svg`):this.packages.xml||(this.packages.xml=this.build(`svg`))}</svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.svg`);
 								break;
@@ -1387,9 +1383,9 @@
 				).map(([key,icon])=>
 					type===`svg`?
 						`<symbol id="mdi-${key}"><path d="${icon.data}"/></symbol>`:
-						type===`angular`?
-							`<g id="${key}"><path d="${icon.data}"/></g>`:
-							`"${key}":"${icon.data}"`
+						type===`jsono`?
+							`"${key}":"${icon.data}"`:
+							`<g id="${key}"><path d="${icon.data}"/></g>`
 				).join(type===`jsono`?`,`:``),
 				async copy(string,message){
 					try{
@@ -1693,7 +1689,6 @@
 						add:new this.Item(`plus-circle`,`Add Icon`),
 						json:new this.Item(`json`,`JSON Object`),
 						svg:new this.Item(`svg`,`SVG Sprite`),
-						angular:new this.Item(`angular`,`SVG for Angular`),
 						polymer:new this.Item(`polymer`,`HTML for Polymer`),
 						import:new this.Item(`file-import`,`Import Library`),
 						export:new this.Item(`file-export`,`Export Library`),
@@ -1718,14 +1713,11 @@
 							case this.actions.add:
 								this.open();
 								break;
-							case this.actions.angular:
-								page.download(`data:text/svg+xml;utf8<svg><defs>${this.build(`angular`)}</defs></svg>`,`mdi-library.svg`);
-								break;
 							case this.actions.json:
 								page.download(`data:text/json;utf8,{${this.build(`jsono`)}}`,`mdi-library.json`);
 								break;
 							case this.actions.polymer:
-								page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${this.build(`polymer`)}</defs></svg></iron-iconset-svg>`,`mdi-library.html`);
+								page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${this.build(`polymer`)}</defs></svg></iron-iconset-svg>`,`mdi-library.html`);
 								break;
 							case this.actions.svg:
 								page.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${this.build(`svg`)}</svg>`,`mdi-library.svg`);
@@ -1825,9 +1817,9 @@
 				build:type=>Object.keys(favourites.list).sort().map(key=>
 					type===`svg`?
 						`<symbol id="mdi-${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></symbol>`:
-						type===`angular`?
-							`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></g>`:
-							`"${key}":"${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"`
+						type===`jsono`?
+							`"${key}":"${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"`:
+							`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></g>`
 				).join(type===`jsono`?`,`:``),
 				close(value){
 					b.removeEventListener(`keydown`,this.fn);
@@ -4124,8 +4116,8 @@
 		"codepoint":"f065",
 		"contributor":"google",
 		"data":"M12,15C12.81,15 13.5,14.7 14.11,14.11C14.7,13.5 15,12.81 15,12C15,11.19 14.7,10.5 14.11,9.89C13.5,9.3 12.81,9 12,9C11.19,9 10.5,9.3 9.89,9.89C9.3,10.5 9,11.19 9,12C9,12.81 9.3,13.5 9.89,14.11C10.5,14.7 11.19,15 12,15M12,2C14.75,2 17.1,3 19.05,4.95C21,6.9 22,9.25 22,12V13.45C22,14.45 21.65,15.3 21,16C20.3,16.67 19.5,17 18.5,17C17.3,17 16.31,16.5 15.56,15.5C14.56,16.5 13.38,17 12,17C10.63,17 9.45,16.5 8.46,15.54C7.5,14.55 7,13.38 7,12C7,10.63 7.5,9.45 8.46,8.46C9.45,7.5 10.63,7 12,7C13.38,7 14.55,7.5 15.54,8.46C16.5,9.45 17,10.63 17,12V13.45C17,13.86 17.16,14.22 17.46,14.53C17.76,14.84 18.11,15 18.5,15C18.92,15 19.27,14.84 19.57,14.53C19.87,14.22 20,13.86 20,13.45V12C20,9.81 19.23,7.93 17.65,6.35C16.07,4.77 14.19,4 12,4C9.81,4 7.93,4.77 6.35,6.35C4.77,7.93 4,9.81 4,12C4,14.19 4.77,16.07 6.35,17.65C7.93,19.23 9.81,20 12,20H17V22H12C9.25,22 6.9,21 4.95,19.05C3,17.1 2,14.75 2,12C2,9.25 3,6.9 4.95,4.95C6.9,3 9.25,2 12,2Z",
-		"exclude":["outline","sharp"],
-		"updated":2119
+		"updated":2119,
+		"variants":["round"]
 	},
 	"atlassian":{
 		"added":2119,
@@ -18001,7 +17993,8 @@
 		"categories":["other"],
 		"codepoint":"f48a",
 		"contributor":"google",
-		"data":"M2,21L23,12L2,3V10L17,12L2,14V21Z"
+		"data":"M2,21L23,12L2,3V10L17,12L2,14V21Z",
+		"variants":["outline","round"]
 	},
 	"send-lock":{
 		"added":2046,
