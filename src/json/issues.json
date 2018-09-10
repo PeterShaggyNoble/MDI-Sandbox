@@ -7,13 +7,13 @@
 		"home":false,
 		"id":3455,
 		"labels":["Icon Request"],
-		"milestone":null,
+		"milestone":"Version 2.9.xx",
 		"node_id":"MDU6SXNzdWUzNTc5MDEwODg=",
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
 		"title":"Chicken \ud83d\udc14 (the animal, not food)",
-		"updated":"2018-09-07T03:38:03Z",
+		"updated":"2018-09-10T10:58:42Z",
 		"upvotes":0,
 		"user":"wkonkel"
 	},{
@@ -84,23 +84,6 @@
 		"updated":"2018-09-03T16:14:50Z",
 		"upvotes":0,
 		"user":"mateusppereira"
-	},{
-		"brand":false,
-		"comments":5,
-		"created":"2018-09-03T04:15:44Z",
-		"downvotes":0,
-		"home":false,
-		"id":3445,
-		"labels":["Icon Request","Needs More Information"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzNTYzNTI4ODQ=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"language-spoken",
-		"updated":"2018-09-07T04:13:43Z",
-		"upvotes":0,
-		"user":"Wefneck"
 	},{
 		"brand":false,
 		"comments":0,
@@ -687,30 +670,30 @@
 		"home":false,
 		"id":3201,
 		"labels":["Brand Icon","Icon Request"],
-		"milestone":null,
+		"milestone":"Backlog",
 		"node_id":"MDU6SXNzdWUzMjY1ODc4Nzk=",
 		"reactions":2,
 		"status":"Pending",
 		"stock":false,
 		"title":"VSTS",
-		"updated":"2018-05-26T04:41:52Z",
+		"updated":"2018-09-10T11:50:36Z",
 		"upvotes":2,
 		"user":"ryanwinter"
 	},{
 		"brand":false,
-		"comments":0,
+		"comments":1,
 		"created":"2018-05-23T19:23:56Z",
 		"downvotes":0,
 		"home":false,
 		"id":3195,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUzMjU4NDExMDk=",
 		"reactions":1,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Mark as unread (Gmail)",
-		"updated":"2018-05-23T19:23:56Z",
+		"updated":"2018-09-10T12:01:25Z",
 		"upvotes":1,
 		"user":"CoDEmanX"
 	},{
@@ -1095,30 +1078,30 @@
 		"home":true,
 		"id":3114,
 		"labels":["Home Assistant","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 2.9.xx",
 		"node_id":"MDU6SXNzdWUzMTc1Nzk1OTM=",
 		"reactions":2,
 		"status":"Pending",
 		"stock":true,
 		"title":"Hallway",
-		"updated":"2018-04-28T11:46:11Z",
+		"updated":"2018-09-10T11:53:31Z",
 		"upvotes":2,
 		"user":"PeterShaggyNoble"
 	},{
 		"brand":false,
-		"comments":0,
+		"comments":1,
 		"created":"2018-04-25T10:39:47Z",
 		"downvotes":0,
 		"home":false,
 		"id":3113,
 		"labels":["Alias","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUzMTc1NzIzNjM=",
 		"reactions":1,
 		"status":"Pending",
 		"stock":true,
 		"title":"settings overscan (+alias fullscreen)",
-		"updated":"2018-04-25T10:39:47Z",
+		"updated":"2018-09-10T12:04:27Z",
 		"upvotes":1,
 		"user":"CoDEmanX"
 	},{
@@ -1316,13 +1299,13 @@
 		"home":false,
 		"id":3082,
 		"labels":["Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 2.9.xx",
 		"node_id":"MDU6SXNzdWUzMTU0Mjk5Nzg=",
 		"reactions":1,
 		"status":"Pending",
 		"stock":true,
 		"title":"image-filter-variant",
-		"updated":"2018-04-24T11:54:30Z",
+		"updated":"2018-09-10T11:56:56Z",
 		"upvotes":1,
 		"user":"GreenTurtwig"
 	},{
@@ -1367,13 +1350,13 @@
 		"home":false,
 		"id":3079,
 		"labels":["Icon Request","Stock Google Icon"],
-		"milestone":"Backlog",
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUzMTU0MTQyNTc=",
 		"reactions":1,
 		"status":"Pending",
 		"stock":true,
 		"title":"Devices Other",
-		"updated":"2018-04-24T11:54:53Z",
+		"updated":"2018-09-10T12:05:01Z",
 		"upvotes":1,
 		"user":"PeterShaggyNoble"
 	},{
@@ -4387,7 +4370,7 @@
 		"user":"Ch-Lo"
 	},{
 		"brand":false,
-		"comments":11,
+		"comments":13,
 		"created":"2017-09-04T14:46:30Z",
 		"downvotes":0,
 		"home":false,
@@ -4399,7 +4382,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Timezone",
-		"updated":"2018-09-05T19:33:39Z",
+		"updated":"2018-09-10T11:49:23Z",
 		"upvotes":0,
 		"user":"rvoltolini"
 	},{
@@ -6665,7 +6648,7 @@
 		"user":"metalla030"
 	},{
 		"brand":false,
-		"comments":3,
+		"comments":4,
 		"created":"2016-12-04T00:49:09Z",
 		"downvotes":0,
 		"home":false,
@@ -6677,7 +6660,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Fire Variant",
-		"updated":"2018-09-01T22:14:19Z",
+		"updated":"2018-09-10T12:01:44Z",
 		"upvotes":1,
 		"user":"RobertoGraham"
 	},{
@@ -7838,7 +7821,7 @@
 		"user":"Apaxe"
 	},{
 		"brand":false,
-		"comments":17,
+		"comments":19,
 		"created":"2016-06-17T11:28:42Z",
 		"downvotes":0,
 		"home":false,
@@ -7850,7 +7833,7 @@
 		"status":"High Priority",
 		"stock":false,
 		"title":"Icons with Single Letter A-Z and a-z",
-		"updated":"2018-09-10T01:59:44Z",
+		"updated":"2018-09-10T14:56:35Z",
 		"upvotes":0,
 		"user":"lalitrane234"
 	},{
@@ -8881,13 +8864,13 @@
 		"home":false,
 		"id":919,
 		"labels":["Brand Icon","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 2.8.xx",
 		"node_id":"MDU6SXNzdWUxMjM0ODg1NzE=",
 		"reactions":1,
 		"status":"Pending",
 		"stock":true,
 		"title":"Google Adwords icon",
-		"updated":"2018-04-03T22:47:42Z",
+		"updated":"2018-09-10T11:51:05Z",
 		"upvotes":1,
 		"user":"garethrbrown"
 	},{
