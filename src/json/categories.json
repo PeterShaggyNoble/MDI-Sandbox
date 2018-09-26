@@ -56,6 +56,10 @@
 		"icon":"omega",
 		"name":"Characters & Symbols"
 	},
+	"clothes":{
+		"icon":"tshirt-crew",
+		"name":"Clothing"
+	},
 	"time":{
 		"icon":"calendar-clock",
 		"name":"Date & Time"

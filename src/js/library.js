@@ -339,7 +339,7 @@
 			apply(scroll){
 				page.section.classList.toggle(`filtered`,this.filtered=!!this.text||!!this.categories.size||!!this.contributors.size);
 				this.heading.nodeValue=this.filtered?`Search Results`:`All Icons`;
-				let 	words=this.text&&this.text.split(/[\s\-]/),
+				let 	words=this.text&&this.text.split(/[\s\-\.\_]/),
 					matches=this.filtered?0:icons.total,
 					article,check,icon,key;
 				for(key in icons.list)

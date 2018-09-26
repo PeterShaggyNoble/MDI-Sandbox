@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2018-09-26:** New [clothing](https://petershaggynoble.github.io/MDI-Sandbox/?categories=clothes) category added.
 - **2018-09-21:** Updated to Material Design Icons v2.8.94.
 - **2018-09-03:** Updated to Material Design Icons v2.7.94.
 - **2018-08-31:** Removed a `mdi.php` and the ability to copy the HTML tag for an icon.
