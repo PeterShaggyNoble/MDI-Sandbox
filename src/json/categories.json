@@ -76,6 +76,10 @@
 		"icon":"file-outline",
 		"name":"Files & Folders"
 	},
+	"filmtv":{
+		"icon":"television-classic",
+		"name":"Film & TV"
+	},
 	"food":{
 		"icon":"food",
 		"name":"Food & Drink"

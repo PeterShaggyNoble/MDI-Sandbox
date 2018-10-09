@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2018-09-26:** New [film & TV](https://petershaggynoble.github.io/MDI-Sandbox/?categories=filmtv) category added.
 - **2018-09-26:** New [clothing](https://petershaggynoble.github.io/MDI-Sandbox/?categories=clothes) category added.
 - **2018-09-21:** Updated to Material Design Icons v2.8.94.
 - **2018-09-03:** Updated to Material Design Icons v2.7.94.
