@@ -3,9 +3,9 @@
 		functions:{},
 		show:0,
 		size:(document.body.offsetWidth>1199)+(document.body.offsetWidth>1299),
-		menu:document.getElementById`menu`,
-		nav:document.getElementById`nav`,
-		navicon:document.getElementById`navicon`,
+		menu:document.getElementById(`menu`),
+		nav:document.getElementById(`nav`),
+		navicon:document.getElementById(`navicon`),
 		init(){
 			this.nav.addEventListener(`click`,event=>{
 				let target=event.target;
@@ -34,8 +34,8 @@
 		touchend(clientx){
 			document.removeEventListener(`touchmove`,this.functions.move);
 			document.removeEventListener(`touchend`,this.functions.end);
-			this.nav.removeAttribute`style`;
-			this.menu.removeAttribute`style`;
+			this.nav.removeAttribute(`style`);
+			this.menu.removeAttribute(`style`);
 			clientx>=this.width/2&&this.toggle();
 		},
 		touchstart(event){
@@ -60,7 +60,7 @@
 	menu.init();
 	(async()=>{
 		await new Promise(resolve=>{
-			let ga=document.createElement`script`;
+			let ga=document.createElement(`script`);
 			ga.async=1;
 			ga.src=`https://www.googletagmanager.com/gtag/js?id=UA-109147935-1`;
 			document.body.append(ga);

@@ -1,14 +1,14 @@
 (async()=>{
-	const 	script=document.querySelector`script`,
-		a=document.createElement`a`,
+	const 	script=document.querySelector(`script`),
+		a=document.createElement(`a`),
 		icons=await(await fetch`../json/stock.json`).json(),
 		statuses=[`complete`,`ignore`,`new`];
-	let 	article=document.createElement`article`,
+	let 	article=document.createElement(`article`),
 		svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 		path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
 		status,data,key,target;
 	article.classList.add(`oh`,`pr`,`tac`);
-	svg.classList.add`db`;
+	svg.classList.add(`db`);
 	svg.setAttribute(`viewBox`,`0 0 24 24`);
 	path.setAttribute(`transform`,`scale(.046875) scale(1,-1) translate(0,-512)`);
 	for(key in icons)

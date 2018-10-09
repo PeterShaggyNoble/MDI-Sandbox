@@ -1262,25 +1262,25 @@
 				packages:{},
 				url:new URL(location),
 				size:(b.offsetWidth>1199)+(b.offsetWidth>1499),
-				anchor:C`a`,
-				header:$`header`,
-				main:$`content`,
-				message:$`message`,
-				section:$`icons`,
-				textarea:C`textarea`,
+				anchor:C(`a`),
+				header:$(`header`),
+				main:$(`content`),
+				message:$(`message`),
+				section:$(`icons`),
+				textarea:C(`textarea`),
 				async init(){
 					this.address=`${this.url.protocol}//${this.url.host+this.url.pathname}`;
 					this.params=this.url.searchParams;
-					this.message.append(T``);
+					this.message.append(T(``));
 					try{
 						this.storage=localStorage;
 					}catch(_){
-						this.alert`Your library is not available.`;
+						this.alert(`Your library is not available.`);
 						for(let key in favourites)
 							delete favourites[key];
 						info.actions.library.remove();
 						delete info.actions.library;
-						Q`#content>aside`.remove();
+						Q(`#content>aside`).remove();
 					}
 					this.textarea.classList.add(`ln`,`pf`);
 					categories.init();
@@ -1300,7 +1300,7 @@
 							menu.menu.removeEventListener(event.type,this.fn);
 						}
 					},1);
-					this.options=this.section.querySelector`ul`,
+					this.options=this.section.querySelector(`ul`),
 					this.actions={
 						link:this.options.firstElementChild,
 						polymer:this.options.lastElementChild
@@ -1309,14 +1309,14 @@
 					this.actions.svg=this.actions.json.nextElementSibling;
 					this.header.addEventListener(`click`,event=>{
 						if(event.target.nodeName.toLowerCase()===`a`&&this.offline){
-							this.alert`Could not connect.`;
+							this.alert(`Could not connect.`);
 							event.preventDefault();
 						}
 					},0);
 					this.main.addEventListener(`click`,async event=>{
 						let	target=event.target,
 							parent=target.parentNode,
-							current=this.main.querySelector`article.active`;
+							current=this.main.querySelector(`article.active`);
 						switch(target){
 							case this.actions.link:
 								this.copy(filter.filtered&&filter.url?filter.url:`${this.address}?section=icons`,`Link`);
@@ -1332,15 +1332,15 @@
 							default:
 								switch(target.nodeName.toLowerCase()){
 									case`svg`:
-										if(parent.nodeName.toLowerCase()===`header`&&!target.classList.contains`trigger`)
+										if(parent.nodeName.toLowerCase()===`header`&&!target.classList.contains(`trigger`))
 											this.copy(`${this.address}?section=${parent.parentNode.id}`,`Link`);
 										break;
 									case`article`:
 										if(current!==target){
 											if(current)
-												current.classList.remove`active`;
+												current.classList.remove(`active`);
 											info.open(target.lastChild.nodeValue);
-											target.classList.add`active`;
+											target.classList.add(`active`);
 										}
 										break;
 								}
@@ -1348,9 +1348,9 @@
 					},0);
 				},
 				load(){
-					let	loader=$`load`,
-						section=this.params.get`section`,
-						icon=this.params.get`edit`;
+					let	loader=$(`load`),
+						section=this.params.get(`section`),
+						icon=this.params.get(`edit`);
 					if(section)
 						if(section=$(section))
 							menu.goto(section);
@@ -1373,13 +1373,13 @@
 				alert(message){
 					clearTimeout(this.timer);
 					this.message.firstChild.nodeValue=message;
-					this.message.classList.remove`oz`;
+					this.message.classList.remove(`oz`);
 					this.timer=setTimeout(()=>
-						this.message.classList.add`oz`
+						this.message.classList.add(`oz`)
 					,5000);
 				},
 				build:type=>Object.entries(icons.list).filter(([key,icon])=>
-						icon.articles.main&&!icon.articles.main.classList.contains`dn`
+						icon.articles.main&&!icon.articles.main.classList.contains(`dn`)
 				).map(([key,icon])=>
 					type===`svg`?
 						`<symbol id="mdi-${key}"><path d="${icon.data}"/></symbol>`:
@@ -1394,7 +1394,7 @@
 						editor.dialog.append(this.textarea);
 						this.textarea.value=string;
 						this.textarea.select();
-						d.execCommand`cut`;
+						d.execCommand(`cut`);
 						this.textarea.remove();
 					}
 					if(message)
@@ -1410,16 +1410,16 @@
 				}
 			},
 			svgs={
-				path:N`path`,
+				path:N(`path`),
 				init(){
-					this.nodes=d.querySelectorAll`svg[data-icons]`;
+					this.nodes=d.querySelectorAll(`svg[data-icons]`);
 					this.nodes.forEach(svg=>{
 						svg.setAttribute(`viewBox`,`0 0 24 24`);
-						svg.dataset.icons.split`,`.forEach(path=>{
+						svg.dataset.icons.split(`,`).forEach(path=>{
 							svg.append(this.path=this.path.cloneNode(1));
-							this.path.setAttribute(`d`,icons.list[path]?icons.list[path].data:icons.list["help-circle-outline"].data);
+							this.path.setAttribute(`d`,icons.list[path]?icons.list[path].data:icons.list[`help-circle-outline`].data);
 						});
-						svg.removeAttribute`data-icons`;
+						svg.removeAttribute(`data-icons`);
 					});
 				}
 			},
@@ -1427,13 +1427,13 @@
 				functions:{},
 				scroll:0,
 				show:0,
-				categories:$`categories`,
-				contributors:$`contributors`,
-				highlight:$`highlight`,
-				menu:$`menu`,
-				nav:$`nav`,
-				navicon:$`navicon`,
-				sections:$`sections`,
+				categories:$(`categories`),
+				contributors:$(`contributors`),
+				highlight:$(`highlight`),
+				menu:$(`menu`),
+				nav:$(`nav`),
+				navicon:$(`navicon`),
+				sections:$(`sections`),
 				init(){
 					this.nav.addEventListener(`click`,event=>{
 						let	target=event.target,
@@ -1448,7 +1448,7 @@
 								this.toggle();
 								break;
 							case this.highlight:
-								b.classList.toggle`highlight`;
+								b.classList.toggle(`highlight`);
 								if(page.size<2)
 									this.toggle();
 								break;
@@ -1459,7 +1459,7 @@
 								break;
 							case this.categories.previousElementSibling:
 							case this.contributors.previousElementSibling:
-								target.classList.toggle`open`;
+								target.classList.toggle(`open`);
 								break;
 							default:
 								if(target.nodeName.toLowerCase()===`li`){
@@ -1475,14 +1475,14 @@
 											break;
 										case this.categories:
 											if(categories.list[category]){
-												target.classList.toggle`active`;
+												target.classList.toggle(`active`);
 												filter.categories[filter.categories.has(category)?`delete`:`add`](category);
 												filter.apply(1);
 											}
 											break;
 										case this.contributors:
 											if(contributors.list[contributor]){
-												target.classList.toggle`active`;
+												target.classList.toggle(`active`);
 												filter.contributors[filter.contributors.has(contributor)?`delete`:`add`](contributor);
 												filter.apply(1);
 											}
@@ -1519,8 +1519,8 @@
 				touchend(clientx){
 					d.removeEventListener(`touchmove`,this.functions.move);
 					d.removeEventListener(`touchend`,this.functions.end);
-					this.nav.removeAttribute`style`;
-					this.menu.removeAttribute`style`;
+					this.nav.removeAttribute(`style`);
+					this.menu.removeAttribute(`style`);
 					if(clientx>=this.width/2)
 						this.toggle();
 				},
@@ -1545,24 +1545,24 @@
 			},
 			filter={
 				clearall:menu.sections.lastElementChild,
-				error:page.section.querySelector`p`,
-				input:$`filter`,
-				heading:page.section.querySelector`h2`,
+				error:page.section.querySelector(`p`),
+				input:$(`filter`),
+				heading:page.section.querySelector(`h2`),
 				init(){
 					this.button=this.input.nextElementSibling;
 					this.counter=this.heading.dataset;
 					this.heading=this.heading.firstChild;
-					if(this.categories=page.params.get`categories`){
-						menu.categories.previousElementSibling.classList.add`open`;
-						for(let key of this.categories=new Set(this.categories.split`,`))
-							categories.list[key].item.classList.add`active`;
+					if(this.categories=page.params.get(`categories`)){
+						menu.categories.previousElementSibling.classList.add(`open`);
+						for(let key of this.categories=new Set(this.categories.split(`,`)))
+							categories.list[key].item.classList.add(`active`);
 					}else this.categories=new Set;
-					if(this.contributors=page.params.get`contributors`){
-						menu.contributors.previousElementSibling.classList.add`open`;
-						for(let key of this.contributors=new Set(this.contributors.split`,`))
-							contributors.list[key].item.classList.add`active`;
+					if(this.contributors=page.params.get(`contributors`)){
+						menu.contributors.previousElementSibling.classList.add(`open`);
+						for(let key of this.contributors=new Set(this.contributors.split(`,`)))
+							contributors.list[key].item.classList.add(`active`);
 					}else this.contributors=new Set;
-					if(this.text=page.params.get`filter`)
+					if(this.text=page.params.get(`filter`))
 						this.text=(this.input.value=this.text.toLowerCase()).replace(/\+/g,`%2b`);
 					if(this.categories.size||this.contributors.size||this.text)
 						this.apply(1);
@@ -1617,12 +1617,12 @@
 					if(this.filtered){
 						this.url=`${page.address}?`;
 						if(this.categories.size){
-							this.url+=`categories=${[...this.categories].sort().join`,`}`;
+							this.url+=`categories=${[...this.categories].sort().join(`,`)}`;
 							if(this.contributors.size||this.text)
 								this.url+=`&`;
 						}
 						if(this.contributors.size){
-							this.url+=`contributors=${[...this.contributors].sort().join`,`}`;
+							this.url+=`contributors=${[...this.contributors].sort().join(`,`)}`;
 							if(this.text)
 								this.url+=`&`;
 						}
@@ -1635,10 +1635,10 @@
 				clear(){
 					if(this.filtered){
 						for(let key of this.categories)
-							categories.list[key].item.classList.remove`active`;
+							categories.list[key].item.classList.remove(`active`);
 						this.categories.clear();
 						for(let key of this.contributors)
-							contributors.list[key].item.classList.remove`active`;
+							contributors.list[key].item.classList.remove(`active`);
 						this.contributors.clear();
 						this.text=this.input.value=``;
 						this.apply(0);
@@ -1649,19 +1649,19 @@
 			favourites={
 				articles:{},
 				reader:new FileReader,
-				article:C`article`,
-				data:$`upload-data`,
-				dialog:$`upload`,
-				input:C`input`,
-				name:$`upload-name`,
-				menu:C`ul`,
-				item:C`li`,
-				path:N`path`,
-				svg:N`svg`,
-				title:N`title`,
+				article:C(`article`),
+				data:$(`upload-data`),
+				dialog:$(`upload`),
+				input:C(`input`),
+				name:$(`upload-name`),
+				menu:C(`ul`),
+				item:C(`li`),
+				path:N(`path`),
+				svg:N(`svg`),
+				title:N(`title`),
 				init(){
 					this.list=page.storage[`favourites`]||`{}`;
-					for(let key in page.storage)page.storage.hasOwnProperty(key)&&key.startsWith`mdi-`&&page.storage.removeItem(key);
+					for(let key in page.storage)page.storage.hasOwnProperty(key)&&key.startsWith(`mdi-`)&&page.storage.removeItem(key);
 					this.list=JSON.parse(this.list);
 					this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 					this.section=categories.list.library.section;
@@ -1679,12 +1679,12 @@
 					this.svg.classList.add(`trigger`,`cp`,`pa`);
 					this.svg.dataset.icons=`dots-vertical`;
 					this.menu.tabIndex=this.svg.tabIndex=-1;
-					this.svg.appendChild(this.title).append(T`Options`);
+					this.svg.appendChild(this.title).append(T(`Options`));
 					this.item.classList.add(`cp`,`fwm`,`pr`,`wsnw`);
 					this.item.append(this.svg=this.svg.cloneNode(0),T``);
 					this.svg.classList.remove(`trigger`,`cp`,`pa`);
 					this.svg.classList.add(`dib`,`pen`,`vam`);
-					this.svg.removeAttribute`tabindex`;
+					this.svg.removeAttribute(`tabindex`);
 					this.actions={
 						add:new this.Item(`plus-circle`,`Add Icon`),
 						json:new this.Item(`json`,`JSON Object`),
@@ -1730,7 +1730,7 @@
 								page.download(`data:text/plain;base64,${btoa(btoa(JSON.stringify(this.list)))}`,`mdi-library.txt`);
 								break;
 							case this.actions.clear:
-								page.storage.removeItem`favourites`;
+								page.storage.removeItem(`favourites`);
 								for(let key in this.list)
 									if(this.list.hasOwnProperty(key)&&parseInt(this.list[key]))
 										delete this.list[key];
@@ -1740,10 +1740,10 @@
 										delete this.articles[key];
 									}
 								this.sort();
-								info.actions.library.classList.remove`remove`;
+								info.actions.library.classList.remove(`remove`);
 								if(!info.custom)
 									info.actions.library.lastChild.nodeValue=`Add to Library`;
-								page.alert`Library cleared.`;
+								page.alert(`Library cleared.`);
 								break;
 						}
 					},0);
@@ -1827,9 +1827,9 @@
 					this.timer=setTimeout(()=>{
 						this.dialog.close(value);
 						this.name.value=this.data.value=``;
-						this.name.classList.remove`error`;
+						this.name.classList.remove(`error`);
 						this.name.nextElementSibling.firstChild.nodeValue=`The icon name may consist of lowercase letters, numbers &amp; hyphens only, must begin with a letter and must end with a letter or number.`;
-						this.data.classList.remove`error`;
+						this.data.classList.remove(`error`);
 						this.data.nextElementSibling.firstChild.nodeValue=`Path data must fit within a 24*24 viewbox.`;
 					},225);
 				},
@@ -1840,9 +1840,9 @@
 					}catch(err){
 						console.log(err);
 						try{
-							list=JSON.parse(`{${atob(event.target.result).split`,`.map(key=>
+							list=JSON.parse(`{${atob(event.target.result).split(`,`).map(key=>
 								`"${key.substr(4)}":1`
-							).join`,`}}`);
+							).join(`,`)}}`);
 						}catch(err){
 							console.log(err);
 							msg=`failed`;
@@ -1854,7 +1854,7 @@
 								this.list[key]=list[key];
 								this.add(key);
 								if(info.name===key&&parseInt(list[key])){
-									info.actions.library.classList.add`remove`;
+									info.actions.library.classList.add(`remove`);
 									info.actions.library.firstChild.nodeValue=`Remove from Library`;
 								}
 							}
@@ -1912,7 +1912,7 @@
 						}else{
 							this.list[name]=info.data;
 							this.add(name);
-							this.articles[name].classList.add`active`;
+							this.articles[name].classList.add(`active`);
 							msg=`restored to`;
 						}
 					}
@@ -1930,12 +1930,12 @@
 						data=this.data.value.trim();
 						if(icons.list[name]||this.list[name]){
 							valid=false;
-							this.name.classList.add`error`;
+							this.name.classList.add(`error`);
 							this.name.nextElementSibling.firstChild.nodeValue=`This name is already in use.`;
 						}
 						if(valid&&Math.max(...match=data.match(/(\d|\.)+/g).map(x=>parseFloat(x)))>24||Math.min(...match)<0){
 							valid=false;
-							this.data.classList.add`error`;
+							this.data.classList.add(`error`);
 							this.data.nextElementSibling.firstChild.nodeValue=`Path data must fit within a 24*24 viewbox.`;
 						}
 						if(valid){
@@ -1956,25 +1956,25 @@
 			},
 			info={
 				actions:{
-					library:Q`#actions>:first-child`,
+					library:Q(`#actions>:first-child`),
 					export:Q`#actions>:nth-child(2)`,
-					markup:Q`#actions>[data-confirm="Markup"]`,
-					uri:Q`#actions>[data-confirm="URI"]`,
-					data:Q`#actions>[data-confirm="Path data"]`,
-					icon:Q`#actions>[data-confirm=Icon]`,
-					codepoint:Q`#actions>[data-confirm="Code point"]`,
-					url:Q`#actions>[data-confirm=Link]`,
-					link:Q`#actions>:last-child`
+					markup:Q(`#actions>[data-confirm="Markup"]`),
+					uri:Q(`#actions>[data-confirm="URI"]`),
+					data:Q(`#actions>[data-confirm="Path data"]`),
+					icon:Q(`#actions>[data-confirm=Icon]`),
+					codepoint:Q(`#actions>[data-confirm="Code point"]`),
+					url:Q(`#actions>[data-confirm=Link]`),
+					link:Q(`#actions>:last-child`)
 				},
 				downloads:{},
 				show:0,
 				xml:new XMLSerializer,
-				aside:$`info`,
-				figure:$`preview`,
-				heading:$`name`,
+				aside:$(`info`),
+				figure:$(`preview`),
+				heading:$(`name`),
 				init(){
 					if(page.size)
-						this.aside.classList.remove`oz`;
+						this.aside.classList.remove(`oz`);
 					if(page.size)
 						this.heading.firstElementChild.remove();
 					this.heading.append(T``);
@@ -1996,23 +1996,23 @@
 							case this.actions.export:
 								if(this.data)
 									editor.open(this.name);
-								else page.alert`Not yet available.`;
+								else page.alert(`Not yet available.`);
 								break;
 							case this.actions.markup:
 							case this.actions.uri:
 							case this.actions.data:
 								if(this.data)
 									page.copy(target.dataset.copy,target.dataset.confirm);
-								else page.alert`Not yet available.`;
+								else page.alert(`Not yet available.`);
 								break;
 							case this.actions.link:
 								if(this.custom||this.rejected)
-									page.alert`Not available.`;
+									page.alert(`Not available.`);
 								else if(this.retired)
-									page.alert`No longer available.`;
+									page.alert(`No longer available.`);
 								else if(!page.offline)
 									location.href=`https://materialdesignicons.com/icon/${this.name}`;
-								else page.alert`Could not connect.`;
+								else page.alert(`Could not connect.`);
 								break;
 							default:
 								if(this.type=target.dataset.type)
@@ -2021,29 +2021,29 @@
 									if(this.copy||target===this.actions.url)
 										page.copy(target.dataset.copy,target.dataset.confirm);
 									else if(this.retired)
-										page.alert`No longer available.`;
+										page.alert(`No longer available.`);
 									else if(this.custom||this.rejected)
-										page.alert`Not available.`;
+										page.alert(`Not available.`);
 									else page.alert(`Not yet available.`);
 						}
 					},0);
 				},
 				load(){
-					let icon=page.params.get`edit`||page.params.get`icon`;
+					let icon=page.params.get(`edit`)||page.params.get(`icon`);
 					if(icon){
 						if(page.storage&&favourites.list[icon]){
 							this.open(icon);
-							favourites.articles[icon].classList.add`active`;
+							favourites.articles[icon].classList.add(`active`);
 						}else if(icons.list[icon]){
 							this.open(icon);
-							Object.values(icons.list[icon].articles)[0].classList.add`active`;
+							Object.values(icons.list[icon].articles)[0].classList.add(`active`);
 						}
 					}else if(page.size){
 						this.open(icon=((page.storage&&Object.keys(favourites.list).sort()[0])||Object.keys(icons.list).find(key=>icons.list[key].data)));
 						if(page.storage&&favourites.list[icon])
-							favourites.articles[icon].classList.add`active`;
+							favourites.articles[icon].classList.add(`active`);
 						else if(icons.list[icon])
-							Object.values(icons.list[icon].articles)[0].classList.add`active`;
+							Object.values(icons.list[icon].articles)[0].classList.add(`active`);
 					}
 				},
 				download(){
@@ -2051,9 +2051,9 @@
 						if(this.data)
 							if(this.downloads[this.type])
 								page.download(this.downloads[this.type],`${this.name}.${this.type}`);
-							else page.alert`Unknown file type.`;
-						else page.alert`Download not available.`;
-					else page.alert`Unknown icon.`;
+							else page.alert(`Unknown file type.`);
+						else page.alert(`Download not available.`);
+					else page.alert(`Unknown icon.`);
 				},
 				open(name){
 					let custom,library;
@@ -2089,15 +2089,15 @@
 					}
 					this.actions.url.dataset.copy=`${page.address}?icon=${name}`;
 					if(page.size){
-						this.heading.classList.add`oz`;
-						this.svg.classList.add`oz`;
+						this.heading.classList.add(`oz`);
+						this.svg.classList.add(`oz`);
 					}else this.toggle();
 					setTimeout(()=>{
 						this.heading.lastChild.nodeValue=this.name;
 						this.path.setAttribute(`d`,this.data);
 						if(page.size){
-							this.heading.classList.remove`oz`;
-							this.svg.classList.remove`oz`;
+							this.heading.classList.remove(`oz`);
+							this.svg.classList.remove(`oz`);
 						}
 					},page.size&&195);
 				},
@@ -2111,33 +2111,33 @@
 							}
 						},0);
 					else{
-						let current=page.main.querySelector`article.active`;
+						let current=page.main.querySelector(`article.active`);
 						if(current)
-							current.classList.remove`active`;
+							current.classList.remove(`active`);
 						b.removeEventListener(`keydown`,this.close);
 					}
 				}
 			},
 			categories={
-				header:C`header`,
-				heading:C`h2`,
-				error:C`p`,
-				item:C`li`,
-				link:N`svg`,
-				section:C`section`,
-				svg:N`svg`,
-				title:N`title`,
+				header:C(`header`),
+				heading:C(`h2`),
+				error:C(`p`),
+				item:C(`li`),
+				link:N(`svg`),
+				section:C(`section`),
+				svg:N(`svg`),
+				title:N(`title`),
 				init(){
 					this.section.classList.add(`dg`,`pr`);
-					this.header.classList.add`ps`;
+					this.header.classList.add(`ps`);
 					this.heading.classList.add(`oh`,`toe`,`wsnw`);
 					this.heading.append(T``);
 					this.link.classList.add(`cp`,`pa`);
 					this.link.dataset.icons=`link`;
-					this.title.append(T`Copy Link`);
+					this.title.append(T(`Copy Link`));
 					this.link.append(this.title);
-					this.error.classList.add`fwm`;
-					this.error.append(T`No icons available in this section.`);
+					this.error.classList.add(`fwm`);
+					this.error.append(T(`No icons available in this section.`));
 					this.item.classList.add(`cp`,`oh`);
 					this.item.tabIndex=-1;
 					this.svg.classList.add(`dib`,`pen`,`vam`);
@@ -2196,7 +2196,7 @@
 					if(key===`library`||category.count){
 						item.lastChild.nodeValue=name;
 						item.dataset.category=key;
-						if(category.hasOwnProperty`count`)
+						if(category.hasOwnProperty(`count`))
 							heading.dataset.count=item.dataset.count=category.count;
 						if(!category.section){
 							item.lastChild.before(this.svg=this.svg.cloneNode(1));
@@ -2365,9 +2365,9 @@
 				}
 			},
 			contributors={
-				img:C`img`,
-				item:C`li`,
-				svg:N`svg`,
+				img:C(`img`),
+				item:C(`li`),
+				svg:N(`svg`),
 				init(){
 					this.item.classList.add(`cp`,`oh`);
 					this.item.tabIndex=-1;
@@ -2535,9 +2535,9 @@
 				}
 			},
 			icons={
-				article:C`article`,
-				path:N`path`,
-				svg:N`svg`,
+				article:C(`article`),
+				path:N(`path`),
+				svg:N(`svg`),
 				total:0,
 				init(){
 					delete this.array;
@@ -2553,7 +2553,7 @@
 					let	icon=this.list[key],
 						article=this.article.cloneNode(1),
 						svg=this.svg.cloneNode(0),
-						keywords=new Set(key.split`-`),
+						keywords=new Set(key.split(`-`)),
 						category,data,path;
 					if(data=icon.data){
 						svg.append(path=this.path.cloneNode(1));
@@ -2562,7 +2562,7 @@
 							keywords.add(icon.codepoint);
 						if(icon.aliases)
 							icon.aliases.forEach(alias=>
-								alias.split`-`.forEach(word=>
+								alias.split(`-`).forEach(word=>
 									keywords.add(word)
 								)
 							);
@@ -23615,26 +23615,26 @@
 			},
 			editor={
 				inputs:{
-					fill:$`png-fill`,
-					opacity:$`png-opacity`,
-					padding:$`png-padding`,
-					colour:$`png-colour`,
-					alpha:$`png-alpha`,
-					radius:$`png-radius`,
-					format:$`png-format`,
-					size:$`png-size`
+					fill:$(`png-fill`),
+					opacity:$(`png-opacity`),
+					padding:$(`png-padding`),
+					colour:$(`png-colour`),
+					alpha:$(`png-alpha`),
+					radius:$(`png-radius`),
+					format:$(`png-format`),
+					size:$(`png-size`)
 				},
 				settings:{},
 				event:new Event(`input`),
 				image:new Image,
 				xml:new XMLSerializer,
-				background:C`span`,
-				canvas:Q`#editor>figure>canvas`,
-				dialog:$`editor`,
+				background:C(`span`),
+				canvas:Q(`#editor>figure>canvas`),
+				dialog:$(`editor`),
 				init(){
-					this.menu=this.dialog.querySelector`ul`;
+					this.menu=this.dialog.querySelector(`ul`);
 					if(page.storage){
-						this.input=C`input`;
+						this.input=C(`input`);
 						this.reader=new FileReader;
 						this.link=this.menu.firstElementChild;
 						this.import=this.link.nextElementSibling;
@@ -23651,8 +23651,8 @@
 						this.reader.addEventListener(`load`,event=>{
 							let msg=`complete`;
 							try{
-								atob(event.target.result).split`,`.forEach(entry=>{
-									entry=entry.split`:`;
+								atob(event.target.result).split(`,`).forEach(entry=>{
+									entry=entry.split(`:`);
 									let key=entry[0];
 									if(this.inputs[key.substr(4)])
 										page.storage.setItem(key,entry[1]);
@@ -23666,10 +23666,10 @@
 							this.load();
 						},0);
 					}else this.menu.remove();
-					this.context=this.canvas.getContext`2d`;
+					this.context=this.canvas.getContext(`2d`);
 					this.save=this.dialog.lastElementChild;
 					this.cancel=this.save.previousElementSibling;
-					this.figure=this.dialog.querySelector`figure`;
+					this.figure=this.dialog.querySelector(`figure`);
 					this.background.classList.add(`pa`,`pen`);
 					this.svg=this.figure.firstElementChild;
 					this.path=this.svg.firstElementChild;
@@ -23699,15 +23699,15 @@
 								break;
 							case this.export:
 								this.menu.blur();
-								page.download(`data:text/plain;base64,${btoa(btoa(Object.entries(page.storage).filter(entry=>entry[0].startsWith`png-`).map(item=>item.join`:`).join`,`))}`,`mdi-settings.txt`);
+								page.download(`data:text/plain;base64,${btoa(btoa(Object.entries(page.storage).filter(entry=>entry[0].startsWith(`png-`)).map(item=>item.join(`:`)).join(`,`)))}`,`mdi-settings.txt`);
 								break;
 							case this.clear:
 								for(key in page.storage)
-									if(page.storage.hasOwnProperty(key)&&key.startsWith`png-`)
+									if(page.storage.hasOwnProperty(key)&&key.startsWith(`png-`))
 										page.storage.removeItem(key);
 								this.menu.blur();
 								this.load();
-								page.alert`Settings cleared.`;
+								page.alert(`Settings cleared.`);
 								break;
 							case this.cancel:
 								this.close(0);
@@ -23897,7 +23897,7 @@
 				load(){
 					for(let key in this.inputs)
 						if(this.inputs.hasOwnProperty(key)){
-							this.inputs[key].value=page.params.get(key)||page.storage&&page.storage[`png-${key}`]||this.inputs[key].getAttribute`value`||this.inputs[key].firstElementChild.getAttribute`value`;
+							this.inputs[key].value=page.params.get(key)||page.storage&&page.storage[`png-${key}`]||this.inputs[key].getAttribute(`value`)||this.inputs[key].firstElementChild.getAttribute(`value`);
 							this.inputs[key].dispatchEvent(this.event);
 						}
 				},
