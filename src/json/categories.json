@@ -92,6 +92,10 @@
 		"icon":"google",
 		"name":"Google"
 	},
+	"holidays":{
+		"icon":"halloween",
+		"name":"Holidays"
+	},
 	"home":{
 		"icon":"home-automation",
 		"name":"Home Automation"
