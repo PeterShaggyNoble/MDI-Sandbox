@@ -1,75 +1,82 @@
 (async()=>{
 	const 	icons=Object.assign(...Object.entries(await(await fetch`../json/icons.json`).json()).filter(([key,value])=>
-/*			value.variants&&!value.rejected&&!value.retired&&!value.categories.includes(`google`)&&!value.categories.includes(`logos`)*/
 			!value.rejected&&!value.retired&&!value.categories.includes(`google`)&&!value.categories.includes(`logos`)
 		).map(([key,value])=>
 			({[key]:value})
-		));
+		)),
+		keys=[...new Set(Object.keys(icons).map(key=>key.replace(/\-(outline|round|sharp)$/,"")).sort((x,y)=>x>y?-1:1))],
 		body=document.querySelector(`tbody`),
-		count=cell=0,
 		variants={
+			solid:0,
 			outline:0,
 			round:0,
 			sharp:0
 		},
 		types=Object.keys(variants),
 		counters=document.querySelectorAll(`tfoot td`);
-	let include,key,path,svg,tr,td,type,use;
-	for(key in icons)
-		if(icons.hasOwnProperty(key)&&!types.some(type=>key.endsWith(`-`+type))){
-			++count;
-			tr=tr?tr.cloneNode(0):document.createElement(`tr`);
-			tr.classList.toggle(`google`,icons[key].contributor===`google`);
-			if(td)
-				td=td.cloneNode(0);
-			else{
-				td=document.createElement(`td`);
-				td.classList.add(`oh`,`toe`,`wsnw`);
-			}
-			td.append(document.createTextNode(key));
-			tr.append(td);
+	let 	count=keys.length,
+		key,path,svg,tr,td,use;
+	counters[0].firstChild.nodeValue=count;
+	while(count--){
+		key=keys[count];
+		tr=tr?tr.cloneNode(0):document.createElement(`tr`);
+		if(td)
 			td=td.cloneNode(0);
-			if(svg){
-				svg=svg.cloneNode(0);
-				svg.classList.remove(`exclude`,`missing`);
-				path=path.cloneNode(0);
-			}else{
-				svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
-				path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
-				svg.classList.add(`vam`);
-				svg.setAttribute(`viewBox`,`0 0 24 24`);
-			}
+		else{
+			td=document.createElement(`td`);
+			td.classList.add(`oh`,`toe`,`wsnw`);
+		}
+		td.append(document.createTextNode(key));
+		tr.append(td);
+		td=td.cloneNode(0);
+		if(svg){
+			svg=svg.cloneNode(0);
+			svg.classList.remove(`missing`);
+			path=path.cloneNode(0);
+		}else{
+			svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
+			path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
+			svg.classList.add(`vam`);
+			svg.setAttribute(`viewBox`,`0 0 24 24`);
+		}
+		if(icons.hasOwnProperty(key)){
+			tr.classList.toggle(`google`,icons[key].contributor===`google`);
+			++variants.solid;
 			path.setAttribute(`d`,icons[key].data);
 			svg.append(path);
-			td.append(svg);
-			tr.append(td);
-			types.forEach(type=>{
-				if(variants.hasOwnProperty(type)){
-					td=td.cloneNode(0);
-					svg=svg.cloneNode(0);
-					if(icons.hasOwnProperty(key+`-`+type)){
-						++variants[type];
-						svg.classList.remove(`exclude`,`missing`);
-						path=path.cloneNode(0);
-						path.setAttribute(`d`,icons[key+`-`+type].data);
-						svg.append(path);
-					}else{
-/*						include=icons[key].variants.includes(type);*/
-						include=!icons[key].variants||icons[key].variants.includes(type);
-						svg.classList.toggle(`exclude`,!include);
-						svg.classList.toggle(`missing`,include);
-						use=use?use.cloneNode(0):document.createElementNS(`http://www.w3.org/2000/svg`,`use`);
-						use.setAttribute(`href`,`#${include?`close-circle`:`cancel`}`);
-						svg.append(use);
-					}
-					td.append(svg);
-					tr.append(td);
-				}
-			});
-			body.appendChild(tr);
+		}else{
+			svg.classList.add(`missing`);
+			use=use?use.cloneNode(0):document.createElementNS(`http://www.w3.org/2000/svg`,`use`);
+			use.setAttribute(`href`,`#close-circle`);
+			svg.append(use);
 		}
-	counters[++cell].firstChild.nodeValue=count;
-	for(type in variants)
+		td.append(svg);
+		tr.append(td);
+		types.forEach(type=>{
+			if(variants.hasOwnProperty(type)&&type!==`solid`){
+				td=td.cloneNode(0);
+				svg=svg.cloneNode(0);
+				if(icons.hasOwnProperty(key+`-`+type)){
+					tr.classList.toggle(`google`,icons[key+`-`+type].contributor===`google`);
+					++variants[type];
+					svg.classList.remove(`missing`);
+					path=path.cloneNode(0);
+					path.setAttribute(`d`,icons[key+`-`+type].data);
+					svg.append(path);
+				}else{
+					svg.classList.add(`missing`);
+					use=use?use.cloneNode(0):document.createElementNS(`http://www.w3.org/2000/svg`,`use`);
+					use.setAttribute(`href`,`#close-circle`);
+					svg.append(use);
+				}
+				td.append(svg);
+				tr.append(td);
+			}
+		});
+		body.appendChild(tr);
+	}
+	types.forEach((type,index)=>{
 		if(variants.hasOwnProperty(type))
-			counters[++cell].firstChild.nodeValue=variants[type];
+			counters[++index].firstChild.nodeValue=variants[type];
+	});
 })();

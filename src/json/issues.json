@@ -7107,19 +7107,19 @@
 		"user":"AlexMichaelUX"
 	},{
 		"brand":false,
-		"comments":2,
+		"comments":3,
 		"created":"2016-10-18T16:17:49Z",
 		"downvotes":0,
 		"home":false,
 		"id":1584,
 		"labels":["Breaking Change","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.1.xx",
 		"node_id":"MDU6SXNzdWUxODM3MzUwOTQ=",
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
 		"title":"Filled emoticon icons",
-		"updated":"2018-03-26T10:21:34Z",
+		"updated":"2018-10-12T08:59:32Z",
 		"upvotes":0,
 		"user":"krambertech"
 	},{
