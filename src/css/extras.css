@@ -583,20 +583,20 @@ table#variants{
 	height:24px;
 	width:24px;
 }
-#variants svg.missing{
-	fill:#f44336;
-	opacity:.54;
-	height:18px;
-	width:18px;
+#variants svg.complete{
+	fill:#388e3c;
 }
 #variants svg.exclude{
 	fill:#bdbdbd;
 	height:18px;
 	width:18px;
 }
-/*#variants svg.done{
-	fill:#388e3c;
-}*/
+#variants svg.missing{
+	fill:#f44336;
+	opacity:.54;
+	height:18px;
+	width:18px;
+}
 #variants tfoot td{
 	background:var(--colour);
 	bottom:0;
