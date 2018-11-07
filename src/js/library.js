@@ -1019,6 +1019,7 @@
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key))
 						this.add(key);
+				console.log(Object.keys(this.list).filter(key=>key.split(`-`).includes(`plus`)&&(!this.list[key].aliases||!this.list[key].aliases.some(alias=>alias.split(`-`).includes(`add`)))).join(`\n`));
 			},
 			add(key){
 				let 	icon=this.list[key],
