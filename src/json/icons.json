@@ -251,7 +251,7 @@
 	},
 	"account-multiple-minus":{
 		"added":1554,
-		"aliases":["accounts-minus","user-multiple-minus","users-minus"],
+		"aliases":["accounts-minus","people-minus","person-multiple-minus","user-multiple-minus","users-minus"],
 		"categories":["users"],
 		"codepoint":"f5d3",
 		"contributor":"austin-andrews",
@@ -259,6 +259,7 @@
 	},
 	"account-multiple-minus-outline":{
 		"added":"{next}",
+		"aliases":["accounts-minus-outline","people-minus-outline","person-multiple-minus-outline","user-multiple-minus-outline","users-minus-outline"],
 		"categories":["users"],
 		"contributor":"greenturtwig",
 		"data":"M13.5,5A3.5,3.5 0 0,0 10,8.5A3.5,3.5 0 0,0 13.5,12C14.25,12 14.94,11.76 15.5,11.36C16.07,11.76 16.76,12 17.5,12A3.5,3.5 0 0,0 21,8.5A3.5,3.5 0 0,0 17.5,5C16.76,5 16.08,5.25 15.5,5.65C14.95,5.24 14.25,5 13.5,5M13.5,6.5A2,2 0 0,1 15.5,8.5A2,2 0 0,1 13.5,10.5A2,2 0 0,1 11.5,8.5A2,2 0 0,1 13.5,6.5M17.5,6.5A2,2 0 0,1 19.5,8.5A2,2 0 0,1 17.5,10.5C17.14,10.5 16.81,10.4 16.5,10.23C16.82,9.72 17,9.13 17,8.5C17,7.87 16.82,7.28 16.5,6.77C16.81,6.6 17.14,6.5 17.5,6.5M0,11V13H8V11H0M13.5,13C11.33,13 7,14.08 7,16.25V19H24V16.25C24,14.08 19.67,13 17.5,13C16.95,13 16.25,13.08 15.5,13.22C14.78,13.08 14.07,13 13.5,13M13.5,14.5C15.94,14.5 18.5,15.71 18.5,16.25V17.5H8.5V16.25C8.5,15.71 11.06,14.5 13.5,14.5M19.08,14.66C20.93,15 22.5,15.83 22.5,16.25V17.5H20V16.25C20,15.63 19.64,15.1 19.08,14.66Z"
@@ -303,6 +304,7 @@
 	},
 	"account-off-outline":{
 		"added":"{next}",
+		"aliases":["person-off-outline","user-off-outline"],
 		"categories":["users"],
 		"contributor":"austin-andrews",
 		"data":"M2.75,7L4.03,5.75L13.26,15L20,21.72L18.73,23L15.73,20H4V17C4,15.14 6.61,13.92 9.09,13.36L2.75,7M20,17V19.18L18.1,17.28V17C18.1,16.74 17.6,16.35 16.8,16L14,13.18C16.71,13.63 20,14.91 20,17M5.9,17V18.1H13.83L10.72,15C8.19,15.3 5.9,16.45 5.9,17M12,4A4,4 0 0,1 16,8C16,9.95 14.6,11.58 12.75,11.93L8.07,7.25C8.42,5.4 10.05,4 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6Z"
@@ -316,7 +318,7 @@
 		"updated":"{next}"
 	},
 	"account-plus":{
-		"aliases":["person-add","register","user-plus"],
+		"aliases":["account-add","person-add","person-plus","register","user-add","user-plus"],
 		"categories":["home","users"],
 		"codepoint":"f014",
 		"contributor":"google",
@@ -2639,7 +2641,7 @@
 		"data":"M16,20H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z"
 	},
 	"battery-plus":{
-		"aliases":["battery-saver"],
+		"aliases":["battery-add","battery-saver"],
 		"categories":["home","power"],
 		"codepoint":"f08f",
 		"contributor":"austin-andrews",
@@ -3776,6 +3778,7 @@
 	},
 	"calendar-check-outline":{
 		"added":"{next}",
+		"aliases":["calendar-task-outline","calendar-tick-outline","event-available-outline","event-check-outline","event-tick-outline"],
 		"categories":["time"],
 		"contributor":"google",
 		"data":"M19,4H18V2H16V4H8V2H6V4H5A2,2 0 0,0 3,6V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V6A2,2 0 0,0 19,4M19,20H5V10H19V20M5,8V6H19V8H5M10.56,18.46L16.5,12.53L15.43,11.47L10.56,16.34L8.45,14.23L7.39,15.29L10.56,18.46Z"
@@ -3879,7 +3882,7 @@
 		"data":"M7,12H9V14H7V12M21,6V20A2,2 0 0,1 19,22H5C3.89,22 3,21.1 3,20V6A2,2 0 0,1 5,4H6V2H8V4H16V2H18V4H19A2,2 0 0,1 21,6M5,8H19V6H5V8M19,20V10H5V20H19M15,14H17V12H15V14M11,14H13V12H11V14Z"
 	},
 	"calendar-remove":{
-		"aliases":["event-busy"],
+		"aliases":["event-busy","event-remove"],
 		"categories":["time"],
 		"codepoint":"f0f4",
 		"contributor":"google",
@@ -3887,6 +3890,7 @@
 	},
 	"calendar-remove-outline":{
 		"added":"{next}",
+		"aliases":["event-busy-outline","event-remove-outline"],
 		"categories":["time"],
 		"contributor":"google",
 		"data":"M19,4H18V2H16V4H8V2H6V4H5A2,2 0 0,0 3,6V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V6A2,2 0 0,0 19,4M19,20H5V10H19V20M5,8V6H19V8H5M8.23,17.41L9.29,18.47L11.73,16.03L14.17,18.47L15.23,17.41L12.79,14.97L15.23,12.53L14.17,11.47L11.73,13.91L9.29,11.47L8.23,12.53L10.67,14.97L8.23,17.41Z"
@@ -8083,6 +8087,12 @@
 		"codepoint":"f1ff",
 		"contributor":"austin-andrews",
 		"data":"M20,8H18.95L6.95,20H4A2,2 0 0,1 2,18A2,2 0 0,1 4,16H5.29L7,14.29V10A1,1 0 0,1 8,9H9A1,1 0 0,1 10,10V11.29L17.29,4H20A2,2 0 0,1 22,6A2,2 0 0,1 20,8M8.5,5A1.5,1.5 0 0,1 10,6.5A1.5,1.5 0 0,1 8.5,8A1.5,1.5 0 0,1 7,6.5A1.5,1.5 0 0,1 8.5,5Z"
+	},
+	"eslint":{
+		"added":"{next}",
+		"categories":["logos","programming"],
+		"contributor":"community",
+		"data":"M7.95,9.55L11.84,7.3C11.94,7.25 12.06,7.25 12.16,7.3L16.05,9.55C16.15,9.61 16.21,9.71 16.21,9.82V14.32C16.21,14.43 16.15,14.53 16.05,14.59L12.16,16.84C12.06,16.89 11.94,16.89 11.84,16.84L7.95,14.59C7.85,14.53 7.79,14.43 7.79,14.32V9.82C7.79,9.71 7.85,9.61 7.95,9.55M22.12,11.6C22.29,11.89 22.29,12.23 22.12,12.53L17.47,20.56C17.3,20.86 17,21 16.65,21H7.35C7,21 6.7,20.85 6.53,20.56L1.88,12.53C1.71,12.24 1.71,11.87 1.88,11.58L6.53,3.5C6.7,3.22 7,3 7.35,3H16.65C17,3 17.3,3.22 17.47,3.5L22.12,11.6M18.27,15.5V8.65C18.27,8.53 18.2,8.42 18.09,8.36L12.16,4.95C12.06,4.89 11.93,4.89 11.83,4.95L5.91,8.36C5.8,8.42 5.73,8.53 5.73,8.65V15.5C5.73,15.61 5.8,15.72 5.91,15.78L11.84,19.19C11.94,19.25 12.07,19.25 12.17,19.19L18.09,15.78C18.2,15.72 18.27,15.61 18.27,15.5Z"
 	},
 	"et":{
 		"added":2794,
@@ -12360,6 +12370,12 @@
 		"contributor":"austin-andrews",
 		"data":"M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
 	},
+	"leaf-maple":{
+		"added":"{next}",
+		"categories":["nature"],
+		"contributor":"michael-richins",
+		"data":"M21.79,13L16,16L17,18L13,17.25V21H11V17.25L7,18L8,16L2.21,13L3.21,11.27L1.61,8L5.21,7.77L6.21,6L9.63,9.9L8,5H10L12,2L14,5H16L14.37,9.9L17.79,6L18.79,7.73L22.39,7.96L20.79,11.19L21.79,13Z"
+	},
 	"led-off":{
 		"categories":["home","power"],
 		"codepoint":"f32b",
@@ -15474,12 +15490,14 @@
 	},
 	"playlist-music":{
 		"added":"{next}",
+		"aliases":["playlist-note","queue-music"],
 		"categories":["player"],
 		"contributor":"google",
 		"data":"M15,6H3V8H15V6M15,10H3V12H15V10M3,16H11V14H3V16M17,6V14.18C16.69,14.07 16.35,14 16,14A3,3 0 0,0 13,17A3,3 0 0,0 16,20A3,3 0 0,0 19,17V8H22V6H17Z"
 	},
 	"playlist-music-outline":{
 		"added":"{next}",
+		"aliases":["playlist-note-outline","queue-music-outline"],
 		"categories":["player"],
 		"contributor":"google",
 		"data":"M15,6V8H3V6H15M15,10V12H3V10H15M3,16V14H11V16H3M17,6H22V8H19V17A3,3 0 0,1 16,20A3,3 0 0,1 13,17A3,3 0 0,1 16,14C16.35,14 16.69,14.07 17,14.18V6M16,16A1,1 0 0,0 15,17A1,1 0 0,0 16,18A1,1 0 0,0 17,17A1,1 0 0,0 16,16Z"
@@ -15888,6 +15906,12 @@
 		"codepoint":"f42d",
 		"contributor":"austin-andrews",
 		"data":"M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M5,9V15H6.25V13H7A2,2 0 0,0 9,11A2,2 0 0,0 7,9H5M6.25,12V10H6.75A1,1 0 0,1 7.75,11A1,1 0 0,1 6.75,12H6.25M9.75,9V15H11V13H11.75L12.41,15H13.73L12.94,12.61C13.43,12.25 13.75,11.66 13.75,11A2,2 0 0,0 11.75,9H9.75M11,12V10H11.5A1,1 0 0,1 12.5,11A1,1 0 0,1 11.5,12H11M17,9C15.62,9 14.5,10.34 14.5,12C14.5,13.66 15.62,15 17,15C18.38,15 19.5,13.66 19.5,12C19.5,10.34 18.38,9 17,9M17,10.25C17.76,10.25 18.38,11.03 18.38,12C18.38,12.97 17.76,13.75 17,13.75C16.24,13.75 15.63,12.97 15.63,12C15.63,11.03 16.24,10.25 17,10.25Z"
+	},
+	"progress-alert":{
+		"added":"{next}",
+		"categories":["other"],
+		"contributor":"community",
+		"data":"M13,2V4C17.39,4.54 20.5,8.53 19.96,12.92C19.5,16.56 16.64,19.43 13,19.88V21.88C18.5,21.28 22.45,16.34 21.85,10.85C21.33,6.19 17.66,2.5 13,2M11,2C9.04,2.18 7.19,2.95 5.67,4.2L7.1,5.74C8.22,4.84 9.57,4.26 11,4.06V2.06M4.26,5.67C3,7.19 2.24,9.04 2.05,11H4.05C4.24,9.58 4.8,8.23 5.69,7.1L4.26,5.67M2.06,13C2.26,14.96 3.03,16.81 4.27,18.33L5.69,16.9C4.81,15.77 4.24,14.42 4.06,13H2.06M7.06,18.37L5.67,19.74C7.18,21 9.04,21.79 11,22V20C9.58,19.82 8.23,19.25 7.1,18.37H7.06M13,13V7H11V13H13M13,17V15H11V17H13Z"
 	},
 	"progress-check":{
 		"added":2485,
@@ -16851,6 +16875,7 @@
 	},
 	"seat":{
 		"added":"{next}",
+		"aliases":["chair","event-seat"],
 		"categories":["other"],
 		"contributor":"google",
 		"data":"M4,18V21H7V18H17V21H20V15H4V18M19,10H22V13H19V10M2,10H5V13H2V10M17,13H7V5A2,2 0 0,1 9,3H15A2,2 0 0,1 17,5V13Z"
@@ -16899,6 +16924,7 @@
 	},
 	"seat-outline":{
 		"added":"{next}",
+		"aliases":["chair-outline","event-seat-outline"],
 		"categories":["other"],
 		"contributor":"google",
 		"data":"M15,5V12H9V5H15M15,3H9A2,2 0 0,0 7,5V14H17V5A2,2 0 0,0 15,3M22,10H19V13H22V10M5,10H2V13H5V10M20,15H4V21H6V17H18V21H20V15Z"
