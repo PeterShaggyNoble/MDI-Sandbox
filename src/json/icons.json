@@ -27,7 +27,7 @@
 		"data":"M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
 	},
 	"account-alert":{
-		"aliases":["account-warning","user-alert","user-warning"],
+		"aliases":["account-warning","person-alert","person-warning","user-alert","user-warning"],
 		"categories":["users"],
 		"codepoint":"f005",
 		"contributor":"austin-andrews",
@@ -35,7 +35,7 @@
 	},
 	"account-alert-outline":{
 		"added":3039,
-		"aliases":["account-warning-outline","user-alert-outline"],
+		"aliases":["account-warning-outline","person-alert-outline","person-warning-outline","user-alert-outline","user-warning-outline"],
 		"categories":["users"],
 		"codepoint":"fb2c",
 		"contributor":"coffeemate",
@@ -43,7 +43,7 @@
 	},
 	"account-arrow-left":{
 		"added":3039,
-		"aliases":["user-arrow-left"],
+		"aliases":["person-arrow-left","user-arrow-left"],
 		"categories":["users"],
 		"codepoint":"fb2d",
 		"contributor":"coffeemate",
@@ -51,7 +51,7 @@
 	},
 	"account-arrow-left-outline":{
 		"added":3039,
-		"aliases":["user-arrow-left-outline"],
+		"aliases":["person-arrow-left-outline","user-arrow-left-outline"],
 		"categories":["users"],
 		"codepoint":"fb2e",
 		"contributor":"coffeemate",
@@ -59,7 +59,7 @@
 	},
 	"account-arrow-right":{
 		"added":3039,
-		"aliases":["user-arrow-right"],
+		"aliases":["person-arrow-right","user-arrow-right"],
 		"categories":["users"],
 		"codepoint":"fb2f",
 		"contributor":"coffeemate",
@@ -67,14 +67,14 @@
 	},
 	"account-arrow-right-outline":{
 		"added":3039,
-		"aliases":["user-arrow-right-outline"],
+		"aliases":["person-arrow-right-outline","user-arrow-right-outline"],
 		"categories":["users"],
 		"codepoint":"fb30",
 		"contributor":"coffeemate",
 		"data":"M19,21V19H15V17H19V15L22,18L19,21M13,18C13,18.71 13.15,19.39 13.42,20H2V17C2,14.79 5.58,13 10,13C11,13 11.96,13.09 12.85,13.26C13.68,13.42 14.44,13.64 15.11,13.92C13.83,14.83 13,16.32 13,18M4,17V18H11C11,16.96 11.23,15.97 11.64,15.08L10,15C6.69,15 4,15.9 4,17M10,4A4,4 0 0,1 14,8A4,4 0 0,1 10,12A4,4 0 0,1 6,8A4,4 0 0,1 10,4M10,6A2,2 0 0,0 8,8A2,2 0 0,0 10,10A2,2 0 0,0 12,8A2,2 0 0,0 10,6Z"
 	},
 	"account-box":{
-		"aliases":["selfie","user-box"],
+		"aliases":["contact","person-box","selfie","user-box"],
 		"categories":["users"],
 		"codepoint":"f006",
 		"contributor":"google",
@@ -82,14 +82,14 @@
 	},
 	"account-box-multiple":{
 		"added":2485,
-		"aliases":["account-boxes","switch-account","user-box-multiple","user-boxes"],
+		"aliases":["account-boxes","person-box-multiple","person-boxes","switch-account","user-box-multiple","user-boxes"],
 		"categories":["users"],
 		"codepoint":"f933",
 		"contributor":"google",
 		"data":"M4,6H2V20A2,2 0 0,0 4,22H18V20H4V6M20,2A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H8A2,2 0 0,1 6,16V4A2,2 0 0,1 8,2H20M17,7A3,3 0 0,0 14,4A3,3 0 0,0 11,7A3,3 0 0,0 14,10A3,3 0 0,0 17,7M8,15V16H20V15C20,13 16,11.9 14,11.9C12,11.9 8,13 8,15Z"
 	},
 	"account-box-outline":{
-		"aliases":["portrait","selfie-outline","user-box-outline"],
+		"aliases":["contact-outline","person-box-outline","portrait","selfie-outline","user-box-outline"],
 		"categories":["users"],
 		"codepoint":"f007",
 		"contributor":"google",
@@ -97,14 +97,14 @@
 	},
 	"account-card-details":{
 		"added":1554,
-		"aliases":["identification-card","user-card-details"],
+		"aliases":["drivers-license","id-card","identification-card","person-card-details","user-card-details"],
 		"categories":["users"],
 		"codepoint":"f5d2",
 		"contributor":"christopher-schreiner",
 		"data":"M2,3H22C23.05,3 24,3.95 24,5V19C24,20.05 23.05,21 22,21H2C0.95,21 0,20.05 0,19V5C0,3.95 0.95,3 2,3M14,6V7H22V6H14M14,8V9H21.5L22,9V8H14M14,10V11H21V10H14M8,13.91C6,13.91 2,15 2,17V18H14V17C14,15 10,13.91 8,13.91M8,6A3,3 0 0,0 5,9A3,3 0 0,0 8,12A3,3 0 0,0 11,9A3,3 0 0,0 8,6Z"
 	},
 	"account-check":{
-		"aliases":["account-tick","user-check","user-tick"],
+		"aliases":["account-tick","how-to-reg","person-check","person-tick","user-check","user-tick"],
 		"categories":["users"],
 		"codepoint":"f008",
 		"contributor":"austin-andrews",
@@ -113,13 +113,14 @@
 	},
 	"account-check-outline":{
 		"added":"{next}",
+		"aliases":["account-tick-outline","how-to-reg-outline","person-check-outline","person-tick-outline","user-check-outline","user-tick-outline"],
 		"categories":["users"],
 		"contributor":"google",
 		"data":"M21.1,12.5L22.5,13.91L15.97,20.5L12.5,17L13.9,15.59L15.97,17.67L21.1,12.5M11,4A4,4 0 0,1 15,8A4,4 0 0,1 11,12A4,4 0 0,1 7,8A4,4 0 0,1 11,4M11,6A2,2 0 0,0 9,8A2,2 0 0,0 11,10A2,2 0 0,0 13,8A2,2 0 0,0 11,6M11,13C11.68,13 12.5,13.09 13.41,13.26L11.74,14.93L11,14.9C8.03,14.9 4.9,16.36 4.9,17V18.1H11.1L13,20H3V17C3,14.34 8.33,13 11,13Z"
 	},
 	"account-child":{
 		"added":2794,
-		"aliases":["user-child"],
+		"aliases":["guardian","person-child","user-child"],
 		"categories":["users"],
 		"codepoint":"fa88",
 		"contributor":"google",
@@ -127,14 +128,14 @@
 	},
 	"account-child-circle":{
 		"added":2794,
-		"aliases":["user-child-circle"],
+		"aliases":["person-child-circle","user-child-circle"],
 		"categories":["users"],
 		"codepoint":"fa89",
 		"contributor":"google",
 		"data":"M12,12A1.5,1.5 0 0,1 13.5,13.5A1.5,1.5 0 0,1 12,15A1.5,1.5 0 0,1 10.5,13.5A1.5,1.5 0 0,1 12,12M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,16C12.72,16 13.4,16.15 14.04,16.5C14.68,16.8 15,17.2 15,17.67V19.41C16.34,18.81 17,18.08 17,17.2V12.8C17,12 16.5,11.35 15.45,10.8C14.4,10.26 13.25,10 12,10C10.75,10 9.6,10.26 8.55,10.8C7.5,11.35 7,12 7,12.8V17.2C7,18 7.53,18.69 8.63,19.22C9.72,19.75 10.84,20 12,20L13,19.92V17.91L12,18C11,18 10,17.8 9.05,17.39C9.17,17 9.53,16.69 10.13,16.41C10.72,16.13 11.34,16 12,16M12,4A2.5,2.5 0 0,0 9.5,6.5A2.5,2.5 0 0,0 12,9A2.5,2.5 0 0,0 14.5,6.5A2.5,2.5 0 0,0 12,4Z"
 	},
 	"account-circle":{
-		"aliases":["user-circle"],
+		"aliases":["person-circle","user-circle"],
 		"categories":["users"],
 		"codepoint":"f009",
 		"contributor":"google",
@@ -142,7 +143,7 @@
 	},
 	"account-circle-outline":{
 		"added":3039,
-		"aliases":["user-circle-outline"],
+		"aliases":["person-circle-outline","user-circle-outline"],
 		"categories":["users"],
 		"codepoint":"fb31",
 		"contributor":"google",
@@ -150,7 +151,7 @@
 	},
 	"account-clock":{
 		"added":3039,
-		"aliases":["account-pending","user-clock"],
+		"aliases":["account-pending","person-clock","user-clock"],
 		"categories":["time","users"],
 		"codepoint":"fb32",
 		"contributor":"coffeemate",
@@ -158,14 +159,14 @@
 	},
 	"account-clock-outline":{
 		"added":3039,
-		"aliases":["account-pending-outline","user-clock-outline"],
+		"aliases":["account-pending-outline","person-clock-outline","user-clock-outline"],
 		"categories":["time","users"],
 		"codepoint":"fb33",
 		"contributor":"coffeemate",
 		"data":"M16,14H17.5V16.82L19.94,18.23L19.19,19.53L16,17.69V14M17,12A5,5 0 0,0 12,17A5,5 0 0,0 17,22A5,5 0 0,0 22,17A5,5 0 0,0 17,12M17,10A7,7 0 0,1 24,17A7,7 0 0,1 17,24C14.21,24 11.8,22.36 10.67,20H1V17C1,14.34 6.33,13 9,13C9.6,13 10.34,13.07 11.12,13.2C12.36,11.28 14.53,10 17,10M10,17C10,16.3 10.1,15.62 10.29,15C9.87,14.93 9.43,14.9 9,14.9C6.03,14.9 2.9,16.36 2.9,17V18.1H10.09C10.03,17.74 10,17.37 10,17M9,4A4,4 0 0,1 13,8A4,4 0 0,1 9,12A4,4 0 0,1 5,8A4,4 0 0,1 9,4M9,5.9A2.1,2.1 0 0,0 6.9,8A2.1,2.1 0 0,0 9,10.1A2.1,2.1 0 0,0 11.1,8A2.1,2.1 0 0,0 9,5.9Z"
 	},
 	"account-convert":{
-		"aliases":["user-convert"],
+		"aliases":["person-convert","user-convert"],
 		"categories":["users"],
 		"codepoint":"f00a",
 		"contributor":"austin-andrews",
@@ -173,7 +174,7 @@
 	},
 	"account-details":{
 		"added":2794,
-		"aliases":["user-details"],
+		"aliases":["person-details","user-details"],
 		"categories":["users"],
 		"codepoint":"f631",
 		"contributor":"google",
@@ -181,7 +182,7 @@
 	},
 	"account-edit":{
 		"added":1836,
-		"aliases":["user-edit"],
+		"aliases":["person-edit","user-edit"],
 		"categories":["users"],
 		"codepoint":"f6bb",
 		"contributor":"michael-richins",
@@ -190,7 +191,7 @@
 	},
 	"account-group":{
 		"added":2199,
-		"aliases":["user-group"],
+		"aliases":["accounts-group","people-group","person-group","user-group","users-group"],
 		"categories":["users"],
 		"codepoint":"f848",
 		"contributor":"greenturtwig",
@@ -198,7 +199,7 @@
 	},
 	"account-group-outline":{
 		"added":3039,
-		"aliases":["user-group-outline"],
+		"aliases":["accounts-group-outline","people-group-outline","person-group-outline","user-group-outline","users-group-outline"],
 		"categories":["users"],
 		"codepoint":"fb34",
 		"contributor":"greenturtwig",
@@ -206,7 +207,7 @@
 	},
 	"account-heart":{
 		"added":2243,
-		"aliases":["user-heart"],
+		"aliases":["person-heart","user-heart"],
 		"categories":["users"],
 		"codepoint":"f898",
 		"contributor":"michael-irigoyen",
@@ -214,12 +215,13 @@
 	},
 	"account-heart-outline":{
 		"added":"{next}",
+		"aliases":["person-heart-outline","user-heart-outline"],
 		"categories":["users"],
 		"contributor":"michael-irigoyen",
 		"data":"M5,15L4.4,14.5C2.4,12.6 1,11.4 1,9.9C1,8.7 2,7.7 3.2,7.7C3.9,7.7 4.6,8 5,8.5C5.4,8 6.1,7.7 6.8,7.7C8,7.7 9,8.6 9,9.9C9,11.4 7.6,12.6 5.6,14.5L5,15M15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4M15,10.1A2.1,2.1 0 0,1 12.9,8A2.1,2.1 0 0,1 15,5.9C16.16,5.9 17.1,6.84 17.1,8C17.1,9.16 16.16,10.1 15,10.1M15,13C12.33,13 7,14.33 7,17V20H23V17C23,14.33 17.67,13 15,13M21.1,18.1H8.9V17C8.9,16.36 12,14.9 15,14.9C17.97,14.9 21.1,16.36 21.1,17V18.1Z"
 	},
 	"account-key":{
-		"aliases":["user-key"],
+		"aliases":["person-key","user-key"],
 		"categories":["users"],
 		"codepoint":"f00b",
 		"contributor":"rejack",
@@ -227,12 +229,13 @@
 	},
 	"account-key-outline":{
 		"added":"{next}",
+		"aliases":["person-key-outline","user-key-outline"],
 		"categories":["users"],
 		"contributor":"michael-irigoyen",
 		"data":"M5.83,10C5.42,8.83 4.31,8 3,8A3,3 0 0,0 0,11A3,3 0 0,0 3,14C4.31,14 5.42,13.17 5.83,12H8V14H10V12H11V10H5.83M3,12A1,1 0 0,1 2,11A1,1 0 0,1 3,10A1,1 0 0,1 4,11A1,1 0 0,1 3,12M16,4A4,4 0 0,0 12,8A4,4 0 0,0 16,12A4,4 0 0,0 20,8A4,4 0 0,0 16,4M16,10.1A2.1,2.1 0 0,1 13.9,8A2.1,2.1 0 0,1 16,5.9C17.16,5.9 18.1,6.84 18.1,8C18.1,9.16 17.16,10.1 16,10.1M16,13C13.33,13 8,14.33 8,17V20H24V17C24,14.33 18.67,13 16,13M22.1,18.1H9.9V17C9.9,16.36 13,14.9 16,14.9C18.97,14.9 22.1,16.36 22.1,17V18.1Z"
 	},
 	"account-minus":{
-		"aliases":["user-minus"],
+		"aliases":["person-minus","user-minus"],
 		"categories":["users"],
 		"codepoint":"f00d",
 		"contributor":"rejack",
@@ -240,14 +243,14 @@
 	},
 	"account-minus-outline":{
 		"added":2894,
-		"aliases":["user-minus-outline"],
+		"aliases":["person-minus-outline","user-minus-outline"],
 		"categories":["users"],
 		"codepoint":"faeb",
 		"contributor":"peter-noble",
 		"data":"M15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4M15,5.9C16.16,5.9 17.1,6.84 17.1,8C17.1,9.16 16.16,10.1 15,10.1A2.1,2.1 0 0,1 12.9,8A2.1,2.1 0 0,1 15,5.9M1,10V12H9V10H1M15,13C12.33,13 7,14.33 7,17V20H23V17C23,14.33 17.67,13 15,13M15,14.9C17.97,14.9 21.1,16.36 21.1,17V18.1H8.9V17C8.9,16.36 12,14.9 15,14.9Z"
 	},
 	"account-multiple":{
-		"aliases":["accounts","group","people","user-multiple","users"],
+		"aliases":["accounts","group","people","person-mutiple","user-multiple","users"],
 		"categories":["users"],
 		"codepoint":"f00e",
 		"contributor":"google",
@@ -255,7 +258,7 @@
 	},
 	"account-multiple-check":{
 		"added":2354,
-		"aliases":["account-multiple-tick","accounts-check","accounts-tick","user-multiple-check","user-multiple-tick","users-check","users-tick"],
+		"aliases":["account-multiple-tick","accounts-check","accounts-tick","people-check","people-tick","person-multiple-check","person-multiple-tick","user-multiple-check","user-multiple-tick","users-check","users-tick"],
 		"categories":["users"],
 		"codepoint":"f8c4",
 		"contributor":"roberto-graham",
@@ -286,7 +289,7 @@
 		"updated":"{next}"
 	},
 	"account-multiple-plus":{
-		"aliases":["accounts-plus","group-add","user-multiple-plus","users-plus"],
+		"aliases":["account-multiple-add","accounts-add","accounts-plus","group-add","people-add","people-plus","person-multiple-add","person-multiple-plus","user-multiple-add","user-multiple-plus","users-add","users-plus"],
 		"categories":["users"],
 		"codepoint":"f010",
 		"contributor":"google",
@@ -295,7 +298,7 @@
 	},
 	"account-multiple-plus-outline":{
 		"added":2119,
-		"aliases":["accounts-plus-outline","group-add-outline","user-multiple-plus-outline","users-plus-outline"],
+		"aliases":["account-multiple-add-outline","accounts-add-outline","accounts-plus-outline","group-add-outline","people-add-outline","people-plus-outline","person-multiple-add-outline","person-multiple-plus-outline","user-multiple-add-outline","user-multiple-plus-outline","users-add-outline","users-plus-outline"],
 		"categories":["users"],
 		"codepoint":"f7ff",
 		"contributor":"greenturtwig",
@@ -319,7 +322,7 @@
 		"data":"M12,10A3.5,3.5 0 0,0 15.5,6.5A3.5,3.5 0 0,0 12,3A3.5,3.5 0 0,0 8.5,6.5A3.5,3.5 0 0,0 12,10M12,5A1.5,1.5 0 0,1 13.5,6.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 10.5,6.5A1.5,1.5 0 0,1 12,5M15,20A1,1 0 0,0 14,19H13V17H19V15.5C19,13.57 15.87,12 12,12C8.13,12 5,13.57 5,15.5V17H11V19H10A1,1 0 0,0 9,20H2V22H9A1,1 0 0,0 10,23H14A1,1 0 0,0 15,22H22V20H15M7.61,15C8.39,14.53 9.89,14 12,14C14.11,14 15.61,14.53 16.39,15H7.61Z"
 	},
 	"account-off":{
-		"aliases":["user-off"],
+		"aliases":["person-off","user-off"],
 		"categories":["users"],
 		"codepoint":"f012",
 		"contributor":"cody",
@@ -349,7 +352,7 @@
 	},
 	"account-plus-outline":{
 		"added":2119,
-		"aliases":["person-add-outline","register-outline","user-plus-outline"],
+		"aliases":["account-add-outline","person-add-outline","person-plus-outline","register-outline","user-add-outline","user-plus-outline"],
 		"categories":["users"],
 		"codepoint":"f800",
 		"contributor":"greenturtwig",
@@ -357,7 +360,7 @@
 	},
 	"account-question":{
 		"added":3039,
-		"aliases":["account-help","account-question-mark","user-help","user-question"],
+		"aliases":["account-help","account-question-mark","person-help","person-question","user-help","user-question"],
 		"categories":["users"],
 		"codepoint":"fb35",
 		"contributor":"coffeemate",
@@ -365,14 +368,14 @@
 	},
 	"account-question-outline":{
 		"added":3039,
-		"aliases":["account-help-outline","account-question-mark-outline","user-help-outline","user-question-outline"],
+		"aliases":["account-help-outline","account-question-mark-outline","person-help-outline","person-question-outline","user-help-outline","user-question-outline"],
 		"categories":["users"],
 		"codepoint":"fb36",
 		"contributor":"coffeemate",
 		"data":"M20.5,14.5V16H19V14.5H20.5M18.5,9.5H17V9A3,3 0 0,1 20,6A3,3 0 0,1 23,9C23,9.97 22.5,10.88 21.71,11.41L21.41,11.6C20.84,12 20.5,12.61 20.5,13.3V13.5H19V13.3C19,12.11 19.6,11 20.59,10.35L20.88,10.16C21.27,9.9 21.5,9.47 21.5,9A1.5,1.5 0 0,0 20,7.5A1.5,1.5 0 0,0 18.5,9V9.5M9,13C11.67,13 17,14.34 17,17V20H1V17C1,14.34 6.33,13 9,13M9,4A4,4 0 0,1 13,8A4,4 0 0,1 9,12A4,4 0 0,1 5,8A4,4 0 0,1 9,4M9,14.9C6.03,14.9 2.9,16.36 2.9,17V18.1H15.1V17C15.1,16.36 11.97,14.9 9,14.9M9,5.9A2.1,2.1 0 0,0 6.9,8A2.1,2.1 0 0,0 9,10.1A2.1,2.1 0 0,0 11.1,8A2.1,2.1 0 0,0 9,5.9Z"
 	},
 	"account-remove":{
-		"aliases":["user-remove"],
+		"aliases":["person-remove","user-remove"],
 		"categories":["users"],
 		"codepoint":"f015",
 		"contributor":"rejack",
@@ -380,14 +383,14 @@
 	},
 	"account-remove-outline":{
 		"added":2894,
-		"aliases":["user-remove-outline"],
+		"aliases":["person-remove-outline","user-remove-outline"],
 		"categories":["users"],
 		"codepoint":"faec",
 		"contributor":"austin-andrews",
 		"data":"M1.46,8.88L2.88,7.46L5,9.59L7.12,7.46L8.54,8.88L6.41,11L8.54,13.12L7.12,14.54L5,12.41L2.88,14.54L1.46,13.12L3.59,11L1.46,8.88M15,4A4,4 0 0,1 19,8A4,4 0 0,1 15,12A4,4 0 0,1 11,8A4,4 0 0,1 15,4M15,5.9A2.1,2.1 0 0,0 12.9,8A2.1,2.1 0 0,0 15,10.1C16.16,10.1 17.1,9.16 17.1,8C17.1,6.84 16.16,5.9 15,5.9M15,13C17.67,13 23,14.33 23,17V20H7V17C7,14.33 12.33,13 15,13M15,14.9C12,14.9 8.9,16.36 8.9,17V18.1H21.1V17C21.1,16.36 17.97,14.9 15,14.9Z"
 	},
 	"account-search":{
-		"aliases":["user-search"],
+		"aliases":["person-search","user-search"],
 		"categories":["users"],
 		"codepoint":"f016",
 		"contributor":"greenturtwig",
@@ -396,7 +399,7 @@
 	},
 	"account-search-outline":{
 		"added":2485,
-		"aliases":["user-search-outline"],
+		"aliases":["person-search-outline","user-search-outline"],
 		"categories":["users"],
 		"codepoint":"f934",
 		"contributor":"greenturtwig",
@@ -412,7 +415,7 @@
 	},
 	"account-settings":{
 		"added":1650,
-		"aliases":["user-settings"],
+		"aliases":["person-settings","user-settings"],
 		"categories":["users"],
 		"codepoint":"f630",
 		"contributor":"austin-andrews",
@@ -429,7 +432,7 @@
 		"retired":2794
 	},
 	"account-star":{
-		"aliases":["user-star"],
+		"aliases":["person-star","user-star"],
 		"categories":["users"],
 		"codepoint":"f017",
 		"contributor":"rejack",
@@ -437,6 +440,7 @@
 	},
 	"account-star-outline":{
 		"added":"{next}",
+		"aliases":["person-star-outline","user-star-outline"],
 		"categories":["users"],
 		"contributor":"michael-irigoyen",
 		"data":"M15,4A4,4 0 0,1 19,8A4,4 0 0,1 15,12A4,4 0 0,1 11,8A4,4 0 0,1 15,4M15,5.9A2.1,2.1 0 0,0 12.9,8A2.1,2.1 0 0,0 15,10.1C16.16,10.1 17.1,9.16 17.1,8C17.1,6.84 16.16,5.9 15,5.9M15,13C17.67,13 23,14.33 23,17V20H7V17C7,14.33 12.33,13 15,13M15,14.9C12,14.9 8.9,16.36 8.9,17V18.1H21.1V17C21.1,16.36 17.97,14.9 15,14.9M5,13.28L2.5,14.77L3.18,11.96L1,10.08L3.87,9.83L5,7.19L6.11,9.83L9,10.08L6.8,11.96L7.45,14.77L5,13.28Z"
@@ -448,7 +452,7 @@
 	},
 	"account-supervisor":{
 		"added":2794,
-		"aliases":["user-supervisor"],
+		"aliases":["person-supervisor","user-supervisor"],
 		"categories":["users"],
 		"codepoint":"fa8a",
 		"contributor":"google",
@@ -456,14 +460,14 @@
 	},
 	"account-supervisor-circle":{
 		"added":2794,
-		"aliases":["user-supervisor-circle"],
+		"aliases":["person-supervisor-circle","user-supervisor-circle"],
 		"categories":["users"],
 		"codepoint":"fa8b",
 		"contributor":"google",
 		"data":"M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M15.6,8.34C16.67,8.34 17.53,9.2 17.53,10.27C17.53,11.34 16.67,12.2 15.6,12.2A1.93,1.93 0 0,1 13.67,10.27C13.66,9.2 14.53,8.34 15.6,8.34M9.6,6.76C10.9,6.76 11.96,7.82 11.96,9.12C11.96,10.42 10.9,11.5 9.6,11.5C8.3,11.5 7.24,10.42 7.24,9.12C7.24,7.81 8.29,6.76 9.6,6.76M9.6,15.89V19.64C7.2,18.89 5.3,17.04 4.46,14.68C5.5,13.56 8.13,13 9.6,13C10.13,13 10.8,13.07 11.5,13.21C9.86,14.08 9.6,15.23 9.6,15.89M12,20C11.72,20 11.46,20 11.2,19.96V15.89C11.2,14.47 14.14,13.76 15.6,13.76C16.67,13.76 18.5,14.15 19.44,14.91C18.27,17.88 15.38,20 12,20Z"
 	},
 	"account-switch":{
-		"aliases":["accounts-switch","user-switch","users-switch"],
+		"aliases":["accounts-switch","people-switch","person-switch","user-switch","users-switch"],
 		"categories":["users"],
 		"codepoint":"f019",
 		"contributor":"austin-andrews",
@@ -504,7 +508,7 @@
 		"data":"M11,23A2,2 0 0,1 9,21V19H15V21A2,2 0 0,1 13,23H11M12,1C12.71,1 13.39,1.09 14.05,1.26C15.22,2.83 16,5.71 16,9C16,11.28 15.62,13.37 15,16A2,2 0 0,1 13,18H11A2,2 0 0,1 9,16C8.38,13.37 8,11.28 8,9C8,5.71 8.78,2.83 9.95,1.26C10.61,1.09 11.29,1 12,1M20,8C20,11.18 18.15,15.92 15.46,17.21C16.41,15.39 17,11.83 17,9C17,6.17 16.41,3.61 15.46,1.79C18.15,3.08 20,4.82 20,8M4,8C4,4.82 5.85,3.08 8.54,1.79C7.59,3.61 7,6.17 7,9C7,11.83 7.59,15.39 8.54,17.21C5.85,15.92 4,11.18 4,8Z"
 	},
 	"airplane":{
-		"aliases":["aeroplane","airplanemode-active","flight","local-airport"],
+		"aliases":["aeroplane","airplanemode-active","flight","flight-mode","local-airport","plane"],
 		"categories":["places","travel"],
 		"codepoint":"f01d",
 		"contributor":"google",
@@ -512,14 +516,14 @@
 	},
 	"airplane-landing":{
 		"added":1554,
-		"aliases":["aeroplane-landing","flight-land"],
+		"aliases":["aeroplane-landing","flight-land","plane-landing"],
 		"categories":["travel"],
 		"codepoint":"f5d4",
 		"contributor":"google",
 		"data":"M2.5,19H21.5V21H2.5V19M9.68,13.27L14.03,14.43L19.34,15.85C20.14,16.06 20.96,15.59 21.18,14.79C21.39,14 20.92,13.17 20.12,12.95L14.81,11.53L12.05,2.5L10.12,2V10.28L5.15,8.95L4.22,6.63L2.77,6.24V11.41L4.37,11.84L9.68,13.27Z"
 	},
 	"airplane-off":{
-		"aliases":["aeroplane-off","airplanemode-inactive"],
+		"aliases":["aeroplane-off","airplanemode-inactive","flight-mode-off","plane-off"],
 		"categories":["travel"],
 		"codepoint":"f01e",
 		"contributor":"google",
@@ -527,13 +531,14 @@
 	},
 	"airplane-takeoff":{
 		"added":1554,
-		"aliases":["aeroplane-takeoff","flight-takeoff"],
+		"aliases":["aeroplane-takeoff","airplane-take-off","flight-takeoff","plan-takeoff"],
 		"categories":["travel"],
 		"codepoint":"f5d5",
 		"contributor":"google",
 		"data":"M2.5,19H21.5V21H2.5V19M22.07,9.64C21.86,8.84 21.03,8.36 20.23,8.58L14.92,10L8,3.57L6.09,4.08L10.23,11.25L5.26,12.58L3.29,11.04L1.84,11.43L3.66,14.59L4.43,15.92L6.03,15.5L11.34,14.07L15.69,12.91L21,11.5C21.81,11.26 22.28,10.44 22.07,9.64Z"
 	},
 	"airplay":{
+		"aliases":["apple"],
 		"categories":["home","logos"],
 		"codepoint":"f01f",
 		"contributor":"community",
@@ -547,7 +552,7 @@
 		"data":"M14.97,5.92C14.83,5.41 14.3,5.1 13.79,5.24L10.39,6.15L5.95,2.03L4.72,2.36L7.38,6.95L4.19,7.8L2.93,6.82L2,7.07L3.66,9.95L14.28,7.11C14.8,6.96 15.1,6.43 14.97,5.92M21,10L20,12H15L14,10L15,9H17V7H18V9H20L21,10M22,20V22H2V20H15V13H20V20H22Z"
 	},
 	"alarm":{
-		"aliases":["access-alarms"],
+		"aliases":["access-alarms","alarm-clock"],
 		"categories":["time"],
 		"codepoint":"f020",
 		"contributor":"google",
@@ -561,7 +566,7 @@
 		"data":"M15,18.66V22H5V18.66C8.09,20.45 11.91,20.45 15,18.66M22,4A2,2 0 0,0 20,2C19.69,2 19.39,2.07 19.12,2.21C18.82,2.36 18.56,2.58 18.36,2.85C17.72,3.75 17.94,5 18.85,5.64C19.18,5.87 19.59,6 20,6C20.08,6 20.16,6 20.24,6C21.97,10.43 20.66,15.46 17,18.5C16.68,18.75 16.35,19 16,19.22V21H17V19.74C20.14,17.5 22,13.86 22,10C22,8.5 21.72,7 21.17,5.62C21.69,5.24 22,4.64 22,4M18,10A8,8 0 0,1 10,18A8,8 0 0,1 2,10A8,8 0 0,1 10,2A8,8 0 0,1 18,10Z"
 	},
 	"alarm-check":{
-		"aliases":["alarm-on","alarm-tick"],
+		"aliases":["alarm-clock-check","alarm-clock-tick","alarm-on","alarm-tick"],
 		"categories":["time"],
 		"codepoint":"f021",
 		"contributor":"google",
@@ -581,20 +586,21 @@
 		"data":"M6,6.9L3.87,4.78L5.28,3.37L7.4,5.5L6,6.9M13,1V4H11V1H13M20.13,4.78L18,6.9L16.6,5.5L18.72,3.37L20.13,4.78M4.5,10.5V12.5H1.5V10.5H4.5M19.5,10.5H22.5V12.5H19.5V10.5M6,20H18A2,2 0 0,1 20,22H4A2,2 0 0,1 6,20M12,5A6,6 0 0,1 18,11V19H6V11A6,6 0 0,1 12,5M12,7A4,4 0 0,0 8,11V17H16V11A4,4 0 0,0 12,7Z"
 	},
 	"alarm-multiple":{
-		"aliases":["alarms"],
+		"aliases":["alarm-clock-multiple","alarm-clocks","alarms"],
 		"categories":["time"],
 		"codepoint":"f022",
 		"contributor":"austin-andrews",
 		"data":"M9.29,3.25L5.16,6.72L4,5.34L8.14,1.87L9.29,3.25M22,5.35L20.84,6.73L16.7,3.25L17.86,1.87L22,5.35M13,4A8,8 0 0,1 21,12A8,8 0 0,1 13,20A8,8 0 0,1 5,12A8,8 0 0,1 13,4M13,6A6,6 0 0,0 7,12A6,6 0 0,0 13,18A6,6 0 0,0 19,12A6,6 0 0,0 13,6M12,7.5H13.5V12.03L16.72,13.5L16.1,14.86L12,13V7.5M1,14C1,11.5 2.13,9.3 3.91,7.83C3.33,9.1 3,10.5 3,12L3.06,13.13L3,14C3,16.28 4.27,18.26 6.14,19.28C7.44,20.5 9.07,21.39 10.89,21.78C10.28,21.92 9.65,22 9,22A8,8 0 0,1 1,14Z"
 	},
 	"alarm-off":{
+		"aliases":["alarm-clock-off"],
 		"categories":["time"],
 		"codepoint":"f023",
 		"contributor":"google",
 		"data":"M8,3.28L6.6,1.86L5.74,2.57L7.16,4M16.47,18.39C15.26,19.39 13.7,20 12,20A7,7 0 0,1 5,13C5,11.3 5.61,9.74 6.61,8.53M2.92,2.29L1.65,3.57L3,4.9L1.87,5.83L3.29,7.25L4.4,6.31L5.2,7.11C3.83,8.69 3,10.75 3,13A9,9 0 0,0 12,22C14.25,22 16.31,21.17 17.89,19.8L20.09,22L21.36,20.73L3.89,3.27L2.92,2.29M22,5.72L17.4,1.86L16.11,3.39L20.71,7.25L22,5.72M12,6A7,7 0 0,1 19,13C19,13.84 18.84,14.65 18.57,15.4L20.09,16.92C20.67,15.73 21,14.41 21,13A9,9 0 0,0 12,4C10.59,4 9.27,4.33 8.08,4.91L9.6,6.43C10.35,6.16 11.16,6 12,6Z"
 	},
 	"alarm-plus":{
-		"aliases":["add-alarm"],
+		"aliases":["add-alarm","alarm-add","alarm-clock-add","alarm-clock-plus"],
 		"categories":["time"],
 		"codepoint":"f024",
 		"contributor":"google",
@@ -602,6 +608,7 @@
 	},
 	"alarm-snooze":{
 		"added":1712,
+		"aliases":["alarm-clock-snooze"],
 		"categories":["time"],
 		"codepoint":"f68d",
 		"contributor":"google",
@@ -637,7 +644,7 @@
 	},
 	"alert-circle-outline":{
 		"added":1554,
-		"aliases":["error-outline","warning-circle-outline"],
+		"aliases":["error-outline","git-issue","warning-circle-outline"],
 		"categories":["other"],
 		"codepoint":"f5d6",
 		"contributor":"google",
@@ -1559,6 +1566,7 @@
 		"data":"M13,11H18L16.5,9.5L17.92,8.08L21.84,12L17.92,15.92L16.5,14.5L18,13H13V18L14.5,16.5L15.92,17.92L12,21.84L8.08,17.92L9.5,16.5L11,18V13H6L7.5,14.5L6.08,15.92L2.16,12L6.08,8.08L7.5,9.5L6,11H11V6L9.5,7.5L8.08,6.08L12,2.16L15.92,6.08L14.5,7.5L13,6V11Z"
 	},
 	"arrow-bottom-left":{
+		"aliases":["arrow-down-left"],
 		"categories":["arrows"],
 		"codepoint":"f042",
 		"contributor":"austin-andrews",
@@ -1566,6 +1574,7 @@
 	},
 	"arrow-bottom-left-bold-outline":{
 		"added":2594,
+		"aliases":["arrow-down-left-bold-outline"],
 		"categories":["arrows"],
 		"codepoint":"f9b6",
 		"contributor":"michael-irigoyen",
@@ -1573,12 +1582,14 @@
 	},
 	"arrow-bottom-left-thick":{
 		"added":2594,
+		"aliases":["arrow-down-left-thick"],
 		"categories":["arrows"],
 		"codepoint":"f9b7",
 		"contributor":"michael-irigoyen",
 		"data":"M15.5,5.69L18.31,8.5L11.94,14.89H16.89V18.31H5.69V7.11H9.12V12.06L15.5,5.69Z"
 	},
 	"arrow-bottom-right":{
+		"aliases":["arrow-down-right"],
 		"categories":["arrows"],
 		"codepoint":"f043",
 		"contributor":"austin-andrews",
@@ -1586,6 +1597,7 @@
 	},
 	"arrow-bottom-right-bold-outline":{
 		"added":2594,
+		"aliases":["arrow-down-right-bold-outline"],
 		"categories":["arrows"],
 		"codepoint":"f9b8",
 		"contributor":"michael-irigoyen",
@@ -1593,6 +1605,7 @@
 	},
 	"arrow-bottom-right-thick":{
 		"added":2594,
+		"aliases":["arrow-down-right-thick"],
 		"categories":["arrows"],
 		"codepoint":"f9b9",
 		"contributor":"michael-irigoyen",
@@ -1665,20 +1678,23 @@
 	},
 	"arrow-decision":{
 		"added":2594,
-		"categories":["arrows"],
+		"aliases":["proxy"],
+		"categories":["arrows","networking"],
 		"codepoint":"f9ba",
 		"contributor":"michael-richins",
 		"data":"M11,5H8L12,1L16,5H13V9.43C12.25,9.89 11.58,10.46 11,11.12V5M22,11L18,7V10C14.39,9.85 11.31,12.57 11,16.17C9.44,16.72 8.62,18.44 9.17,20C9.72,21.56 11.44,22.38 13,21.83C14.56,21.27 15.38,19.56 14.83,18C14.53,17.14 13.85,16.47 13,16.17C13.47,12.17 17.47,11.97 17.95,11.97V14.97L22,11M10.63,11.59C9.3,10.57 7.67,10 6,10V7L2,11L6,15V12C7.34,12.03 8.63,12.5 9.64,13.4C9.89,12.76 10.22,12.15 10.63,11.59Z"
 	},
 	"arrow-decision-auto":{
 		"added":2594,
-		"categories":["arrows"],
+		"aliases":["proxy-auto"],
+		"categories":["arrows","networking"],
 		"codepoint":"f9bb",
 		"contributor":"michael-richins",
 		"data":"M12,5H9L13,1L17,5H14V9.43C13.25,9.89 12.58,10.46 12,11.12V5M10.4,15H8.5L7.8,13H4.6L3.9,15H2L5.2,6H7.2L10.4,15M7.35,11.65L6.2,8L5.05,11.65H7.35M23,11L19,7V10C15.39,9.85 12.31,12.57 12,16.17C10.44,16.72 9.62,18.44 10.17,20C10.72,21.56 12.44,22.38 14,21.83C15.56,21.27 16.38,19.56 15.83,18C15.53,17.14 14.85,16.47 14,16.17C14.47,12.17 18.47,11.97 18.95,11.97V14.97L23,11Z"
 	},
 	"arrow-decision-auto-outline":{
 		"added":2594,
+		"aliases":["proxy-auto-outline"],
 		"categories":["arrows"],
 		"codepoint":"f9bc",
 		"contributor":"michael-richins",
@@ -1686,13 +1702,14 @@
 	},
 	"arrow-decision-outline":{
 		"added":2594,
-		"categories":["arrows"],
+		"aliases":["proxy-outline"],
+		"categories":["arrows","networking"],
 		"codepoint":"f9bd",
 		"contributor":"michael-richins",
 		"data":"M9.64,13.4C8.63,12.5 7.34,12.03 6,12V15L2,11L6,7V10C7.67,10 9.3,10.57 10.63,11.59C10.22,12.15 9.89,12.76 9.64,13.4M18,15V12C17.5,12 13.5,12.16 13.05,16.2C14.61,16.75 15.43,18.47 14.88,20.03C14.33,21.59 12.61,22.41 11.05,21.86C9.5,21.3 8.67,19.59 9.22,18.03C9.5,17.17 10.2,16.5 11.05,16.2C11.34,12.61 14.4,9.88 18,10V7L22,11L18,15M13,19A1,1 0 0,0 12,18A1,1 0 0,0 11,19A1,1 0 0,0 12,20A1,1 0 0,0 13,19M11,11.12C11.58,10.46 12.25,9.89 13,9.43V5H16L12,1L8,5H11V11.12Z"
 	},
 	"arrow-down":{
-		"aliases":["arrow-downward"],
+		"aliases":["arrow-bottom","arrow-downward"],
 		"categories":["arrows"],
 		"codepoint":"f045",
 		"contributor":"austin-andrews",
@@ -1700,6 +1717,7 @@
 	},
 	"arrow-down-bold":{
 		"added":1932,
+		"aliases":["arrow-bottom-bold"],
 		"categories":["arrows"],
 		"codepoint":"f72d",
 		"contributor":"austin-andrews",
@@ -1707,6 +1725,7 @@
 	},
 	"arrow-down-bold-box":{
 		"added":1932,
+		"aliases":["arrow-bottom-bold-box"],
 		"categories":["arrows"],
 		"codepoint":"f72e",
 		"contributor":"austin-andrews",
@@ -1714,24 +1733,28 @@
 	},
 	"arrow-down-bold-box-outline":{
 		"added":1932,
+		"aliases":["arrow-bottom-bold-box-outline"],
 		"categories":["arrows"],
 		"codepoint":"f72f",
 		"contributor":"austin-andrews",
 		"data":"M12,17L7,12H10V8H14V12H17L12,17M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M5,5V19H19V5H5Z"
 	},
 	"arrow-down-bold-circle":{
+		"aliases":["arrow-bottom-bold-circle"],
 		"categories":["arrows"],
 		"codepoint":"f047",
 		"contributor":"austin-andrews",
 		"data":"M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,17L17,12H14V8H10V12H7L12,17Z"
 	},
 	"arrow-down-bold-circle-outline":{
+		"aliases":["arrow-bottom-bold-circle-outline"],
 		"categories":["arrows"],
 		"codepoint":"f048",
 		"contributor":"austin-andrews",
 		"data":"M12,17L7,12H10V8H14V12H17L12,17M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"
 	},
 	"arrow-down-bold-hexagon-outline":{
+		"aliases":["arrow-bottom-bold-hexagon-outline"],
 		"categories":["arrows"],
 		"codepoint":"f049",
 		"contributor":"austin-andrews",
@@ -1739,6 +1762,7 @@
 	},
 	"arrow-down-bold-outline":{
 		"added":2594,
+		"aliases":["arrow-bottom-bold-outline"],
 		"categories":["arrows"],
 		"codepoint":"f9be",
 		"contributor":"michael-irigoyen",
@@ -1746,13 +1770,14 @@
 	},
 	"arrow-down-box":{
 		"added":1836,
+		"aliases":["arrow-bottom-box"],
 		"categories":["arrows"],
 		"codepoint":"f6bf",
 		"contributor":"austin-andrews",
 		"data":"M3,5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5M11,6V14.5L7.5,11L6.08,12.42L12,18.34L17.92,12.42L16.5,11L13,14.5V6H11Z"
 	},
 	"arrow-down-drop-circle":{
-		"aliases":["arrow-drop-down-circle"],
+		"aliases":["arrow-bottom-drop-circle","arrow-drop-down-circle"],
 		"categories":["arrows"],
 		"codepoint":"f04a",
 		"contributor":"google",
@@ -1761,12 +1786,14 @@
 	},
 	"arrow-down-drop-circle-outline":{
 		"added":1554,
+		"aliases":["arrow-bottom-drop-circle-outline"],
 		"categories":["arrows"],
 		"codepoint":"f04b",
 		"contributor":"austin-andrews",
 		"data":"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z"
 	},
 	"arrow-down-thick":{
+		"aliases":["arrow-bottom-thick"],
 		"categories":["arrows"],
 		"codepoint":"f046",
 		"contributor":"austin-andrews",
@@ -2013,6 +2040,7 @@
 		"data":"M18,16V13H15V22H13V2H15V11H18V8L22,12L18,16M2,12L6,16V13H9V22H11V2H9V11H6V8L2,12Z"
 	},
 	"arrow-top-left":{
+		"aliases":["arrow-up-left"],
 		"categories":["arrows"],
 		"codepoint":"f05b",
 		"contributor":"austin-andrews",
@@ -2020,6 +2048,7 @@
 	},
 	"arrow-top-left-bold-outline":{
 		"added":2594,
+		"aliases":["arrow-up-left-bold-outline"],
 		"categories":["arrows"],
 		"codepoint":"f9c2",
 		"contributor":"michael-irigoyen",
@@ -2027,12 +2056,14 @@
 	},
 	"arrow-top-left-thick":{
 		"added":2594,
+		"aliases":["arrow-up-left-thick"],
 		"categories":["arrows"],
 		"codepoint":"f9c3",
 		"contributor":"michael-irigoyen",
 		"data":"M9.12,11.94V16.89H5.69V5.69H16.89V9.12H11.94L18.31,15.5L15.5,18.31L9.12,11.94Z"
 	},
 	"arrow-top-right":{
+		"aliases":["arrow-up-right"],
 		"categories":["arrows"],
 		"codepoint":"f05c",
 		"contributor":"austin-andrews",
@@ -2040,6 +2071,7 @@
 	},
 	"arrow-top-right-bold-outline":{
 		"added":2594,
+		"aliases":["arrow-up-right-bold-outline"],
 		"categories":["arrows"],
 		"codepoint":"f9c4",
 		"contributor":"michael-irigoyen",
@@ -2047,6 +2079,7 @@
 	},
 	"arrow-top-right-thick":{
 		"added":2594,
+		"aliases":["arrow-up-right-thick"],
 		"categories":["arrows"],
 		"codepoint":"f9c5",
 		"contributor":"michael-irigoyen",
@@ -2062,6 +2095,7 @@
 	},
 	"arrow-up-bold":{
 		"added":1932,
+		"aliases":["arrow-top-bold"],
 		"categories":["arrows"],
 		"codepoint":"f736",
 		"contributor":"austin-andrews",
@@ -2070,6 +2104,7 @@
 	},
 	"arrow-up-bold-box":{
 		"added":1932,
+		"aliases":["arrow-top-bold-box"],
 		"categories":["arrows"],
 		"codepoint":"f737",
 		"contributor":"austin-andrews",
@@ -2078,6 +2113,7 @@
 	},
 	"arrow-up-bold-box-outline":{
 		"added":1932,
+		"aliases":["arrow-top-bold-box-outline"],
 		"categories":["arrows"],
 		"codepoint":"f738",
 		"contributor":"austin-andrews",
@@ -2085,6 +2121,7 @@
 		"keywords":["top"]
 	},
 	"arrow-up-bold-circle":{
+		"aliases":["arrow-top-bold-circle"],
 		"categories":["arrows"],
 		"codepoint":"f05f",
 		"contributor":"austin-andrews",
@@ -2092,6 +2129,7 @@
 		"keywords":["top"]
 	},
 	"arrow-up-bold-circle-outline":{
+		"aliases":["arrow-top-bold-circle-outline"],
 		"categories":["arrows"],
 		"codepoint":"f060",
 		"contributor":"austin-andrews",
@@ -2099,6 +2137,7 @@
 		"keywords":["top"]
 	},
 	"arrow-up-bold-hexagon-outline":{
+		"aliases":["arrow-top-bold-hexagon-outline"],
 		"categories":["arrows"],
 		"codepoint":"f061",
 		"contributor":"austin-andrews",
@@ -2107,6 +2146,7 @@
 	},
 	"arrow-up-bold-outline":{
 		"added":2594,
+		"aliases":["arrow-top-bold-outline"],
 		"categories":["arrows"],
 		"codepoint":"f9c6",
 		"contributor":"michael-irigoyen",
@@ -2131,6 +2171,7 @@
 	},
 	"arrow-up-drop-circle":{
 		"added":1554,
+		"aliases":["arrow-top-drop-circle"],
 		"categories":["arrows"],
 		"codepoint":"f062",
 		"contributor":"austin-andrews",
@@ -2139,6 +2180,7 @@
 	},
 	"arrow-up-drop-circle-outline":{
 		"added":1554,
+		"aliases":["arrow-top-drop-circle-outline"],
 		"categories":["arrows"],
 		"codepoint":"f063",
 		"contributor":"austin-andrews",
@@ -2146,6 +2188,7 @@
 		"keywords":["top"]
 	},
 	"arrow-up-thick":{
+		"aliases":["arrow-top-thick"],
 		"categories":["arrows"],
 		"codepoint":"f05e",
 		"contributor":"austin-andrews",
@@ -2342,6 +2385,7 @@
 	},
 	"ballot":{
 		"added":2594,
+		"aliases":["vote"],
 		"categories":["other"],
 		"codepoint":"f9c8",
 		"contributor":"google",
@@ -2349,6 +2393,7 @@
 	},
 	"ballot-outline":{
 		"added":2594,
+		"aliases":["vote-outline"],
 		"categories":["other"],
 		"codepoint":"f9c9",
 		"contributor":"google",
@@ -2356,12 +2401,14 @@
 	},
 	"ballot-recount":{
 		"added":"{next}",
+		"aliases":["vote-recount"],
 		"categories":["other"],
 		"contributor":"michael-irigoyen",
 		"data":"M10,17H7V14H10V17M10,7H7V10H10V7M12.81,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V12.81C20.12,12.3 19.09,12 18,12A6,6 0 0,0 12,18C12,19.09 12.3,20.12 12.81,21M13,9.5H18V7.5H13V9.5M11,13H6V18H11V13M11,6H6V11H11V6M18,21.5A3,3 0 0,1 15,18.5C15,18 15.12,17.5 15.35,17.1L14.62,16.37C14.23,17 14,17.72 14,18.5A4,4 0 0,0 18,22.5V24L20,22L18,20M18,14.5V13L16,15L18,17V15.5A3,3 0 0,1 21,18.5C21,19 20.88,19.5 20.65,19.9L21.38,20.63C21.77,20 22,19.28 22,18.5A4,4 0 0,0 18,14.5Z"
 	},
 	"ballot-recount-outline":{
 		"added":"{next}",
+		"aliases":["vote-recount-outline"],
 		"categories":["other"],
 		"contributor":"michael-irigoyen",
 		"data":"M6,18H11V13H6V18M7,14H10V17H7V14M13,7.5H18V9.5H13V7.5M12.81,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V12.81C20.39,12.46 19.72,12.21 19,12.09V5H5V19H12.09C12.21,19.72 12.46,20.39 12.81,21M11,6H6V11H11V6M10,10H7V7H10V10M18,21.5A3,3 0 0,1 15,18.5C15,18 15.12,17.5 15.35,17.1L14.62,16.37C14.23,17 14,17.72 14,18.5A4,4 0 0,0 18,22.5V24L20,22L18,20M18,14.5V13L16,15L18,17V15.5A3,3 0 0,1 21,18.5C21,19 20.88,19.5 20.65,19.9L21.38,20.63C21.77,20 22,19.28 22,18.5A4,4 0 0,0 18,14.5Z"
@@ -2960,7 +3007,7 @@
 		"data":"M16,17H7V10.5C7,8 9,6 11.5,6C14,6 16,8 16,10.5M18,16V10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18M11.5,22A2,2 0 0,0 13.5,20H9.5A2,2 0 0,0 11.5,22Z"
 	},
 	"bell-plus":{
-		"aliases":["add-alert"],
+		"aliases":["add-alert","bell-add"],
 		"categories":["other"],
 		"codepoint":"f09d",
 		"contributor":"google",
@@ -2969,6 +3016,7 @@
 	},
 	"bell-plus-outline":{
 		"added":2794,
+		"aliases":["add-alert-outline","bell-add-outline"],
 		"categories":["other"],
 		"codepoint":"fa91",
 		"contributor":"google",
@@ -3212,6 +3260,7 @@
 		"data":"M8,14A3,3 0 0,1 5,17A3,3 0 0,1 2,14C2,13.23 2.29,12.53 2.76,12C2.29,11.47 2,10.77 2,10A3,3 0 0,1 5,7A3,3 0 0,1 8,10C9.33,10.08 10.67,10.17 12,10.17C13.33,10.17 14.67,10.08 16,10A3,3 0 0,1 19,7A3,3 0 0,1 22,10C22,10.77 21.71,11.47 21.24,12C21.71,12.53 22,13.23 22,14A3,3 0 0,1 19,17A3,3 0 0,1 16,14C14.67,13.92 13.33,13.83 12,13.83C10.67,13.83 9.33,13.92 8,14Z"
 	},
 	"book":{
+		"aliases":["git-repository"],
 		"categories":["other"],
 		"codepoint":"f0ba",
 		"contributor":"google",
@@ -3260,7 +3309,7 @@
 	},
 	"book-multiple-plus":{
 		"added":2794,
-		"aliases":["books-plus"],
+		"aliases":["book-multiple-add","books-add","books-plus"],
 		"categories":["other"],
 		"codepoint":"fa94",
 		"contributor":"community",
@@ -3320,6 +3369,7 @@
 	},
 	"book-plus":{
 		"added":1554,
+		"aliases":["book-add"],
 		"categories":["other"],
 		"codepoint":"f5db",
 		"contributor":"cody",
@@ -3396,12 +3446,14 @@
 		"data":"M17,18L12,15.82L7,18V5H17M17,3H7A2,2 0 0,0 5,5V21L12,18L19,21V5C19,3.89 18.1,3 17,3Z"
 	},
 	"bookmark-plus":{
+		"aliases":["bookmark-add"],
 		"categories":["other"],
 		"codepoint":"f0c5",
 		"contributor":"austin-andrews",
 		"data":"M17,3A2,2 0 0,1 19,5V21L12,18L5,21V5C5,3.89 5.9,3 7,3H17M11,7V9H9V11H11V13H13V11H15V9H13V7H11Z"
 	},
 	"bookmark-plus-outline":{
+		"aliases":["bookmark-add-outline"],
 		"categories":["other"],
 		"codepoint":"f0c4",
 		"contributor":"google",
@@ -3665,6 +3717,7 @@
 	},
 	"briefcase-plus":{
 		"added":2695,
+		"aliases":["briefcase-add"],
 		"categories":["other"],
 		"codepoint":"fa2a",
 		"contributor":"michael-irigoyen",
@@ -3710,6 +3763,7 @@
 		"data":"M9,2C7.95,2 6.95,2.16 6,2.46C10.06,3.73 13,7.5 13,12C13,16.5 10.06,20.27 6,21.54C6.95,21.84 7.95,22 9,22A10,10 0 0,0 19,12A10,10 0 0,0 9,2Z"
 	},
 	"brightness-4":{
+		"aliases":["theme-light-dark"],
 		"categories":["other"],
 		"codepoint":"f0dd",
 		"contributor":"google",
@@ -3723,7 +3777,7 @@
 		"data":"M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z"
 	},
 	"brightness-6":{
-		"aliases":["brightness-medium"],
+		"aliases":["brightness-medium","theme-light-dark"],
 		"categories":["other"],
 		"codepoint":"f0df",
 		"contributor":"google",
@@ -4059,7 +4113,7 @@
 		"data":"M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3,4.9 3,6V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V6A2,2 0 0,0 19,4M19,20H5V10H19V20M19,8H5V6H19V8M12,13H17V18H12V13Z"
 	},
 	"calendar-plus":{
-		"aliases":["event-plus"],
+		"aliases":["calendar-add","event-add","event-plus"],
 		"categories":["time"],
 		"codepoint":"f0f3",
 		"contributor":"austin-andrews",
@@ -5084,6 +5138,7 @@
 	},
 	"check-box-mutiple-outline":{
 		"added":"{next}",
+		"aliases":["check-boxes-outline","tick-box-multiple-outline"],
 		"categories":["other"],
 		"contributor":"michael-richins",
 		"data":"M20,2H8A2,2 0 0,0 6,4V16A2,2 0 0,0 8,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M20,16H8V4H20V16M16,20V22H4A2,2 0 0,1 2,20V7H4V20H16M18.53,8.06L17.47,7L12.59,11.88L10.47,9.76L9.41,10.82L12.59,14L18.53,8.06Z"
@@ -5121,12 +5176,14 @@
 	},
 	"check-network":{
 		"added":"{next}",
+		"aliases":["tick-network"],
 		"categories":["networking"],
 		"contributor":"michael-richins",
 		"data":"M15,20A1,1 0 0,0 14,19H13V17H17A2,2 0 0,0 19,15V5A2,2 0 0,0 17,3H7A2,2 0 0,0 5,5V15A2,2 0 0,0 7,17H11V19H10A1,1 0 0,0 9,20H2V22H9A1,1 0 0,0 10,23H14A1,1 0 0,0 15,22H22V20H15M8.25,10.08L9.41,8.92L11,10.5L14.59,6.92L15.75,8.33L11,13.08L8.25,10.08Z"
 	},
 	"check-network-outline":{
 		"added":"{next}",
+		"aliases":["tick-network-outline"],
 		"categories":["networking"],
 		"contributor":"michael-irigoyen",
 		"data":"M15,20A1,1 0 0,0 14,19H13V17H17A2,2 0 0,0 19,15V5A2,2 0 0,0 17,3H7A2,2 0 0,0 5,5V15A2,2 0 0,0 7,17H11V19H10A1,1 0 0,0 9,20H2V22H9A1,1 0 0,0 10,23H14A1,1 0 0,0 15,22H22V20H15M7,15V5H17V15H7M8,10.37L9.24,9.13L10.93,10.83L14.76,7L16,8.5L10.93,13.57L8,10.37Z"
@@ -5745,6 +5802,7 @@
 	},
 	"clipboard-plus":{
 		"added":1932,
+		"aliases":["clipboard-add"],
 		"categories":["other"],
 		"codepoint":"f750",
 		"contributor":"austin-andrews",
@@ -6370,12 +6428,14 @@
 	},
 	"comment-plus":{
 		"added":2594,
+		"aliases":["comment-add"],
 		"categories":["other"],
 		"codepoint":"f9e4",
 		"contributor":"peter-noble",
 		"data":"M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22H9M11,6V9H8V11H11V14H13V11H16V9H13V6H11Z"
 	},
 	"comment-plus-outline":{
+		"aliases":["comment-add-outline"],
 		"categories":["other"],
 		"codepoint":"f183",
 		"contributor":"austin-andrews",
@@ -6462,6 +6522,7 @@
 		"data":"M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M10,16V19.08L13.08,16H20V4H4V16H10M6,7H18V9H6V7M6,11H15V13H6V11Z"
 	},
 	"compare":{
+		"aliases":["theme-light-dark"],
 		"categories":["other"],
 		"codepoint":"f18a",
 		"contributor":"google",
@@ -6655,6 +6716,7 @@
 		"data":"M17.5,7A5.5,5.5 0 0,1 23,12.5A5.5,5.5 0 0,1 17.5,18C15.79,18 14.27,17.22 13.26,16H10.74C9.73,17.22 8.21,18 6.5,18A5.5,5.5 0 0,1 1,12.5A5.5,5.5 0 0,1 6.5,7H17.5M6.5,9A3.5,3.5 0 0,0 3,12.5A3.5,3.5 0 0,0 6.5,16C7.9,16 9.1,15.18 9.66,14H14.34C14.9,15.18 16.1,16 17.5,16A3.5,3.5 0 0,0 21,12.5A3.5,3.5 0 0,0 17.5,9H6.5M5.75,10.25H7.25V11.75H8.75V13.25H7.25V14.75H5.75V13.25H4.25V11.75H5.75V10.25M16.75,12.5A1,1 0 0,1 17.75,13.5A1,1 0 0,1 16.75,14.5A1,1 0 0,1 15.75,13.5A1,1 0 0,1 16.75,12.5M18.75,10.5A1,1 0 0,1 19.75,11.5A1,1 0 0,1 18.75,12.5A1,1 0 0,1 17.75,11.5A1,1 0 0,1 18.75,10.5Z"
 	},
 	"cookie":{
+		"aliases":["biscuit"],
 		"categories":["food"],
 		"codepoint":"f198",
 		"contributor":"google",
@@ -6733,6 +6795,7 @@
 	},
 	"credit-card-plus":{
 		"added":1712,
+		"aliases":["credit-card-add"],
 		"categories":["money"],
 		"codepoint":"f675",
 		"contributor":"austin-andrews",
@@ -7052,7 +7115,7 @@
 		"keywords":["dollars","taiwanese"]
 	},
 	"currency-usd":{
-		"aliases":["attach-money"],
+		"aliases":["attach-money","dollar"],
 		"categories":["money"],
 		"codepoint":"f1b3",
 		"contributor":"google",
@@ -7062,7 +7125,7 @@
 	},
 	"currency-usd-off":{
 		"added":1712,
-		"aliases":["money-off"],
+		"aliases":["dollar-off","money-off"],
 		"categories":["money"],
 		"codepoint":"f679",
 		"contributor":"google",
@@ -7174,6 +7237,7 @@
 		"updated":1650
 	},
 	"database-plus":{
+		"aliases":["database-add"],
 		"categories":["networking"],
 		"codepoint":"f1ba",
 		"contributor":"cody",
@@ -7439,18 +7503,21 @@
 	},
 	"diameter":{
 		"added":"{next}",
+		"aliases":["circle-diameter","sphere-diameter"],
 		"categories":["other"],
 		"contributor":"michael-richins",
 		"data":"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M17,15V13H7V15L4,12L7,9V11H17V9L20,12L17,15Z"
 	},
 	"diameter-outline":{
 		"added":"{next}",
+		"aliases":["circle-diameter-outline","sphere-diameter-outline"],
 		"categories":["other"],
 		"contributor":"michael-richins",
 		"data":"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M16,15V13H8V15L5,12L8,9V11H16V9L19,12L16,15Z"
 	},
 	"diameter-variant":{
 		"added":"{next}",
+		"aliases":["circle-diameter-variant","sphere-diameter-variant"],
 		"categories":["other"],
 		"contributor":"michael-richins",
 		"data":"M4.15,21.46L5.47,19.58C3.35,17.74 2,15.03 2,12A10,10 0 0,1 12,2C13.78,2 15.44,2.46 16.89,3.27L18.21,1.39L19.85,2.54L18.53,4.42C20.65,6.26 22,8.97 22,12A10,10 0 0,1 12,22C10.22,22 8.56,21.54 7.11,20.73L5.79,22.61L4.15,21.46M12,4A8,8 0 0,0 4,12C4,14.35 5,16.46 6.63,17.93L15.73,4.92C14.62,4.33 13.35,4 12,4M12,20A8,8 0 0,0 20,12C20,9.65 19,7.54 17.37,6.07L8.27,19.08C9.38,19.67 10.65,20 12,20Z"
@@ -8171,6 +8238,7 @@
 	},
 	"email-plus":{
 		"added":2594,
+		"aliases":["email-add","envelope-add","envelope-plus"],
 		"categories":["other"],
 		"codepoint":"f9ea",
 		"contributor":"greenturtwig",
@@ -8178,6 +8246,7 @@
 	},
 	"email-plus-outline":{
 		"added":2594,
+		"aliases":["email-add-outline","envelope-add-outline","envelope-plus-outline"],
 		"categories":["other"],
 		"codepoint":"f9eb",
 		"contributor":"greenturtwig",
@@ -8530,6 +8599,7 @@
 	},
 	"eye-plus":{
 		"added":2199,
+		"aliases":["eye-add"],
 		"categories":["other"],
 		"codepoint":"f86a",
 		"contributor":"greenturtwig",
@@ -8537,6 +8607,7 @@
 	},
 	"eye-plus-outline":{
 		"added":2199,
+		"aliases":["eye-add-outline"],
 		"categories":["other"],
 		"codepoint":"f86b",
 		"contributor":"greenturtwig",
@@ -8666,6 +8737,7 @@
 	},
 	"feature-search":{
 		"added":2695,
+		"aliases":["box","box-search"],
 		"categories":["other"],
 		"codepoint":"fa48",
 		"contributor":"cody",
@@ -8673,6 +8745,7 @@
 	},
 	"feature-search-outline":{
 		"added":2695,
+		"aliases":["box","box-outline","box-search-outline"],
 		"categories":["other"],
 		"codepoint":"fa49",
 		"contributor":"cody",
@@ -9209,6 +9282,7 @@
 	},
 	"flag-plus":{
 		"added":3039,
+		"aliases":["flag-add"],
 		"categories":["other"],
 		"codepoint":"fb76",
 		"contributor":"michael-richins",
@@ -9222,6 +9296,7 @@
 		"data":"M14.46,15.88L15.88,14.46L18,16.59L20.12,14.46L21.54,15.88L19.41,18L21.54,20.12L20.12,21.54L18,19.41L15.88,21.54L14.46,20.12L16.59,18L14.46,15.88M12.4,5H18V12C15.78,12 13.84,13.21 12.8,15H11L10.6,13H5V20H3V3H12L12.4,5Z"
 	},
 	"flag-triangle":{
+		"aliases":["milestone"],
 		"categories":["other"],
 		"codepoint":"f23f",
 		"contributor":"austin-andrews",
@@ -9548,7 +9623,7 @@
 		"data":"M20,18H4V8H20M20,6H12L10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6Z"
 	},
 	"folder-plus":{
-		"aliases":["create-new-folder"],
+		"aliases":["create-new-folder","folder-add"],
 		"categories":["files"],
 		"codepoint":"f257",
 		"contributor":"austin-andrews",
@@ -9556,7 +9631,7 @@
 	},
 	"folder-plus-outline":{
 		"added":3039,
-		"aliases":["create-new-folder-outline"],
+		"aliases":["create-new-folder-outline","folder-add-outline"],
 		"categories":["files"],
 		"codepoint":"fb79",
 		"contributor":"google",
@@ -9754,6 +9829,7 @@
 	},
 	"format-annotation-plus":{
 		"added":1650,
+		"aliases":["format-annotation-add"],
 		"categories":["editor"],
 		"codepoint":"f646",
 		"contributor":"kai-faust",
@@ -9772,7 +9848,7 @@
 		"data":"M6,5V5.18L8.82,8H11.22L10.5,9.68L12.6,11.78L14.21,8H20V5H6M3.27,5L2,6.27L8.97,13.24L6.5,19H9.5L11.07,15.34L16.73,21L18,19.73L3.55,5.27L3.27,5Z"
 	},
 	"format-color-fill":{
-		"aliases":["format-colour-fill"],
+		"aliases":["format-colour-fill","paint","paint-bucket"],
 		"categories":["editor"],
 		"codepoint":"f266",
 		"contributor":"google",
@@ -11656,6 +11732,7 @@
 	},
 	"home-plus":{
 		"added":2485,
+		"aliases":["home-add"],
 		"categories":["home","places"],
 		"codepoint":"f974",
 		"contributor":"peter-noble",
@@ -12040,6 +12117,7 @@
 	},
 	"image-plus":{
 		"added":2199,
+		"aliases":["image-add"],
 		"categories":["other"],
 		"codepoint":"f87b",
 		"contributor":"greenturtwig",
@@ -12190,6 +12268,7 @@
 	},
 	"ipod":{
 		"added":"{next}",
+		"aliases":["apple-ipod"],
 		"categories":["devices","player"],
 		"contributor":"greenturtwig",
 		"data":"M7,2A2,2 0 0,0 5,4V20A2,2 0 0,0 7,22H17A2,2 0 0,0 19,20V4A2,2 0 0,0 17,2H7M7,4H17V10H7V4M12,12A4,4 0 0,1 16,16A4,4 0 0,1 12,20A4,4 0 0,1 8,16A4,4 0 0,1 12,12M12,14A2,2 0 0,0 10,16A2,2 0 0,0 12,18A2,2 0 0,0 14,16A2,2 0 0,0 12,14Z"
@@ -12293,6 +12372,7 @@
 		"data":"M6.5,3C8.46,3 10.13,4.25 10.74,6H22V9H18V12H15V9H10.74C10.13,10.75 8.46,12 6.5,12C4,12 2,10 2,7.5C2,5 4,3 6.5,3M6.5,6A1.5,1.5 0 0,0 5,7.5A1.5,1.5 0 0,0 6.5,9A1.5,1.5 0 0,0 8,7.5A1.5,1.5 0 0,0 6.5,6M8,17H16V19H8V17Z"
 	},
 	"key-plus":{
+		"aliases":["key-add"],
 		"categories":["other"],
 		"codepoint":"f309",
 		"contributor":"austin-andrews",
@@ -12830,34 +12910,38 @@
 		"data":"M7,1A2,2 0 0,0 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3A2,2 0 0,0 17,1H7M7,3H17V21H7V3M9,6V18H15V6H9M10,7H14V11H10V7M10,13H14V17H10V13Z"
 	},
 	"lightbulb":{
+		"aliases":["idea"],
 		"categories":["home","power"],
 		"codepoint":"f335",
 		"contributor":"google",
 		"data":"M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 19,11.38 19,9A7,7 0 0,0 12,2M9,21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V20H9V21Z",
-		"keywords":["bulb","idea"]
+		"keywords":["bulb"]
 	},
 	"lightbulb-on":{
 		"added":1836,
+		"aliases":["idea"],
 		"categories":["home","power"],
 		"codepoint":"f6e7",
 		"contributor":"austin-andrews",
 		"data":"M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63Z",
-		"keywords":["bulb","idea"]
+		"keywords":["bulb"]
 	},
 	"lightbulb-on-outline":{
 		"added":1836,
+		"aliases":["idea"],
 		"categories":["home","power"],
 		"codepoint":"f6e8",
 		"contributor":"austin-andrews",
 		"data":"M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M11,18H13V15.87C14.73,15.43 16,13.86 16,12A4,4 0 0,0 12,8A4,4 0 0,0 8,12C8,13.86 9.27,15.43 11,15.87V18Z",
-		"keywords":["bulb","idea"]
+		"keywords":["bulb"]
 	},
 	"lightbulb-outline":{
+		"aliases":["idea"],
 		"categories":["home","power"],
 		"codepoint":"f336",
 		"contributor":"austin-andrews",
 		"data":"M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11.05 8.23,12.81 10,13.58V16H14V13.58C15.77,12.81 17,11.05 17,9A5,5 0 0,0 12,4Z",
-		"keywords":["bulb","idea"]
+		"keywords":["bulb"]
 	},
 	"lighthouse":{
 		"added":2594,
@@ -12992,7 +13076,7 @@
 	},
 	"lock-plus":{
 		"added":1554,
-		"aliases":["enhanced-encryption"],
+		"aliases":["enhanced-encryption","lock-add"],
 		"categories":["other"],
 		"codepoint":"f5fb",
 		"contributor":"google",
@@ -13155,7 +13239,7 @@
 		"keywords":["minify","smaller"]
 	},
 	"magnify-plus":{
-		"aliases":["zoom-in"],
+		"aliases":["magnify-add","zoom-in"],
 		"categories":["other"],
 		"codepoint":"f34b",
 		"contributor":"austin-andrews",
@@ -13164,7 +13248,7 @@
 	},
 	"magnify-plus-cursor":{
 		"added":2695,
-		"aliases":["zoom-in-cursor"],
+		"aliases":["magnify-add-cursor","zoom-in-cursor"],
 		"categories":["other"],
 		"codepoint":"fa62",
 		"contributor":"michael-richins",
@@ -13172,7 +13256,7 @@
 	},
 	"magnify-plus-outline":{
 		"added":1836,
-		"aliases":["zoom-in-outline"],
+		"aliases":["magnify-add-outline","zoom-in-outline"],
 		"categories":["other"],
 		"codepoint":"f6ec",
 		"contributor":"google",
@@ -13300,6 +13384,7 @@
 	},
 	"map-plus":{
 		"added":2485,
+		"aliases":["map-add"],
 		"categories":["places","travel"],
 		"codepoint":"f982",
 		"contributor":"peter-noble",
@@ -13382,6 +13467,7 @@
 		"data":"M8,16.61V15.37L14,11.91V7.23L9,10.12L4,7.23V13L3,13.58L2,13V5L3.07,4.38L9,7.81L12.93,5.54L14.93,4.38L16,5V13.06L10.92,16L14.97,18.33L20,15.43V11L21,10.42L22,11V16.58L14.97,20.64L8,16.61M22,9.75L21,10.33L20,9.75V8.58L21,8L22,8.58V9.75Z"
 	},
 	"math-compass":{
+		"aliases":["maths-compass"],
 		"categories":["science"],
 		"codepoint":"f358",
 		"contributor":"gabriel",
@@ -13389,18 +13475,21 @@
 	},
 	"math-cos":{
 		"added":"{next}",
+		"aliases":["math-cosine","maths-cos"],
 		"categories":["science"],
 		"contributor":"michael-irigoyen",
 		"data":"M4,7A2,2 0 0,0 2,9V15A2,2 0 0,0 4,17H6A2,2 0 0,0 8,15V14H6V15H4V9H6V10H8V9A2,2 0 0,0 6,7H4M11,7A2,2 0 0,0 9,9V15A2,2 0 0,0 11,17H13A2,2 0 0,0 15,15V9A2,2 0 0,0 13,7H11M11,9H13V15H11V9M18,7A2,2 0 0,0 16,9V11A2,2 0 0,0 18,13H20V15H16V17H20A2,2 0 0,0 22,15V13A2,2 0 0,0 20,11H18V9H22V7H18Z"
 	},
 	"math-sin":{
 		"added":"{next}",
+		"aliases":["math-sine","maths-sin"],
 		"categories":["science"],
 		"contributor":"michael-irigoyen",
 		"data":"M4,7A2,2 0 0,0 2,9V11A2,2 0 0,0 4,13H6V15H2V17H6A2,2 0 0,0 8,15V13A2,2 0 0,0 6,11H4V9H8V7H4M14,7V9H13V15H14V17H10V15H11V9H10V7H14M16,7V17H18V12L20,17H22V7H20V12L18,7H16Z"
 	},
 	"math-tan":{
 		"added":"{next}",
+		"aliases":["math-tangent","maths-tan"],
 		"categories":["science"],
 		"contributor":"michael-irigoyen",
 		"data":"M2,7V9H4V17H6V9H8V7H2M11,7A2,2 0 0,0 9,9V17H11V13H13V17H15V9A2,2 0 0,0 13,7H11M11,9H13V11H11V9M16,7V17H18V12L20,17H22V7H20V12L18,7H16Z"
@@ -13607,6 +13696,7 @@
 	},
 	"message-plus":{
 		"added":1650,
+		"aliases":["message-add"],
 		"categories":["other"],
 		"codepoint":"f653",
 		"contributor":"cody",
@@ -13705,6 +13795,7 @@
 	},
 	"microphone-minus":{
 		"added":2243,
+		"aliases":["microphone-remove"],
 		"categories":["other"],
 		"codepoint":"f8b2",
 		"contributor":"michael-richins",
@@ -13726,6 +13817,7 @@
 	},
 	"microphone-plus":{
 		"added":2243,
+		"aliases":["microphone-add"],
 		"categories":["other"],
 		"codepoint":"f8b3",
 		"contributor":"michael-richins",
@@ -13772,6 +13864,7 @@
 	},
 	"microwave":{
 		"added":"{next}",
+		"aliases":["microwave-oven"],
 		"categories":["home"],
 		"contributor":"greenturtwig",
 		"data":"M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M4,7H16V17H4V7M19,7A1,1 0 0,1 20,8A1,1 0 0,1 19,9A1,1 0 0,1 18,8A1,1 0 0,1 19,7M13,9V15H15V9H13M19,11A1,1 0 0,1 20,12A1,1 0 0,1 19,13A1,1 0 0,1 18,12A1,1 0 0,1 19,11Z"
@@ -14412,12 +14505,14 @@
 		"data":"M14,10H19.5L14,4.5V10M5,3H15L21,9V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3M5,5V19H19V12H12V5H5Z"
 	},
 	"note-plus":{
+		"aliases":["note-add"],
 		"categories":["files"],
 		"codepoint":"f39c",
 		"contributor":"austin-andrews",
 		"data":"M14,10H19.5L14,4.5V10M5,3H15L21,9V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3M9,18H11V15H14V13H11V10H9V13H6V15H9V18Z"
 	},
 	"note-plus-outline":{
+		"aliases":["note-add-outline"],
 		"categories":["files"],
 		"codepoint":"f39d",
 		"contributor":"austin-andrews",
@@ -15447,6 +15542,7 @@
 	},
 	"pencil-outline":{
 		"added":"{next}",
+		"aliases":["create-outline","edit-outline","mode-edit-outline"],
 		"categories":["editor"],
 		"contributor":"google",
 		"data":"M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z"
@@ -15726,11 +15822,11 @@
 		"data":"M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12M8.8,14L10,12.8V4H14V12.8L15.2,14H8.8Z"
 	},
 	"pine-tree":{
+		"aliases":["forest"],
 		"categories":["holidays","nature","places"],
 		"codepoint":"f405",
 		"contributor":"austin-andrews",
-		"data":"M10,21V18H3L8,13H5L10,8H7L12,3L17,8H14L19,13H16L21,18H14V21H10Z",
-		"keywords":["forest"]
+		"data":"M10,21V18H3L8,13H5L10,8H7L12,3L17,8H14L19,13H16L21,18H14V21H10Z"
 	},
 	"pine-tree-box":{
 		"categories":["nature"],
@@ -16331,6 +16427,7 @@
 	},
 	"progress-alert":{
 		"added":"{next}",
+		"aliases":["progress-warning"],
 		"categories":["other"],
 		"contributor":"community",
 		"data":"M13,2V4C17.39,4.54 20.5,8.53 19.96,12.92C19.5,16.56 16.64,19.43 13,19.88V21.88C18.5,21.28 22.45,16.34 21.85,10.85C21.33,6.19 17.66,2.5 13,2M11,2C9.04,2.18 7.19,2.95 5.67,4.2L7.1,5.74C8.22,4.84 9.57,4.26 11,4.06V2.06M4.26,5.67C3,7.19 2.24,9.04 2.05,11H4.05C4.24,9.58 4.8,8.23 5.69,7.1L4.26,5.67M2.06,13C2.26,14.96 3.03,16.81 4.27,18.33L5.69,16.9C4.81,15.77 4.24,14.42 4.06,13H2.06M7.06,18.37L5.67,19.74C7.18,21 9.04,21.79 11,22V20C9.58,19.82 8.23,19.25 7.1,18.37H7.06M13,13V7H11V13H13M13,17V15H11V17H13Z"
@@ -16565,12 +16662,14 @@
 	},
 	"radius":{
 		"added":"{next}",
+		"aliases":["circle-radius","sphere-radius"],
 		"categories":["other"],
 		"contributor":"michael-richins",
 		"data":"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M17,15V13H13.72C13.36,13.62 12.71,14 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10C12.71,10 13.36,10.38 13.72,11H17V9L20,12L17,15Z"
 	},
 	"radius-outline":{
 		"added":"{next}",
+		"aliases":["circle-radius-outline","sphere-radius-outline"],
 		"categories":["other"],
 		"contributor":"michael-richins",
 		"data":"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M16,15V13H13.72C13.36,13.62 12.71,14 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10C12.71,10 13.36,10.38 13.72,11H16V9L19,12L16,15Z"
@@ -16641,6 +16740,7 @@
 		"retired":2119
 	},
 	"receipt":{
+		"aliases":["invoice"],
 		"categories":["other"],
 		"codepoint":"f449",
 		"contributor":"google",
@@ -17100,6 +17200,7 @@
 	},
 	"ruler-square":{
 		"added":"{next}",
+		"aliases":["architecture","carpentry","square"],
 		"categories":["editor"],
 		"contributor":"michael-richins",
 		"data":"M3,5V21H9V19.5H7V18H9V16.5H5V15H9V13.5H7V12H9V10.5H5V9H9V5H10.5V9H12V7H13.5V9H15V5H16.5V9H18V7H19.5V9H21V3H5A2,2 0 0,0 3,5M6,7A1,1 0 0,1 5,6A1,1 0 0,1 6,5A1,1 0 0,1 7,6A1,1 0 0,1 6,7Z"
@@ -17486,6 +17587,7 @@
 		"data":"M4,1H20A1,1 0 0,1 21,2V6A1,1 0 0,1 20,7H4A1,1 0 0,1 3,6V2A1,1 0 0,1 4,1M4,9H20A1,1 0 0,1 21,10V14A1,1 0 0,1 20,15H4A1,1 0 0,1 3,14V10A1,1 0 0,1 4,9M4,17H20A1,1 0 0,1 21,18V22A1,1 0 0,1 20,23H4A1,1 0 0,1 3,22V18A1,1 0 0,1 4,17M9,5H10V3H9V5M9,13H10V11H9V13M9,21H10V19H9V21M5,3V5H7V3H5M5,11V13H7V11H5M5,19V21H7V19H5Z"
 	},
 	"server-minus":{
+		"aliases":["server-remove"],
 		"categories":["networking"],
 		"codepoint":"f48c",
 		"contributor":"austin-andrews",
@@ -17512,6 +17614,7 @@
 		"data":"M4,1H20A1,1 0 0,1 21,2V6A1,1 0 0,1 20,7H8.82L6.82,5H7V3H5V3.18L3.21,1.39C3.39,1.15 3.68,1 4,1M22,22.72L20.73,24L19.73,23H4A1,1 0 0,1 3,22V18A1,1 0 0,1 4,17H13.73L11.73,15H4A1,1 0 0,1 3,14V10A1,1 0 0,1 4,9H5.73L3.68,6.95C3.38,6.85 3.15,6.62 3.05,6.32L1,4.27L2.28,3L22,22.72M20,9A1,1 0 0,1 21,10V14A1,1 0 0,1 20,15H16.82L10.82,9H20M20,17A1,1 0 0,1 21,18V19.18L18.82,17H20M9,5H10V3H9V5M9,13H9.73L9,12.27V13M9,21H10V19H9V21M5,11V13H7V11H5M5,19V21H7V19H5Z"
 	},
 	"server-plus":{
+		"aliases":["server-add"],
 		"categories":["networking"],
 		"codepoint":"f490",
 		"contributor":"austin-andrews",
@@ -17531,6 +17634,7 @@
 	},
 	"set-all":{
 		"added":1932,
+		"aliases":["full-outer-join","set-or","set-union","sql-full-outer-join"],
 		"categories":["other"],
 		"codepoint":"f777",
 		"contributor":"cody",
@@ -17538,7 +17642,7 @@
 	},
 	"set-center":{
 		"added":1932,
-		"aliases":["set-centre"],
+		"aliases":["inner-join","set-and","set-centre","set-intersection","sql-inner-join"],
 		"categories":["other"],
 		"codepoint":"f778",
 		"contributor":"cody",
@@ -17546,7 +17650,7 @@
 	},
 	"set-center-right":{
 		"added":1932,
-		"aliases":["set-centre-right"],
+		"aliases":["outer-join-right","set-centre-right","sql-right-outer-join"],
 		"categories":["other"],
 		"codepoint":"f779",
 		"contributor":"cody",
@@ -17554,6 +17658,7 @@
 	},
 	"set-left":{
 		"added":1932,
+		"aliases":["difference-left"],
 		"categories":["other"],
 		"codepoint":"f77a",
 		"contributor":"cody",
@@ -17561,7 +17666,7 @@
 	},
 	"set-left-center":{
 		"added":1932,
-		"aliases":["set-left-centre"],
+		"aliases":["outer-join-left","set-left-centre","sql-left-outer-join"],
 		"categories":["other"],
 		"codepoint":"f77b",
 		"contributor":"cody",
@@ -17569,6 +17674,7 @@
 	},
 	"set-left-right":{
 		"added":1932,
+		"aliases":["exclusion","set-xor"],
 		"categories":["other"],
 		"codepoint":"f77c",
 		"contributor":"cody",
@@ -17576,6 +17682,7 @@
 	},
 	"set-none":{
 		"added":1932,
+		"aliases":["set-none","set-null"],
 		"categories":["other"],
 		"codepoint":"f77d",
 		"contributor":"cody",
@@ -17583,6 +17690,7 @@
 	},
 	"set-right":{
 		"added":1932,
+		"aliases":["difference-right"],
 		"categories":["other"],
 		"codepoint":"f77e",
 		"contributor":"cody",
@@ -17634,6 +17742,7 @@
 	},
 	"shape-circle-plus":{
 		"added":1650,
+		"aliases":["shape-circle-add"],
 		"categories":["other"],
 		"codepoint":"f65d",
 		"contributor":"kai-faust",
@@ -17648,6 +17757,7 @@
 		"data":"M11,13.5V21.5H3V13.5H11M9,15.5H5V19.5H9V15.5M12,2L17.5,11H6.5L12,2M12,5.86L10.08,9H13.92L12,5.86M17.5,13C20,13 22,15 22,17.5C22,20 20,22 17.5,22C15,22 13,20 13,17.5C13,15 15,13 17.5,13M17.5,15A2.5,2.5 0 0,0 15,17.5A2.5,2.5 0 0,0 17.5,20A2.5,2.5 0 0,0 20,17.5A2.5,2.5 0 0,0 17.5,15Z"
 	},
 	"shape-plus":{
+		"aliases":["shape-add"],
 		"categories":["other"],
 		"codepoint":"f495",
 		"contributor":"austin-andrews",
@@ -17655,6 +17765,7 @@
 	},
 	"shape-polygon-plus":{
 		"added":1650,
+		"aliases":["shape-polygon-add"],
 		"categories":["other"],
 		"codepoint":"f65e",
 		"contributor":"kai-faust",
@@ -17662,6 +17773,7 @@
 	},
 	"shape-rectangle-plus":{
 		"added":1650,
+		"aliases":["shape-rectangle-add"],
 		"categories":["other"],
 		"codepoint":"f65f",
 		"contributor":"kai-faust",
@@ -17669,12 +17781,14 @@
 	},
 	"shape-square-plus":{
 		"added":1650,
+		"aliases":["shape-square-add"],
 		"categories":["other"],
 		"codepoint":"f660",
 		"contributor":"kai-faust",
 		"data":"M19,5H22V7H19V10H17V7H14V5H17V2H19V5M17,19V13H19V21H3V5H11V7H5V19H17Z"
 	},
 	"share":{
+		"aliases":["forward"],
 		"categories":["other"],
 		"codepoint":"f496",
 		"contributor":"google",
@@ -17701,7 +17815,7 @@
 	},
 	"shield-account":{
 		"added":2199,
-		"alises":["security-account"],
+		"aliases":["security-account","shield-person","shield-user"],
 		"categories":["users"],
 		"codepoint":"f88e",
 		"contributor":"michael-richins",
@@ -17710,7 +17824,7 @@
 	},
 	"shield-account-outline":{
 		"added":2594,
-		"alises":["security-account-outline"],
+		"aliases":["security-account-outline","shield-person-outline","shield-user-outline"],
 		"categories":["users"],
 		"codepoint":"fa11",
 		"contributor":"greenturtwig",
@@ -17728,6 +17842,7 @@
 	},
 	"shield-airplane-outline":{
 		"added":"{next}",
+		"aliases":["shield-aeroplane-outline","shield-plane-outline"],
 		"categories":["other"],
 		"contributor":"michael-irigoyen",
 		"data":"M21,11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1L21,5V11M12,21C15.75,20 19,15.54 19,11.22V6.3L12,3.18L5,6.3V11.22C5,15.54 8.25,20 12,21M12,5.68C12.5,5.68 12.95,6.11 12.95,6.63V10.11L18,13.26V14.53L12.95,12.95V16.42L14.21,17.37V18.32L12,17.68L9.79,18.32V17.37L11.05,16.42V12.95L6,14.53V13.26L11.05,10.11V6.63C11.05,6.11 11.5,5.68 12,5.68Z"
@@ -17742,6 +17857,7 @@
 	},
 	"shield-check-outline":{
 		"added":"{next}",
+		"aliases":["shield-tick-outline"],
 		"categories":["other"],
 		"contributor":"michael-irigoyen",
 		"data":"M21,11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1L21,5V11M12,21C15.75,20 19,15.54 19,11.22V6.3L12,3.18L5,6.3V11.22C5,15.54 8.25,20 12,21M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9"
@@ -17764,6 +17880,7 @@
 	},
 	"shield-home-outline":{
 		"added":"{next}",
+		"aliases":["shield-house-outline"],
 		"categories":["other"],
 		"contributor":"michael-irigoyen",
 		"data":"M21,11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1L21,5V11M12,21C15.75,20 19,15.54 19,11.22V6.3L12,3.18L5,6.3V11.22C5,15.54 8.25,20 12,21M11,14H13V17H16V12H18L12,7L6,12H8V17H11V14"
@@ -17820,6 +17937,7 @@
 	},
 	"shield-plus":{
 		"added":2794,
+		"aliases":["shield-add"],
 		"categories":["other"],
 		"codepoint":"fad9",
 		"contributor":"google",
@@ -17827,6 +17945,7 @@
 	},
 	"shield-plus-outline":{
 		"added":2794,
+		"aliases":["shield-add-outline"],
 		"categories":["other"],
 		"codepoint":"fada",
 		"contributor":"google",
@@ -17957,6 +18076,7 @@
 		"data":"M19,12C19,16.42 15.64,20 11.5,20C7.36,20 4,16.42 4,12C4,7.58 7.36,4 11.5,4H20V6H16.46C18,7.47 19,9.61 19,12M11.5,6C8.46,6 6,8.69 6,12C6,15.31 8.46,18 11.5,18C14.54,18 17,15.31 17,12C17,8.69 14.54,6 11.5,6Z"
 	},
 	"sign-caution":{
+		"aliases":["barrier"],
 		"categories":["travel"],
 		"codepoint":"f4a1",
 		"contributor":"austin-andrews",
@@ -19138,6 +19258,7 @@
 	},
 	"tab-plus":{
 		"added":1932,
+		"aliases":["tab-add"],
 		"categories":["other"],
 		"codepoint":"f75b",
 		"contributor":"austin-andrews",
@@ -19179,12 +19300,14 @@
 		"data":"M8,2H16A2,2 0 0,1 18,4V20A2,2 0 0,1 16,22H8A2,2 0 0,1 6,20V4A2,2 0 0,1 8,2M8,10V14H16V10H8M8,16V20H16V16H8M8,4V8H16V4H8Z"
 	},
 	"table-column-plus-after":{
+		"aliases":["table-column-add-after"],
 		"categories":["editor"],
 		"codepoint":"f4ec",
 		"contributor":"austin-andrews",
 		"data":"M11,2A2,2 0 0,1 13,4V20A2,2 0 0,1 11,22H2V2H11M4,10V14H11V10H4M4,16V20H11V16H4M4,4V8H11V4H4M15,11H18V8H20V11H23V13H20V16H18V13H15V11Z"
 	},
 	"table-column-plus-before":{
+		"aliases":["table-column-add-before"],
 		"categories":["editor"],
 		"codepoint":"f4ed",
 		"contributor":"austin-andrews",
@@ -19231,6 +19354,7 @@
 	},
 	"table-plus":{
 		"added":2695,
+		"aliases":["table-add"],
 		"categories":["editor"],
 		"codepoint":"fa74",
 		"contributor":"michael-irigoyen",
@@ -19257,12 +19381,14 @@
 		"data":"M3,5H15A2,2 0 0,1 17,7V17A2,2 0 0,1 15,19H3A2,2 0 0,1 1,17V7A2,2 0 0,1 3,5M3,9V12H8V9H3M10,9V12H15V9H10M3,14V17H8V14H3M10,14V17H15V14H10M23,14V7H19V9H21V12H19V14H23Z"
 	},
 	"table-row-plus-after":{
+		"aliases":["table-row-add-after"],
 		"categories":["editor"],
 		"codepoint":"f4f3",
 		"contributor":"austin-andrews",
 		"data":"M22,10A2,2 0 0,1 20,12H4A2,2 0 0,1 2,10V3H4V5H8V3H10V5H14V3H16V5H20V3H22V10M4,10H8V7H4V10M10,10H14V7H10V10M20,10V7H16V10H20M11,14H13V17H16V19H13V22H11V19H8V17H11V14Z"
 	},
 	"table-row-plus-before":{
+		"aliases":["table-row-add-before"],
 		"categories":["editor"],
 		"codepoint":"f4f4",
 		"contributor":"austin-andrews",
@@ -19373,6 +19499,7 @@
 	},
 	"tag-plus":{
 		"added":1836,
+		"aliases":["tag-add"],
 		"categories":["other"],
 		"codepoint":"f721",
 		"contributor":"michael-richins",
@@ -19606,6 +19733,7 @@
 	},
 	"textbox":{
 		"added":1554,
+		"aliases":["rename"],
 		"categories":["other"],
 		"codepoint":"f60e",
 		"contributor":"austin-andrews",
@@ -19975,13 +20103,14 @@
 	},
 	"tooltip-plus":{
 		"added":3039,
+		"aliases":["tooltip-add"],
 		"categories":["other"],
 		"codepoint":"fbb2",
 		"contributor":"austin-andrews",
 		"data":"M4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H16L12,22L8,18H4A2,2 0 0,1 2,16V4A2,2 0 0,1 4,2M11,6V9H8V11H11V14H13V11H16V9H13V6H11Z"
 	},
 	"tooltip-plus-outline":{
-		"aliases":["tooltip-outline-plus"],
+		"aliases":["tooltip-add-outline","tooltip-outline-plus"],
 		"categories":["other"],
 		"codepoint":"f527",
 		"contributor":"austin-andrews",
@@ -20285,7 +20414,7 @@
 		"data":"M7,2V4H2V11C2,12 3,13 4,13H7.2C7.6,14.9 8.6,16.6 11,16.9V19C8,19.2 8,20.3 8,21.6V22H16V21.7C16,20.4 16,19.3 13,19.1V17C15.5,16.7 16.5,15 16.8,13.1H20C21,13.1 22,12.1 22,11.1V4H17V2H7M9,4H15V12A3,3 0 0,1 12,15C10,15 9,13.66 9,12V4M4,6H7V8L7,11H4V6M17,6H20V11H17V6Z"
 	},
 	"truck":{
-		"aliases":["local-shipping","lorry"],
+		"aliases":["courier","local-shipping","lorry"],
 		"categories":["places","travel"],
 		"codepoint":"f53d",
 		"contributor":"google",
@@ -20293,6 +20422,7 @@
 	},
 	"truck-check":{
 		"added":"{next}",
+		"aliases":["courier-check","lorry-check","truck-tick"],
 		"categories":["travel"],
 		"contributor":"austin-andrews",
 		"data":"M3,4H17V8H20L23,12V17H21A3,3 0 0,1 18,20A3,3 0 0,1 15,17H9A3,3 0 0,1 6,20A3,3 0 0,1 3,17H1V6C1,4.89 1.9,4 3,4M17,9.5V12H21.47L19.5,9.5H17M6,15.5A1.5,1.5 0 0,0 4.5,17A1.5,1.5 0 0,0 6,18.5A1.5,1.5 0 0,0 7.5,17A1.5,1.5 0 0,0 6,15.5M18,15.5A1.5,1.5 0 0,0 16.5,17A1.5,1.5 0 0,0 18,18.5A1.5,1.5 0 0,0 19.5,17A1.5,1.5 0 0,0 18,15.5M8,14L14,8L12.59,6.58L8,11.17L5.91,9.08L4.5,10.5L8,14Z"
@@ -20306,7 +20436,7 @@
 	},
 	"truck-fast":{
 		"added":1932,
-		"aliases":["lorry-fast"],
+		"aliases":["courier-fast","lorry-fast"],
 		"categories":["travel"],
 		"codepoint":"f787",
 		"contributor":"austin-andrews",
@@ -20890,6 +21020,7 @@
 	},
 	"video-minus":{
 		"added":2485,
+		"aliases":["video-remove"],
 		"categories":["other"],
 		"codepoint":"f9b1",
 		"contributor":"google",
@@ -20920,7 +21051,7 @@
 	},
 	"video-plus":{
 		"added":2485,
-		"aliases":["video-call"],
+		"aliases":["video-add","video-call"],
 		"categories":["other"],
 		"codepoint":"f9b2",
 		"contributor":"google",
@@ -21186,6 +21317,7 @@
 	},
 	"volume-minus":{
 		"added":1932,
+		"aliases":["volume-decrease"],
 		"categories":["home","player"],
 		"codepoint":"f75d",
 		"contributor":"austin-andrews",
@@ -21209,10 +21341,12 @@
 	},
 	"volume-plus":{
 		"added":1932,
+		"aliases":["volume-increase"],
 		"categories":["home","player"],
 		"codepoint":"f75c",
 		"contributor":"austin-andrews",
-		"data":"M3,9H7L12,4V20L7,15H3V9M14,11H17V8H19V11H22V13H19V16H17V13H14V11Z"
+		"data":"M3,9H7L12,4V20L7,15H3V9M14,11H17V8H19V11H22V13H19V16H17V13H14V11Z",
+		"keywords":["up"]
 	},
 	"vote":{
 		"added":2594,
@@ -21254,6 +21388,7 @@
 	},
 	"wall":{
 		"added":2046,
+		"aliases":["bricks"],
 		"categories":["other"],
 		"codepoint":"f7fd",
 		"contributor":"austin-andrews",
@@ -21946,7 +22081,7 @@
 		"data":"M18.93,12L15.46,18H8.54L5.07,12L8.54,6H15.46L18.93,12M23.77,12L19.73,19L18,18L21.46,12L18,6L19.73,5L23.77,12M0.23,12L4.27,5L6,6L2.54,12L6,18L4.27,19L0.23,12Z"
 	},
 	"xbox":{
-		"aliases":["xbox-live"],
+		"aliases":["microsoft","xbox-live"],
 		"categories":["games","logos"],
 		"codepoint":"f5b9",
 		"contributor":"community",
