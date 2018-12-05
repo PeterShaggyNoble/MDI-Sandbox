@@ -61,8 +61,8 @@
 						path.setAttribute(`d`,value);
 						if(value){
 							size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
-							console.log(size,Math.min(...value.match(/(-?(\d|\.)+)/g).map(x=>parseFloat(x))))
-							transform=inputs.name.value=``;
+							transform=transforms[0];
+							inputs.name.value=``;
 							while(!inputs.name.value&&sets[++ind])
 								for(key in (set=sets[ind]))
 									if(set.hasOwnProperty(key))
@@ -71,8 +71,8 @@
 											transform=transforms[ind];
 											break;
 										}
-							if(!transform)
-								transform=size>24?size>48?size>480?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.05) scale(1,-1) translate(220,-680)`:`scale(.5) translate(22,20)`:`translate(11,10)`;
+/*							if(!transform)
+								transform=size>24?size>48?size>480?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.05) scale(1,-1) translate(220,-680)`:`scale(.5) translate(22,20)`:`translate(11,10)`;*/
 							path.setAttribute(`transform`,transform);
 							inputs.name.dispatchEvent(new Event(`input`));
 						}

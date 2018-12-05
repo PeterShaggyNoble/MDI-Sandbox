@@ -2635,12 +2635,6 @@
 					for(let key in this.list)
 						if(this.list.hasOwnProperty(key))
 							this.add(key);
-					console.log(Object.keys(this.list).filter(key=>
-						!this.list[key].retired&&!this.list[key].rejected&&(0>Math.min(...this.list[key].data.match(/(-?(\d|\.)+)/g).map(x=>parseFloat(x)))||24<Math.max(...this.list[key].data.match(/(\d|\.)+/g).map(x=>parseFloat(x))))
-					).reduce((obj,key)=>(obj[key]={
-						"min":Math.min(...this.list[key].data.match(/(-?(\d|\.)+)/g).map(x=>parseFloat(x))),
-						"max":Math.max(...this.list[key].data.match(/(\d|\.)+/g).map(x=>parseFloat(x)))
-					},obj),{}));
 				},
 				add(key){
 					let	icon=this.list[key],
