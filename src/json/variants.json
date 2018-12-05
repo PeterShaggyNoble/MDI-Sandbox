@@ -2442,7 +2442,7 @@
 	"wallet-giftcard":[],
 	"wallet-membership":[],
 	"wallet-travel":[],
-	"wan":[],
+	"wan":["outline"],
 	"washing-machine":[],
 	"watch":[],
 	"watch-export":[],
