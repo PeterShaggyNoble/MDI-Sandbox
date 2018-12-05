@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2018-12-04:** Updated to Material Design Icons v3.2.89.
 - **2018-10-20:** Updated to Material Design Icons v3.0.39.
 - **2018-10-10:** New [holidays](https://petershaggynoble.github.io/MDI-Sandbox/?categories=holidays) category added.
 - **2018-10-09:** New [film & TV](https://petershaggynoble.github.io/MDI-Sandbox/?categories=filmtv) category added.

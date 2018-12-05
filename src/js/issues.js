@@ -75,6 +75,9 @@
 		tr.append(td);
 		td=td.cloneNode(0);
 		td.classList.remove(`fwm`);
+		issue.milestone&&td.append(document.createTextNode(issue.milestone));
+		tr.append(td);
+		td=td.cloneNode(0);
 		issue.stock&&td.append(svg.cloneNode(1));
 		tr.append(td);
 		td=td.cloneNode(0);

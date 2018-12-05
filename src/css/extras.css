@@ -523,14 +523,15 @@ table.issues{
 	text-align:center;
 	width:74px;
 }
-.issues th:nth-child(4),.issues td:nth-child(4){
+.issues th:nth-child(4),.issues td:nth-child(4),
+.issues th:nth-child(5),.issues td:nth-child(5){
 	width:144px;
 }
-.issues th:nth-child(5),.issues td:nth-child(5){
+.issues th:nth-child(6),.issues td:nth-child(6){
 	text-align:center;
 	width:80px;
 }
-.issues th:nth-child(6),.issues td:nth-child(6){
+.issues th:nth-child(7),.issues td:nth-child(7){
 	text-align:center;
 	width:92px;
 }
