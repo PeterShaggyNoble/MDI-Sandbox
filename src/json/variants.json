@@ -2432,7 +2432,7 @@
 	"volume-off":[],
 	"volume-plus":[],
 	"vote":[],
-	"vpn":[],
+	"vpn":["outline"],
 	"walk":[],
 	"wall":[],
 	"wall-sconce":[],
