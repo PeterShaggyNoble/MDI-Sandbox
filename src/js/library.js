@@ -710,8 +710,8 @@
 		},
 		info={
 			actions:{
-				library:Q(`#actions>:first-child`),
-				export:Q`#actions>:nth-child(2)`,
+				library:Q(`#actions>[data-label=Removed]+li`),
+				export:Q(`#actions>[data-label=Removed]+li+li`),
 				markup:Q(`#actions>[data-confirm="Markup"]`),
 				uri:Q(`#actions>[data-confirm="URI"]`),
 				data:Q(`#actions>[data-confirm="Path data"]`),
@@ -721,6 +721,13 @@
 				link:Q(`#actions>:last-child`)
 			},
 			downloads:{},
+			meta:{
+				contributor:Q(`#actions>[data-label=Designer]`),
+				added:Q(`#actions>[data-label=Added]`),
+				updated:Q(`#actions>[data-label=Updated]`),
+				renamed:Q(`#actions>[data-label=Renamed]`),
+				removed:Q(`#actions>[data-label=Removed]`)
+			},
 			show:0,
 			xml:new XMLSerializer,
 			aside:$(`info`),
@@ -734,6 +741,10 @@
 				this.heading.append(T``);
 				this.svg=this.figure.firstElementChild;
 				this.path=this.svg.firstElementChild;
+				let key;
+				for(key in this.meta)
+					if(this.meta.hasOwnProperty(key))
+						this.meta[key].append(this.meta[key]=T(``));
 				if(page.size)
 					this.load();
 				this.aside.addEventListener(`click`,event=>{
@@ -818,12 +829,19 @@
 					this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 					this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`;
 					this.rejected=!!this.icon.rejected;
+					this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
+					this.meta.added.nodeValue=this.icon.added?`v${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+					this.meta.updated.nodeValue=this.icon.updated?`v${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+					this.meta.renamed.nodeValue=this.icon.renamed?`v${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+					this.meta.removed.nodeValue=this.icon.retired?`v${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
 					this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 					this.aside.classList.toggle(`retired`,this.retired||this.rejected);
 				}else if(page.storage){
 					this.custom=1;
 					this.icon=this.data=this.actions.data.dataset.copy=favourites.list[name];
 					this.codepoint=this.copy=this.rejected=0;
+					this.meta.contributor.nodeValue=`You`;
+					this.meta.aliases.nodeValue=this.meta.added.nodeValue=this.meta.updated.nodeValue=this.meta.renamed.nodeValue=this.meta.removed.nodeValue=``;
 					this.aside.classList.add(`nocopy`,`retired`);
 				}
 				this.actions.markup.dataset.copy=`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`;
@@ -1019,7 +1037,12 @@
 				for(let key in this.list)
 					if(this.list.hasOwnProperty(key))
 						this.add(key);
-				console.log(Object.keys(this.list).filter(key=>key.split(`-`).includes(`plus`)&&(!this.list[key].aliases||!this.list[key].aliases.some(alias=>alias.split(`-`).includes(`add`)))).join(`\n`));
+				console.log(Object.keys(this.list).filter(key=>
+					!this.list[key].retired&&!this.list[key].rejected&&(0>Math.min(...this.list[key].data.match(/(-?(\d|\.)+)/g).map(x=>parseFloat(x)))||24<Math.max(...this.list[key].data.match(/(\d|\.)+/g).map(x=>parseFloat(x))))
+				).reduce((obj,key)=>(obj[key]={
+					"min":Math.min(...this.list[key].data.match(/(-?(\d|\.)+)/g).map(x=>parseFloat(x))),
+					"max":Math.max(...this.list[key].data.match(/(\d|\.)+/g).map(x=>parseFloat(x)))
+				},obj),{}));
 			},
 			add(key){
 				let 	icon=this.list[key],

@@ -476,12 +476,29 @@
 	#actions{
 		background:#fff;
 		border-radius:0 0 2px 2px;
-		line-height:48px;
 		overscroll-behavior:contain;
-		padding:8px 0;
+		padding:0px 0 8px;
 		z-index:2;
 	}
 	#actions>li{
+		line-height:24px;
+		padding:8px 16px 0;
+	}
+	#actions>li.dib{
+		width:50%;
+	}
+	#actions>li:empty{
+		display:none;
+	}
+	#actions>li[data-label]::before{
+		content:attr(data-label) ": ";
+		display:inline-block;
+		font-weight:500;
+		vertical-align:top;
+		width:64px;
+	}
+	#actions>li.cp{
+		line-height:48px;
 		padding:0 16px;
 		transition-duration:.225s,.225s,.195s;
 		transition-property:background,color,height,opacity;
@@ -490,7 +507,11 @@
 	#actions>li:nth-last-child(12),#actions>li:nth-last-child(11),#actions>li:nth-last-child(8),#info>#actions>li:nth-last-child(2){
 		border-bottom:1px solid #e0e0e0;
 	}
-	#info>#actions>li:hover{
+	#actions>li:nth-last-child(12){
+		border-top:1px solid #e0e0e0;
+		margin-top:8px;
+	}
+	#info>#actions>li.cp:hover{
 		background:#eee;
 		color:var(--colour);
 	}
@@ -1095,6 +1116,7 @@
 	.ttl{text-transform:lowercase;}
 	.ttu{text-transform:uppercase;}
 	.wsnw{white-space:nowrap;}
+	.wsw{white-space:wrap;}
 	.ch{cursor:help;}
 	.cna{cursor:not-allowed;}
 	.cp{cursor:pointer;}
@@ -1169,6 +1191,12 @@
 		</figure>
 	</header>
 	<ul class="fwm oa pr toe wsnw" id="actions">
+		<li class="fwn" data-label="Designer"></li>
+		<!--p class="fwn pr wsw" data-label="Aliases"></p-->
+		<li class="fwn dib" data-label="Added"></li>
+		<li class="fwn dib" data-label="Updated"></li>
+		<li class="fwn dib" data-label="Renamed"></li>
+		<li class="fwn dib" data-label="Removed"></li>
 		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="plus-circle,minus-circle,close-circle"></svg>Add to Library
 		<li class="cp oh" tabindex="-1"><svg class="dib pen vam" data-icons="brush"></svg>Edit Icon
 		<li class="cp oh" data-type="svg" tabindex="-1"><svg class="dib pen vam" data-icons="svg"></svg>Download SVG
@@ -1956,8 +1984,8 @@
 			},
 			info={
 				actions:{
-					library:Q(`#actions>:first-child`),
-					export:Q`#actions>:nth-child(2)`,
+					library:Q(`#actions>[data-label=Removed]+li`),
+					export:Q(`#actions>[data-label=Removed]+li+li`),
 					markup:Q(`#actions>[data-confirm="Markup"]`),
 					uri:Q(`#actions>[data-confirm="URI"]`),
 					data:Q(`#actions>[data-confirm="Path data"]`),
@@ -1967,6 +1995,13 @@
 					link:Q(`#actions>:last-child`)
 				},
 				downloads:{},
+				meta:{
+					contributor:Q(`#actions>[data-label=Designer]`),
+					added:Q(`#actions>[data-label=Added]`),
+					updated:Q(`#actions>[data-label=Updated]`),
+					renamed:Q(`#actions>[data-label=Renamed]`),
+					removed:Q(`#actions>[data-label=Removed]`)
+				},
 				show:0,
 				xml:new XMLSerializer,
 				aside:$(`info`),
@@ -1980,6 +2015,10 @@
 					this.heading.append(T``);
 					this.svg=this.figure.firstElementChild;
 					this.path=this.svg.firstElementChild;
+					let key;
+					for(key in this.meta)
+						if(this.meta.hasOwnProperty(key))
+							this.meta[key].append(this.meta[key]=T(``));
 					if(page.size)
 						this.load();
 					this.aside.addEventListener(`click`,event=>{
@@ -2064,12 +2103,19 @@
 						this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
 						this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`;
 						this.rejected=!!this.icon.rejected;
+						this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
+						this.meta.added.nodeValue=this.icon.added?`v${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+						this.meta.updated.nodeValue=this.icon.updated?`v${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+						this.meta.renamed.nodeValue=this.icon.renamed?`v${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+						this.meta.removed.nodeValue=this.icon.retired?`v${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
 						this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 						this.aside.classList.toggle(`retired`,this.retired||this.rejected);
 					}else if(page.storage){
 						this.custom=1;
 						this.icon=this.data=this.actions.data.dataset.copy=favourites.list[name];
 						this.codepoint=this.copy=this.rejected=0;
+						this.meta.contributor.nodeValue=`You`;
+						this.meta.aliases.nodeValue=this.meta.added.nodeValue=this.meta.updated.nodeValue=this.meta.renamed.nodeValue=this.meta.removed.nodeValue=``;
 						this.aside.classList.add(`nocopy`,`retired`);
 					}
 					this.actions.markup.dataset.copy=`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`;
@@ -2589,7 +2635,12 @@
 					for(let key in this.list)
 						if(this.list.hasOwnProperty(key))
 							this.add(key);
-					console.log(Object.keys(this.list).filter(key=>key.split(`-`).includes(`plus`)&&(!this.list[key].aliases||!this.list[key].aliases.some(alias=>alias.split(`-`).includes(`add`)))).join(`\n`));
+					console.log(Object.keys(this.list).filter(key=>
+						!this.list[key].retired&&!this.list[key].rejected&&(0>Math.min(...this.list[key].data.match(/(-?(\d|\.)+)/g).map(x=>parseFloat(x)))||24<Math.max(...this.list[key].data.match(/(\d|\.)+/g).map(x=>parseFloat(x))))
+					).reduce((obj,key)=>(obj[key]={
+						"min":Math.min(...this.list[key].data.match(/(-?(\d|\.)+)/g).map(x=>parseFloat(x))),
+						"max":Math.max(...this.list[key].data.match(/(\d|\.)+/g).map(x=>parseFloat(x)))
+					},obj),{}));
 				},
 				add(key){
 					let	icon=this.list[key],
@@ -2923,8 +2974,7 @@
 		"categories":["users"],
 		"codepoint":"fbc1",
 		"contributor":"greenturtwig",
-		"data":"M13,13C15,13 19,14 19,16V18H7V16C7,14 11,13 13,13M19.62,13.16C21.63,13.5 24,14.46 24,16V18H21V16C21,14.82 20.45,13.88 19.62,13.16M13,11A3,3 0 0,1 10,8A3,3 0 0,1 13,5A3,3 0 0,1 16,8A3,3 0 0,1 13,11M18,11C17.68,11 17.37,10.95 17.08,10.85C17.65,10.04 18,9.06 18,8C18,6.94 17.65,5.95 17.08,5.14C17.37,5.05 17.68,5 18,5A3,3 0 0,1 21,8A3,3 0 0,1 18,11M8,10V12H0V10H8M13,6.5A1.5,1.5 0 0,0 11.5,8A1.5,1.5 0 0,0 13,9.5A1.5,1.5 0 0,0 14.5,8A1.5,1.5 0 0,0 13,6.5M8.5,16.5H17.5V16C17.5,15.17 15.5,14.5 13,14.5C10.5,14.5 8.5,15.17 8.5,16V16.5Z",
-		"updated":3289
+		"data":"M13,13C15,13 19,14 19,16V18H7V16C7,14 11,13 13,13M19.62,13.16C21.63,13.5 24,14.46 24,16V18H21V16C21,14.82 20.45,13.88 19.62,13.16M13,11A3,3 0 0,1 10,8A3,3 0 0,1 13,5A3,3 0 0,1 16,8A3,3 0 0,1 13,11M18,11C17.68,11 17.37,10.95 17.08,10.85C17.65,10.04 18,9.06 18,8C18,6.94 17.65,5.95 17.08,5.14C17.37,5.05 17.68,5 18,5A3,3 0 0,1 21,8A3,3 0 0,1 18,11M8,10V12H0V10H8M13,6.5A1.5,1.5 0 0,0 11.5,8A1.5,1.5 0 0,0 13,9.5A1.5,1.5 0 0,0 14.5,8A1.5,1.5 0 0,0 13,6.5M8.5,16.5H17.5V16C17.5,15.17 15.5,14.5 13,14.5C10.5,14.5 8.5,15.17 8.5,16V16.5Z"
 	},
 	"account-multiple-outline":{
 		"aliases":["accounts-outline","people-outline","user-multiple-outline","users-outline"],
@@ -5158,6 +5208,7 @@
 	},
 	"arrow-split-horizontal":{
 		"added":2485,
+		"aliases":["resize","resize-horizontal"],
 		"categories":["arrows"],
 		"codepoint":"f93a",
 		"contributor":"michael-richins",
@@ -5165,6 +5216,7 @@
 	},
 	"arrow-split-vertical":{
 		"added":2485,
+		"aliases":["resize","resize-vertical"],
 		"categories":["arrows"],
 		"codepoint":"f93b",
 		"contributor":"michael-richins",
@@ -12038,6 +12090,20 @@
 		"codepoint":"f208",
 		"contributor":"google",
 		"data":"M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"
+	},
+	"eye-check":{
+		"added":"{next}",
+		"aliases":["eye-tick"],
+		"categories":["other"],
+		"contributor":"austin-andrews",
+		"data":"M23.5,17L18.5,22L15,18.5L16.5,17L18.5,19L22,15.5L23.5,17M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,17C12.5,17 12.97,16.93 13.42,16.79C13.15,17.5 13,18.22 13,19V19.45L12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5C17,4.5 21.27,7.61 23,12C22.75,12.64 22.44,13.26 22.08,13.85C21.18,13.31 20.12,13 19,13C18.22,13 17.5,13.15 16.79,13.42C16.93,12.97 17,12.5 17,12A5,5 0 0,0 12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17Z"
+	},
+	"eye-check-outline":{
+		"added":3039,
+		"aliases":["eye-tick-outline"],
+		"categories":["other"],
+		"contributor":"austin-andrews",
+		"data":"M23.5,17L18.5,22L15,18.5L16.5,17L18.5,19L22,15.5L23.5,17M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C22.75,12.65 22.44,13.26 22.08,13.85C21.5,13.5 20.86,13.25 20.18,13.12L20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12C4.83,15.36 8.24,17.5 12,17.5L13.21,17.43C13.07,17.93 13,18.46 13,19V19.46L12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5Z"
 	},
 	"eye-circle":{
 		"added":3039,

@@ -61,6 +61,7 @@
 						path.setAttribute(`d`,value);
 						if(value){
 							size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
+							console.log(size,Math.min(...value.match(/(-?(\d|\.)+)/g).map(x=>parseFloat(x))))
 							transform=inputs.name.value=``;
 							while(!inputs.name.value&&sets[++ind])
 								for(key in (set=sets[ind]))
