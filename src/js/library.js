@@ -740,7 +740,7 @@
 					this.heading.firstElementChild.remove();
 				this.heading.append(T``);
 				this.svg=this.figure.firstElementChild;
-				this.path=this.svg.firstElementChild;
+				this.path=this.svg.lastElementChild;
 				let key;
 				for(key in this.meta)
 					if(this.meta.hasOwnProperty(key))
@@ -830,10 +830,10 @@
 					this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`;
 					this.rejected=!!this.icon.rejected;
 					this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
-					this.meta.added.nodeValue=this.icon.added?`v${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
-					this.meta.updated.nodeValue=this.icon.updated?`v${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
-					this.meta.renamed.nodeValue=this.icon.renamed?`v${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
-					this.meta.removed.nodeValue=this.icon.retired?`v${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+					this.meta.added.nodeValue=this.icon.added&&this.icon.added!=="{next}"?`v${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+					this.meta.updated.nodeValue=this.icon.updated&&this.icon.updated!=="{next}"?`v${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+					this.meta.renamed.nodeValue=this.icon.renamed&&this.icon.renamed!=="{next}"?`v${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+					this.meta.removed.nodeValue=this.icon.retired&&this.icon.retired!=="{next}"?`v${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
 					this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 					this.aside.classList.toggle(`retired`,this.retired||this.rejected);
 				}else if(page.storage){
