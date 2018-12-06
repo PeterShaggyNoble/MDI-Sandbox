@@ -1,12 +1,11 @@
 # Material Design Icons Sandbox
 ## Important Notes
 - This is a side-project to the main [Material Design Icons](https://materialdesignicons.com/) project. To request a new icon, suggest an alias or make a contribution to the icon pack, please [create an issue](https://github.com/Templarian/MaterialDesign/issues) in the main repository.
-- One of the main purposes of this Sandbox is for me to play around with ECMAScript 6+ features I don't normally get to work with. As such I can only guarantee that the website will work in the latest version(s) of Google Chrome.
+- One of the main purposes of this Sandbox is for me to play around with ECMAScript 6+ features I don't normally get to work with. As such I can only guarantee that the website will work in the latest version of Google Chrome.
 
 ## Features & Tools
 
 ### Icon Library
-![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme/library.png)
 
 The main section of this project; a jacked up "cheatsheet" for MDI. Features include:
 - Build your own library of icons.
@@ -29,13 +28,13 @@ Create customised icon preview images which can be copied & pasted directly into
 
 #### Automated Preview Generator
 To save you some work, there's also an automated preview generator available at [mdi.houseofdesign.ie/tools/preview/](http://mdi.houseofdesign.ie/tools/preview/). Use the `icon` querystring parameter to provide an icon name from [the main library](https://petershaggynoble.github.io/MDI-Sandbox/), [Material Icons Extended](https://petershaggynoble.github.io/MDI-Sandbox/extended/), the [other Google icons](https://petershaggynoble.github.io/MDI-Sandbox/other/) or the [stock icons](https://petershaggynoble.github.io/MDI-Sandbox/stock/) and a preview will be generated that you can link to directly. You can also use the optional `action` parameter to provide the name of an icon from the main library to be shown in the bottom right corner.
-> **Example:** [mdi.houseofdesign.ie/tools/preview/?icon=vector-square&action=link](http://mdi.houseofdesign.ie/tools/preview/?icon=vector-square&action=link)
+> **Example:** [/?icon=vector-square&action=link](http://mdi.houseofdesign.ie/tools/preview/?icon=vector-square&action=link)
 
 Alternatively, instead of using the `icon` parameter to provide the name of an existing icon, you can provide a custom path and name using the `path` & `name` parameters.
-> **Example:** [mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&path=M20,8...Z](http://mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&path=M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4%202,4.89%202,6V18A2,2%200%200,0%204,20H20A2,2%200%200,0%2022,18V6C22,4.89%2021.1,4%2020,4M7,22H9V24H7V22M11,22H13V24H11V22M15,22H17V24H15V22Z)
+> **Example:** [/?name=credit-card-settings&action=download&path=M20,8...Z](http://mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&path=M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4%202,4.89%202,6V18A2,2%200%200,0%204,20H20A2,2%200%200,0%2022,18V6C22,4.89%2021.1,4%2020,4M7,22H9V24H7V22M11,22H13V24H11V22M15,22H17V24H15V22Z)
 
 If necessary, you can override the auto-detected preview type using the `type` parameter. The values this parameter can accept can be found in the table below along with their corresponding colours & labels.
-> **Example:** [mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&type=final&path=M20,8...Z](http://mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&type=final&path=M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4%202,4.89%202,6V18A2,2%200%200,0%204,20H20A2,2%200%200,0%2022,18V6C22,4.89%2021.1,4%2020,4M7,22H9V24H7V22M11,22H13V24H11V22M15,22H17V24H15V22Z)
+> **Example:** [/?name=credit-card-settings&action=download&type=final&path=M20,8...Z](http://mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&type=final&path=M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4%202,4.89%202,6V18A2,2%200%200,0%204,20H20A2,2%200%200,0%2022,18V6C22,4.89%2021.1,4%2020,4M7,22H9V24H7V22M11,22H13V24H11V22M15,22H17V24H15V22Z)
 
 | Value       | Colour                                                           | Label            | Text                |
 | ----------- | ---------------------------------------------------------------- | ---------------- | ------------------- |
@@ -47,7 +46,6 @@ If necessary, you can override the auto-detected preview type using the `type` p
 | `rejected`  | ![#d32f2f](https://placehold.it/15/d32f2f/000000?text=+) Red     | Rejected         | Won't be added      |
 
 ### Additional Google Icons
-![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme/extended.png)
 
 A preview of the extra icons in Google's "Material Icons Extended" set is available at [petershaggynoble.github.io/MDI-Sandbox/extended/](https://petershaggynoble.github.io/MDI-Sandbox/extended/) and their GMP & AOG icons at [petershaggynoble.github.io/MDI-Sandbox/other/](https://petershaggynoble.github.io/MDI-Sandbox/other/). Icons can be downloaded but note that the `transform` attribute is used on the `path` elements to scale them down to 24 pixels.
 
