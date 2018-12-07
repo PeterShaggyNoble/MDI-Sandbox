@@ -1,15 +1,15 @@
 (async()=>{
 	const 	sets=[
-			await(await fetch`../json/icons.json`).json(),
-			await(await fetch`../json/stock.json`).json(),
-			await(await fetch`../json/extended.json`).json(),
-			await(await fetch`../json/other.json`).json()
+			await(await fetch(`../json/icons.json`)).json(),
+			await(await fetch(`../json/stock.json`)).json(),
+			await(await fetch(`../json/extended.json`)).json(),
+			await(await fetch(`../json/other.json`)).json()
 		],
 		inputs={
-			canvas:document.getElementById(`canvas`),
+/*			canvas:document.getElementById(`canvas`),*/
 			data:document.getElementById(`data`),
 			overlay:document.getElementById(`overlay`),
-			colour:document.getElementById(`colour`),
+/*			colour:document.getElementById(`colour`),*/
 			name:document.getElementById(`name`),
 			action:document.getElementById(`action`),
 			type:document.getElementById(`type`)
@@ -45,7 +45,7 @@
 				delay=0;
 				ind=-1;
 				switch(target){
-					case inputs.canvas:
+/*					case inputs.canvas:
 						shadow.setAttribute(`flood-color`,`#`+value);
 						grid.setAttribute(`stroke`,`#`+value);
 						path.setAttribute(`fill`,`#`+value);
@@ -56,7 +56,7 @@
 							if(text.hasOwnProperty(key))
 								text[key].setAttribute(`fill`,`#`+value);
 						delay=200;
-						break;
+						break;*/
 					case inputs.data:
 						path.setAttribute(`d`,value);
 						if(value){
@@ -81,14 +81,23 @@
 						ghost.setAttribute(`fill-opacity`,value?`.4375`:`0`);
 						delay=value?0:200;
 						if(value){
-							size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
-							ghost.setAttribute(`transform`,size>24?size>48?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.5) translate(22,20)`:`translate(11,10)`);
+/*							size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
+							ghost.setAttribute(`transform`,size>24?size>48?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.5) translate(22,20)`:`translate(11,10)`);*/
+							transform=transforms[0];
+							while(!inputs.name.value&&sets[++ind])
+								for(key in (set=sets[ind]))
+									if(set.hasOwnProperty(key))
+										if(set[key].data===value){
+											transform=transforms[ind];
+											break;
+										}
+							ghost.setAttribute(`transform`,transform);
 						}
 						break;
-					case inputs.colour:
+/*					case inputs.colour:
 						ghost.setAttribute(`fill`,`#`+value);
 						delay=200;
-						break;
+						break;*/
 					case inputs.name:
 						text.name.textContent=value.trim().toLowerCase().replace(/ |_/g,`-`);
 						break;
@@ -100,8 +109,17 @@
 					case inputs.type:
 						if(value){
 							text.type.textContent=value;
-							text.disclaimer.textContent=target.options[target.selectedIndex].dataset.disclaimer;
+							text.disclaimer.textContent=target.options[target.selectedIndex].dataset.text;
 						}
+						shadow.setAttribute(`flood-color`,`#${color=target.options[target.selectedIndex].dataset.color}`);
+						grid.setAttribute(`stroke`,`#`+color);
+						path.setAttribute(`fill`,`#`+color);
+						caption.setAttribute(`fill`,`#`+color);
+						caption.setAttribute(`stroke`,`#`+color);
+						icon.setAttribute(`fill`,`#`+color);
+						for(key in text)
+							if(text.hasOwnProperty(key))
+								text[key].setAttribute(`fill`,`#`+color);
 						delay=value?0:200;
 						text.type.setAttribute(`fill-opacity`,value?1:0);
 						text.disclaimer.setAttribute(`fill-opacity`,value?1:0);
@@ -112,7 +130,7 @@
 				},delay);
 			},50);
 		};
-	let delay,ind,key,set,size,target,timer,transform,value;
+	let color,delay,ind,key,set,size,target,timer,transform,value;
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);

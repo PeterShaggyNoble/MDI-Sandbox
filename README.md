@@ -31,19 +31,19 @@ To save you some work, there's also an automated preview generator available at 
 > **Example:** [/?icon=vector-square&action=link](http://mdi.houseofdesign.ie/tools/preview/?icon=vector-square&action=link)
 
 Alternatively, instead of using the `icon` parameter to provide the name of an existing icon, you can provide a custom path and name using the `path` & `name` parameters.
-> **Example:** [/?name=credit-card-settings&action=download&path=M20,8...Z](http://mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&path=M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4%202,4.89%202,6V18A2,2%200%200,0%204,20H20A2,2%200%200,0%2022,18V6C22,4.89%2021.1,4%2020,4M7,22H9V24H7V22M11,22H13V24H11V22M15,22H17V24H15V22Z)
+> **Example:** [/?name=vector-square&action=download&path=M2,2...Z](http://mdi.houseofdesign.ie/tools/preview/?name=vector-square&action=download&path=M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z)
 
 If necessary, you can override the auto-detected preview type using the `type` parameter. The values this parameter can accept can be found in the table below along with their corresponding colours & labels.
-> **Example:** [/?name=credit-card-settings&action=download&type=final&path=M20,8...Z](http://mdi.houseofdesign.ie/tools/preview/?name=credit-card-settings&action=download&type=final&path=M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4%202,4.89%202,6V18A2,2%200%200,0%204,20H20A2,2%200%200,0%2022,18V6C22,4.89%2021.1,4%2020,4M7,22H9V24H7V22M11,22H13V24H11V22M15,22H17V24H15V22Z)
+> **Example:** [/?name=vector-square&action=download&type=final&path=M2,2...Z](http://mdi.houseofdesign.ie/tools/preview/?name=vector-square&action=download&type=final&path=M2,2H8V4H16V2H22V8H20V16H22V22H16V20H8V22H2V16H4V8H2V2M16,8V6H8V8H6V16H8V18H16V16H18V8H16M4,4V6H6V4H4M18,4V6H20V4H18M4,18V20H6V18H4M18,18V20H20V18H18Z)
 
 | Value       | Colour                                                           | Label            | Text                |
 | ----------- | ---------------------------------------------------------------- | ---------------- | ------------------- |
-| `standard`  | ![#616161](https://placehold.it/15/616161/000000?text=+) Grey    |                  |                     |
-| `stock`     | ![#388e3c](https://placehold.it/15/388e3c/000000?text=+) Green   | Stock Icon       | Not yet available   |
-| `wip`       | ![#1976d2](https://placehold.it/15/1976d2/000000?text=+) Blue    | Work in Progress | Unreleased Draft    |
-| `final`     | ![#303f9f](https://placehold.it/15/303f9f/000000?text=+) Indigo  | Final Draft      | Not yet available   |
-| `removed`   | ![#5d4037](https://placehold.it/15/5d4037/000000?text=+) Brown   | Legacy Icon      | No longer available |
-| `rejected`  | ![#d32f2f](https://placehold.it/15/d32f2f/000000?text=+) Red     | Rejected         | Won't be added      |
+| `standard`  | ![#616161](https://placehold.it/19/616161/000000?text=+) Grey    |                  |                     |
+| `stock`     | ![#388e3c](https://placehold.it/19/388e3c/000000?text=+) Green   | Stock Icon       | Not yet available   |
+| `wip`       | ![#1976d2](https://placehold.it/19/1976d2/000000?text=+) Blue    | Work in Progress | Unreleased Draft    |
+| `final`     | ![#303f9f](https://placehold.it/19/303f9f/000000?text=+) Indigo  | Final Draft      | Not yet available   |
+| `removed`   | ![#5d4037](https://placehold.it/19/5d4037/000000?text=+) Brown   | Legacy Icon      | No longer available |
+| `rejected`  | ![#d32f2f](https://placehold.it/19/d32f2f/000000?text=+) Red     | Rejected         | Won't be added      |
 
 ### Additional Google Icons
 
