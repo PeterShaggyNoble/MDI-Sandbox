@@ -28,7 +28,7 @@
 			td=td.cloneNode(0);
 			if(svg){
 				svg=svg.cloneNode(0);
-				svg.classList.remove(`complete`,`exclude`,`missing`);
+				svg.classList.remove(`exclude`,`missing`);
 				path=path.cloneNode(0);
 			}else{
 				svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
@@ -53,7 +53,7 @@
 			tr.append(td);
 			td=td.cloneNode(0);
 			svg=svg.cloneNode(0);
-			svg.classList.remove(`complete`,`exclude`,`missing`);
+			svg.classList.remove(`exclude`,`missing`);
 			if(icons.hasOwnProperty(key+`-outline`)){
 				tr.classList.toggle(`google`,!icons[key]&&icons[key+`-outline`].contributor===`google`);
 				++variants.outline;
@@ -95,13 +95,12 @@
 			});*/
 			td=td.cloneNode(0);
 			svg=svg.cloneNode(0);
-			svg.classList.remove(`complete`,`exclude`,`missing`);
+			svg.classList.remove(`exclude`,`missing`);
 			if(light.hasOwnProperty(key)){
 				++variants.light;
-				svg.classList.add(`complete`);
-				use=use?use.cloneNode(0):document.createElementNS(`http://www.w3.org/2000/svg`,`use`);
-				use.setAttribute(`href`,`#check`);
-				svg.append(use);
+				path=path.cloneNode(0);
+				path.setAttribute(`d`,light[key].data);
+				svg.append(path);
 			}else{
 				exclude=exclusions[key].includes(`light`);
 				svg.classList.toggle(`exclude`,exclude);

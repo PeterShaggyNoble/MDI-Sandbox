@@ -584,9 +584,6 @@ table#variants{
 	height:24px;
 	width:24px;
 }
-#variants svg.complete{
-	fill:#388e3c;
-}
 #variants svg.exclude{
 	fill:#bdbdbd;
 	height:18px;

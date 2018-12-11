@@ -458,12 +458,12 @@ body.highlight>#content>section>article.active{
 }
 #preview>svg{
 	fill:#fff;
-	height:112px;
+	height:120px;
 	left:50%;
 	top:50%;
 	transform:translate(-50%,-50%);
 	transition:opacity .195s var(--timing-function);
-	width:112px;
+	width:120px;
 }
 #actions{
 	background:#fff;
