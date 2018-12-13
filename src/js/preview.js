@@ -1,6 +1,7 @@
 (async()=>{
 	const 	sets=[
 			await(await fetch(`../json/icons.json`)).json(),
+			await(await fetch(`../json/light.json`)).json(),
 			await(await fetch(`../json/stock.json`)).json(),
 			await(await fetch(`../json/extended.json`)).json(),
 			await(await fetch(`../json/other.json`)).json()
@@ -34,7 +35,7 @@
 		a=document.createElement(`a`),
 		xml=new XMLSerializer,
 		image=new Image,
-		transforms=[`translate(11,10)`,`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`,`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`,`scale(.05) scale(1,-1) translate(220,-680)`],
+		transforms=[`translate(11,10)`,`translate(11,10)`,`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`,`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`,`scale(.05) scale(1,-1) translate(220,-680)`],
 		draw=()=>image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`})),
 		/*draw=async()=>context.transferFromImageBitmap(await createImageBitmap(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`})).catch(console.log)),*/
 		generate=event=>{
