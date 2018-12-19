@@ -330,8 +330,7 @@ section#editor{
 	width:320px;
 }
 #editor>figure{
-	background:linear-gradient(45deg,#e0e0e0 25%,transparent 25%,transparent 75%,#e0e0e0 75%,#e0e0e0) 0 0 / 16px,linear-gradient(45deg,#e0e0e0 25%,transparent 25%,transparent 75%,#e0e0e0 75%,#e0e0e0) 8px 8px / 16px;
-	background-color:#fff;
+	background:#fff url('data:image/svg+xml;utf-8,<svg fill="#e0e0e0" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M0,0H16V16H0ZM16,16H32V32H16Z"/></svg>');
 	border-radius:2px 2px 0 0;
 	height:320px;
 	margin:0 -16px 16px;
@@ -340,8 +339,7 @@ section#editor{
 	z-index:2;
 }
 #editor>figure.light{
-	background-color:#616161;
-	background-image:linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121),linear-gradient(45deg,#212121 25%,transparent 25%,transparent 75%,#212121 75%,#212121);
+	background:#616161 url('data:image/svg+xml;utf-8,<svg fill="#212121" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M0,0H16V16H0ZM16,16H32V32H16Z"/></svg>');
 }
 #editor span{
 	border:0 solid rgba(76,175,80,.54);
