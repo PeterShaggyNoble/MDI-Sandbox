@@ -1,5 +1,7 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2018-12-20:** Added a [Material Design Icons Light library](https://petershaggynoble.github.io/MDI-Sandbox/light/).
+- **2018-12-13:** Added Material Design Icons Light to the [preview generator](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 - **2018-12-05:** Added icon meta info.
 - **2018-12-04:** Updated to Material Design Icons v3.2.89.
 - **2018-10-20:** Updated to Material Design Icons v3.0.39.

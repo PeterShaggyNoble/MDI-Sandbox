@@ -1,7 +1,12 @@
 {
 	let version={
-		str:`3.2.89`,
-		int:3289
+		main:{
+			str:`3.2.89`,
+			int:3289
+		},light:{
+			str:`0.2.63`,
+			int:263
+		}
 	};
 	const 	$=i=>d.getElementById(i),
 		Q=s=>d.querySelector(s),
@@ -23,6 +28,7 @@
 			section:$(`icons`),
 			textarea:C(`textarea`),
 			async init(){
+				version=version[page.light?`light`:`main`];
 				this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
 				this.params=this.url.searchParams;
 				this.message.append(T(``));
@@ -70,18 +76,24 @@
 				this.main.addEventListener(`click`,async event=>{
 					let 	target=event.target,
 						parent=target.parentNode,
-						current=this.main.querySelector(`article.active`);
+						current=this.main.querySelector(`article.active`),
+						blur=false;
 					switch(target){
 						case this.actions.link:
 							this.copy(filter.filtered&&filter.url?filter.url:`${this.address}?section=icons`,`Link`);
+							blur=true;
 							break;
 						case this.actions.json:
 							this.download(`data:text/json;utf8,{${filter.filtered?this.build(`jsono`):this.packages.json||(this.packages.jsono=this.build(`jsono`))}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
+							blur=true;
 							break;
 						case this.actions.polymer:
 							this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.html`);
+							blur=true;
+							break;
 						case this.actions.svg:
 							this.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${filter.filtered?this.build(`svg`):this.packages.xml||(this.packages.xml=this.build(`svg`))}</svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.svg`);
+							blur=true;
 							break;
 						default:
 							switch(target.nodeName.toLowerCase()){
@@ -99,6 +111,8 @@
 									break;
 							}
 					}
+					if(blur)
+						target.parentNode.blur();
 				},0);
 			},
 			load(){
@@ -118,7 +132,7 @@
 							if(!this.size)
 								info.load();
 							if(icon)
-								if(icons.list[icon]||favourites.list[icon])
+								if(icons.use[icon]||favourites.list[icon])
 									editor.open(icon);
 						},0,{once:true});
 					}
@@ -132,7 +146,7 @@
 					this.message.classList.add(`oz`)
 				,5000);
 			},
-			build:type=>Object.entries(icons.list).filter(([key,icon])=>
+			build:type=>Object.entries(icons.use).filter(([key,icon])=>
 					icon.articles.main&&!icon.articles.main.classList.contains(`dn`)
 			).map(([key,icon])=>
 				type===`svg`?
@@ -342,9 +356,9 @@
 				let 	words=this.text&&this.text.split(/[\s\-\.\_]/),
 					matches=this.filtered?0:icons.total,
 					article,check,icon,key;
-				for(key in icons.list)
-					if(icons.list.hasOwnProperty(key)){
-						icon=icons.list[key];
+				for(key in icons.use)
+					if(icons.use.hasOwnProperty(key)){
+						icon=icons.use[key];
 						if(icon.articles.main){
 							check=1;
 							if(this.filtered){
@@ -463,6 +477,7 @@
 				,0);
 				this.menu.addEventListener(`click`,async event=>{
 					let target=event.target;
+					this.menu.blur();
 					switch(target){
 						case this.actions.add:
 							this.open();
@@ -548,16 +563,17 @@
 				}
 			},
 			add(key){
-				if(icons.list[key]&&icons.list[key].data){
+				if(icons.use[key]&&icons.use[key].data){
 					this.path=this.path.cloneNode(1);
-					this.path.setAttribute(`d`,icons.list[key].data);
+					this.path.setAttribute(`d`,icons.use[key].data);
 				}else if(!parseInt(this.list[key])){
 					this.path=this.path.cloneNode(1);
 					this.path.setAttribute(`d`,this.list[key]);
-				}else delete this.list[key];
-				if(this.list[key]){
+				}else if(!page.light)
+					delete this.list[key];
+				if(this.list[key]&&(icons.use[key]||key.startsWith(`my-`))){
 					this.articles[key]=this.article.cloneNode(1);
-					if(icons.list[key]&&icons.list[key].contributor!==`google`)
+					if(icons.use[key]&&icons.use[key].contributor!==`google`)
 						this.articles[key].classList.add(`community`);
 					else if(!parseInt(this.list[key]))
 						this.articles[key].classList.add(`custom`);
@@ -570,10 +586,10 @@
 			},
 			build:type=>Object.keys(favourites.list).sort().map(key=>
 				type===`svg`?
-					`<symbol id="mdi-${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></symbol>`:
+					`<symbol id="mdi-${key}"><path d="${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"/></symbol>`:
 					type===`jsono`?
-						`"${key}":"${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"`:
-						`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.list[key].data:favourites.list[key]}"/></g>`
+						`"${key}":"${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"`:
+						`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"/></g>`
 			).join(type===`jsono`?`,`:``),
 			close(value){
 				b.removeEventListener(`keydown`,this.fn);
@@ -642,7 +658,7 @@
 			},
 			toggle(name){
 				let article=this.articles[name],msg;
-				if(icons.list[name]){
+				if(icons.use[name]){
 					info.actions.library.classList.toggle(`remove`,!article);
 					info.actions.library.lastChild.nodeValue=`${article?`Add to`:`Remove from`} Library`;
 					if(article){
@@ -682,7 +698,7 @@
 				if(this.name.validity.valid&&this.data.validity.valid){
 					name=`my-`+this.name.value.trim().toLowerCase();
 					data=this.data.value.trim();
-					if(icons.list[name]||this.list[name]){
+					if(icons.use[name]||this.list[name]){
 						valid=false;
 						this.name.classList.add(`error`);
 						this.name.nextElementSibling.firstChild.nodeValue=`This name is already in use.`;
@@ -799,16 +815,16 @@
 					if(page.storage&&favourites.list[icon]){
 						this.open(icon);
 						favourites.articles[icon].classList.add(`active`);
-					}else if(icons.list[icon]){
+					}else if(icons.use[icon]){
 						this.open(icon);
-						Object.values(icons.list[icon].articles)[0].classList.add(`active`);
+						Object.values(icons.use[icon].articles)[0].classList.add(`active`);
 					}
 				}else if(page.size){
-					this.open(icon=((page.storage&&Object.keys(favourites.list).sort()[0])||Object.keys(icons.list).find(key=>icons.list[key].data)));
+					this.open(icon=((page.storage&&Object.keys(favourites.list).filter(key=>icons.use[key]||key.startsWith(`my-`)).sort()[0])||Object.keys(icons.use).find(key=>icons.use[key].data)));
 					if(page.storage&&favourites.list[icon])
 						favourites.articles[icon].classList.add(`active`);
-					else if(icons.list[icon])
-						Object.values(icons.list[icon].articles)[0].classList.add(`active`);
+					else if(icons.use[icon])
+						Object.values(icons.use[icon].articles)[0].classList.add(`active`);
 				}
 			},
 			download(){
@@ -822,7 +838,7 @@
 			},
 			open(name){
 				let custom,library;
-				this.icon=icons.list[this.name=name];
+				this.icon=icons.use[this.name=name];
 				if(this.icon){
 					this.custom=0;
 					this.data=this.actions.data.dataset.copy=this.icon.data;
@@ -841,7 +857,7 @@
 					this.icon=this.data=this.actions.data.dataset.copy=favourites.list[name];
 					this.codepoint=this.copy=this.rejected=0;
 					this.meta.contributor.nodeValue=`You`;
-					this.meta.aliases.nodeValue=this.meta.added.nodeValue=this.meta.updated.nodeValue=this.meta.renamed.nodeValue=this.meta.removed.nodeValue=``;
+					this.meta.added.nodeValue=this.meta.updated.nodeValue=this.meta.renamed.nodeValue=this.meta.removed.nodeValue=``;
 					this.aside.classList.add(`nocopy`,`retired`);
 				}
 				this.actions.markup.dataset.copy=`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`;
@@ -1034,12 +1050,12 @@
 				this.article.append(T``);
 				this.svg.classList.add(`db`,`pen`);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				for(let key in this.list)
-					if(this.list.hasOwnProperty(key))
+				for(let key in this.use)
+					if(this.use.hasOwnProperty(key))
 						this.add(key);
 			},
 			add(key){
-				let 	icon=this.list[key],
+				let 	icon=this.use[key],
 					article=this.article.cloneNode(1),
 					svg=this.svg.cloneNode(0),
 					keywords=new Set(key.split(`-`)),
@@ -1084,7 +1100,7 @@
 						++this.total;
 						page.section.append(icon.articles.main=article);
 					}
-				}else delete this.list[key];
+				}else delete this.use[key];
 			}
 		},
 		editor={
@@ -1131,8 +1147,8 @@
 								if(this.inputs[key.substr(4)])
 									page.storage.setItem(key,entry[1]);
 							});
-						}catch(error){
-							console.log(error);
+						}catch(err){
+							console.log(err);
 							msg=`failed`;
 						}
 						page.alert(`Import ${msg}.`);
@@ -1378,8 +1394,8 @@
 			open(name){
 				clearTimeout(this.timer);
 				this.name=name;
-				if(icons.list[name])
-					this.path.setAttribute(`d`,this.data=icons.list[name].data);
+				if(icons.use[name])
+					this.path.setAttribute(`d`,this.data=icons.use[name].data);
 				else if(favourites.list[name])
 					this.path.setAttribute(`d`,this.data=favourites.list[name]);
 				this.dialog.showModal();
@@ -1396,9 +1412,12 @@
 			test:([r,g,b])=>(r*299+g*587+b*114)/1000
 		};
 	(async()=>{
-		categories.list=await(await fetch`json/categories.json`).json();
-		contributors.list=await(await fetch`json/contributors.json`).json();
-		icons.array=Object.values(icons.list=await(await fetch`json/icons.json`).json());
+		page.light=page.url.pathname.endsWith(`light/`);
+		categories.list=await(await fetch(`${page.light?`../`:``}json/categories.json`)).json();
+		contributors.list=await(await fetch(`${page.light?`../`:``}json/contributors.json`)).json();
+		icons.array=Object.values(icons.use=icons.list=await(await fetch(`${page.light?`../`:``}json/icons.json`)).json());
+		if(page.light)
+			icons.array=Object.values(icons.use=await(await fetch(`../json/light.json`)).json());
 		page.init();
 		await new Promise(resolve=>{
 			let ga=C(`script`);
