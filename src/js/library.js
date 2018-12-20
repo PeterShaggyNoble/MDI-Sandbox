@@ -1,9 +1,9 @@
 {
 	let version={
-		main:{
+		mdi:{
 			str:`3.2.89`,
 			int:3289
-		},light:{
+		},mdil:{
 			str:`0.2.63`,
 			int:263
 		}
@@ -28,7 +28,8 @@
 			section:$(`icons`),
 			textarea:C(`textarea`),
 			async init(){
-				version=version[page.light?`light`:`main`];
+				this.prefix=this.light?`mdil`:`mdi`;
+				version=version[this.prefix];
 				this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
 				this.params=this.url.searchParams;
 				this.message.append(T(``));
@@ -84,15 +85,15 @@
 							blur=true;
 							break;
 						case this.actions.json:
-							this.download(`data:text/json;utf8,{${filter.filtered?this.build(`jsono`):this.packages.json||(this.packages.jsono=this.build(`jsono`))}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
+							this.download(`data:text/json;utf8,{${filter.filtered?this.build(`jsono`):this.packages.json||(this.packages.jsono=this.build(`jsono`))}}`,`${page.prefix}${filter.filtered?`-custom`:``}.json`);
 							blur=true;
 							break;
 						case this.actions.polymer:
-							this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.html`);
+							this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="${page.prefix}" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${page.prefix}${filter.filtered?`-custom`:``}.html`);
 							blur=true;
 							break;
 						case this.actions.svg:
-							this.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${filter.filtered?this.build(`svg`):this.packages.xml||(this.packages.xml=this.build(`svg`))}</svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.svg`);
+							this.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${filter.filtered?this.build(`svg`):this.packages.xml||(this.packages.xml=this.build(`svg`))}</svg>`,`${page.prefix}${filter.filtered?`-custom`:``}.svg`);
 							blur=true;
 							break;
 						default:
@@ -150,7 +151,7 @@
 					icon.articles.main&&!icon.articles.main.classList.contains(`dn`)
 			).map(([key,icon])=>
 				type===`svg`?
-					`<symbol id="mdi-${key}"><path d="${icon.data}"/></symbol>`:
+					`<symbol id="${page.prefix}-${key}"><path d="${icon.data}"/></symbol>`:
 					type===`jsono`?
 						`"${key}":"${icon.data}"`:
 						`<g id="${key}"><path d="${icon.data}"/></g>`
@@ -428,8 +429,12 @@
 			svg:N(`svg`),
 			title:N(`title`),
 			init(){
-				this.list=page.storage[`favourites`]||`{}`;
-				for(let key in page.storage)page.storage.hasOwnProperty(key)&&key.startsWith(`mdi-`)&&page.storage.removeItem(key);
+				if(this.list=page.storage[`favourites`]){
+					this.list=JSON.parse(this.list);
+					this.write();
+					page.storage.removeItem(`favourites`);
+				}
+				this.list=page.storage[`${page.prefix}-favourites`]||`{}`;
 				this.list=JSON.parse(this.list);
 				this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 				this.section=categories.list.library.section;
@@ -483,23 +488,23 @@
 							this.open();
 							break;
 						case this.actions.json:
-							page.download(`data:text/json;utf8,{${this.build(`jsono`)}}`,`mdi-library.json`);
+							page.download(`data:text/json;utf8,{${this.build(`jsono`)}}`,`${page.prefix}-library.json`);
 							break;
 						case this.actions.polymer:
-							page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${this.build(`polymer`)}</defs></svg></iron-iconset-svg>`,`mdi-library.html`);
+							page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="${page.prefix}" size="24"><svg><defs>${this.build(`polymer`)}</defs></svg></iron-iconset-svg>`,`${page.prefix}-library.html`);
 							break;
 						case this.actions.svg:
-							page.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${this.build(`svg`)}</svg>`,`mdi-library.svg`);
+							page.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${this.build(`svg`)}</svg>`,`${page.prefix}-library.svg`);
 							break;
 						case this.actions.import:
 							b.append(this.input);
 							this.input.click();
 							break;
 						case this.actions.export:
-							page.download(`data:text/plain;base64,${btoa(btoa(JSON.stringify(this.list)))}`,`mdi-library.txt`);
+							page.download(`data:text/plain;base64,${btoa(btoa(JSON.stringify(this.list)))}`,`${page.prefix}-library.txt`);
 							break;
 						case this.actions.clear:
-							page.storage.removeItem(`favourites`);
+							page.storage.removeItem(`${page-prefix}-favourites`);
 							for(let key in this.list)
 								if(this.list.hasOwnProperty(key)&&parseInt(this.list[key]))
 									delete this.list[key];
@@ -569,8 +574,7 @@
 				}else if(!parseInt(this.list[key])){
 					this.path=this.path.cloneNode(1);
 					this.path.setAttribute(`d`,this.list[key]);
-				}else if(!page.light)
-					delete this.list[key];
+				}else delete this.list[key];
 				if(this.list[key]&&(icons.use[key]||key.startsWith(`my-`))){
 					this.articles[key]=this.article.cloneNode(1);
 					if(icons.use[key]&&icons.use[key].contributor!==`google`)
@@ -586,7 +590,7 @@
 			},
 			build:type=>Object.keys(favourites.list).sort().map(key=>
 				type===`svg`?
-					`<symbol id="mdi-${key}"><path d="${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"/></symbol>`:
+					`<symbol id="${page.prefix}-${key}"><path d="${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"/></symbol>`:
 					type===`jsono`?
 						`"${key}":"${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"`:
 						`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"/></g>`
@@ -721,7 +725,7 @@
 				}
 			},
 			write(){
-				page.storage.setItem(`favourites`,JSON.stringify(this.list));
+				page.storage.setItem(`${page.prefix}-favourites`,JSON.stringify(this.list));
 			}
 		},
 		info={
@@ -820,7 +824,7 @@
 						Object.values(icons.use[icon].articles)[0].classList.add(`active`);
 					}
 				}else if(page.size){
-					this.open(icon=((page.storage&&Object.keys(favourites.list).filter(key=>icons.use[key]||key.startsWith(`my-`)).sort()[0])||Object.keys(icons.use).find(key=>icons.use[key].data)));
+					this.open(icon=((page.storage&&Object.keys(favourites.list).sort()[0])||Object.keys(icons.use).find(key=>icons.use[key].data)));
 					if(page.storage&&favourites.list[icon])
 						favourites.articles[icon].classList.add(`active`);
 					else if(icons.use[icon])
@@ -846,10 +850,10 @@
 					this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`;
 					this.rejected=!!this.icon.rejected;
 					this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
-					this.meta.added.nodeValue=this.icon.added&&this.icon.added!=="{next}"?`v${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
-					this.meta.updated.nodeValue=this.icon.updated&&this.icon.updated!=="{next}"?`v${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
-					this.meta.renamed.nodeValue=this.icon.renamed&&this.icon.renamed!=="{next}"?`v${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
-					this.meta.removed.nodeValue=this.icon.retired&&this.icon.retired!=="{next}"?`v${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+					this.meta.added.nodeValue=this.icon.added?this.icon.added!=="{next}"?`v${page.light?0:``}${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
+					this.meta.updated.nodeValue=this.icon.updated?this.icon.updated!=="{next}"?`v${page.light?0:``}${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
+					this.meta.renamed.nodeValue=this.icon.renamed?this.icon.renamed!=="{next}"?`v${page.light?0:``}${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
+					this.meta.removed.nodeValue=this.icon.retired?this.icon.retired!=="{next}"?`v${page.light?0:``}${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
 					this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 					this.aside.classList.toggle(`retired`,this.retired||this.rejected);
 				}else if(page.storage){

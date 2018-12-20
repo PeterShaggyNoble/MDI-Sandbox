@@ -9,6 +9,7 @@
 	},
 	"account-alert":{
 		"added":"{next}",
+		"aliases":["account-warning","person-alert","person-warning","user-alert","user-warning"],
 		"categories":["users"],
 		"codepoint":"f005",
 		"contributor":"austin-andrews",
@@ -16,6 +17,7 @@
 	},
 	"alarm":{
 		"added":263,
+		"aliases":["alarm-clock"],
 		"categories":["time"],
 		"codepoint":"f020",
 		"contributor":"austin-andrews",
@@ -23,6 +25,7 @@
 	},
 	"alarm-plus":{
 		"added":263,
+		"aliases":["add-alarm","alarm-add","alarm-clock-add","alarm-clock-plus"],
 		"categories":["time"],
 		"codepoint":"f024",
 		"contributor":"austin-andrews",
@@ -30,6 +33,7 @@
 	},
 	"alert":{
 		"added":263,
+		"aliases":["warning"],
 		"categories":["other"],
 		"codepoint":"f026",
 		"contributor":"austin-andrews",
@@ -37,6 +41,7 @@
 	},
 	"alert-circle":{
 		"added":263,
+		"aliases":["error","warning-circle"],
 		"categories":["other"],
 		"codepoint":"f028",
 		"contributor":"austin-andrews",
@@ -44,6 +49,7 @@
 	},
 	"alert-octagon":{
 		"added":263,
+		"aliases":["warning-octagon"],
 		"categories":["other"],
 		"codepoint":"f029",
 		"contributor":"austin-andrews",
@@ -79,6 +85,7 @@
 	},
 	"arrow-down":{
 		"added":263,
+		"aliases":["arrow-bottom"],
 		"categories":["arrows"],
 		"codepoint":"f045",
 		"contributor":"austin-andrews",
@@ -86,6 +93,7 @@
 	},
 	"arrow-down-circle":{
 		"added":263,
+		"aliases":["arrow-bottom-circle"],
 		"categories":["arrows"],
 		"codepoint":"fcbb",
 		"contributor":"austin-andrews",
@@ -93,6 +101,7 @@
 	},
 	"arrow-left":{
 		"added":263,
+		"aliases":["arrow-back"],
 		"categories":["arrows"],
 		"codepoint":"f04d",
 		"contributor":"austin-andrews",
@@ -100,6 +109,7 @@
 	},
 	"arrow-left-circle":{
 		"added":263,
+		"aliases":["arrow-back-circle"],
 		"categories":["arrows"],
 		"codepoint":"fcb9",
 		"contributor":"austin-andrews",
@@ -107,6 +117,7 @@
 	},
 	"arrow-right":{
 		"added":263,
+		"aliases":["arrow-forward"],
 		"categories":["arrows"],
 		"codepoint":"f054",
 		"contributor":"austin-andrews",
@@ -114,6 +125,7 @@
 	},
 	"arrow-right-circle":{
 		"added":263,
+		"aliases":["arrow-forward-circle"],
 		"categories":["arrows"],
 		"codepoint":"fcbb",
 		"contributor":"austin-andrews",
@@ -121,6 +133,7 @@
 	},
 	"arrow-up":{
 		"added":263,
+		"aliases":["arrow-top"],
 		"categories":["arrows"],
 		"codepoint":"f05d",
 		"contributor":"austin-andrews",
@@ -128,6 +141,7 @@
 	},
 	"arrow-up-circle":{
 		"added":263,
+		"aliases":["arrow-top-circle"],
 		"categories":["arrows"],
 		"codepoint":"fcbd",
 		"contributor":"austin-andrews",
@@ -135,6 +149,7 @@
 	},
 	"bank":{
 		"added":263,
+		"aliases":["museum"],
 		"categories":["money","places"],
 		"codepoint":"f070",
 		"contributor":"austin-andrews",

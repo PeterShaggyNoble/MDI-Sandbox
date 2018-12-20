@@ -1273,10 +1273,10 @@
 <script>
 	{
 		let version={
-			main:{
+			mdi:{
 				str:`3.2.89`,
 				int:3289
-			},light:{
+			},mdil:{
 				str:`0.2.63`,
 				int:263
 			}
@@ -1301,7 +1301,8 @@
 				section:$(`icons`),
 				textarea:C(`textarea`),
 				async init(){
-					version=version[page.light?`light`:`main`];
+					this.prefix=this.light?`mdil`:`mdi`;
+					version=version[this.prefix];
 					this.address=`${this.url.protocol}//${this.url.host+this.url.pathname}`;
 					this.params=this.url.searchParams;
 					this.message.append(T(``));
@@ -1357,15 +1358,15 @@
 								blur=true;
 								break;
 							case this.actions.json:
-								this.download(`data:text/json;utf8,{${filter.filtered?this.build(`jsono`):this.packages.json||(this.packages.jsono=this.build(`jsono`))}}`,`${filter.filtered?`mdi-custom`:`mdi`}.json`);
+								this.download(`data:text/json;utf8,{${filter.filtered?this.build(`jsono`):this.packages.json||(this.packages.jsono=this.build(`jsono`))}}`,`${page.prefix}${filter.filtered?`-custom`:``}.json`);
 								blur=true;
 								break;
 							case this.actions.polymer:
-								this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.html`);
+								this.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="${page.prefix}" size="24"><svg><defs>${filter.filtered?this.build(`polymer`):this.packages.xml||(this.packages.xml=this.build(`polymer`))}</defs></svg></iron-iconset-svg>`,`${page.prefix}${filter.filtered?`-custom`:``}.html`);
 								blur=true;
 								break;
 							case this.actions.svg:
-								this.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${filter.filtered?this.build(`svg`):this.packages.xml||(this.packages.xml=this.build(`svg`))}</svg>`,`${filter.filtered?`mdi-custom`:`mdi`}.svg`);
+								this.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${filter.filtered?this.build(`svg`):this.packages.xml||(this.packages.xml=this.build(`svg`))}</svg>`,`${page.prefix}${filter.filtered?`-custom`:``}.svg`);
 								blur=true;
 								break;
 							default:
@@ -1423,7 +1424,7 @@
 						icon.articles.main&&!icon.articles.main.classList.contains(`dn`)
 				).map(([key,icon])=>
 					type===`svg`?
-						`<symbol id="mdi-${key}"><path d="${icon.data}"/></symbol>`:
+						`<symbol id="${page.prefix}-${key}"><path d="${icon.data}"/></symbol>`:
 						type===`jsono`?
 							`"${key}":"${icon.data}"`:
 							`<g id="${key}"><path d="${icon.data}"/></g>`
@@ -1701,8 +1702,12 @@
 				svg:N(`svg`),
 				title:N(`title`),
 				init(){
-					this.list=page.storage[`favourites`]||`{}`;
-					for(let key in page.storage)page.storage.hasOwnProperty(key)&&key.startsWith(`mdi-`)&&page.storage.removeItem(key);
+					if(this.list=page.storage[`favourites`]){
+						this.list=JSON.parse(this.list);
+						this.write();
+						page.storage.removeItem(`favourites`);
+					}
+					this.list=page.storage[`${page.prefix}-favourites`]||`{}`;
 					this.list=JSON.parse(this.list);
 					this.article.classList.add(`cp`,`oh`,`pr`,`tac`,`toe`,`wsnw`);
 					this.section=categories.list.library.section;
@@ -1756,23 +1761,23 @@
 								this.open();
 								break;
 							case this.actions.json:
-								page.download(`data:text/json;utf8,{${this.build(`jsono`)}}`,`mdi-library.json`);
+								page.download(`data:text/json;utf8,{${this.build(`jsono`)}}`,`${page.prefix}-library.json`);
 								break;
 							case this.actions.polymer:
-								page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="mdi" size="24"><svg><defs>${this.build(`polymer`)}</defs></svg></iron-iconset-svg>`,`mdi-library.html`);
+								page.download(`data:text/html;utf8,<link rel="import" href="../bower_components/iron-icon/iron-icon.html"><link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"><iron-iconset-svg name="${page.prefix}" size="24"><svg><defs>${this.build(`polymer`)}</defs></svg></iron-iconset-svg>`,`${page.prefix}-library.html`);
 								break;
 							case this.actions.svg:
-								page.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${this.build(`svg`)}</svg>`,`mdi-library.svg`);
+								page.download(`data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${this.build(`svg`)}</svg>`,`${page.prefix}-library.svg`);
 								break;
 							case this.actions.import:
 								b.append(this.input);
 								this.input.click();
 								break;
 							case this.actions.export:
-								page.download(`data:text/plain;base64,${btoa(btoa(JSON.stringify(this.list)))}`,`mdi-library.txt`);
+								page.download(`data:text/plain;base64,${btoa(btoa(JSON.stringify(this.list)))}`,`${page.prefix}-library.txt`);
 								break;
 							case this.actions.clear:
-								page.storage.removeItem(`favourites`);
+								page.storage.removeItem(`${page-prefix}-favourites`);
 								for(let key in this.list)
 									if(this.list.hasOwnProperty(key)&&parseInt(this.list[key]))
 										delete this.list[key];
@@ -1842,8 +1847,7 @@
 					}else if(!parseInt(this.list[key])){
 						this.path=this.path.cloneNode(1);
 						this.path.setAttribute(`d`,this.list[key]);
-					}else if(!page.light)
-						delete this.list[key];
+					}else delete this.list[key];
 					if(this.list[key]&&(icons.use[key]||key.startsWith(`my-`))){
 						this.articles[key]=this.article.cloneNode(1);
 						if(icons.use[key]&&icons.use[key].contributor!==`google`)
@@ -1859,7 +1863,7 @@
 				},
 				build:type=>Object.keys(favourites.list).sort().map(key=>
 					type===`svg`?
-						`<symbol id="mdi-${key}"><path d="${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"/></symbol>`:
+						`<symbol id="${page.prefix}-${key}"><path d="${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"/></symbol>`:
 						type===`jsono`?
 							`"${key}":"${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"`:
 							`<g id="${key}"><path d="${parseInt(favourites.list[key])?icons.use[key].data:favourites.list[key]}"/></g>`
@@ -1994,7 +1998,7 @@
 					}
 				},
 				write(){
-					page.storage.setItem(`favourites`,JSON.stringify(this.list));
+					page.storage.setItem(`${page.prefix}-favourites`,JSON.stringify(this.list));
 				}
 			},
 			info={
@@ -2093,7 +2097,7 @@
 							Object.values(icons.use[icon].articles)[0].classList.add(`active`);
 						}
 					}else if(page.size){
-						this.open(icon=((page.storage&&Object.keys(favourites.list).filter(key=>icons.use[key]||key.startsWith(`my-`)).sort()[0])||Object.keys(icons.use).find(key=>icons.use[key].data)));
+						this.open(icon=((page.storage&&Object.keys(favourites.list).sort()[0])||Object.keys(icons.use).find(key=>icons.use[key].data)));
 						if(page.storage&&favourites.list[icon])
 							favourites.articles[icon].classList.add(`active`);
 						else if(icons.use[icon])
@@ -2119,10 +2123,10 @@
 						this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`;
 						this.rejected=!!this.icon.rejected;
 						this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
-						this.meta.added.nodeValue=this.icon.added&&this.icon.added!=="{next}"?`v${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
-						this.meta.updated.nodeValue=this.icon.updated&&this.icon.updated!=="{next}"?`v${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
-						this.meta.renamed.nodeValue=this.icon.renamed&&this.icon.renamed!=="{next}"?`v${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
-						this.meta.removed.nodeValue=this.icon.retired&&this.icon.retired!=="{next}"?`v${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):``;
+						this.meta.added.nodeValue=this.icon.added?this.icon.added!=="{next}"?`v${page.light?0:``}${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
+						this.meta.updated.nodeValue=this.icon.updated?this.icon.updated!=="{next}"?`v${page.light?0:``}${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
+						this.meta.renamed.nodeValue=this.icon.renamed?this.icon.renamed!=="{next}"?`v${page.light?0:``}${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
+						this.meta.removed.nodeValue=this.icon.retired?this.icon.retired!=="{next}"?`v${page.light?0:``}${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
 						this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 						this.aside.classList.toggle(`retired`,this.retired||this.rejected);
 					}else if(page.storage){
@@ -5130,6 +5134,7 @@
 	},
 	"arrow-left-circle":{
 		"added":"{next}",
+		"aliases":["arrow-back-circle"],
 		"categories":["arrows"],
 		"contributor":"austin-andrews",
 		"data":"M2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12M18,11H10L13.5,7.5L12.08,6.08L6.16,12L12.08,17.92L13.5,16.5L10,13H18V11Z"
@@ -5230,6 +5235,7 @@
 	},
 	"arrow-right-circle":{
 		"added":"{next}",
+		"aliases":["arrow-forward-circle"],
 		"categories":["arrows"],
 		"contributor":"austin-andrews",
 		"data":"M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M6,13H14L10.5,16.5L11.92,17.92L17.84,12L11.92,6.08L10.5,7.5L14,11H6V13Z"
@@ -17754,7 +17760,7 @@
 		"data":"M5,3C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H5M12,5C15.09,5 17.82,7.04 18.7,10H16A1,1 0 0,0 15,11V13A1,1 0 0,0 16,14H18.71C17.82,16.97 15.09,19 12,19A7,7 0 0,1 5,12A7,7 0 0,1 12,5M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z"
 	},
 	"minus":{
-		"aliases":["remove"],
+		"aliases":["horizontal-line","remove"],
 		"categories":["characters"],
 		"codepoint":"f374",
 		"contributor":"google",
@@ -18271,18 +18277,21 @@
 		"updated":1554
 	},
 	"nfc":{
+		"aliases":["near-field-communication"],
 		"categories":["networking"],
 		"codepoint":"f396",
 		"contributor":"austin-andrews",
 		"data":"M10.59,7.66C10.59,7.66 11.19,7.39 11.57,7.82C11.95,8.26 12.92,9.94 12.92,11.62C12.92,13.3 12.5,15.09 12.05,15.68C11.62,16.28 11.19,16.28 10.86,16.06C10.54,15.85 5.5,12 5.23,11.89C4.95,11.78 4.85,12.05 5.12,13.5C5.39,15 4.95,15.41 4.57,15.47C4.2,15.5 3.06,15.2 3,12.16C2.95,9.13 3.76,8.64 4.14,8.64C4.85,8.64 10.27,13.5 10.64,13.46C10.97,13.41 11.13,11.35 10.5,9.72C9.78,7.96 10.59,7.66 10.59,7.66M19.3,4.63C21.12,8.24 21,11.66 21,12C21,12.34 21.12,15.76 19.3,19.37C19.3,19.37 18.83,19.92 18.12,19.59C17.42,19.26 17.66,18.4 17.66,18.4C17.66,18.4 19.14,15.55 19.1,12.05V12C19.14,8.5 17.66,5.6 17.66,5.6C17.66,5.6 17.42,4.74 18.12,4.41C18.83,4.08 19.3,4.63 19.3,4.63M15.77,6.25C17.26,8.96 17.16,11.66 17.14,12C17.16,12.34 17.26,14.92 15.77,17.85C15.77,17.85 15.3,18.4 14.59,18.07C13.89,17.74 14.13,16.88 14.13,16.88C14.13,16.88 15.09,15.5 15.24,12.05V12C15.14,8.53 14.13,7.23 14.13,7.23C14.13,7.23 13.89,6.36 14.59,6.04C15.3,5.71 15.77,6.25 15.77,6.25Z"
 	},
 	"nfc-tap":{
+		"aliases":["near-field-communication-tap"],
 		"categories":["networking"],
 		"codepoint":"f397",
 		"contributor":"austin-andrews",
 		"data":"M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M4,4H11A2,2 0 0,1 13,6V9H11V6H4V11H6V9L9,12L6,15V13H4A2,2 0 0,1 2,11V6A2,2 0 0,1 4,4M20,20H13A2,2 0 0,1 11,18V15H13V18H20V13H18V15L15,12L18,9V11H20A2,2 0 0,1 22,13V18A2,2 0 0,1 20,20Z"
 	},
 	"nfc-variant":{
+		"aliases":["near-field-communication-variant"],
 		"categories":["networking"],
 		"codepoint":"f398",
 		"contributor":"google",
@@ -21265,6 +21274,7 @@
 		"updated":1554
 	},
 	"rss-box":{
+		"aliases":["rss-feed-box"],
 		"categories":["other"],
 		"codepoint":"f46c",
 		"contributor":"gabriel",
