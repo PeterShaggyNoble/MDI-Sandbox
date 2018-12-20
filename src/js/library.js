@@ -506,7 +506,7 @@
 							page.download(`data:text/plain;base64,${btoa(btoa(JSON.stringify(this.list)))}`,`${page.prefix}-library.txt`);
 							break;
 						case this.actions.clear:
-							page.storage.removeItem(`${page-prefix}-favourites`);
+							page.storage.removeItem(`${page.prefix}-favourites`);
 							for(let key in this.list)
 								if(this.list.hasOwnProperty(key)&&parseInt(this.list[key]))
 									delete this.list[key];
