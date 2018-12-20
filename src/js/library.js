@@ -429,10 +429,12 @@
 			svg:N(`svg`),
 			title:N(`title`),
 			init(){
-				if(this.list=page.storage[`favourites`]){
-					this.list=JSON.parse(this.list);
-					this.write();
-					page.storage.removeItem(`favourites`);
+				if(!page.light){
+					if(this.list=page.storage[`favourites`]){
+						this.list=JSON.parse(this.list);
+						this.write();
+						page.storage.removeItem(`favourites`);
+					}
 				}
 				this.list=page.storage[`${page.prefix}-favourites`]||`{}`;
 				this.list=JSON.parse(this.list);
