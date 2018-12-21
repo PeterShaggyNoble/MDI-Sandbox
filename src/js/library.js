@@ -852,10 +852,10 @@
 					this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`;
 					this.rejected=!!this.icon.rejected;
 					this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
-					this.meta.added.nodeValue=this.icon.added?this.icon.added!=="{next}"?`v${page.light?0:``}${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
-					this.meta.updated.nodeValue=this.icon.updated?this.icon.updated!=="{next}"?`v${page.light?0:``}${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
-					this.meta.renamed.nodeValue=this.icon.renamed?this.icon.renamed!=="{next}"?`v${page.light?0:``}${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
-					this.meta.removed.nodeValue=this.icon.retired?this.icon.retired!=="{next}"?`v${page.light?0:``}${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
+					this.meta.added.nodeValue=this.icon.added?this.icon.added!=="{next}"?`v${page.light?0:``}${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):``:``;
+					this.meta.updated.nodeValue=this.icon.updated?this.icon.updated!=="{next}"?`${this.icon.updated}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):``:``;
+					this.meta.renamed.nodeValue=this.icon.renamed?this.icon.renamed!=="{next}"?`${this.icon.renamed}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):``:``;
+					this.meta.removed.nodeValue=this.icon.retired?this.icon.retired!=="{next}"?`${this.icon.removed}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):``:``;
 					this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 					this.aside.classList.toggle(`retired`,this.retired||this.rejected);
 				}else if(page.storage){

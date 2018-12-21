@@ -2125,10 +2125,10 @@
 						this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`;
 						this.rejected=!!this.icon.rejected;
 						this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
-						this.meta.added.nodeValue=this.icon.added?this.icon.added!=="{next}"?`v${page.light?0:``}${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
-						this.meta.updated.nodeValue=this.icon.updated?this.icon.updated!=="{next}"?`v${page.light?0:``}${this.icon.updated}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
-						this.meta.renamed.nodeValue=this.icon.renamed?this.icon.renamed!=="{next}"?`v${page.light?0:``}${this.icon.renamed}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
-						this.meta.removed.nodeValue=this.icon.retired?this.icon.retired!=="{next}"?`v${page.light?0:``}${this.icon.removed}`.replace(/\d{3}/,match=>[...match].join(`.`)):`Next Release`:``;
+						this.meta.added.nodeValue=this.icon.added?this.icon.added!=="{next}"?`v${page.light?0:``}${this.icon.added}`.replace(/\d{3}/,match=>[...match].join(`.`)):``:``;
+						this.meta.updated.nodeValue=this.icon.updated?this.icon.updated!=="{next}"?`${this.icon.updated}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):``:``;
+						this.meta.renamed.nodeValue=this.icon.renamed?this.icon.renamed!=="{next}"?`${this.icon.renamed}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):``:``;
+						this.meta.removed.nodeValue=this.icon.retired?this.icon.retired!=="{next}"?`${this.icon.removed}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):``:``;
 						this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
 						this.aside.classList.toggle(`retired`,this.retired||this.rejected);
 					}else if(page.storage){
@@ -6212,6 +6212,12 @@
 		"codepoint":"f092",
 		"contributor":"austin-andrews",
 		"data":"M15,18.54C17.13,18.21 19.5,18 22,18V22H5C5,21.35 8.2,19.86 13,18.9V12.4C12.16,12.65 11.45,13.21 11,13.95C10.39,12.93 9.27,12.25 8,12.25C6.73,12.25 5.61,12.93 5,13.95C5.03,10.37 8.5,7.43 13,7.04V7A1,1 0 0,1 14,6A1,1 0 0,1 15,7V7.04C19.5,7.43 22.96,10.37 23,13.95C22.39,12.93 21.27,12.25 20,12.25C18.73,12.25 17.61,12.93 17,13.95C16.55,13.21 15.84,12.65 15,12.39V18.54M7,2A5,5 0 0,1 2,7V2H7Z"
+	},
+	"beaker":{
+		"added":"{next}",
+		"categories":["science"],
+		"contributor":"cody",
+		"data":"M3,3V5A2,2 0 0,1 5,7V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V7A2,2 0 0,1 21,5V3H3M7,9H10V10H7V9M7,11H10V12H7V11M10,16H7V15H10V16M12,14H7V13H12V14M12,8H7V7H12V8Z"
 	},
 	"beaker-outline":{
 		"added":1712,
@@ -12220,7 +12226,7 @@
 		"data":"M23.5,17L18.5,22L15,18.5L16.5,17L18.5,19L22,15.5L23.5,17M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,17C12.5,17 12.97,16.93 13.42,16.79C13.15,17.5 13,18.22 13,19V19.45L12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5C17,4.5 21.27,7.61 23,12C22.75,12.64 22.44,13.26 22.08,13.85C21.18,13.31 20.12,13 19,13C18.22,13 17.5,13.15 16.79,13.42C16.93,12.97 17,12.5 17,12A5,5 0 0,0 12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17Z"
 	},
 	"eye-check-outline":{
-		"added":3039,
+		"added":"{next}",
 		"aliases":["eye-tick-outline"],
 		"categories":["other"],
 		"contributor":"austin-andrews",
