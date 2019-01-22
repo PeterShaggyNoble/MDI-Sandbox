@@ -1,6 +1,23 @@
 [
 	{
 		"brand":false,
+		"comments":5,
+		"created":"2019-01-21T20:28:06Z",
+		"downvotes":0,
+		"home":true,
+		"id":3842,
+		"labels":["Home Assistant","Icon Request"],
+		"milestone":null,
+		"node_id":"MDU6SXNzdWU0MDE1MDAzNDk=",
+		"reactions":0,
+		"status":"Pending",
+		"stock":false,
+		"title":"valve - Open \/ Closed states",
+		"updated":"2019-01-21T20:42:39Z",
+		"upvotes":0,
+		"user":"gijbelsy"
+	},{
+		"brand":false,
 		"comments":0,
 		"created":"2019-01-21T06:21:27Z",
 		"downvotes":0,
@@ -12,25 +29,25 @@
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
-		"title":"fragance icon",
-		"updated":"2019-01-21T07:25:16Z",
+		"title":"Perfume \/ Fragrance",
+		"updated":"2019-01-21T18:07:10Z",
 		"upvotes":0,
 		"user":"nlambuca"
 	},{
 		"brand":false,
-		"comments":4,
+		"comments":12,
 		"created":"2019-01-20T21:28:51Z",
 		"downvotes":0,
 		"home":true,
 		"id":3836,
-		"labels":["Home Assistant","Icon Request"],
+		"labels":["Contribution","Home Assistant","Icon Request"],
 		"milestone":null,
 		"node_id":"MDU6SXNzdWU0MDExNDEwNjk=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"Light icons",
-		"updated":"2019-01-21T07:19:20Z",
+		"updated":"2019-01-22T08:01:55Z",
 		"upvotes":0,
 		"user":"hulkhaugen"
 	},{
@@ -177,13 +194,13 @@
 		"home":false,
 		"id":3817,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzOTgzMDA0Mjk=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"content-save-alert",
-		"updated":"2019-01-18T16:24:19Z",
+		"updated":"2019-01-21T17:44:07Z",
 		"upvotes":0,
 		"user":"MitchBerninger"
 	},{
@@ -1446,23 +1463,6 @@
 		"user":"GreenTurtwig"
 	},{
 		"brand":false,
-		"comments":4,
-		"created":"2018-05-15T15:07:46Z",
-		"downvotes":0,
-		"home":true,
-		"id":3181,
-		"labels":["Alias","Home Assistant","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.7.xx",
-		"node_id":"MDU6SXNzdWUzMjMyNjA2MzM=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":true,
-		"title":"Air Heater",
-		"updated":"2019-01-19T19:17:58Z",
-		"upvotes":0,
-		"user":"gabglus"
-	},{
-		"brand":false,
 		"comments":2,
 		"created":"2018-05-15T15:06:58Z",
 		"downvotes":0,
@@ -2327,23 +2327,6 @@
 		"title":"coffee-off\/coffee-off-outline",
 		"updated":"2018-11-25T06:21:34Z",
 		"upvotes":1,
-		"user":"Mariusthvdb"
-	},{
-		"brand":false,
-		"comments":4,
-		"created":"2018-04-03T14:57:58Z",
-		"downvotes":0,
-		"home":true,
-		"id":3007,
-		"labels":["Contribution","Home Assistant","Icon Request"],
-		"milestone":"Version 3.6.xx",
-		"node_id":"MDU6SXNzdWUzMTA4NzMyNzQ=",
-		"reactions":2,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"(no) motion sensor\/detected",
-		"updated":"2018-11-25T06:21:22Z",
-		"upvotes":2,
 		"user":"Mariusthvdb"
 	},{
 		"brand":false,
@@ -5542,23 +5525,6 @@
 		"upvotes":0,
 		"user":"archirex"
 	},{
-		"brand":true,
-		"comments":2,
-		"created":"2017-01-26T11:07:51Z",
-		"downvotes":0,
-		"home":false,
-		"id":1804,
-		"labels":["Brand Icon","Contribution","Icon Request"],
-		"milestone":"Version 3.4.xx",
-		"node_id":"MDU6SXNzdWUyMDMzNDUwODg=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Creative Commons",
-		"updated":"2018-11-26T03:27:16Z",
-		"upvotes":0,
-		"user":"httx"
-	},{
 		"brand":false,
 		"comments":2,
 		"created":"2017-01-26T10:43:04Z",
@@ -5728,23 +5694,6 @@
 		"updated":"2018-11-25T05:35:03Z",
 		"upvotes":0,
 		"user":"ekntrtmz"
-	},{
-		"brand":false,
-		"comments":4,
-		"created":"2016-12-28T08:31:10Z",
-		"downvotes":0,
-		"home":false,
-		"id":1721,
-		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.4.xx",
-		"node_id":"MDU6SXNzdWUxOTc4MTU2NDI=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":true,
-		"title":"Racing\/Bike Helmet",
-		"updated":"2019-01-10T18:02:12Z",
-		"upvotes":0,
-		"user":"TheSagarPatil"
 	},{
 		"brand":false,
 		"comments":4,
@@ -6257,7 +6206,7 @@
 		"user":"breon"
 	},{
 		"brand":false,
-		"comments":4,
+		"comments":5,
 		"created":"2016-08-30T10:44:23Z",
 		"downvotes":0,
 		"home":false,
@@ -6269,7 +6218,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"ATM and POS icons",
-		"updated":"2018-11-26T04:01:35Z",
+		"updated":"2019-01-22T04:35:06Z",
 		"upvotes":0,
 		"user":"alexefremo"
 	},{
@@ -6289,23 +6238,6 @@
 		"updated":"2018-11-26T16:58:49Z",
 		"upvotes":2,
 		"user":"Depechie"
-	},{
-		"brand":false,
-		"comments":8,
-		"created":"2016-08-19T17:24:26Z",
-		"downvotes":0,
-		"home":false,
-		"id":1451,
-		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.4.xx",
-		"node_id":"MDU6SXNzdWUxNzIxNzk4MTU=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":true,
-		"title":"Gif icon from Google icons",
-		"updated":"2018-11-26T04:02:42Z",
-		"upvotes":0,
-		"user":"dnldsht"
 	},{
 		"brand":false,
 		"comments":1,
@@ -6952,23 +6884,6 @@
 		"updated":"2016-04-26T13:09:24Z",
 		"upvotes":0,
 		"user":"kentonbmax"
-	},{
-		"brand":false,
-		"comments":9,
-		"created":"2016-04-05T17:42:46Z",
-		"downvotes":0,
-		"home":false,
-		"id":1136,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.4.xx",
-		"node_id":"MDU6SXNzdWUxNDYwNTkxMjM=",
-		"reactions":1,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Backpacker \/ Hiker",
-		"updated":"2019-01-11T16:13:28Z",
-		"upvotes":1,
-		"user":"Fleker"
 	},{
 		"brand":false,
 		"comments":1,
