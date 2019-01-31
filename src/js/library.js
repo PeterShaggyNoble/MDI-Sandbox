@@ -849,7 +849,7 @@
 					this.custom=0;
 					this.data=this.actions.data.dataset.copy=this.icon.data;
 					this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
-					this.retired=!!this.icon.retired&&this.icon.retired!==`{soon}`;
+					this.retired=!!this.icon.retired/*&&this.icon.retired!==`{soon}`*/;
 					this.rejected=!!this.icon.rejected;
 					this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
 					this.setversion(`added`);
@@ -898,11 +898,11 @@
 			setversion(mod){
 				let ver=this.icon[mod]||``;
 				if(ver){
-					if(ver.map){
+					if(ver instanceof Array){
 						ver=ver.filter(v=>/\d/.test(v));
 						ver=ver.length?ver[ver.length-1]:``;
 					}
-					if(ver===`{next}`)
+					if(ver>version.int)
 						ver=``;
 					else ver=`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`));
 				}
@@ -978,7 +978,7 @@
 									fn=icon=>icon.added===version.int;
 									break;
 								case`soon`:
-									fn=icon=>icon.added===`{next}`;
+									fn=icon=>icon.added>version.int;
 									break;
 								case`removed`:
 									fn=icon=>icon.retired===version.int;
@@ -1109,7 +1109,7 @@
 						category.section.append(icon.articles.renamed=article.cloneNode(1));
 					if((category=categories.list.removed)&&icon.retired===version.int)
 						category.section.append(icon.articles.removed=article.cloneNode(1));
-					if((category=categories.list.soon)&&icon.added&&icon.added===`{next}`)
+					if((category=categories.list.soon)&&icon.added&&icon.added>version.int)
 						category.section.append(icon.articles.soon=article.cloneNode(1));
 					if((category=categories.list.retired)&&parseInt(icon.retired))
 						category.section.append(icon.articles.retired=article.cloneNode(1));

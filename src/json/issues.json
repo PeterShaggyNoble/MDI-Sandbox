@@ -1,19 +1,70 @@
 [
 	{
 		"brand":false,
+		"comments":0,
+		"created":"2019-01-30T20:28:25Z",
+		"downvotes":0,
+		"home":false,
+		"id":3865,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Version 3.9.xx",
+		"node_id":"MDU6SXNzdWU0MDQ5NTAzMDk=",
+		"reactions":1,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"ocarina",
+		"updated":"2019-01-30T20:28:25Z",
+		"upvotes":1,
+		"user":"goyney"
+	},{
+		"brand":false,
+		"comments":3,
+		"created":"2019-01-30T19:21:38Z",
+		"downvotes":0,
+		"home":false,
+		"id":3864,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Version 3.9.xx",
+		"node_id":"MDU6SXNzdWU0MDQ5MjUxOTE=",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"chart-bell-curve-cumulative",
+		"updated":"2019-01-31T06:25:08Z",
+		"upvotes":0,
+		"user":"jacobq"
+	},{
+		"brand":false,
+		"comments":0,
+		"created":"2019-01-30T18:58:05Z",
+		"downvotes":0,
+		"home":false,
+		"id":3862,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Backlog",
+		"node_id":"MDU6SXNzdWU0MDQ5MTUyNzY=",
+		"reactions":0,
+		"status":"Coming Soon",
+		"stock":false,
+		"title":"wizard-hat",
+		"updated":"2019-01-30T18:58:17Z",
+		"upvotes":0,
+		"user":"goyney"
+	},{
+		"brand":false,
 		"comments":1,
 		"created":"2019-01-28T22:50:17Z",
 		"downvotes":0,
 		"home":false,
 		"id":3860,
-		"labels":["Alias","Contribution","Icon Request"],
-		"milestone":"Version 3.8.xx",
+		"labels":["Alias","Breaking Change","Contribution","Icon Request"],
+		"milestone":"Version 3.9.xx",
 		"node_id":"MDU6SXNzdWU0MDQwNDI3NDY=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"swiss-cross\/hospital variants",
-		"updated":"2019-01-29T14:14:18Z",
+		"updated":"2019-01-29T15:33:15Z",
 		"upvotes":0,
 		"user":"EthanKing96"
 	},{
@@ -30,7 +81,7 @@
 		"status":"Pending",
 		"stock":true,
 		"title":"Blog",
-		"updated":"2019-01-28T15:04:17Z",
+		"updated":"2019-01-30T11:32:10Z",
 		"upvotes":0,
 		"user":"MathiasKandelborg"
 	},{
@@ -52,36 +103,36 @@
 		"user":"sureshreddyputta"
 	},{
 		"brand":false,
-		"comments":2,
+		"comments":3,
 		"created":"2019-01-25T04:35:41Z",
 		"downvotes":0,
 		"home":false,
 		"id":3850,
-		"labels":["Icon Request"],
-		"milestone":null,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Version 3.9.xx",
 		"node_id":"MDU6SXNzdWU0MDMwMDI2MDI=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"Gantry",
-		"updated":"2019-01-28T08:46:49Z",
+		"updated":"2019-01-29T15:57:21Z",
 		"upvotes":0,
 		"user":"sureshreddyputta"
 	},{
 		"brand":false,
-		"comments":3,
+		"comments":4,
 		"created":"2019-01-25T04:32:14Z",
 		"downvotes":0,
 		"home":false,
 		"id":3849,
-		"labels":["Icon Request","Needs More Information"],
+		"labels":["Contribution","Icon Request","Needs More Information"],
 		"milestone":null,
 		"node_id":"MDU6SXNzdWU0MDMwMDIwMTU=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"Billboard \/ Hoarding",
-		"updated":"2019-01-25T12:59:06Z",
+		"updated":"2019-01-30T23:03:26Z",
 		"upvotes":0,
 		"user":"sureshreddyputta"
 	},{
@@ -92,14 +143,14 @@
 		"home":false,
 		"id":3848,
 		"labels":["Contribution","High Priority","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWU0MDI1NDI2NjM=",
-		"reactions":2,
+		"reactions":3,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"format-comma-*",
-		"updated":"2019-01-24T20:21:11Z",
-		"upvotes":2,
+		"updated":"2019-01-29T21:50:44Z",
+		"upvotes":3,
 		"user":"spencerfeng"
 	},{
 		"brand":false,
@@ -126,7 +177,7 @@
 		"home":false,
 		"id":3844,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.8.xx",
+		"milestone":"Version 3.9.xx",
 		"node_id":"MDU6SXNzdWU0MDE2Nzg3Njk=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -171,7 +222,7 @@
 		"user":"nlambuca"
 	},{
 		"brand":false,
-		"comments":12,
+		"comments":13,
 		"created":"2019-01-20T21:28:51Z",
 		"downvotes":0,
 		"home":true,
@@ -183,7 +234,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Light icons",
-		"updated":"2019-01-22T08:01:55Z",
+		"updated":"2019-01-31T07:05:16Z",
 		"upvotes":0,
 		"user":"hulkhaugen"
 	},{
@@ -313,7 +364,7 @@
 		"home":false,
 		"id":3817,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzOTgzMDA0Mjk=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -336,7 +387,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"golf-tee",
-		"updated":"2019-01-10T18:23:41Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"goyney"
 	},{
@@ -489,7 +540,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"car-seat",
-		"updated":"2019-01-14T18:20:35Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"goyney"
 	},{
@@ -523,7 +574,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"health-insurance-id-card",
-		"updated":"2019-01-14T17:53:04Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"jonnyborg"
 	},{
@@ -540,7 +591,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Table tennis",
-		"updated":"2019-01-08T02:42:54Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"Gualty"
 	},{
@@ -557,7 +608,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"key-wireless",
-		"updated":"2018-12-28T16:08:49Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"MrGrigri"
 	},{
@@ -591,7 +642,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"fireplace icon",
-		"updated":"2019-01-11T03:17:37Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"dgorski"
 	},{
@@ -608,7 +659,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"home-import, home-export",
-		"updated":"2019-01-08T12:09:53Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"Mariusthvdb"
 	},{
@@ -659,7 +710,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"local_stadium",
-		"updated":"2018-12-05T23:29:51Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":1,
 		"user":"henriquecm"
 	},{
@@ -693,7 +744,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"baby-buggy-off \/ child-friendly-off",
-		"updated":"2018-12-05T18:03:23Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"Webifi"
 	},{
@@ -710,7 +761,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Carpool",
-		"updated":"2019-01-08T14:31:39Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"systect"
 	},{
@@ -727,7 +778,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"sign-direction-modifiers",
-		"updated":"2018-11-29T18:04:53Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"MrGrigri"
 	},{
@@ -744,7 +795,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"flag-modifiers-outline",
-		"updated":"2018-11-28T15:17:47Z",
+		"updated":"2019-01-29T21:56:16Z",
 		"upvotes":0,
 		"user":"MrGrigri"
 	},{
@@ -761,7 +812,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"New weather icons",
-		"updated":"2019-01-07T02:39:11Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":0,
 		"user":"goyney"
 	},{
@@ -778,7 +829,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"network-card",
-		"updated":"2018-11-25T06:38:02Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":0,
 		"user":"Shikareth"
 	},{
@@ -789,7 +840,7 @@
 		"home":false,
 		"id":3682,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNzkwOTMwNjg=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -806,7 +857,7 @@
 		"home":false,
 		"id":3664,
 		"labels":["Alias","Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNzUzMjQ4NjQ=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -823,7 +874,7 @@
 		"home":false,
 		"id":3588,
 		"labels":["Brand Icon","Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNjkwOTA3NDQ=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -857,7 +908,7 @@
 		"home":false,
 		"id":3562,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNjY4MjkxNTI=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -897,7 +948,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Handball",
-		"updated":"2019-01-10T18:00:19Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":0,
 		"user":"matthew2402"
 	},{
@@ -1044,7 +1095,7 @@
 		"home":false,
 		"id":3513,
 		"labels":["Brand Icon","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNjM2NTkxMzk=",
 		"reactions":0,
 		"status":"Pending",
@@ -1061,7 +1112,7 @@
 		"home":false,
 		"id":3511,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNjM0MjQzMDg=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1095,7 +1146,7 @@
 		"home":false,
 		"id":3500,
 		"labels":["Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNjI2MDE2NjA=",
 		"reactions":0,
 		"status":"Pending",
@@ -1112,7 +1163,7 @@
 		"home":false,
 		"id":3487,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNjEyOTY3MDM=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1129,7 +1180,7 @@
 		"home":false,
 		"id":3485,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNjA4MzAwNDk=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1163,7 +1214,7 @@
 		"home":false,
 		"id":3461,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNTg1MDM4OTI=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1197,7 +1248,7 @@
 		"home":false,
 		"id":3451,
 		"labels":["Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNTc0MTMzNzU=",
 		"reactions":0,
 		"status":"Pending",
@@ -1214,7 +1265,7 @@
 		"home":false,
 		"id":3448,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNTY2MDU0MzE=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1231,7 +1282,7 @@
 		"home":false,
 		"id":3409,
 		"labels":["Alias","Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNTE4NTQ1NzI=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -1248,7 +1299,7 @@
 		"home":false,
 		"id":3403,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNTExNDc3MzY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1265,7 +1316,7 @@
 		"home":false,
 		"id":3394,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNTAxMTAyNjQ=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1299,7 +1350,7 @@
 		"home":false,
 		"id":3370,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNDg3ODM0Mjc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1333,7 +1384,7 @@
 		"home":false,
 		"id":3332,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNDIyMDc3MDA=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1350,7 +1401,7 @@
 		"home":false,
 		"id":3327,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzNDE0NzAyMjE=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1367,7 +1418,7 @@
 		"home":false,
 		"id":3297,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.7.xx",
+		"milestone":"Version 3.8.xx",
 		"node_id":"MDU6SXNzdWUzMzc5NDM2OTA=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -1441,7 +1492,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Suite of Music Icons",
-		"updated":"2018-11-26T04:18:23Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":1,
 		"user":"goyney"
 	},{
@@ -1458,7 +1509,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"backspace-reverse",
-		"updated":"2018-11-25T06:32:01Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":1,
 		"user":"goyney"
 	},{
@@ -1475,7 +1526,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"snail-mail",
-		"updated":"2018-11-25T06:32:09Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":0,
 		"user":"goyney"
 	},{
@@ -1492,7 +1543,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"\"sun umbrella (protection)\"",
-		"updated":"2018-11-25T06:31:39Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":0,
 		"user":"WideAngleDe"
 	},{
@@ -1509,7 +1560,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Disk and partition add remove icon",
-		"updated":"2018-11-25T06:31:16Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":0,
 		"user":"codeparksoftware"
 	},{
@@ -1560,7 +1611,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"video-input-scart",
-		"updated":"2018-11-25T06:30:31Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":0,
 		"user":"GreenTurtwig"
 	},{
@@ -1577,7 +1628,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Patio Heater Icon",
-		"updated":"2018-11-25T06:29:55Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":0,
 		"user":"gabglus"
 	},{
@@ -1594,7 +1645,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Wallet with plus",
-		"updated":"2018-11-25T06:29:46Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":0,
 		"user":"sukhvi"
 	},{
@@ -1611,12 +1662,12 @@
 		"status":"Pending",
 		"stock":true,
 		"title":"perm-device-information",
-		"updated":"2018-11-25T06:29:38Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":0,
 		"user":"peddersen"
 	},{
 		"brand":true,
-		"comments":4,
+		"comments":5,
 		"created":"2018-05-13T19:51:59Z",
 		"downvotes":0,
 		"home":true,
@@ -1628,7 +1679,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Node-RED Icon",
-		"updated":"2019-01-25T16:18:46Z",
+		"updated":"2019-01-30T11:23:13Z",
 		"upvotes":0,
 		"user":"james-fry"
 	},{
@@ -1645,7 +1696,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"cabinet, pantry, storage, provisions...",
-		"updated":"2018-11-25T06:29:12Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":0,
 		"user":"Mariusthvdb"
 	},{
@@ -1662,7 +1713,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Automotive Transmission",
-		"updated":"2018-11-25T06:28:54Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":2,
 		"user":"Alekhen"
 	},{
@@ -1679,7 +1730,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"baby-bottle",
-		"updated":"2018-11-25T06:28:44Z",
+		"updated":"2019-01-29T21:55:54Z",
 		"upvotes":0,
 		"user":"MrGrigri"
 	},{
@@ -1690,7 +1741,7 @@
 		"home":true,
 		"id":3158,
 		"labels":["Contribution","Home Assistant","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMjExODQwMTE=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1741,7 +1792,7 @@
 		"home":false,
 		"id":3140,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTk1MjA1NTY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1758,7 +1809,7 @@
 		"home":false,
 		"id":3133,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTg2Mjc3MzY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1775,7 +1826,7 @@
 		"home":false,
 		"id":3131,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTg2MjU5Mzg=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1792,7 +1843,7 @@
 		"home":false,
 		"id":3129,
 		"labels":["Alias","Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTg2MjUyMTU=",
 		"reactions":2,
 		"status":"Coming Soon",
@@ -1809,7 +1860,7 @@
 		"home":false,
 		"id":3128,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTg2MjQ3ODM=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -1826,7 +1877,7 @@
 		"home":true,
 		"id":3114,
 		"labels":["Contribution","Home Assistant","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTc1Nzk1OTM=",
 		"reactions":2,
 		"status":"Coming Soon",
@@ -1843,7 +1894,7 @@
 		"home":false,
 		"id":3113,
 		"labels":["Alias","Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTc1NzIzNjM=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -1894,7 +1945,7 @@
 		"home":false,
 		"id":3101,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTY1NTcyNzE=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1911,7 +1962,7 @@
 		"home":false,
 		"id":3099,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTY1NTY5ODg=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1945,7 +1996,7 @@
 		"home":false,
 		"id":3088,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTU2NzQzOTU=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1962,7 +2013,7 @@
 		"home":false,
 		"id":3082,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTU0Mjk5Nzg=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -1979,7 +2030,7 @@
 		"home":false,
 		"id":3081,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTU0Mjg1NTY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -1996,7 +2047,7 @@
 		"home":false,
 		"id":3080,
 		"labels":["Icon Request","Stock Google Icon","Update Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTU0Mjc2MzM=",
 		"reactions":0,
 		"status":"Pending",
@@ -2013,7 +2064,7 @@
 		"home":false,
 		"id":3079,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTU0MTQyNTc=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -2030,7 +2081,7 @@
 		"home":false,
 		"id":3076,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTUyOTI0MTU=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2047,7 +2098,7 @@
 		"home":false,
 		"id":3075,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTUxODc3MDU=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2081,7 +2132,7 @@
 		"home":false,
 		"id":3070,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTUwMjcxMzI=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2183,7 +2234,7 @@
 		"home":false,
 		"id":3058,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTQzMzQwNTY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2217,7 +2268,7 @@
 		"home":false,
 		"id":3052,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTM2OTA1Nzg=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2251,7 +2302,7 @@
 		"home":false,
 		"id":3050,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTM1NjQ3Nzg=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2285,7 +2336,7 @@
 		"home":false,
 		"id":3045,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTM0NzM3MzI=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2302,7 +2353,7 @@
 		"home":false,
 		"id":3043,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTM0NDU1OTc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2336,7 +2387,7 @@
 		"home":false,
 		"id":3034,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTI3NTM0OTk=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2353,7 +2404,7 @@
 		"home":false,
 		"id":3024,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTIwNzk0OTU=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2370,7 +2421,7 @@
 		"home":false,
 		"id":3023,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTIwNzgwNDM=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2404,7 +2455,7 @@
 		"home":false,
 		"id":3010,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTEzMzM1MTc=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -2421,7 +2472,7 @@
 		"home":true,
 		"id":3004,
 		"labels":["Contribution","Home Assistant","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTA1NjQ0MDQ=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -2438,7 +2489,7 @@
 		"home":true,
 		"id":3002,
 		"labels":["Contribution","Home Assistant","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMTAzNDg3ODY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2455,7 +2506,7 @@
 		"home":false,
 		"id":2983,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMDkzMTY0NDU=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2472,7 +2523,7 @@
 		"home":false,
 		"id":2970,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMDg4Njk2OTk=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2489,7 +2540,7 @@
 		"home":false,
 		"id":2967,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMDg3MDA2Mzk=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2540,7 +2591,7 @@
 		"home":false,
 		"id":2946,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMDc3OTE2NjY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2608,7 +2659,7 @@
 		"home":false,
 		"id":2908,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMDQ5ODkwNzA=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2625,7 +2676,7 @@
 		"home":false,
 		"id":2904,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMDQ2NDQ3MzM=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2642,7 +2693,7 @@
 		"home":true,
 		"id":2900,
 		"labels":["Contribution","Home Assistant","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMDQyOTg1NTc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2693,7 +2744,7 @@
 		"home":false,
 		"id":2879,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.6.xx",
+		"milestone":"Version 3.7.xx",
 		"node_id":"MDU6SXNzdWUzMDI2Njc4OTc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -2852,7 +2903,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Flow",
-		"updated":"2018-11-25T06:17:32Z",
+		"updated":"2019-01-29T21:55:26Z",
 		"upvotes":0,
 		"user":"boshinski"
 	},{
@@ -2886,7 +2937,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"lightbulb-group",
-		"updated":"2018-11-25T06:17:10Z",
+		"updated":"2019-01-29T21:55:26Z",
 		"upvotes":0,
 		"user":"user897943"
 	},{
@@ -2920,7 +2971,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"video-2d",
-		"updated":"2018-11-25T06:16:59Z",
+		"updated":"2019-01-29T21:55:26Z",
 		"upvotes":0,
 		"user":"matthew2402"
 	},{
@@ -3022,7 +3073,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"CAD",
-		"updated":"2018-11-25T06:16:45Z",
+		"updated":"2019-01-29T21:55:26Z",
 		"upvotes":0,
 		"user":"esamk"
 	},{
@@ -3090,7 +3141,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Confluence",
-		"updated":"2018-11-26T19:41:58Z",
+		"updated":"2019-01-29T21:55:26Z",
 		"upvotes":0,
 		"user":"ramzimaalej"
 	},{
@@ -3158,7 +3209,7 @@
 		"status":"Low Priority",
 		"stock":false,
 		"title":"Ripple (XRP) ",
-		"updated":"2018-11-25T06:14:43Z",
+		"updated":"2019-01-29T21:55:26Z",
 		"upvotes":0,
 		"user":"frittes"
 	},{
@@ -3175,7 +3226,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"fingerprint-off",
-		"updated":"2018-11-25T06:14:30Z",
+		"updated":"2019-01-29T21:55:25Z",
 		"upvotes":0,
 		"user":"othomas"
 	},{
@@ -3192,7 +3243,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Picture-in-Picture",
-		"updated":"2018-11-27T16:11:07Z",
+		"updated":"2019-01-29T21:55:25Z",
 		"upvotes":0,
 		"user":"tyler-austin"
 	},{
@@ -3209,7 +3260,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"3 People",
-		"updated":"2018-11-25T06:14:12Z",
+		"updated":"2019-01-29T21:55:25Z",
 		"upvotes":0,
 		"user":"dev-myatminsoe"
 	},{
@@ -3260,7 +3311,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Unicode Logo",
-		"updated":"2018-11-26T19:50:44Z",
+		"updated":"2019-01-29T21:55:25Z",
 		"upvotes":0,
 		"user":"DragonVirus"
 	},{
@@ -3294,7 +3345,7 @@
 		"status":"Low Priority",
 		"stock":false,
 		"title":"speedometer-slow ",
-		"updated":"2018-11-25T06:13:40Z",
+		"updated":"2019-01-29T21:55:25Z",
 		"upvotes":0,
 		"user":"b-jazz"
 	},{
@@ -3311,7 +3362,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Wrong location icon",
-		"updated":"2018-11-25T06:13:18Z",
+		"updated":"2019-01-29T21:55:25Z",
 		"upvotes":0,
 		"user":"kostaskoufogiannis"
 	},{
@@ -3379,7 +3430,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Penguin",
-		"updated":"2018-11-25T06:12:56Z",
+		"updated":"2019-01-29T21:55:25Z",
 		"upvotes":1,
 		"user":"augustin32"
 	},{
@@ -3396,7 +3447,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"A Few Icons from Analytics",
-		"updated":"2018-11-26T19:51:30Z",
+		"updated":"2019-01-29T21:55:25Z",
 		"upvotes":0,
 		"user":"PeterShaggyNoble"
 	},{
@@ -3430,7 +3481,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"layers-triple",
-		"updated":"2018-11-25T06:12:14Z",
+		"updated":"2019-01-29T21:55:25Z",
 		"upvotes":0,
 		"user":"vieb84"
 	},{
@@ -3458,7 +3509,7 @@
 		"home":false,
 		"id":2650,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNzgyNzQ3Mjc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3475,7 +3526,7 @@
 		"home":false,
 		"id":2639,
 		"labels":["Brand Icon","Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNzc1NDk2MDc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3509,7 +3560,7 @@
 		"home":true,
 		"id":2628,
 		"labels":["Alias","Contribution","Home Assistant","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNzY4MzgxNTQ=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3611,7 +3662,7 @@
 		"home":false,
 		"id":2603,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNzQwNTQzOTQ=",
 		"reactions":2,
 		"status":"Coming Soon",
@@ -3662,7 +3713,7 @@
 		"home":false,
 		"id":2596,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNzMyMTEyOTM=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3704,7 +3755,7 @@
 		"title":"fleur-de-lis",
 		"updated":"2018-03-09T11:21:21Z",
 		"upvotes":0,
-		"user":"k5cents"
+		"user":"kiernann"
 	},{
 		"brand":false,
 		"comments":0,
@@ -3781,7 +3832,7 @@
 		"home":false,
 		"id":2556,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjc5NDgzMTQ=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3815,7 +3866,7 @@
 		"home":false,
 		"id":2544,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjcwNzI2Njk=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3849,7 +3900,7 @@
 		"home":false,
 		"id":2535,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjY3MjY5Mjc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3866,7 +3917,7 @@
 		"home":false,
 		"id":2534,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjY3MTc4Njc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3883,7 +3934,7 @@
 		"home":false,
 		"id":2526,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjU4MjE1NTY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3934,7 +3985,7 @@
 		"home":false,
 		"id":2520,
 		"labels":["Alias","Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjU0NDQwNTQ=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -3976,7 +4027,7 @@
 		"title":"message-clock",
 		"updated":"2018-03-08T17:41:02Z",
 		"upvotes":0,
-		"user":"k5cents"
+		"user":"kiernann"
 	},{
 		"brand":false,
 		"comments":2,
@@ -3985,7 +4036,7 @@
 		"home":false,
 		"id":2514,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjUyNTEzMjQ=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4019,7 +4070,7 @@
 		"home":false,
 		"id":2475,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjE2MjY4MDE=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4036,7 +4087,7 @@
 		"home":false,
 		"id":2473,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjE1MzIxMDU=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4070,7 +4121,7 @@
 		"home":false,
 		"id":2465,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNjExMTIzOTY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4104,7 +4155,7 @@
 		"home":false,
 		"id":2453,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTk4NTM0Njk=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4138,7 +4189,7 @@
 		"home":false,
 		"id":2445,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTk1NzgxNjc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4155,7 +4206,7 @@
 		"home":false,
 		"id":2413,
 		"labels":["Brand Icon","Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTY1Njg0NTg=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4172,7 +4223,7 @@
 		"home":false,
 		"id":2411,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTY0OTc2NjQ=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4189,7 +4240,7 @@
 		"home":false,
 		"id":2407,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTY0NTg4OTU=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -4206,7 +4257,7 @@
 		"home":false,
 		"id":2398,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTYyNjczNDc=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -4240,7 +4291,7 @@
 		"home":false,
 		"id":2390,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTU2MTQ0MDM=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4308,7 +4359,7 @@
 		"home":false,
 		"id":2366,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTQwNTE2MjQ=",
 		"reactions":3,
 		"status":"Coming Soon",
@@ -4325,7 +4376,7 @@
 		"home":false,
 		"id":2365,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTM5OTgyMzQ=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4342,7 +4393,7 @@
 		"home":false,
 		"id":2363,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNTM4ODMwMDU=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4401,7 +4452,7 @@
 		"title":"Wired and Wireless Earbuds",
 		"updated":"2017-10-06T15:19:33Z",
 		"upvotes":0,
-		"user":"k5cents"
+		"user":"kiernann"
 	},{
 		"brand":false,
 		"comments":7,
@@ -4410,7 +4461,7 @@
 		"home":false,
 		"id":2328,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNDk3Mjc0MjA=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4427,7 +4478,7 @@
 		"home":false,
 		"id":2316,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNDg0MzM5NTQ=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -4444,7 +4495,7 @@
 		"home":false,
 		"id":2312,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNDgxNzQyNzk=",
 		"reactions":2,
 		"status":"Coming Soon",
@@ -4461,7 +4512,7 @@
 		"home":true,
 		"id":2289,
 		"labels":["Contribution","Home Assistant","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNDYxMzUwNzQ=",
 		"reactions":4,
 		"status":"Coming Soon",
@@ -4495,7 +4546,7 @@
 		"home":false,
 		"id":2265,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNDQ1Mjc1MDY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4503,7 +4554,7 @@
 		"title":"Missing Material.io Icons",
 		"updated":"2018-11-27T14:45:29Z",
 		"upvotes":0,
-		"user":"k5cents"
+		"user":"kiernann"
 	},{
 		"brand":false,
 		"comments":3,
@@ -4512,7 +4563,7 @@
 		"home":false,
 		"id":2263,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNDQ0Njg5ODI=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4529,7 +4580,7 @@
 		"home":false,
 		"id":2261,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNDQzNzQ1MDc=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4546,7 +4597,7 @@
 		"home":false,
 		"id":2255,
 		"labels":["Contribution","Icon Request","Needs More Information","Stock Google Icon"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNDM5MTIxODY=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4580,7 +4631,7 @@
 		"home":false,
 		"id":2247,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
+		"milestone":"Version 3.6.xx",
 		"node_id":"MDU6SXNzdWUyNDMyMzg1Mzg=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -4591,7 +4642,7 @@
 		"user":"augustin32"
 	},{
 		"brand":false,
-		"comments":5,
+		"comments":7,
 		"created":"2017-07-14T20:33:02Z",
 		"downvotes":0,
 		"home":false,
@@ -4603,7 +4654,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"popout",
-		"updated":"2018-11-25T05:53:56Z",
+		"updated":"2019-01-29T22:06:00Z",
 		"upvotes":0,
 		"user":"MrGrigri"
 	},{
@@ -4622,7 +4673,7 @@
 		"title":"phone-location",
 		"updated":"2018-03-08T17:11:27Z",
 		"upvotes":0,
-		"user":"k5cents"
+		"user":"kiernann"
 	},{
 		"brand":false,
 		"comments":0,
@@ -4640,23 +4691,6 @@
 		"updated":"2018-03-08T12:20:57Z",
 		"upvotes":0,
 		"user":"brimba"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2017-07-04T11:28:53Z",
-		"downvotes":0,
-		"home":false,
-		"id":2220,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
-		"node_id":"MDU6SXNzdWUyNDAzOTMyNjI=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Cactus",
-		"updated":"2018-11-25T05:53:32Z",
-		"upvotes":0,
-		"user":"JamesCoyle"
 	},{
 		"brand":false,
 		"comments":8,
@@ -4677,23 +4711,6 @@
 	},{
 		"brand":false,
 		"comments":2,
-		"created":"2017-06-27T19:47:57Z",
-		"downvotes":0,
-		"home":false,
-		"id":2207,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
-		"node_id":"MDU6SXNzdWUyMzg5NjE5MDg=",
-		"reactions":2,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Edit History",
-		"updated":"2018-11-25T05:53:13Z",
-		"upvotes":2,
-		"user":"MrGrigri"
-	},{
-		"brand":false,
-		"comments":2,
 		"created":"2017-06-20T15:50:20Z",
 		"downvotes":0,
 		"home":false,
@@ -4705,7 +4722,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Water outline and dew point",
-		"updated":"2018-11-25T05:52:55Z",
+		"updated":"2019-01-29T21:54:59Z",
 		"upvotes":0,
 		"user":"GreenTurtwig"
 	},{
@@ -4790,7 +4807,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Necklace Icon",
-		"updated":"2018-11-25T05:52:03Z",
+		"updated":"2019-01-29T21:54:59Z",
 		"upvotes":0,
 		"user":"emanf"
 	},{
@@ -4841,26 +4858,9 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"send-circle",
-		"updated":"2018-11-25T05:51:50Z",
+		"updated":"2019-01-29T21:54:59Z",
 		"upvotes":0,
 		"user":"cachapa"
-	},{
-		"brand":false,
-		"comments":12,
-		"created":"2017-06-12T14:22:58Z",
-		"downvotes":0,
-		"home":false,
-		"id":2151,
-		"labels":["Alias","Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
-		"node_id":"MDU6SXNzdWUyMzUyNDk0MDU=",
-		"reactions":1,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Document-Edit \/ Contract",
-		"updated":"2018-11-25T05:51:37Z",
-		"upvotes":1,
-		"user":"ricardorado9"
 	},{
 		"brand":false,
 		"comments":0,
@@ -4894,7 +4894,7 @@
 		"title":"Encyclopedia Icon",
 		"updated":"2017-06-14T01:31:58Z",
 		"upvotes":0,
-		"user":"k5cents"
+		"user":"kiernann"
 	},{
 		"brand":true,
 		"comments":0,
@@ -4943,29 +4943,12 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Air Horn",
-		"updated":"2018-11-25T05:50:46Z",
+		"updated":"2019-01-29T21:54:59Z",
 		"upvotes":0,
 		"user":"JapanYoshi"
 	},{
-		"brand":true,
-		"comments":13,
-		"created":"2017-05-23T15:49:33Z",
-		"downvotes":0,
-		"home":false,
-		"id":2106,
-		"labels":["Brand Icon","Contribution","Icon Request"],
-		"milestone":"Version 3.5.xx",
-		"node_id":"MDU6SXNzdWUyMzA3NTc5OTM=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"Jabber icon",
-		"updated":"2019-01-02T17:11:20Z",
-		"upvotes":0,
-		"user":"andrewnenakhov"
-	},{
 		"brand":false,
-		"comments":8,
+		"comments":18,
 		"created":"2017-05-23T15:42:38Z",
 		"downvotes":0,
 		"home":false,
@@ -4977,7 +4960,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Volume-off-variant",
-		"updated":"2018-11-25T05:49:48Z",
+		"updated":"2019-01-30T21:11:14Z",
 		"upvotes":0,
 		"user":"andrewnenakhov"
 	},{
@@ -4999,7 +4982,7 @@
 		"user":"JosefKatic"
 	},{
 		"brand":false,
-		"comments":10,
+		"comments":11,
 		"created":"2017-05-19T17:34:08Z",
 		"downvotes":0,
 		"home":false,
@@ -5011,7 +4994,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Footprint",
-		"updated":"2019-01-09T21:12:34Z",
+		"updated":"2019-01-30T05:22:03Z",
 		"upvotes":0,
 		"user":"MrMarlin"
 	},{
@@ -5107,13 +5090,13 @@
 		"home":false,
 		"id":2067,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUyMjYyOTg0MzU=",
 		"reactions":1,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Popsicle \/ Ice Pop",
-		"updated":"2018-11-25T05:48:09Z",
+		"updated":"2019-01-29T21:50:44Z",
 		"upvotes":1,
 		"user":"KIQ19"
 	},{
@@ -5215,7 +5198,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Clapperboard open",
-		"updated":"2018-11-25T16:14:18Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":0,
 		"user":"bernzrdo"
 	},{
@@ -5249,7 +5232,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Smoke",
-		"updated":"2018-11-26T18:20:17Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":0,
 		"user":"metbril"
 	},{
@@ -5266,7 +5249,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Bee",
-		"updated":"2019-01-10T17:58:45Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":1,
 		"user":"endlessbux"
 	},{
@@ -5300,7 +5283,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"A\/B Testing",
-		"updated":"2018-11-26T01:42:17Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":0,
 		"user":"Sjennon"
 	},{
@@ -5464,13 +5447,13 @@
 		"home":false,
 		"id":1858,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUyMDY5ODIwNzg=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Starred list",
-		"updated":"2018-11-25T05:40:06Z",
+		"updated":"2019-01-29T21:50:43Z",
 		"upvotes":0,
 		"user":"ursusursus"
 	},{
@@ -5719,13 +5702,13 @@
 		"home":false,
 		"id":1770,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUyMDEyODA5MjU=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"screen-lock and screen-lock-off icon request",
-		"updated":"2018-11-25T05:38:22Z",
+		"updated":"2019-01-29T21:50:43Z",
 		"upvotes":0,
 		"user":"rabross"
 	},{
@@ -5753,13 +5736,13 @@
 		"home":false,
 		"id":1722,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxOTc5MzIwMjk=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"FAQ ",
-		"updated":"2018-11-25T05:35:03Z",
+		"updated":"2019-01-29T21:50:43Z",
 		"upvotes":0,
 		"user":"ekntrtmz"
 	},{
@@ -5787,30 +5770,30 @@
 		"home":false,
 		"id":1706,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxOTYxMjkwNTQ=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Missing google icon list",
-		"updated":"2018-11-26T03:29:24Z",
+		"updated":"2019-01-29T21:50:43Z",
 		"upvotes":0,
 		"user":"justechn"
 	},{
 		"brand":false,
-		"comments":3,
+		"comments":4,
 		"created":"2016-12-11T17:30:15Z",
 		"downvotes":0,
 		"home":false,
 		"id":1696,
 		"labels":["Contribution","Icon Request","Needs More Information","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxOTQ4NDQxNjY=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"timeline",
-		"updated":"2019-01-19T19:19:15Z",
+		"updated":"2019-01-29T22:11:13Z",
 		"upvotes":0,
 		"user":"curliq"
 	},{
@@ -5821,13 +5804,13 @@
 		"home":true,
 		"id":1694,
 		"labels":["Alias","Contribution","Home Assistant","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxOTQ4MDE3MTY=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"leak_add, leak_remove (+aliases proximity sensor)",
-		"updated":"2018-11-26T02:50:10Z",
+		"updated":"2019-01-29T21:50:43Z",
 		"upvotes":0,
 		"user":"ambitmaster"
 	},{
@@ -5889,13 +5872,13 @@
 		"home":false,
 		"id":1634,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxODkyNTgxODA=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"phone-off",
-		"updated":"2018-11-25T05:31:04Z",
+		"updated":"2019-01-29T21:50:43Z",
 		"upvotes":0,
 		"user":"savaka2"
 	},{
@@ -5957,13 +5940,13 @@
 		"home":false,
 		"id":1599,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxODUxMTcxMzQ=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Missed Google Material Design Icons",
-		"updated":"2018-11-27T14:16:39Z",
+		"updated":"2019-01-29T21:50:42Z",
 		"upvotes":0,
 		"user":"SuperITMan"
 	},{
@@ -6008,13 +5991,13 @@
 		"home":false,
 		"id":1573,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxODI4NDg5NzQ=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"No Translation Icon",
-		"updated":"2018-11-25T05:27:19Z",
+		"updated":"2019-01-29T21:50:42Z",
 		"upvotes":0,
 		"user":"solomojo"
 	},{
@@ -6025,13 +6008,13 @@
 		"home":false,
 		"id":1568,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxODI1Nzc2OTI=",
 		"reactions":2,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"camera-add",
-		"updated":"2018-11-26T03:39:58Z",
+		"updated":"2019-01-29T21:50:42Z",
 		"upvotes":2,
 		"user":"jQuery2DotNet"
 	},{
@@ -6059,13 +6042,13 @@
 		"home":false,
 		"id":1561,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxODE4ODQ5MTA=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Hierarchical list icon. Suggestion + contribution",
-		"updated":"2018-11-27T14:14:32Z",
+		"updated":"2019-01-29T21:50:42Z",
 		"upvotes":0,
 		"user":"AsafAgranat"
 	},{
@@ -6144,13 +6127,13 @@
 		"home":false,
 		"id":1529,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNzkxMjgwMjE=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Open Hand \/ Move icon",
-		"updated":"2018-11-26T03:47:02Z",
+		"updated":"2019-01-29T21:50:42Z",
 		"upvotes":0,
 		"user":"dietrichg"
 	},{
@@ -6186,7 +6169,7 @@
 		"title":"Chromebox ",
 		"updated":"2017-11-30T10:43:38Z",
 		"upvotes":0,
-		"user":"k5cents"
+		"user":"kiernann"
 	},{
 		"brand":false,
 		"comments":8,
@@ -6240,19 +6223,19 @@
 		"user":"atul7398"
 	},{
 		"brand":false,
-		"comments":10,
+		"comments":11,
 		"created":"2016-09-08T13:29:17Z",
 		"downvotes":0,
 		"home":false,
 		"id":1493,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNzU3NTM3MTY=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Subscribe \/ Unsubscribe",
-		"updated":"2018-11-25T05:21:10Z",
+		"updated":"2019-01-29T22:14:09Z",
 		"upvotes":0,
 		"user":"Glurt"
 	},{
@@ -6263,13 +6246,13 @@
 		"home":false,
 		"id":1474,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNzQwNDAxMzY=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"settings_ethernet",
-		"updated":"2018-11-26T03:57:56Z",
+		"updated":"2019-01-29T21:50:41Z",
 		"upvotes":0,
 		"user":"breon"
 	},{
@@ -6280,13 +6263,13 @@
 		"home":false,
 		"id":1473,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNzM5ODY4ODE=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"ATM and POS icons",
-		"updated":"2019-01-22T04:35:06Z",
+		"updated":"2019-01-29T21:50:41Z",
 		"upvotes":0,
 		"user":"alexefremo"
 	},{
@@ -6303,7 +6286,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"piggy-bank",
-		"updated":"2018-11-26T16:58:49Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":2,
 		"user":"Depechie"
 	},{
@@ -6331,13 +6314,13 @@
 		"home":false,
 		"id":1433,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNzA5NTQ3ODI=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Slope icon request",
-		"updated":"2018-11-25T05:13:36Z",
+		"updated":"2019-01-29T21:50:41Z",
 		"upvotes":0,
 		"user":"dgngulcan"
 	},{
@@ -6365,13 +6348,13 @@
 		"home":false,
 		"id":1416,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNjk2NDE4NTM=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"a patient",
-		"updated":"2018-11-25T05:13:06Z",
+		"updated":"2019-01-29T21:50:41Z",
 		"upvotes":0,
 		"user":"Goniek"
 	},{
@@ -6382,13 +6365,13 @@
 		"home":false,
 		"id":1411,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNjk1NDg2NjY=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Fleet (multiple bus) icon",
-		"updated":"2018-11-25T05:12:32Z",
+		"updated":"2019-01-29T21:50:41Z",
 		"upvotes":0,
 		"user":"ayozebarrera"
 	},{
@@ -6535,13 +6518,13 @@
 		"home":false,
 		"id":1363,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNjU5MDgwOTg=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Wish Icon",
-		"updated":"2018-11-25T05:10:56Z",
+		"updated":"2019-01-29T21:50:41Z",
 		"upvotes":0,
 		"user":"praveenkush12"
 	},{
@@ -6569,13 +6552,13 @@
 		"home":false,
 		"id":1349,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNjQ2OTg3MjE=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Plus sign with - music icon\/playlist icon - in bottom right",
-		"updated":"2018-11-25T05:10:27Z",
+		"updated":"2019-01-29T21:50:41Z",
 		"upvotes":0,
 		"user":"bigworld12"
 	},{
@@ -6626,7 +6609,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"email-edit",
-		"updated":"2018-11-27T16:02:30Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":0,
 		"user":"vaishali-ghayal"
 	},{
@@ -6637,13 +6620,13 @@
 		"home":false,
 		"id":1339,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNjM5NzIxMTk=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"pdf-box",
-		"updated":"2018-11-27T14:28:11Z",
+		"updated":"2019-01-29T21:50:40Z",
 		"upvotes":0,
 		"user":"ajmihalic"
 	},{
@@ -6654,13 +6637,13 @@
 		"home":false,
 		"id":1336,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNjM4ODE1MjM=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Add-New-Filter icon",
-		"updated":"2018-11-25T05:07:57Z",
+		"updated":"2019-01-29T21:50:40Z",
 		"upvotes":0,
 		"user":"AndrewEastwood"
 	},{
@@ -6671,13 +6654,13 @@
 		"home":false,
 		"id":1325,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNjMxNjAyNDk=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Unshare",
-		"updated":"2018-11-25T05:07:20Z",
+		"updated":"2019-01-29T21:50:40Z",
 		"upvotes":0,
 		"user":"jandrei"
 	},{
@@ -6705,13 +6688,13 @@
 		"home":false,
 		"id":1304,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNjEzOTc5NzM=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Database Save, database restore, database export",
-		"updated":"2018-11-25T05:02:54Z",
+		"updated":"2019-01-29T21:50:40Z",
 		"upvotes":0,
 		"user":"Apaxe"
 	},{
@@ -6739,13 +6722,13 @@
 		"home":false,
 		"id":1289,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNjAwNDkwNjY=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Biometric Passport \/ E-Passport",
-		"updated":"2018-11-25T05:01:46Z",
+		"updated":"2019-01-29T21:50:40Z",
 		"upvotes":0,
 		"user":"quietmint"
 	},{
@@ -6779,7 +6762,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Fuel Tanker Icon",
-		"updated":"2019-01-11T02:46:50Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":0,
 		"user":"mmasanova"
 	},{
@@ -6790,13 +6773,13 @@
 		"home":false,
 		"id":1273,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNTkwMDYyMzA=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Jellyfish icon",
-		"updated":"2018-11-25T05:01:22Z",
+		"updated":"2019-01-29T21:50:40Z",
 		"upvotes":0,
 		"user":"cpalosrejano"
 	},{
@@ -6824,13 +6807,13 @@
 		"home":false,
 		"id":1269,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNTg1OTExODc=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"New icon - bank plus",
-		"updated":"2018-11-25T05:01:06Z",
+		"updated":"2019-01-29T21:50:39Z",
 		"upvotes":0,
 		"user":"rosemarystanley"
 	},{
@@ -6841,7 +6824,7 @@
 		"home":false,
 		"id":1253,
 		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.8.xx",
+		"milestone":"Version 3.9.xx",
 		"node_id":"MDU6SXNzdWUxNTczODI2NDg=",
 		"reactions":0,
 		"status":"Coming Soon",
@@ -6858,13 +6841,13 @@
 		"home":false,
 		"id":1232,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNTU2NTE2ODI=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"file-eye",
-		"updated":"2018-11-25T05:00:32Z",
+		"updated":"2019-01-29T21:50:39Z",
 		"upvotes":0,
 		"user":"itsmeYudist"
 	},{
@@ -6892,13 +6875,13 @@
 		"home":false,
 		"id":1209,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNTI4ODQ4NTQ=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Additional chart-* variations",
-		"updated":"2018-11-25T04:59:58Z",
+		"updated":"2019-01-29T21:50:39Z",
 		"upvotes":0,
 		"user":"kaifaust"
 	},{
@@ -6909,13 +6892,13 @@
 		"home":false,
 		"id":1203,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNTE4MjMwMTg=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"syringe",
-		"updated":"2018-11-25T04:59:38Z",
+		"updated":"2019-01-29T21:50:39Z",
 		"upvotes":0,
 		"user":"veersamrat"
 	},{
@@ -6994,13 +6977,13 @@
 		"home":false,
 		"id":1126,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxNDQ3ODg0NzI=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Extract frame from video icon",
-		"updated":"2018-11-25T04:58:20Z",
+		"updated":"2019-01-29T21:50:39Z",
 		"upvotes":0,
 		"user":"migototo"
 	},{
@@ -7045,13 +7028,13 @@
 		"home":false,
 		"id":1083,
 		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxMzkwODQ5ODU=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"chevron-triple-*",
-		"updated":"2018-11-26T04:08:36Z",
+		"updated":"2019-01-29T21:50:38Z",
 		"upvotes":0,
 		"user":"RwbyChan2"
 	},{
@@ -7096,13 +7079,13 @@
 		"home":false,
 		"id":1053,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxMzU0NDQ1NjA=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Auto focus camera [AF]",
-		"updated":"2019-01-02T12:16:09Z",
+		"updated":"2019-01-29T21:50:38Z",
 		"upvotes":0,
 		"user":"smitt522"
 	},{
@@ -7221,7 +7204,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Graph",
-		"updated":"2018-11-26T16:47:30Z",
+		"updated":"2019-01-29T21:56:15Z",
 		"upvotes":0,
 		"user":"mantenie"
 	},{
@@ -7283,13 +7266,13 @@
 		"home":false,
 		"id":889,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxMjA5ODU2MTM=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Bread \/ Bakery",
-		"updated":"2018-12-21T20:01:59Z",
+		"updated":"2019-01-29T21:50:38Z",
 		"upvotes":0,
 		"user":"mactopus"
 	},{
@@ -7300,7 +7283,7 @@
 		"home":true,
 		"id":882,
 		"labels":["Contribution","Home Assistant","Icon Request"],
-		"milestone":"Version 3.8.xx",
+		"milestone":"Version 3.9.xx",
 		"node_id":"MDU6SXNzdWUxMjAxNzk0Mzg=",
 		"reactions":1,
 		"status":"Coming Soon",
@@ -7317,13 +7300,13 @@
 		"home":false,
 		"id":864,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWUxMTg4NDE2Mzc=",
 		"reactions":0,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Stanley Knife or Scalpel",
-		"updated":"2019-01-02T17:57:57Z",
+		"updated":"2019-01-29T21:50:38Z",
 		"upvotes":0,
 		"user":"adrientetar"
 	},{
@@ -7413,23 +7396,6 @@
 		"user":"JakubSteplowski"
 	},{
 		"brand":false,
-		"comments":2,
-		"created":"2015-10-15T10:06:57Z",
-		"downvotes":0,
-		"home":false,
-		"id":755,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.8.xx",
-		"node_id":"MDU6SXNzdWUxMTE1ODUwMzY=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"footsteps",
-		"updated":"2019-01-09T21:13:28Z",
-		"upvotes":0,
-		"user":"matthew2402"
-	},{
-		"brand":false,
 		"comments":3,
 		"created":"2015-10-13T17:02:37Z",
 		"downvotes":0,
@@ -7459,7 +7425,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Location \"Enter\" and \"Exit\" icon",
-		"updated":"2018-11-27T12:40:05Z",
+		"updated":"2019-01-29T21:56:14Z",
 		"upvotes":0,
 		"user":"chrisonline"
 	},{
@@ -7595,7 +7561,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Math symbols",
-		"updated":"2019-01-11T01:46:22Z",
+		"updated":"2019-01-29T21:56:14Z",
 		"upvotes":1,
 		"user":"ketangoyani"
 	},{
@@ -7646,7 +7612,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Campfire icon ",
-		"updated":"2019-01-11T03:13:03Z",
+		"updated":"2019-01-29T21:56:14Z",
 		"upvotes":0,
 		"user":"river-visual"
 	},{
@@ -7827,13 +7793,13 @@
 		"home":false,
 		"id":263,
 		"labels":["Contribution","High Priority","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWU2NjY3MDIzNA==",
 		"reactions":1,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"select-ellipse, select-free, select-fuzzy, select-by-color",
-		"updated":"2019-01-02T12:17:53Z",
+		"updated":"2019-01-29T21:50:37Z",
 		"upvotes":1,
 		"user":"keeferrourke"
 	},{
@@ -7889,7 +7855,7 @@
 		"user":"ghost"
 	},{
 		"brand":false,
-		"comments":7,
+		"comments":8,
 		"created":"2015-02-18T15:35:20Z",
 		"downvotes":0,
 		"home":false,
@@ -7900,8 +7866,8 @@
 		"reactions":0,
 		"status":"Pending",
 		"stock":false,
-		"title":"Suggestion: Beer Icons",
-		"updated":"2019-01-27T22:08:28Z",
+		"title":"Beer Icons",
+		"updated":"2019-01-30T11:26:52Z",
 		"upvotes":0,
 		"user":"emburaman"
 	},{
@@ -7912,13 +7878,13 @@
 		"home":false,
 		"id":141,
 		"labels":["Contribution","Icon Request"],
-		"milestone":null,
+		"milestone":"Version 3.5.xx",
 		"node_id":"MDU6SXNzdWU1Njg0OTY3MA==",
 		"reactions":1,
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"bag\/purse",
-		"updated":"2019-01-02T12:16:39Z",
+		"updated":"2019-01-29T21:50:37Z",
 		"upvotes":1,
 		"user":"royvergara"
 	}

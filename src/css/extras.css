@@ -330,7 +330,7 @@ section#editor{
 	width:320px;
 }
 #editor>figure{
-	background:#fff url('data:image/svg+xml;utf-8,<svg fill="#e0e0e0" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0,0H8V8H0ZM8,8H16V16H8Z"/></svg>');
+	background:#fff url('data:image/svg+xml;utf-8,<svg fill="%23e0e0e0" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0,0H8V8H0ZM8,8H16V16H8Z"/></svg>');
 	border-radius:2px 2px 0 0;
 	height:320px;
 	margin:0 -16px 16px;
@@ -339,7 +339,7 @@ section#editor{
 	z-index:2;
 }
 #editor>figure.light{
-	background:#616161 url('data:image/svg+xml;utf-8,<svg fill="#212121" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0,0H8V8H0ZM8,8H16V16H8Z"/></svg>');
+	background:#616161 url('data:image/svg+xml;utf-8,<svg fill="%23212121" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0,0H8V8H0ZM8,8H16V16H8Z"/></svg>');
 }
 #editor span{
 	border:0 solid rgba(76,175,80,.54);
