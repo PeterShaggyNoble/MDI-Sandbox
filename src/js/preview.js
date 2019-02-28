@@ -85,7 +85,7 @@
 /*							size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
 							ghost.setAttribute(`transform`,size>24?size>48?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.5) translate(22,20)`:`translate(11,10)`);*/
 							transform=transforms[0];
-							while(!inputs.name.value&&sets[++ind])
+							while(sets[++ind])
 								for(key in (set=sets[ind]))
 									if(set.hasOwnProperty(key))
 										if(set[key].data===value){
