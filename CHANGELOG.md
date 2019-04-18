@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2019-04-18:** Updated to Material Design Icons v3.6.95.
 - **2019-02-26:** Updated to Material Design Icons v3.5.95.
 - **2019-01-29:** Updated to Material Design Icons v3.4.93.
 - **2019-01-02:** Updated to Material Design Icons v3.3.92.
