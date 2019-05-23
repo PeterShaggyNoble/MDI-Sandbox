@@ -899,12 +899,11 @@
 				let ver=this.icon[mod]||``;
 				if(ver){
 					if(ver instanceof Array){
-						ver=ver.filter(v=>/\d/.test(v));
+						ver=ver.filter(v=>/\d/.test(v)&&v<version.int);
 						ver=ver.length?ver[ver.length-1]:``;
 					}
-					if(ver>version.int)
-						ver=``;
-					else ver=`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`));
+					if(ver)
+						ver=`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`));
 				}
 				this.meta[mod].nodeValue=ver;
 			},
