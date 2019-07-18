@@ -2075,23 +2075,6 @@
 		"user":"FANMixco"
 	},{
 		"brand":false,
-		"comments":9,
-		"created":"2019-01-11T14:01:05Z",
-		"downvotes":0,
-		"home":false,
-		"id":3817,
-		"labels":["Contribution","Icon Request"],
-		"milestone":"Version 3.9.xx",
-		"node_id":"MDU6SXNzdWUzOTgzMDA0Mjk=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":false,
-		"title":"content-save-alert",
-		"updated":"2019-06-25T23:06:18Z",
-		"upvotes":0,
-		"user":"MitchBerninger"
-	},{
-		"brand":false,
 		"comments":1,
 		"created":"2019-01-10T18:10:08Z",
 		"downvotes":0,
@@ -3316,7 +3299,7 @@
 		"user":"LiadIdan"
 	},{
 		"brand":false,
-		"comments":0,
+		"comments":1,
 		"created":"2018-04-28T11:23:06Z",
 		"downvotes":0,
 		"home":false,
@@ -3328,7 +3311,7 @@
 		"status":"Coming Soon",
 		"stock":true,
 		"title":"Select-group",
-		"updated":"2019-06-22T02:14:11Z",
+		"updated":"2019-07-18T12:53:30Z",
 		"upvotes":0,
 		"user":"CoDEmanX"
 	},{
@@ -3926,23 +3909,6 @@
 		"updated":"2019-07-15T19:48:57Z",
 		"upvotes":0,
 		"user":"Mariusthvdb"
-	},{
-		"brand":false,
-		"comments":1,
-		"created":"2018-03-26T19:16:45Z",
-		"downvotes":0,
-		"home":false,
-		"id":2967,
-		"labels":["Contribution","Icon Request","Stock Google Icon"],
-		"milestone":"Version 3.9.xx",
-		"node_id":"MDU6SXNzdWUzMDg3MDA2Mzk=",
-		"reactions":0,
-		"status":"Coming Soon",
-		"stock":true,
-		"title":"Location Disabled Icon",
-		"updated":"2019-07-12T01:24:03Z",
-		"upvotes":0,
-		"user":"DavidCRivera"
 	},{
 		"brand":false,
 		"comments":0,
