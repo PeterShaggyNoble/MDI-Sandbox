@@ -39,11 +39,6 @@
 		"name":"Retired Icons",
 		"section":true
 	},
-	"rejected":{
-		"icon":"cancel",
-		"name":"Rejected Suggestions",
-		"section":true
-	},
 	"other":{
 		"icon":"help",
 		"name":"Uncategorised"

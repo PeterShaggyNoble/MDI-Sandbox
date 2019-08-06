@@ -1,5 +1,8 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2019-08-06:** Updated to Material Design Icons v3.9.95.
+- **2019-08-06:** Removed standalone version.
+- **2019-08-06:** Removed the section for rejected suggestions.
 - **2019-07-17:** Updated to Material Design Icons v3.8.95.
 - **2019-06-25:** Updated to Material Design Icons v3.7.95.
 - **2019-04-18:** Updated to Material Design Icons v3.6.95.
@@ -16,7 +19,7 @@ Only major changes and additions will be noted here.
 - **2018-09-26:** New [clothing](https://petershaggynoble.github.io/MDI-Sandbox/?categories=clothes) category added.
 - **2018-09-21:** Updated to Material Design Icons v2.8.94.
 - **2018-09-03:** Updated to Material Design Icons v2.7.94.
-- **2018-08-31:** Removed a `mdi.php` and the ability to copy the HTML tag for an icon.
+- **2018-08-31:** Removed the `mdi.php` and the ability to copy the HTML tag for an icon.
 - **2018-08-21:** Added a [tracker for icon variants](https://petershaggynoble.github.io/MDI-Sandbox/variants/).
 - **2018-08-20:** Updated to Material Design Icons v2.6.95.
 - **2018-07-11:** Updated to Material Design Icons v2.5.94.
@@ -24,7 +27,7 @@ Only major changes and additions will be noted here.
 - **2018-05-21:** Added the option to download favourites and currently filtered icons as an SVG sprite.
 - **2018-05-11:** Icons can now be copied as base-64 encoded data URIs.
 - **2018-05-10:** Added the original Google stock icons to the automated preview generator.
-- **2018-05-09:** Added a section for [rejected sugestions](https://petershaggynoble.github.io/MDI-Sandbox/?section=rejected), for the benefit of those who might have use for them.
+- **2018-05-09:** Added a section for [rejected suggestions](https://petershaggynoble.github.io/MDI-Sandbox/?section=rejected), for the benefit of those who might have use for them.
 - **2018-05-09:** Added an automated preview generator - see [README.md](README.md#preview-generator) for usage instructions.
 - **2018-05-08:** "My Favourites" renamed as "My Library".
 - **2018-05-04:** Implemented [OpenSearch](https://github.com/dewitt/opensearch).

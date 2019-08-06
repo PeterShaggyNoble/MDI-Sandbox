@@ -1,8 +1,8 @@
 {
 	let version={
 		mdi:{
-			str:`3.8.95`,
-			int:3895
+			str:`3.9.95`,
+			int:3995
 		},mdil:{
 			str:`0.2.63`,
 			int:263
@@ -793,7 +793,7 @@
 							else page.alert(`Not yet available.`);
 							break;
 						case this.actions.link:
-							if(this.custom||this.rejected)
+							if(this.custom)
 								page.alert(`Not available.`);
 							else if(this.retired)
 								page.alert(`No longer available.`);
@@ -809,7 +809,7 @@
 									page.copy(target.dataset.copy,target.dataset.confirm);
 								else if(this.retired)
 									page.alert(`No longer available.`);
-								else if(this.custom||this.rejected)
+								else if(this.custom)
 									page.alert(`Not available.`);
 								else page.alert(`Not yet available.`);
 					}
@@ -849,19 +849,18 @@
 					this.custom=0;
 					this.data=this.actions.data.dataset.copy=this.icon.data;
 					this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
-					this.retired=!!this.icon.retired/*&&this.icon.retired!==`{soon}`*/;
-					this.rejected=!!this.icon.rejected;
+					this.retired=!!this.icon.retired&&this.icon.retired<=version.int/*&&this.icon.retired!==`{soon}`*/;
 					this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
 					this.setversion(`added`);
 					this.setversion(`updated`);
 					this.setversion(`renamed`);
 					this.setversion(`retired`);
 					this.aside.classList.toggle(`nocopy`,!(this.copy=!!this.codepoint));
-					this.aside.classList.toggle(`retired`,this.retired||this.rejected);
+					this.aside.classList.toggle(`retired`,this.retired);
 				}else if(page.storage){
 					this.custom=1;
 					this.icon=this.data=this.actions.data.dataset.copy=favourites.list[name];
-					this.codepoint=this.copy=this.rejected=0;
+					this.codepoint=this.copy=0;
 					this.meta.contributor.nodeValue=`You`;
 					this.meta.added.nodeValue=this.meta.updated.nodeValue=this.meta.renamed.nodeValue=this.meta.retired.nodeValue=``;
 					this.aside.classList.add(`nocopy`,`retired`);
@@ -976,6 +975,9 @@
 								case`new`:
 									fn=icon=>icon.added===version.int;
 									break;
+								case`published`:
+									fn=icon=>icon.published===version.int;
+									break;
 								case`soon`:
 									fn=icon=>icon.added>version.int;
 									break;
@@ -983,10 +985,7 @@
 									fn=icon=>icon.retired===version.int;
 									break;
 								case`retired`:
-									fn=icon=>parseInt(icon.retired);
-									break;
-								case`rejected`:
-									fn=icon=>icon.rejected;
+									fn=icon=>icon.retired<=version.int;
 									break;
 								default:
 									fn=icon=>icon[key]&&icon[key][icon[key].length-1]===version.int;
@@ -997,7 +996,7 @@
 					if(key===`library`||category.count)
 						page.section.before(category.section=section);
 				}else category.count=icons.array.filter(icon=>
-					!icon.retired&&!icon.rejected&&icon.categories.includes(key)
+					(!icon.retired||icon.retired>version.int)&&!icon.rejected&&icon.categories.includes(key)
 				).length;
 				if(key===`library`||category.count){
 					item.lastChild.nodeValue=name;
@@ -1037,7 +1036,7 @@
 					item=this.item.cloneNode(1),
 					svg;
 				contributor.count=icons.array.filter(icon=>
-					icon.contributor&&icon.data&&!parseInt(icon.retired)&&!icon.rejected&&icon.contributor===key
+					icon.contributor&&icon.data&&(!icon.retired||icon.retired>version.int)&&!icon.rejected&&icon.contributor===key
 				).length;
 				if(contributor.count){
 					item.dataset.contributor=key;
@@ -1106,15 +1105,13 @@
 						category.section.append(icon.articles.published=article.cloneNode(1));
 					if((category=categories.list.renamed)&&icon.renamed&&icon.renamed[icon.renamed.length-1]===version.int)
 						category.section.append(icon.articles.renamed=article.cloneNode(1));
-					if((category=categories.list.removed)&&icon.retired===version.int)
+					if((category=categories.list.removed)&&icon.retired&&icon.retired===version.int)
 						category.section.append(icon.articles.removed=article.cloneNode(1));
 					if((category=categories.list.soon)&&icon.added&&icon.added>version.int)
 						category.section.append(icon.articles.soon=article.cloneNode(1));
-					if((category=categories.list.retired)&&parseInt(icon.retired))
+					if((category=categories.list.retired)&&icon.retired&&icon.retired<=version.int)
 						category.section.append(icon.articles.retired=article.cloneNode(1));
-					if((category=categories.list.rejected)&&parseInt(icon.rejected))
-						category.section.append(icon.articles.rejected=article.cloneNode(1));
-					if(!parseInt(icon.retired)&&!icon.rejected){
+					if((!icon.retired||icon.retired>version.int)&&!icon.rejected){
 						++this.total;
 						page.section.append(icon.articles.main=article);
 					}
