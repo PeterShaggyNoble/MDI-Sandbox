@@ -17,9 +17,6 @@ The main section of this project; a jacked up "cheatsheet" for MDI. Features inc
 - See which icons were [added](https://petershaggynoble.github.io/MDI-Sandbox/?section=new), [updated](https://petershaggynoble.github.io/MDI-Sandbox/?section=updated), [renamed](https://petershaggynoble.github.io/MDI-Sandbox/?section=renamed) or [removed](https://petershaggynoble.github.io/MDI-Sandbox/?section=removed) in the latest release.
 - See which icons will be [available in the next release](https://petershaggynoble.github.io/MDI-Sandbox/?section=soon).
 - Access [icons which have since been removed](https://petershaggynoble.github.io/MDI-Sandbox/?section=retired) from the MDI library.
-- Access a *small* selection of [icons which were rejected](https://petershaggynoble.github.io/MDI-Sandbox/?section=rejected) for inclusion in MDI.
-
-> **Note:** Rejected icons are provided as-is, having not passed through the usual quality control measures before being added to the main MDI library.
 
 ### Preview Generator
 ![](https://petershaggynoble.github.io/MDI-Sandbox/img/readme/previews.png)

@@ -902,7 +902,7 @@
 						ver=ver.length?ver[ver.length-1]:``;
 					}
 					if(ver)
-						ver=`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`));
+						ver=ver<=version.int?`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):``;
 				}
 				this.meta[mod].nodeValue=ver;
 			},
@@ -996,7 +996,7 @@
 					if(key===`library`||category.count)
 						page.section.before(category.section=section);
 				}else category.count=icons.array.filter(icon=>
-					(!icon.retired||icon.retired>version.int)&&!icon.rejected&&icon.categories.includes(key)
+					(!icon.retired||icon.retired>version.int)&&icon.categories.includes(key)
 				).length;
 				if(key===`library`||category.count){
 					item.lastChild.nodeValue=name;
@@ -1036,7 +1036,7 @@
 					item=this.item.cloneNode(1),
 					svg;
 				contributor.count=icons.array.filter(icon=>
-					icon.contributor&&icon.data&&(!icon.retired||icon.retired>version.int)&&!icon.rejected&&icon.contributor===key
+					icon.contributor&&icon.data&&(!icon.retired||icon.retired>version.int)&&icon.contributor===key
 				).length;
 				if(contributor.count){
 					item.dataset.contributor=key;
@@ -1111,7 +1111,7 @@
 						category.section.append(icon.articles.soon=article.cloneNode(1));
 					if((category=categories.list.retired)&&icon.retired&&icon.retired<=version.int)
 						category.section.append(icon.articles.retired=article.cloneNode(1));
-					if((!icon.retired||icon.retired>version.int)&&!icon.rejected){
+					if(!icon.retired||icon.retired>version.int){
 						++this.total;
 						page.section.append(icon.articles.main=article);
 					}
