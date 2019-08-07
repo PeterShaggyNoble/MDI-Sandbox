@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2019-08-07:** Updated to Material Design Icons v3.9.96.
 - **2019-08-06:** Updated to Material Design Icons v3.9.95.
 - **2019-08-06:** Removed standalone version.
 - **2019-08-06:** Removed the section for rejected suggestions.

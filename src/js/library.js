@@ -1,8 +1,8 @@
 {
 	let version={
 		mdi:{
-			str:`3.9.95`,
-			int:3995
+			str:`3.9.96`,
+			int:3996
 		},mdil:{
 			str:`0.2.63`,
 			int:263
