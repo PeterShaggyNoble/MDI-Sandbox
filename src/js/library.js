@@ -898,11 +898,11 @@
 				let ver=this.icon[mod]||``;
 				if(ver){
 					if(ver instanceof Array){
-						ver=ver.filter(v=>/\d/.test(v)&&v<version.int);
+						ver=ver.filter(v=>/\d/.test(v)&&v<=version.int);
 						ver=ver.length?ver[ver.length-1]:``;
 					}
 					if(ver)
-						ver=ver<=version.int?`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):``;
+						ver=ver<=version.int?`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):`Soon`;
 				}
 				this.meta[mod].nodeValue=ver;
 			},
