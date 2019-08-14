@@ -2,6 +2,23 @@
 	{
 		"brand":false,
 		"comments":0,
+		"created":"2019-08-14T14:28:18Z",
+		"downvotes":0,
+		"home":false,
+		"id":4330,
+		"labels":["Icon Request"],
+		"milestone":null,
+		"node_id":"MDU6SXNzdWU0ODA3MTE2MjI=",
+		"reactions":1,
+		"status":"Pending",
+		"stock":false,
+		"title":"Outlined dice icons",
+		"updated":"2019-08-14T14:28:18Z",
+		"upvotes":1,
+		"user":"LuckyLuke19"
+	},{
+		"brand":false,
+		"comments":0,
 		"created":"2019-08-06T14:39:53Z",
 		"downvotes":0,
 		"home":false,
