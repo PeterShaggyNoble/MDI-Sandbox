@@ -2,23 +2,6 @@
 	{
 		"brand":false,
 		"comments":0,
-		"created":"2019-08-14T14:28:18Z",
-		"downvotes":0,
-		"home":false,
-		"id":4330,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWU0ODA3MTE2MjI=",
-		"reactions":1,
-		"status":"Pending",
-		"stock":false,
-		"title":"Outlined dice icons",
-		"updated":"2019-08-14T14:28:18Z",
-		"upvotes":1,
-		"user":"LuckyLuke19"
-	},{
-		"brand":false,
-		"comments":0,
 		"created":"2019-08-06T14:39:53Z",
 		"downvotes":0,
 		"home":false,
@@ -35,7 +18,7 @@
 		"user":"goyney"
 	},{
 		"brand":false,
-		"comments":14,
+		"comments":15,
 		"created":"2019-08-05T15:17:00Z",
 		"downvotes":0,
 		"home":false,
@@ -47,7 +30,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"truck-(plus | remove | minus)",
-		"updated":"2019-08-08T23:13:28Z",
+		"updated":"2019-08-15T07:34:10Z",
 		"upvotes":0,
 		"user":"JKennedy24"
 	},{
@@ -613,7 +596,7 @@
 		"user":"goyney"
 	},{
 		"brand":false,
-		"comments":2,
+		"comments":3,
 		"created":"2019-01-08T03:00:57Z",
 		"downvotes":0,
 		"home":false,
@@ -625,12 +608,12 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Google Fit Series: Water Sports",
-		"updated":"2019-01-08T14:28:37Z",
+		"updated":"2019-08-15T09:07:25Z",
 		"upvotes":0,
 		"user":"goyney"
 	},{
 		"brand":false,
-		"comments":1,
+		"comments":2,
 		"created":"2019-01-08T02:55:36Z",
 		"downvotes":0,
 		"home":false,
@@ -642,7 +625,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Google Fit Series: Exercise Equipment",
-		"updated":"2019-01-08T12:19:44Z",
+		"updated":"2019-08-15T09:04:57Z",
 		"upvotes":0,
 		"user":"goyney"
 	},{
@@ -834,19 +817,19 @@
 		"user":"patrickcurl"
 	},{
 		"brand":false,
-		"comments":8,
+		"comments":9,
 		"created":"2018-09-17T05:07:34Z",
 		"downvotes":0,
 		"home":false,
 		"id":3481,
-		"labels":["Icon Request"],
-		"milestone":null,
+		"labels":["Contribution","Google","Icon Request"],
+		"milestone":"Upcoming Icons",
 		"node_id":"MDU6SXNzdWUzNjA3MjQzMDQ=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"spaghetti\/noodles",
-		"updated":"2019-08-08T23:36:05Z",
+		"updated":"2019-08-15T02:27:58Z",
 		"upvotes":0,
 		"user":"ghost"
 	},{
@@ -1089,23 +1072,6 @@
 		"user":"Templarian"
 	},{
 		"brand":false,
-		"comments":6,
-		"created":"2018-03-10T11:57:09Z",
-		"downvotes":0,
-		"home":false,
-		"id":2899,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzMDQwNjUxNjA=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"seat-recline-empty ",
-		"updated":"2018-11-20T15:25:22Z",
-		"upvotes":0,
-		"user":"Mariusthvdb"
-	},{
-		"brand":false,
 		"comments":0,
 		"created":"2018-03-06T10:46:39Z",
 		"downvotes":0,
@@ -1121,23 +1087,6 @@
 		"updated":"2018-03-06T10:47:21Z",
 		"upvotes":0,
 		"user":"dmandrioli"
-	},{
-		"brand":false,
-		"comments":4,
-		"created":"2018-03-04T23:18:28Z",
-		"downvotes":0,
-		"home":false,
-		"id":2873,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUzMDIxMzMyNTE=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"shaker",
-		"updated":"2018-03-05T11:41:24Z",
-		"upvotes":0,
-		"user":"coogle"
 	},{
 		"brand":false,
 		"comments":4,
@@ -1310,19 +1259,19 @@
 		"user":"Naesstrom"
 	},{
 		"brand":false,
-		"comments":0,
+		"comments":3,
 		"created":"2018-01-31T14:22:08Z",
 		"downvotes":0,
 		"home":false,
 		"id":2782,
-		"labels":["Icon Request"],
-		"milestone":null,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Upcoming Icons",
 		"node_id":"MDU6SXNzdWUyOTMxNzUwNzQ=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"Mouse scroll(wheel)",
-		"updated":"2018-01-31T14:52:08Z",
+		"updated":"2019-08-15T02:13:22Z",
 		"upvotes":0,
 		"user":"0x4C4A"
 	},{
@@ -1344,7 +1293,7 @@
 		"user":"naofireblade"
 	},{
 		"brand":false,
-		"comments":1,
+		"comments":2,
 		"created":"2018-01-24T06:25:25Z",
 		"downvotes":0,
 		"home":false,
@@ -1356,26 +1305,9 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Old man",
-		"updated":"2018-02-06T13:44:25Z",
+		"updated":"2019-08-15T09:00:39Z",
 		"upvotes":0,
 		"user":"jabrera"
-	},{
-		"brand":false,
-		"comments":1,
-		"created":"2018-01-18T14:40:13Z",
-		"downvotes":0,
-		"home":true,
-		"id":2754,
-		"labels":["Home Assistant","Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUyODk2NTE3NTU=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"Smart home hub",
-		"updated":"2018-01-18T15:17:52Z",
-		"upvotes":0,
-		"user":"czingosz"
 	},{
 		"brand":false,
 		"comments":2,
@@ -1412,7 +1344,7 @@
 		"user":"ghalimi"
 	},{
 		"brand":false,
-		"comments":1,
+		"comments":3,
 		"created":"2018-01-04T00:06:43Z",
 		"downvotes":0,
 		"home":false,
@@ -1424,7 +1356,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Multiple Translations Icon",
-		"updated":"2018-03-07T14:46:43Z",
+		"updated":"2019-08-15T02:00:08Z",
 		"upvotes":0,
 		"user":"solomojo"
 	},{
@@ -1514,19 +1446,19 @@
 		"user":"sfaquadri"
 	},{
 		"brand":false,
-		"comments":4,
+		"comments":5,
 		"created":"2017-11-14T06:45:12Z",
 		"downvotes":0,
 		"home":true,
 		"id":2600,
-		"labels":["Home Assistant","Icon Request"],
-		"milestone":null,
+		"labels":["Contribution","Home Assistant","Icon Request"],
+		"milestone":"Upcoming Icons",
 		"node_id":"MDU6SXNzdWUyNzM2ODQyMDU=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"gate-open",
-		"updated":"2019-08-13T13:52:57Z",
+		"updated":"2019-08-15T01:57:26Z",
 		"upvotes":0,
 		"user":"kovacsguido"
 	},{
@@ -1565,23 +1497,6 @@
 		"user":"kiernann"
 	},{
 		"brand":false,
-		"comments":2,
-		"created":"2017-11-05T16:30:00Z",
-		"downvotes":0,
-		"home":false,
-		"id":2583,
-		"labels":["Icon Request"],
-		"milestone":"Backlog",
-		"node_id":"MDU6SXNzdWUyNzEyOTM0NzI=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"Better sort alpha\/sort numeric icons",
-		"updated":"2019-02-04T01:14:47Z",
-		"upvotes":0,
-		"user":"heath3n"
-	},{
-		"brand":false,
 		"comments":1,
 		"created":"2017-11-04T14:14:57Z",
 		"downvotes":0,
@@ -1597,23 +1512,6 @@
 		"updated":"2018-04-14T22:26:36Z",
 		"upvotes":0,
 		"user":"Bracba"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2017-10-30T00:58:14Z",
-		"downvotes":0,
-		"home":false,
-		"id":2570,
-		"labels":["Icon Request"],
-		"milestone":"Backlog",
-		"node_id":"MDU6SXNzdWUyNjk0NTQ2Mjg=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"remove sorting",
-		"updated":"2019-08-08T19:55:09Z",
-		"upvotes":0,
-		"user":"brainloc"
 	},{
 		"brand":false,
 		"comments":5,
@@ -1684,38 +1582,21 @@
 		"user":"trycoon"
 	},{
 		"brand":false,
-		"comments":0,
+		"comments":1,
 		"created":"2017-10-13T15:45:11Z",
 		"downvotes":0,
 		"home":false,
 		"id":2517,
-		"labels":["Icon Request"],
-		"milestone":null,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Upcoming Icons",
 		"node_id":"MDU6SXNzdWUyNjUzMzQ1ODY=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"message-clock",
-		"updated":"2018-03-08T17:41:02Z",
+		"updated":"2019-08-15T01:16:58Z",
 		"upvotes":0,
 		"user":"kiernann"
-	},{
-		"brand":false,
-		"comments":1,
-		"created":"2017-10-12T16:37:29Z",
-		"downvotes":0,
-		"home":false,
-		"id":2512,
-		"labels":["Icon Request"],
-		"milestone":"Backlog",
-		"node_id":"MDU6SXNzdWUyNjUwMDg2OTc=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"camcorder",
-		"updated":"2019-08-08T19:54:25Z",
-		"upvotes":0,
-		"user":"GreenTurtwig"
 	},{
 		"brand":false,
 		"comments":11,
@@ -1770,23 +1651,6 @@
 	},{
 		"brand":false,
 		"comments":3,
-		"created":"2017-09-21T22:39:48Z",
-		"downvotes":0,
-		"home":false,
-		"id":2447,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUyNTk2NTMyNjc=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"Restaurant",
-		"updated":"2018-03-08T16:58:47Z",
-		"upvotes":0,
-		"user":"renzobianchi"
-	},{
-		"brand":false,
-		"comments":3,
 		"created":"2017-09-05T10:14:30Z",
 		"downvotes":0,
 		"home":false,
@@ -1820,38 +1684,21 @@
 		"user":"derwaldgeist"
 	},{
 		"brand":false,
-		"comments":7,
+		"comments":8,
 		"created":"2017-08-28T11:00:13Z",
 		"downvotes":0,
 		"home":false,
 		"id":2356,
-		"labels":["Icon Request"],
-		"milestone":"Backlog",
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Upcoming Icons",
 		"node_id":"MDU6SXNzdWUyNTMyOTU0Njk=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"account-lock",
-		"updated":"2019-08-08T20:02:49Z",
+		"updated":"2019-08-15T01:36:30Z",
 		"upvotes":0,
 		"user":"msayanece"
-	},{
-		"brand":false,
-		"comments":7,
-		"created":"2017-08-20T20:35:59Z",
-		"downvotes":0,
-		"home":false,
-		"id":2338,
-		"labels":["Icon Request"],
-		"milestone":"Backlog",
-		"node_id":"MDU6SXNzdWUyNTE1MTI4Mzk=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"burglar \/ thief \/ criminal ",
-		"updated":"2019-08-08T19:52:59Z",
-		"upvotes":0,
-		"user":"damianobarbati"
 	},{
 		"brand":false,
 		"comments":1,
@@ -1871,19 +1718,19 @@
 		"user":"kiernann"
 	},{
 		"brand":false,
-		"comments":2,
+		"comments":3,
 		"created":"2017-07-22T23:30:58Z",
 		"downvotes":0,
 		"home":false,
 		"id":2272,
-		"labels":["Icon Request"],
-		"milestone":null,
+		"labels":["Contribution","Icon Request"],
+		"milestone":"Upcoming Icons",
 		"node_id":"MDU6SXNzdWUyNDQ4Nzc5Nzg=",
 		"reactions":0,
-		"status":"Pending",
+		"status":"Coming Soon",
 		"stock":false,
 		"title":"Scroll lock",
-		"updated":"2018-03-08T17:14:47Z",
+		"updated":"2019-08-15T01:53:03Z",
 		"upvotes":0,
 		"user":"AdrianVovk"
 	},{
@@ -2279,23 +2126,6 @@
 		"user":"GovernmentPlates"
 	},{
 		"brand":false,
-		"comments":2,
-		"created":"2017-02-16T12:34:05Z",
-		"downvotes":0,
-		"home":false,
-		"id":1870,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUyMDgxMDg4ODY=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"Task \/ project progress icon",
-		"updated":"2019-08-13T00:40:52Z",
-		"upvotes":0,
-		"user":"Thoum"
-	},{
-		"brand":false,
 		"comments":1,
 		"created":"2017-02-15T15:34:32Z",
 		"downvotes":0,
@@ -2362,40 +2192,6 @@
 		"updated":"2019-05-16T15:34:27Z",
 		"upvotes":1,
 		"user":"kylerw"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2017-01-27T14:13:23Z",
-		"downvotes":0,
-		"home":false,
-		"id":1810,
-		"labels":["Icon Request"],
-		"milestone":"Backlog",
-		"node_id":"MDU6SXNzdWUyMDM2NDUwNTI=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"printer-check",
-		"updated":"2019-08-12T18:10:59Z",
-		"upvotes":0,
-		"user":"ruslanfedoseenko"
-	},{
-		"brand":false,
-		"comments":2,
-		"created":"2017-01-26T17:49:40Z",
-		"downvotes":0,
-		"home":false,
-		"id":1807,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWUyMDM0NDEwMTI=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"library_edit and library_remove icon request",
-		"updated":"2017-02-01T16:46:36Z",
-		"upvotes":0,
-		"user":"archirex"
 	},{
 		"brand":false,
 		"comments":2,
@@ -2704,7 +2500,7 @@
 		"user":"AeonDave"
 	},{
 		"brand":false,
-		"comments":3,
+		"comments":4,
 		"created":"2016-03-10T07:06:30Z",
 		"downvotes":0,
 		"home":false,
@@ -2716,7 +2512,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"yoga",
-		"updated":"2018-11-25T04:57:56Z",
+		"updated":"2019-08-15T08:59:16Z",
 		"upvotes":1,
 		"user":"bandna22"
 	},{
@@ -2772,7 +2568,7 @@
 		"user":"SuicSoft"
 	},{
 		"brand":false,
-		"comments":4,
+		"comments":5,
 		"created":"2015-10-19T13:07:39Z",
 		"downvotes":0,
 		"home":false,
@@ -2784,7 +2580,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Weight Lifter",
-		"updated":"2019-08-12T02:03:10Z",
+		"updated":"2019-08-15T09:09:07Z",
 		"upvotes":0,
 		"user":"JakubSteplowski"
 	},{
@@ -2840,7 +2636,7 @@
 		"user":"metalla030"
 	},{
 		"brand":false,
-		"comments":5,
+		"comments":6,
 		"created":"2015-02-27T15:08:26Z",
 		"downvotes":0,
 		"home":false,
@@ -2852,7 +2648,7 @@
 		"status":"Pending",
 		"stock":false,
 		"title":"Meditation",
-		"updated":"2019-08-12T15:15:23Z",
+		"updated":"2019-08-15T08:58:33Z",
 		"upvotes":0,
 		"user":"mmokross"
 	},{
