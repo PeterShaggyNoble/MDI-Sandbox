@@ -36,7 +36,7 @@
 					version={
 						str:v,
 						int:parseInt(v.replace(/\./g,``))
-					}
+					};
 				else version=version[this.prefix];
 				this.soon=!v;
 				this.message.append(T(``));
