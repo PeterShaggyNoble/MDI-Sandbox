@@ -583,7 +583,8 @@
 				}else if(!parseInt(this.list[key])){
 					this.path=this.path.cloneNode(1);
 					this.path.setAttribute(`d`,this.list[key]);
-				}else delete this.list[key];
+				}else if(page.soon)
+					delete this.list[key];
 				if(this.list[key]&&(icons.use[key]||key.startsWith(`my-`))){
 					this.articles[key]=this.article.cloneNode(1);
 					if(icons.use[key]&&icons.use[key].contributor!==`google`)
@@ -824,7 +825,7 @@
 			},
 			load(){
 				let icon=page.params.get(`edit`)||page.params.get(`icon`);
-				if(icon){
+				if(icon&&icons.use[icon]){
 					if(page.storage&&favourites.list[icon]){
 						this.open(icon);
 						favourites.articles[icon].classList.add(`active`);
@@ -833,7 +834,7 @@
 						Object.values(icons.use[icon].articles)[0].classList.add(`active`);
 					}
 				}else if(page.size){
-					this.open(icon=((page.storage&&Object.keys(favourites.list).sort()[0])||Object.keys(icons.use).find(key=>icons.use[key].data)));
+					this.open(icon=((page.storage&&Object.keys(favourites.list).sort().find(key=>icons.use[key]))||Object.keys(icons.use).find(key=>icons.use[key].data)));
 					if(page.storage&&favourites.list[icon])
 						favourites.articles[icon].classList.add(`active`);
 					else if(icons.use[icon])
