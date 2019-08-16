@@ -28,10 +28,17 @@
 			section:$(`icons`),
 			textarea:C(`textarea`),
 			async init(){
-				this.prefix=this.light?`mdil`:`mdi`;
-				version=version[this.prefix];
 				this.address=`${this.url.protocol}\/\/${this.url.host+this.url.pathname}`;
 				this.params=this.url.searchParams;
+				let v=this.params.get(`v`);
+				this.prefix=this.light?`mdil`:`mdi`;
+				if(v)
+					version={
+						str:v,
+						int:parseInt(v.replace(/\./g,``))
+					}
+				else version=version[this.prefix];
+				this.soon=!v;
 				this.message.append(T(``));
 				try{
 					this.storage=localStorage;
@@ -186,7 +193,7 @@
 					svg.setAttribute(`viewBox`,`0 0 24 24`);
 					svg.dataset.icons.split(`,`).forEach(path=>{
 						svg.append(this.path=this.path.cloneNode(1));
-						this.path.setAttribute(`d`,icons.list[path]?icons.list[path].data:icons.list[`help-circle-outline`].data);
+						this.path.setAttribute(`d`,icons.list[path]?icons.list[path].data:``);
 					});
 					svg.removeAttribute(`data-icons`);
 				});
@@ -979,7 +986,7 @@
 									fn=icon=>icon.published===version.int;
 									break;
 								case`soon`:
-									fn=icon=>icon.added>version.int;
+									fn=icon=>page.soon&&icon.added>version.int;
 									break;
 								case`removed`:
 									fn=icon=>icon.retired===version.int;
@@ -1076,8 +1083,9 @@
 					article=this.article.cloneNode(1),
 					svg=this.svg.cloneNode(0),
 					keywords=new Set(key.split(`-`)),
-					category,data,path;
-				if(data=icon.data){
+					data=icon.data,
+					category,path;
+				if((!icon.added||icon.added<=version.int)&&data){
 					svg.append(path=this.path.cloneNode(1));
 					path.setAttribute(`d`,data);
 					if(icon.codepoint)
