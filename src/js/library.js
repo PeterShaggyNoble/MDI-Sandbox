@@ -38,7 +38,7 @@
 						int:parseInt(v.replace(/\./g,``))
 					};
 				else version=version[this.prefix];
-				this.soon=!v;
+				this.versioned=!!v;
 				this.message.append(T(``));
 				try{
 					this.storage=localStorage;
@@ -583,7 +583,7 @@
 				}else if(!parseInt(this.list[key])){
 					this.path=this.path.cloneNode(1);
 					this.path.setAttribute(`d`,this.list[key]);
-				}else if(page.soon)
+				}else if(!page.versioned&&!page.light)
 					delete this.list[key];
 				if(this.list[key]&&(icons.use[key]||key.startsWith(`my-`))){
 					this.articles[key]=this.article.cloneNode(1);
@@ -987,7 +987,7 @@
 									fn=icon=>icon.published===version.int;
 									break;
 								case`soon`:
-									fn=icon=>page.soon&&icon.added>version.int;
+									fn=icon=>!page.versioned&&icon.added>version.int;
 									break;
 								case`removed`:
 									fn=icon=>icon.retired===version.int;
@@ -1086,7 +1086,7 @@
 					keywords=new Set(key.split(`-`)),
 					data=icon.data,
 					category,path;
-				if((!icon.added||icon.added<=version.int)&&data){
+				if((!page.versioned||!icon.added||icon.added<=version.int)&&data){
 					svg.append(path=this.path.cloneNode(1));
 					path.setAttribute(`d`,data);
 					if(icon.codepoint)
