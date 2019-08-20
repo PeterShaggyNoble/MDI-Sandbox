@@ -1124,7 +1124,8 @@
 						++this.total;
 						page.section.append(icon.articles.main=article);
 					}
-				}else delete this.use[key];
+				}else if(!page.versioned||!data)
+					delete this.use[key];
 			}
 		},
 		editor={
