@@ -910,7 +910,7 @@
 						ver=ver.length?ver[ver.length-1]:``;
 					}
 					if(ver)
-						ver=ver<=version.int?`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`)):`Soon`;
+						ver=`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`));
 				}
 				this.meta[mod].nodeValue=ver;
 			},
