@@ -476,9 +476,6 @@ body.highlight>#content>section>article.active{
 	line-height:24px;
 	padding:8px 16px 0;
 }
-#actions>li.dib{
-	width:calc(50% - 2px);
-}
 #actions>li:empty{
 	display:none;
 }
