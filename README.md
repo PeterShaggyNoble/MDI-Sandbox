@@ -39,6 +39,7 @@ If necessary, you can override the auto-detected preview type using the `type` p
 | `stock`     | ![#388e3c](https://placehold.it/19/388e3c/000000?text=+) Green   | Stock Icon       | Not yet available   |
 | `wip`       | ![#1976d2](https://placehold.it/19/1976d2/000000?text=+) Blue    | Work in Progress | Unreleased Draft    |
 | `final`     | ![#303f9f](https://placehold.it/19/303f9f/000000?text=+) Indigo  | Final Draft      | Not yet available   |
+| `example`   | ![#e64a19](https://placehold.it/19/e64a19/000000?text=+) Orange  | Example          | Not for release     |
 | `removed`   | ![#5d4037](https://placehold.it/19/5d4037/000000?text=+) Brown   | Legacy Icon      | No longer available |
 | `rejected`  | ![#d32f2f](https://placehold.it/19/d32f2f/000000?text=+) Red     | Rejected         | Won't be added      |
 
@@ -47,7 +48,7 @@ If necessary, you can override the auto-detected preview type using the `type` p
 A preview of the extra icons in Google's "Material Icons Extended" set is available at [petershaggynoble.github.io/MDI-Sandbox/extended/](https://petershaggynoble.github.io/MDI-Sandbox/extended/) and their GMP & AOG icons at [petershaggynoble.github.io/MDI-Sandbox/other/](https://petershaggynoble.github.io/MDI-Sandbox/other/). Icons can be downloaded but note that the `transform` attribute is used on the `path` elements to scale them down to 24 pixels.
 
 ### Issue Tracker
-The [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/) can be used to view the status of all [`Icon Request` issues](https://github.com/Templarian/MaterialDesign/issues?q=is%3Aissue+is%3Aopen+label%3A%22Icon+Request+%3Apencil2%3A%22), sorted by number of reactions with the ability to filter requests for stock Google icons, home automation icons or brand icons. Please note that the issue tracker can currently only be updated manually so you may not be seeing the most up-to-date data. I am working on a way to keep it updated automatically.
+The [issue tracker](https://petershaggynoble.github.io/MDI-Sandbox/issues/) can be used to view the status of all [`Icon Request` issues](https://github.com/Templarian/MaterialDesign/issues?q=is%3Aissue+is%3Aopen+label%3A%22Icon+Request), sorted by number of reactions with the ability to filter requests for stock Google icons, home automation icons or brand icons. Please note that the issue tracker can currently only be updated manually so you may not be seeing the most up-to-date data. I am working on a way to keep it updated automatically.
 
 ### Icon Editor
 The [custom icon editor](https://petershaggynoble.github.io/MDI-Sandbox/editor/) expands on the editor included in the icon library to allow creation of PNGs using the path data from _any_ 24x24, 48x48 or 512x512 (vertically flipped) SVG. Also includes the ability to add `block-helper` or `color-helper` as an overlay.
