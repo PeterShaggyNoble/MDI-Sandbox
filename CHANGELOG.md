@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2019-09-10:** Updated to Material Design Icons v4.4.95.
 - **2019-09-06:** Added "Simple Icons" style to the [preview generator](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 - **2019-09-06:** Updated to Material Design Icons v4.3.95.
 - **2019-09-03:** Added "Example" style to the [preview generator](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
