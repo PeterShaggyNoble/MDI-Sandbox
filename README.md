@@ -24,7 +24,7 @@ The main section of this project; a jacked up "cheatsheet" for MDI. Features inc
 Create customised icon preview images which can be copied & pasted directly into GitHub issues (or anywhere else) at [petershaggynoble.github.io/MDI-Sandbox/preview/](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 
 #### Automated Preview Generator
-To save you some work, there's also an automated preview generator available at [mdi.houseofdesign.ie/tools/preview/](http://mdi.houseofdesign.ie/tools/preview/). Use the `icon` querystring parameter to provide an icon name from [the main library](https://petershaggynoble.github.io/MDI-Sandbox/), [Material Icons Extended](https://petershaggynoble.github.io/MDI-Sandbox/extended/), the [other Google icons](https://petershaggynoble.github.io/MDI-Sandbox/other/) or the [stock icons](https://petershaggynoble.github.io/MDI-Sandbox/stock/) and a preview will be generated that you can link to directly. You can also use the optional `action` parameter to provide the name of an icon from the main library to be shown in the bottom right corner.
+To save you some work, there's also an automated preview generator available at [mdi.houseofdesign.ie/tools/preview/](http://mdi.houseofdesign.ie/tools/preview/). Use the `icon` querystring parameter to provide an icon name from [the main library](https://petershaggynoble.github.io/MDI-Sandbox/), [Material Icons Extended](https://petershaggynoble.github.io/MDI-Sandbox/extended/), the [other Google icons](https://petershaggynoble.github.io/MDI-Sandbox/other/) or the [stock Google icons](https://petershaggynoble.github.io/MDI-Sandbox/stock/) and a preview will be generated that you can link to directly. You can also use the optional `action` parameter to provide the name of an icon from the main library to be shown in the bottom right corner.
 > **Example:** [/?icon=vector-square&action=link](http://mdi.houseofdesign.ie/tools/preview/?icon=vector-square&action=link)
 
 Alternatively, instead of using the `icon` parameter to provide the name of an existing icon, you can provide a custom path and name using the `path` & `name` parameters.
@@ -36,7 +36,7 @@ If necessary, you can override the auto-detected preview type using the `type` p
 | Value       | Colour                                                           | Label            | Text                 |
 | ----------- | ---------------------------------------------------------------- | ---------------- | -------------------- |
 | `standard`  | ![#616161](https://placehold.it/19/616161/000000?text=+) Grey    |                  |                      |
-| `stock`     | ![#388e3c](https://placehold.it/19/388e3c/000000?text=+) Green   | Stock Icon       | Not yet available    |
+| `google`    | ![#388e3c](https://placehold.it/19/388e3c/000000?text=+) Green   | Google Icon      | Not yet available    |
 | `wip`       | ![#1976d2](https://placehold.it/19/1976d2/000000?text=+) Blue    | Work in Progress | Unreleased Draft     |
 | `final`     | ![#303f9f](https://placehold.it/19/303f9f/000000?text=+) Indigo  | Final Draft      | Not yet available    |
 | `example`   | ![#e64a19](https://placehold.it/19/e64a19/000000?text=+) Orange  | Example          | Not for release      |
