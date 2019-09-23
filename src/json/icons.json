@@ -9412,6 +9412,12 @@
 		"contributor":"austin-andrews",
 		"data":"M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M10,16V19.08L13.08,16H20V4H4V16H10M16.5,8L11,13.5L7.5,10L8.91,8.59L11,10.67L15.09,6.59L16.5,8Z"
 	},
+	"comment-edit":{
+		"added":4595,
+		"categories":["other"],
+		"contributor":"austin-andrews",
+		"data":"M9 22C8.45 22 8 21.55 8 21V18H4C2.9 18 2 17.11 2 16L2 4C2 2.89 2.89 2 4 2H20C21.1 2 22 2.89 22 4V16C22 17.1 21.1 18 20 18L13.9 18L10.2 21.71C10 21.9 9.75 22 9.5 22L9.5 22H9M18 14V12H12.5L10.5 14H18M6 14H8.5L15.35 7.12C15.55 6.93 15.55 6.61 15.35 6.41L13.59 4.65C13.39 4.45 13.07 4.45 12.88 4.65L6 11.53V14Z"
+	},
 	"comment-eye":{
 		"added":2695,
 		"categories":["other"],
@@ -25218,6 +25224,18 @@
 		"contributor":"community",
 		"data":"M7,2H17V8H19V13H16.5L13,17H11L7.5,13H5V8H7V2M10,22H2V20H10A1,1 0 0,0 11,19V18H13V19A3,3 0 0,1 10,22Z"
 	},
+	"printer-3d-nozzle-alert":{
+		"added":4595,
+		"categories":["other"],
+		"contributor":"austin-andrews",
+		"data":"M7 2H17V8H19V13H16.5L13 17H11L7.5 13H5V8H7V2M10 22H2V20H10C10.55 20 11 19.55 11 19V18H13V19C13 20.66 11.66 22 10 22M21 12V7H23V12H21M21 16V14H23V16H21Z"
+	},
+	"printer-3d-nozzle-alert-outline":{
+		"added":4595,
+		"categories":["other"],
+		"contributor":"austin-andrews",
+		"data":"M7 2H17V7H19V13H16.5L13 17H11L7.5 13H5V7H7V2M10 22H2V20H10C10.55 20 11 19.55 11 19V18H13V19C13 20.66 11.66 22 10 22M7 9V11H8.5L12 15L15.5 11H17V9H15V4H9V9H7M21 12V7H23V12H21M21 16V14H23V16H21Z"
+	},
 	"printer-3d-nozzle-outline":{
 		"added":3695,
 		"categories":["tech"],
@@ -33447,6 +33465,7 @@
 	},
 	"xml":{
 		"added":882,
+		"aliases":["code"],
 		"categories":["programming"],
 		"codepoint":"f5c0",
 		"contributor":"austin-andrews",
