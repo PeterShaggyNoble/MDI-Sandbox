@@ -1,8 +1,8 @@
 {
 	let version={
 		mdi:{
-			str:`4.4.95`,
-			int:4495
+			str:`4.5.95`,
+			int:4595
 		},mdil:{
 			str:`0.2.63`,
 			int:263
@@ -992,6 +992,9 @@
 								case`removed`:
 									fn=icon=>icon.retired===version.int;
 									break;
+								case`deprecated`:
+									fn=icon=>icon.retired>version.int;
+									break;
 								case`retired`:
 									fn=icon=>icon.retired<=version.int;
 									break;
@@ -1118,6 +1121,8 @@
 						category.section.append(icon.articles.removed=article.cloneNode(1));
 					if((category=categories.list.soon)&&icon.added&&icon.added>version.int)
 						category.section.append(icon.articles.soon=article.cloneNode(1));
+					if((category=categories.list.deprecated)&&icon.retired&&icon.retired>version.int)
+						category.section.append(icon.articles.deprecated=article.cloneNode(1));
 					if((category=categories.list.retired)&&icon.retired&&icon.retired<=version.int)
 						category.section.append(icon.articles.retired=article.cloneNode(1));
 					if(!icon.retired||icon.retired>version.int){

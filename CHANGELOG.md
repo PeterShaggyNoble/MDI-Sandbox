@@ -1,5 +1,7 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2018-10-09:** Added a section for [deprecated icons](https://petershaggynoble.github.io/MDI-Sandbox/?section=depreacted).
+- **2019-10-09:** Updated to Material Design Icons v4.5.95.
 - **2019-09-10:** Updated to Material Design Icons v4.4.95.
 - **2019-09-06:** Added "Simple Icons" style to the [preview generator](https://petershaggynoble.github.io/MDI-Sandbox/preview/).
 - **2019-09-06:** Updated to Material Design Icons v4.3.95.

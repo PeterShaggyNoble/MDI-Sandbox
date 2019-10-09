@@ -34,6 +34,11 @@
 		"name":"Coming Soon",
 		"section":true
 	},
+	"deprecated":{
+		"icon":"thumb-down-outline",
+		"name":"Deprecated Icons",
+		"section":true
+	},
 	"retired":{
 		"icon":"history",
 		"name":"Retired Icons",
