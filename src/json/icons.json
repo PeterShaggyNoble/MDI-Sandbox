@@ -13226,6 +13226,12 @@
 		"contributor":"austin-andrews",
 		"data":"M11.5,3C6.85,3 2.92,6.03 1.53,10.22L3.9,11C4.95,7.81 7.96,5.5 11.5,5.5C13.46,5.5 15.23,6.22 16.62,7.38L14,10H21V3L18.4,5.6C16.55,4 14.15,3 11.5,3M19,14V20C19,21.11 18.11,22 17,22H15A2,2 0 0,1 13,20V14A2,2 0 0,1 15,12H17C18.11,12 19,12.9 19,14M15,14V20H17V14H15M11,20C11,21.11 10.1,22 9,22H5V20H9V18H7V16H9V14H5V12H9A2,2 0 0,1 11,14V15.5A1.5,1.5 0 0,1 9.5,17A1.5,1.5 0 0,1 11,18.5V20Z"
 	},
+	"fast-forward-5":{
+		"added":4695,
+		"categories":["player"],
+		"contributor":"community",
+		"data":"M11.5 3C14.15 3 16.55 4 18.4 5.6L21 3V10H14L16.62 7.38C15.23 6.22 13.46 5.5 11.5 5.5C7.96 5.5 4.95 7.81 3.9 11L1.53 10.22C2.92 6.03 6.85 3 11.5 3M9 12H15V14H11V16H13C14.11 16 15 16.9 15 18V20C15 21.11 14.11 22 13 22H9V20H13V18H9V12Z"
+	},
 	"fast-forward-outline":{
 		"added":1836,
 		"categories":["player"],
@@ -13606,6 +13612,7 @@
 	},
 	"file-edit":{
 		"added":4595,
+		"aliases":["contract"],
 		"categories":["files"],
 		"codepoint":"f0212",
 		"contributor":"frankgrinaert",
@@ -13613,6 +13620,7 @@
 	},
 	"file-edit-outline":{
 		"added":4595,
+		"aliases":["contract-outline"],
 		"categories":["files"],
 		"codepoint":"f0213",
 		"contributor":"frankgrinaert",
@@ -26461,6 +26469,12 @@
 		"contributor":"austin-andrews",
 		"data":"M19,14V20C19,21.11 18.11,22 17,22H15A2,2 0 0,1 13,20V14A2,2 0 0,1 15,12H17C18.11,12 19,12.9 19,14M15,14V20H17V14H15M11,20C11,21.11 10.1,22 9,22H5V20H9V18H7V16H9V14H5V12H9A2,2 0 0,1 11,14V15.5A1.5,1.5 0 0,1 9.5,17A1.5,1.5 0 0,1 11,18.5V20M12.5,3C17.15,3 21.08,6.03 22.47,10.22L20.1,11C19.05,7.81 16.04,5.5 12.5,5.5C10.54,5.5 8.77,6.22 7.38,7.38L10,10H3V3L5.6,5.6C7.45,4 9.85,3 12.5,3Z"
 	},
+	"rewind-5":{
+		"added":4695,
+		"categories":["player"],
+		"contributor":"community",
+		"data":"M12.5 3C17.15 3 21.08 6.03 22.47 10.22L20.1 11C19.05 7.81 16.04 5.5 12.5 5.5C10.54 5.5 8.77 6.22 7.38 7.38L10 10H3V3L5.6 5.6C7.45 4 9.85 3 12.5 3M9 12H15V14H11V16H13C14.11 16 15 16.9 15 18V20C15 21.11 14.11 22 13 22H9V20H13V18H9V12Z"
+	},
 	"rewind-outline":{
 		"added":1836,
 		"categories":["player"],
@@ -26564,13 +26578,14 @@
 	},
 	"robot-mower":{
 		"added":4695,
+		"aliases":["lawn-mower"],
 		"categories":["home"],
 		"contributor":"community",
 		"data":"M1 14V5H13C18.5 5 23 9.5 23 15V17H20.83C20.42 18.17 19.31 19 18 19C16.69 19 15.58 18.17 15.17 17H10C9.09 18.21 7.64 19 6 19C3.24 19 1 16.76 1 14M6 11C4.34 11 3 12.34 3 14C3 15.66 4.34 17 6 17C7.66 17 9 15.66 9 14C9 12.34 7.66 11 6 11M15 10V12H20.25C19.92 11.27 19.5 10.6 19 10H15Z"
 	},
 	"robot-mower-outline":{
 		"added":4595,
-		"aliases":["lawn-mower"],
+		"aliases":["lawn-mower-outline"],
 		"categories":["home"],
 		"codepoint":"f021e",
 		"contributor":"community",
@@ -29185,6 +29200,7 @@
 	},
 	"spider":{
 		"added":4595,
+		"aliases":["arachnid"],
 		"categories":["holidays","nature"],
 		"codepoint":"f0215",
 		"contributor":"michael-richins",
@@ -29192,6 +29208,7 @@
 	},
 	"spider-thread":{
 		"added":4595,
+		"aliases":["arachnid-thread"],
 		"categories":["holidays","nature"],
 		"codepoint":"f0216",
 		"contributor":"michael-richins",
@@ -29199,7 +29216,7 @@
 	},
 	"spider-web":{
 		"added":3039,
-		"aliases":["cobweb"],
+		"aliases":["archnid-web","cobweb"],
 		"categories":["holidays","nature"],
 		"codepoint":"fba6",
 		"contributor":"austin-andrews",
