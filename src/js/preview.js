@@ -6,6 +6,7 @@
 			await(await fetch(`../json/extended.json`)).json(),
 			await(await fetch(`../json/other.json`)).json()
 		],
+		google=await(await fetch(`../json/google.json`)).json(),
 		inputs={
 /*			canvas:document.getElementById(`canvas`),*/
 			data:document.getElementById(`data`),
@@ -72,6 +73,16 @@
 											transform=transforms[ind];
 											break;
 										}
+							if(!inputs.name.value)
+								for(variant in google)
+									if(google.hasOwnProperty(variant)&&!inputs.name.value)
+										for(key in google[variant])
+											if(google[variant].hasOwnProperty(key))
+												if(google[variant][key].data===value){
+													inputs.name.value=key;
+													transform=transforms[2];
+													break;
+												}
 /*							if(!transform)
 								transform=size>24?size>48?size>480?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.05) scale(1,-1) translate(220,-680)`:`scale(.5) translate(22,20)`:`translate(11,10)`;*/
 							path.setAttribute(`transform`,transform);
