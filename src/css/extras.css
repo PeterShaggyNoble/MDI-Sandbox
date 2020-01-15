@@ -216,6 +216,20 @@ body.menu #menu{
 	transition-duration:inherit;
 }
 
+/** CONTENT **/
+body>h2{
+	background:var(--colour);
+	border-radius:2px 2px 0 0;
+	color:#fff;
+	font-size:20px;
+	grid-column:1/-1;
+	line-height:48px;
+	margin:0 -8px;
+	padding:0 72px 0 16px;
+	text-transform:capitalize;
+	z-index:2;
+}
+
 /** TABS **/
 #tabs{
 	background:var(--colour);
