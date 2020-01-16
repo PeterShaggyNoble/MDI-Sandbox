@@ -9,10 +9,7 @@
 		status,data,key,target;
 	article.classList.add(`oh`,`pr`,`tac`);
 	svg.classList.add(`db`);
-	/*svg.setAttribute(`height`,24);*/
-	svg.setAttribute(`viewBox`,`0 0 24 24`);
-	/*svg.setAttribute(`width`,24);*/
-	path.setAttribute(`transform`,`scale(.05) scale(1,-1) translate(0,-480)`);
+	svg.setAttribute(`viewBox`,`0 0 480 480`);
 	for(key in icons)
 		if(icons.hasOwnProperty(key)){
 			article=article.cloneNode(0);
@@ -22,7 +19,6 @@
 			svg=svg.cloneNode(0);
 			path=path.cloneNode(1);
 			path.setAttribute(`d`,data=icons[key].data);
-			Math.max(...data.match(/(\d|\.)+/g).map(x=>parseFloat(x)))>24?path.setAttribute(`transform`,`scale(.05) scale(1,-1) translate(0,-480)`):path.removeAttribute(`transform`);
 			svg.append(path);
 			article.append(svg,document.createTextNode(key.replace(/_/g," ")));
 			script.before(article);

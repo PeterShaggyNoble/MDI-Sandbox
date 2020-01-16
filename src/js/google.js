@@ -3,41 +3,44 @@
 		a=document.createElement(`a`),
 		icons=await(await fetch`../json/google.json`).json(),
 		statuses=[`complete`,`ignore`,`new`];
-	let 	heading=document.createElement(`h2`),
+	let 	section=document.createElement(`section`),
+		heading=document.createElement(`h2`),
 		article=document.createElement(`article`),
 		svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`),
 		path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`),
 		filter=(new URL(location)).searchParams.get(`filter`),
 		count,data,key,status,target,variant;
-	heading.classList.add(`fwm`);
+	section.classList.add(`dg`,`pr`);
+	heading.classList.add(`fwm`,`ps`);
 	article.classList.add(`oh`,`pr`,`tac`);
 	svg.classList.add(`db`);
-	svg.setAttribute(`viewBox`,`0 0 24 24`);
-	path.setAttribute(`transform`,`scale(.046875) scale(1,-1) translate(0,-512)`);
+	svg.setAttribute(`viewBox`,`0 0 512 512`);
 	for(variant in icons)
 		if(icons.hasOwnProperty(variant)){
 			count=Object.keys(icons[variant]).length;
 			if(count){
+				section=section.cloneNode(0);
+				section.id=variant;
 				heading=heading.cloneNode(0);
 				heading.append(document.createTextNode(variant[0].toUpperCase()+variant.slice(1)+` (${count} icons)`));
-				script.before(heading);
+				section.append(heading);
 				for(key in icons[variant])
 					if(icons[variant].hasOwnProperty(key)){
 						status=icons[variant][key].status;
 						if(!filter||filter===status){
 							article=article.cloneNode(0);
-/*							if(status&&filter!==status)
+							if(status&&filter!==status)
 								statuses.forEach(x=>article.classList.toggle(x,status===x));
-							else article.classList.remove(...statuses);*/
+							else article.classList.remove(...statuses);
 							svg=svg.cloneNode(0);
 							path=path.cloneNode(1);
 							path.setAttribute(`d`,data=icons[variant][key].data);
-							Math.max(...data.match(/(\d|\.)+/g).map(x=>parseFloat(x)))>24?path.setAttribute(`transform`,`scale(.046875) scale(1,-1) translate(0,-512)`):path.removeAttribute(`transform`);
 							svg.append(path);
 							article.append(svg,document.createTextNode(key.replace(/_/g," ")));
-							script.before(article);
+							section.append(article);
 						}
 					}
+				script.before(section);
 			}
 		}
 	document.body.addEventListener(`click`,event=>{
