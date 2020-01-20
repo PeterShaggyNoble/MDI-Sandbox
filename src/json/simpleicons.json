@@ -532,85 +532,105 @@
 		"status":"available"
 	},
 	"language-c":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"c\""
 	},
 	"language-cpp":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"cplusplus\""
 	},
 	"language-csharp":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"csharp\""
 	},
 	"language-css3":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"css3\""
 	},
 	"language-go":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"go\""
 	},
 	"language-haskell":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"haskell\""
 	},
 	"language-html5":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"html5\""
 	},
 	"language-java":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"java\""
 	},
 	"language-javascript":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"javascript\""
 	},
 	"language-lua":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"lua\""
 	},
 	"language-php":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"php\""
 	},
 	"language-python":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"c\""
 	},
 	"language-python-text":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"language-r":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"r\""
 	},
 	"language-ruby-on-rails":{
-		"status":"unknown"
+		"status":"sync",
+		"note":"Current Simple Icons name: \"rails\", awaiting update"
 	},
 	"language-swift":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"swift\""
 	},
 	"language-typescript":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"typesecript\""
 	},
 	"laravel":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"lastfm":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"last-dot-fm\""
 	},
 	"lastpass":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"linkedin":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"linkedin-box":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"linux":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"linux-mint":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"linuxmint\""
 	},
 	"litecoin":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"lumx":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"lyft":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"mail-ru":{
 		"status":"unknown"
