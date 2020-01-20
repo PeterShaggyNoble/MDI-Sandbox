@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2020-01-20:** Updated to Material Design Icons v4.8.95.
 - **2020-01-16:** Merged Material Icons Extened page with [additional stock icons page](https://petershaggynoble.github.io/MDI-Sandbox/google).
 - **2020-01-15:** Added a page for [additional stock icons](https://petershaggynoble.github.io/MDI-Sandbox/google).
 - **2020-01-08:** Updated to Material Design Icons v4.7.95.
