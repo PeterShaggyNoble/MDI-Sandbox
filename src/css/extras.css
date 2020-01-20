@@ -590,23 +590,27 @@ table.issues{
 .issues a:active>svg,.issues a:focus>svg{
 	fill:var(--colour);
 }
-/*  variants  */
-table#variants{
+/*  variants + simple  */
+table#variants,table#simple{
 	max-width:720px;
 }
-#variants th{
+#variants th,#simple th{
 	background:var(--colour);
 	color:#fff;
 }
-#variants th:nth-child(n+2),#variants td:nth-child(n+2){
+#variants th:nth-child(n+2),#variants td:nth-child(n+2),
+#simple th:nth-child(-n+3),#simple td:nth-child(-n+3){
 	text-align:center;
 	width:120px;
+}
+#simple td:first-child>svg{
+	margin:0 6px 0 -2px;
 }
 #variants tr.google{
 	color:var(--colour);
 	font-weight:500;
 }
-#variants svg{
+#variants svg,#simple svg{
 	height:24px;
 	width:24px;
 }
@@ -617,6 +621,26 @@ table#variants{
 }
 #variants svg.missing{
 	fill:#f44336;
+	opacity:.54;
+	height:18px;
+	width:18px;
+}
+#simple svg.available{
+	fill:#2e7b32;
+}
+#simple svg.added{
+	fill:#1976d2;
+}
+#simple svg.wip{
+	fill:var(--colour);
+}
+#simple svg.deprecated{
+	fill:#f57c00;
+}
+#simple svg.rejected{
+	fill:#f44336;
+}
+#simple svg.unknown{
 	opacity:.54;
 	height:18px;
 	width:18px;
@@ -706,7 +730,7 @@ table#variants{
 	section.dg>h2{
 		top:56px;
 	}
-	#editor>figure,#variants th,.issues th{
+	#editor>figure,#variants th,#simple th,.issues th{
 		top:56px;
 	}
 }
@@ -734,7 +758,7 @@ table#variants{
 	section.dg>h2{
 		top:64px;
 	}
-	#editor>figure,#variants th,.issues th{
+	#editor>figure,#variants th,#simple th,.issues th{
 		top:64px;
 	}
 }
