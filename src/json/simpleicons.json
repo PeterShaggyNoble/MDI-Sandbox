@@ -272,229 +272,264 @@
 		"status":"available"
 	},
 	"facebook":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"facebook-box":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"facebook-messenger":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"facebookmessenger\""
 	},
 	"facebook-workplace":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"workplace\""
 	},
 	"fedora":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"firebase":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"firefox":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"mozillafirefox\""
 	},
 	"flattr":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"flickr":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"font-awesome":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"foursquare":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"freebsd":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"gatsby":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"gentoo":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"git":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"github-box":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"github-circle":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"github\""
 	},
 	"github-face":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"gitlab":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"glassdoor":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"gmail":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"gnome":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons version includes wordmark"
 	},
 	"gog":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"goodreads":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"google":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"google-adwords":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Renamed and available as \"googleads\""
 	},
 	"google-allo":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service discontinued"
 	},
 	"google-analytics":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googleanalytics\""
 	},
 	"google-assistant":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googleassistant\""
 	},
 	"google-cardboard":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"google-chrome":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googlechrome\""
 	},
 	"google-classroom":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"google-cloud":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googlecloud\""
 	},
 	"google-drive":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googledrive\""
 	},
 	"google-earth":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"google-fit":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googlefit\""
 	},
 	"google-glass":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"google-hangouts":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googlehangouts\""
 	},
 	"google-keep":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googlekeep\""
 	},
 	"google-lens":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googlelens\""
 	},
 	"google-maps":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googlemaps\""
 	},
 	"google-my-business":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"google-nearby":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"google-pages":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service discontinued"
 	},
 	"google-photos":{
-		"status":"unknown"
+		"status":"wip",
+		"note":"Simple Icons name: \"googlephotos\""
 	},
 	"google-physical-web":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service discontinued"
 	},
 	"google-play":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googleplay\""
 	},
 	"google-plus":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service discontinued"
 	},
 	"google-plus-box":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service discontinued"
 	},
 	"google-podcast":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"googlepodcasts\""
 	},
 	"google-spreadsheet":{
-		"status":"unknown"
+		"status":"wip",
+		"note":"Simple Icons name: \"googlesheets\""
 	},
 	"google-street-view":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"google-translate":{
-		"status":"unknown"
+		"status":"wip",
+		"note":"Simple Icons name: \"googletranslate\""
 	},
 	"google-wallet":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service discontinued"
 	},
 	"graphql":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"hackernews":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"ycombinator\""
 	},
 	"home-assistant":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"homeassistant\""
 	},
 	"houzz":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"houzz-box":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"hubspot":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"hulu":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"humble-bundle":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"humblebundle\""
 	},
 	"instagram":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"instapaper":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"internet-explorer":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"iobroker":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"itunes":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"jabber":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"jira":{
-		"status":"unknown"
+		"status":"outdated",
+		"note":"Current version differs from MDI's"
 	},
 	"jquery":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"jsfiddle":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"kickstarter":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"kodi":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"kotlin":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"kubernetes":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"language-c":{
 		"status":"unknown"

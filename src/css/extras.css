@@ -628,7 +628,7 @@ table#variants,table#simple{
 #simple svg.available{
 	fill:#2e7b32;
 }
-#simple svg.added{
+#simple svg.added,#simple svg.outdated{
 	fill:#1976d2;
 }
 #simple svg.wip{
