@@ -824,273 +824,306 @@
 		"status":"available"
 	},
 	"rdio":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service discontinued"
 	},
 	"react":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"readability":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service discontinued"
 	},
 	"reddit":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"redhat":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"rollupjs":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"rollup-dot-js\""
 	},
 	"ruby":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"salesforce":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"sass":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"semantic-web":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"semanticweb\""
 	},
 	"shopify":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"simple-icons":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"simpleicons\""
 	},
 	"sina-weibo":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"sinaweibo\""
 	},
 	"skype":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"skype-business":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"skypeforbusiness\""
 	},
 	"slack":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"slackware":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"snapchat":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"soundcloud":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"spotify":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"square-inc":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"square\""
 	},
 	"square-inc-cash":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"cashapp\""
 	},
 	"stack-exchange":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"stackexchange\""
 	},
 	"stack-overflow":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"stackoverflow\""
 	},
 	"steam":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"steam-box":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"strava":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"symfony":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"teamviewer":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"telegram":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"terraform":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"tor":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"trello":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"tumblr":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"tumblr-box":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"twitch":{
-		"status":"unknown"
+		"status":"sync"
 	},
 	"twitter":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"twitter-box":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"twitter-circle":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"uber":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"ubisoft":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"ubuntu":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"umbraco":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"unicode":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"unity":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"unreal":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"unrealengine\""
 	},
 	"untappd":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"vector-square":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"materialdesignicons\""
 	},
 	"venmo":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons uses the full wordmark"
 	},
 	"vimeo":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"vine":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Service discontinued"
 	},
 	"visual-studio":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"visualstudio\""
 	},
 	"visual-studio-code":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"visualstudiocode\""
 	},
 	"vk":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"vk-box":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"vk\""
 	},
 	"vk-circle":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"vlc":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"vlcmediaplayer\""
 	},
 	"vuejs":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"vue-dot-js\""
 	},
 	"vuetify":{
-		"status":"unknown"
+		"status":"wip"
 	},
 	"waze":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"webpack":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"webrtc":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"wechat":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"whatsapp":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"wii":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"wiiu":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"wikipedia":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"windows":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"windows-classic":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Outdated icon, outside the scope of Simple Icons"
 	},
 	"wordpress":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"wunderlist":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service deprecated"
 	},
 	"xamarin":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"xamarin-outline":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"xaml":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"xbox":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"xda":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"xdadevelopers\""
 	},
 	"xing":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"xing-box":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"xing-circle":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"xmpp":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"yahoo":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"yammer":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"yelp":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"youtube":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"youtube-creator-studio":{
 		"status":"unknown"
 	},
 	"youtube-gaming":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Service discontinued"
 	},
 	"youtube-tv":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"z-wave":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"zend":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"zigbee":{
-		"status":"unknown"
+		"status":"wip"
 	}
 }
