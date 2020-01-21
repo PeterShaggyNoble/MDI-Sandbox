@@ -631,7 +631,8 @@ table#variants,table#simple{
 #simple svg.added,#simple svg.outdated{
 	fill:#1976d2;
 }
-#simple svg.wip{
+#simple svg.wip,
+#simple svg.prsubmitted{
 	fill:var(--colour);
 }
 #simple svg.deprecated{

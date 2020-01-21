@@ -24,7 +24,7 @@
 		"status":"available"
 	},
 	"amazon-drive":{
-		"status":"pending"
+		"status":"unknown"
 	},
 	"android":{
 		"status":"available"
@@ -37,7 +37,7 @@
 		"note":"No official logo\/icon available"
 	},
 	"android-messages":{
-		"status":"wip",
+		"status":"prsubmitted",
 		"note":"Simple Icons name: \"googlemessages\""
 	},
 	"android-studio":{
@@ -173,7 +173,7 @@
 		"status":"available"
 	},
 	"concourse-ci":{
-		"status":"wip"
+		"status":"prsubmitted"
 	},
 	"cordova":{
 		"status":"available",
@@ -303,7 +303,8 @@
 		"status":"available"
 	},
 	"font-awesome":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Simple Icons name: \"fontawesome\""
 	},
 	"foursquare":{
 		"status":"available"
@@ -449,14 +450,14 @@
 		"note":"Simple Icons name: \"googlepodcasts\""
 	},
 	"google-spreadsheet":{
-		"status":"wip",
+		"status":"prsubmitted",
 		"note":"Simple Icons name: \"googlesheets\""
 	},
 	"google-street-view":{
 		"status":"pending"
 	},
 	"google-translate":{
-		"status":"wip",
+		"status":"prsubmitted",
 		"note":"Simple Icons name: \"googletranslate\""
 	},
 	"google-wallet":{
@@ -588,7 +589,7 @@
 		"note":"Simple Icons name: \"r\""
 	},
 	"language-ruby-on-rails":{
-		"status":"sync",
+		"status":"outdated",
 		"note":"Current Simple Icons name: \"rails\", awaiting update"
 	},
 	"language-swift":{
@@ -703,7 +704,7 @@
 		"note":"Simple Icons name: \"nintendoswitch\""
 	},
 	"nix":{
-		"status":"wip",
+		"status":"prsubmitted",
 		"note":"Simple Icons name: \"nixos\""
 	},
 	"nodejs":{
@@ -766,7 +767,7 @@
 		"note":"Simple Icons name: \"microsoftoutlook\""
 	},
 	"pandora":{
-		"status":"outdated"
+		"status":"prsubmitted"
 	},
 	"patreon":{
 		"status":"available"
@@ -800,7 +801,7 @@
 		"status":"unknown"
 	},
 	"pokemon-go":{
-		"status":"wip",
+		"status":"prsubmitted",
 		"note":"Simple Icons name: \"pokemongo\""
 	},
 	"polymer":{
@@ -942,7 +943,7 @@
 		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"twitch":{
-		"status":"sync"
+		"status":"added"
 	},
 	"twitter":{
 		"status":"available"
@@ -1024,7 +1025,7 @@
 		"note":"Simple Icons name: \"vue-dot-js\""
 	},
 	"vuetify":{
-		"status":"wip"
+		"status":"prsubmitted"
 	},
 	"waze":{
 		"status":"available"
@@ -1033,7 +1034,7 @@
 		"status":"available"
 	},
 	"webrtc":{
-		"status":"pending"
+		"status":"wip"
 	},
 	"wechat":{
 		"status":"available"
@@ -1115,7 +1116,8 @@
 		"note":"Service discontinued"
 	},
 	"youtube-tv":{
-		"status":"pending"
+		"status":"rejected",
+		"note":"Now uses the primary YouTube icon"
 	},
 	"z-wave":{
 		"status":"available"
@@ -1124,6 +1126,6 @@
 		"status":"available"
 	},
 	"zigbee":{
-		"status":"wip"
+		"status":"prsubmitted"
 	}
 }
