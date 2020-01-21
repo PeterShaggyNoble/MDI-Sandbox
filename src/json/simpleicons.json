@@ -633,172 +633,195 @@
 		"status":"available"
 	},
 	"mail-ru":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"mail-dot-ru\""
 	},
 	"mapbox":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"markdown":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"markdown-outline":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"mastodon":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"mastodon-variant":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"material-design":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"materialdesign\""
 	},
 	"material-ui":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"materialui\""
 	},
 	"maxcdn":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Renamed and available in both libraries as \"stackpath\""
 	},
 	"medium":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"meetup":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"meteor":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"microsoft":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"microsoft-dynamics":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"midi":{
-		"status":"unknown"
+		"status":"pending"
 	},
 	"minecraft":{
-		"status":"unknown"
+		"status":"rejected"
 	},
 	"mixcloud":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"mixer":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"nativescript":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"netflix":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"nintendo-switch":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"nintendoswitch\""
 	},
 	"nix":{
-		"status":"unknown"
+		"status":"wip",
+		"note":"Simple Icons name: \"nixos\""
 	},
 	"nodejs":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"node-dot-js\""
 	},
 	"npm":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"npm-variant":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"npm-variant-outline":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"nuxt":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"nuxt-dot-js\""
 	},
 	"oci":{
-		"status":"unknown"
+		"status":"unknown",
+		"note":"Simple Icons name: \"opencontainersinitiative\""
 	},
 	"odnoklassniki":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"office":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"microsoftoffice\""
 	},
 	"onedrive":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"microsoftonedrive\""
 	},
 	"onenote":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"microsoftonenote\""
 	},
 	"onepassword":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"1password\""
 	},
 	"open-source-initiative":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"opensourceinitiative\""
 	},
 	"openid":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"opera":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"origin":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"outlook":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"microsoftoutlook\""
 	},
 	"pandora":{
-		"status":"unknown"
+		"status":"outdated"
 	},
 	"patreon":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"paypal":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"periscope":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"pi-hole":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"pinterest":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"pinterest-box":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"playstation":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"plex":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"pocket":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"pokeball":{
 		"status":"unknown"
 	},
 	"pokemon-go":{
-		"status":"unknown"
+		"status":"wip",
+		"note":"Simple Icons name: \"pokemongo\""
 	},
 	"polymer":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"polymerproject\""
 	},
 	"powershell":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"qi":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"qqchat":{
-		"status":"unknown"
+		"status":"available",
+		"note":"Simple Icons name: \"tencentqq\""
 	},
 	"quicktime":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"quora":{
-		"status":"unknown"
+		"status":"available"
 	},
 	"rdio":{
 		"status":"unknown"

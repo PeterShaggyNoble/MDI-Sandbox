@@ -18,7 +18,7 @@
 		"user":"CoDEmanX"
 	},{
 		"brand":false,
-		"comments":2,
+		"comments":3,
 		"created":"2020-01-18T00:04:43Z",
 		"downvotes":0,
 		"home":false,
@@ -30,7 +30,7 @@
 		"status":"Coming Soon",
 		"stock":false,
 		"title":"Rename star-half to star-half-full, add half a star",
-		"updated":"2020-01-18T02:39:47Z",
+		"updated":"2020-01-20T19:54:22Z",
 		"upvotes":1,
 		"user":"CoDEmanX"
 	},{
@@ -77,7 +77,7 @@
 		"labels":["Icon Request","Needs More Info"],
 		"milestone":null,
 		"node_id":"MDU6SXNzdWU1NDk1NDA4NTQ=",
-		"reactions":2,
+		"reactions":3,
 		"status":"Pending",
 		"stock":false,
 		"title":"compare-remove",
