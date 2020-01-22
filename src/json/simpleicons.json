@@ -162,6 +162,10 @@
 	"bulma":{
 		"status":"available"
 	},
+	"cast":{
+		"status":"added",
+		"note":"Simple Icons name: \"googlecast\""
+	},
 	"centos":{
 		"status":"available"
 	},
@@ -303,7 +307,7 @@
 		"status":"available"
 	},
 	"font-awesome":{
-		"status":"wip",
+		"status":"prsubmitted",
 		"note":"Simple Icons name: \"fontawesome\""
 	},
 	"foursquare":{
@@ -1025,7 +1029,7 @@
 		"note":"Simple Icons name: \"vue-dot-js\""
 	},
 	"vuetify":{
-		"status":"prsubmitted"
+		"status":"added"
 	},
 	"waze":{
 		"status":"available"
@@ -1034,7 +1038,7 @@
 		"status":"available"
 	},
 	"webrtc":{
-		"status":"wip"
+		"status":"prsubmitted"
 	},
 	"wechat":{
 		"status":"available"
