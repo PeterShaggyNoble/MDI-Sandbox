@@ -37,7 +37,7 @@
 		"note":"No official logo\/icon available"
 	},
 	"android-messages":{
-		"status":"prsubmitted",
+		"status":"added",
 		"note":"Simple Icons name: \"googlemessages\""
 	},
 	"android-studio":{
@@ -457,7 +457,7 @@
 		"status":"pending"
 	},
 	"google-translate":{
-		"status":"prsubmitted",
+		"status":"added",
 		"note":"Simple Icons name: \"googletranslate\""
 	},
 	"google-wallet":{
@@ -1116,8 +1116,7 @@
 		"note":"Service discontinued"
 	},
 	"youtube-tv":{
-		"status":"rejected",
-		"note":"Now uses the primary YouTube icon"
+		"status":"unknown"
 	},
 	"z-wave":{
 		"status":"available"
@@ -1126,6 +1125,6 @@
 		"status":"available"
 	},
 	"zigbee":{
-		"status":"prsubmitted"
+		"status":"added"
 	}
 }
