@@ -383,7 +383,7 @@
 		"note":"Simple Icons name: \"googlechrome\""
 	},
 	"google-classroom":{
-		"status":"pending"
+		"status":"wip"
 	},
 	"google-cloud":{
 		"status":"available",
@@ -686,7 +686,7 @@
 		"status":"pending"
 	},
 	"midi":{
-		"status":"pending"
+		"status":"wip"
 	},
 	"minecraft":{
 		"status":"rejected"
@@ -1113,14 +1113,16 @@
 		"status":"available"
 	},
 	"youtube-creator-studio":{
-		"status":"unknown"
+		"status":"wip",
+		"note":"Simple Icons name: \"youtubestudio\""
 	},
 	"youtube-gaming":{
 		"status":"rejected",
 		"note":"Service discontinued"
 	},
 	"youtube-tv":{
-		"status":"unknown"
+		"status":"wip",
+		"note":"Simple Icons name: \"youtubetv\""
 	},
 	"z-wave":{
 		"status":"available"
