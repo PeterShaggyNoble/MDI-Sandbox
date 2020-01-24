@@ -771,7 +771,8 @@
 		"note":"Simple Icons name: \"microsoftoutlook\""
 	},
 	"pandora":{
-		"status":"prsubmitted"
+		"status":"added",
+		"note":"Current Simple Icons version is outdated"
 	},
 	"patreon":{
 		"status":"available"
@@ -1038,7 +1039,7 @@
 		"status":"available"
 	},
 	"webrtc":{
-		"status":"prsubmitted"
+		"status":"added"
 	},
 	"wechat":{
 		"status":"available"
