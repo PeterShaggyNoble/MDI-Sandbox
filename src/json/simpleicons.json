@@ -178,7 +178,7 @@
 		"status":"available"
 	},
 	"concourse-ci":{
-		"status":"prsubmitted"
+		"status":"pr"
 	},
 	"contactless-payment":{
 		"status":"pending"
@@ -380,14 +380,15 @@
 		"note":"Simple Icons name: \"googleassistant\""
 	},
 	"google-cardboard":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Simple Icons name: \"googlecardboard\""
 	},
 	"google-chrome":{
 		"status":"available",
 		"note":"Simple Icons name: \"googlechrome\""
 	},
 	"google-classroom":{
-		"status":"prsubmitted"
+		"status":"pr"
 	},
 	"google-cloud":{
 		"status":"available",
@@ -458,7 +459,7 @@
 		"note":"Simple Icons name: \"googlepodcasts\""
 	},
 	"google-spreadsheet":{
-		"status":"prsubmitted",
+		"status":"pr",
 		"note":"Simple Icons name: \"googlesheets\""
 	},
 	"google-street-view":{
@@ -715,7 +716,7 @@
 		"note":"Simple Icons name: \"nintendoswitch\""
 	},
 	"nix":{
-		"status":"prsubmitted",
+		"status":"pr",
 		"note":"Simple Icons name: \"nixos\""
 	},
 	"nodejs":{
@@ -738,7 +739,7 @@
 		"note":"Simple Icons name: \"nuxt-dot-js\""
 	},
 	"oci":{
-		"status":"prsubmitted",
+		"status":"pr",
 		"note":"Simple Icons name: \"opencontainersinitiative\""
 	},
 	"odnoklassniki":{
@@ -813,7 +814,7 @@
 		"status":"unknown"
 	},
 	"pokemon-go":{
-		"status":"prsubmitted",
+		"status":"pr",
 		"note":"Simple Icons name: \"pokemongo\""
 	},
 	"polymer":{
@@ -1121,7 +1122,7 @@
 		"status":"available"
 	},
 	"youtube-creator-studio":{
-		"status":"prsubmitted",
+		"status":"pr",
 		"note":"Simple Icons name: \"youtubestudio\""
 	},
 	"youtube-gaming":{
@@ -1129,7 +1130,7 @@
 		"note":"Service discontinued"
 	},
 	"youtube-tv":{
-		"status":"prsubmitted",
+		"status":"pr",
 		"note":"Simple Icons name: \"youtubetv\""
 	},
 	"z-wave":{

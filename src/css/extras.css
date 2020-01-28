@@ -632,7 +632,7 @@ table#variants,table#simple{
 	fill:#1976d2;
 }
 #simple svg.wip,
-#simple svg.prsubmitted{
+#simple svg.pr{
 	fill:var(--colour);
 }
 #simple svg.deprecated{
@@ -650,6 +650,21 @@ table#variants,table#simple{
 	background:var(--colour);
 	bottom:0;
 	color:#fff;
+}
+#simple tfoot td{
+	background:var(--colour);
+	bottom:0;
+	color:#fff;
+}
+#simple tfoot div{
+	grid-gap:8px;
+	gap:8px;
+	grid-auto-rows:1fr;
+	grid-template-columns:repeat(auto-fill,minmax(calc((100% - 16px) / 3),1fr));
+}
+#simple tfoot svg{
+	fill:currentcolor;
+	margin:0 6px 0 0;
 }
 
 /** BREAKPOINTS **/
