@@ -41,7 +41,8 @@
 		"note":"Simple Icons name: \"googlemessages\""
 	},
 	"android-studio":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Simple Icons name: \"androidstudio\""
 	},
 	"angular":{
 		"status":"available"
@@ -179,6 +180,9 @@
 	"concourse-ci":{
 		"status":"prsubmitted"
 	},
+	"contactless-payment":{
+		"status":"pending"
+	},
 	"cordova":{
 		"status":"available",
 		"note":"Simple Icons name: \"apachecordova\""
@@ -307,7 +311,7 @@
 		"status":"available"
 	},
 	"font-awesome":{
-		"status":"prsubmitted",
+		"status":"added",
 		"note":"Simple Icons name: \"fontawesome\""
 	},
 	"foursquare":{
@@ -383,7 +387,7 @@
 		"note":"Simple Icons name: \"googlechrome\""
 	},
 	"google-classroom":{
-		"status":"wip"
+		"status":"prsubmitted"
 	},
 	"google-cloud":{
 		"status":"available",
@@ -686,7 +690,7 @@
 		"status":"pending"
 	},
 	"midi":{
-		"status":"wip"
+		"status":"added"
 	},
 	"minecraft":{
 		"status":"rejected"
@@ -702,6 +706,9 @@
 	},
 	"netflix":{
 		"status":"available"
+	},
+	"nfc":{
+		"status":"wip"
 	},
 	"nintendo-switch":{
 		"status":"available",
@@ -731,7 +738,7 @@
 		"note":"Simple Icons name: \"nuxt-dot-js\""
 	},
 	"oci":{
-		"status":"unknown",
+		"status":"prsubmitted",
 		"note":"Simple Icons name: \"opencontainersinitiative\""
 	},
 	"odnoklassniki":{
@@ -1114,7 +1121,7 @@
 		"status":"available"
 	},
 	"youtube-creator-studio":{
-		"status":"wip",
+		"status":"prsubmitted",
 		"note":"Simple Icons name: \"youtubestudio\""
 	},
 	"youtube-gaming":{
@@ -1122,7 +1129,7 @@
 		"note":"Service discontinued"
 	},
 	"youtube-tv":{
-		"status":"wip",
+		"status":"prsubmitted",
 		"note":"Simple Icons name: \"youtubetv\""
 	},
 	"z-wave":{
