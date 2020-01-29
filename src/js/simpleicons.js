@@ -2,7 +2,9 @@
 	const 	version=4895,
 		icons=await(await fetch(`../json/icons.json`)).json(),
 		simple=await(await fetch(`../json/simpleicons.json`)).json(),
-		body=document.querySelector(`tbody`);
+		body=document.querySelector(`tbody`),
+		counts={},
+		legends=document.querySelectorAll(`tfoot p`);
 	let key,tr,td,svg,path,title,use;
 	for(key in simple)
 		if(simple.hasOwnProperty(key)){
@@ -48,6 +50,9 @@
 			use=use.cloneNode(0);
 			use.className=simple[key].status;
 			use.setAttribute(`href`,`#`+simple[key].status);
+			if(counts[simple[key].status])
+				++counts[simple[key].status];
+			else counts[simple[key].status]=1;
 			svg.append(use);
 			td.append(svg);
 			tr.append(td);
@@ -57,4 +62,6 @@
 			tr.append(td);
 			body.append(tr)
 		}
+	for(key of legends)
+		key.append(document.createTextNode(` (${counts[key.dataset.count]||0})`))
 })();

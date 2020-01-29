@@ -536,7 +536,7 @@
 		"status":"available"
 	},
 	"kotlin":{
-		"status":"available"
+		"status":"outdated"
 	},
 	"kubernetes":{
 		"status":"available"
@@ -920,6 +920,9 @@
 		"status":"available",
 		"note":"Simple Icons name: \"stackoverflow\""
 	},
+	"stackpath":{
+		"status":"available"
+	},
 	"steam":{
 		"status":"available"
 	},
@@ -1086,7 +1089,7 @@
 		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"xaml":{
-		"status":"pending"
+		"status":"unknown"
 	},
 	"xbox":{
 		"status":"available"
