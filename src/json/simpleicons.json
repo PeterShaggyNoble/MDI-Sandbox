@@ -101,8 +101,8 @@
 		"status":"available"
 	},
 	"babel":{
-		"status":"available",
-		"note":"Simple Icons uses the full wordmark"
+		"status":"pr",
+		"note":"Simple Icons currently uses the full wordmark"
 	},
 	"bandcamp":{
 		"status":"available"
@@ -380,7 +380,7 @@
 		"note":"Simple Icons name: \"googleassistant\""
 	},
 	"google-cardboard":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Simple Icons name: \"googlecardboard\""
 	},
 	"google-chrome":{
@@ -388,7 +388,8 @@
 		"note":"Simple Icons name: \"googlechrome\""
 	},
 	"google-classroom":{
-		"status":"pr"
+		"status":"pr",
+		"note":"Simple Icons name: \"googleclassroom\""
 	},
 	"google-cloud":{
 		"status":"available",
@@ -425,10 +426,12 @@
 		"note":"Simple Icons name: \"googlemaps\""
 	},
 	"google-my-business":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Simple Icons name: \"googlemybusiness\""
 	},
 	"google-nearby":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Simple Icons name: \"googlenearby\""
 	},
 	"google-pages":{
 		"status":"rejected",
@@ -709,7 +712,11 @@
 		"status":"available"
 	},
 	"nfc":{
-		"status":"wip"
+		"status":"pr"
+	},
+	"nfc-off":{
+		"status":"rejected",
+		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"nintendo-switch":{
 		"status":"available",
