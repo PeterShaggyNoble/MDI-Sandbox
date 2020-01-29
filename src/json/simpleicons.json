@@ -102,7 +102,7 @@
 	},
 	"babel":{
 		"status":"pr",
-		"note":"Simple Icons currently uses the full wordmark"
+		"note":"Currently uses the full wordmark"
 	},
 	"bandcamp":{
 		"status":"available"
@@ -523,8 +523,8 @@
 		"status":"available"
 	},
 	"jira":{
-		"status":"outdated",
-		"note":"Current version differs from MDI's"
+		"status":"wip",
+		"note":"Current version is Jira Software, awaiting update"
 	},
 	"jquery":{
 		"status":"available"
@@ -539,7 +539,7 @@
 		"status":"available"
 	},
 	"kotlin":{
-		"status":"outdated"
+		"status":"available"
 	},
 	"kubernetes":{
 		"status":"available"
@@ -602,7 +602,7 @@
 	},
 	"language-ruby-on-rails":{
 		"status":"outdated",
-		"note":"Current Simple Icons name: \"rails\", awaiting update"
+		"note":"Current name: \"rails\", awaiting update"
 	},
 	"language-swift":{
 		"status":"available",
@@ -787,7 +787,7 @@
 	},
 	"pandora":{
 		"status":"added",
-		"note":"Current Simple Icons version is outdated"
+		"note":"Current version is outdated"
 	},
 	"patreon":{
 		"status":"available"
