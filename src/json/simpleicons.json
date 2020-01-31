@@ -24,7 +24,8 @@
 		"status":"available"
 	},
 	"amazon-drive":{
-		"status":"unknown"
+		"status":"rejected",
+		"note":"Replaced by Amazon Photos"
 	},
 	"android":{
 		"status":"available"
@@ -647,7 +648,7 @@
 		"status":"available"
 	},
 	"lumx":{
-		"status":"pending"
+		"status":"wip"
 	},
 	"lyft":{
 		"status":"available"
@@ -698,7 +699,8 @@
 		"status":"available"
 	},
 	"microsoft-dynamics":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Simple Icons name: \"dynamics365\""
 	},
 	"midi":{
 		"status":"added"
