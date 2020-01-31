@@ -103,7 +103,7 @@
 		"status":"available"
 	},
 	"babel":{
-		"status":"pr",
+		"status":"added",
 		"note":"Currently uses the full wordmark"
 	},
 	"bandcamp":{
@@ -395,7 +395,7 @@
 		"note":"Simple Icons name: \"googlechrome\""
 	},
 	"google-classroom":{
-		"status":"pr",
+		"status":"added",
 		"note":"Simple Icons name: \"googleclassroom\""
 	},
 	"google-cloud":{
@@ -474,7 +474,8 @@
 		"note":"Simple Icons name: \"googlesheets\""
 	},
 	"google-street-view":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Simple Icons name: \"googlestreetview\""
 	},
 	"google-translate":{
 		"status":"added",
@@ -567,6 +568,10 @@
 	"language-css3":{
 		"status":"available",
 		"note":"Simple Icons name: \"css3\""
+	},
+	"language-fortran":{
+		"status":"rejected",
+		"note":"No official logo\/icon available"
 	},
 	"language-go":{
 		"status":"available",
@@ -755,7 +760,7 @@
 		"note":"Simple Icons name: \"nuxt-dot-js\""
 	},
 	"oci":{
-		"status":"pr",
+		"status":"added",
 		"note":"Simple Icons name: \"opencontainersinitiative\""
 	},
 	"odnoklassniki":{
