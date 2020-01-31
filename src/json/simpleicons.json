@@ -61,7 +61,8 @@
 		"status":"available"
 	},
 	"apple-finder":{
-		"status":"pending"
+		"status":"rejected",
+		"note":"Not a brand"
 	},
 	"apple-icloud":{
 		"status":"available",
@@ -174,11 +175,16 @@
 		"status":"rejected",
 		"name":"Service now uses the Cisco logo"
 	},
+	"clippy":{
+		"status":"rejected",
+		"note":"Not a brand"
+	},
 	"codepen":{
 		"status":"available"
 	},
 	"concourse-ci":{
-		"status":"pr"
+		"status":"added",
+		"note":"Simple Icons name: \"concourse\""
 	},
 	"contactless-payment":{
 		"status":"pending"
@@ -380,7 +386,7 @@
 		"note":"Simple Icons name: \"googleassistant\""
 	},
 	"google-cardboard":{
-		"status":"pr",
+		"status":"added",
 		"note":"Simple Icons name: \"googlecardboard\""
 	},
 	"google-chrome":{
@@ -400,7 +406,8 @@
 		"note":"Simple Icons name: \"googledrive\""
 	},
 	"google-earth":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Simple Icons name: \"googleearth\""
 	},
 	"google-fit":{
 		"status":"available",
@@ -430,7 +437,7 @@
 		"note":"Simple Icons name: \"googlemybusiness\""
 	},
 	"google-nearby":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Simple Icons name: \"googlenearby\""
 	},
 	"google-pages":{
@@ -723,7 +730,7 @@
 		"note":"Simple Icons name: \"nintendoswitch\""
 	},
 	"nix":{
-		"status":"pr",
+		"status":"added",
 		"note":"Simple Icons name: \"nixos\""
 	},
 	"nodejs":{
@@ -1096,7 +1103,7 @@
 		"note":"Variant, outside the scope of Simple Icons"
 	},
 	"xaml":{
-		"status":"unknown"
+		"status":"wip"
 	},
 	"xbox":{
 		"status":"available"
