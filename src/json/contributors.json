@@ -152,9 +152,17 @@
 		"name":"Michael Richins",
 		"uuid":"58a489e8-6c78-11e6-8c7d-842b2b6cfe1b"
 	},
+	"moma":{
+		"name":"Moma Design Studio",
+		"uuid":"a0feb023-44a2-11ea-925c-94188269ec50"
+	},
 	"nick":{
 		"name":"Nick",
 		"uuid":"8aa1a4d1-2486-11e8-b914-94188269ec50"
+	},
+	"nilsfast":{
+		"name":"nilsfast",
+		"uuid":"3efd1ed6-44a6-11ea-925c-94188269ec50"
 	},
 	"ozgurgorgulu":{
 		"name":"Özgür Görgülü",

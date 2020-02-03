@@ -17,7 +17,7 @@
 	svg.setAttribute(`viewBox`,`0 0 512 512`);
 	for(variant in icons)
 		if(icons.hasOwnProperty(variant)){
-			count=Object.keys(icons[variant]).length;
+			count=Object.keys(icons[variant]).filter(x=>!filter||filter===icons[variant][x].status).length;
 			if(count){
 				section=section.cloneNode(0);
 				section.id=variant;

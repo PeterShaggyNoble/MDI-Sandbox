@@ -370,9 +370,13 @@
 	"google":{
 		"status":"available"
 	},
+	"google-ads":{
+		"status":"available",
+		"note":"Simple Icons name: \"googleads\""
+	},
 	"google-adwords":{
 		"status":"rejected",
-		"note":"Renamed and available as \"googleads\""
+		"note":"Renamed and available in both libraries asc\"google(-)ads\""
 	},
 	"google-allo":{
 		"status":"rejected",
@@ -415,7 +419,8 @@
 		"note":"Simple Icons name: \"googlefit\""
 	},
 	"google-glass":{
-		"status":"pending"
+		"status":"rejected",
+		"note":"Too niche for inclusion"
 	},
 	"google-hangouts":{
 		"status":"available",
@@ -438,7 +443,7 @@
 		"note":"Simple Icons name: \"googlemybusiness\""
 	},
 	"google-nearby":{
-		"status":"pr",
+		"status":"added",
 		"note":"Simple Icons name: \"googlenearby\""
 	},
 	"google-pages":{
