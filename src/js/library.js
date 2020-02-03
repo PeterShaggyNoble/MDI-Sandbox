@@ -1078,8 +1078,6 @@
 				this.article.append(T``);
 				this.svg.classList.add(`db`,`pen`);
 				this.svg.setAttribute(`viewBox`,`0 0 24 24`);
-				console.log(Object.keys(this.use).length)
-				console.log(new Set(Object.keys(this.use)).size)
 				for(let key in this.use)
 					if(this.use.hasOwnProperty(key))
 						this.add(key);
