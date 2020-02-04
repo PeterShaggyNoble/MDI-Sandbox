@@ -31,7 +31,8 @@
 		"status":"available"
 	},
 	"android-auto":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Name: \"androidauto\""
 	},
 	"android-debug-bridge":{
 		"status":"rejected",
@@ -42,7 +43,7 @@
 		"note":"Name: \"googlemessages\""
 	},
 	"android-studio":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Name: \"androidstudio\""
 	},
 	"angular":{
@@ -188,7 +189,8 @@
 		"note":"Name: \"concourse\""
 	},
 	"contactless-payment":{
-		"status":"pending"
+		"status":"wip",
+		"note":"Name: \"contactlesspayment\""
 	},
 	"cordova":{
 		"status":"available",
@@ -439,7 +441,7 @@
 		"note":"Name: \"googlemaps\""
 	},
 	"google-my-business":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Name: \"googlemybusiness\""
 	},
 	"google-nearby":{
@@ -713,7 +715,7 @@
 		"status":"available"
 	},
 	"microsoft-dynamics":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Name: \"dynamics365\""
 	},
 	"midi":{
@@ -1116,7 +1118,7 @@
 		"note":"Variant, out of scope"
 	},
 	"xaml":{
-		"status":"wip"
+		"status":"pr"
 	},
 	"xbox":{
 		"status":"available"
@@ -1156,8 +1158,8 @@
 		"note":"Name: \"youtubestudio\""
 	},
 	"youtube-gaming":{
-		"status":"rejected",
-		"note":"Service discontinued"
+		"status":"wip",
+		"note":"Name: \"youtubegaming\""
 	},
 	"youtube-tv":{
 		"status":"pr",
