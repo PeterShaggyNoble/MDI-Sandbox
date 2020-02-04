@@ -11,11 +11,11 @@
 	},
 	"adobe-acrobat":{
 		"status":"available",
-		"note":"Simple Icons name: \"adobeacobatreader\""
+		"note":"Name: \"adobeacobatreader\""
 	},
 	"airplay":{
 		"status":"available",
-		"note":"Simple Icons name: \"airplayvideo\""
+		"note":"Name: \"airplayvideo\""
 	},
 	"amazon":{
 		"status":"available"
@@ -39,11 +39,11 @@
 	},
 	"android-messages":{
 		"status":"added",
-		"note":"Simple Icons name: \"googlemessages\""
+		"note":"Name: \"googlemessages\""
 	},
 	"android-studio":{
 		"status":"wip",
-		"note":"Simple Icons name: \"androidstudio\""
+		"note":"Name: \"androidstudio\""
 	},
 	"angular":{
 		"status":"available"
@@ -56,7 +56,7 @@
 	},
 	"apache-kafka":{
 		"status":"available",
-		"note":"Simple Icons name: \"apachekafka\""
+		"note":"Name: \"apachekafka\""
 	},
 	"apple":{
 		"status":"available"
@@ -67,15 +67,15 @@
 	},
 	"apple-icloud":{
 		"status":"available",
-		"note":"Simple Icons name: \"icloud\""
+		"note":"Name: \"icloud\""
 	},
 	"apple-ios":{
 		"status":"available",
-		"note":"Simple Icons name: \"ios\""
+		"note":"Name: \"ios\""
 	},
 	"apple-safari":{
 		"status":"available",
-		"note":"Simple Icons name: \"safari\""
+		"note":"Name: \"safari\""
 	},
 	"appnet":{
 		"status":"rejected",
@@ -83,7 +83,7 @@
 	},
 	"arch":{
 		"status":"available",
-		"note":"Simple Icons name: \"archlinux\""
+		"note":"Name: \"archlinux\""
 	},
 	"artstation":{
 		"status":"available"
@@ -93,11 +93,11 @@
 	},
 	"aws":{
 		"status":"available",
-		"note":"Simple Icons name: \"amazonaws\""
+		"note":"Name: \"amazonaws\""
 	},
 	"azure":{
 		"status":"available",
-		"note":"Simple Icons name: \"microsoftazure\""
+		"note":"Name: \"microsoftazure\""
 	},
 	"azure-devops":{
 		"status":"available"
@@ -114,7 +114,7 @@
 	},
 	"battlenet":{
 		"status":"available",
-		"note":"Simple Icons name: \"battle-dot-net\""
+		"note":"Name: \"battle-dot-net\""
 	},
 	"beam":{
 		"status":"rejected",
@@ -122,7 +122,7 @@
 	},
 	"beats":{
 		"status":"available",
-		"note":"Simple Icons name: \"beatsbydre\""
+		"note":"Name: \"beatsbydre\""
 	},
 	"behance":{
 		"status":"available"
@@ -138,14 +138,14 @@
 	},
 	"black-mesa":{
 		"status":"rejected",
-		"note":"Fictional brand, outside the scope of Simple Icons"
+		"note":"Fictional brand, out of scope"
 	},
 	"blackberry":{
 		"status":"available"
 	},
 	"blender-software":{
 		"status":"available",
-		"note":"Simple Icons name: \"blender\""
+		"note":"Name: \"blender\""
 	},
 	"blogger":{
 		"status":"available"
@@ -167,7 +167,7 @@
 	},
 	"cast":{
 		"status":"added",
-		"note":"Simple Icons name: \"googlecast\""
+		"note":"Name: \"googlecast\""
 	},
 	"centos":{
 		"status":"available"
@@ -185,35 +185,35 @@
 	},
 	"concourse-ci":{
 		"status":"added",
-		"note":"Simple Icons name: \"concourse\""
+		"note":"Name: \"concourse\""
 	},
 	"contactless-payment":{
 		"status":"pending"
 	},
 	"cordova":{
 		"status":"available",
-		"note":"Simple Icons name: \"apachecordova\""
+		"note":"Name: \"apachecordova\""
 	},
 	"creative-commons":{
 		"status":"available"
 	},
 	"cryengine":{
 		"status":"available",
-		"note":"Simple Icons version includes wordmark"
+		"note":"Includes wordmark"
 	},
 	"debian":{
 		"status":"available"
 	},
 	"dev-to":{
 		"status":"available",
-		"note":"Simple Icons name: \"dev-dot-to\""
+		"note":"Name: \"dev-dot-to\""
 	},
 	"deviantart":{
 		"status":"available"
 	},
 	"digital-ocean":{
 		"status":"available",
-		"note":"Simple Icons name: \"digitalocean\""
+		"note":"Name: \"digitalocean\""
 	},
 	"discord":{
 		"status":"available"
@@ -223,7 +223,7 @@
 	},
 	"disqus-outline":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"dlna":{
 		"status":"available"
@@ -245,7 +245,7 @@
 	},
 	"dribbble-box":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"dropbox":{
 		"status":"available"
@@ -258,15 +258,15 @@
 	},
 	"edge-legacy":{
 		"status":"rejected",
-		"note":"Outdated icon, outside the scope of Simple Icons"
+		"note":"Outdated icon, out of scope"
 	},
 	"electron-framework":{
 		"status":"available",
-		"note":"Simple Icons name: \"electron\""
+		"note":"Name: \"electron\""
 	},
 	"ember":{
 		"status":"available",
-		"note":"Simple Icons name: \"ember-dot-js\""
+		"note":"Name: \"ember-dot-js\""
 	},
 	"emby":{
 		"status":"available"
@@ -291,15 +291,15 @@
 	},
 	"facebook-box":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"facebook-messenger":{
 		"status":"available",
-		"note":"Simple Icons name: \"facebookmessenger\""
+		"note":"Name: \"facebookmessenger\""
 	},
 	"facebook-workplace":{
 		"status":"available",
-		"note":"Simple Icons name: \"workplace\""
+		"note":"Name: \"workplace\""
 	},
 	"fedora":{
 		"status":"available"
@@ -308,8 +308,8 @@
 		"status":"available"
 	},
 	"firefox":{
-		"status":"available",
-		"note":"Simple Icons name: \"mozillafirefox\""
+		"status":"outdated",
+		"note":"Current name: \"mozillafirefox\", awaiting rename to \"firefoxbrowser\""
 	},
 	"flattr":{
 		"status":"available"
@@ -319,7 +319,7 @@
 	},
 	"font-awesome":{
 		"status":"added",
-		"note":"Simple Icons name: \"fontawesome\""
+		"note":"Name: \"fontawesome\""
 	},
 	"foursquare":{
 		"status":"available"
@@ -338,15 +338,15 @@
 	},
 	"github-box":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"github-circle":{
 		"status":"available",
-		"note":"Simple Icons name: \"github\""
+		"note":"Name: \"github\""
 	},
 	"github-face":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"gitlab":{
 		"status":"available"
@@ -359,7 +359,7 @@
 	},
 	"gnome":{
 		"status":"available",
-		"note":"Simple Icons version includes wordmark"
+		"note":"Includes wordmark"
 	},
 	"gog":{
 		"status":"available"
@@ -372,7 +372,7 @@
 	},
 	"google-ads":{
 		"status":"available",
-		"note":"Simple Icons name: \"googleads\""
+		"note":"Name: \"googleads\""
 	},
 	"google-adwords":{
 		"status":"rejected",
@@ -384,39 +384,39 @@
 	},
 	"google-analytics":{
 		"status":"available",
-		"note":"Simple Icons name: \"googleanalytics\""
+		"note":"Name: \"googleanalytics\""
 	},
 	"google-assistant":{
 		"status":"available",
-		"note":"Simple Icons name: \"googleassistant\""
+		"note":"Name: \"googleassistant\""
 	},
 	"google-cardboard":{
 		"status":"added",
-		"note":"Simple Icons name: \"googlecardboard\""
+		"note":"Name: \"googlecardboard\""
 	},
 	"google-chrome":{
 		"status":"available",
-		"note":"Simple Icons name: \"googlechrome\""
+		"note":"Name: \"googlechrome\""
 	},
 	"google-classroom":{
 		"status":"added",
-		"note":"Simple Icons name: \"googleclassroom\""
+		"note":"Name: \"googleclassroom\""
 	},
 	"google-cloud":{
 		"status":"available",
-		"note":"Simple Icons name: \"googlecloud\""
+		"note":"Name: \"googlecloud\""
 	},
 	"google-drive":{
 		"status":"available",
-		"note":"Simple Icons name: \"googledrive\""
+		"note":"Name: \"googledrive\""
 	},
 	"google-earth":{
 		"status":"wip",
-		"note":"Simple Icons name: \"googleearth\""
+		"note":"Name: \"googleearth\""
 	},
 	"google-fit":{
 		"status":"available",
-		"note":"Simple Icons name: \"googlefit\""
+		"note":"Name: \"googlefit\""
 	},
 	"google-glass":{
 		"status":"rejected",
@@ -424,27 +424,27 @@
 	},
 	"google-hangouts":{
 		"status":"available",
-		"note":"Simple Icons name: \"googlehangouts\""
+		"note":"Name: \"googlehangouts\""
 	},
 	"google-keep":{
 		"status":"available",
-		"note":"Simple Icons name: \"googlekeep\""
+		"note":"Name: \"googlekeep\""
 	},
 	"google-lens":{
 		"status":"available",
-		"note":"Simple Icons name: \"googlelens\""
+		"note":"Name: \"googlelens\""
 	},
 	"google-maps":{
 		"status":"available",
-		"note":"Simple Icons name: \"googlemaps\""
+		"note":"Name: \"googlemaps\""
 	},
 	"google-my-business":{
 		"status":"wip",
-		"note":"Simple Icons name: \"googlemybusiness\""
+		"note":"Name: \"googlemybusiness\""
 	},
 	"google-nearby":{
 		"status":"added",
-		"note":"Simple Icons name: \"googlenearby\""
+		"note":"Name: \"googlenearby\""
 	},
 	"google-pages":{
 		"status":"rejected",
@@ -452,7 +452,7 @@
 	},
 	"google-photos":{
 		"status":"wip",
-		"note":"Simple Icons name: \"googlephotos\""
+		"note":"Name: \"googlephotos\""
 	},
 	"google-physical-web":{
 		"status":"rejected",
@@ -460,7 +460,7 @@
 	},
 	"google-play":{
 		"status":"available",
-		"note":"Simple Icons name: \"googleplay\""
+		"note":"Name: \"googleplay\""
 	},
 	"google-plus":{
 		"status":"rejected",
@@ -472,19 +472,19 @@
 	},
 	"google-podcast":{
 		"status":"available",
-		"note":"Simple Icons name: \"googlepodcasts\""
+		"note":"Name: \"googlepodcasts\""
 	},
 	"google-spreadsheet":{
 		"status":"pr",
-		"note":"Simple Icons name: \"googlesheets\""
+		"note":"Name: \"googlesheets\""
 	},
 	"google-street-view":{
 		"status":"wip",
-		"note":"Simple Icons name: \"googlestreetview\""
+		"note":"Name: \"googlestreetview\""
 	},
 	"google-translate":{
 		"status":"added",
-		"note":"Simple Icons name: \"googletranslate\""
+		"note":"Name: \"googletranslate\""
 	},
 	"google-wallet":{
 		"status":"rejected",
@@ -495,18 +495,18 @@
 	},
 	"hackernews":{
 		"status":"available",
-		"note":"Simple Icons name: \"ycombinator\""
+		"note":"Name: \"ycombinator\""
 	},
 	"home-assistant":{
 		"status":"available",
-		"note":"Simple Icons name: \"homeassistant\""
+		"note":"Name: \"homeassistant\""
 	},
 	"houzz":{
 		"status":"available"
 	},
 	"houzz-box":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"hubspot":{
 		"status":"available"
@@ -516,7 +516,7 @@
 	},
 	"humble-bundle":{
 		"status":"available",
-		"note":"Simple Icons name: \"humblebundle\""
+		"note":"Name: \"humblebundle\""
 	},
 	"instagram":{
 		"status":"available"
@@ -560,19 +560,19 @@
 	},
 	"language-c":{
 		"status":"available",
-		"note":"Simple Icons name: \"c\""
+		"note":"Name: \"c\""
 	},
 	"language-cpp":{
 		"status":"available",
-		"note":"Simple Icons name: \"cplusplus\""
+		"note":"Name: \"cplusplus\""
 	},
 	"language-csharp":{
 		"status":"available",
-		"note":"Simple Icons name: \"csharp\""
+		"note":"Name: \"csharp\""
 	},
 	"language-css3":{
 		"status":"available",
-		"note":"Simple Icons name: \"css3\""
+		"note":"Name: \"css3\""
 	},
 	"language-fortran":{
 		"status":"rejected",
@@ -580,69 +580,73 @@
 	},
 	"language-go":{
 		"status":"available",
-		"note":"Simple Icons name: \"go\""
+		"note":"Name: \"go\""
 	},
 	"language-haskell":{
 		"status":"available",
-		"note":"Simple Icons name: \"haskell\""
+		"note":"Name: \"haskell\""
 	},
 	"language-html5":{
 		"status":"available",
-		"note":"Simple Icons name: \"html5\""
+		"note":"Name: \"html5\""
 	},
 	"language-java":{
 		"status":"available",
-		"note":"Simple Icons name: \"java\""
+		"note":"Name: \"java\""
 	},
 	"language-javascript":{
 		"status":"available",
-		"note":"Simple Icons name: \"javascript\""
+		"note":"Name: \"javascript\""
 	},
 	"language-lua":{
 		"status":"available",
-		"note":"Simple Icons name: \"lua\""
+		"note":"Name: \"lua\""
 	},
 	"language-php":{
 		"status":"available",
-		"note":"Simple Icons name: \"php\""
+		"note":"Name: \"php\""
 	},
 	"language-python":{
 		"status":"available",
-		"note":"Simple Icons name: \"c\""
+		"note":"Name: \"c\""
 	},
 	"language-python-text":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"language-r":{
 		"status":"available",
-		"note":"Simple Icons name: \"r\""
+		"note":"Name: \"r\""
+	},
+	"language-ruby":{
+		"status":"available",
+		"note":"Name: \"ruby\""
 	},
 	"language-ruby-on-rails":{
 		"status":"outdated",
-		"note":"Current name: \"rails\", awaiting update"
+		"note":"Current name: \"rails\", awaiting rename to \"rubyrails\""
 	},
 	"language-swift":{
 		"status":"available",
-		"note":"Simple Icons name: \"swift\""
+		"note":"Name: \"swift\""
 	},
 	"language-typescript":{
 		"status":"available",
-		"note":"Simple Icons name: \"typesecript\""
+		"note":"Name: \"typesecript\""
 	},
 	"laravel":{
 		"status":"available"
 	},
 	"lastfm":{
 		"status":"available",
-		"note":"Simple Icons name: \"last-dot-fm\""
+		"note":"Name: \"last-dot-fm\""
 	},
 	"lastpass":{
 		"status":"available"
 	},
 	"linkedin":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"linkedin-box":{
 		"status":"available"
@@ -652,7 +656,7 @@
 	},
 	"linux-mint":{
 		"status":"available",
-		"note":"Simple Icons name: \"linuxmint\""
+		"note":"Name: \"linuxmint\""
 	},
 	"litecoin":{
 		"status":"available"
@@ -665,7 +669,7 @@
 	},
 	"mail-ru":{
 		"status":"available",
-		"note":"Simple Icons name: \"mail-dot-ru\""
+		"note":"Name: \"mail-dot-ru\""
 	},
 	"mapbox":{
 		"status":"available"
@@ -675,22 +679,22 @@
 	},
 	"markdown-outline":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"mastodon":{
 		"status":"available"
 	},
 	"mastodon-variant":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"material-design":{
 		"status":"available",
-		"note":"Simple Icons name: \"materialdesign\""
+		"note":"Name: \"materialdesign\""
 	},
 	"material-ui":{
 		"status":"available",
-		"note":"Simple Icons name: \"materialui\""
+		"note":"Name: \"materialui\""
 	},
 	"maxcdn":{
 		"status":"rejected",
@@ -710,7 +714,7 @@
 	},
 	"microsoft-dynamics":{
 		"status":"wip",
-		"note":"Simple Icons name: \"dynamics365\""
+		"note":"Name: \"dynamics365\""
 	},
 	"midi":{
 		"status":"added"
@@ -735,61 +739,61 @@
 	},
 	"nfc-off":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"nintendo-switch":{
 		"status":"available",
-		"note":"Simple Icons name: \"nintendoswitch\""
+		"note":"Name: \"nintendoswitch\""
 	},
 	"nix":{
 		"status":"added",
-		"note":"Simple Icons name: \"nixos\""
+		"note":"Name: \"nixos\""
 	},
 	"nodejs":{
 		"status":"available",
-		"note":"Simple Icons name: \"node-dot-js\""
+		"note":"Name: \"node-dot-js\""
 	},
 	"npm":{
 		"status":"available"
 	},
 	"npm-variant":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"npm-variant-outline":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"nuxt":{
 		"status":"available",
-		"note":"Simple Icons name: \"nuxt-dot-js\""
+		"note":"Name: \"nuxt-dot-js\""
 	},
 	"oci":{
 		"status":"added",
-		"note":"Simple Icons name: \"opencontainersinitiative\""
+		"note":"Name: \"opencontainersinitiative\""
 	},
 	"odnoklassniki":{
 		"status":"available"
 	},
 	"office":{
 		"status":"available",
-		"note":"Simple Icons name: \"microsoftoffice\""
+		"note":"Name: \"microsoftoffice\""
 	},
 	"onedrive":{
 		"status":"available",
-		"note":"Simple Icons name: \"microsoftonedrive\""
+		"note":"Name: \"microsoftonedrive\""
 	},
 	"onenote":{
 		"status":"available",
-		"note":"Simple Icons name: \"microsoftonenote\""
+		"note":"Name: \"microsoftonenote\""
 	},
 	"onepassword":{
 		"status":"available",
-		"note":"Simple Icons name: \"1password\""
+		"note":"Name: \"1password\""
 	},
 	"open-source-initiative":{
 		"status":"available",
-		"note":"Simple Icons name: \"opensourceinitiative\""
+		"note":"Name: \"opensourceinitiative\""
 	},
 	"openid":{
 		"status":"available"
@@ -802,7 +806,7 @@
 	},
 	"outlook":{
 		"status":"available",
-		"note":"Simple Icons name: \"microsoftoutlook\""
+		"note":"Name: \"microsoftoutlook\""
 	},
 	"pandora":{
 		"status":"added",
@@ -825,7 +829,7 @@
 	},
 	"pinterest-box":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"playstation":{
 		"status":"available"
@@ -841,11 +845,11 @@
 	},
 	"pokemon-go":{
 		"status":"pr",
-		"note":"Simple Icons name: \"pokemongo\""
+		"note":"Name: \"pokemongo\""
 	},
 	"polymer":{
 		"status":"available",
-		"note":"Simple Icons name: \"polymerproject\""
+		"note":"Name: \"polymerproject\""
 	},
 	"powershell":{
 		"status":"available"
@@ -855,7 +859,7 @@
 	},
 	"qqchat":{
 		"status":"available",
-		"note":"Simple Icons name: \"tencentqq\""
+		"note":"Name: \"tencentqq\""
 	},
 	"quicktime":{
 		"status":"available"
@@ -882,10 +886,7 @@
 	},
 	"rollupjs":{
 		"status":"available",
-		"note":"Simple Icons name: \"rollup-dot-js\""
-	},
-	"ruby":{
-		"status":"available"
+		"note":"Name: \"rollup-dot-js\""
 	},
 	"salesforce":{
 		"status":"available"
@@ -895,25 +896,25 @@
 	},
 	"semantic-web":{
 		"status":"available",
-		"note":"Simple Icons name: \"semanticweb\""
+		"note":"Name: \"semanticweb\""
 	},
 	"shopify":{
 		"status":"available"
 	},
 	"simple-icons":{
 		"status":"available",
-		"note":"Simple Icons name: \"simpleicons\""
+		"note":"Name: \"simpleicons\""
 	},
 	"sina-weibo":{
 		"status":"available",
-		"note":"Simple Icons name: \"sinaweibo\""
+		"note":"Name: \"sinaweibo\""
 	},
 	"skype":{
 		"status":"available"
 	},
 	"skype-business":{
 		"status":"available",
-		"note":"Simple Icons name: \"skypeforbusiness\""
+		"note":"Name: \"skypeforbusiness\""
 	},
 	"slack":{
 		"status":"available"
@@ -932,19 +933,19 @@
 	},
 	"square-inc":{
 		"status":"available",
-		"note":"Simple Icons name: \"square\""
+		"note":"Name: \"square\""
 	},
 	"square-inc-cash":{
 		"status":"available",
-		"note":"Simple Icons name: \"cashapp\""
+		"note":"Name: \"cashapp\""
 	},
 	"stack-exchange":{
 		"status":"available",
-		"note":"Simple Icons name: \"stackexchange\""
+		"note":"Name: \"stackexchange\""
 	},
 	"stack-overflow":{
 		"status":"available",
-		"note":"Simple Icons name: \"stackoverflow\""
+		"note":"Name: \"stackoverflow\""
 	},
 	"stackpath":{
 		"status":"available"
@@ -954,7 +955,7 @@
 	},
 	"steam-box":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"strava":{
 		"status":"available"
@@ -982,7 +983,7 @@
 	},
 	"tumblr-box":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"twitch":{
 		"status":"added"
@@ -992,11 +993,11 @@
 	},
 	"twitter-box":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"twitter-circle":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"uber":{
 		"status":"available"
@@ -1018,18 +1019,18 @@
 	},
 	"unreal":{
 		"status":"available",
-		"note":"Simple Icons name: \"unrealengine\""
+		"note":"Name: \"unrealengine\""
 	},
 	"untappd":{
 		"status":"available"
 	},
 	"vector-square":{
 		"status":"available",
-		"note":"Simple Icons name: \"materialdesignicons\""
+		"note":"Name: \"materialdesignicons\""
 	},
 	"venmo":{
 		"status":"available",
-		"note":"Simple Icons uses the full wordmark"
+		"note":"Uses the full wordmark"
 	},
 	"vimeo":{
 		"status":"available"
@@ -1040,31 +1041,31 @@
 	},
 	"visual-studio":{
 		"status":"available",
-		"note":"Simple Icons name: \"visualstudio\""
+		"note":"Name: \"visualstudio\""
 	},
 	"visual-studio-code":{
 		"status":"available",
-		"note":"Simple Icons name: \"visualstudiocode\""
+		"note":"Name: \"visualstudiocode\""
 	},
 	"vk":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"vk-box":{
 		"status":"available",
-		"note":"Simple Icons name: \"vk\""
+		"note":"Name: \"vk\""
 	},
 	"vk-circle":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"vlc":{
 		"status":"available",
-		"note":"Simple Icons name: \"vlcmediaplayer\""
+		"note":"Name: \"vlcmediaplayer\""
 	},
 	"vuejs":{
 		"status":"available",
-		"note":"Simple Icons name: \"vue-dot-js\""
+		"note":"Name: \"vue-dot-js\""
 	},
 	"vuetify":{
 		"status":"added"
@@ -1098,7 +1099,7 @@
 	},
 	"windows-classic":{
 		"status":"rejected",
-		"note":"Outdated icon, outside the scope of Simple Icons"
+		"note":"Outdated icon, out of scope"
 	},
 	"wordpress":{
 		"status":"available"
@@ -1112,7 +1113,7 @@
 	},
 	"xamarin-outline":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"xaml":{
 		"status":"wip"
@@ -1122,18 +1123,18 @@
 	},
 	"xda":{
 		"status":"available",
-		"note":"Simple Icons name: \"xdadevelopers\""
+		"note":"Name: \"xdadevelopers\""
 	},
 	"xing":{
 		"status":"available"
 	},
 	"xing-box":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"xing-circle":{
 		"status":"rejected",
-		"note":"Variant, outside the scope of Simple Icons"
+		"note":"Variant, out of scope"
 	},
 	"xmpp":{
 		"status":"available"
@@ -1152,7 +1153,7 @@
 	},
 	"youtube-creator-studio":{
 		"status":"pr",
-		"note":"Simple Icons name: \"youtubestudio\""
+		"note":"Name: \"youtubestudio\""
 	},
 	"youtube-gaming":{
 		"status":"rejected",
@@ -1160,7 +1161,7 @@
 	},
 	"youtube-tv":{
 		"status":"pr",
-		"note":"Simple Icons name: \"youtubetv\""
+		"note":"Name: \"youtubetv\""
 	},
 	"z-wave":{
 		"status":"available"
