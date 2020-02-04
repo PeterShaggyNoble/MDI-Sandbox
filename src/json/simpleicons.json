@@ -175,7 +175,7 @@
 	},
 	"cisco-webex":{
 		"status":"rejected",
-		"name":"Service now uses the Cisco logo"
+		"note":"Service now uses the Cisco logo"
 	},
 	"clippy":{
 		"status":"rejected",
@@ -413,7 +413,7 @@
 		"note":"Name: \"googledrive\""
 	},
 	"google-earth":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Name: \"googleearth\""
 	},
 	"google-fit":{
@@ -737,7 +737,7 @@
 		"status":"available"
 	},
 	"nfc":{
-		"status":"pr"
+		"status":"added"
 	},
 	"nfc-off":{
 		"status":"rejected",
