@@ -480,7 +480,7 @@
 		"note":"Name: \"googlesheets\""
 	},
 	"google-street-view":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Name: \"googlestreetview\""
 	},
 	"google-translate":{
@@ -1099,8 +1099,7 @@
 		"status":"available"
 	},
 	"windows-classic":{
-		"status":"rejected",
-		"note":"Outdated icon, out of scope"
+		"status":"wip"
 	},
 	"wordpress":{
 		"status":"available"
@@ -1157,7 +1156,7 @@
 		"note":"Name: \"youtubestudio\""
 	},
 	"youtube-gaming":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Name: \"youtubegaming\""
 	},
 	"youtube-tv":{
