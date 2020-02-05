@@ -338,13 +338,12 @@
 	"git":{
 		"status":"available"
 	},
+	"github":{
+		"status":"available"
+	},
 	"github-box":{
 		"status":"rejected",
 		"note":"Variant, out of scope"
-	},
-	"github-circle":{
-		"status":"available",
-		"note":"Name: \"github\""
 	},
 	"github-face":{
 		"status":"rejected",

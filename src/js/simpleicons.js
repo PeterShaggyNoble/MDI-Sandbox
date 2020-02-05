@@ -1,5 +1,5 @@
 (async()=>{
-	const 	version=4895,
+	const 	version=4995,
 		icons=await(await fetch(`../json/icons.json`)).json(),
 		simple=await(await fetch(`../json/simpleicons.json`)).json(),
 		body=document.querySelector(`tbody`),

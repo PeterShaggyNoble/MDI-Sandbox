@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2020-02-05:** Updated to Material Design Icons v4.9.95.
 - **2020-01-20:** Added a page showing the [status of all brand icons](https://petershaggynoble.github.io/MDI-Sandbox/simpleicons/) within [Simple Icons](https://simpleicons.org/).
 - **2020-01-20:** Updated to Material Design Icons v4.8.95.
 - **2020-01-16:** Merged Material Icons Extened page with [additional stock icons page](https://petershaggynoble.github.io/MDI-Sandbox/google/).
