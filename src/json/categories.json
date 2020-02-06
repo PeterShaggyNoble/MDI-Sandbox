@@ -133,7 +133,7 @@
 		"name":"Power"
 	},
 	"programming":{
-		"icon":"json",
+		"icon":"code-json",
 		"name":"Programming"
 	},
 	"science":{

@@ -120,9 +120,6 @@
 	"behance":{
 		"status":"available"
 	},
-	"bing":{
-		"status":"available"
-	},
 	"bitbucket":{
 		"status":"available"
 	},
@@ -703,6 +700,10 @@
 		"status":"available",
 		"note":"Name: \"azuredevops\""
 	},
+	"microsoft-bing":{
+		"status":"available",
+		"note":"Name: \"bing\""
+	},
 	"microsoft-dynamics-365":{
 		"status":"pr",
 		"note":"Name: \"dynamics365\""
@@ -727,6 +728,10 @@
 		"status":"available",
 		"note":"Name: \"microsoftoffice\""
 	},
+	"microsoft-onedrive":{
+		"status":"available",
+		"note":"Name: \"microsoftonedrive\""
+	},
 	"microsoft-onenote":{
 		"status":"outdated",
 		"note":"Name: \"microsoftonenote\""
@@ -746,6 +751,14 @@
 	"microsoft-teams":{
 		"status":"outdated",
 		"note":"Name: \"microsoftteams\""
+	},
+	"microsoft-visual-studio":{
+		"status":"available",
+		"note":"Name: \"visualstudio\""
+	},
+	"microsoft-visual-studio-code":{
+		"status":"available",
+		"note":"Name: \"visualstudiocode\""
 	},
 	"microsoft-windows":{
 		"status":"available",
@@ -821,10 +834,6 @@
 	},
 	"odnoklassniki":{
 		"status":"available"
-	},
-	"onedrive":{
-		"status":"available",
-		"note":"Name: \"microsoftonedrive\""
 	},
 	"onepassword":{
 		"status":"available",
@@ -1072,14 +1081,6 @@
 	"vine":{
 		"status":"available",
 		"note":"Service discontinued"
-	},
-	"visual-studio":{
-		"status":"available",
-		"note":"Name: \"visualstudio\""
-	},
-	"visual-studio-code":{
-		"status":"available",
-		"note":"Name: \"visualstudiocode\""
 	},
 	"vk":{
 		"status":"rejected",
