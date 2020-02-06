@@ -39,7 +39,7 @@
 		"note":"No official logo\/icon available"
 	},
 	"android-messages":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"googlemessages\""
 	},
 	"android-studio":{
@@ -96,16 +96,8 @@
 		"status":"available",
 		"note":"Name: \"amazonaws\""
 	},
-	"azure":{
-		"status":"available",
-		"note":"Name: \"microsoftazure\""
-	},
-	"azure-devops":{
-		"status":"available"
-	},
 	"babel":{
-		"status":"added",
-		"note":"Currently uses the full wordmark"
+		"status":"available"
 	},
 	"bandcamp":{
 		"status":"available"
@@ -167,7 +159,7 @@
 		"status":"available"
 	},
 	"cast":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"googlecast\""
 	},
 	"centos":{
@@ -185,7 +177,7 @@
 		"status":"available"
 	},
 	"concourse-ci":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"concourse\""
 	},
 	"contactless-payment":{
@@ -255,13 +247,6 @@
 	"drupal":{
 		"status":"available"
 	},
-	"edge":{
-		"status":"available"
-	},
-	"edge-legacy":{
-		"status":"rejected",
-		"note":"Outdated icon, out of scope"
-	},
 	"electron-framework":{
 		"status":"available",
 		"note":"Name: \"electron\""
@@ -320,7 +305,7 @@
 		"status":"available"
 	},
 	"font-awesome":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"fontawesome\""
 	},
 	"foursquare":{
@@ -392,7 +377,7 @@
 		"note":"Name: \"googleassistant\""
 	},
 	"google-cardboard":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"googlecardboard\""
 	},
 	"google-chrome":{
@@ -400,7 +385,7 @@
 		"note":"Name: \"googlechrome\""
 	},
 	"google-classroom":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"googleclassroom\""
 	},
 	"google-cloud":{
@@ -444,7 +429,7 @@
 		"note":"Name: \"googlemybusiness\""
 	},
 	"google-nearby":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"googlenearby\""
 	},
 	"google-pages":{
@@ -484,7 +469,7 @@
 		"note":"Name: \"googlestreetview\""
 	},
 	"google-translate":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"googletranslate\""
 	},
 	"google-wallet":{
@@ -493,10 +478,6 @@
 	},
 	"graphql":{
 		"status":"available"
-	},
-	"hackernews":{
-		"status":"available",
-		"note":"Name: \"ycombinator\""
 	},
 	"home-assistant":{
 		"status":"available",
@@ -523,9 +504,6 @@
 		"status":"available"
 	},
 	"instapaper":{
-		"status":"available"
-	},
-	"internet-explorer":{
 		"status":"available"
 	},
 	"iobroker":{
@@ -713,12 +691,80 @@
 	"microsoft":{
 		"status":"available"
 	},
-	"microsoft-dynamics":{
+	"microsoft-access":{
+		"status":"outdated",
+		"note":"Name: \"microsoftaccess\""
+	},
+	"microsoft-azure":{
+		"status":"available",
+		"note":"Name: \"microsoftazure\""
+	},
+	"microsoft-azure-devops":{
+		"status":"available",
+		"note":"Name: \"azuredevops\""
+	},
+	"microsoft-dynamics-365":{
 		"status":"pr",
 		"note":"Name: \"dynamics365\""
 	},
+	"microsoft-edge":{
+		"status":"available",
+		"note":"Name: \"edge\""
+	},
+	"microsoft-edge-legacy":{
+		"status":"rejected",
+		"note":"Outdated icon, out of scope"
+	},
+	"microsoft-excel":{
+		"status":"outdated",
+		"note":"Name: \"microsoftexcel\""
+	},
+	"microsoft-internet-explorer":{
+		"status":"available",
+		"note":"Name: \"internetexplorer\""
+	},
+	"microsoft-office":{
+		"status":"available",
+		"note":"Name: \"microsoftoffice\""
+	},
+	"microsoft-onenote":{
+		"status":"outdated",
+		"note":"Name: \"microsoftonenote\""
+	},
+	"microsoft-outlook":{
+		"status":"outdated",
+		"note":"Name: \"microsoftoutlook\""
+	},
+	"microsoft-powerpoint":{
+		"status":"outdated",
+		"note":"Name: \"microsoftpowerpoint\""
+	},
+	"microsoft-sharepoint":{
+		"status":"wip",
+		"note":"Name: \"microsofsharepoint\""
+	},
+	"microsoft-teams":{
+		"status":"outdated",
+		"note":"Name: \"microsoftteams\""
+	},
+	"microsoft-windows":{
+		"status":"available",
+		"note":"Name: \"windows\""
+	},
+	"microsoft-windows-classic":{
+		"status":"wip",
+		"note":"Name: \"windows95\""
+	},
+	"microsoft-word":{
+		"status":"outdated",
+		"note":"Name: \"microsoftword\""
+	},
+	"microsoft-yammer":{
+		"status":"outdated",
+		"note":"Name: \"yammer\""
+	},
 	"midi":{
-		"status":"added"
+		"status":"available"
 	},
 	"minecraft":{
 		"status":"rejected"
@@ -736,7 +782,7 @@
 		"status":"available"
 	},
 	"nfc":{
-		"status":"added"
+		"status":"available"
 	},
 	"nfc-off":{
 		"status":"rejected",
@@ -747,7 +793,7 @@
 		"note":"Name: \"nintendoswitch\""
 	},
 	"nix":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"nixos\""
 	},
 	"nodejs":{
@@ -770,23 +816,15 @@
 		"note":"Name: \"nuxt-dot-js\""
 	},
 	"oci":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"opencontainersinitiative\""
 	},
 	"odnoklassniki":{
 		"status":"available"
 	},
-	"office":{
-		"status":"available",
-		"note":"Name: \"microsoftoffice\""
-	},
 	"onedrive":{
 		"status":"available",
 		"note":"Name: \"microsoftonedrive\""
-	},
-	"onenote":{
-		"status":"available",
-		"note":"Name: \"microsoftonenote\""
 	},
 	"onepassword":{
 		"status":"available",
@@ -805,13 +843,8 @@
 	"origin":{
 		"status":"available"
 	},
-	"outlook":{
-		"status":"available",
-		"note":"Name: \"microsoftoutlook\""
-	},
 	"pandora":{
-		"status":"added",
-		"note":"Current version is outdated"
+		"status":"available"
 	},
 	"patreon":{
 		"status":"available"
@@ -987,7 +1020,7 @@
 		"note":"Variant, out of scope"
 	},
 	"twitch":{
-		"status":"added"
+		"status":"available"
 	},
 	"twitter":{
 		"status":"available"
@@ -1069,7 +1102,7 @@
 		"note":"Name: \"vue-dot-js\""
 	},
 	"vuetify":{
-		"status":"added"
+		"status":"available"
 	},
 	"waze":{
 		"status":"available"
@@ -1078,7 +1111,7 @@
 		"status":"available"
 	},
 	"webrtc":{
-		"status":"added"
+		"status":"available"
 	},
 	"wechat":{
 		"status":"available"
@@ -1094,12 +1127,6 @@
 	},
 	"wikipedia":{
 		"status":"available"
-	},
-	"windows":{
-		"status":"available"
-	},
-	"windows-classic":{
-		"status":"wip"
 	},
 	"wordpress":{
 		"status":"available"
@@ -1139,10 +1166,11 @@
 	"xmpp":{
 		"status":"available"
 	},
-	"yahoo":{
-		"status":"available"
+	"y-combinator":{
+		"status":"available",
+		"note":"Name: \"ycombinator\""
 	},
-	"yammer":{
+	"yahoo":{
 		"status":"available"
 	},
 	"yelp":{
@@ -1151,13 +1179,13 @@
 	"youtube":{
 		"status":"available"
 	},
-	"youtube-creator-studio":{
-		"status":"pr",
-		"note":"Name: \"youtubestudio\""
-	},
 	"youtube-gaming":{
 		"status":"pr",
 		"note":"Name: \"youtubegaming\""
+	},
+	"youtube-studio":{
+		"status":"pr",
+		"note":"Name: \"youtubestudio\""
 	},
 	"youtube-tv":{
 		"status":"pr",
@@ -1170,6 +1198,6 @@
 		"status":"available"
 	},
 	"zigbee":{
-		"status":"added"
+		"status":"available"
 	}
 }
