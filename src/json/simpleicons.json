@@ -171,7 +171,7 @@
 		"note":"Not a brand"
 	},
 	"codepen":{
-		"status":"available"
+		"status":"outdated"
 	},
 	"concourse-ci":{
 		"status":"available",
@@ -220,7 +220,7 @@
 		"status":"available"
 	},
 	"docker":{
-		"status":"available"
+		"status":"outdated"
 	},
 	"dolby":{
 		"status":"available"
@@ -366,7 +366,7 @@
 		"note":"Service discontinued"
 	},
 	"google-analytics":{
-		"status":"available",
+		"status":"outdated",
 		"note":"Name: \"googleanalytics\""
 	},
 	"google-assistant":{
@@ -523,7 +523,7 @@
 		"status":"available"
 	},
 	"kickstarter":{
-		"status":"available"
+		"status":"outdated"
 	},
 	"kodi":{
 		"status":"available"
@@ -705,7 +705,7 @@
 		"note":"Name: \"bing\""
 	},
 	"microsoft-dynamics-365":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"dynamics365\""
 	},
 	"microsoft-edge":{
@@ -922,7 +922,7 @@
 		"note":"Service discontinued"
 	},
 	"reddit":{
-		"status":"available"
+		"status":"outdated"
 	},
 	"redhat":{
 		"status":"available"
@@ -1154,7 +1154,7 @@
 		"note":"Name: \"xdadevelopers\""
 	},
 	"xing":{
-		"status":"available"
+		"status":"outdated"
 	},
 	"xing-box":{
 		"status":"rejected",
