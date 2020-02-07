@@ -31,7 +31,7 @@
 		"status":"available"
 	},
 	"android-auto":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Name: \"androidauto\""
 	},
 	"android-debug-bridge":{
@@ -43,7 +43,7 @@
 		"note":"Name: \"googlemessages\""
 	},
 	"android-studio":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"androidstudio\""
 	},
 	"angular":{
