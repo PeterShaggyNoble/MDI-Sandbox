@@ -447,6 +447,7 @@ article{
 	transition-timing-function:var(--timing-function);
 	padding:8px;
 	width:96px;
+	word-break:break-all;
 }
 article.complete,article.ignore{
 	color:#bdbdbd;

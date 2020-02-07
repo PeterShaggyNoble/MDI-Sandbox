@@ -16,13 +16,13 @@
 	svg.classList.add(`db`);
 	svg.setAttribute(`viewBox`,`0 0 512 512`);
 	for(variant in icons)
-		if(icons.hasOwnProperty(variant)){
+		if(variant!==`versions`&&icons.hasOwnProperty(variant)){
 			count=Object.keys(icons[variant]).filter(x=>!filter||filter===icons[variant][x].status).length;
 			if(count){
 				section=section.cloneNode(0);
 				section.id=variant;
 				heading=heading.cloneNode(0);
-				heading.append(document.createTextNode(variant[0].toUpperCase()+variant.slice(1)+` (${count} icons)`));
+				heading.append(document.createTextNode(variant[0].toUpperCase()+variant.slice(1)+` v${icons.versions[variant]} (${count} icons)`));
 				section.append(heading);
 				for(key in icons[variant])
 					if(icons[variant].hasOwnProperty(key)){
