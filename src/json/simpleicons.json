@@ -745,7 +745,7 @@
 		"note":"Name: \"microsoftpowerpoint\""
 	},
 	"microsoft-sharepoint":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Name: \"microsofsharepoint\""
 	},
 	"microsoft-teams":{
