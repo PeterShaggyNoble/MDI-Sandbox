@@ -422,7 +422,7 @@
 		"note":"Name: \"googlemaps\""
 	},
 	"google-my-business":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"googlemybusiness\""
 	},
 	"google-nearby":{
@@ -1181,7 +1181,7 @@
 		"status":"available"
 	},
 	"youtube-gaming":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"youtubegaming\""
 	},
 	"youtube-studio":{
