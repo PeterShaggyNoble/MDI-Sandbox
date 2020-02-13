@@ -13,10 +13,6 @@
 		"status":"available",
 		"note":"Name: \"adobeacobatreader\""
 	},
-	"airplay":{
-		"status":"available",
-		"note":"Name: \"airplayvideo\""
-	},
 	"amazon":{
 		"status":"available"
 	},
@@ -61,6 +57,10 @@
 	},
 	"apple":{
 		"status":"available"
+	},
+	"apple-airplay":{
+		"status":"available",
+		"note":"Name: \"airplayvideo\""
 	},
 	"apple-finder":{
 		"status":"rejected",
@@ -178,7 +178,7 @@
 		"note":"Name: \"concourse\""
 	},
 	"contactless-payment":{
-		"status":"wip",
+		"status":"pr",
 		"note":"Name: \"contactlesspayment\""
 	},
 	"cordova":{
@@ -458,7 +458,7 @@
 		"note":"Name: \"googlepodcasts\""
 	},
 	"google-spreadsheet":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"googlesheets\""
 	},
 	"google-street-view":{
@@ -528,9 +528,6 @@
 	"kodi":{
 		"status":"available"
 	},
-	"kotlin":{
-		"status":"available"
-	},
 	"kubernetes":{
 		"status":"available"
 	},
@@ -574,9 +571,21 @@
 		"status":"available",
 		"note":"Name: \"javascript\""
 	},
+	"language-kotlin":{
+		"status":"available",
+		"note":"Name: \"kotlin\""
+	},
 	"language-lua":{
 		"status":"available",
 		"note":"Name: \"lua\""
+	},
+	"language-markdown":{
+		"status":"available",
+		"note":"Name: \"markdown\""
+	},
+	"language-markdown-outline":{
+		"status":"rejected",
+		"note":"Variant, out of scope"
 	},
 	"language-php":{
 		"status":"available",
@@ -609,6 +618,10 @@
 	"language-typescript":{
 		"status":"available",
 		"note":"Name: \"typesecript\""
+	},
+	"language-xaml":{
+		"status":"pr",
+		"note":"Name: \"xaml\""
 	},
 	"laravel":{
 		"status":"available"
@@ -649,13 +662,6 @@
 	},
 	"mapbox":{
 		"status":"available"
-	},
-	"markdown":{
-		"status":"available"
-	},
-	"markdown-outline":{
-		"status":"rejected",
-		"note":"Variant, out of scope"
 	},
 	"mastodon":{
 		"status":"available"
@@ -1142,9 +1148,6 @@
 	"xamarin-outline":{
 		"status":"rejected",
 		"note":"Variant, out of scope"
-	},
-	"xaml":{
-		"status":"pr"
 	},
 	"xbox":{
 		"status":"available"
