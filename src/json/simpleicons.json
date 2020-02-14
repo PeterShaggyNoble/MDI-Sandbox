@@ -894,7 +894,7 @@
 	},
 	"pokemon-go":{
 		"status":"pr",
-		"note":"Name: \"pokemongo\""
+		"note":"Name: \"pokemongo\", uses the \"GO\" wordmark"
 	},
 	"polymer":{
 		"status":"available",
