@@ -39,7 +39,7 @@
 		"note":"Name: \"googlemessages\""
 	},
 	"android-studio":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"androidstudio\""
 	},
 	"angular":{
@@ -171,7 +171,7 @@
 		"note":"Not a brand"
 	},
 	"codepen":{
-		"status":"outdated"
+		"status":"available"
 	},
 	"concourse-ci":{
 		"status":"available",
@@ -180,6 +180,14 @@
 	"contactless-payment":{
 		"status":"pr",
 		"note":"Name: \"contactlesspayment\""
+	},
+	"contactless-payment-circle":{
+		"status":"rejected",
+		"note":"Variant, out of scope"
+	},
+	"contactless-payment-circle-outline":{
+		"status":"rejected",
+		"note":"Variant, out of scope"
 	},
 	"cordova":{
 		"status":"available",
@@ -220,7 +228,7 @@
 		"status":"available"
 	},
 	"docker":{
-		"status":"outdated"
+		"status":"available"
 	},
 	"dolby":{
 		"status":"available"
@@ -366,7 +374,7 @@
 		"note":"Service discontinued"
 	},
 	"google-analytics":{
-		"status":"outdated",
+		"status":"available",
 		"note":"Name: \"googleanalytics\""
 	},
 	"google-assistant":{
@@ -422,7 +430,7 @@
 		"note":"Name: \"googlemaps\""
 	},
 	"google-my-business":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"googlemybusiness\""
 	},
 	"google-nearby":{
@@ -458,7 +466,7 @@
 		"note":"Name: \"googlepodcasts\""
 	},
 	"google-spreadsheet":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"googlesheets\""
 	},
 	"google-street-view":{
@@ -523,7 +531,7 @@
 		"status":"available"
 	},
 	"kickstarter":{
-		"status":"outdated"
+		"status":"available"
 	},
 	"kodi":{
 		"status":"available"
@@ -711,7 +719,7 @@
 		"note":"Name: \"bing\""
 	},
 	"microsoft-dynamics-365":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"dynamics365\""
 	},
 	"microsoft-edge":{
@@ -775,8 +783,12 @@
 		"note":"Name: \"windows95\""
 	},
 	"microsoft-word":{
-		"status":"outdated",
+		"status":"available",
 		"note":"Name: \"microsoftword\""
+	},
+	"microsoft-xbox":{
+		"status":"available",
+		"note":"Name: \"xbox\""
 	},
 	"microsoft-yammer":{
 		"status":"outdated",
@@ -810,6 +822,14 @@
 	"nintendo-switch":{
 		"status":"available",
 		"note":"Name: \"nintendoswitch\""
+	},
+	"nintendo-wii":{
+		"status":"available",
+		"note":"Name: \"wii\""
+	},
+	"nintendo-wiiu":{
+		"status":"available",
+		"note":"Name: \"wiiu\""
 	},
 	"nix":{
 		"status":"available",
@@ -880,9 +900,6 @@
 		"status":"rejected",
 		"note":"Variant, out of scope"
 	},
-	"playstation":{
-		"status":"available"
-	},
 	"plex":{
 		"status":"available"
 	},
@@ -928,7 +945,7 @@
 		"note":"Service discontinued"
 	},
 	"reddit":{
-		"status":"outdated"
+		"status":"available"
 	},
 	"redhat":{
 		"status":"available"
@@ -974,6 +991,10 @@
 	"snapchat":{
 		"status":"available"
 	},
+	"sony-playstation":{
+		"status":"available",
+		"note":"Name: \"playstation\""
+	},
 	"soundcloud":{
 		"status":"available"
 	},
@@ -1007,6 +1028,9 @@
 		"note":"Variant, out of scope"
 	},
 	"strava":{
+		"status":"available"
+	},
+	"svg":{
 		"status":"available"
 	},
 	"symfony":{
@@ -1124,12 +1148,6 @@
 		"status":"available"
 	},
 	"whatsapp":{
-		"status":"outdated"
-	},
-	"wii":{
-		"status":"available"
-	},
-	"wiiu":{
 		"status":"available"
 	},
 	"wikipedia":{
@@ -1148,9 +1166,6 @@
 	"xamarin-outline":{
 		"status":"rejected",
 		"note":"Variant, out of scope"
-	},
-	"xbox":{
-		"status":"available"
 	},
 	"xda":{
 		"status":"available",
@@ -1184,15 +1199,15 @@
 		"status":"available"
 	},
 	"youtube-gaming":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"youtubegaming\""
 	},
 	"youtube-studio":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"youtubestudio\""
 	},
 	"youtube-tv":{
-		"status":"pr",
+		"status":"available",
 		"note":"Name: \"youtubetv\""
 	},
 	"z-wave":{

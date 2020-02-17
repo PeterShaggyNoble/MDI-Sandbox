@@ -469,7 +469,7 @@
 				this.svg.removeAttribute(`tabindex`);
 				this.actions={
 					add:new this.Item(`plus-circle`,`Add Icon`),
-					json:new this.Item(`json`,`JSON Object`),
+					json:new this.Item(`code-json`,`JSON Object`),
 					svg:new this.Item(`svg`,`SVG Sprite`),
 					polymer:new this.Item(`polymer`,`HTML for Polymer`),
 					import:new this.Item(`file-import`,`Import Library`),
