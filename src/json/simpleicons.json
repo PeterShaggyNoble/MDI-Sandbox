@@ -402,7 +402,7 @@
 		"note":"Name: \"googledrive\""
 	},
 	"google-earth":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"googleearth\""
 	},
 	"google-fit":{
@@ -470,7 +470,7 @@
 		"note":"Name: \"googlesheets\""
 	},
 	"google-street-view":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"googlestreetview\""
 	},
 	"google-translate":{
@@ -628,7 +628,7 @@
 		"note":"Name: \"typesecript\""
 	},
 	"language-xaml":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"xaml\""
 	},
 	"laravel":{
