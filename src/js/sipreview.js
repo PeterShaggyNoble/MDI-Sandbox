@@ -100,7 +100,7 @@
 		URL.revokeObjectURL(image.src);
 	});
 	button.addEventListener(`click`,save);
-	document.body.addEventListener(`keydown`,keydown)
+	document.body.addEventListener(`keydown`,keydown);
 	document.addEventListener(`input`,generate,true);
 	draw();
 })();
