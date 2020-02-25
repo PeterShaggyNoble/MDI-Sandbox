@@ -26,7 +26,23 @@
 		xml=new XMLSerializer,
 		image=new Image,
 		draw=()=>image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`})),
-		setfill=hex=>parseInt(hex.substr(0,2),16)*.299+parseInt(hex.substr(2,2),16)*.587+parseInt(hex.substr(4,2),16)*.114<128?`#fff`:`#000`,
+		keydown=event=>{
+			if(event.ctrlKey&&event.key===`s`){
+				event.preventDefault();
+				button.dispatchEvent(new Event(`click`));
+			}
+		},
+		save=()=>{
+			canvas.toBlob(blob=>{
+				a.href=URL.createObjectURL(blob);
+				a.download=text.file.firstChild.nodeValue+`.png`;
+				document.body.append(a);
+				a.click();
+				a.remove();
+				URL.revokeObjectURL(a.href);
+			});
+		},
+		setfill=hex=>parseInt(hex.substr(0,2),16)*.299+parseInt(hex.substr(2,2),16)*.587+parseInt(hex.substr(4,2),16)*.114<160?`#fff`:`#000`,
 		generate=event=>{
 			clearTimeout(timer);
 			timer=setTimeout(()=>{
@@ -36,23 +52,28 @@
 				ind=-1;
 				switch(target){
 					case inputs.colour:
-						if(target.validity.valid){
-							if(inputs.overlay.value)
+						if(!inputs.overlay.value){
+							if(!target.validity.valid)
 								value=`111111`;
 							value=value.replace(/^#/,``);
+							text.color.parentNode.setAttribute(`fill-opacity`,target.validity.valid?`1`:`0`);
+							if(target.validity.valid)
+								text.color.textContent=value.toUpperCase();
 							background.setAttribute(`fill`,`#`+value);
 							svg.setAttribute(`fill`,setfill(value));
-							text.color.textContent=value.toUpperCase();
+							delay=200;
 						}
-						delay=200;
 						break;
 					case inputs.data:
 						path.setAttribute(`d`,value);
 						break;
 					case inputs.overlay:
 						compare.setAttribute(`fill-opacity`,value?`.5`:`0`);
+						text.color.parentNode.setAttribute(`fill-opacity`,value||!inputs.colour.validity.valid?`0`:`1`);
 						text.type.textContent=value?`Comparison`:`Preview`;
-						inputs.colour.dispatchEvent(new Event(`input`));
+						if(value)
+							background.setAttribute(`fill`,`#111111`);
+						else inputs.colour.dispatchEvent(new Event(`input`));
 						delay=value?0:200;
 						break;
 					case inputs.name:
@@ -77,17 +98,9 @@
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);
 		URL.revokeObjectURL(image.src);
-	},0);
-	button.addEventListener(`click`,()=>{
-		canvas.toBlob(blob=>{
-			a.href=URL.createObjectURL(blob);
-			a.download=text.file.firstChild.nodeValue+`.png`;
-			document.body.append(a);
-			a.click();
-			a.remove();
-			URL.revokeObjectURL(a.href);
-		});
-	},0);
-	document.addEventListener(`input`,generate,1);
+	});
+	button.addEventListener(`click`,save);
+	document.body.addEventListener(`keydown`,keydown)
+	document.addEventListener(`input`,generate,true);
 	draw();
 })();
