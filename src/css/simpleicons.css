@@ -155,6 +155,9 @@ section>label{
 	margin:8px 0;
 	width:75px;
 }
+body.ctrl>section span.ctrl{
+	text-decoration:underline;
+}
 section>input,section>select,section>textarea{
 	border-bottom:1px solid #bdbdbd;
 	line-height:23px;

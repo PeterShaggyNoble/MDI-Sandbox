@@ -1,5 +1,7 @@
 (async()=>{
-	const 	inputs={
+	const 	data=Object.entries(await(await fetch(`https://houseofdesign.ie/data/icons/simpleicons.json`)).json()),
+		meta=(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json`)).json()).icons,
+		inputs={
 			data:document.getElementById(`data`),
 			overlay:document.getElementById(`overlay`),
 			colour:document.getElementById(`colour`),
@@ -16,7 +18,7 @@
 		background=document.getElementById(`background`),
 		path=document.querySelector(`#path>path`),
 		compare=document.getElementById(`compare`),
-		icon=document.querySelector(`figure>svg>path:last-of-type`),
+		action=document.querySelector(`figure>svg>path:last-of-type`),
 		canvas=document.querySelector(`canvas`),
 		context=canvas.getContext(`2d`),
 		width=canvas.width,
@@ -27,11 +29,26 @@
 		image=new Image,
 		draw=()=>image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`})),
 		keydown=event=>{
-			if(event.ctrlKey&&event.key===`s`){
-				event.preventDefault();
-				button.dispatchEvent(new Event(`click`));
-			}
+			document.body.classList.toggle(`ctrl`,event.ctrlKey);
+			if(event.ctrlKey)
+				switch(event.key){
+/*					case`b`:
+						inputs.name.focus();
+						break;
+					case`c`:
+						inputs.colour.focus();
+						break;
+					case`p`:
+						event.preventDefault();
+						inputs.data.focus();
+						break;*/
+					case`s`:
+						event.preventDefault();
+						button.dispatchEvent(new Event(`click`));
+						break;
+				}
 		},
+		keyup=event=>document.body.classList.toggle(`ctrl`,event.ctrlKey),
 		save=()=>{
 			canvas.toBlob(blob=>{
 				a.href=URL.createObjectURL(blob);
@@ -42,6 +59,7 @@
 				URL.revokeObjectURL(a.href);
 			});
 		},
+		sanitise=value=>value.toLowerCase().replace(/\+/g,`plus`).replace(/^\./,`dot-`).replace(/\.$/,`-dot`).replace(/\./g,`-dot-`).replace(/^&/,`and-`).replace(/&$/,`-and`).replace(/&/g,`-and-`).replace(/[ !:’']/g, "").replace(/à|á|â|ã|ä/g,`a`).replace(/ç|č|ć/g,`c`).replace(/è|é|ê|ë/g,`e`).replace(/ì|í|î|ï/g,`i`).replace(/ñ|ň|ń/g,`n`).replace(/ò|ó|ô|õ|ö/g,`o`).replace(/š|ś/g,`s`).replace(/ù|ú|û|ü/g,`u`).replace(/ý|ÿ/g,`y`).replace(/ž|ź/g,`z`),
 		setfill=hex=>parseInt(hex.substr(0,2),16)*.299+parseInt(hex.substr(2,2),16)*.587+parseInt(hex.substr(4,2),16)*.114<160?`#fff`:`#000`,
 		generate=event=>{
 			clearTimeout(timer);
@@ -49,7 +67,6 @@
 				target=event.target;
 				value=target.value;
 				delay=0;
-				ind=-1;
 				switch(target){
 					case inputs.colour:
 						if(!inputs.overlay.value){
@@ -66,6 +83,13 @@
 						break;
 					case inputs.data:
 						path.setAttribute(`d`,value);
+						if(icon=data.find(([,d])=>d===value))
+							if(icon=meta.find(d=>sanitise(d.title)===icon[0])){
+								inputs.name.value=icon.title;
+								inputs.name.dispatchEvent(new Event(`input`));
+								inputs.colour.value=icon.hex;
+								inputs.colour.dispatchEvent(new Event(`input`));
+							}
 						break;
 					case inputs.overlay:
 						compare.setAttribute(`fill-opacity`,value?`.5`:`0`);
@@ -78,12 +102,12 @@
 						break;
 					case inputs.name:
 						value=value.trim();
-						text.file.textContent=value.toLowerCase().replace(/\+/g,`plus`).replace(/^\./,`dot-`).replace(/\.$/,`-dot`).replace(/\./g,`-dot-`).replace(/^&/,`and-`).replace(/&$/,`-and`).replace(/&/g,`-and-`).replace(/[ !:’']/g, "").replace(/à|á|â|ã|ä/g,`a`).replace(/ç|č|ć/g,`c`).replace(/è|é|ê|ë/g,`e`).replace(/ì|í|î|ï/g,`i`).replace(/ñ|ň|ń/g,`n`).replace(/ò|ó|ô|õ|ö/g,`o`).replace(/š|ś/g,`s`).replace(/ù|ú|û|ü/g,`u`).replace(/ý|ÿ/g,`y`).replace(/ž|ź/g,`z`);
+						text.file.textContent=sanitise(value);
 						text.brand.textContent=value;
 						break;
 					case inputs.action:
-						value&&icon.setAttribute(`d`,value);
-						icon.setAttribute(`fill-opacity`,value?1:0);
+						value&&action.setAttribute(`d`,value);
+						action.setAttribute(`fill-opacity`,value?1:0);
 						delay=200;
 						break;
 				}
@@ -93,7 +117,7 @@
 				},delay);
 			},50);
 		};
-	let color,delay,ind,key,set,size,target,timer,transform,value;
+	let color,delay,icon,target,timer,value;
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);
@@ -101,6 +125,7 @@
 	});
 	button.addEventListener(`click`,save);
 	document.body.addEventListener(`keydown`,keydown);
+	document.body.addEventListener(`keyup`,keyup);
 	document.addEventListener(`input`,generate,true);
 	draw();
 })();
