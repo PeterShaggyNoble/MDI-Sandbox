@@ -65,7 +65,7 @@
 			clearTimeout(timer);
 			timer=setTimeout(()=>{
 				target=event.target;
-				value=target.value;
+				value=target.value.trim();
 				delay=0;
 				switch(target){
 					case inputs.colour:
@@ -86,7 +86,7 @@
 						if(icon=data.find(([,d])=>d===value))
 							if(icon=meta.find(d=>sanitise(d.title)===icon[0])){
 								inputs.name.value=icon.title;
-								inputs.name.dispatchEvent(new Event(`input`));
+								setTimeout(()=>inputs.name.dispatchEvent(new Event(`input`)));
 								inputs.colour.value=icon.hex;
 								inputs.colour.dispatchEvent(new Event(`input`));
 							}
@@ -101,7 +101,6 @@
 						delay=value?0:200;
 						break;
 					case inputs.name:
-						value=value.trim();
 						text.file.textContent=sanitise(value);
 						text.brand.textContent=value;
 						break;
@@ -114,8 +113,8 @@
 				timer=setTimeout(()=>{
 					target===inputs.overlay&&compare.setAttribute(`d`,value);
 					draw();
-				},delay);
-			},50);
+				},event.isTrusted*delay);
+			},event.isTrusted*50);
 		};
 	let color,delay,icon,target,timer,value;
 	image.addEventListener(`load`,()=>{
@@ -123,9 +122,9 @@
 		context.drawImage(image,0,0);
 		URL.revokeObjectURL(image.src);
 	});
+	draw();
 	button.addEventListener(`click`,save);
 	document.body.addEventListener(`keydown`,keydown);
 	document.body.addEventListener(`keyup`,keyup);
 	document.addEventListener(`input`,generate,true);
-	draw();
 })();
