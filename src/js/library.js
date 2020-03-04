@@ -743,8 +743,9 @@
 				library:Q(`#actions>[data-label=Retired]+li`),
 				export:Q(`#actions>[data-label=Retired]+li+li`),
 				markup:Q(`#actions>[data-confirm="Markup"]`),
-				uri:Q(`#actions>[data-confirm="URI"]`),
 				data:Q(`#actions>[data-confirm="Path data"]`),
+				uri:Q(`#actions>[data-confirm="URI"]`),
+				import:Q(`#actions>[data-confirm="Import"]`),
 				icon:Q(`#actions>[data-confirm=Icon]`),
 				codepoint:Q(`#actions>[data-confirm="Code point"]`),
 				url:Q(`#actions>[data-confirm=Link]`),
@@ -796,6 +797,7 @@
 						case this.actions.markup:
 						case this.actions.uri:
 						case this.actions.data:
+						case this.actions.import:
 							if(this.data)
 								page.copy(target.dataset.copy,target.dataset.confirm);
 							else page.alert(`Not yet available.`);
@@ -856,7 +858,8 @@
 				if(this.icon){
 					this.custom=0;
 					this.data=this.actions.data.dataset.copy=this.icon.data;
-					this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint;
+					this.import=this.actions.import.dataset.copy=`import {mdi${page.light?`l`:``}${this.name.replace(/(^|-)(.)/g,(x,y,z)=>z.toUpperCase())}} from '@mdi/${page.light?`light-`:``}js';`;
+					this.codepoint=this.actions.codepoint.dataset.copy=this.icon.codepoint&&this.icon.codepoint[!page.light&&version.int>4995?`new`:`old`];
 					this.retired=!!this.icon.retired&&this.icon.retired<=version.int/*&&this.icon.retired!==`{soon}`*/;
 					this.meta.contributor.nodeValue=contributors.list[this.icon.contributor].name;
 					this.setversion(`added`);
@@ -1094,8 +1097,8 @@
 				if((!page.versioned||!icon.added||icon.added<=version.int)&&data){
 					svg.append(path=this.path.cloneNode(1));
 					path.setAttribute(`d`,data);
-					if(icon.codepoint)
-						keywords.add(icon.codepoint);
+					if(icon.codepoint&&icon.codepoint[!page.light&&version.int>4995?`new`:`old`])
+						keywords.add(icon.codepoint[!page.light&&version.int>4995?`new`:`old`]);
 					if(icon.aliases)
 						icon.aliases.forEach(alias=>
 							alias.split(`-`).forEach(word=>
