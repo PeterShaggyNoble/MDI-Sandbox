@@ -367,7 +367,7 @@
 				for(key in icons.use)
 					if(icons.use.hasOwnProperty(key)){
 						icon=icons.use[key];
-						if(icon.articles.main){
+						if(icon.articles&&icon.articles.main){
 							check=1;
 							if(this.filtered){
 								if(this.categories.size)
