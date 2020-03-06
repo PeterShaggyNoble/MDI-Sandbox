@@ -30,7 +30,7 @@
 		"section":true
 	},
 	"soon":{
-		"icon":"timer",
+		"icon":"timer-outline",
 		"name":"Coming Soon",
 		"section":true
 	},
