@@ -27,7 +27,7 @@
 		"status":"available"
 	},
 	"android-auto":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"androidauto\""
 	},
 	"android-debug-bridge":{
@@ -178,7 +178,7 @@
 		"note":"Name: \"concourse\""
 	},
 	"contactless-payment":{
-		"status":"pr",
+		"status":"added",
 		"note":"Name: \"contactlesspayment\""
 	},
 	"contactless-payment-circle":{
