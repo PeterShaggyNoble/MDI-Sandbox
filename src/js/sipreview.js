@@ -95,9 +95,10 @@
 						compare.setAttribute(`fill-opacity`,value?`.5`:`0`);
 						text.color.parentNode.setAttribute(`fill-opacity`,value||!inputs.colour.validity.valid?`0`:`1`);
 						text.type.textContent=value?`Comparison`:`Preview`;
-						if(value)
+						if(value){
 							background.setAttribute(`fill`,`#111111`);
-						else inputs.colour.dispatchEvent(new Event(`input`));
+							svg.setAttribute(`fill`,setfill(`111111`));
+						}else inputs.colour.dispatchEvent(new Event(`input`));
 						delay=value?0:200;
 						break;
 					case inputs.name:

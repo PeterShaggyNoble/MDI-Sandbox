@@ -27,7 +27,7 @@
 		"status":"available"
 	},
 	"android-auto":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"androidauto\""
 	},
 	"android-debug-bridge":{
@@ -178,7 +178,7 @@
 		"note":"Name: \"concourse\""
 	},
 	"contactless-payment":{
-		"status":"added",
+		"status":"available",
 		"note":"Name: \"contactlesspayment\""
 	},
 	"contactless-payment-circle":{
@@ -301,7 +301,7 @@
 	},
 	"firefox":{
 		"status":"outdated",
-		"note":"Current name: \"mozillafirefox\", awaiting rename to \"firefoxbrowser\""
+		"note":"Name: \"mozillafirefox\", awaiting rename to \"firefoxbrowser\""
 	},
 	"flattr":{
 		"status":"available"
@@ -426,7 +426,7 @@
 		"note":"Name: \"googlelens\""
 	},
 	"google-maps":{
-		"status":"outdated",
+		"status":"available",
 		"note":"Name: \"googlemaps\""
 	},
 	"google-my-business":{
@@ -759,7 +759,7 @@
 		"note":"Name: \"microsoftpowerpoint\""
 	},
 	"microsoft-sharepoint":{
-		"status":"pr",
+		"status":"available",
 		"note":"Name: \"microsofsharepoint\""
 	},
 	"microsoft-teams":{
@@ -791,7 +791,7 @@
 		"note":"Name: \"xbox\""
 	},
 	"microsoft-yammer":{
-		"status":"outdated",
+		"status":"available",
 		"note":"Name: \"yammer\""
 	},
 	"midi":{
