@@ -742,6 +742,7 @@
 			actions:{
 				library:Q(`#actions>[data-label=Retired]+li`),
 				export:Q(`#actions>[data-label=Retired]+li+li`),
+				name:Q(`#actions>[data-confirm="Name"]`),
 				markup:Q(`#actions>[data-confirm="Markup"]`),
 				data:Q(`#actions>[data-confirm="Path data"]`),
 				uri:Q(`#actions>[data-confirm="URI"]`),
@@ -795,6 +796,7 @@
 							else page.alert(`Not yet available.`);
 							break;
 						case this.actions.markup:
+						case this.actions.name:
 						case this.actions.uri:
 						case this.actions.data:
 						case this.actions.import:
@@ -876,6 +878,7 @@
 					this.meta.added.nodeValue=this.meta.updated.nodeValue=this.meta.renamed.nodeValue=this.meta.retired.nodeValue=``;
 					this.aside.classList.add(`nocopy`,`retired`);
 				}
+				this.actions.name.dataset.copy=this.name;
 				this.actions.markup.dataset.copy=`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`;
 				this.actions.uri.dataset.copy=`data:image/svg+xml;base64,${btoa(this.actions.markup.dataset.copy)}`;
 				this.downloads={

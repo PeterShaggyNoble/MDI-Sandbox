@@ -493,10 +493,10 @@ body.highlight>#content>section>article.active{
 	transition-property:background,color,height,opacity;
 	transition-timing-function:var(--timing-function);
 }
-#actions>li:nth-last-child(13),#actions>li:nth-last-child(12),#actions>li:nth-last-child(9),#info>#actions>li:nth-last-child(3){
+#actions>li:nth-last-child(14),#actions>li:nth-last-child(13),#actions>li:nth-last-child(10),#info>#actions>li:nth-last-child(3){
 	border-bottom:1px solid #e0e0e0;
 }
-#actions>li:nth-last-child(13){
+#actions>li:nth-last-child(14){
 	border-top:1px solid #e0e0e0;
 	margin-top:8px;
 }

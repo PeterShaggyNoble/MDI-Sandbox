@@ -1,6 +1,7 @@
 (async()=>{
 	const 	data=Object.entries(await(await fetch(`https://houseofdesign.ie/data/icons/simpleicons.json`)).json()),
 		meta=(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json`)).json()).icons,
+		count=(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/master/_data/simple-icons.json`)).json()).icons.length,
 		inputs={
 			data:document.getElementById(`data`),
 			overlay:document.getElementById(`overlay`),
@@ -118,6 +119,7 @@
 			},event.isTrusted*50);
 		};
 	let color,delay,icon,target,timer,value;
+	document.getElementById(`count`).textContent=count.toString().replace(/\B(?=(\d{3})+(?!\d))/g,`,`);
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);

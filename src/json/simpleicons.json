@@ -779,7 +779,7 @@
 		"note":"Name: \"windows\""
 	},
 	"microsoft-windows-classic":{
-		"status":"pr",
+		"status":"available",
 		"note":"Name: \"windows95\""
 	},
 	"microsoft-word":{
@@ -1036,6 +1036,10 @@
 	},
 	"symfony":{
 		"status":"available"
+	},
+	"tailwind":{
+		"status":"available",
+		"note":"Name: \"tailwindcss\""
 	},
 	"teamviewer":{
 		"status":"available"
