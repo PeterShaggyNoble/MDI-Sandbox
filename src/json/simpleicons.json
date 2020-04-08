@@ -592,8 +592,8 @@
 		"note":"Name: \"markdown\""
 	},
 	"language-markdown-outline":{
-		"status":"rejected",
-		"note":"Variant, out of scope"
+		"status":"pr",
+		"note":"Name: \"commonmark\""
 	},
 	"language-php":{
 		"status":"available",

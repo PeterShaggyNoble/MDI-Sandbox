@@ -73,7 +73,7 @@
 						if(!inputs.overlay.value){
 							if(!target.validity.valid)
 								value=`111111`;
-							value=value.replace(/^#/,``);
+							value=value.replace(/^#/,``).replace(/^(.)(.)(.)$/,`$1$1$2$2$3$3`);
 							text.color.parentNode.setAttribute(`fill-opacity`,target.validity.valid?`1`:`0`);
 							if(target.validity.valid)
 								text.color.textContent=value.toUpperCase();
