@@ -3,8 +3,9 @@
 		meta=(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json`)).json()).icons,
 		count=(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/master/_data/simple-icons.json`)).json()).icons.length,
 		buttons={
-			save:document.querySelector(`button:last-of-type`),
-			upload:document.querySelector(`button:first-of-type`)
+			download:document.getElementById(`download`),
+			save:document.getElementById(`save`),
+			upload:document.getElementById(`upload`)
 		},
 		inputs={
 			action:document.getElementById(`action`),
@@ -34,7 +35,17 @@
 		reader=new FileReader,
 		xml=new XMLSerializer,
 		image=new Image,
-		draw=()=>image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{type:`image/svg+xml;charset=utf-8`})),
+		download=(data,type)=>{
+			a.href=data;
+			a.download=(text.file.textContent||`icon`)+`.`+type;
+			document.body.append(a);
+			a.click();
+			a.remove();
+			URL.revokeObjectURL(a.href);
+		},
+		draw=()=>image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{
+			type:`image/svg+xml;charset=utf-8`
+		})),
 		findcolour=value=>{
 			if(icon=meta.find(o=>sanitise(o.title)===sanitise(value))){
 				inputs.colour.value=icon.hex;
@@ -49,16 +60,11 @@
 			document.body.classList.toggle(`ctrl`,event.ctrlKey);
 			if(event.ctrlKey)
 				switch(event.key){
-/*					case`b`:
-						inputs.name.focus();
-						break;
-					case`c`:
-						inputs.colour.focus();
-						break;
-					case`p`:
+					case`d`:
 						event.preventDefault();
-						inputs.data.focus();
-						break;*/
+						buttons.download.dispatchEvent(new Event(`click`));
+						keyup();
+						break;
 					case`s`:
 						event.preventDefault();
 						buttons.save.dispatchEvent(new Event(`click`));
@@ -75,9 +81,11 @@
 		load=event=>{
 			let 	parsed=parser.parseFromString(event.target.result,`image/svg+xml`),
 				title=parsed.querySelector(`title`),
-				d=parsed.querySelector(`path`);
-			if(d){
-				d=d.getAttribute(`d`);
+				paths=parsed.querySelectorAll(`path`),
+				d=``,x;
+			if(paths.length){
+				for(x of paths)
+					d+=x.getAttribute(`d`);
 				if(d){
 					path.setAttribute(`d`,inputs.data.value=d);
 					finddata(d);
@@ -102,15 +110,15 @@
 			inputs.upload.remove();
 		},
 		sanitise=value=>value.toLowerCase().replace(/\+/g,`plus`).replace(/^\./,`dot-`).replace(/\.$/,`-dot`).replace(/\./g,`-dot-`).replace(/^&/,`and-`).replace(/&$/,`-and`).replace(/&/g,`-and-`).replace(/[ !:’']/g, "").replace(/à|á|â|ã|ä/g,`a`).replace(/ç|č|ć/g,`c`).replace(/è|é|ê|ë/g,`e`).replace(/ì|í|î|ï/g,`i`).replace(/ñ|ň|ń/g,`n`).replace(/ò|ó|ô|õ|ö/g,`o`).replace(/š|ś/g,`s`).replace(/ù|ú|û|ü/g,`u`).replace(/ý|ÿ/g,`y`).replace(/ž|ź/g,`z`),
-		save=()=>{
-			canvas.toBlob(blob=>{
-				a.href=URL.createObjectURL(blob);
-				a.download=text.file.firstChild.nodeValue+`.png`;
-				document.body.append(a);
-				a.click();
-				a.remove();
-				URL.revokeObjectURL(a.href);
-			});
+		save=event=>{
+			switch(event.target){
+				case buttons.download:
+					download(`data:image/svg+xml;utf8,<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>${(text.brand.textContent||`Unknown`)} icon</title><path d="${path.getAttribute(`d`)}"/></svg>`,`svg`);
+					break;
+				case buttons.save:
+					canvas.toBlob(blob=>download(URL.createObjectURL(blob),`png`));
+					break;
+			}
 		},
 		setfill=hex=>parseInt(hex.substr(0,2),16)*.299+parseInt(hex.substr(2,2),16)*.587+parseInt(hex.substr(4,2),16)*.114<160?`#fff`:`#000`,
 		upload=()=>{
@@ -178,6 +186,7 @@
 		URL.revokeObjectURL(image.src);
 	});
 	draw();
+	buttons.download.addEventListener(`click`,save);
 	buttons.save.addEventListener(`click`,save);
 	buttons.upload.addEventListener(`click`,upload);
 	inputs.upload.accept=`.svg,image/svg+xml`;

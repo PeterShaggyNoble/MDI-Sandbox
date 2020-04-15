@@ -219,11 +219,11 @@ section>button{
 	line-height:36px;
 	padding:0 16px;
 }
-section>button:first-of-type{
-	margin:0 0 0 auto;
-}
 section>button+button{
 	margin:0 0 0 16px;
+}
+section>button:last-of-type{
+	margin:0 0 0 auto;
 }
 @media(max-width:759px){
 	body{
