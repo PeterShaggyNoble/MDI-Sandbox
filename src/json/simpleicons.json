@@ -521,7 +521,7 @@
 		"status":"available"
 	},
 	"jira":{
-		"status":"wip",
+		"status":"outdated",
 		"note":"Current version is Jira Software, awaiting update"
 	},
 	"jquery":{

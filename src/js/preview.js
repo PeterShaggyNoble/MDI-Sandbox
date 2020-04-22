@@ -93,16 +93,20 @@
 						ghost.setAttribute(`fill-opacity`,value?`.4375`:`0`);
 						delay=value?0:200;
 						if(value){
-/*							size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
-							ghost.setAttribute(`transform`,size>24?size>48?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.5) translate(22,20)`:`translate(11,10)`);*/
+							size=Math.max(...value.match(/(\d|\.)+/g).map(x=>parseFloat(x)));
+/*							ghost.setAttribute(`transform`,size>24?size>48?`scale(.046875) scale(1,-1) translate(234.66667,-725.33333)`:`scale(.5) translate(22,20)`:`translate(11,10)`);*/
 							transform=transforms[0];
-							while(sets[++ind])
-								for(key in (set=sets[ind]))
-									if(set.hasOwnProperty(key))
-										if(set[key].data===value){
-											transform=transforms[ind];
-											break;
-										}
+							console.log(transform);
+							if(size>24)
+								for(variant in google)
+									if(google.hasOwnProperty(variant))
+										for(key in google[variant])
+											if(google[variant].hasOwnProperty(key))
+												if(google[variant][key].data===value){
+													transform=transforms[2];
+													break;
+												}
+							console.log(transform);
 							ghost.setAttribute(`transform`,transform);
 						}
 						break;

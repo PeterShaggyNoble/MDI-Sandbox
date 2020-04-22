@@ -1,8 +1,8 @@
 {
 	let version={
 		mdi:{
-			str:`5.0.45`,
-			int:5045
+			str:`5.1.45`,
+			int:5145
 		},mdil:{
 			str:`0.2.63`,
 			int:263
@@ -915,8 +915,11 @@
 						ver=ver.filter(v=>/\d/.test(v)&&v<=version.int);
 						ver=ver.length?ver[ver.length-1]:``;
 					}
-					if(ver)
-						ver=`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`));
+					if(ver){
+						if(ver>version.int)
+							ver="Soon";
+						else ver=`${ver}`.padStart(5,`v0`).replace(/\d{3}/,match=>[...match].join(`.`));
+					}
 				}
 				this.meta[mod].nodeValue=ver;
 			},
