@@ -1,12 +1,12 @@
 (async()=>{
-	const 	data=Object.entries(await(await fetch(`https://houseofdesign.ie/data/icons/simpleicons.json`)).json()),
+	const 	data=await(await fetch(`https://houseofdesign.ie/data/icons/simpleicons.json`)).json(),
 		meta=(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json`)).json()).icons,
-		count=(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/master/_data/simple-icons.json`)).json()).icons.length,
 		buttons={
 			download:document.getElementById(`download`),
 			save:document.getElementById(`save`),
 			upload:document.getElementById(`upload`)
 		},
+		holder=document.getElementById(`holder`),
 		inputs={
 			action:document.getElementById(`action`),
 			colour:document.getElementById(`colour`),
@@ -15,6 +15,7 @@
 			overlay:document.getElementById(`overlay`),
 			upload:document.createElement(`input`)
 		},
+		list=document.getElementById(`list`),
 		text={
 			type:document.getElementById(`type`),
 			file:document.getElementById(`filename`),
@@ -35,6 +36,11 @@
 		reader=new FileReader,
 		xml=new XMLSerializer,
 		image=new Image,
+		autocomplete=value=>{
+			if(autocomplete.timer)
+				clearTimeout(autocomplete.timer);
+			autocomplete.timer=setTimeout(search,50,value.trim().toLowerCase());
+		},
 		download=(data,type)=>{
 			a.href=data;
 			a.download=(text.file.textContent||`icon`)+`.`+type;
@@ -46,15 +52,12 @@
 		draw=()=>image.src=URL.createObjectURL(new Blob([xml.serializeToString(svg)],{
 			type:`image/svg+xml;charset=utf-8`
 		})),
-		findcolour=value=>{
-			if(icon=meta.find(o=>sanitise(o.title)===sanitise(value))){
+		finddata=value=>{
+			if(icon=meta.find(o=>o.data===value)){
+				text.file.textContent=sanitise(text.brand.textContent=inputs.name.value=icon.title);
 				inputs.colour.value=icon.hex;
 				inputs.colour.dispatchEvent(new Event(`input`));
 			}
-		},
-		finddata=value=>{
-			if(icon=data.find(([,d])=>d===value))
-				findcolour(icon[0]);
 		},
 		keydown=event=>{
 			document.body.classList.toggle(`ctrl`,event.ctrlKey);
@@ -80,9 +83,9 @@
 		keyup=event=>document.body.classList.toggle(`ctrl`,event&&event.ctrlKey),
 		load=event=>{
 			let 	parsed=parser.parseFromString(event.target.result,`image/svg+xml`),
-				title=parsed.querySelector(`title`),
 				paths=parsed.querySelectorAll(`path`),
 				d=``,x;
+			title=parsed.querySelector(`title`);
 			if(paths.length){
 				for(x of paths)
 					d+=x.getAttribute(`d`);
@@ -91,15 +94,25 @@
 					finddata(d);
 					if(title){
 						title=title.firstChild.nodeValue.replace(/ icon$/,``);
-						if(title){
+						if(title)
 							text.file.textContent=sanitise(inputs.name.value=text.brand.textContent=title);
-							if(!icon)
-								findcolour(title);
-						}
 					}
 				}
 				else alert(`No path data detcted`);
 			}else alert(`No path tag detcted`);
+		},
+		populate=event=>{
+			let target=event.target;
+			if(target.nodeName.toLowerCase()===`li`){
+				text.file.textContent=sanitise(text.brand.textContent=inputs.name.value=target.lastChild.nodeValue);
+				inputs.data.value=target.dataset.data;
+				inputs.colour.value=target.dataset.colour;
+				inputs.colour.dispatchEvent(new Event(`input`));
+				setTimeout(()=>inputs.data.dispatchEvent(new Event(`input`)));
+				inputs.name.focus();
+				list.classList.add(`oz`,`pen`);
+				list.scrollTo(0,0);
+			}
 		},
 		read=()=>{
 			let file=inputs.upload.files[0];
@@ -120,14 +133,33 @@
 					break;
 			}
 		},
+		search=value=>{
+			let 	count=0,
+				show;
+			if(holder.innerText=value){
+				for(obj of meta){
+					show=obj.title.toLowerCase().startsWith(value);
+					obj.li.classList.toggle(`dn`,!show);
+					count+=show;
+					if(count===50)
+						break;
+				}
+				list.style.left=`${Math.min(91+holder.scrollWidth,91+inputs.name.offsetWidth-list.offsetWidth)}px`;
+			}
+			list.classList.toggle(`oz`,!count);
+			list.classList.toggle(`pen`,!count);
+			if(!count)
+				list.scrollTo(0,0);
+		},
 		setfill=hex=>parseInt(hex.substr(0,2),16)*.299+parseInt(hex.substr(2,2),16)*.587+parseInt(hex.substr(4,2),16)*.114<160?`#fff`:`#000`,
 		upload=()=>{
 			document.body.append(inputs.upload);
 			inputs.upload.click();
 		},
 		generate=event=>{
-			clearTimeout(timer);
-			timer=setTimeout(()=>{
+			if(generate.timer)
+				clearTimeout(generate.timer);
+			generate.timer=setTimeout(()=>{
 				target=event.target;
 				value=target.value.trim();
 				delay=0;
@@ -152,14 +184,12 @@
 						break;
 					case inputs.data:
 						path.setAttribute(`d`,value);
-						finddata(value);
-						if(icon){
-							inputs.name.value=icon.title;
-							setTimeout(()=>inputs.name.dispatchEvent(new Event(`input`)));
-						}
+						if(event.isTrusted)
+							finddata(value);
 						break;
 					case inputs.name:
 						text.file.textContent=sanitise(text.brand.textContent=value);
+						autocomplete(value);
 						break;
 					case inputs.overlay:
 						compare.setAttribute(`fill-opacity`,value?`.5`:`0`);
@@ -172,14 +202,15 @@
 						delay=value?0:200;
 						break;
 				}
-				timer=setTimeout(()=>{
+				generate.timer=setTimeout(()=>{
 					target===inputs.overlay&&compare.setAttribute(`d`,value);
 					draw();
 				},event.isTrusted*delay);
 			},event.isTrusted*50);
 		};
-	let color,delay,icon,target,timer,value;
-	document.getElementById(`count`).textContent=count.toString().replace(/\B(?=(\d{3})+(?!\d))/g,`,`);
+	let 	bullet={},
+		color,delay,icon,obj,target,title,value;
+	document.getElementById(`count`).textContent=Object.keys(data).length.toString().replace(/\B(?=(\d{3})+(?!\d))/g,`,`);
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);
@@ -197,4 +228,28 @@
 	document.addEventListener(`input`,generate,true);
 	document.body.addEventListener(`keydown`,keydown);
 	document.body.addEventListener(`keyup`,keyup);
+	for(obj of meta){
+		title=obj.title;
+		if(bullet.li){
+			bullet.li=bullet.li.cloneNode(false);
+			bullet.svg=bullet.svg.cloneNode(false);
+			bullet.path=bullet.path.cloneNode(false);
+		}else{
+			bullet.li=document.createElement(`li`);
+			bullet.li.classList.add(`cp`,`dn`,`fwm`,`oh`,`toe`,`wsnw`);
+			bullet.svg=document.createElementNS(`http://www.w3.org/2000/svg`,`svg`);
+			bullet.svg.classList.add(`pen`,`vat`);
+			bullet.svg.setAttribute(`viewBox`,`0 0 24 24`);
+			bullet.path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`);
+		}
+		bullet.li.append(bullet.svg,document.createTextNode(title));
+		bullet.data=data[title=sanitise(title)];
+		if(!bullet.data)
+			bullet.data=parser.parseFromString(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/${title}.svg`)).text(),`text/xml`).querySelector(`path`).getAttribute(`d`);
+		bullet.path.setAttribute(`d`,obj.data=bullet.li.dataset.data=bullet.data);
+		bullet.li.dataset.colour=obj.hex;
+		bullet.svg.append(bullet.path);
+		list.append(obj.li=bullet.li);
+	}
+	list.addEventListener(`click`,populate,false);
 })();
