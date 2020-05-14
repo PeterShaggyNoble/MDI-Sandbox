@@ -766,23 +766,6 @@
 		"user":"molinaga"
 	},{
 		"brand":false,
-		"comments":3,
-		"created":"2020-04-20T13:55:22Z",
-		"downvotes":0,
-		"home":false,
-		"id":5059,
-		"labels":["Icon Request"],
-		"milestone":null,
-		"node_id":"MDU6SXNzdWU2MDMyNTgyMjA=",
-		"reactions":0,
-		"status":"Pending",
-		"stock":false,
-		"title":"Beekeeper",
-		"updated":"2020-05-06T06:12:41Z",
-		"upvotes":0,
-		"user":"guenth39"
-	},{
-		"brand":false,
 		"comments":0,
 		"created":"2020-04-19T15:25:16Z",
 		"downvotes":0,
@@ -2712,12 +2695,12 @@
 		"labels":["Icon Request"],
 		"milestone":null,
 		"node_id":"MDU6SXNzdWUzNTc5MDEwODg=",
-		"reactions":3,
+		"reactions":4,
 		"status":"Pending",
 		"stock":false,
 		"title":"Chicken \ud83d\udc14 (the animal, not food)",
 		"updated":"2020-03-25T13:10:31Z",
-		"upvotes":3,
+		"upvotes":4,
 		"user":"wkonkel"
 	},{
 		"brand":false,
