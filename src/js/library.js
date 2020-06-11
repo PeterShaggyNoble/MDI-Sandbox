@@ -1,8 +1,8 @@
 {
 	let version={
 		mdi:{
-			str:`5.2.45`,
-			int:5245
+			str:`5.3.45`,
+			int:5345
 		},mdil:{
 			str:`0.2.63`,
 			int:263
@@ -848,9 +848,12 @@
 			download(){
 				if(this.icon)
 					if(this.data)
-						if(this.downloads[this.type])
-							page.download(this.downloads[this.type],`${this.name}.${this.type}`);
-						else page.alert(`Unknown file type.`);
+						if(this.downloads[this.type]){
+							let name=this.name;
+							if(this.type===`xml`)
+								name=name.replace(/-/g,`_`);
+							page.download(this.downloads[this.type],`${name}.${this.type}`);
+						}else page.alert(`Unknown file type.`);
 					else page.alert(`Download not available.`);
 				else page.alert(`Unknown icon.`);
 			},
@@ -884,7 +887,7 @@
 				this.downloads={
 					svg:`data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="${this.data}"/></svg>`,
 					xaml:`data:text/xaml+xml;utf8,<?xml version="1.0" encoding="UTF-8"?><Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="24" Height="24"><Path Data="${this.data}"/></Canvas>`,
-					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="#000" android:pathData="${this.data}"/></vector>`
+					xml:`data:text/xml;utf8,<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:width="24dp" android:viewportWidth="24" android:viewportHeight="24"><path android:fillColor="%23000" android:pathData="${this.data}"/></vector>`
 				};
 				if(page.storage){
 					this.actions.library.classList.toggle(`remove`,library=!!favourites.articles[this.name]&&!!parseInt(favourites.list[this.name]));

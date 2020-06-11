@@ -1,5 +1,6 @@
 # Change Log
 Only major changes and additions will be noted here.
+- **2020-06-11:** Updated to Material Design Icons v5.3.45.
 - **2020-05-13:** Updated to Material Design Icons v5.2.45.
 - **2020-04-22:** Updated to Material Design Icons v5.1.45.
 - **2020-03-30:** Added the ability to copy the name of an icon.

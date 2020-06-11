@@ -39,7 +39,7 @@
 		autocomplete=value=>{
 			if(autocomplete.timer)
 				clearTimeout(autocomplete.timer);
-			autocomplete.timer=setTimeout(search,50,value.trim().toLowerCase());
+			autocomplete.timer=setTimeout(search,50,sanitise(value.trim()));
 		},
 		download=(data,type)=>{
 			a.href=data;
@@ -138,7 +138,7 @@
 				show;
 			if(holder.innerText=value){
 				for(obj of meta){
-					show=obj.title.toLowerCase().startsWith(value);
+					show=sanitise(obj.title).startsWith(value);
 					obj.li.classList.toggle(`dn`,!show);
 					count+=show;
 					if(count===50)
