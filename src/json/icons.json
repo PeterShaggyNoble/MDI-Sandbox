@@ -27941,7 +27941,7 @@
 	},
 	"hanger":{
 		"aliases":["clothes-hanger","coat-hanger"],
-		"categories":["other"],
+		"categories":["clothes"],
 		"codepoint":{
 			"old":"f2c8",
 			"new":"f02c8"
