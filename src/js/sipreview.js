@@ -26,6 +26,17 @@
 		svg=document.querySelector(`figure>svg`),
 		background=document.getElementById(`background`),
 		path=document.querySelector(`#path>path`),
+		shields={
+			white:document.querySelector(`#shieldwhite>path`),
+			color:document.querySelector(`#shieldcolor>path`),
+			rects:document.querySelectorAll(`#shields rect.rect`),
+			highlights:document.querySelectorAll(`#shields text.highlight`),
+			text:document.querySelectorAll(`#shields text.text`),
+			colors:{
+				highlight:`010101`,
+				text:`ffffff`
+			}
+		},
 		compare=document.getElementById(`compare`),
 		action=document.querySelector(`figure>svg>path:last-of-type`),
 		canvas=document.querySelector(`canvas`),
@@ -91,6 +102,8 @@
 					d+=x.getAttribute(`d`);
 				if(d){
 					path.setAttribute(`d`,inputs.data.value=d);
+					shields.white.setAttribute(`d`,d);
+					shields.color.setAttribute(`d`,d);
 					finddata(d);
 					if(title){
 						title=title.firstChild.nodeValue.replace(/ icon$/,``);
@@ -151,7 +164,16 @@
 			if(!count)
 				list.scrollTo(0,0);
 		},
-		setfill=hex=>parseInt(hex.substr(0,2),16)*.299+parseInt(hex.substr(2,2),16)*.587+parseInt(hex.substr(4,2),16)*.114<160?`#fff`:`#000`,
+		setfill=hex=>{
+			if(parseInt(hex.substr(0,2),16)*.299+parseInt(hex.substr(2,2),16)*.587+parseInt(hex.substr(4,2),16)*.114<160){
+				shields.colors.highlight=`010101`;
+				return shields.colors.text=`#fff`;
+			}else{
+				shields.colors.highlight=`cccccc`;
+				shields.colors.text=`333333`;
+				return`#000`;
+			}
+		},
 		upload=()=>{
 			document.body.append(inputs.upload);
 			inputs.upload.click();
@@ -179,11 +201,20 @@
 								text.color.textContent=value.toUpperCase();
 							background.setAttribute(`fill`,`#`+value);
 							svg.setAttribute(`fill`,setfill(value));
+							shields.color.setAttribute(`fill`,`#`+value);
+							for(let x of shields.rects)
+								x.setAttribute(`fill`,`#`+value);
+							for(let y of shields.highlights)
+								y.setAttribute(`fill`,`#`+shields.colors.highlight);
+							for(let z of shields.text)
+								z.setAttribute(`fill`,`#`+shields.colors.text);
 							delay=200;
 						}
 						break;
 					case inputs.data:
 						path.setAttribute(`d`,value);
+						shields.white.setAttribute(`d`,value);
+						shields.color.setAttribute(`d`,value);
 						if(event.isTrusted)
 							finddata(value);
 						break;
@@ -210,7 +241,7 @@
 		};
 	let 	bullet={},
 		color,delay,icon,obj,target,title,value;
-	document.getElementById(`count`).textContent=Object.keys(data).length.toString().replace(/\B(?=(\d{3})+(?!\d))/g,`,`);
+	document.getElementById(`count`).textContent=Object.keys(meta).length.toString().replace(/\B(?=(\d{3})+(?!\d))/g,`,`);
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);
@@ -252,4 +283,8 @@
 		list.append(obj.li=bullet.li);
 	}
 	list.addEventListener(`click`,populate,false);
+/*	inputs.name.addEventListener(`blur`,event=>{
+		if(!event.relatedTarget||event.relatedTarget.parentNode!==list)
+			list.classList.add(`oz`,`pen`);
+	},true);*/
 })();

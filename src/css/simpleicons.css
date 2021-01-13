@@ -191,16 +191,30 @@ section svg{
 section svg,section path,section rect,section text{
 	transition:fill .195s var(--timing-function),fill-opacity .195s var(--timing-function),stroke .195s var(--timing-function);
 }
-section text:first-of-type{
+section #shields>g>text{
+	font-size:110px;
+}
+section #shields>g:nth-of-type(3)>text{
+	font-size:100px;
+}
+section #shields>g:last-of-type>text:last-of-type{
+	font-weight:bold;
+}
+section #badges text{
+	font-size:110px;
+	font-weight:700;
+	line-height:14px;
+}
+section #text>text:first-of-type{
 	font-size:25px;
 	line-height:30px;
 }
-section text:nth-of-type(2){
+section #text>text:nth-of-type(2){
 	font-size:18px;
 	line-height:24px;
 }
-section text:nth-last-of-type(2),
-section text:last-of-type{
+section #text>text:nth-last-of-type(2),
+section #text>text:last-of-type{
 	font-size:12px;
 	line-height:16px;
 }
