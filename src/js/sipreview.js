@@ -241,7 +241,7 @@
 		};
 	let 	bullet={},
 		color,delay,icon,obj,target,title,value;
-	document.getElementById(`count`).textContent=Object.keys(meta).length.toString().replace(/\B(?=(\d{3})+(?!\d))/g,`,`);
+	document.getElementById(`count`).textContent=Object.keys(data).length.toString().replace(/\B(?=(\d{3})+(?!\d))/g,`,`);
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);
