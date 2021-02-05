@@ -1,6 +1,5 @@
 (async()=>{
-	const 	data=await(await fetch(`https://houseofdesign.ie/data/icons/simpleicons.json`)).json(),
-		meta=(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json`)).json()).icons,
+	const 	data=Object.values(icons),
 		buttons={
 			download:document.getElementById(`download`),
 			save:document.getElementById(`save`),
@@ -64,7 +63,7 @@
 			type:`image/svg+xml;charset=utf-8`
 		})),
 		finddata=value=>{
-			if(icon=meta.find(o=>o.data===value)){
+			if(icon=data.find(o=>o.data===value)){
 				text.file.textContent=sanitise(text.brand.textContent=inputs.name.value=icon.title);
 				inputs.colour.value=icon.hex;
 				inputs.colour.dispatchEvent(new Event(`input`));
@@ -150,7 +149,7 @@
 			let 	count=0,
 				show;
 			if(holder.innerText=value){
-				for(obj of meta){
+				for(obj of data){
 					show=sanitise(obj.title).startsWith(value);
 					obj.li.classList.toggle(`dn`,!show);
 					count+=show;
@@ -241,7 +240,7 @@
 		};
 	let 	bullet={},
 		color,delay,icon,obj,target,title,value;
-	document.getElementById(`count`).textContent=Object.keys(data).length.toString().replace(/\B(?=(\d{3})+(?!\d))/g,`,`);
+	document.getElementById(`count`).textContent=data.length.toString().replace(/\B(?=(\d{3})+(?!\d))/g,`,`);
 	image.addEventListener(`load`,()=>{
 		context.clearRect(0,0,width,height);
 		context.drawImage(image,0,0);
@@ -259,7 +258,7 @@
 	document.addEventListener(`input`,generate,true);
 	document.body.addEventListener(`keydown`,keydown);
 	document.body.addEventListener(`keyup`,keyup);
-	for(obj of meta){
+	for(obj of data){
 		title=obj.title;
 		if(bullet.li){
 			bullet.li=bullet.li.cloneNode(false);
@@ -274,9 +273,9 @@
 			bullet.path=document.createElementNS(`http://www.w3.org/2000/svg`,`path`);
 		}
 		bullet.li.append(bullet.svg,document.createTextNode(title));
-		bullet.data=data[title=sanitise(title)];
-		if(!bullet.data)
-			bullet.data=parser.parseFromString(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/${title}.svg`)).text(),`text/xml`).querySelector(`path`).getAttribute(`d`);
+		bullet.data=icons.get(obj.slug).path;
+/*		if(!bullet.data)
+			bullet.data=parser.parseFromString(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/${title}.svg`)).text(),`text/xml`).querySelector(`path`).getAttribute(`d`);*/
 		bullet.path.setAttribute(`d`,obj.data=bullet.li.dataset.data=bullet.data);
 		bullet.li.dataset.colour=obj.hex;
 		bullet.svg.append(bullet.path);
