@@ -7,7 +7,7 @@
 		},
 		holder=document.getElementById(`holder`),
 		inputs={
-			action:document.getElementById(`action`),
+/*			action:document.getElementById(`action`),*/
 			colour:document.getElementById(`colour`),
 			data:document.getElementById(`data`),
 			name:document.getElementById(`name`),
@@ -37,7 +37,7 @@
 			}
 		},
 		compare=document.getElementById(`compare`),
-		action=document.querySelector(`figure>svg>path:last-of-type`),
+/*		action=document.querySelector(`figure>svg>path:last-of-type`),*/
 		canvas=document.querySelector(`canvas`),
 		context=canvas.getContext(`2d`),
 		width=canvas.width,
@@ -64,10 +64,13 @@
 		})),
 		finddata=value=>{
 			if(icon=data.find(o=>o.data===value)){
-				text.file.textContent=sanitise(text.brand.textContent=inputs.name.value=icon.title);
+				text.brand.textContent=inputs.name.value=icon.title;
+				text.file.textContent=icon.slug;
 				inputs.colour.value=icon.hex;
 				inputs.colour.dispatchEvent(new Event(`input`));
+				return true;
 			}
+			return false;
 		},
 		keydown=event=>{
 			document.body.classList.toggle(`ctrl`,event.ctrlKey);
@@ -103,11 +106,12 @@
 					path.setAttribute(`d`,inputs.data.value=d);
 					shields.white.setAttribute(`d`,d);
 					shields.color.setAttribute(`d`,d);
-					finddata(d);
+					if(!finddata(d))
+						text.file.textContent=reader.name;
 					if(title){
 						title=title.firstChild.nodeValue.replace(/ icon$/,``);
 						if(title)
-							text.file.textContent=sanitise(inputs.name.value=text.brand.textContent=title);
+							inputs.name.value=text.brand.textContent=title;
 					}
 				}
 				else alert(`No path data detcted`);
@@ -116,7 +120,8 @@
 		populate=event=>{
 			let target=event.target;
 			if(target.nodeName.toLowerCase()===`li`){
-				text.file.textContent=sanitise(text.brand.textContent=inputs.name.value=target.lastChild.nodeValue);
+				text.brand.textContent=inputs.name.value=target.lastChild.nodeValue;
+				text.file.textContent=target.dataset.slug;
 				inputs.data.value=target.dataset.data;
 				inputs.colour.value=target.dataset.colour;
 				inputs.colour.dispatchEvent(new Event(`input`));
@@ -129,9 +134,10 @@
 		read=()=>{
 			let file=inputs.upload.files[0];
 			if(file)
-				if(file.type===`image/svg+xml`)
-					reader.readAsText(inputs.upload.files[0]);
-				else alert(`Invalid file type`);
+				if(file.type===`image/svg+xml`){
+					reader.name=file.name.replace(/\..+?$/,``);
+					reader.readAsText(file);
+				}else alert(`Invalid file type`);
 			inputs.upload.remove();
 		},
 		sanitise=value=>value.toLowerCase().replace(/\+/g,`plus`).replace(/^\./,`dot-`).replace(/\.$/,`-dot`).replace(/\./g,`-dot-`).replace(/^&/,`and-`).replace(/&$/,`-and`).replace(/&/g,`-and-`).replace(/[ !:’'°]/g, "").replace(/à|á|â|ã|ä/g,`a`).replace(/ç|č|ć/g,`c`).replace(/è|é|ê|ë/g,`e`).replace(/ì|í|î|ï/g,`i`).replace(/ñ|ň|ń/g,`n`).replace(/ò|ó|ô|õ|ö/g,`o`).replace(/š|ś/g,`s`).replace(/ù|ú|û|ü/g,`u`).replace(/ý|ÿ/g,`y`).replace(/ž|ź/g,`z`),
@@ -185,11 +191,11 @@
 				value=target.value.trim();
 				delay=0;
 				switch(target){
-					case inputs.action:
+/*					case inputs.action:
 						value&&action.setAttribute(`d`,value);
 						action.setAttribute(`fill-opacity`,value?1:0);
 						delay=200;
-						break;
+						break;*/
 					case inputs.colour:
 						if(!inputs.overlay.value){
 							if(!target.validity.valid)
@@ -278,6 +284,7 @@
 			bullet.data=parser.parseFromString(await(await fetch(`https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/${title}.svg`)).text(),`text/xml`).querySelector(`path`).getAttribute(`d`);*/
 		bullet.path.setAttribute(`d`,obj.data=bullet.li.dataset.data=bullet.data);
 		bullet.li.dataset.colour=obj.hex;
+		bullet.li.dataset.slug=obj.slug;
 		bullet.svg.append(bullet.path);
 		list.append(obj.li=bullet.li);
 	}
